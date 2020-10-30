@@ -72,6 +72,9 @@ typedef pthread_cond_t __libcpp_condvar_t;
 typedef pthread_once_t __libcpp_exec_once_flag;
 #define _LIBCPP_EXEC_ONCE_INITIALIZER PTHREAD_ONCE_INIT
 
+// Thread Attributes
+typedef pthread_attr_t __libcpp_thread_attr;
+
 // Thread id
 #if defined(__MVS__)
   typedef unsigned long long __libcpp_thread_id;
@@ -202,6 +205,16 @@ _LIBCPP_THREAD_ABI_VISIBILITY
 int __libcpp_execute_once(__libcpp_exec_once_flag *__flag,
                           void (*__init_routine)());
 
+// Thread Attributes
+_LIBCPP_THREAD_ABI_VISIBILITY
+void __libcpp_thread_attr_init(__libcpp_thread_attr *__attr);
+
+_LIBCPP_THREAD_ABI_VISIBILITY
+void __libcpp_thread_attr_destroy(__libcpp_thread_attr *__attr);
+
+_LIBCPP_THREAD_ABI_VISIBILITY
+void __libcpp_thread_attr_stack_size(__libcpp_thread_attr *__attr, std::size_t size);
+
 // Thread id
 _LIBCPP_THREAD_ABI_VISIBILITY
 bool __libcpp_thread_id_equal(__libcpp_thread_id __t1, __libcpp_thread_id __t2);
@@ -216,6 +229,10 @@ bool __libcpp_thread_isnull(const __libcpp_thread_t *__t);
 _LIBCPP_THREAD_ABI_VISIBILITY
 int __libcpp_thread_create(__libcpp_thread_t *__t, void *(*__func)(void *),
                            void *__arg);
+
+_LIBCPP_THREAD_ABI_VISIBILITY
+int __libcpp_thread_create(__libcpp_thread_t *__t, const __libcpp_thread_attr *__attr,
+                           void *(*__func)(void *), void *__arg);
 
 _LIBCPP_THREAD_ABI_VISIBILITY
 __libcpp_thread_id __libcpp_thread_get_current_id();
@@ -347,6 +364,22 @@ int __libcpp_execute_once(__libcpp_exec_once_flag *__flag,
   return pthread_once(__flag, __init_routine);
 }
 
+// Thread Attributes
+void __libcpp_thread_attr_init(__libcpp_thread_attr *__attr)
+{
+  pthread_attr_init(__attr);
+}
+
+void __libcpp_thread_attr_destroy(__libcpp_thread_attr *__attr)
+{
+  pthread_attr_destroy(__attr);
+}
+
+void __libcpp_thread_attr_stack_size(__libcpp_thread_attr *__attr, std::size_t size)
+{
+  pthread_attr_setstacksize(__attr, size);
+}
+
 // Thread id
 // Returns non-zero if the thread ids are equal, otherwise 0
 bool __libcpp_thread_id_equal(__libcpp_thread_id __t1, __libcpp_thread_id __t2)
@@ -369,6 +402,12 @@ int __libcpp_thread_create(__libcpp_thread_t *__t, void *(*__func)(void *),
                            void *__arg)
 {
   return pthread_create(__t, nullptr, __func, __arg);
+}
+
+int __libcpp_thread_create(__libcpp_thread_t *__t, const __libcpp_thread_attr *__attr,
+                           void *(*__func)(void *), void *__arg)
+{
+  return pthread_create(__t, __attr, __func, __arg);
 }
 
 __libcpp_thread_id __libcpp_thread_get_current_id()

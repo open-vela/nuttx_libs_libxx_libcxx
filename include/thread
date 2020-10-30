@@ -21,10 +21,12 @@ class thread
 {
 public:
     class id;
+    class attributes;
     typedef pthread_t native_handle_type;
 
     thread() noexcept;
     template <class F, class ...Args> explicit thread(F&& f, Args&&... args);
+    template <class F, class ...Args> explicit thread(const attributes& attrs, F&& f, Args&&... args);
     ~thread();
 
     thread(const thread&) = delete;
