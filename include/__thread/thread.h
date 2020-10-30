@@ -165,6 +165,7 @@ class _LIBCPP_EXPORTED_FROM_ABI thread
     thread(const thread&);
     thread& operator=(const thread&);
 public:
+    class attributes;
     typedef __thread_id id;
     typedef __libcpp_thread_t native_handle_type;
 
@@ -175,10 +176,17 @@ public:
               class = __enable_if_t<!is_same<__remove_cvref_t<_Fp>, thread>::value> >
         _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
         explicit thread(_Fp&& __f, _Args&&... __args);
+    template <class _Fp, class ..._Args,
+              class = __enable_if_t<!is_same<__remove_cvref_t<_Fp>, thread>::value> >
+        _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
+        thread(const attributes& __attr, _Fp&& __f, _Args&&... __args);
 #else  // _LIBCPP_CXX03_LANG
     template <class _Fp>
     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
     explicit thread(_Fp __f);
+    template <class _Fp>
+    _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
+    thread(const attributes& __attr, _Fp __f);
 #endif
     ~thread();
 
@@ -209,6 +217,25 @@ public:
     native_handle_type native_handle() _NOEXCEPT {return __t_;}
 
     static unsigned hardware_concurrency() _NOEXCEPT;
+};
+
+class _LIBCPP_EXPORTED_FROM_ABI thread::attributes
+{
+public:
+    attributes() _NOEXCEPT {
+        __libcpp_thread_attr_init(&attr_);
+    }
+
+    ~attributes() {
+        __libcpp_thread_attr_destroy(&attr_);
+    }
+
+    attributes& stack_size(std::size_t size) _NOEXCEPT {
+        __libcpp_thread_attr_stack_size(&attr_, size);
+        return *this;
+    }
+
+    __libcpp_thread_attr attr_;
 };
 
 #ifndef _LIBCPP_CXX03_LANG
@@ -252,6 +279,25 @@ thread::thread(_Fp&& __f, _Args&&... __args)
         __throw_system_error(__ec, "thread constructor failed");
 }
 
+template <class _Fp, class ..._Args,
+          class
+         >
+thread::thread(const attributes& __attrs, _Fp&& __f, _Args&&... __args)
+{
+    typedef unique_ptr<__thread_struct> _TSPtr;
+    _TSPtr __tsp(new __thread_struct);
+    typedef tuple<_TSPtr, __decay_t<_Fp>, __decay_t<_Args>...> _Gp;
+    unique_ptr<_Gp> __p(
+            new _Gp(_VSTD::move(__tsp),
+                    _VSTD::forward<_Fp>(__f),
+                    _VSTD::forward<_Args>(__args)...));
+    int __ec = _VSTD::__libcpp_thread_create(&__t_, &__attrs.attr_, &__thread_proxy<_Gp>, __p.get());
+    if (__ec == 0)
+        __p.release();
+    else
+        __throw_system_error(__ec, "thread constructor failed");
+}
+
 #else  // _LIBCPP_CXX03_LANG
 
 template <class _Fp>
@@ -281,6 +327,20 @@ thread::thread(_Fp __f)
     typedef unique_ptr<_InvokePair> _PairPtr;
     _PairPtr __pp(new _InvokePair(__f));
     int __ec = _VSTD::__libcpp_thread_create(&__t_, &__thread_proxy_cxx03<_InvokePair>, __pp.get());
+    if (__ec == 0)
+        __pp.release();
+    else
+        __throw_system_error(__ec, "thread constructor failed");
+}
+
+template <class _Fp>
+thread::thread(const attributes& __attrs, _Fp __f)
+{
+
+    typedef __thread_invoke_pair<_Fp> _InvokePair;
+    typedef unique_ptr<_InvokePair> _PairPtr;
+    _PairPtr __pp(new _InvokePair(__f));
+    int __ec = _VSTD::__libcpp_thread_create(&__t_, &__attrs.attr_, &__thread_proxy_cxx03<_InvokePair>, __pp.get());
     if (__ec == 0)
         __pp.release();
     else
