@@ -217,11 +217,17 @@ ios_base::register_callback(event_callback fn, int index)
         size_t newcap = __ios_new_cap<event_callback>(req_size, __event_cap_);
         event_callback* fns = static_cast<event_callback*>(realloc(__fn_, newcap * sizeof(event_callback)));
         if (fns == 0)
+        {
             setstate(badbit);
+            return;
+        }
         __fn_ = fns;
         int* indxs = static_cast<int *>(realloc(__index_, newcap * sizeof(int)));
         if (indxs == 0)
+        {
             setstate(badbit);
+            return;
+        }
         __index_ = indxs;
         __event_cap_ = newcap;
     }
