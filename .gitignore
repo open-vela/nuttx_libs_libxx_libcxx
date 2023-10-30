@@ -53,3 +53,5 @@ keep.lst
 
 # Editor by-products
 .vscode/
+**/*.o
+include/__config_site
