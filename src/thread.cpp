@@ -26,6 +26,10 @@
 #pragma weak pthread_create // Do not create libpthread dependency
 #endif
 
+#if defined(__NuttX__)
+#include <nuttx/tls.h>
+#endif
+
 #if defined(_LIBCPP_WIN32API)
 #include <windows.h>
 #endif
@@ -114,6 +118,35 @@ sleep_for(const chrono::nanoseconds& ns)
 
 }  // this_thread
 
+#if defined(__NuttX__)
+static void __free_thread_local_data(void* data)
+{
+    __thread_specific_ptr<__thread_struct>* __p = static_cast<__thread_specific_ptr<__thread_struct>*>(data);
+    delete __p;
+}
+
+__thread_specific_ptr<__thread_struct>&
+__thread_local_data()
+{
+    __thread_specific_ptr<__thread_struct>* __p = NULL;
+    static int __index = -1;
+
+    if (__index < 0)
+        __index = task_tls_alloc(__free_thread_local_data);
+
+    if (__index >= 0)
+    {
+        __p = reinterpret_cast<__thread_specific_ptr<__thread_struct>*>(task_tls_get_value(__index));
+        if (__p == NULL)
+        {
+            __p = new __thread_specific_ptr<__thread_struct>();
+            if (__p)
+                task_tls_set_value(__index, reinterpret_cast<uintptr_t>(__p));
+        }
+    }
+    return *__p;
+}
+#else
 __thread_specific_ptr<__thread_struct>&
 __thread_local_data()
 {
@@ -125,6 +158,7 @@ __thread_local_data()
   static __thread_specific_ptr<__thread_struct>* __p = new (__b) __thread_specific_ptr<__thread_struct>();
   return *__p;
 }
+#endif
 
 // __thread_struct_imp
 
