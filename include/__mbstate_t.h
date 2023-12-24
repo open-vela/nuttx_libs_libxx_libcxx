@@ -39,6 +39,8 @@
 #   define __NEED_mbstate_t
 #   include <bits/alltypes.h>
 #   undef __NEED_mbstate_t
+#elif defined(__NuttX__)
+#   include_next <wchar.h>
 #elif __has_include(<bits/types/mbstate_t.h>)
 #   include <bits/types/mbstate_t.h> // works on most Unixes
 #elif __has_include(<sys/_types/_mbstate_t.h>)
