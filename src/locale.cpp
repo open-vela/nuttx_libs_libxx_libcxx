@@ -1285,7 +1285,7 @@ ctype_byname<char>::ctype_byname(const char* name, size_t refs)
 {
     if (__l_ == 0)
         __throw_runtime_error("ctype_byname<char>::ctype_byname"
-                            " failed to construct for " + string(name));
+                            " failed to construct for "s + name);
 }
 
 ctype_byname<char>::ctype_byname(const string& name, size_t refs)
@@ -1339,7 +1339,7 @@ ctype_byname<wchar_t>::ctype_byname(const char* name, size_t refs)
 {
     if (__l_ == 0)
         __throw_runtime_error("ctype_byname<wchar_t>::ctype_byname"
-                            " failed to construct for " + string(name));
+                            " failed to construct for "s + name);
 }
 
 ctype_byname<wchar_t>::ctype_byname(const string& name, size_t refs)
@@ -1610,7 +1610,7 @@ codecvt<wchar_t, char, mbstate_t>::codecvt(const char* nm, size_t refs)
 {
     if (__l_ == 0)
         __throw_runtime_error("codecvt_byname<wchar_t, char, mbstate_t>::codecvt_byname"
-                            " failed to construct for " + string(nm));
+                            " failed to construct for "s + nm);
 }
 
 codecvt<wchar_t, char, mbstate_t>::~codecvt()
@@ -5194,7 +5194,7 @@ __time_get::__time_get(const char* nm)
 {
     if (__loc_ == 0)
         __throw_runtime_error("time_get_byname"
-                            " failed to construct for " + string(nm));
+                            " failed to construct for "s + nm);
 }
 
 __time_get::__time_get(const string& nm)
@@ -5852,7 +5852,7 @@ __time_put::__time_put(const char* nm)
 {
     if (__loc_ == 0)
         __throw_runtime_error("time_put_byname"
-                            " failed to construct for " + string(nm));
+                            " failed to construct for "s + nm);
 }
 
 __time_put::__time_put(const string& nm)
