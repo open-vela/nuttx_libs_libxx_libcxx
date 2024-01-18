@@ -179,14 +179,14 @@ public:
     template <class _Fp, class ..._Args,
               class = __enable_if_t<!is_same<__remove_cvref_t<_Fp>, thread>::value> >
         _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
-        thread(const attributes& __attr, _Fp&& __f, _Args&&... __args);
+        explicit thread(attributes& __attr, _Fp&& __f, _Args&&... __args);
 #else  // _LIBCPP_CXX03_LANG
     template <class _Fp>
     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
     explicit thread(_Fp __f);
     template <class _Fp>
     _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
-    thread(const attributes& __attr, _Fp __f);
+    explicit thread(attributes& __attr, _Fp __f);
 #endif
     ~thread();
 
@@ -282,7 +282,7 @@ thread::thread(_Fp&& __f, _Args&&... __args)
 template <class _Fp, class ..._Args,
           class
          >
-thread::thread(const attributes& __attrs, _Fp&& __f, _Args&&... __args)
+thread::thread(attributes& __attrs, _Fp&& __f, _Args&&... __args)
 {
     typedef unique_ptr<__thread_struct> _TSPtr;
     _TSPtr __tsp(new __thread_struct);

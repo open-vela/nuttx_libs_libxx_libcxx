@@ -231,7 +231,7 @@ int __libcpp_thread_create(__libcpp_thread_t *__t, void *(*__func)(void *),
                            void *__arg);
 
 _LIBCPP_THREAD_ABI_VISIBILITY
-int __libcpp_thread_create(__libcpp_thread_t *__t, const __libcpp_thread_attr *__attr,
+int __libcpp_thread_create(__libcpp_thread_t *__t, __libcpp_thread_attr *__attr,
                            void *(*__func)(void *), void *__arg);
 
 _LIBCPP_THREAD_ABI_VISIBILITY
@@ -404,7 +404,7 @@ int __libcpp_thread_create(__libcpp_thread_t *__t, void *(*__func)(void *),
   return pthread_create(__t, nullptr, __func, __arg);
 }
 
-int __libcpp_thread_create(__libcpp_thread_t *__t, const __libcpp_thread_attr *__attr,
+int __libcpp_thread_create(__libcpp_thread_t *__t, __libcpp_thread_attr *__attr,
                            void *(*__func)(void *), void *__arg)
 {
   return pthread_create(__t, __attr, __func, __arg);
