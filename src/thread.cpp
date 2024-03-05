@@ -119,6 +119,10 @@ sleep_for(const chrono::nanoseconds& ns)
 }  // this_thread
 
 #if defined(__NuttX__)
+#if !defined(CONFIG_TLS_TASK_NELEM) || CONFIG_TLS_TASK_NELEM == 0
+#error "Thread.cpp needs to enable config of CONFIG_TLS_TASK_NELEM," \
+       " and CONFIG_TLS_TASK_NELEM > 0, please enable it"
+#endif
 static void __free_thread_local_data(void* data)
 {
     __thread_specific_ptr<__thread_struct>* __p = static_cast<__thread_specific_ptr<__thread_struct>*>(data);
