@@ -26,7 +26,7 @@
 #pragma weak pthread_create // Do not create libpthread dependency
 #endif
 
-#if defined(__NuttX__) && !defined(BUILD_KERNEL)
+#if defined(__NuttX__)
 #include <nuttx/tls.h>
 #endif
 
@@ -118,7 +118,7 @@ sleep_for(const chrono::nanoseconds& ns)
 
 }  // this_thread
 
-#if defined(__NuttX__) && !defined(BUILD_KERNEL)
+#if defined(__NuttX__)
 #if !defined(CONFIG_TLS_TASK_NELEM) || CONFIG_TLS_TASK_NELEM == 0
 #error "Thread.cpp needs to enable config of CONFIG_TLS_TASK_NELEM," \
        " and CONFIG_TLS_TASK_NELEM > 0, please enable it"
