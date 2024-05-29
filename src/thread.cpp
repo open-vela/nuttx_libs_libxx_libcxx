@@ -129,24 +129,26 @@ static void __free_thread_local_data(void* data)
     delete __p;
 }
 
+static int __g_thread_index;
+
+static void __alloc_thread_index(void)
+{
+    __g_thread_index = task_tls_alloc(__free_thread_local_data);
+}
+
 __thread_specific_ptr<__thread_struct>&
 __thread_local_data()
 {
     __thread_specific_ptr<__thread_struct>* __p = NULL;
-    static int __index = -1;
+    static pthread_once_t once = PTHREAD_ONCE_INIT;
 
-    if (__index < 0)
-        __index = task_tls_alloc(__free_thread_local_data);
-
-    if (__index >= 0)
+    pthread_once(&once, __alloc_thread_index);
+    __p = reinterpret_cast<__thread_specific_ptr<__thread_struct>*>(task_tls_get_value(__g_thread_index));
+    if (__p == NULL)
     {
-        __p = reinterpret_cast<__thread_specific_ptr<__thread_struct>*>(task_tls_get_value(__index));
-        if (__p == NULL)
-        {
-            __p = new __thread_specific_ptr<__thread_struct>();
-            if (__p)
-                task_tls_set_value(__index, reinterpret_cast<uintptr_t>(__p));
-        }
+        __p = new __thread_specific_ptr<__thread_struct>();
+        if (__p)
+            task_tls_set_value(__g_thread_index, reinterpret_cast<uintptr_t>(__p));
     }
     return *__p;
 }
