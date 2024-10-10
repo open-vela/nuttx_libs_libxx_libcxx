@@ -117,7 +117,11 @@ static void __libcpp_platform_wake_by_address(__cxx_atomic_contention_t const vo
 
 #endif // __linux__
 
+#ifdef _LIBCPP_HAS_NO_CONTENTION_TABLE
+static constexpr size_t __libcpp_contention_table_size = (1 << 0);
+#else
 static constexpr size_t __libcpp_contention_table_size = (1 << 8);  /* < there's no magic in this number */
+#endif
 
 struct alignas(64) /*  aim to avoid false sharing */ __libcpp_contention_table_entry
 {
