@@ -61,17 +61,17 @@ struct ImplicitCopy {
 
 // Test that tuple(std::allocator_arg, Alloc, Types const&...) allows implicit
 // copy conversions in return value expressions.
-std::tuple<ImplicitCopy> testImplicitCopy1() {
+static std::tuple<ImplicitCopy> testImplicitCopy1() {
     ImplicitCopy i(42);
     return {i};
 }
 
-std::tuple<ImplicitCopy> testImplicitCopy2() {
+static std::tuple<ImplicitCopy> testImplicitCopy2() {
     const ImplicitCopy i(42);
     return {i};
 }
 
-std::tuple<ImplicitCopy> testImplicitCopy3() {
+static std::tuple<ImplicitCopy> testImplicitCopy3() {
     const ImplicitCopy i(42);
     return i;
 }

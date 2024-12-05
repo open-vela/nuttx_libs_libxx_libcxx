@@ -32,7 +32,7 @@ LIBCPP_STATIC_ASSERT(!std::is_default_constructible_v<std::move_iterator<NoDefau
 #endif
 
 template <class It>
-void test() {
+static void test() {
     std::move_iterator<It> r;
     (void)r;
 }

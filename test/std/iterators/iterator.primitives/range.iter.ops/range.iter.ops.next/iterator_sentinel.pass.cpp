@@ -20,7 +20,7 @@
 #include "test_iterators.h"
 
 template <typename It>
-constexpr void check_assignable(int* first, int* last, int* expected) {
+constexpr static void check_assignable(int* first, int* last, int* expected) {
   It it(first);
   auto sent = assignable_sentinel(It(last));
   It result = std::ranges::next(std::move(it), sent);
@@ -28,7 +28,7 @@ constexpr void check_assignable(int* first, int* last, int* expected) {
 }
 
 template <typename It>
-constexpr void check_sized_sentinel(int* first, int* last, int* expected) {
+constexpr static void check_sized_sentinel(int* first, int* last, int* expected) {
   auto size = (last - first);
 
   It it(first);
@@ -38,14 +38,14 @@ constexpr void check_sized_sentinel(int* first, int* last, int* expected) {
 }
 
 template <typename It>
-constexpr void check_sentinel(int* first, int* last, int* expected) {
+constexpr static void check_sentinel(int* first, int* last, int* expected) {
   It it(first);
   auto sent = sentinel_wrapper(It(last));
   std::same_as<It> auto result = std::ranges::next(std::move(it), sent);
   assert(base(result) == expected);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   for (int n = 0; n != 10; ++n) {

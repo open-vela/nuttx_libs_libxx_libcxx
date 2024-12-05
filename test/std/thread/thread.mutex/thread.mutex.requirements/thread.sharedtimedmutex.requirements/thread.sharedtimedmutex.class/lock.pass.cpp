@@ -29,7 +29,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::system_clock Clock;
 typedef Clock::time_point time_point;
@@ -37,12 +37,12 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-std::atomic<bool> ready(false);
-time_point start;
+static std::atomic<bool> ready(false);
+static time_point start;
 
-ms WaitTime = ms(250);
+static ms WaitTime = ms(250);
 
-void f()
+static void f()
 {
   ready.store(true);
   m.lock();

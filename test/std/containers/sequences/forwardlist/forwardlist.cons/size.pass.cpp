@@ -20,7 +20,7 @@
 #include "min_allocator.h"
 
 template <class T, class Allocator>
-void check_allocator(unsigned n, Allocator const &alloc = Allocator())
+static void check_allocator(unsigned n, Allocator const &alloc = Allocator())
 {
 #if TEST_STD_VER > 11
     typedef std::forward_list<T, Allocator> C;

@@ -230,7 +230,7 @@ constexpr void test_layout_large() {
 // mapping requirements only require the index operator to mixed integer types not anything convertible to index_type
 constexpr void test_index_cast_happens() {}
 
-constexpr bool test() {
+static constexpr bool test() {
   test_layout<std::layout_left>();
   test_layout<std::layout_right>();
   test_layout<layout_wrapping_integral<4>>();

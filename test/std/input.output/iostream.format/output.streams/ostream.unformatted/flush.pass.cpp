@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int sync_called = 0;
+static int sync_called = 0;
 
 template <class CharT>
 class testbuf

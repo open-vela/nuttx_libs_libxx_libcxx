@@ -32,7 +32,7 @@
 namespace ex = std::experimental::pmr;
 
 template <class Alloc>
-void check_allocate_deallocate()
+static void check_allocate_deallocate()
 {
     typedef ex::resource_adaptor<Alloc> R1;
     const std::size_t max_align = alignof(std::max_align_t);
@@ -62,7 +62,7 @@ void check_allocate_deallocate()
     }
 }
 
-void check_alloc_max_size() {
+static void check_alloc_max_size() {
     using Alloc = NullAllocator<char>;
     using R1 = ex::resource_adaptor<Alloc>;
     const std::size_t max_align = alignof(std::max_align_t);

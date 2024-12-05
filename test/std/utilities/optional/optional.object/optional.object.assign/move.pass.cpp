@@ -23,6 +23,7 @@
 
 using std::optional;
 
+namespace {
 struct X
 {
     static bool throw_now;
@@ -50,6 +51,7 @@ struct Y {};
 
 bool X::throw_now = false;
 int X::alive = 0;
+}
 
 
 template <class Tp>

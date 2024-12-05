@@ -52,20 +52,20 @@ struct expected {
   Error const& error() { return data->error; }
 };
 
-expected<int> g() { return {0}; }
-expected<int> h() { return {error_tag{}, 42}; }
+expected<int> static g() { return {0}; }
+expected<int> static h() { return {error_tag{}, 42}; }
 
 extern "C" void print(int);
 
 bool f1_started, f1_resumed = false;
-expected<int> f1() {
+static expected<int> f1() {
   f1_started = true;
   (void)(co_await g());
   f1_resumed = true;
   co_return 100;
 }
 
-bool f2_started, f2_resumed = false;
+static bool f2_started, f2_resumed = false;
 expected<int> f2() {
   f2_started = true;
   (void)(co_await h());

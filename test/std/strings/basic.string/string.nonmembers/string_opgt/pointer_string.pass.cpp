@@ -24,7 +24,7 @@ test(const typename S::value_type* lhs, const S& rhs, bool x)
     assert((lhs > rhs) == x);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test("", S(""), false);

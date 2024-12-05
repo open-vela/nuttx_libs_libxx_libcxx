@@ -27,7 +27,7 @@
 
 
 template<class CharT>
-void check_for(const std::locale& loc)
+static void check_for(const std::locale& loc)
 {
     assert(std::has_facet<std::collate<CharT> >(loc));
 
@@ -49,7 +49,7 @@ void check_for(const std::locale& loc)
     assert(std::has_facet<std::messages<CharT> >(loc));
 }
 
-void check(const std::locale& loc)
+static void check(const std::locale& loc)
 {
     check_for<char>(loc);
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
@@ -64,6 +64,7 @@ void check(const std::locale& loc)
 #endif
 }
 
+namespace {
 struct my_facet
     : public std::locale::facet
 {
@@ -73,6 +74,7 @@ struct my_facet
 };
 
 std::locale::id my_facet::id;
+}
 
 extern "C" int main(int, char**)
 {

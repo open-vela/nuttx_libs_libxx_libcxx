@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 int sign(int x)
+TEST_CONSTEXPR_CXX20 static int sign(int x)
 {
     if (x == 0)
         return 0;
@@ -5980,7 +5980,7 @@ TEST_CONSTEXPR_CXX20 bool test56() {
 }
 
 template <class S, class SV>
-void test() {
+static void test() {
   test0<S, SV>();
   test1<S, SV>();
   test2<S, SV>();

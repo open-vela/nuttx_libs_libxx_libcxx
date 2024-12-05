@@ -25,7 +25,7 @@ struct MemberIteratorCategory {
 static_assert(HasIterCategory<MemberIteratorCategory>);
 
 template <class Val, class CharT>
-void test() {
+static void test() {
   using Iter = std::ranges::iterator_t<std::ranges::basic_istream_view<Val, CharT>>;
   static_assert(std::is_same_v<typename Iter::iterator_concept, std::input_iterator_tag>);
   static_assert(std::is_same_v<typename Iter::difference_type, std::ptrdiff_t>);
@@ -41,7 +41,7 @@ void testOne() {
   test<CharT, CharT>();
 }
 
-void test() {
+static void test() {
   testOne<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   testOne<wchar_t>();

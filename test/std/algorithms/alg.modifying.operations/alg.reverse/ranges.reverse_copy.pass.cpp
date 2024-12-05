@@ -74,7 +74,7 @@ constexpr void test(std::array<int, N> value, std::array<int, N> expected) {
 }
 
 template <class Iter, class OutIter, class Sent>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<Iter, OutIter, Sent, 4>({1, 2, 3, 4}, {4, 3, 2, 1});
 
@@ -98,7 +98,7 @@ constexpr void test_out_iterators() {
   test_iterators<Iter, int*, Sent>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_out_iterators<bidirectional_iterator<int*>>();
   test_out_iterators<random_access_iterator<int*>>();
   test_out_iterators<contiguous_iterator<int*>>();

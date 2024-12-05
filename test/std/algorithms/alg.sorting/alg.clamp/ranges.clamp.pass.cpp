@@ -38,7 +38,7 @@ static_assert(!HasClamp<NoComp>);
 static_assert(!HasClamp<int, NoComp>);
 static_assert(!HasClamp<int, std::ranges::less, CreateNoComp>);
 
-constexpr bool test() {
+static constexpr bool test() {
   { // low < val < high
     int val = 2;
     int low = 1;

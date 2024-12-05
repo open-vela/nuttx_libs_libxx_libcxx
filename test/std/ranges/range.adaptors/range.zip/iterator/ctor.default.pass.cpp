@@ -49,7 +49,7 @@ static_assert(!std::default_initializable<zip_iter<IterNoDefaultCtrView, IterNoD
 static_assert(std::default_initializable<zip_iter<IterDefaultCtrView>>);
 static_assert(std::default_initializable<zip_iter<IterDefaultCtrView, IterDefaultCtrView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   using ZipIter = zip_iter<IterDefaultCtrView>;
   {
     ZipIter iter;

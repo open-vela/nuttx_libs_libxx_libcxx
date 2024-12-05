@@ -48,7 +48,7 @@ static_assert( test_convertible<std::ranges::drop_while_view<View, Pred>, View, 
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::drop_while_view<View, Pred> dwv{View{{}, MoveOnly{5}}, Pred{}};
     assert(dwv.pred().moved);

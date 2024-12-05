@@ -24,7 +24,7 @@ concept SizeEnabled = requires(const std::ranges::take_view<T>& tv) {
   tv.size();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

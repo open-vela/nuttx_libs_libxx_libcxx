@@ -61,7 +61,7 @@ static_assert(HasSize<const OnlyConstSized>);
 static_assert(HasSize<std::ranges::elements_view<OnlyConstSized, 0>>);
 static_assert(HasSize<const std::ranges::elements_view<OnlyConstSized, 0>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> buffer[] = {{1}, {2}, {3}};
 
   // non-const and const are sized

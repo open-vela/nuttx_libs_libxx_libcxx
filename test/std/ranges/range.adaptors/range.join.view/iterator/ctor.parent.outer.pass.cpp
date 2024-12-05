@@ -22,7 +22,7 @@ static_assert(!std::default_initializable<NonDefaultCtrIter>);
 using NonDefaultCtrIterView = BufferView<NonDefaultCtrIter, sentinel_wrapper<NonDefaultCtrIter>>;
 static_assert(std::ranges::input_range<NonDefaultCtrIterView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
   {
     CopyableChild children[4] = {CopyableChild(buffer[0]), CopyableChild(buffer[1]), CopyableChild(buffer[2]),

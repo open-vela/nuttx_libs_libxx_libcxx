@@ -31,7 +31,7 @@ using namespace ImplicitTypes; // Get implicitly archetypes
 
 namespace ConstructorTest {
 
-template <class T1, bool CanCopy = true, bool CanMove = CanCopy> void test() {
+template <class T1, bool CanCopy = true, bool CanMove = CanCopy> static void test() {
   using P1 = std::pair<T1, int>;
   using P2 = std::pair<int, T1>;
   static_assert(std::is_copy_constructible<P1>::value == CanCopy, "");
@@ -79,7 +79,7 @@ void test_constructors_exist() {
 
 namespace AssignmentOperatorTest {
 
-template <class T1, bool CanCopy = true, bool CanMove = CanCopy> void test() {
+template <class T1, bool CanCopy = true, bool CanMove = CanCopy> static void test() {
   using P1 = std::pair<T1, int>;
   using P2 = std::pair<int, T1>;
   static_assert(std::is_copy_assignable<P1>::value == CanCopy, "");

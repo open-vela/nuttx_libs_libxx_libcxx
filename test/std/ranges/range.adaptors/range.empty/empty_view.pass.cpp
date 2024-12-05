@@ -43,7 +43,7 @@ struct BigType { char buff[8]; };
 template<class T>
 concept ValidEmptyView = requires { typename std::ranges::empty_view<T>; };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Not objects:
   static_assert(!ValidEmptyView<int&>);
   static_assert(!ValidEmptyView<void>);

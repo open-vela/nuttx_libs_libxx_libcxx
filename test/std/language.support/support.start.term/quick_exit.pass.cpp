@@ -18,7 +18,7 @@
 
 #include <cstdlib>
 
-void f() {}
+static void f() {}
 
 extern "C" int main(int, char**) {
     std::at_quick_exit(f);

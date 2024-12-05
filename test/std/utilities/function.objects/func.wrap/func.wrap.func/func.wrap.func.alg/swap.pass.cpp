@@ -22,6 +22,7 @@
 #include "test_macros.h"
 #include "count_new.h"
 
+namespace {
 class A
 {
     int data_[10];
@@ -54,9 +55,10 @@ public:
 };
 
 int A::count = 0;
+}
 
-int g(int) {return 0;}
-int h(int) {return 1;}
+static int g(int) {return 0;}
+static int h(int) {return 1;}
 
 extern "C" int main(int, char**)
 {

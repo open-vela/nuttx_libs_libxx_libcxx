@@ -37,7 +37,7 @@ TEST_CONSTEXPR_CXX23 void testAssign(APtr& aptr, BPtr& bptr) {
 }
 
 template <class LHS, class RHS>
-TEST_CONSTEXPR_CXX23 void checkDeleter(LHS& lhs, RHS& rhs, int LHSState, int RHSState) {
+TEST_CONSTEXPR_CXX23 static void checkDeleter(LHS& lhs, RHS& rhs, int LHSState, int RHSState) {
   assert(lhs.get_deleter().state() == LHSState);
   assert(rhs.get_deleter().state() == RHSState);
 }
@@ -74,7 +74,7 @@ struct NCGenericDeleter {
   TEST_CONSTEXPR_CXX23 void operator()(void*) const {}
 };
 
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
   using DA = NCConvertingDeleter<A>; // non-copyable deleters
   using DB = NCConvertingDeleter<B>;
   using UA = std::unique_ptr<A>;

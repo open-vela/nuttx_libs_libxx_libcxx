@@ -66,13 +66,13 @@
 
 #include "make_test_thread.h"
 
-void my_terminate() {
+static void my_terminate() {
   std::_Exit(0); // Use _Exit to prevent cleanup from taking place.
 }
 
 // The predicate used in the cv.wait calls.
-bool pred = false;
-bool pred_function() {
+static bool pred = false;
+static bool pred_function() {
   return pred == true;
 }
 
@@ -100,10 +100,10 @@ public:
   bool isLocked() const { return locked == true; }
 };
 
-ThrowingMutex mut;
-std::condition_variable_any cv;
+static ThrowingMutex mut;
+static std::condition_variable_any cv;
 
-void signal_me() {
+static void signal_me() {
   while (mut.isLocked()) {} // wait until T1 releases mut inside the cv.wait call.
   pred = true;
   cv.notify_one();

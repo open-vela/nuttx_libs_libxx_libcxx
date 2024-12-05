@@ -28,7 +28,7 @@ static_assert(std::ranges::forward_range<EmptyView>);
 static_assert(std::ranges::view<EmptyView>);
 LIBCPP_STATIC_ASSERT(std::ranges::__tiny_range<EmptyView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // Can call `inner-iterator::operator++`; `View` is a forward range.
   {
     SplitViewForward v("abc def", " ");

@@ -82,7 +82,7 @@ static_assert(std::is_same_v<std::ranges::unary_transform_result<int, long>, std
 
 // clang-format off
 template <class In1, class Out, class Sent1>
-constexpr bool test_iterators() {
+constexpr static bool test_iterators() {
   { // simple
     {
       int a[] = {1, 2, 3, 4, 5};
@@ -196,7 +196,7 @@ constexpr void test_iterator_in1() {
   static_assert(test_iterators<int*, Out, int*>());
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   { // check that std::ranges::dangling is returned properly
     std::array<int, 5> b;
     std::same_as<std::ranges::in_out_result<std::ranges::dangling, int*>> auto ret =

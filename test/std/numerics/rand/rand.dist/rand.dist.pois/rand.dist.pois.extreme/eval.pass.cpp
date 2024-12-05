@@ -30,7 +30,7 @@ sqr(T x)
     return x * x;
 }
 
-void
+static void
 test1()
 {
     typedef std::extreme_value_distribution<> D;
@@ -71,7 +71,7 @@ test1()
     assert(std::abs((kurtosis - x_kurtosis) / x_kurtosis) < 0.01);
 }
 
-void
+static void
 test2()
 {
     typedef std::extreme_value_distribution<> D;
@@ -112,7 +112,7 @@ test2()
     assert(std::abs((kurtosis - x_kurtosis) / x_kurtosis) < 0.01);
 }
 
-void
+static void
 test3()
 {
     typedef std::extreme_value_distribution<> D;
@@ -153,7 +153,7 @@ test3()
     assert(std::abs((kurtosis - x_kurtosis) / x_kurtosis) < 0.01);
 }
 
-void
+static void
 test4()
 {
     typedef std::extreme_value_distribution<> D;

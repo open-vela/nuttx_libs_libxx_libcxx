@@ -34,7 +34,7 @@ constexpr void test_access() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_access<int>();
   test_access<const int>();
   test_access<MinimalElementType>();

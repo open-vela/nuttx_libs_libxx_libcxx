@@ -58,7 +58,7 @@ struct ConstructibleFrom {
   T content;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::in_in_result<int, double> res{10L, 0.};
     assert(res.in1 == 10);

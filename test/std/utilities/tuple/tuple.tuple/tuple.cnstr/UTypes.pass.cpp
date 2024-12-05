@@ -38,7 +38,7 @@ struct NoDefault { NoDefault() = delete; };
 
 // Make sure the _Up... constructor SFINAEs out when there are fewer
 // constructor arguments than tuple elements.
-void test_sfinae_missing_elements()
+static void test_sfinae_missing_elements()
 {
     {
         typedef std::tuple<MoveOnly, NoDefault> Tuple;

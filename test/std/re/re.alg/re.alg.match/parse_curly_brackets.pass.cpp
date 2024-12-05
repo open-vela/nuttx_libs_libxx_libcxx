@@ -22,7 +22,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::string re("\\{a\\}");
@@ -32,7 +32,7 @@ test1()
     assert((std::regex_match(target, smatch, regex)));
 }
 
-void
+static void
 test2()
 {
     std::string re("\\{a\\}");
@@ -42,7 +42,7 @@ test2()
     assert((std::regex_match(target, smatch, regex)));
 }
 
-void
+static void
 test3()
 {
     std::string re("\\{a\\}");
@@ -52,7 +52,7 @@ test3()
     assert((std::regex_match(target, smatch, regex)));
 }
 
-void
+static void
 test4()
 {
     std::string re("\\{a\\}");

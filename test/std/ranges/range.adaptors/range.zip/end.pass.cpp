@@ -64,7 +64,7 @@
 // 43 |   N    |   N    |  N   |    N   |   N   |   1    | sentinel<false>| sentinel<true>
 // 44 |   N    |   N    |  N   |    N   |   N   |   >1   | sentinel<false>| sentinel<true>
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[5] = {1, 2, 3, 4, 5};
   int buffer2[1] = {1};
   int buffer3[3] = {1, 2, 3};

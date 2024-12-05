@@ -52,7 +52,7 @@ struct Counted {
   constexpr ~Counted() { --count; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Value initialization.
   {
     int x = 1;

@@ -48,7 +48,7 @@ static_assert(std::convertible_to<std::ranges::sentinel_t<NonSimpleNonCommonConv
                                   std::ranges::sentinel_t<NonSimpleNonCommonConvertibleView const>>);
 LIBCPP_STATIC_ASSERT(!std::ranges::__simple_view<NonSimpleNonCommonConvertibleView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[4] = {1, 2, 3, 4};
   int buffer2[5] = {1, 2, 3, 4, 5};
   std::ranges::zip_view v{NonSimpleNonCommonConvertibleView(buffer1), NonSimpleNonCommonConvertibleView(buffer2)};

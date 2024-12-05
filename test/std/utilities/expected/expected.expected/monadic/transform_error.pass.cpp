@@ -186,7 +186,7 @@ constexpr void test_direct_non_list_init() {
 }
 
 // check that the lambda body is not instantiated during overload resolution
-constexpr void test_sfinae() {
+constexpr static void test_sfinae() {
   std::expected<int, NonConst> e(2);
   auto l = [](auto&& x) { return x.non_const(); };
   e.transform_error(l);
@@ -206,7 +206,7 @@ constexpr void test_sfinae() {
   std::move(ce1).transform_error(never_called);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_sfinae();
   test_val_types();
   test_direct_non_list_init();

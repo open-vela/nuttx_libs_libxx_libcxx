@@ -22,7 +22,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   using A = test_allocator<operator_hijacker>;
   using H = std::hash<operator_hijacker>;
   using P = std::equal_to<operator_hijacker>;

@@ -61,7 +61,7 @@ public:
     }
 };
 
-void
+static void
 test1()
 {
     static_assert((std::is_same<
@@ -69,7 +69,7 @@ test1()
         unsigned long>::value), "");
 }
 
-void
+static void
 test2()
 {
     static_assert((std::is_same<

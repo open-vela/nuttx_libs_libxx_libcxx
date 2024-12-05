@@ -19,7 +19,7 @@ struct HasDefault { HasDefault() = default; };
 struct NoDefault { NoDefault() = delete; };
 
 template <class T>
-constexpr void test() {
+constexpr static void test() {
   using Cache = std::ranges::__non_propagating_cache<T>;
   static_assert(std::is_nothrow_default_constructible_v<Cache>);
   Cache cache;

@@ -51,14 +51,14 @@ constexpr void testTypes() {
   testDefaultCtor<T, NoDedefaultCtor>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testTypes<int>();
   testTypes<MyInt>();
   testTypes<TailClobberer<0>>();
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing() { throw Except{}; };

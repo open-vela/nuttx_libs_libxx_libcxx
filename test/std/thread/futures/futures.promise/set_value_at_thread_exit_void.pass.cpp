@@ -22,9 +22,9 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-int i = 0;
+static int i = 0;
 
-void func(std::promise<void> p)
+static void func(std::promise<void> p)
 {
     p.set_value_at_thread_exit();
     i = 1;

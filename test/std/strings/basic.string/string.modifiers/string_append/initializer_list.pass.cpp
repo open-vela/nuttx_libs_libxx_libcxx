@@ -20,7 +20,7 @@
 #include "nasty_string.h"
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test() {
+TEST_CONSTEXPR_CXX20 static void test() {
   using CharT = typename S::value_type;
 
   S s(CONVERT_TO_CSTRING(CharT, "123"));
@@ -28,7 +28,7 @@ TEST_CONSTEXPR_CXX20 void test() {
   assert(s == CONVERT_TO_CSTRING(CharT, "123abc"));
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   test<std::string>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<std::wstring>();

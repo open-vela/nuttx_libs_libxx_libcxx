@@ -2311,7 +2311,7 @@ void test_floating_point() {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   test_bool<CharT>();
   test_integer<CharT>();
   test_floating_point<float, CharT>();

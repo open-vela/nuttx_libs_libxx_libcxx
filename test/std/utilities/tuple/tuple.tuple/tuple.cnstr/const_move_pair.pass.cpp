@@ -57,7 +57,7 @@ static_assert(!std::is_convertible_v<const std::pair<ConstMove, ConstMove>&&,
 static_assert(!std::is_convertible_v<const std::pair<ConstMove, ConstMove>&&,
                                      std::tuple<ConvertibleFrom<ConstMove>, ExplicitConstructibleFrom<ConstMove>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   {
     const std::pair<ConstMove, int> p{1, 2};

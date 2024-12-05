@@ -20,7 +20,7 @@ constexpr void testDestructor() {
   static_assert(std::is_trivially_destructible_v<T>);
 }
 
-void test() {
+static void test() {
   testDestructor<std::span<int, 1>>();
   testDestructor<std::span<int>>();
 }

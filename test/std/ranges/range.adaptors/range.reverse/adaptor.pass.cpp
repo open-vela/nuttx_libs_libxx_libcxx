@@ -24,7 +24,7 @@ concept CanBePiped = requires (View&& view, T&& t) {
   { std::forward<View>(view) | std::forward<T>(t) };
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buf[] = {1, 2, 3};
 
   // views::reverse(x) is equivalent to x.base() if x is a reverse_view

@@ -77,9 +77,9 @@ private:
     int i_;
     };
 
-bool operator <(int          rhs,   const C2Int& lhs) { return rhs       < lhs.get(); }
-bool operator <(const C2Int& rhs,   const C2Int& lhs) { return rhs.get() < lhs.get(); }
-bool operator <(const C2Int& rhs,            int lhs) { return rhs.get() < lhs; }
+static bool operator <(int          rhs,   const C2Int& lhs) { return rhs       < lhs.get(); }
+static bool operator <(const C2Int& rhs,   const C2Int& lhs) { return rhs.get() < lhs.get(); }
+static bool operator <(const C2Int& rhs,            int lhs) { return rhs.get() < lhs; }
 
 #endif // TEST_STD_VER > 11
 

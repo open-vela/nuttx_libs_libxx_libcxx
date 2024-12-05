@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int showmanyc_called = 0;
+static int showmanyc_called = 0;
 
 template <class CharT>
 struct test

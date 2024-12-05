@@ -24,7 +24,7 @@
 #include "test_macros.h"
 #include "variant_test_helpers.h"
 
-void test_call_operator_forwarding() {
+static void test_call_operator_forwarding() {
   using Fn = ForwardingCallObject;
   Fn obj{};
   const Fn &cobj = obj;
@@ -102,7 +102,7 @@ void test_call_operator_forwarding() {
   }
 }
 
-void test_argument_forwarding() {
+static void test_argument_forwarding() {
   using Fn = ForwardingCallObject;
   Fn obj{};
   const auto Val = CT_LValue | CT_NonConst;
@@ -175,7 +175,7 @@ void test_argument_forwarding() {
   }
 }
 
-void test_return_type() {
+static void test_return_type() {
   using Fn = ForwardingCallObject;
   Fn obj{};
   const Fn &cobj = obj;
@@ -229,7 +229,7 @@ void test_return_type() {
   }
 }
 
-void test_constexpr() {
+static void test_constexpr() {
   constexpr ReturnFirst obj{};
   constexpr ReturnArity aobj{};
   {
@@ -272,7 +272,7 @@ void test_constexpr() {
   }
 }
 
-void test_exceptions() {
+static void test_exceptions() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   ReturnArity obj{};
   auto test = [&](auto &&... args) {
@@ -334,7 +334,7 @@ void test_exceptions() {
 }
 
 // See https://llvm.org/PR31916
-void test_caller_accepts_nonconst() {
+static void test_caller_accepts_nonconst() {
   struct A {};
   struct Visitor {
     void operator()(A&) {}
@@ -352,7 +352,7 @@ void get(const MyVariant&) {
 }
 } // namespace std
 
-void test_derived_from_variant() {
+static void test_derived_from_variant() {
   auto v1 = MyVariant{42};
   const auto cv1 = MyVariant{142};
   std::visit([](auto x) { assert(x == 42); }, v1);
@@ -409,7 +409,7 @@ constexpr bool has_visit(...) {
   return false;
 }
 
-void test_sfinae() {
+static void test_sfinae() {
   struct BadVariant : std::variant<short>, std::variant<long, float> {};
   struct BadVariant2 : private std::variant<long, float> {};
   struct GoodVariant : std::variant<long, float> {};

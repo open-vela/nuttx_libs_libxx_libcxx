@@ -24,7 +24,7 @@ using SplitSent = std::ranges::sentinel_t<SplitView>;
 static_assert(std::is_constructible_v<SplitSent, SplitView&>);
 static_assert(!std::is_convertible_v<SplitView&, SplitSent>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     int buffer[] = {0, 1, 2};
     Range input{buffer, sentinel_wrapper<int*>(buffer + 3)};

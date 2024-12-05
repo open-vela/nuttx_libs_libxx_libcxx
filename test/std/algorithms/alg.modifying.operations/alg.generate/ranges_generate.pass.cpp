@@ -146,7 +146,7 @@ constexpr void test_iter() {
   test_iter_sent<Iter, sentinel_wrapper<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iter<cpp17_input_iterator<int*>>();
   test_iter<cpp20_input_iterator<int*>>();
   test_iter<cpp17_output_iterator<int*>>();
@@ -158,7 +158,7 @@ constexpr void test_iterators() {
   test_iter<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // Complexity: exactly N evaluations of `gen()` and assignments.

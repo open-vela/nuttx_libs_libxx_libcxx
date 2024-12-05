@@ -18,6 +18,7 @@
 #include "test_macros.h"
 #include "deleter_types.h"
 
+namespace {
 struct A
 {
     int state_;
@@ -47,6 +48,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 template <class T>
 struct NonSwappableDeleter {

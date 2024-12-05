@@ -78,14 +78,14 @@ void test_swap_empty() {
     assert(Tp::copied == 0);
 }
 
-void test_noexcept()
+static void test_noexcept()
 {
     std::any a1;
     std::any a2;
     ASSERT_NOEXCEPT(a1.swap(a2));
 }
 
-void test_self_swap() {
+static void test_self_swap() {
     {
         // empty
         std::any a;

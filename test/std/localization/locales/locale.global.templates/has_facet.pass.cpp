@@ -15,6 +15,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct my_facet
     : public std::locale::facet
 {
@@ -22,6 +23,7 @@ struct my_facet
 };
 
 std::locale::id my_facet::id;
+}
 
 extern "C" int main(int, char**)
 {

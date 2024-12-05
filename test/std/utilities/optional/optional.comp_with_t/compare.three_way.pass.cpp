@@ -88,7 +88,7 @@ constexpr void test_int() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_custom_integral();
   test_int();
 

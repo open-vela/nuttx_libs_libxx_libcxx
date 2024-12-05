@@ -32,7 +32,7 @@
 template <class T>
 void where(const T &) {}
 
-void
+static void
 test1()
 {
     typedef std::ranlux24_base E;
@@ -53,7 +53,7 @@ test1()
     where(E::default_seed);
 }
 
-void
+static void
 test2()
 {
     typedef std::ranlux48_base E;

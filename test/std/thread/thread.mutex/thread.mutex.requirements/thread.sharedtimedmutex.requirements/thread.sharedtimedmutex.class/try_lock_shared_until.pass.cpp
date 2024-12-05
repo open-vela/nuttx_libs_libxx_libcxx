@@ -32,7 +32,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::steady_clock Clock;
 typedef Clock::time_point time_point;
@@ -40,15 +40,15 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-ms SuccessWaitTime = ms(5000); // Some machines are busy or slow or both
-ms FailureWaitTime = ms(50);
+static ms SuccessWaitTime = ms(5000); // Some machines are busy or slow or both
+static ms FailureWaitTime = ms(50);
 
 // On busy or slow machines, there can be a significant delay between thread
 // creation and thread start, so we use an atomic variable to signal that the
 // thread is actually executing.
 static std::atomic<unsigned> countDown;
 
-void f1()
+static void f1()
 {
   --countDown;
   time_point t0 = Clock::now();
@@ -58,7 +58,7 @@ void f1()
   assert(t1 - t0 <= SuccessWaitTime);
 }
 
-void f2()
+static void f2()
 {
   time_point t0 = Clock::now();
   assert(m.try_lock_shared_until(Clock::now() + FailureWaitTime) == false);

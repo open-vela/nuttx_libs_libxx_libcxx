@@ -24,7 +24,7 @@
 #  define CHOOSE_BY_ENDIANESS(little, big) (big)
 #endif
 
-std::string CityHash[] = {
+static std::string CityHash[] = {
     {/* "abcdefgh" */ "\x61\x62\x63\x64\x65\x66\x67\x68"},
     {/* "abcDefgh" */ "\x61\x62\x63\x44\x65\x66\x67\x68"},
     {/* "CityHash" */ "\x43\x69\x74\x79\x48\x61\x73\x68"},

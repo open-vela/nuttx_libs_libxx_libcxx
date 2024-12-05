@@ -873,7 +873,7 @@
 #error SCNxPTR not defined
 #endif
 
-template <class T> void test()
+template <class T> static void test()
 {
     T t = 0;
     ((void)t); // Prevent unused warning

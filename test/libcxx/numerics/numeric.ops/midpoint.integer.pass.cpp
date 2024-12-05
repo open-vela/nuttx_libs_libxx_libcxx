@@ -27,7 +27,7 @@
 //  In some cases midpoint<int>(0,0) might get deduced as the pointer overload.
 
 template <typename T>
-void test()
+static void test()
 {
     ASSERT_SAME_TYPE(T, decltype(std::midpoint<T>(0, 0)));
 }

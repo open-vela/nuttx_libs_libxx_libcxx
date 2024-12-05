@@ -30,7 +30,7 @@
 #include "test_macros.h"
 
 // Test that the operators are NOT marked noexcept.
-void test_cast_is_not_noexcept() {
+static void test_cast_is_not_noexcept() {
     std::any a;
     static_assert(!noexcept(std::any_cast<int>(static_cast<std::any&>(a))), "");
     static_assert(!noexcept(std::any_cast<int>(static_cast<std::any const&>(a))), "");
@@ -38,7 +38,7 @@ void test_cast_is_not_noexcept() {
 }
 
 // Test that the return type of any_cast is correct.
-void test_cast_return_type() {
+static void test_cast_return_type() {
     std::any a;
     static_assert(std::is_same<decltype(std::any_cast<int>(a)), int>::value, "");
     static_assert(std::is_same<decltype(std::any_cast<int const>(a)), int>::value, "");
@@ -62,7 +62,7 @@ void test_cast_return_type() {
 }
 
 template <class Type, class ConstT = Type>
-void checkThrows(std::any& a)
+static void checkThrows(std::any& a)
 {
 #if !defined(TEST_HAS_NO_EXCEPTIONS)
     try {
@@ -101,7 +101,7 @@ void checkThrows(std::any& a)
 #endif
 }
 
-void test_cast_empty() {
+static void test_cast_empty() {
     // None of these operations should allocate.
     DisableAllocationGuard g; (TEST_IGNORE_NODISCARD g);
     std::any a;

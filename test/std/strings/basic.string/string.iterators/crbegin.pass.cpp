@@ -28,7 +28,7 @@ test(const S& s)
     assert(cb == s.rbegin());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S());

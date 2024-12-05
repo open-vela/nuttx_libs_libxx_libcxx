@@ -40,7 +40,7 @@ test(InputIterator f, InputIterator l, const Allocator& a)
         assert(*i == *f);
 }
 
-void basic_test()
+static void basic_test()
 {
     int ab[] = {3, 4, 2, 8, 0, 1, 44, 34, 45, 96, 80, 1, 13, 31, 45};
     int* an = ab + sizeof(ab)/sizeof(ab[0]);
@@ -57,7 +57,7 @@ void basic_test()
 }
 
 
-void test_emplacable_concept() {
+static void test_emplacable_concept() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};

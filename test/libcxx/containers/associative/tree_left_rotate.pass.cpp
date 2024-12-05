@@ -30,7 +30,7 @@ struct Node
     Node() : __left_(), __right_(), __parent_() {}
 };
 
-void
+static void
 test1()
 {
     Node root;
@@ -55,7 +55,7 @@ test1()
     assert(x.__right_ == 0);
 }
 
-void
+static void
 test2()
 {
     Node root;

@@ -40,7 +40,7 @@ int& return_no_object(T) {
 }
 
 // clang-format off
-void test() {
+static void test() {
 
   // Test & overload
   {

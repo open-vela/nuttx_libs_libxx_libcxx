@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-void test() {
+static void test() {
   static_assert(std::input_iterator<std::counted_iterator<cpp17_input_iterator<int*>>>);
   static_assert(std::forward_iterator<std::counted_iterator<forward_iterator<int*>>>);
   static_assert(std::bidirectional_iterator<std::counted_iterator<random_access_iterator<int*>>>);

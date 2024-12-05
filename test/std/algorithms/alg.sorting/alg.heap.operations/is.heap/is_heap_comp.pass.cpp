@@ -29,7 +29,7 @@ TEST_CONSTEXPR bool test_constexpr() {
     }
 #endif
 
-void test()
+static void test()
 {
     typedef random_access_iterator<int *> RI;
     int i1[] = {0, 0};

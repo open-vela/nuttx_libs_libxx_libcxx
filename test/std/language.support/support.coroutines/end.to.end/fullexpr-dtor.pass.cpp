@@ -17,7 +17,7 @@
 int alive = 0;
 int ctor_called = 0;
 int dtor_called = 0;
-void reset() {
+static void reset() {
   assert(alive == 0);
   alive = 0;
   ctor_called = 0;

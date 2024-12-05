@@ -45,7 +45,7 @@ struct StrangeSizeView : std::ranges::view_base {
   constexpr auto size() const { return 6; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // single range
     std::ranges::zip_view v(View(8));

@@ -25,7 +25,7 @@ LIBCPP_STATIC_ASSERT(!std::is_nothrow_default_constructible<
                      std::basic_string<char, std::char_traits<char>, limited_allocator<char, 10>>>::value, "");
 #endif
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   std::string str;
   assert(str.empty());
 

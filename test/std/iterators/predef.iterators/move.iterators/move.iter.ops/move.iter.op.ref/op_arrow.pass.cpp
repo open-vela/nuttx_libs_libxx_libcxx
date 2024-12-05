@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX17 bool test()
+TEST_CONSTEXPR_CXX17 static bool test()
 {
     char a[] = "123456789";
     std::move_iterator<char *> it1 = std::make_move_iterator(a);

@@ -22,7 +22,7 @@ struct Iter : ForwardIterBase<Iter> {
   constexpr Iter(int ii) : i(ii) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using SplitView = std::ranges::split_view<std::ranges::subrange<Iter>, std::ranges::subrange<Iter>>;
   using SplitIter = std::ranges::iterator_t<SplitView>;
 

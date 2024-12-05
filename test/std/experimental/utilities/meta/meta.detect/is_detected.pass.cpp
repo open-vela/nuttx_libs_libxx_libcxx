@@ -24,7 +24,7 @@ struct not_assignable {
 };
 
 template <typename T, bool b>
-void test() {
+static void test() {
     static_assert( b == ex::is_detected  <copy_assign_t, T>::value, "" );
     static_assert( b == ex::is_detected_v<copy_assign_t, T>, "" );
 }

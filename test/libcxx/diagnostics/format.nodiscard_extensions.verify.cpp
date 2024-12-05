@@ -21,7 +21,7 @@
 #  include <locale>
 #endif
 
-void test() {
+static void test() {
   // clang-format off
   std::format(""); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
   std::vformat("", std::make_format_args()); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}

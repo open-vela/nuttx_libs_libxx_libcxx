@@ -30,7 +30,7 @@ struct View : std::ranges::view_base {
 };
 
 template <class I1, class I2, class ExpectedView, class ExpectedPattern>
-constexpr void test() {
+constexpr static void test() {
   static_assert(std::is_same_v<decltype(std::ranges::split_view(std::declval<I1>(), std::declval<I2>())),
                                std::ranges::split_view<ExpectedView, ExpectedPattern>>);
 }

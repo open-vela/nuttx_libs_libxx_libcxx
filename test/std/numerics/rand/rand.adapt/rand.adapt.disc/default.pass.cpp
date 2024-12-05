@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::ranlux24 e1;
@@ -27,7 +27,7 @@ test1()
     assert(e1() == 15039276);
 }
 
-void
+static void
 test2()
 {
     std::ranlux48 e1;

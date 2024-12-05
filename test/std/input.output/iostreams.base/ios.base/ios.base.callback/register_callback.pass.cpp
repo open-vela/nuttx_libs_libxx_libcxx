@@ -32,9 +32,9 @@ public:
     }
 };
 
-int f1_called = 0;
+static int f1_called = 0;
 
-void f1(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f1(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::imbue_event)
     {

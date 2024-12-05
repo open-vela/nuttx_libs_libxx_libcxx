@@ -30,7 +30,7 @@ void test_max(std::size_t count)
 }
 
 template <typename T>
-void test()
+static void test()
 {
     // Bug 26812 -- allocating too large
     typedef std::allocator<T> A;

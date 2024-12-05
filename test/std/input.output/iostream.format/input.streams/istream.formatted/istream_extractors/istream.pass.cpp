@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int f_called = 0;
+static int f_called = 0;
 
 template <class CharT>
 std::basic_istream<CharT>&

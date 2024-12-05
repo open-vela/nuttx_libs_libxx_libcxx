@@ -33,7 +33,7 @@
 #include <mutex>
 #include <thread>
 
-int condition_variable_lock_skipped_counter = 0;
+static int condition_variable_lock_skipped_counter = 0;
 
 union X {
     X() : cv_() {}
@@ -42,12 +42,12 @@ union X {
     unsigned char bytes_[sizeof(std::condition_variable)];
 };
 
-void test()
+static void test()
 {
     constexpr int N = 3;
 
     X x;
-    std::mutex m;
+    static std::mutex m;
     int threads_active = N;
 
     for (int i = 0; i < N; ++i) {

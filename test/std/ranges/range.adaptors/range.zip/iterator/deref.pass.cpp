@@ -17,7 +17,7 @@
 
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::array a{1, 2, 3, 4};
   std::array b{4.1, 3.2, 4.3};
   {

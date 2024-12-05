@@ -16,7 +16,7 @@
 #include <utility>
 
 template <class T1, class T2>
-void test()
+static void test()
 {
     {
     typedef T1 Exp1;

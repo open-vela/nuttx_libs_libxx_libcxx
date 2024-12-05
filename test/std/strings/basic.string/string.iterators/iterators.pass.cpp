@@ -23,7 +23,7 @@
 #include "test_macros.h"
 
 template<class C>
-TEST_CONSTEXPR_CXX20 void test()
+TEST_CONSTEXPR_CXX20 static void test()
 {
     { // N3644 testing
         typename C::iterator ii1{}, ii2{};
@@ -59,7 +59,7 @@ TEST_CONSTEXPR_CXX20 void test()
     }
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
     test<std::string>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
     test<std::wstring>();

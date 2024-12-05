@@ -10,7 +10,7 @@
 
 // <format>
 
-// constexpr void check_arg_id(size_t id);
+// constexpr static void check_arg_id(size_t id);
 
 #include <format>
 
@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::format_parse_context context("", 10);
   for (std::size_t i = 0; i < 10; ++i)
     context.check_arg_id(i);

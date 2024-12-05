@@ -19,7 +19,7 @@ struct NonBorrowedRange {
 static_assert(!std::ranges::enable_borrowed_range<NonBorrowedRange>);
 
 // Verify that if the expression is an rvalue and `enable_borrowed_range` is false, `ranges::data` is ill-formed.
-void test() {
+static void test() {
   std::ranges::data(NonBorrowedRange());
   // expected-error-re@-1 {{{{no matching function for call to object of type 'const (std::ranges::)?__data::__fn'}}}}
 }

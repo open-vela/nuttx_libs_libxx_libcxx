@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::drop_view<MoveOnlyView> dropView1;
   auto base1 = std::move(dropView1).base();
   assert(std::ranges::begin(base1) == globalBuff);

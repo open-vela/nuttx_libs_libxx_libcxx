@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     for (int s = 0; s < 20; ++s)

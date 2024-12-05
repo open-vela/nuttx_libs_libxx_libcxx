@@ -251,7 +251,7 @@ constexpr void runAllIteratorPermutationsTests() {
   static_assert(withAllPermutationsOfInIter1AndInIter2<contiguous_iterator<int*>>());
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   // check that every element is copied exactly once
   {
     std::array<TracedCopy, 3> r1{3, 5, 8};

@@ -49,7 +49,7 @@ struct Counted {
 };
 
 template <class Iterator>
-constexpr void test() {
+constexpr static void test() {
   // (iterator + sentinel) overload.
   {
     constexpr int N = 5;

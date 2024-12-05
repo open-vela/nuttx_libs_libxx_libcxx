@@ -27,7 +27,7 @@ struct NonCommonSimpleView : std::ranges::view_base {
 static_assert(std::ranges::sized_range<NonCommonSimpleView>);
 static_assert(!std::ranges::sized_range<const NonCommonSimpleView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // sized_range && random_access_iterator

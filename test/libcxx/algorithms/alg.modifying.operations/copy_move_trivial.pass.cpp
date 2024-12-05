@@ -292,7 +292,7 @@ void test_different_signedness() {
   });
 }
 
-void test() {
+static void test() {
   // Built-in.
   test_all_permutations_from_to_sent<int, int, std::type_identity_t>();
   // User-defined.

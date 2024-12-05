@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     typedef std::bernoulli_distribution D;

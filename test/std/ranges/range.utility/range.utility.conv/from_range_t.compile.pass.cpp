@@ -14,7 +14,7 @@
 #include <ranges>
 
 template <class T>
-void check(std::from_range_t);
+static void check(std::from_range_t);
 
 template <class T>
 concept IsCtrNonexplicit = requires {

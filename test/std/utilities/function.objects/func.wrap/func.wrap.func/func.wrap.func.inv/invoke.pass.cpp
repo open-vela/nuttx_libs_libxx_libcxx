@@ -36,12 +36,12 @@
 #include "test_macros.h"
 
 
-int count = 0;
+static int count = 0;
 
 
 // 0 args, return int
 
-int f_int_0()
+static int f_int_0()
 {
     return 3;
 }
@@ -51,7 +51,7 @@ struct A_int_0
     int operator()() {return 4;}
 };
 
-void test_int_0()
+static void test_int_0()
 {
     // function
     {
@@ -75,7 +75,7 @@ void test_int_0()
 
 // 0 args, return void
 
-void f_void_0()
+static void f_void_0()
 {
     ++count;
 }
@@ -85,7 +85,7 @@ struct A_void_0
     void operator()() {++count;}
 };
 
-void
+static void
 test_void_0()
 {
     int save_count = count;
@@ -116,7 +116,7 @@ test_void_0()
 
 // 1 arg, return void
 
-void f_void_1(int i)
+static void f_void_1(int i)
 {
     count += i;
 }
@@ -132,7 +132,7 @@ struct A_void_1
     void mem2() const {++count;}
 };
 
-void
+static void
 test_void_1()
 {
     int save_count = count;
@@ -194,7 +194,7 @@ test_void_1()
 
 // 1 arg, return int
 
-int f_int_1(int i)
+static int f_int_1(int i)
 {
     return i + 1;
 }
@@ -212,7 +212,7 @@ struct A_int_1
     int data_;
 };
 
-void
+static void
 test_int_1()
 {
     // function
@@ -273,7 +273,7 @@ test_int_1()
 
 // 2 arg, return void
 
-void f_void_2(int i, int j)
+static void f_void_2(int i, int j)
 {
     count += i+j;
 }
@@ -289,7 +289,7 @@ struct A_void_2
     void mem2(int i) const {count += i;}
 };
 
-void
+static void
 test_void_2()
 {
     int save_count = count;
@@ -356,7 +356,7 @@ test_void_2()
 
 // 2 arg, return int
 
-int f_int_2(int i, int j)
+static int f_int_2(int i, int j)
 {
     return i+j;
 }
@@ -372,7 +372,7 @@ struct A_int_2
     int mem2(int i) const {return i+2;}
 };
 
-void test_int_2()
+static void test_int_2()
 {
     // function
     {

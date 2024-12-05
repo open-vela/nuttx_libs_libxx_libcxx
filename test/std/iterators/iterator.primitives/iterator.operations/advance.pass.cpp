@@ -39,7 +39,7 @@
 
 template <class Distance, class It>
 TEST_CONSTEXPR_CXX17
-void check_advance(It it, Distance n, It result)
+static void check_advance(It it, Distance n, It result)
 {
     static_assert(std::is_same<decltype(std::advance(it, n)), void>::value, "");
     std::advance(it, n);

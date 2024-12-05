@@ -18,7 +18,7 @@
 #include <iterator>
 #include <type_traits>
 
-constexpr bool test()
+constexpr static bool test()
 {
   // The underlying sentinel is an integer.
   {

@@ -19,7 +19,7 @@
 #include "test_macros.h"
 
 template <typename T>
-void checkAlwaysLockFree() {
+static void checkAlwaysLockFree() {
   if (std::atomic<T>::is_always_lock_free) {
     LIBCPP_ASSERT(sizeof(std::atomic<T>) == sizeof(T)); // technically not required, but libc++ does it that way
     assert(std::atomic<T>().is_lock_free());

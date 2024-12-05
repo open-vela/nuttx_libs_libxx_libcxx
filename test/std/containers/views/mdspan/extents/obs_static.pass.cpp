@@ -54,7 +54,7 @@ void test_static_observers() {
 }
 
 template <class T>
-void test() {
+static void test() {
   constexpr size_t D = std::dynamic_extent;
   constexpr size_t S = 5;
 

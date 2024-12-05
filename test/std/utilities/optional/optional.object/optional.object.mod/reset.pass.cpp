@@ -20,6 +20,7 @@
 
 using std::optional;
 
+namespace {
 struct X
 {
     static bool dtor_called;
@@ -30,6 +31,7 @@ struct X
 };
 
 bool X::dtor_called = false;
+}
 
 constexpr bool check_reset()
 {

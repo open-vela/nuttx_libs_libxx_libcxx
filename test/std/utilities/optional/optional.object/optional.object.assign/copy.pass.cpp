@@ -20,6 +20,7 @@
 
 using std::optional;
 
+namespace {
 struct X
 {
     static bool throw_now;
@@ -34,6 +35,7 @@ struct X
 };
 
 bool X::throw_now = false;
+}
 
 template <class Tp>
 constexpr bool assign_empty(optional<Tp>&& lhs) {

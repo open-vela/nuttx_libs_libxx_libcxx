@@ -23,7 +23,7 @@ struct Charlike {
     TEST_CONSTEXPR operator char() const { return ch_; }
 };
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   std::string s;
   Charlike<Holder<Incomplete> > a[] = {'m', 'a', 'h', 'i'};
   s.append(a, a+4);

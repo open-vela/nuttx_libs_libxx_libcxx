@@ -43,7 +43,7 @@ template <class ...Args>
 int t1(Args...) {
   return sizeof...(Args);
 }
-void test() {
+static void test() {
   assert(t1() == 0);
   assert(t1(42) == 1);
   assert(t1(1, 2, 3) == 3);
@@ -58,7 +58,7 @@ struct T {
   int moved;
 };
 void f(T o, int expect_moved) { assert(o.moved == expect_moved); }
-void test() {
+static void test() {
   {
     T t;
     assert(t.moved == 0);
@@ -79,7 +79,7 @@ template <class Expect, class T>
 void f(T&&) {
   static_assert((std::is_same<Expect, T&&>::value), "");
 }
-void test() {
+static void test() {
   int x = 42;
   f<int&>(x);
   f<int&&>(42);
@@ -90,7 +90,7 @@ void test() {
 namespace default_values_for_nttp {
 template <int I = 42>
 void f() { assert(I == 42); }
-void test() {
+static void test() {
   f();
 }
 }
@@ -104,7 +104,7 @@ struct T {
   int rvalue_called;
 };
 
-void test() {
+static void test() {
   {
     T t;
     t.foo();

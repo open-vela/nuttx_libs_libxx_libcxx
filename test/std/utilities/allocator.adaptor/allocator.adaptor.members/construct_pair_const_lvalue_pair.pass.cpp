@@ -28,7 +28,7 @@
 #include "test_macros.h"
 
 
-void test_no_inner_alloc()
+static void test_no_inner_alloc()
 {
     using VoidAlloc = CountingAllocator<void>;
     AllocController P;
@@ -100,7 +100,7 @@ void test_no_inner_alloc()
     }
 }
 
-void test_with_inner_alloc()
+static void test_with_inner_alloc()
 {
     using VoidAlloc2 = CountingAllocator<void, 2>;
 

@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-void test() {
+static void test() {
   {
     using Iter = cpp17_input_iterator<int*>;
     using CommonIter = std::counted_iterator<Iter>;

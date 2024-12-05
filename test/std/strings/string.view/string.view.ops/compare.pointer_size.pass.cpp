@@ -19,10 +19,10 @@
 #include "test_macros.h"
 #include "constexpr_char_traits.h"
 
-int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
+static int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
 
 template<typename CharT>
-void test1 ( std::basic_string_view<CharT> sv1,
+static void test1 ( std::basic_string_view<CharT> sv1,
              std::size_t pos1, size_t n1, const CharT *s, int expected ) {
 #ifdef TEST_HAS_NO_EXCEPTIONS
     if (pos1 <= sv1.size())
@@ -39,7 +39,7 @@ void test1 ( std::basic_string_view<CharT> sv1,
 }
 
 template<typename CharT>
-void
+static void
 test( const CharT *s1, std::size_t pos1, size_t n1, const CharT *s2, int expected)
 {
     typedef std::basic_string_view<CharT> string_view_t;
@@ -47,7 +47,7 @@ test( const CharT *s1, std::size_t pos1, size_t n1, const CharT *s2, int expecte
     test1 ( sv1, pos1, n1, s2, expected );
 }
 
-void test0()
+static void test0()
 {
     test("", 0, 0, "", 0);
     test("", 0, 0, "abcde", -5);
@@ -151,7 +151,7 @@ void test0()
     test("abcde", 5, 1, "abcdefghijklmnopqrst", -20);
 }
 
-void test1()
+static void test1()
 {
     test("abcde", 6, 0, "", 0);
     test("abcde", 6, 0, "abcde", 0);
@@ -255,7 +255,7 @@ void test1()
     test("abcdefghij", 11, 0, "abcdefghijklmnopqrst", 0);
 }
 
-void test2()
+static void test2()
 {
     test("abcdefghijklmnopqrst", 0, 0, "", 0);
     test("abcdefghijklmnopqrst", 0, 0, "abcde", -5);

@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 template <std::size_t N>
-TEST_CONSTEXPR_CXX23 void test_equality() {
+TEST_CONSTEXPR_CXX23 static void test_equality() {
     std::vector<std::bitset<N> > const cases = get_test_cases<N>();
     for (std::size_t c = 0; c != cases.size(); ++c) {
         std::bitset<N> const v1 = cases[c];

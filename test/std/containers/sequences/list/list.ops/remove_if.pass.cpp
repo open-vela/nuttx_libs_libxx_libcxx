@@ -19,12 +19,12 @@
 #include "min_allocator.h"
 #include "counting_predicates.h"
 
-bool even(int i)
+static bool even(int i)
 {
     return i % 2 == 0;
 }
 
-bool g(int i)
+static bool g(int i)
 {
     return i < 3;
 }

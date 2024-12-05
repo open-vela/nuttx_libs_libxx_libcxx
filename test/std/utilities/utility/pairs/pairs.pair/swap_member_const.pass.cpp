@@ -42,7 +42,7 @@ struct ConstSwappable {
   friend constexpr void swap(const ConstSwappable& lhs, const ConstSwappable& rhs) { std::swap(lhs.i, rhs.i); }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // user defined const swap
   {
     using P = std::pair<const ConstSwappable, const ConstSwappable>;

@@ -22,7 +22,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-void func(std::promise<int> p)
+static void func(std::promise<int> p)
 {
     p.set_exception_at_thread_exit(std::make_exception_ptr(3));
 }

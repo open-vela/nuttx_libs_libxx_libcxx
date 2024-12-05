@@ -40,6 +40,7 @@ struct CopyThrows {
   CopyThrows& operator=(CopyThrows const&) { throw 42; }
 };
 
+namespace {
 struct MoveThrows {
   static int alive;
   MoveThrows() { ++alive; }
@@ -74,6 +75,7 @@ struct MakeEmptyT {
 static_assert(std::is_swappable_v<MakeEmptyT>, ""); // required for test
 
 int MakeEmptyT::alive = 0;
+}
 
 template <class Variant>
 void makeEmpty(Variant& v) {
@@ -100,6 +102,7 @@ inline constexpr CallType operator|(CallType LHS, CallType RHS) {
                                static_cast<unsigned>(RHS));
 }
 
+namespace {
 struct ForwardingCallObject {
 
   template <class... Args>
@@ -153,6 +156,7 @@ struct ForwardingCallObject {
 
 CallType ForwardingCallObject::last_call_type = CT_None;
 const TypeID *ForwardingCallObject::last_call_args = nullptr;
+}
 
 struct ReturnFirst {
   template <class... Args> constexpr int operator()(int f, Args &&...) const {

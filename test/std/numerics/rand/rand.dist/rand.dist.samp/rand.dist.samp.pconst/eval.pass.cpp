@@ -32,7 +32,7 @@ sqr(T x)
     return x*x;
 }
 
-void
+static void
 test1()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -95,7 +95,7 @@ test1()
     }
 }
 
-void
+static void
 test2()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -158,7 +158,7 @@ test2()
     }
 }
 
-void
+static void
 test3()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -221,7 +221,7 @@ test3()
     }
 }
 
-void
+static void
 test4()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -284,7 +284,7 @@ test4()
     }
 }
 
-void
+static void
 test5()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -347,7 +347,7 @@ test5()
     }
 }
 
-void
+static void
 test6()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -410,7 +410,7 @@ test6()
     }
 }
 
-void
+static void
 test7()
 {
     typedef std::piecewise_constant_distribution<> D;
@@ -473,7 +473,7 @@ test7()
     }
 }
 
-void
+static void
 test8()
 {
     typedef std::piecewise_constant_distribution<> D;

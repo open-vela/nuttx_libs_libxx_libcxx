@@ -21,6 +21,6 @@
 
 void foo(int) {}
 
-void f() {
+static void f() {
     std::function<void(int)> f(std::allocator_arg, std::allocator<int>(), foo); // expected-error {{no matching constructor for initialization of}}
 }

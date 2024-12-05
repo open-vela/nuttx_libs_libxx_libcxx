@@ -70,7 +70,7 @@ bool do_forwarding_test(Tuple&& tup) {
         && value.arg_types == &makeArgumentID<ExpectTypes...>();
 }
 
-void test_constexpr_construction() {
+static void test_constexpr_construction() {
     {
         constexpr std::tuple<> tup;
         static_assert(do_constexpr_test(tup), "");
@@ -97,7 +97,7 @@ void test_constexpr_construction() {
     }
 }
 
-void test_perfect_forwarding() {
+static void test_perfect_forwarding() {
     {
         using Tup = std::tuple<>;
         Tup tup;
@@ -148,7 +148,7 @@ void test_perfect_forwarding() {
     }
 }
 
-void test_noexcept() {
+static void test_noexcept() {
     struct NothrowMoveable {
       NothrowMoveable() = default;
       NothrowMoveable(NothrowMoveable const&) {}

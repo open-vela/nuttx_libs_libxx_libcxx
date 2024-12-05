@@ -15,6 +15,7 @@
 #include "test_macros.h"
 #include "deleter_types.h"
 
+namespace {
 struct A {
   static int count;
   TEST_CONSTEXPR_CXX23 A() {
@@ -50,6 +51,7 @@ struct B : public A {
 };
 
 int B::count = 0;
+}
 
 template <class T>
 TEST_CONSTEXPR_CXX23 typename std::enable_if<!std::is_array<T>::value, T*>::type newValue(int num_elements) {

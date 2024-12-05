@@ -61,7 +61,7 @@ TEST_CONSTEXPR_CXX20 void test_assign() {
     test(S(CONVERT_TO_CSTRING(CharT, "12345678901234567890")), S(CONVERT_TO_CSTRING(CharT, "12345678901234567890")));
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
     test_assign<std::string>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
     test_assign<std::wstring>();

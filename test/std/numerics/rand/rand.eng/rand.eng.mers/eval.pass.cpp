@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::mt19937 e;
@@ -29,7 +29,7 @@ test1()
     assert(e() == 3890346734u);
 }
 
-void
+static void
 test2()
 {
     std::mt19937_64 e;

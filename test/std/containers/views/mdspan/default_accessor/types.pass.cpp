@@ -32,7 +32,7 @@
 #include "../MinimalElementType.h"
 
 template <class T>
-void test() {
+static void test() {
   using A = std::default_accessor<T>;
   ASSERT_SAME_TYPE(typename A::offset_policy, A);
   ASSERT_SAME_TYPE(typename A::element_type, T);

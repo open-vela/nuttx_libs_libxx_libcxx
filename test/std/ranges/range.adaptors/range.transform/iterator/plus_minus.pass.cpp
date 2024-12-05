@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::transform_view<MoveOnlyView, PlusOneMutable> transformView1;
   auto iter1 = std::move(transformView1).begin();
   std::ranges::transform_view<MoveOnlyView, PlusOneMutable> transformView2;

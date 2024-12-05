@@ -17,14 +17,14 @@
 
 #include "test_macros.h"
 
-// Flag that makes the copy constructor for CMyClass throw an exception
+// Flag that makes the copy constructor for PushCMyClass throw an exception
 static bool gCopyConstructorShouldThow = false;
 
 
-class CMyClass {
-    public: CMyClass();
-    public: CMyClass(const CMyClass& iOther);
-    public: ~CMyClass();
+class PushCMyClass {
+    public: PushCMyClass();
+    public: PushCMyClass(const PushCMyClass& iOther);
+    public: ~PushCMyClass();
 
     private: int fMagicValue;
 
@@ -33,18 +33,18 @@ class CMyClass {
 };
 
 // Value for fMagicValue when the constructor has started running, but not yet finished
-int CMyClass::kStartedConstructionMagicValue = 0;
+int PushCMyClass::kStartedConstructionMagicValue = 0;
 // Value for fMagicValue when the constructor has finished running
-int CMyClass::kFinishedConstructionMagicValue = 12345;
+int PushCMyClass::kFinishedConstructionMagicValue = 12345;
 
-CMyClass::CMyClass() :
+PushCMyClass::PushCMyClass() :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // Signal that the constructor has finished running
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::CMyClass(const CMyClass& /*iOther*/) :
+PushCMyClass::PushCMyClass(const PushCMyClass& /*iOther*/) :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // If requested, throw an exception _before_ setting fMagicValue to kFinishedConstructionMagicValue
@@ -55,15 +55,15 @@ CMyClass::CMyClass(const CMyClass& /*iOther*/) :
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::~CMyClass() {
+PushCMyClass::~PushCMyClass() {
     // Only instances for which the constructor has finished running should be destructed
     assert(fMagicValue == kFinishedConstructionMagicValue);
 }
 
 extern "C" int main(int, char**)
 {
-    CMyClass instance;
-    std::list<CMyClass> vec;
+    PushCMyClass instance;
+    std::list<PushCMyClass> vec;
 
     vec.push_front(instance);
 

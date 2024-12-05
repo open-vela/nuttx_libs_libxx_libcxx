@@ -18,7 +18,7 @@
 
 struct S : public std::function<void()> { using function::function; };
 
-void f() {
+static void f() {
   S f1( [](){} );
   S f2(std::allocator_arg, std::allocator<int>{}, f1); // expected-error {{no matching constructor for initialization of 'S'}}
 }

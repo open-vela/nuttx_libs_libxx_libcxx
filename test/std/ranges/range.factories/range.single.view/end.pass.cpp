@@ -19,7 +19,7 @@
 struct Empty {};
 struct BigType { char buffer[64] = {10}; };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     auto sv = std::ranges::single_view<int>(42);
     assert(sv.end() == sv.begin() + 1);

@@ -30,7 +30,7 @@ static_assert(test_convertible<std::ranges::drop_view<View>, View, std::ranges::
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::drop_view dropView1(MoveOnlyView(), 4);
   assert(dropView1.size() == 4);
   assert(dropView1.begin() == globalBuff + 4);

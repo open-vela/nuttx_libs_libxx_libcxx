@@ -22,14 +22,14 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable* cv;
-std::mutex m;
+static std::condition_variable* cv;
+static std::mutex m;
 typedef std::unique_lock<std::mutex> Lock;
 
-bool f_ready = false;
-bool g_ready = false;
+static bool f_ready = false;
+static bool g_ready = false;
 
-void f()
+static void f()
 {
     Lock lk(m);
     f_ready = true;
@@ -37,7 +37,7 @@ void f()
     delete cv;
 }
 
-void g()
+static void g()
 {
     Lock lk(m);
     g_ready = true;

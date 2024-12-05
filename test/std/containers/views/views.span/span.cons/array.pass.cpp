@@ -25,7 +25,7 @@
 #include "test_macros.h"
 
 
-void checkCV()
+static void checkCV()
 {
                    int   arr[] = {1,2,3};
     const          int  carr[] = {4,5,6};

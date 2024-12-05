@@ -37,7 +37,7 @@ to_string(T const &e)
     return os.str();
 }
 
-void
+static void
 test1()
 {
     const char* a = "15136306 8587749 2346244 16479026 15515802 9510553 "
@@ -48,7 +48,7 @@ test1()
     assert(to_string(e1) == a);
 }
 
-void
+static void
 test2()
 {
     const char* a = "10880375256626 126660097854724 33643165434010 "

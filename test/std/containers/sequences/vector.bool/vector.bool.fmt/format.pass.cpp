@@ -56,7 +56,7 @@ void test_fmt() {
   test_format(SV("false"), std::vector<bool>{false}[0]);
 }
 
-void test() {
+static void test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

@@ -394,7 +394,7 @@ void test_abstract_class() {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   test_P0645<CharT>();
   test_P1361<CharT>();
   test_P1636<CharT>();
@@ -404,7 +404,7 @@ void test() {
   test_disabled<CharT>();
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

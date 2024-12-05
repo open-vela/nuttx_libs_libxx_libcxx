@@ -137,7 +137,7 @@ constexpr void test_all_cases(std::array<int, N> input) {
   test_one<Iter, Sent, N>(input, N);
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   auto check = []<class Iter, class Sent> {
     // Empty sequence.
     test_one<Iter, Sent, 0>({}, 0);
@@ -184,7 +184,7 @@ constexpr void test_iterators() {
   check.operator()<int*, sentinel_wrapper<int*>>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom comparator works.

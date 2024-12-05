@@ -21,7 +21,7 @@
 template<class T>
 concept BeginInvocable = requires(T t) { t.begin(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
   {

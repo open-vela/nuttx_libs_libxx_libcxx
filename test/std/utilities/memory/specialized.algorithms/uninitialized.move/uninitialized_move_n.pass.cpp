@@ -30,8 +30,6 @@ struct Counted {
   friend void operator&(Counted) = delete;
   int value;
 };
-int Counted::count = 0;
-int Counted::constructed = 0;
 
 struct ThrowsCounted {
   static int count;
@@ -50,11 +48,8 @@ struct ThrowsCounted {
   ~ThrowsCounted() { assert(count > 0); --count; }
   friend void operator&(ThrowsCounted) = delete;
 };
-int ThrowsCounted::count = 0;
-int ThrowsCounted::constructed = 0;
-int ThrowsCounted::throw_after = 0;
 
-void test_ctor_throws()
+static void test_ctor_throws()
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     using It = forward_iterator<ThrowsCounted*>;
@@ -77,7 +72,7 @@ void test_ctor_throws()
 #endif
 }
 
-void test_counted()
+static void test_counted()
 {
     using It = cpp17_input_iterator<int*>;
     using FIt = forward_iterator<Counted*>;

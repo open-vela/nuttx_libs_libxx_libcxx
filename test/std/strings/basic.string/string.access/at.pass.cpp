@@ -75,7 +75,7 @@ struct TestCaller {
   }
 };
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   types::for_each(types::character_types(), TestCaller());
 
   return true;

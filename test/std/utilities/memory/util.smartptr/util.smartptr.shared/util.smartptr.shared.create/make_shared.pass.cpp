@@ -20,6 +20,7 @@
 #include "operator_hijacker.h"
 #include "test_macros.h"
 
+namespace {
 struct A
 {
     static int count;
@@ -41,6 +42,7 @@ private:
 };
 
 int A::count = 0;
+}
 
 
 struct Foo

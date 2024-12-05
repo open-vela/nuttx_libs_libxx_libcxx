@@ -27,7 +27,7 @@ template<typename CharT>
 struct testbuf
     : std::basic_stringbuf<CharT>
 {
-    void check()
+    static void check()
     {
         assert(this->eback() == NULL);
         assert(this->gptr() == NULL);

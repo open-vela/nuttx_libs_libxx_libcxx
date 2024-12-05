@@ -42,7 +42,7 @@ static_assert(!std::is_convertible_v<std::pair<X, Y>&, std::pair<ExplicitConstru
 static_assert(!std::is_convertible_v<std::pair<X, Y>&, std::pair<ExplicitConstructibleFrom<X>, ExplicitConstructibleFrom<Y>>>);
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   // use case in zip. Init pair<T&, U&> from pair<T, U>&
   {
     std::pair<int, int> p1{1, 2};

@@ -30,7 +30,7 @@ static_assert(!HasBegin<const std::ranges::wistream_view<int>>);
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   // begin should read the first element
   {
     auto iss = make_string_stream<CharT>("12    3");

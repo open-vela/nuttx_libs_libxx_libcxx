@@ -31,7 +31,7 @@ struct NonCopyableFunction {
   constexpr T operator()(T x) const { return x; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
   // Test `views::transform(f)(v)`

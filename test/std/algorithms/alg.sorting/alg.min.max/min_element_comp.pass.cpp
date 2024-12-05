@@ -21,10 +21,10 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class Iter>
-void
+static void
 test(Iter first, Iter last)
 {
     Iter i = std::min_element(first, last, std::greater<int>());
@@ -38,7 +38,7 @@ test(Iter first, Iter last)
 }
 
 template <class Iter>
-void
+static void
 test(int N)
 {
     int* a = new int[N];
@@ -50,7 +50,7 @@ test(int N)
 }
 
 template <class Iter>
-void
+static void
 test()
 {
     test<Iter>(0);
@@ -62,12 +62,12 @@ test()
 }
 
 template <class Iter, class Pred>
-void test_eq0(Iter first, Iter last, Pred p)
+static void test_eq0(Iter first, Iter last, Pred p)
 {
     assert(first == std::min_element(first, last, p));
 }
 
-void test_eq()
+static void test_eq()
 {
     const int N = 10;
     int* a = new int[N];
@@ -79,11 +79,11 @@ void test_eq()
 }
 
 #if TEST_STD_VER >= 14
-constexpr int il[] = { 2, 4, 6, 8, 7, 5, 3, 1 };
+static constexpr int il[] = { 2, 4, 6, 8, 7, 5, 3, 1 };
 struct less { constexpr bool operator ()( const int &x, const int &y) const { return x < y; }};
 #endif
 
-void constexpr_test()
+static void constexpr_test()
 {
 #if TEST_STD_VER >= 14
     constexpr auto p = std::min_element(il, il+8, less());

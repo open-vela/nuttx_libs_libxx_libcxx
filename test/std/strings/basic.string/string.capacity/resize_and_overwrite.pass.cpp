@@ -58,7 +58,7 @@ constexpr void test_truncating(std::size_t o, size_t N) {
 }
 
 template <class CharT>
-constexpr bool test() {
+constexpr static bool test() {
   using S = std::basic_string<CharT>;
   test_appending<S>(10, 15, 15);
   test_appending<S>(10, 15, 20);

@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 bool test()
+TEST_CONSTEXPR_CXX20 static bool test()
 {
     char32_t s1[] = {1, 2, 3};
     char32_t s2[3] = {0};

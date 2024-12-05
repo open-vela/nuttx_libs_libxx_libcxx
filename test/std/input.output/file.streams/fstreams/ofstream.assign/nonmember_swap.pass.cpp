@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "platform_support.h"
 
-std::pair<std::string, std::string> get_temp_file_names() {
+static std::pair<std::string, std::string> get_temp_file_names() {
   std::pair<std::string, std::string> names;
   names.first = get_temp_file_name();
 

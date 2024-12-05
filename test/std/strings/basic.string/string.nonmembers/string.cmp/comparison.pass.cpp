@@ -35,7 +35,7 @@
 #define STR(S) MAKE_STRING(CharT, S)
 
 template <class T, class Ordering = std::strong_ordering>
-constexpr void test() {
+constexpr static void test() {
   AssertOrderAreNoexcept<T>();
   AssertOrderReturn<Ordering, T>();
 

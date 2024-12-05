@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   // Test that assignment from {} and {ptr, len} are allowed and are not
   // ambiguous.
   {

@@ -63,7 +63,7 @@ constexpr void inequalityOperatorsDoNotExistTest(const auto& iter1, const auto& 
   static_assert(!std::is_invocable_v<std::greater_equal<>, Iter1, Iter2>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> ts[] = {{1}, {2}, {3}};
 
   {

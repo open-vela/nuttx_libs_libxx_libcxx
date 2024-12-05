@@ -46,7 +46,7 @@ struct Counted {
 };
 
 template <class Iterator>
-constexpr void test() {
+constexpr static void test() {
   {
     constexpr int N = 5;
     std::allocator<Counted> alloc;

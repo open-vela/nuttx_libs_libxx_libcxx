@@ -69,7 +69,7 @@ static_assert(!HasEqualR<UncheckedRange<int*>, InputRangeNotSentinelEqualityComp
 static_assert(!HasEqualR<UncheckedRange<int*>, UncheckedRange<int**>>);
 
 template <class Iter1, class Sent1, class Iter2, class Sent2 = Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       int a[] = {1, 2, 3, 4};
@@ -262,7 +262,7 @@ constexpr void test_iterators2() {
   test_iterators<Iter1, Sent1, const int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators2<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>>();
   test_iterators2<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_iterators2<forward_iterator<int*>>();

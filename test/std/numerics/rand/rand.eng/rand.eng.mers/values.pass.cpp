@@ -44,7 +44,7 @@
 template <class T>
 void where(const T &) {}
 
-void
+static void
 test1()
 {
     typedef std::mt19937 E;
@@ -85,7 +85,7 @@ test1()
     where(E::default_seed);
 }
 
-void
+static void
 test2()
 {
     typedef std::mt19937_64 E;

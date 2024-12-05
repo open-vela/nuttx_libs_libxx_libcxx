@@ -44,13 +44,13 @@ struct TestClock
     }
 };
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-int runs = 0;
+static int runs = 0;
 
 template <typename Clock>
 void f()

@@ -33,7 +33,7 @@ static_assert(!std::ranges::random_access_range<BidiRange>);
 
 static_assert(!CanSubscript<ElemIter<BidiRange>, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // reference
     std::tuple<int> ts[] = {{1}, {2}, {3}, {4}};

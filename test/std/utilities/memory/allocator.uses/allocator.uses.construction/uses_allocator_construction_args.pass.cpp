@@ -28,7 +28,7 @@ constexpr decltype(auto) test_uses_allocator_construction_args(Args&&... args) {
   return std::uses_allocator_construction_args<Type>(std::forward<Args>(args)...);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   Alloc a(12);
   {
     std::same_as<std::tuple<std::allocator_arg_t, const Alloc&>> auto ret =

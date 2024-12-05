@@ -28,7 +28,7 @@ using IntDiffT = long long;
 using IntDiffT = long;
 #endif
 
-constexpr bool test() {
+static constexpr bool test() {
   // <iterator> - difference_type
   {
     // When "_Start" is signed integer like.

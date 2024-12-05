@@ -24,7 +24,7 @@
 #include "test_convertible.h"
 #include "test_macros.h"
 
-void test_ctor_sfinae() {
+static void test_ctor_sfinae() {
   {
     using V = std::variant<int>;
     static_assert(
@@ -67,7 +67,7 @@ void test_ctor_sfinae() {
   }
 }
 
-void test_ctor_basic() {
+static void test_ctor_basic() {
   {
     constexpr std::variant<int> v(std::in_place_type<int>, 42);
     static_assert(v.index() == 0, "");

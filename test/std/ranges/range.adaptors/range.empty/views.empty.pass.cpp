@@ -30,7 +30,7 @@ struct BigType {
   char buff[8];
 };
 
-constexpr bool test() {
+static constexpr bool test() {
 
   testType<int>();
   testType<const int>();

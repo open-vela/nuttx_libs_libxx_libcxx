@@ -21,7 +21,7 @@
 #include "../types.h"
 
 template <bool Count, typename It>
-constexpr void check_forward(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check_forward(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
   using Difference = std::iter_difference_t<It>;
   Difference const M = (expected - first); // expected travel distance
 
@@ -46,7 +46,7 @@ constexpr void check_forward(int* first, int* last, std::iter_difference_t<It> n
 }
 
 template <typename It>
-constexpr void check_forward_sized_sentinel(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check_forward_sized_sentinel(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
   using Difference = std::iter_difference_t<It>;
   Difference const size = (last - first);
   Difference const M = (expected - first); // expected travel distance
@@ -75,7 +75,7 @@ constexpr void check_forward_sized_sentinel(int* first, int* last, std::iter_dif
 }
 
 template <typename It>
-constexpr void check_backward(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check_backward(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
   static_assert(std::random_access_iterator<It>, "This test doesn't support non random access iterators");
   using Difference = std::iter_difference_t<It>;
   Difference const M = (expected - last); // expected travel distance (which is negative)
@@ -115,7 +115,7 @@ struct iota_iterator {
 static_assert(std::bidirectional_iterator<iota_iterator>);
 static_assert(std::sized_sentinel_for<iota_iterator, iota_iterator>);
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   // Basic functionality test: advance forward, bound has the same type

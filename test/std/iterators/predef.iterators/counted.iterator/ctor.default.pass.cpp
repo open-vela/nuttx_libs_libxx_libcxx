@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-constexpr bool test() {
+constexpr static bool test() {
   static_assert(!std::default_initializable<std::counted_iterator<cpp17_input_iterator<int*>>>);
   static_assert( std::default_initializable<std::counted_iterator<forward_iterator<int*>>>);
 

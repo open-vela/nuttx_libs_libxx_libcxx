@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-double fw(double x)
+static double fw(double x)
 {
     return x+1;
 }

@@ -18,7 +18,7 @@
 #include <cstdio>
 #include "check_assertion.h"
 
-void test1() {
+static void test1() {
   std::deque<char> test;
   char buff[100000];
   test.insert(test.begin(), buff, buff + 64000);
@@ -31,7 +31,7 @@ void test1() {
   test.insert(test.begin(), buff, buff + 32000);
 }
 
-void test2() {
+static void test2() {
   std::deque<char> test;
   char buff[100000];
   test.insert(test.end(), buff, buff + 64000);

@@ -25,8 +25,8 @@
 #include "min_allocator.h"
 
 #if TEST_STD_VER >= 11
-std::vector<int> ca_allocs;
-std::vector<int> ca_deallocs;
+static std::vector<int> ca_allocs;
+static std::vector<int> ca_deallocs;
 
 template <class T>
 class counting_allocatorT {

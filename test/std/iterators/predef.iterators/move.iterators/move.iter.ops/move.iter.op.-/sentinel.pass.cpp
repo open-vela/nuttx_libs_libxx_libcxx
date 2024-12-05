@@ -78,7 +78,7 @@ constexpr void test_one() {
   assert(sent_c - it_b == 1);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   test_one<CustomIt>();
   test_one<cpp17_input_iterator<int*>>();
   test_one<forward_iterator<int*>>();

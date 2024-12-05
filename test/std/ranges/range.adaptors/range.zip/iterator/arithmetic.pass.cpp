@@ -33,7 +33,7 @@ concept canPlusEqual = requires(T& t, U& u) { t += u; };
 template <class T, class U>
 concept canMinusEqual = requires(T& t, U& u) { t -= u; };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[5] = {1, 2, 3, 4, 5};
   int buffer2[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 

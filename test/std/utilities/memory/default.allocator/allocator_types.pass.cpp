@@ -40,7 +40,7 @@
 struct U;
 
 template <typename T>
-void test() {
+static void test() {
     typedef std::allocator<T> Alloc;
     static_assert((std::is_same<typename Alloc::size_type, std::size_t>::value), "");
     static_assert((std::is_same<typename Alloc::difference_type, std::ptrdiff_t>::value), "");

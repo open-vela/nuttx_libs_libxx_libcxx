@@ -44,7 +44,7 @@ struct NoConstBeginView : std::ranges::view_base {
   int* end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
   {
     // all underlying iterators should be at the begin position

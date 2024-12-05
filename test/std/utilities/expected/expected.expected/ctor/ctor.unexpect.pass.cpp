@@ -77,7 +77,7 @@ constexpr void testRValue() {
   assert(e.error() == 5);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testInt<int>();
   testInt<CopyOnly>();
   testInt<MoveOnly>();
@@ -113,7 +113,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing(int) { throw Except{}; };

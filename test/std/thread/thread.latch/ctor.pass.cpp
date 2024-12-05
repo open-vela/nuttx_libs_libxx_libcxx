@@ -21,7 +21,7 @@
 
 static_assert(!test_convertible<std::latch, std::ptrdiff_t>(), "This constructor must be explicit");
 
-constexpr bool test() {
+static constexpr bool test() {
   std::latch l(5);
   (void)l;
   return true;

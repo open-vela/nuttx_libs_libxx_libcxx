@@ -34,7 +34,7 @@ struct InputRange {
 static_assert(std::ranges::input_range<InputRange>);
 
 template <class I1, class I2, class ExpectedView, class ExpectedPattern>
-constexpr void test() {
+constexpr static void test() {
   I1 i1{};
   I2 i2{};
 

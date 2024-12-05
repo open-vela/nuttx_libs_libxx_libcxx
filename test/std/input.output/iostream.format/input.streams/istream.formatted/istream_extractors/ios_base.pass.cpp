@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int f_called = 0;
+static int f_called = 0;
 
 std::ios_base&
 f(std::ios_base& is)

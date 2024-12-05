@@ -34,11 +34,11 @@ template <class It>
 struct find_current
     : private std::reverse_iterator<It>
 {
-    void test() { (void)this->current; }
+    static void test() { (void)this->current; }
 };
 
 template <class It>
-void test() {
+static void test() {
   typedef std::reverse_iterator<It> R;
   typedef std::iterator_traits<It> T;
   find_current<It> q; q.test(); // Just test that we can access `.current` from derived classes

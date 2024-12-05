@@ -27,7 +27,7 @@ static_assert( std::is_convertible_v<ConvertibleForwardSubrange, std::tuple<Conv
 static_assert(!std::is_convertible_v<SizedIntPtrSubrange, std::tuple<long*, int*>>);
 static_assert( std::is_convertible_v<SizedIntPtrSubrange, std::tuple<int*, int*>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   ForwardSubrange a(ForwardIter(globalBuff), ForwardIter(globalBuff + 8));
   std::pair<ForwardIter, ForwardIter> aPair = a;
   assert(base(aPair.first) == globalBuff);

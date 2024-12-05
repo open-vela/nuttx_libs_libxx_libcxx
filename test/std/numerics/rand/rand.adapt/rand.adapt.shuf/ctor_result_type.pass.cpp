@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     const char* a = "1771550148 168070 677268843 1194115201 1259501992 "

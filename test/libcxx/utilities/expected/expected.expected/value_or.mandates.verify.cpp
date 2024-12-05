@@ -31,7 +31,7 @@ struct NonMovable {
 
 struct NotConvertibleFromInt {};
 
-void test() {
+static void test() {
   // const & overload
   // !is_copy_constructible_v<T>,
   {

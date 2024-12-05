@@ -49,7 +49,7 @@ void test_signatures() {
   ASSERT_SAME_TYPE(decltype(0 <=> Eq), std::partial_ordering);
 }
 
-constexpr void test_equality() {
+constexpr static void test_equality() {
   auto& PartialEq = std::partial_ordering::equivalent;
   auto& WeakEq = std::weak_ordering::equivalent;
   assert(PartialEq == WeakEq);

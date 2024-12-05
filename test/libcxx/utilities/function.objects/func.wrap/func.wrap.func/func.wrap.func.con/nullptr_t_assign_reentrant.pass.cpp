@@ -19,6 +19,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct A
 {
   static std::function<void()> global;
@@ -46,4 +47,5 @@ extern "C" int main(int, char**)
   RTTI_ASSERT(!A::global.target<A>());
 
   return 0;
+}
 }

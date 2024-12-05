@@ -30,7 +30,7 @@
 #include "test_macros.h"
 
 template <class CharT>
-constexpr void test() {
+constexpr static void test() {
   static_assert(
       std::is_same_v<typename std::basic_format_parse_context<CharT>::char_type,
                      CharT>);
@@ -43,7 +43,7 @@ constexpr void test() {
           typename std::basic_format_parse_context<CharT>::const_iterator>);
 }
 
-constexpr void test() {
+constexpr static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

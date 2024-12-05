@@ -60,7 +60,7 @@ constexpr void compareViews(View v, std::initializer_list<int> list) {
   assert(b2 == e2);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {0, 1, 2, 3, 4, 5, 6, 7};
 
   // Test `views::filter(pred)(v)`

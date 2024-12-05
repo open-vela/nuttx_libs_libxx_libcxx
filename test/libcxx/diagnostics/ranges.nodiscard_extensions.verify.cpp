@@ -12,7 +12,7 @@
 
 #include <algorithm>
 
-void test() {
+static void test() {
   int range[1];
   int* iter = range;
   auto pred = [](auto...) { return true; };

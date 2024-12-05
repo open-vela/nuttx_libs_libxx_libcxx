@@ -42,7 +42,7 @@ static_assert(HasBase<std::ranges::take_while_view<View, Pred>&&>);
 static_assert(!HasBase<std::ranges::take_while_view<MoveOnlyView, Pred> const&>);
 static_assert(HasBase<std::ranges::take_while_view<MoveOnlyView, Pred>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &
   {
     const std::ranges::take_while_view<View, Pred> twv{View{{}, 5}, {}};

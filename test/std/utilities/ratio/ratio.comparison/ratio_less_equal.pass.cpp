@@ -13,7 +13,7 @@
 #include "test_macros.h"
 
 template <class Rat1, class Rat2, bool result>
-void test()
+static void test()
 {
     static_assert((result == std::ratio_less_equal<Rat1, Rat2>::value), "");
 #if TEST_STD_VER > 14

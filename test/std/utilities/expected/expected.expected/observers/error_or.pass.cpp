@@ -54,7 +54,7 @@ constexpr bool test_default_template_arg() {
   return true;
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &, has_value()
   {
     const std::expected<int, int> e(5);

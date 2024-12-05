@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using cf = std::chars_format;
   using ut = std::underlying_type<cf>::type;
 
@@ -59,7 +59,7 @@ constexpr bool test() {
   return true;
 }
 
-std::chars_format x;
+static std::chars_format x;
 static_assert(std::is_same<std::chars_format, decltype(~x)>::value, "");
 static_assert(std::is_same<std::chars_format, decltype(x & x)>::value, "");
 static_assert(std::is_same<std::chars_format, decltype(x | x)>::value, "");

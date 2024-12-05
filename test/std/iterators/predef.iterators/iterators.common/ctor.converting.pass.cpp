@@ -16,7 +16,7 @@
 #include <iterator>
 #include <type_traits>
 
-constexpr bool test()
+constexpr static bool test()
 {
   struct Base {};
   struct Derived : Base {};

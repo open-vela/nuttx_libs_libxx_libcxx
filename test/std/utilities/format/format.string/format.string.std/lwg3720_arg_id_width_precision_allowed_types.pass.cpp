@@ -47,7 +47,7 @@ void test_exception([[maybe_unused]] std::basic_string_view<CharT> fmt, [[maybe_
 }
 
 template <class CharT>
-void test() {
+static void test() {
   // *** Width ***
   test_exception(SV("{:{}}"), 42, true);
   test_exception(SV("{:{}}"), 42, '0');

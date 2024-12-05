@@ -32,7 +32,7 @@ void test_container_iterators(C c)
     assert(std::__to_address(cc.end()) == cc.data() + cc.size());
 }
 
-void test_valarray_iterators()
+static void test_valarray_iterators()
 {
     std::valarray<int> v(100);
     int *p = std::__to_address(std::begin(v));

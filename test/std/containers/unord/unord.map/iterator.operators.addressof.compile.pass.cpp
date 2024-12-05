@@ -21,7 +21,7 @@
 #include "operator_hijacker.h"
 
 template <class ToIterator, class FromIterator>
-void test() {
+static void test() {
   FromIterator from;
   ToIterator copy(from);
   copy = from;
@@ -31,7 +31,7 @@ void test() {
   move = std::move(from);
 }
 
-void test() {
+static void test() {
   {
     using I = std::unordered_map<operator_hijacker, operator_hijacker>::iterator;
     using CI = std::unordered_map<operator_hijacker, operator_hijacker>::const_iterator;

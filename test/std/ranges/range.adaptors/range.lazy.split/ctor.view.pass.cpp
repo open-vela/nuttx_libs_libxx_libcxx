@@ -63,7 +63,7 @@ static_assert( test_convertible<std::ranges::lazy_split_view<View, Pattern>, Vie
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   // Calling the constructor with `(ForwardView, ForwardView)`.
   {
     CopyableView input = "abc def";

@@ -22,7 +22,7 @@ struct Sent {
   friend constexpr bool operator==(std::tuple<int>*, const Sent&) { return true; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using BaseRange = std::ranges::subrange<std::tuple<int>*, Sent>;
   using EleRange  = std::ranges::elements_view<BaseRange, 0>;
   using EleSent   = std::ranges::sentinel_t<EleRange>;

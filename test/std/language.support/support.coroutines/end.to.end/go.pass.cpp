@@ -15,8 +15,9 @@
 
 #include "test_macros.h"
 
-bool cancel = false;
+static bool cancel = false;
 
+namespace {
 struct goroutine
 {
   static int const N = 10;
@@ -55,6 +56,7 @@ int goroutine::count;
 std::coroutine_handle<> goroutine::stack[N];
 
 std::coroutine_handle<goroutine::promise_type> workaround;
+}
 
 class channel;
 

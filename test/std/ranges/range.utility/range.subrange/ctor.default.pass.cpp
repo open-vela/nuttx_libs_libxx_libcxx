@@ -37,7 +37,7 @@ struct Sentinel {
   friend bool operator!=(Sentinel const&, NoDefaultIterator const&);
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     static_assert(!std::is_default_constructible_v<std::ranges::subrange<NoDefaultIterator, Sentinel, std::ranges::subrange_kind::sized>>);
     static_assert(!std::is_default_constructible_v<std::ranges::subrange<NoDefaultIterator, Sentinel, std::ranges::subrange_kind::unsized>>);

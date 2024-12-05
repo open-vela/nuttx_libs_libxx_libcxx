@@ -140,7 +140,7 @@ void test_false()
     static_assert(!std::default_initializable<const volatile T>);
 }
 
-void test()
+static void test()
 {
     test_not_const<bool>();
     test_not_const<char>();

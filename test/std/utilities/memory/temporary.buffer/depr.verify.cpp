@@ -12,7 +12,7 @@
 
 #include <memory>
 
-void test() {
+static void test() {
   auto a = std::get_temporary_buffer<int>(1); // expected-warning {{'get_temporary_buffer<int>' is deprecated}}
   std::return_temporary_buffer(a.first); // expected-warning {{'return_temporary_buffer<int>' is deprecated}}
 }

@@ -17,7 +17,7 @@
 #include <cmath>
 #include "test_macros.h"
 
-void test() {
+static void test() {
   // These tests rely on Clang's behaviour of adding `[[gnu::const]]` to the double overload of most of the functions
   // below.
   // Without that attribute being added implicitly, this test can't be checked consistently because its result depends

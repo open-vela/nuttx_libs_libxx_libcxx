@@ -20,7 +20,7 @@
 #include <string>
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using namespace std::string_literals;
   // Can call `outer-iterator::operator++`; `View` is a forward range.
   {

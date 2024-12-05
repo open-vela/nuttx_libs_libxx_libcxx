@@ -25,7 +25,7 @@ concept can_invoke_r = requires {
     { std::invoke_r<R>(std::declval<F>(), std::declval<Args>()...) } -> std::same_as<R>;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
     // Make sure basic functionality works (i.e. we actually call the function and
     // return the right result).
     {

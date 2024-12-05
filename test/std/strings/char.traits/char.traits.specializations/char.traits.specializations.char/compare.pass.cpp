@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX17 bool test() {
+TEST_CONSTEXPR_CXX17 static bool test() {
   assert(std::char_traits<char>::compare("", "", 0) == 0);
   assert(std::char_traits<char>::compare(NULL, NULL, 0) == 0);
 

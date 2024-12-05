@@ -24,7 +24,7 @@ using ConstIterIncompatibleView = BasicView<forward_iterator<int*>, forward_iter
 static_assert(!std::convertible_to<std::ranges::iterator_t<ConstIterIncompatibleView>,
                                    std::ranges::iterator_t<const ConstIterIncompatibleView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[3] = {1, 2, 3};
 
   {

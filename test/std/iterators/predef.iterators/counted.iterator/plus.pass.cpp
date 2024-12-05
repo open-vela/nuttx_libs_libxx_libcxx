@@ -31,7 +31,7 @@ concept PlusEqEnabled = requires(Iter& iter) {
   iter += 1;
 };
 
-constexpr bool test() {
+constexpr static bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

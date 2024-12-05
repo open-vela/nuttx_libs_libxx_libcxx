@@ -20,7 +20,7 @@
 #include "types.h"
 
 template <class T>
-constexpr void check() {
+constexpr static void check() {
   // non-const version
   {
     std::ranges::__movable_box<T> x(std::in_place, 10);

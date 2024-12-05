@@ -16,10 +16,10 @@ struct Incomplete;
 template<class T> struct Holder { T t; };
 typedef Holder<Incomplete> *Ptr;
 
-Ptr no_args() { return nullptr; }
-Ptr one_arg(Ptr p) { return p; }
-Ptr two_args(Ptr p, Ptr) { return p; }
-Ptr three_args(Ptr p, Ptr, Ptr) { return p; }
+static Ptr no_args() { return nullptr; }
+static Ptr one_arg(Ptr p) { return p; }
+static Ptr two_args(Ptr p, Ptr) { return p; }
+static Ptr three_args(Ptr p, Ptr, Ptr) { return p; }
 
 void one_arg_void(Ptr) { }
 

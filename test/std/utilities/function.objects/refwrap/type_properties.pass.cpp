@@ -39,7 +39,7 @@ public:
 
 
 template <class T>
-void test()
+static void test()
 {
     typedef std::reference_wrapper<T> Wrap;
     static_assert(std::is_copy_constructible<Wrap>::value, "");

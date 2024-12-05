@@ -17,7 +17,7 @@
 #include "test_iterators.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // Test `int`, which has operator<=>; the iota iterator should also have operator<=>.
     using R = std::ranges::iota_view<int>;

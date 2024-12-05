@@ -58,7 +58,7 @@ struct S {
 #include "test_iterators.h"
 #include "counting_predicates.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class Iter>
 void

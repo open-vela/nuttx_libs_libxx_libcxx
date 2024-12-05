@@ -22,7 +22,7 @@
 #include "common.h"
 #include "test_allocator.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   Alloc a(12);
   {
     auto* ptr                             = std::allocator<UsesAllocArgT>{}.allocate(1);

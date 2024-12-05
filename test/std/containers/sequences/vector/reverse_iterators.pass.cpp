@@ -22,7 +22,7 @@
 #include "min_allocator.h"
 
 template <class Vector>
-TEST_CONSTEXPR_CXX20 void check_vector_reverse_iterators() {
+TEST_CONSTEXPR_CXX20 static void check_vector_reverse_iterators() {
     {
         Vector vec;
         assert(vec.rbegin() == vec.rend());

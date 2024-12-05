@@ -58,7 +58,7 @@ static_assert( test_convertible<std::ranges::split_view<View, Pattern>, View, Pa
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::string_view input = "abc def";
     std::ranges::lazy_split_view<std::string_view, std::string_view> v(input, " ");

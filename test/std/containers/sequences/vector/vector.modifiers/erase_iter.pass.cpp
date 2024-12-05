@@ -43,7 +43,6 @@ struct Throws {
   static bool sThrows;
 };
 
-bool Throws::sThrows = false;
 #endif
 
 TEST_CONSTEXPR_CXX20 bool tests() {

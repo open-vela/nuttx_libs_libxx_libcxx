@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-TEST_CONSTEXPR_CXX20 int sign(int x)
+TEST_CONSTEXPR_CXX20 static int sign(int x)
 {
     if (x == 0)
         return 0;
@@ -33,7 +33,7 @@ test(const S& s, SV sv, int x)
     assert(sign(s.compare(sv)) == sign(x));
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     typedef std::string_view SV;

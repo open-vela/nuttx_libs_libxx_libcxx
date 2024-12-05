@@ -26,7 +26,7 @@ test()
     assert(abs(z) == 5);
 }
 
-void test_edges()
+static void test_edges()
 {
     const unsigned N = sizeof(testcases) / sizeof(testcases[0]);
     for (unsigned i = 0; i < N; ++i)

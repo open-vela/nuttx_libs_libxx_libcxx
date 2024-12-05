@@ -22,7 +22,7 @@ constexpr void CreateTuple(std::index_sequence<I...>) {
   assert(std::get<sizeof...(I)-1>(tuple) == sizeof...(I)-1);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   CreateTuple(std::make_index_sequence<1024>{});
   return true;
 }

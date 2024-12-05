@@ -22,7 +22,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using day = std::chrono::day;
 
   // Validate invalid values. The range [0, 255] is guaranteed to be allowed.

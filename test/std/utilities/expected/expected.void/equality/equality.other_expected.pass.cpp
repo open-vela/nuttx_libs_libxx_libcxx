@@ -31,7 +31,7 @@ static_assert(CanCompare<std::expected<void, int>, std::expected<void, short>>);
 // Note this is true because other overloads in expected<non-void> are unconstrained
 static_assert(CanCompare<std::expected<void, int>, std::expected<int, int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // x.has_value() && y.has_value()
   {
     const std::expected<void, int> e1;

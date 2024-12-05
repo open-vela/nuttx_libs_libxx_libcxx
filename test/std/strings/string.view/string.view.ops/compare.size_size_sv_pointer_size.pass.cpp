@@ -20,10 +20,10 @@
 #include "test_macros.h"
 #include "constexpr_char_traits.h"
 
-int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
+static int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
 
 template<typename CharT>
-void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
+static void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
              const CharT *s2, std::size_t n2, int expected ) {
 #ifdef TEST_HAS_NO_EXCEPTIONS
     if (pos1 <= sv1.size())
@@ -41,7 +41,7 @@ void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
 
 
 template<typename CharT>
-void test ( const CharT *s1, std::size_t pos1, size_t n1,
+static void test ( const CharT *s1, std::size_t pos1, size_t n1,
             const CharT *s2, std::size_t n2,
             int expected ) {
     typedef std::basic_string_view<CharT> string_view_t;
@@ -50,7 +50,7 @@ void test ( const CharT *s1, std::size_t pos1, size_t n1,
 }
 
 
-void test0()
+static void test0()
 {
     test("", 0, 0, "", 0, 0);
     test("", 0, 0, "abcde", 0, 0);
@@ -155,7 +155,7 @@ void test0()
 }
 
 
-void test1()
+static void test1()
 {
     test("abcde", 0, 4, "abcde", 4, 0);
     test("abcde", 0, 4, "abcde", 5, -1);
@@ -260,7 +260,7 @@ void test1()
 }
 
 
-void test2()
+static void test2()
 {
     test("abcde", 1, 3, "abcdefghij", 5, 1);
     test("abcde", 1, 3, "abcdefghij", 9, 1);
@@ -365,7 +365,7 @@ void test2()
 }
 
 
-void test3()
+static void test3()
 {
     test("abcde", 2, 3, "abcdefghijklmnopqrst", 1, 2);
     test("abcde", 2, 3, "abcdefghijklmnopqrst", 10, 2);
@@ -470,7 +470,7 @@ void test3()
 }
 
 
-void test4()
+static void test4()
 {
     test("abcde", 6, 0, "", 0, 0);
     test("abcde", 6, 0, "abcde", 0, 0);
@@ -575,7 +575,7 @@ void test4()
 }
 
 
-void test5()
+static void test5()
 {
     test("abcdefghij", 0, 11, "abcde", 4, 6);
     test("abcdefghij", 0, 11, "abcde", 5, 5);
@@ -680,7 +680,7 @@ void test5()
 }
 
 
-void test6()
+static void test6()
 {
     test("abcdefghij", 1, 10, "abcdefghij", 5, 1);
     test("abcdefghij", 1, 10, "abcdefghij", 9, 1);
@@ -785,7 +785,7 @@ void test6()
 }
 
 
-void test7()
+static void test7()
 {
     test("abcdefghij", 5, 6, "abcdefghijklmnopqrst", 1, 5);
     test("abcdefghij", 5, 6, "abcdefghijklmnopqrst", 10, 5);
@@ -889,7 +889,7 @@ void test7()
     test("abcdefghij", 11, 0, "abcdefghijklmnopqrst", 20, 0);
 }
 
-void test8()
+static void test8()
 {
     test("abcdefghijklmnopqrst", 0, 0, "", 0, 0);
     test("abcdefghijklmnopqrst", 0, 0, "abcde", 0, 0);
@@ -994,7 +994,7 @@ void test8()
 }
 
 
-void test9()
+static void test9()
 {
     test("abcdefghijklmnopqrst", 1, 0, "abcde", 4, -4);
     test("abcdefghijklmnopqrst", 1, 0, "abcde", 5, -5);
@@ -1099,7 +1099,7 @@ void test9()
 }
 
 
-void test10()
+static void test10()
 {
     test("abcdefghijklmnopqrst", 10, 0, "abcdefghij", 5, -5);
     test("abcdefghijklmnopqrst", 10, 0, "abcdefghij", 9, -9);
@@ -1204,7 +1204,7 @@ void test10()
 }
 
 
-void test11()
+static void test11()
 {
     test("abcdefghijklmnopqrst", 19, 0, "abcdefghijklmnopqrst", 1, -1);
     test("abcdefghijklmnopqrst", 19, 0, "abcdefghijklmnopqrst", 10, -10);

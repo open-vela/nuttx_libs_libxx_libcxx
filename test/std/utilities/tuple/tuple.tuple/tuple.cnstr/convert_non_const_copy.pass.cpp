@@ -44,7 +44,7 @@ static_assert(!std::is_convertible_v<std::tuple<MutableCopy>&, std::tuple<Explic
 static_assert(!std::is_convertible_v<std::tuple<MutableCopy, MutableCopy>&,
                                      std::tuple<ConvertibleFrom<MutableCopy>, ExplicitConstructibleFrom<MutableCopy>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   // sizeof...(Types) == 1
   {

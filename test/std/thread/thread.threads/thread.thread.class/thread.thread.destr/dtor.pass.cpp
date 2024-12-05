@@ -43,10 +43,7 @@ public:
     }
 };
 
-int G::n_alive = 0;
-bool G::op_run = false;
-
-void f1()
+static void f1()
 {
     std::_Exit(0);
 }

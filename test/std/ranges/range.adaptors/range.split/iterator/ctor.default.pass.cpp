@@ -19,7 +19,7 @@ struct PODIter : ForwardIterBase<PODIter> {
   int i;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using SplitView = std::ranges::split_view<std::ranges::subrange<PODIter>, std::ranges::subrange<PODIter>>;
   using SplitIter = std::ranges::iterator_t<SplitView>;
   {

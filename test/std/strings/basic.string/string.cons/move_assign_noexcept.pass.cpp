@@ -62,7 +62,7 @@ struct some_alloc3
     typedef std::false_type is_always_equal;
 };
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string C;
     static_assert(std::is_nothrow_move_assignable<C>::value, "");

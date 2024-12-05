@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test()
+constexpr static bool test()
 {
     using S = std::string;
     using SV = std::string_view;

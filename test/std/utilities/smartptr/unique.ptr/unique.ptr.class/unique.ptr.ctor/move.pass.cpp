@@ -72,7 +72,7 @@ void sink3(std::unique_ptr<VT, NCDeleter<VT>&> p) {
 }
 
 template <class ValueT>
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
   typedef std::unique_ptr<ValueT> U;
   { // Ensure unique_ptr is non-copyable
     static_assert((!std::is_constructible<U, U const&>::value), "");

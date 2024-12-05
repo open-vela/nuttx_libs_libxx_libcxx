@@ -26,7 +26,7 @@ static_assert( noexcept(std::declval<InnerIterInput&>().base()));
 static_assert( noexcept(std::declval<InnerIterInput const &>().base()));
 static_assert( noexcept(std::declval<InnerIterInput const &&>().base()));
 
-constexpr bool test() {
+static constexpr bool test() {
   // `base` works with a forward view (two different overloads based on ref-qualification of the `inner-iterator`).
   {
     using BaseIter = std::ranges::iterator_t<CopyableView>;

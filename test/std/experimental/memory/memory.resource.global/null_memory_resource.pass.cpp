@@ -39,7 +39,7 @@ protected:
     { assert(false); return false; }
 };
 
-void test_return()
+static void test_return()
 {
     {
         static_assert(std::is_same<
@@ -56,7 +56,7 @@ void test_return()
     }
 }
 
-void test_equality()
+static void test_equality()
 {
     // Same object
     {

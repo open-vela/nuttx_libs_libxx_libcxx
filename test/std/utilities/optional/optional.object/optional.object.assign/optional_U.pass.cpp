@@ -25,6 +25,7 @@
 
 using std::optional;
 
+namespace {
 struct X
 {
     static bool throw_now;
@@ -55,6 +56,7 @@ struct Y2
 
 struct B { virtual ~B() = default; };
 class D : public B {};
+}
 
 
 template <class T>
@@ -86,7 +88,7 @@ template <class T> int AssignableFrom<T>::type_assigned = 0;
 template <class T> int AssignableFrom<T>::int_constructed = 0;
 template <class T> int AssignableFrom<T>::int_assigned = 0;
 
-void test_with_test_type() {
+static void test_with_test_type() {
     using T = TestTypes::TestType;
     T::reset();
     { // non-empty to empty

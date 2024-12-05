@@ -21,7 +21,7 @@
 #include "../types.h"
 
 template <class Iterator, bool HasNoexceptIterMove>
-constexpr void test() {
+constexpr static void test() {
   using Sentinel = sentinel_wrapper<Iterator>;
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, AlwaysTrue>;

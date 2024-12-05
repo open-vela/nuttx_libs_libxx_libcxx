@@ -35,7 +35,7 @@ struct CustomEquality {
   friend constexpr bool operator<(int, const CustomEquality&) noexcept { return false; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Empty tuple
   {
     typedef std::tuple<> T0;

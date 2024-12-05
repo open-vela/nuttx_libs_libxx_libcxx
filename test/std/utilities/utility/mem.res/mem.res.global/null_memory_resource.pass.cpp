@@ -37,7 +37,7 @@ struct assert_on_compare : public std::pmr::memory_resource {
   }
 };
 
-void test_return() {
+static void test_return() {
   { ASSERT_SAME_TYPE(decltype(std::pmr::null_memory_resource()), std::pmr::memory_resource*); }
   // Test that the returned value is not null
   { assert(std::pmr::null_memory_resource()); }
@@ -45,7 +45,7 @@ void test_return() {
   { assert(std::pmr::null_memory_resource() == std::pmr::null_memory_resource()); }
 }
 
-void test_equality() {
+static void test_equality() {
   // Same object
   {
     std::pmr::memory_resource& r1 = *std::pmr::null_memory_resource();
@@ -72,7 +72,7 @@ void test_equality() {
   }
 }
 
-void test_allocate() {
+static void test_allocate() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   DisableAllocationGuard g; // null_memory_resource shouldn't allocate.
   try {
@@ -86,7 +86,7 @@ void test_allocate() {
 #endif
 }
 
-void test_deallocate() {
+static void test_deallocate() {
   globalMemCounter.reset();
 
   int x = 42;

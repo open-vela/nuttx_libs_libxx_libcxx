@@ -21,7 +21,7 @@
 // - different kinds of assignments (assigning an {empty/one-element/mid-sized/long range} to an
 //   {empty/one-element/full} container);
 // - an exception is thrown when allocating new elements.
-constexpr bool test() {
+static constexpr bool test() {
   static_assert(test_constraints_assign_range<std::vector, bool, char>());
 
   for_all_iterators_and_allocators<bool, const int*>([]<class Iter, class Sent, class Alloc>() {

@@ -57,7 +57,7 @@ static_assert( test_convertible<std::ranges::filter_view<Range, Pred>, Range, Pr
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // Test explicit syntax

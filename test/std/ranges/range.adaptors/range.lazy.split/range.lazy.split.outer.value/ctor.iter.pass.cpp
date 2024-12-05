@@ -19,7 +19,7 @@
 static_assert(!std::is_convertible_v<OuterIterForward, ValueTypeForward>);
 static_assert(!std::is_convertible_v<OuterIterInput, ValueTypeInput>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // `View` is a forward range.
   {
     CopyableView input = "a";

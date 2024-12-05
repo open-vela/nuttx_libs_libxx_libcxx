@@ -58,7 +58,7 @@ constexpr void testOne() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   using Ptr = std::tuple<int>*;
   testOne<cpp20_input_iterator<Ptr>>();
   testOne<forward_iterator<Ptr>>();

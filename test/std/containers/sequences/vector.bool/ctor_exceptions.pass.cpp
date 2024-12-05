@@ -72,7 +72,7 @@ struct Iterator {
   }
 };
 
-void check_new_delete_called() {
+static void check_new_delete_called() {
   assert(globalMemCounter.new_called == globalMemCounter.delete_called);
   assert(globalMemCounter.new_array_called == globalMemCounter.delete_array_called);
   assert(globalMemCounter.aligned_new_called == globalMemCounter.aligned_delete_called);

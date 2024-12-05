@@ -223,14 +223,14 @@ void test_ldexp() {
     assert(ldexp(1, ip) == 2);
 }
 
-void test_log() {
+static void test_log() {
     ASSERT_SAME_TYPE(decltype(logf(0)), float);
     ASSERT_SAME_TYPE(decltype(logl(0)), long double);
     ASSERT_SAME_TYPE(decltype(log(Ambiguous())), Ambiguous);
     assert(log(1) == 0);
 }
 
-void test_log10() {
+static void test_log10() {
     ASSERT_SAME_TYPE(decltype(log10f(0)), float);
     ASSERT_SAME_TYPE(decltype(log10l(0)), long double);
     ASSERT_SAME_TYPE(decltype(log10(Ambiguous())), Ambiguous);
@@ -567,21 +567,21 @@ void test_llround() {
     assert(llround(1) == 1LL);
 }
 
-void test_log1p() {
+static void test_log1p() {
     ASSERT_SAME_TYPE(decltype(log1pf(0)), float);
     ASSERT_SAME_TYPE(decltype(log1pl(0)), long double);
     ASSERT_SAME_TYPE(decltype(log1p(Ambiguous())), Ambiguous);
     assert(log1p(0) == 0);
 }
 
-void test_log2() {
+static void test_log2() {
     ASSERT_SAME_TYPE(decltype(log2f(0)), float);
     ASSERT_SAME_TYPE(decltype(log2l(0)), long double);
     ASSERT_SAME_TYPE(decltype(log2(Ambiguous())), Ambiguous);
     assert(log2(1) == 0);
 }
 
-void test_logb() {
+static void test_logb() {
     ASSERT_SAME_TYPE(decltype(logbf(0)), float);
     ASSERT_SAME_TYPE(decltype(logbl(0)), long double);
     ASSERT_SAME_TYPE(decltype(logb(Ambiguous())), Ambiguous);

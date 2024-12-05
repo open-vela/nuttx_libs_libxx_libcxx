@@ -34,7 +34,7 @@ static_assert(DerefNoexcept<const std::expected<int, int>&>);
 static_assert(DerefNoexcept<std::expected<int, int>&&>);
 static_assert(DerefNoexcept<const std::expected<int, int>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // non-const &
   {
     std::expected<int, int> e(5);

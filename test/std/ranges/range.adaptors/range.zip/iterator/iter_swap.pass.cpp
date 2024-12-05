@@ -23,7 +23,7 @@ struct ThrowingMove {
   ThrowingMove& operator=(ThrowingMove&&){return *this;}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::array a1{1, 2, 3, 4};
     std::array a2{0.1, 0.2, 0.3};

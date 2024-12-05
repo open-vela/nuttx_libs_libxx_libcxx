@@ -202,7 +202,7 @@ void testNotValueInitialized() {
   }
 }
 
-void test() {
+static void test() {
   testTypeWithDefaultCtor();
   testAllocatorOperationsCalled();
   testNotValueInitialized();

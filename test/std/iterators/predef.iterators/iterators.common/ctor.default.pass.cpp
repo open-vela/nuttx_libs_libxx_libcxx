@@ -15,7 +15,7 @@
 
 #include "test_iterators.h"
 
-constexpr bool test()
+constexpr static bool test()
 {
   {
     using It = cpp17_input_iterator<int*>;

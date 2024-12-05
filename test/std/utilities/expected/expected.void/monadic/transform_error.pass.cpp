@@ -119,7 +119,7 @@ constexpr void test_direct_non_list_init() {
   assert(nv.error().value == 2);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_fail();
   test_val_types();
   test_direct_non_list_init();

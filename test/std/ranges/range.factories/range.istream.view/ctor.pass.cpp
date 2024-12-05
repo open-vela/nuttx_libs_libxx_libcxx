@@ -28,7 +28,7 @@ static_assert(!std::convertible_to<std::wistream&, std::ranges::wistream_view<in
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   // test constructor init the stream pointer to the passed one
   {
     auto iss = make_string_stream<CharT>("123");

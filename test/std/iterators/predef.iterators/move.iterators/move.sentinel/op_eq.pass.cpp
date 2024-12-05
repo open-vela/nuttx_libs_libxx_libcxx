@@ -56,7 +56,7 @@ constexpr void test_one() {
   static_assert(!HasLess<decltype(sent1), decltype(sent1)>);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   test_one<cpp17_input_iterator<char*>>();
   test_one<cpp20_input_iterator<char*>>();
   test_one<forward_iterator<char*>>();

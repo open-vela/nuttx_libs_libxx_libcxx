@@ -24,7 +24,7 @@
 #include <ranges>
 #include <type_traits>
 
-constexpr bool test() {
+static constexpr bool test() {
   // unbound
   {
     using Iter = std::ranges::iterator_t<std::ranges::repeat_view<int>>;

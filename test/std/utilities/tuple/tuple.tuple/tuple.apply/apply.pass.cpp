@@ -128,7 +128,7 @@ struct TrackedCallable {
 };
 
 template <class ...ExpectArgs, class Tuple>
-void check_apply_quals_and_types(Tuple&& t) {
+static void check_apply_quals_and_types(Tuple&& t) {
     TypeID const* const expect_args = &makeArgumentID<ExpectArgs...>();
     TrackedCallable obj;
     TrackedCallable const& cobj = obj;
@@ -184,7 +184,7 @@ struct TestNoexceptCallable {
   NothrowMoveable operator()(Args...) const noexcept(IsNoexcept) { return {}; }
 };
 
-void test_noexcept()
+static void test_noexcept()
 {
     TestNoexceptCallable<true> nec;
     TestNoexceptCallable<false> tc;
@@ -229,7 +229,7 @@ namespace ReturnTypeTest {
     int const volatile * f(index<13>) { return static_cast<int const volatile *>(&my_int); }
 
     template <int Func, class Expect>
-    void test()
+    static void test()
     {
         using RawInvokeResult = decltype(f(index<Func>{}));
         static_assert(std::is_same<RawInvokeResult, Expect>::value, "");
@@ -241,7 +241,7 @@ namespace ReturnTypeTest {
     }
 } // end namespace ReturnTypeTest
 
-void test_return_type()
+static void test_return_type()
 {
     using ReturnTypeTest::test;
     test<0, void>();

@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     typedef std::fisher_f_distribution<> D;

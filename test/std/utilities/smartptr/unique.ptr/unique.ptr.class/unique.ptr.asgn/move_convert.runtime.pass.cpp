@@ -33,7 +33,7 @@ void testAssign(APtr& aptr, BPtr& bptr) {
 }
 
 template <class LHS, class RHS>
-void checkDeleter(LHS& lhs, RHS& rhs, int LHSState, int RHSState) {
+static void checkDeleter(LHS& lhs, RHS& rhs, int LHSState, int RHSState) {
   assert(lhs.get_deleter().state() == LHSState);
   assert(rhs.get_deleter().state() == RHSState);
 }
@@ -74,7 +74,7 @@ struct NCGenericDeleter {
   void operator()(void*) const {}
 };
 
-void test_sfinae() {
+static void test_sfinae() {
   using DA = NCConvertingDeleter<A[]>;        // non-copyable deleters
   using DAC = NCConvertingDeleter<const A[]>; // non-copyable deleters
 

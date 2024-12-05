@@ -24,7 +24,7 @@
 // - inserting move-only elements;
 // - an exception is thrown when copying the elements or when allocating new elements.
 
-constexpr bool test() {
+static constexpr bool test() {
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {
     test_sequence_insert_range<std::vector<int, Alloc>, Iter, Sent>([](auto&& c) {
       LIBCPP_ASSERT(c.__invariants());

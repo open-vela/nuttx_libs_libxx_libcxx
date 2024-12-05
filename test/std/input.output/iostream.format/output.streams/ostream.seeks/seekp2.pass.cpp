@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int seekoff_called = 0;
+static int seekoff_called = 0;
 
 template <class CharT>
 struct testbuf

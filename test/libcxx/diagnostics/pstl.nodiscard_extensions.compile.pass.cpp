@@ -19,7 +19,7 @@
 #include <execution>
 #include <iterator>
 
-void test() {
+static void test() {
   int a[] = {1};
   auto pred = [](auto) { return false; };
   std::all_of(std::execution::par, std::begin(a), std::end(a), pred);

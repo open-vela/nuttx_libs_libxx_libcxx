@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[8] = {0, 1, 2, 3, 4, 5, 6, 7};
   std::ranges::transform_view transformView1(MoveOnlyView{buff}, PlusOneMutable{});
   auto iter1 = std::move(transformView1).begin() + 1;

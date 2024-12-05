@@ -59,7 +59,7 @@ static_assert(!HasFindR<InputRangeNotSentinelEqualityComparableWith, int>);
 static std::vector<int> comparable_data;
 
 template <class It, class Sent = It>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   using ValueT = std::iter_value_t<It>;
   { // simple test
     {
@@ -117,7 +117,7 @@ public:
   bool operator==(const TriviallyComparable&) const = default;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   types::for_each(types::type_list<char, wchar_t, int, long, TriviallyComparable<char>, TriviallyComparable<wchar_t>>{},
                   []<class T> {
                     types::for_each(types::cpp20_input_iterator_list<T*>{}, []<class Iter> {

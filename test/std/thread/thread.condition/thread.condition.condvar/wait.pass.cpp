@@ -22,13 +22,13 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-void f()
+static void f()
 {
     std::unique_lock<std::mutex> lk(mut);
     assert(test2 == 0);

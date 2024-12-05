@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::knuth_b e1;

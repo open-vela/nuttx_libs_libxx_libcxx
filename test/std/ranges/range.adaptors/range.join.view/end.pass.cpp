@@ -48,7 +48,7 @@ struct ConstNotRange : std::ranges::view_base {
   const ChildView* end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[4][4] = {{1111, 2222, 3333, 4444}, {555, 666, 777, 888}, {99, 1010, 1111, 1212}, {13, 14, 15, 16}};
 
   {

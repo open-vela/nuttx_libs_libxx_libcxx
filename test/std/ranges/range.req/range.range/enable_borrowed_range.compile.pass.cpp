@@ -30,7 +30,7 @@
 
 struct S {};
 
-void test() {
+static void test() {
   using std::ranges::enable_borrowed_range;
   static_assert(!enable_borrowed_range<char>);
   static_assert(!enable_borrowed_range<int>);

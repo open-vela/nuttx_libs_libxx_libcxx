@@ -19,7 +19,7 @@ struct Error {
   constexpr Error(Error&& other) : i(other.i) {other.i = 0;}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::unexpected<Error> unex(5);
   auto unex2 = std::move(unex);
   assert(unex2.error().i == 5);

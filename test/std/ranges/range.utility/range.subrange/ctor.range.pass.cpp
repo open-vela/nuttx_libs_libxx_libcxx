@@ -25,7 +25,7 @@ static_assert( std::is_constructible_v<ConvertibleForwardSubrange, ConvertibleFo
 static_assert( std::is_constructible_v<DifferentSentinelSubrange, ForwardBorrowedRangeDifferentSentinel>);
 static_assert( std::is_constructible_v<DifferentSentinelWithSizeMemberSubrange, DifferentSentinelWithSizeMember>);
 
-constexpr bool test() {
+static constexpr bool test() {
   ForwardSubrange a{ForwardBorrowedRange()};
   assert(base(a.begin()) == globalBuff);
   assert(base(a.end()) == globalBuff + 8);

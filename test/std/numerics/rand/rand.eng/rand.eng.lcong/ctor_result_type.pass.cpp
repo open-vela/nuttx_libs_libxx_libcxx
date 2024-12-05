@@ -36,7 +36,7 @@ std::string to_string(T const& e) {
 }
 
 template <class T>
-void
+static void
 test1()
 {
     // c % m != 0 && s % m != 0
@@ -58,7 +58,7 @@ test1()
 }
 
 template <class T>
-void
+static void
 test2()
 {
     // c % m != 0 && s % m == 0
@@ -80,7 +80,7 @@ test2()
 }
 
 template <class T>
-void
+static void
 test3()
 {
     // c % m == 0 && s % m != 0
@@ -102,7 +102,7 @@ test3()
 }
 
 template <class T>
-void
+static void
 test4()
 {
     // c % m == 0 && s % m == 0

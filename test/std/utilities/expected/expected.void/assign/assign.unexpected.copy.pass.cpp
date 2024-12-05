@@ -61,7 +61,7 @@ static_assert(
 static_assert(
     !std::is_assignable_v<std::expected<void, NotCopyAssignable>&, const std::unexpected<NotCopyAssignable>&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // - If has_value() is true, equivalent to:
   //   construct_at(addressof(unex), std::forward<GF>(e.error()));
   //   has_val = false;
@@ -96,7 +96,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   std::expected<void, ThrowOnCopyConstruct> e1(std::in_place);
   std::unexpected<ThrowOnCopyConstruct> un(std::in_place);

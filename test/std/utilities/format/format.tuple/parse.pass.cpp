@@ -45,7 +45,7 @@ constexpr void test(StringViewT fmt, std::size_t offset) {
 }
 
 template <class CharT, class Arg>
-constexpr void test() {
+constexpr static void test() {
   test<Arg>(SV(""), 0);
   test<Arg>(SV("42"), 0);
 
@@ -54,14 +54,14 @@ constexpr void test() {
 }
 
 template <class CharT>
-constexpr void test() {
+constexpr static void test() {
   test<CharT, std::tuple<int>>();
   test<CharT, std::tuple<int, CharT>>();
   test<CharT, std::pair<int, CharT>>();
   test<CharT, std::tuple<int, CharT, bool>>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // When "_Start" is signed integer like.
   {
     std::ranges::iota_view<int> io(0);

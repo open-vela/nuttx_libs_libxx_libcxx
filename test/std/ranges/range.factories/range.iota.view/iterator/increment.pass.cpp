@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::iota_view<int> io(0);
     auto iter1 = io.begin();

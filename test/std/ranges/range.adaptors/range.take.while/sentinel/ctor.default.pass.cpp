@@ -24,7 +24,7 @@ struct Range : std::ranges::view_base {
   Sent end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using R        = std::ranges::take_while_view<Range, bool (*)(int)>;
     using Sentinel = std::ranges::sentinel_t<R>;

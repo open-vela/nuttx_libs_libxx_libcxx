@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     typedef std::ranlux24_base E;
@@ -34,7 +34,7 @@ test1()
     assert(e1 == e2);
 }
 
-void
+static void
 test2()
 {
     typedef std::ranlux48_base E;

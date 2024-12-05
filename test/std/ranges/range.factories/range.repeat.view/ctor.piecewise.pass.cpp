@@ -78,7 +78,7 @@ static_assert(!std::constructible_from<std::ranges::repeat_view<A>,
 static_assert(
     !std::constructible_from<std::ranges::repeat_view<A>, std::piecewise_construct_t, std::tuple<B>, std::tuple<int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::repeat_view<A, int> rv(std::piecewise_construct, std::tuple{}, std::tuple{3});
     assert(rv.size() == 3);

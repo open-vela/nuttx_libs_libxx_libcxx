@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::transform_view<MoveOnlyView, PlusOne> transformView;
   auto iter = std::move(transformView).begin();
   assert((++iter).base() == globalBuff + 1);

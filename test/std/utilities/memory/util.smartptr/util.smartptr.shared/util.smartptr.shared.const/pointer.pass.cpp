@@ -16,6 +16,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct A
 {
     static int count;
@@ -26,6 +27,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 struct Derived : A {};
 

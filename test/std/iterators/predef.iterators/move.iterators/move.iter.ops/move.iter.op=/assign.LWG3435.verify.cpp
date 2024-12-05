@@ -19,7 +19,7 @@
 struct Base { };
 struct Derived : Base { };
 
-void test() {
+static void test() {
     std::move_iterator<Base*> base;
     std::move_iterator<Derived*> derived;
     derived = base; // expected-error {{no viable overloaded '='}}

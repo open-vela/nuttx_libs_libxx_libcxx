@@ -25,7 +25,7 @@ concept CanCallEquals = requires(const Iter& i) {
   i != i;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Forward range supports both overloads of `operator==`.
   {
     // outer-iterator == outer-iterator

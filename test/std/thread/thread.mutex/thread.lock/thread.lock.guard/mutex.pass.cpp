@@ -24,9 +24,9 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::mutex m;
+static std::mutex m;
 
-void do_try_lock() {
+static void do_try_lock() {
   assert(m.try_lock() == false);
 }
 

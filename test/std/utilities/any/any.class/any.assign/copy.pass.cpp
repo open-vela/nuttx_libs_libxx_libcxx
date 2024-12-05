@@ -89,7 +89,7 @@ void test_copy_assign_empty() {
     assert(LHS::count == 0);
 }
 
-void test_copy_assign_self() {
+static void test_copy_assign_self() {
     // empty
     {
         std::any a;

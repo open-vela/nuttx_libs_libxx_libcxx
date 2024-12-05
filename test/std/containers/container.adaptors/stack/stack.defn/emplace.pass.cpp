@@ -23,7 +23,7 @@
 #include "../../../Emplaceable.h"
 
 template <typename Stack>
-void test_return_type() {
+static void test_return_type() {
     typedef typename Stack::container_type Container;
     typedef typename Container::value_type value_type;
     typedef decltype(std::declval<Stack>().emplace(std::declval<value_type &>()))     stack_return_type;

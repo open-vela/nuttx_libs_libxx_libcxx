@@ -13,7 +13,7 @@
 #include <ranges>
 #include <type_traits>
 
-constexpr bool test() {
+static constexpr bool test() {
   using Iter = std::ranges::iterator_t<std::ranges::repeat_view<int>>;
   static_assert(std::is_default_constructible_v<Iter>);
   [[maybe_unused]] Iter iter;

@@ -25,7 +25,7 @@ struct mutex
     void unlock() {}
 };
 
-mutex m;
+static mutex m;
 
 extern "C" int main(int, char**)
 {

@@ -25,7 +25,7 @@
 
 template <class It>
 TEST_CONSTEXPR_CXX17
-void check_distance(It first, It last, typename std::iterator_traits<It>::difference_type dist)
+static void check_distance(It first, It last, typename std::iterator_traits<It>::difference_type dist)
 {
     typedef typename std::iterator_traits<It>::difference_type Difference;
     static_assert(std::is_same<decltype(std::distance(first, last)), Difference>::value, "");

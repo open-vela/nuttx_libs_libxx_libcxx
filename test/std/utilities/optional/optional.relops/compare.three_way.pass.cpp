@@ -22,7 +22,7 @@
 
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::optional<int> op1;
     std::optional<int> op2;

@@ -18,7 +18,7 @@
 template<class T>
 concept EndIsIter = requires(T t) { ++t.end(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::transform_view<SizedSentinelView, PlusOne> transformView1;
   // Going to const and back.
   auto sent1 = transformView1.end();

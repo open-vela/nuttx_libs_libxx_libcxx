@@ -26,7 +26,7 @@
 
 using namespace fs;
 
-recursive_directory_iterator createInterestingIterator(const static_test_env &static_env)
+static recursive_directory_iterator createInterestingIterator(const static_test_env &static_env)
     // Create an "interesting" iterator where all fields are
     // in a non-default state. The returned 'it' is in a
     // state such that:
@@ -49,7 +49,7 @@ recursive_directory_iterator createInterestingIterator(const static_test_env &st
 }
 
 
-recursive_directory_iterator createDifferentInterestingIterator(const static_test_env &static_env)
+static recursive_directory_iterator createDifferentInterestingIterator(const static_test_env &static_env)
     // Create an "interesting" iterator where all fields are
     // in a non-default state. The returned 'it' is in a
     // state such that:

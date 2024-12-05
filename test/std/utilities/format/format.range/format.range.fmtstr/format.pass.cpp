@@ -53,7 +53,7 @@ void test_fmt() {
   test_format(SV("hello"), test_range_format_debug_string<std::basic_string<CharT>>{STR("hello")});
 }
 
-void test() {
+static void test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

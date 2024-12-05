@@ -47,6 +47,7 @@ struct MoveOnlyNT {
   MoveOnlyNT &operator=(const MoveOnlyNT &) = default;
 };
 
+namespace {
 struct CopyAssign {
   static int alive;
   static int copy_construct;
@@ -86,6 +87,7 @@ int CopyAssign::copy_construct = 0;
 int CopyAssign::copy_assign = 0;
 int CopyAssign::move_construct = 0;
 int CopyAssign::move_assign = 0;
+}
 
 struct CopyMaybeThrows {
   CopyMaybeThrows(const CopyMaybeThrows &);
@@ -145,6 +147,7 @@ struct CopyThrows {
   CopyThrows &operator=(const CopyThrows &) { throw 42; }
 };
 
+namespace {
 struct CopyCannotThrow {
   static int alive;
   CopyCannotThrow() { ++alive; }
@@ -183,6 +186,7 @@ struct MakeEmptyT {
 };
 
 int MakeEmptyT::alive = 0;
+}
 
 template <class Variant> void makeEmpty(Variant &v) {
   Variant v2(std::in_place_type<MakeEmptyT>);

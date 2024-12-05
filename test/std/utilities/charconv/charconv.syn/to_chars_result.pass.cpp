@@ -26,7 +26,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::to_chars_result lhs{nullptr, std::errc{}};
 #if TEST_STD_VER > 17
   std::to_chars_result rhs{nullptr, std::errc{}};

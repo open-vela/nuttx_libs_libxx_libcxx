@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void test() {
+static void test() {
   static_assert(std::ranges::enable_borrowed_range<std::span<int, 0> >);
   static_assert(std::ranges::enable_borrowed_range<std::span<int, 42> >);
   static_assert(std::ranges::enable_borrowed_range<std::span<int, std::dynamic_extent> >);

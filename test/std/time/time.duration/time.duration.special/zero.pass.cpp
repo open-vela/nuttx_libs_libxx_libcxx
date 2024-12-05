@@ -19,7 +19,7 @@
 #include "../../rep.h"
 
 template <class D>
-void test()
+static void test()
 {
     LIBCPP_ASSERT_NOEXCEPT(std::chrono::duration_values<typename D::rep>::zero());
 #if TEST_STD_VER > 17

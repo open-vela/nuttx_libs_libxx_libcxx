@@ -16,7 +16,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::match_results<const char*> m;
@@ -26,7 +26,7 @@ test1()
     assert(m.ready() == true);
 }
 
-void
+static void
 test2()
 {
     std::match_results<const char*> m;

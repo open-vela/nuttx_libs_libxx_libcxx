@@ -46,7 +46,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-TEST_CONSTEXPR_CXX23 bool test() {
+static TEST_CONSTEXPR_CXX23 bool test() {
   if (!TEST_IS_CONSTANT_EVALUATED) {
     AssertEqualityAreNoexcept<std::unique_ptr<int>, nullptr_t>();
     AssertEqualityAreNoexcept<nullptr_t, std::unique_ptr<int> >();

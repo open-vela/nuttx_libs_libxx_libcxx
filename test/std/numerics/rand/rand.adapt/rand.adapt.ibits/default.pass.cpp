@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::independent_bits_engine<std::ranlux24, 32, unsigned> e1;
@@ -27,7 +27,7 @@ test1()
     assert(e1() == 2066486613);
 }
 
-void
+static void
 test2()
 {
     std::independent_bits_engine<std::ranlux48, 64, unsigned long long> e1;

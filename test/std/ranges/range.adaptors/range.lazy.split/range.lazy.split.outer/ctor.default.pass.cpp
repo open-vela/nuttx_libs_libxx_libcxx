@@ -14,7 +14,7 @@
 
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // `View` is a forward range.
   {
     [[maybe_unused]] OuterIterForward i;

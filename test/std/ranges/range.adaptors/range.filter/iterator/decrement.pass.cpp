@@ -39,7 +39,7 @@ using FilterIteratorFor = std::ranges::iterator_t<
 >;
 
 template <class Iterator, class Sentinel = sentinel_wrapper<Iterator>>
-constexpr void test() {
+constexpr static void test() {
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, EqualTo>;
   using FilterIterator = std::ranges::iterator_t<FilterView>;

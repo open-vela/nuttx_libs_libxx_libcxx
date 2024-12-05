@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-double f(double x)
+static double f(double x)
 {
     return x*2;
 }

@@ -17,7 +17,7 @@
 #include "test_macros.h"
 
 template <class T>
-void test1()
+static void test1()
 {
     ASSERT_SAME_TYPE(void, std::void_t<T>);
     ASSERT_SAME_TYPE(void, std::void_t<const T>);
@@ -26,7 +26,7 @@ void test1()
 }
 
 template <class T, class U>
-void test2()
+static void test2()
 {
     ASSERT_SAME_TYPE(void, std::void_t<T, U>);
     ASSERT_SAME_TYPE(void, std::void_t<const T, U>);

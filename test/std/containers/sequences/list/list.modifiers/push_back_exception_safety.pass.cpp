@@ -17,14 +17,14 @@
 
 #include "test_macros.h"
 
-// Flag that makes the copy constructor for CMyClass throw an exception
+// Flag that makes the copy constructor for BackCMyClass throw an exception
 static bool gCopyConstructorShouldThow = false;
 
 
-class CMyClass {
-    public: CMyClass();
-    public: CMyClass(const CMyClass& iOther);
-    public: ~CMyClass();
+class BackCMyClass {
+    public: BackCMyClass();
+    public: BackCMyClass(const BackCMyClass& iOther);
+    public: ~BackCMyClass();
 
     private: int fMagicValue;
 
@@ -33,18 +33,18 @@ class CMyClass {
 };
 
 // Value for fMagicValue when the constructor has started running, but not yet finished
-int CMyClass::kStartedConstructionMagicValue = 0;
+int BackCMyClass::kStartedConstructionMagicValue = 0;
 // Value for fMagicValue when the constructor has finished running
-int CMyClass::kFinishedConstructionMagicValue = 12345;
+int BackCMyClass::kFinishedConstructionMagicValue = 12345;
 
-CMyClass::CMyClass() :
+BackCMyClass::BackCMyClass() :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // Signal that the constructor has finished running
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::CMyClass(const CMyClass& /*iOther*/) :
+BackCMyClass::BackCMyClass(const BackCMyClass& /*iOther*/) :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // If requested, throw an exception _before_ setting fMagicValue to kFinishedConstructionMagicValue
@@ -55,15 +55,15 @@ CMyClass::CMyClass(const CMyClass& /*iOther*/) :
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::~CMyClass() {
+BackCMyClass::~BackCMyClass() {
     // Only instances for which the constructor has finished running should be destructed
     assert(fMagicValue == kFinishedConstructionMagicValue);
 }
 
 extern "C" int main(int, char**)
 {
-    CMyClass instance;
-    std::list<CMyClass> vec;
+    BackCMyClass instance;
+    std::list<BackCMyClass> vec;
 
     vec.push_back(instance);
 

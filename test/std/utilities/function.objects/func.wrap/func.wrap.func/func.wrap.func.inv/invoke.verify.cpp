@@ -21,7 +21,7 @@
 
 struct Foo { int data; };
 
-void f() {
+static void f() {
     int Foo::*fp = &Foo::data;
     std::function<int& (const Foo*)> r2(fp); // expected-error {{no matching constructor for initialization of}}
 }

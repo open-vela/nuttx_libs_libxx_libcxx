@@ -243,17 +243,17 @@ classify(double x)
     return non_zero;
 }
 
-void is_about(float x, float y)
+static void is_about(float x, float y)
 {
     assert(std::abs((x-y)/(x+y)) < 1.e-6);
 }
 
-void is_about(double x, double y)
+static void is_about(double x, double y)
 {
     assert(std::abs((x-y)/(x+y)) < 1.e-14);
 }
 
-void is_about(long double x, long double y)
+static void is_about(long double x, long double y)
 {
     assert(std::abs((x-y)/(x+y)) < 1.e-14);
 }

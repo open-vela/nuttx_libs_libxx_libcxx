@@ -22,7 +22,7 @@
 
 #include "test_iterators.h"
 
-template <class PopulationIterator, class SampleIterator> void test() {
+template <class PopulationIterator, class SampleIterator> static void test() {
   int ia[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   const unsigned is = sizeof(ia) / sizeof(ia[0]);
   const unsigned os = 4;

@@ -69,7 +69,7 @@ void test_string_view(From value) {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   using Context = std::basic_format_context<CharT*, CharT>;
   {
     const std::basic_format_args<Context> format_args{};
@@ -284,7 +284,7 @@ void test() {
   test<Context, const void*>(nullptr);
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

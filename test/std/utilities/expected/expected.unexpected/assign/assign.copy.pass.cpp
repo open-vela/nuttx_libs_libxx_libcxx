@@ -17,7 +17,7 @@ struct Error {
   constexpr Error(int ii) : i(ii) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::unexpected<Error> unex1(4);
   const std::unexpected<Error> unex2(5);
   unex1 = unex2;

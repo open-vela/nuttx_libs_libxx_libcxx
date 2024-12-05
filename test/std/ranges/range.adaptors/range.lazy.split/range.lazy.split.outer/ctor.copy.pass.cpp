@@ -39,7 +39,7 @@ static_assert( IsNonConstOuterIter<OuterIterNonConst>);
 
 static_assert(!std::is_constructible_v<OuterIterNonConst, OuterIterConst>);
 
-constexpr bool test() {
+static constexpr bool test() {
   [[maybe_unused]] OuterIterConst i(OuterIterNonConst{});
 
   return true;

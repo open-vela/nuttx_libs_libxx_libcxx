@@ -50,7 +50,7 @@ struct ForwardViewNonCommonRange : std::ranges::view_base {
 };
 bool operator==(forward_iterator<std::string_view::const_iterator>, std::default_sentinel_t) { return false; }
 
-constexpr bool test() {
+static constexpr bool test() {
   // non-const: forward_range<V> && simple_view<V> && simple_view<P> -> outer-iterator<Const = true>
   // const: forward_range<V> && common_range<V> -> outer-iterator<Const = true>
   {

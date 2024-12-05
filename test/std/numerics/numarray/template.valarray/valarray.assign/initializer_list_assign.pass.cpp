@@ -20,6 +20,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct S
 {
     S() : x_(0) { default_ctor_called = true; }
@@ -29,6 +30,7 @@ struct S
 };
 
 bool S::default_ctor_called = false;
+}
 
 bool operator==(const S& lhs, const S& rhs)
 {

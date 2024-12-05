@@ -47,7 +47,7 @@ static_assert(!std::is_copy_constructible_v<std::expected<void, NonCopyable>>);
 static_assert(std::is_trivially_copy_constructible_v<std::expected<void, int>>);
 static_assert(!std::is_trivially_copy_constructible_v<std::expected<void, CopyableNonTrivial>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // copy the error non-trivial
   {
     const std::expected<void, CopyableNonTrivial> e1(std::unexpect, 5);
@@ -74,7 +74,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing() = default;

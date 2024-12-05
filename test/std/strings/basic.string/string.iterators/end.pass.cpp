@@ -34,7 +34,7 @@ test(S s)
     assert(static_cast<std::size_t>(ce - cs.begin()) == cs.size());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S());

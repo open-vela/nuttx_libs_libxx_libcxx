@@ -16,7 +16,7 @@
 #include "test_macros.h"
 
 template <class T>
-void test()
+static void test()
 {
     {
     typedef T Exp;

@@ -50,7 +50,7 @@ struct DiffTypeRange : std::ranges::view_base {
 template<class T>
 concept HasIterCategory = requires { typename T::iterator_category; };
 
-void test() {
+static void test() {
   {
     int buffer[4][4];
     std::ranges::join_view jv(buffer);

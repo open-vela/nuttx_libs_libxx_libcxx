@@ -28,7 +28,7 @@ struct NotValueConvertible {
 #endif
 
 template <class D, class R>
-TEST_CONSTEXPR_CXX14 void check(R r) {
+TEST_CONSTEXPR_CXX14 static void check(R r) {
     D d(r);
     assert(d.count() == r);
 }

@@ -17,7 +17,7 @@
 #include "min_allocator.h"
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void
+TEST_CONSTEXPR_CXX20 static void
 test(const S& s, const typename S::value_type* str, typename S::size_type pos,
       typename S::size_type n, typename S::size_type x)
 {
@@ -28,7 +28,7 @@ test(const S& s, const typename S::value_type* str, typename S::size_type pos,
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test0()
+TEST_CONSTEXPR_CXX20 static void test0()
 {
     test(S(""), "", 0, 0, 0);
     test(S(""), "abcde", 0, 0, 0);
@@ -133,7 +133,7 @@ TEST_CONSTEXPR_CXX20 void test0()
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test1()
+TEST_CONSTEXPR_CXX20 static void test1()
 {
     test(S("abcde"), "abcde", 5, 4, 0);
     test(S("abcde"), "abcde", 5, 5, 0);
@@ -238,7 +238,7 @@ TEST_CONSTEXPR_CXX20 void test1()
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test2()
+TEST_CONSTEXPR_CXX20 static void test2()
 {
     test(S("abcdeabcde"), "abcdeabcde", 10, 5, 5);
     test(S("abcdeabcde"), "abcdeabcde", 10, 9, 0);
@@ -343,7 +343,7 @@ TEST_CONSTEXPR_CXX20 void test2()
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test3()
+TEST_CONSTEXPR_CXX20 static void test3()
 {
     test(S("abcdeabcdeabcdeabcde"), "abcdeabcdeabcdeabcde", 20, 1, 15);
     test(S("abcdeabcdeabcdeabcde"), "abcdeabcdeabcdeabcde", 20, 10, 10);
@@ -367,7 +367,7 @@ TEST_CONSTEXPR_CXX20 void test3()
     test(S("abcdeabcdeabcdeabcde"), "abcdeabcdeabcdeabcde", 21, 20, 0);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test0<S>();

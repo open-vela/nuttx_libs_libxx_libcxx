@@ -64,7 +64,7 @@ static_assert(!HasCopyIfR<InputRangeNotSentinelEqualityComparableWith, int*>);
 static_assert(std::is_same_v<std::ranges::copy_if_result<int, long>, std::ranges::in_out_result<int, long>>);
 
 template <class In, class Out, class Sent = In>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       std::array in = {1, 2, 3, 4};
@@ -145,7 +145,7 @@ constexpr bool test_in_iterators() {
   return true;
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_in_iterators<cpp17_output_iterator<int*>>();
   test_in_iterators<cpp20_output_iterator<int*>>();
   test_in_iterators<forward_iterator<int*>>();

@@ -47,7 +47,7 @@ struct no_element_type {
     reference operator[](difference_type n) const;
 };
 
-void test() {
+static void test() {
     (void) std::contiguous_iterator<no_element_type>;
         // expected-error@*:* {{implicit instantiation of undefined template}}
         // expected-note@*:* {{to_address}}

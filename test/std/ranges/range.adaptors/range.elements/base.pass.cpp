@@ -38,7 +38,7 @@ static_assert(HasBase<std::ranges::elements_view<View, 0>&&>);
 static_assert(!HasBase<std::ranges::elements_view<MoveOnlyView, 0> const&>);
 static_assert(HasBase<std::ranges::elements_view<MoveOnlyView, 0>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &
   {
     const std::ranges::elements_view<View, 0> ev{View{{}, 5}};

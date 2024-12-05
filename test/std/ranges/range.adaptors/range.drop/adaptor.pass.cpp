@@ -64,7 +64,7 @@ constexpr void test_small_range(const T& input) {
   assert(result.empty());
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr int N = 8;
   int buf[N] = {1, 2, 3, 4, 5, 6, 7, 8};
 

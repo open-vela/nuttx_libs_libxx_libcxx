@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-void test() {
+static void test() {
   {
     std::fileystem::file_status f1;
     std::fileystem::file_status f2;

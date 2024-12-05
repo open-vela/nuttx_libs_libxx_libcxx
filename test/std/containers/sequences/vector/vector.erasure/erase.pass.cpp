@@ -28,7 +28,7 @@ TEST_CONSTEXPR_CXX20 void test0(S s, U val, S expected, std::size_t expected_era
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test()
+TEST_CONSTEXPR_CXX20 static void test()
 {
   test0(S(), 1, S(), 0);
 

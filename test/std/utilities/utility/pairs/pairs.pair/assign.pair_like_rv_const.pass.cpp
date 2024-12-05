@@ -26,7 +26,7 @@
 #include <type_traits>
 #include <utility>
 
-constexpr bool test() {
+static constexpr bool test() {
   // Make sure assignment works from array and tuple
   {
     // Check from std::array

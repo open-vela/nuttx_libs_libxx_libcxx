@@ -42,7 +42,7 @@ struct CustomEquality {
   friend constexpr bool operator<(int, const CustomEquality&) noexcept { return false; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     assert(synth_three_way(1, 1) == std::strong_ordering::equal);
     assert(synth_three_way(2, 1) == std::strong_ordering::greater);

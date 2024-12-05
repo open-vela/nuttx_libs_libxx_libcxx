@@ -29,7 +29,7 @@ void swap(const SwapThrower&, const SwapThrower&) { throw 0.f; }
 static_assert(std::is_swappable_v<const SwapThrower>);
 static_assert(std::is_swappable_with_v<const SwapThrower&, const SwapThrower&>);
 
-void test_noexcept() {
+static void test_noexcept() {
   const std::tuple<SwapThrower> t1;
   const std::tuple<SwapThrower> t2;
 
@@ -54,7 +54,7 @@ struct ConstSwappable {
 
 constexpr void swap(const ConstSwappable& lhs, const ConstSwappable& rhs) { std::swap(lhs.i, rhs.i); }
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     typedef std::tuple<const ConstSwappable> T;
     const T t0(ConstSwappable{0});

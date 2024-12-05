@@ -26,7 +26,7 @@ class GetAlloc : public base_type {
 public:
   explicit GetAlloc(test_allocator_statistics& stats_, const int* begin, const int* end)
       : base_type(begin, end, test_allocator<int>(&stats_)), stats(&stats_) {}
-  void check() {
+  static void check() {
     assert(size() == 4);
     assert(stats->alloc_count > 0);
   }

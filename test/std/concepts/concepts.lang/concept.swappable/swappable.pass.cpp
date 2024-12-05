@@ -237,7 +237,7 @@ static_assert(std::swappable<swap_type>);
 enum class nothrow { no, yes };
 
 template <nothrow is_noexcept, std::swappable T>
-void check_swap(expected<T> const& e) {
+static void check_swap(expected<T> const& e) {
   auto a = e.y;
   auto b = e.x;
 

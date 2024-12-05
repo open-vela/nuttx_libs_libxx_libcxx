@@ -77,7 +77,7 @@ constexpr void test(std::array<int, N> a_, Pred pred, int val, std::array<int, N
 }
 
 template <class Iter, class Sent = Iter>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<Iter, Sent, 4>({1, 2, 3, 4}, [](int i) { return i < 3; }, 23, {23, 23, 3, 4});
   // no match
@@ -90,7 +90,7 @@ constexpr void test_iterators() {
   test<Iter, Sent, 1>({1}, [](int i) { return i > 0; }, 2, {2});
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>>();
   test_iterators<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_iterators<forward_iterator<int*>>();

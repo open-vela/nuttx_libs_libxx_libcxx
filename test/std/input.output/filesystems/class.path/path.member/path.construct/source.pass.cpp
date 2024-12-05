@@ -32,7 +32,6 @@
 #include "test_iterators.h"
 #include "test_macros.h"
 
-
 template <class CharT, class ...Args>
 void RunTestCaseImpl(MultiStringType const& MS, Args... args) {
   using namespace fs;
@@ -94,7 +93,7 @@ void RunTestCase(MultiStringType const& MS) {
   RunTestCaseImpl<CharT>(MS, fs::path::generic_format);
 }
 
-void test_sfinae() {
+static void test_sfinae() {
   using namespace fs;
   {
     using It = const char* const;

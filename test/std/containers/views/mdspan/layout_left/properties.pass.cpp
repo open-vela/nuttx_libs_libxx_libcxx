@@ -50,7 +50,7 @@ constexpr void test_layout_mapping_left() {
   ASSERT_NOEXCEPT(M::is_always_strided());
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr size_t D = std::dynamic_extent;
   test_layout_mapping_left<std::extents<int>>();
   test_layout_mapping_left<std::extents<char, 4, 5>>();

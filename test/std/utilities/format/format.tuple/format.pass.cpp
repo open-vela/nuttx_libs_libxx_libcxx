@@ -95,7 +95,7 @@ void test_assure_parse_is_called() {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   test(SV("(1)"), std::tuple<int>{1});
   test(SV("(1, 1)"), std::tuple<int, CharT>{1, CharT('1')});
   test(SV("(1, 1)"), std::pair<int, CharT>{1, CharT('1')});
@@ -104,7 +104,7 @@ void test() {
   test_assure_parse_is_called<CharT>();
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

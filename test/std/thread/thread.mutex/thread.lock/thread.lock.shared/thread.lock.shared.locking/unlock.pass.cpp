@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-bool unlock_called = false;
+static bool unlock_called = false;
 
 struct mutex
 {
@@ -30,7 +30,7 @@ struct mutex
     void unlock_shared() {unlock_called = true;}
 };
 
-mutex m;
+static mutex m;
 
 extern "C" int main(int, char**)
 {

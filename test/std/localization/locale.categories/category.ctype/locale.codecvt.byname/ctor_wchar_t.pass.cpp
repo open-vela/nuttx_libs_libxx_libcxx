@@ -25,6 +25,7 @@
 
 typedef std::codecvt_byname<wchar_t, char, std::mbstate_t> F;
 
+namespace {
 class my_facet
     : public F
 {
@@ -40,6 +41,7 @@ public:
 };
 
 int my_facet::count = 0;
+}
 
 extern "C" int main(int, char**)
 {

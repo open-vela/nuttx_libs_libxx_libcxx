@@ -60,7 +60,7 @@ static_assert( test_convertible<std::ranges::iota_view<SomeInt, IntComparableWit
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::iota_view<SomeInt, SomeInt> io(SomeInt(0), SomeInt(10));
     assert(std::ranges::next(io.begin(), 10) == io.end());

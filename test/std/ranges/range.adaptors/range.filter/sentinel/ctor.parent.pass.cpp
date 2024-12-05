@@ -20,7 +20,7 @@
 #include "../types.h"
 
 template <class Iterator, class Sentinel = sentinel_wrapper<Iterator>>
-constexpr void test() {
+constexpr static void test() {
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, AlwaysTrue>;
   using FilterSentinel = std::ranges::sentinel_t<FilterView>;

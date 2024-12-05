@@ -24,18 +24,18 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable_any cv;
+static std::condition_variable_any cv;
 
 typedef std::timed_mutex L0;
 typedef std::unique_lock<L0> L1;
 
-L0 m0;
+static L0 m0;
 
-const unsigned threadCount = 2;
-bool pleaseExit = false;
-std::atomic<unsigned> notReady;
+static const unsigned threadCount = 2;
+static bool pleaseExit = false;
+static std::atomic<unsigned> notReady;
 
-void helper() {
+static void helper() {
   L1 lk(m0);
   --notReady;
   while (pleaseExit == false)

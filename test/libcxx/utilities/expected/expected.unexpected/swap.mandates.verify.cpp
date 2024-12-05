@@ -19,7 +19,7 @@ struct Foo {};
 
 void swap(Foo&, Foo&) = delete;
 
-void test() {
+static void test() {
   std::unexpected<Foo> f1{Foo{}};
   f1.swap(f1); // expected-note{{in instantiation of member function 'std::unexpected<Foo>::swap' requested here}}
   // expected-error-re@*:* {{{{(static_assert|static assertion)}} failed {{.*}}unexpected::swap requires is_swappable_v<E> to be true}}

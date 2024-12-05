@@ -107,7 +107,7 @@ constexpr void test_sentinels() {
   tests<Iter, sized_sentinel<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_sentinels<forward_iterator<int*>>();
   test_sentinels<bidirectional_iterator<int*>>();
   test_sentinels<random_access_iterator<int*>>();
@@ -115,7 +115,7 @@ constexpr void test_iterators() {
   test_sentinels<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // check that ranges::dangling is returned

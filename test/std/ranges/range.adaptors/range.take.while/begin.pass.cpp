@@ -56,7 +56,7 @@ struct NotPredForConst {
 };
 static_assert(HasOnlyNonConstBegin<std::ranges::take_while_view<NonSimple, NotPredForConst>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // simple-view
   {
     int buffer[] = {1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1};

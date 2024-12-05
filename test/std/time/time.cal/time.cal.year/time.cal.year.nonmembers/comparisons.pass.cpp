@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using year = std::chrono::year;
 
   // Validate valid value. The range [-32768, 32767] is guaranteed to be allowed.

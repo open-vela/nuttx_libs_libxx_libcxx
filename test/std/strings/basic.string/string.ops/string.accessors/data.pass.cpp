@@ -47,7 +47,7 @@ test_nonconst(S& s)
         assert(T::eq(str[0], typename S::value_type()));
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test_const(S(""));

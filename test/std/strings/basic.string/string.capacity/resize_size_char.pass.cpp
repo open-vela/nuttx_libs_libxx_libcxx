@@ -63,7 +63,7 @@ TEST_CONSTEXPR_CXX20 void test_string() {
   test(S(), S::npos, 'a', S("not going to happen"));
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   test_string<std::string>();
 #if TEST_STD_VER >= 11
   test_string<std::basic_string<char, std::char_traits<char>, min_allocator<char>>>();

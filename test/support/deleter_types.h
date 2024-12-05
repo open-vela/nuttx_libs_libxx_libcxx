@@ -343,9 +343,6 @@ struct test_deleter_base {
   static int dealloc_count;
 };
 
-int test_deleter_base::count         = 0;
-int test_deleter_base::dealloc_count = 0;
-
 template <class T>
 class test_deleter : public test_deleter_base {
   int state_;

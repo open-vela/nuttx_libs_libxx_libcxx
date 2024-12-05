@@ -56,7 +56,7 @@ static_assert(!std::is_convertible_v<std::pair<MutableCopy, MutableCopy>&,
 static_assert(!std::is_convertible_v<std::pair<MutableCopy, MutableCopy>&,
                                      std::tuple<ConvertibleFrom<MutableCopy>, ExplicitConstructibleFrom<MutableCopy>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   {
     std::pair<MutableCopy, int> p{1, 2};

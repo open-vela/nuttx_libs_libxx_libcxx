@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::sentinel_t<std::ranges::join_view<CopyableParent>> sent;
   (void) sent;
 

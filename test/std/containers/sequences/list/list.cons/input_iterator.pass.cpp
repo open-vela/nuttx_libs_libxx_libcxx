@@ -22,7 +22,7 @@
 #include "container_test_types.h"
 #endif
 
-void basic_test()
+static void basic_test()
 {
     {
         int a[] = {0, 1, 2, 3};
@@ -83,7 +83,7 @@ void basic_test()
 
 
 
-void test_emplacable_concept() {
+static void test_emplacable_concept() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};
@@ -177,7 +177,7 @@ void test_emplacable_concept_with_alloc() {
 #endif
 }
 
-void test_ctor_under_alloc() {
+static void test_ctor_under_alloc() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};
@@ -208,7 +208,7 @@ void test_ctor_under_alloc() {
 #endif
 }
 
-void test_ctor_under_alloc_with_alloc() {
+static void test_ctor_under_alloc_with_alloc() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};

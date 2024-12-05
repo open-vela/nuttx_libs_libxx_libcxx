@@ -31,7 +31,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::system_clock Clock;
 typedef Clock::time_point time_point;
@@ -39,13 +39,13 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-std::atomic<unsigned> countDown;
-time_point readerStart; // Protected by the above mutex 'm'
-time_point writerStart; // Protected by the above mutex 'm'
+static std::atomic<unsigned> countDown;
+static time_point readerStart; // Protected by the above mutex 'm'
+static time_point writerStart; // Protected by the above mutex 'm'
 
-ms WaitTime = ms(250);
+static ms WaitTime = ms(250);
 
-void readerMustWait() {
+static void readerMustWait() {
   --countDown;
   m.lock_shared();
   time_point t1 = Clock::now();
@@ -55,13 +55,13 @@ void readerMustWait() {
   assert(t1 - t0 >= WaitTime);
 }
 
-void reader() {
+static void reader() {
   --countDown;
   m.lock_shared();
   m.unlock_shared();
 }
 
-void writerMustWait() {
+static void writerMustWait() {
   --countDown;
   m.lock();
   time_point t1 = Clock::now();

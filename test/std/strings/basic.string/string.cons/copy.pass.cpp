@@ -28,7 +28,7 @@ test(S s1)
     assert(s2.get_allocator() == s1.get_allocator());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef test_allocator<char> A;
     typedef std::basic_string<char, std::char_traits<char>, A> S;

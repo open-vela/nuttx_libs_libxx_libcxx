@@ -16,8 +16,9 @@
 
 #include "test_macros.h"
 
-int facet_count = 0;
+static int facet_count = 0;
 
+namespace {
 struct my_facet
     : public std::locale::facet
 {
@@ -30,6 +31,7 @@ struct my_facet
 };
 
 std::locale::id my_facet::id;
+}
 
 extern "C" int main(int, char**)
 {

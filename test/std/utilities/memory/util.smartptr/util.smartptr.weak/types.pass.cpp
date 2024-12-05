@@ -28,7 +28,7 @@ struct B {
 };
 
 template <class T>
-void test() {
+static void test() {
   ASSERT_SAME_TYPE(typename std::weak_ptr<T>::element_type, T);
 #if TEST_STD_VER > 14
   ASSERT_SAME_TYPE(typename std::weak_ptr<T[]>::element_type, T);

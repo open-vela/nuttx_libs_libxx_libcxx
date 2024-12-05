@@ -26,7 +26,7 @@
 #include "tracking_mem_res.h"
 
 template <class T>
-void test() {
+static void test() {
   std::size_t last_size      = 0;
   std::size_t last_alignment = 0;
   TrackingMemRes resource(&last_size, &last_alignment);

@@ -20,7 +20,7 @@
 static_assert(!std::ranges::forward_range<SplitViewInput>);
 static_assert(!std::is_constructible_v<OuterIterInput, SplitViewInput&, std::ranges::iterator_t<InputView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   ForwardView input("abc");
   SplitViewForward v(std::move(input), " ");
   [[maybe_unused]] OuterIterForward i(v, input.begin());

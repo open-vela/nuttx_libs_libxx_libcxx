@@ -30,7 +30,7 @@ template <> struct is_error_code_enum<testing> : public std::true_type {};
 
 }
 
-std::error_code
+static std::error_code
 make_error_code(testing x)
 {
     return std::error_code(static_cast<int>(x), std::generic_category());

@@ -39,7 +39,7 @@ void test(
   }
 }
 
-void test() {
+static void test() {
   test(std::basic_format_args(
       std::make_format_args<
           std::basic_format_context<cpp20_output_iterator<std::basic_string<char>::iterator>, char>>()));

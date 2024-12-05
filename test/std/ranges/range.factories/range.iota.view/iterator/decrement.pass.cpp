@@ -27,7 +27,7 @@ concept Decrementable =
     i--;
   };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::iota_view<int> io(0);
     auto iter1 = std::next(io.begin());

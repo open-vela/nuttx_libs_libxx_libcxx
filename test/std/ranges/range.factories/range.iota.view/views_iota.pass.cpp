@@ -46,7 +46,7 @@ constexpr void testType(U u) {
 
 struct X {};
 
-constexpr bool test() {
+static constexpr bool test() {
   testType<SomeInt>(SomeInt(10));
   testType<SomeInt>(IntComparableWith(SomeInt(10)));
   testType<signed long>(IntComparableWith<signed long>(10));

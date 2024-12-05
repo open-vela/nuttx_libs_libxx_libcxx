@@ -134,7 +134,7 @@ constexpr void inequalityOperatorsDoNotExistTest(auto&& iter1, auto&& iter2) {
   static_assert(!std::is_invocable_v<std::greater_equal<>, Iter1, Iter2>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // Test a new-school iterator with operator<=>; the iterator should also have operator<=>.
     using It = three_way_contiguous_iterator<int*>;

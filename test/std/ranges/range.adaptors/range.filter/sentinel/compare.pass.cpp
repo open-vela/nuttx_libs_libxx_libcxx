@@ -20,7 +20,7 @@
 #include "../types.h"
 
 template <class Iterator, class Sentinel = sentinel_wrapper<Iterator>>
-constexpr void test() {
+constexpr static void test() {
   using View = minimal_view<Iterator, Sentinel>;
 
   std::array<int, 5> array{0, 1, 2, 3, 4};

@@ -29,7 +29,7 @@
 #define SV(S) MAKE_STRING_VIEW(CharT, S)
 
 template <class CharT, class Arg>
-constexpr void test() {
+constexpr static void test() {
   std::formatter<Arg, CharT> formatter;
   formatter.set_brackets(SV("open"), SV("close"));
   // Note the SV macro may throw, so can't use it.
@@ -39,14 +39,14 @@ constexpr void test() {
 }
 
 template <class CharT>
-constexpr void test() {
+constexpr static void test() {
   test<CharT, std::tuple<int>>();
   test<CharT, std::tuple<int, CharT>>();
   test<CharT, std::pair<int, CharT>>();
   test<CharT, std::tuple<int, CharT, bool>>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

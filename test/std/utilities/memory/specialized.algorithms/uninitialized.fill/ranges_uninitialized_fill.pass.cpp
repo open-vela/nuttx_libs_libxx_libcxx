@@ -30,6 +30,12 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
+int Counted::current_objects = 0;
+int Counted::total_objects = 0;
+int Counted::total_copies = 0;
+int Counted::total_moves = 0;
+int Counted::throw_on = -1;
+
 // TODO(varconst): consolidate the ADL checks into a single file.
 // Because this is a variable and not a function, it's guaranteed that ADL won't be used. However,
 // implementations are allowed to use a different mechanism to achieve this effect, so this check is

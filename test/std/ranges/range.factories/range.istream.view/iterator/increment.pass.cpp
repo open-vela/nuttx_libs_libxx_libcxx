@@ -20,7 +20,7 @@
 #include "../utils.h"
 
 template <class CharT>
-void test() {
+static void test() {
   // operator ++()
   {
     auto iss = make_string_stream<CharT>("1 2 345 ");

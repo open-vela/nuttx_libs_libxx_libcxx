@@ -51,7 +51,7 @@ public:
 };
 
 template <class CharT>
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   using S = std::basic_string<CharT, std::char_traits<CharT>, soccc_allocator<CharT>>;
   {
     int soccc_lhs = 0;

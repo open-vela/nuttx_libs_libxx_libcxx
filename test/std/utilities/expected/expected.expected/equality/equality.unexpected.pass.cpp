@@ -24,7 +24,7 @@ struct Data {
   friend constexpr bool operator==(const Data& data, int ii) { return data.i == ii; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // x.has_value()
   {
     const std::expected<Data, Data> e1(std::in_place, 5);

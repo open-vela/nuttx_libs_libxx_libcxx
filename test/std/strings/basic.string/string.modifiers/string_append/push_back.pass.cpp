@@ -65,7 +65,7 @@ test(S s, typename S::value_type c, S expected)
     assert(s == expected);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S(), 'a', S(1, 'a'));

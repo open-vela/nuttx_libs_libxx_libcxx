@@ -25,7 +25,7 @@ struct Range : std::ranges::view_base {
   PODSentinel end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using R = std::ranges::zip_view<Range>;
     using Sentinel = std::ranges::sentinel_t<R>;

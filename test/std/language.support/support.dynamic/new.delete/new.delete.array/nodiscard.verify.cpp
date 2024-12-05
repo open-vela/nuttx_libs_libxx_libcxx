@@ -31,7 +31,7 @@
 
 #include "test_macros.h"
 
-void f() {
+static void f() {
     ::operator new[](4);  // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
     ::operator new[](4, std::nothrow);  // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
 

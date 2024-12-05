@@ -38,7 +38,7 @@ constexpr void test_with_char() {
   test_ctad<contiguous_iterator<const CharT*>, sized_sentinel<contiguous_iterator<const CharT*>>>(val);
 }
 
-constexpr void test() {
+constexpr static void test() {
   test_with_char<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_with_char<wchar_t>();

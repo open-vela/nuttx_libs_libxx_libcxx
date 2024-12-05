@@ -31,7 +31,7 @@ test(S s)
     assert(b == cb);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S());

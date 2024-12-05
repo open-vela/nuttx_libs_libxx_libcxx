@@ -177,7 +177,7 @@ struct ThrowsOnSecondMove {
   }
 };
 
-void test_swap_valueless_by_exception() {
+static void test_swap_valueless_by_exception() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   using V = std::variant<int, MakeEmptyT>;
   { // both empty
@@ -225,7 +225,7 @@ void test_swap_valueless_by_exception() {
 #endif
 }
 
-void test_swap_same_alternative() {
+static void test_swap_same_alternative() {
   {
     using T = ThrowingTypeWithNothrowSwap;
     using V = std::variant<T, int>;
@@ -315,7 +315,7 @@ void test_swap_same_alternative() {
 #endif
 }
 
-void test_swap_different_alternatives() {
+static void test_swap_different_alternatives() {
   {
     using T = NothrowMoveCtorWithThrowingSwap;
     using V = std::variant<T, int>;
@@ -483,7 +483,7 @@ template <class Var> constexpr bool has_swap_member() {
   return has_swap_member_imp<Var>(0);
 }
 
-void test_swap_sfinae() {
+static void test_swap_sfinae() {
   {
     // This variant type does not provide either a member or non-member swap
     // but is still swappable via the generic swap algorithm, since the
@@ -509,7 +509,7 @@ void test_swap_sfinae() {
   }
 }
 
-void test_swap_noexcept() {
+static void test_swap_noexcept() {
   {
     using V = std::variant<int, NothrowMoveable>;
     static_assert(std::is_swappable_v<V> && has_swap_member<V>(), "");

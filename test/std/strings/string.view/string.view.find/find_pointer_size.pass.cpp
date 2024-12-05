@@ -19,7 +19,7 @@
 #include "constexpr_char_traits.h"
 
 template <class S>
-void
+static void
 test(const S& s, const typename S::value_type* str, typename S::size_type pos,
      typename S::size_type x)
 {
@@ -33,7 +33,7 @@ test(const S& s, const typename S::value_type* str, typename S::size_type pos,
 }
 
 template <class S>
-void
+static void
 test(const S& s, const typename S::value_type* str, typename S::size_type x)
 {
     LIBCPP_ASSERT_NOEXCEPT(s.find(str));
@@ -46,7 +46,7 @@ test(const S& s, const typename S::value_type* str, typename S::size_type x)
 }
 
 template <class S>
-void test0()
+static void test0()
 {
     test(S(""), "", 0, 0);
     test(S(""), "abcde", 0, S::npos);
@@ -131,7 +131,7 @@ void test0()
 }
 
 template <class S>
-void test1()
+static void test1()
 {
     test(S(""), "", 0);
     test(S(""), "abcde", S::npos);

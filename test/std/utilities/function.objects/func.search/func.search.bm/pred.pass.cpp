@@ -46,8 +46,6 @@ struct count_equal
         {++count; return x == y;}
 };
 
-unsigned count_equal::count = 0;
-
 template <typename Iter1, typename Iter2>
 void do_search(Iter1 b1, Iter1 e1, Iter2 b2, Iter2 e2, Iter1 result, unsigned max_count) {
     std::boyer_moore_searcher<Iter2,

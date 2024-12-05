@@ -49,7 +49,7 @@ struct Container {
 
 };
 
-void test() {
+static void test() {
   using R = std::vector<int>;
   R in = {1, 2, 3};
 

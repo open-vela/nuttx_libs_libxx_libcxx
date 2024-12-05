@@ -13,7 +13,7 @@
 
 #include "test_macros.h"
 
-int A_constructed = 0;
+static int A_constructed = 0;
 
 struct A
 {

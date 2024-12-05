@@ -21,6 +21,7 @@
 
 using std::optional;
 
+namespace {
 class X
 {
     int i_;
@@ -61,14 +62,14 @@ public:
     friend constexpr bool operator==(const Z& x, const Z& y) {return x.i_ == y.i_;}
     friend void swap(Z&, Z&) { TEST_THROW(6);}
 };
-
+}
 
 struct NonSwappable {
     NonSwappable(NonSwappable const&) = delete;
 };
 void swap(NonSwappable&, NonSwappable&) = delete;
 
-void test_swap_sfinae() {
+static void test_swap_sfinae() {
     using std::optional;
     {
         using T = TestTypes::TestType;

@@ -24,7 +24,7 @@ struct TemplateConstructor
     TemplateConstructor (const T&) {}
 };
 
-bool operator<(const TemplateConstructor&, const TemplateConstructor&) { return false; }
+static bool operator<(const TemplateConstructor&, const TemplateConstructor&) { return false; }
 
 extern "C" int main(int, char**)
 {

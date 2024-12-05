@@ -33,7 +33,7 @@ static_assert(NoexceptEnd<const std::ranges::wistream_view<int>>);
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   auto iss = make_string_stream<CharT>("12");
   std::ranges::basic_istream_view<int, CharT> isv{iss};
   [[maybe_unused]] std::same_as<std::default_sentinel_t> auto sent = isv.end();

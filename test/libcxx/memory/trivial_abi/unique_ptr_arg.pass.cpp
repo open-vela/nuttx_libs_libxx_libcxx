@@ -17,7 +17,7 @@
 #include <memory>
 #include <cassert>
 
-__attribute__((noinline)) void call_something() { asm volatile(""); }
+__attribute__((noinline)) static void call_something() { asm volatile(""); }
 
 struct Node {
   int* shared_val;
@@ -26,12 +26,12 @@ struct Node {
   ~Node() { ++(*shared_val); }
 };
 
-__attribute__((noinline)) bool get_val(std::unique_ptr<Node> /*unused*/) {
+__attribute__((noinline)) static bool get_val(std::unique_ptr<Node> /*unused*/) {
   call_something();
   return true;
 }
 
-__attribute__((noinline)) void expect_1(int* shared, bool /*unused*/) {
+__attribute__((noinline)) static void expect_1(int* shared, bool /*unused*/) {
   assert(*shared == 1);
 }
 

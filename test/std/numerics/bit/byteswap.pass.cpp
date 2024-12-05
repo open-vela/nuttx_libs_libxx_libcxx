@@ -53,7 +53,7 @@ constexpr void test_implementation_defined_size() {
   test_num<T>(in, expected);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_num<std::uint8_t>(0xAB, 0xAB);
   test_num<std::uint16_t>(0xCDEF, 0xEFCD);
   test_num<std::uint32_t>(0x01234567, 0x67452301);

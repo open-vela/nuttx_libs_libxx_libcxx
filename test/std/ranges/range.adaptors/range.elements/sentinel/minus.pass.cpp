@@ -164,7 +164,7 @@ constexpr void testConstraints() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> buffer[] = {{1}, {2}, {3}, {4}, {5}};
 
   // base is sized but not cross const

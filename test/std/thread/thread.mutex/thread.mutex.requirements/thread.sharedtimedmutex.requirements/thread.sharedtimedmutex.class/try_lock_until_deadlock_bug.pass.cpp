@@ -26,20 +26,20 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
-const int total_readers = 2;
-std::atomic<int> readers_started(0);
-std::atomic<int> readers_finished(0);
+static const int total_readers = 2;
+static std::atomic<int> readers_started(0);
+static std::atomic<int> readers_finished(0);
 
 // Wait for the readers to start then try and acquire the write lock.
-void writer_one() {
+static void writer_one() {
   while (readers_started != total_readers) {}
   bool b = m.try_lock_for(std::chrono::milliseconds(500));
   assert(b == false);
 }
 
-void blocked_reader() {
+static void blocked_reader() {
   ++readers_started;
   // Wait until writer_one is waiting for the write lock.
   while (m.try_lock_shared()) {

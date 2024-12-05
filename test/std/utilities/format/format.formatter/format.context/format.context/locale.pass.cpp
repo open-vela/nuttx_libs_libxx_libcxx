@@ -27,7 +27,7 @@
 #include "test_macros.h"
 
 template <class OutIt, class CharT>
-void test() {
+static void test() {
   std::locale en_US{LOCALE_en_US_UTF_8};
   std::locale fr_FR{LOCALE_fr_FR_UTF_8};
   std::basic_string<CharT> string = MAKE_STRING(CharT, "string");

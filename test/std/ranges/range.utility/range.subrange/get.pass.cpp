@@ -26,7 +26,7 @@ static_assert( HasGet<1, std::ranges::subrange<int*>>);
 static_assert(!HasGet<2, std::ranges::subrange<int*>>);
 static_assert(!HasGet<3, std::ranges::subrange<int*>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using It = int*;
     using Sent = sentinel_wrapper<int*>;

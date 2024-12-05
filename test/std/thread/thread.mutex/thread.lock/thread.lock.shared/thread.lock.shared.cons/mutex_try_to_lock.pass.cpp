@@ -29,7 +29,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::system_clock Clock;
 typedef Clock::time_point time_point;
@@ -42,12 +42,12 @@ typedef std::chrono::nanoseconds ns;
 // to fail. To prevent this we give Thread sanitizer more time to complete the
 // test.
 #if !defined(TEST_IS_EXECUTED_IN_A_SLOW_ENVIRONMENT)
-ms Tolerance = ms(200);
+static ms Tolerance = ms(200);
 #else
-ms Tolerance = ms(200 * 5);
+static ms Tolerance = ms(200 * 5);
 #endif
 
-void f()
+static void f()
 {
     time_point t0 = Clock::now();
     {

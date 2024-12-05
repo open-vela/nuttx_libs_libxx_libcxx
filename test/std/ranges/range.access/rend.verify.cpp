@@ -19,7 +19,7 @@ struct NonBorrowedRange {
 static_assert(!std::ranges::enable_borrowed_range<NonBorrowedRange>);
 
 // Verify that if the expression is an rvalue and `enable_borrowed_range` is false, `ranges::rend` is ill-formed.
-void test() {
+static void test() {
   std::ranges::rend(NonBorrowedRange());
   // expected-error-re@-1 {{{{call to deleted function call operator in type 'const (std::ranges::)?__rend::__fn'}}}}
   // expected-error@-2  {{attempt to use a deleted function}}

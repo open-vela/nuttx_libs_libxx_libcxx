@@ -25,6 +25,7 @@
 
 int new_count = 0;
 
+namespace {
 struct A
 {
     static int count;
@@ -45,6 +46,7 @@ private:
 };
 
 int A::count = 0;
+}
 
 struct Zero
 {
@@ -107,7 +109,7 @@ struct AllocNoConstruct : std::allocator<T>
 };
 
 template <class Alloc>
-void test()
+static void test()
 {
     int const bad = -1;
     {

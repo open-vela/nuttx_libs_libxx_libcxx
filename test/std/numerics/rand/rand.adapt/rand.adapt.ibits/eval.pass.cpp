@@ -57,7 +57,7 @@ public:
     }
 };
 
-void
+static void
 test1()
 {
    typedef std::independent_bits_engine<rand1<unsigned, 0, 10>, 16, unsigned> E;
@@ -66,7 +66,7 @@ test1()
     assert(e() == 6958);
 }
 
-void
+static void
 test2()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 0, 100>, 16, unsigned> E;
@@ -75,7 +75,7 @@ test2()
     assert(e() == 66);
 }
 
-void
+static void
 test3()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 0, 0xFFFFFFFF>, 32, unsigned> E;
@@ -84,7 +84,7 @@ test3()
     assert(e() == 5);
 }
 
-void
+static void
 test4()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 0, 0xFFFFFFFF>, 7, unsigned> E;
@@ -93,7 +93,7 @@ test4()
     assert(e() == 1);
 }
 
-void
+static void
 test5()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 2, 3>, 1, unsigned> E;
@@ -102,7 +102,7 @@ test5()
     assert(e() == 1);
 }
 
-void
+static void
 test6()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 2, 3>, 11, unsigned> E;
@@ -111,7 +111,7 @@ test6()
     assert(e() == 1365);
 }
 
-void
+static void
 test7()
 {
     typedef std::independent_bits_engine<rand1<unsigned, 2, 3>, 32, unsigned> E;
@@ -120,7 +120,7 @@ test7()
     assert(e() == 2863311530u);
 }
 
-void
+static void
 test8()
 {
     typedef std::independent_bits_engine<std::mt19937, 64, unsigned long long> E;

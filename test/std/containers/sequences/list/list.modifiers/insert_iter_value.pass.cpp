@@ -19,7 +19,7 @@
 #include "count_new.h"
 
 template <class List>
-void test()
+static void test()
 {
     int a1[] = {1, 2, 3};
     int a2[] = {1, 4, 2, 3};

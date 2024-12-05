@@ -87,7 +87,7 @@ static_assert(
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using V = std::ranges::split_view<StrView, StrView>;
 

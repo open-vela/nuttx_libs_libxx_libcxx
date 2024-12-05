@@ -23,7 +23,7 @@
 #include "test_convertible.h"
 
 template <typename S>
-void test() {
+static void test() {
   static_assert(test_convertible<S>(), "");
   static_assert(!test_convertible<S, std::ios_base::openmode>(), "");
 }

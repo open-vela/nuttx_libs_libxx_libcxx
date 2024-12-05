@@ -31,7 +31,7 @@
 //   is_constructible_v<T, Args...> is true, calls
 //   OUTERMOST_ALLOC_TRAITS(*this)::construct(
 //      OUTERMOST (*this), p, std::forward<Args>(args)...).
-void test_bullet_one() {
+static void test_bullet_one() {
     using VoidAlloc2 = CountingAllocator<void, 2>;
 
     AllocController POuter;
@@ -64,7 +64,7 @@ void test_bullet_one() {
 // is_constructible_v<T, allocator_arg_t, inner_allocator_type&, Args...> is
 // true, calls OUTERMOST_ALLOC_TRAITS(*this)::construct(OUTERMOST (*this), p,
 //     allocator_arg, inner_allocator(), std::forward<Args>(args)...).
-void test_bullet_two() {
+static void test_bullet_two() {
     using VoidAlloc2 = CountingAllocator<void, 2>;
 
     AllocController POuter;
@@ -102,7 +102,7 @@ void test_bullet_two() {
 // is_constructible_v<T, Args..., inner_allocator_type&> is true, calls
 // OUTERMOST_ALLOC_TRAITS(*this)::construct(OUTERMOST (*this), p,
 //   std::forward<Args>(args)..., inner_allocator()).
-void test_bullet_three() {
+static void test_bullet_three() {
     using VoidAlloc2 = CountingAllocator<void, 2>;
 
     AllocController POuter;

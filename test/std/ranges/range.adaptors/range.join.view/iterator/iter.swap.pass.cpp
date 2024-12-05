@@ -20,7 +20,7 @@ using NonSwappableView = BufferView<copying_iterator<int*>>;
 static_assert(std::ranges::input_range<NonSwappableView>);
 static_assert(!std::indirectly_swappable<std::ranges::iterator_t<NonSwappableView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
 
   {

@@ -18,7 +18,7 @@
 #include <type_traits>
 #include <utility>
 
-void test() {
+static void test() {
   std::stop_token st;
   auto a = [] {};
   static_assert(std::is_same_v<decltype(std::stop_callback(st, a)), std::stop_callback<decltype(a)>>);

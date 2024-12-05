@@ -62,7 +62,7 @@ static_assert(!std::is_trivially_copy_constructible_v<std::expected<CopyableNonT
 static_assert(!std::is_trivially_copy_constructible_v<std::expected<int, CopyableNonTrivial>>);
 static_assert(!std::is_trivially_copy_constructible_v<std::expected<CopyableNonTrivial, CopyableNonTrivial>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // copy the value non-trivial
   {
     const std::expected<CopyableNonTrivial, int> e1(5);
@@ -112,7 +112,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing() = default;

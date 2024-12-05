@@ -19,7 +19,7 @@
 struct Base { };
 struct Derived : Base { };
 
-void test() {
+static void test() {
     std::move_iterator<Base*> base;
     std::move_iterator<Derived*> derived(base); // expected-error {{no matching constructor for initialization of 'std::move_iterator<Derived *>'}}
 }

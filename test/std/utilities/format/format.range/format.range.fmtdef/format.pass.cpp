@@ -96,7 +96,7 @@ void test_fmt() {
   test_assure_parse_is_called<CharT>();
 }
 
-void test() {
+static void test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

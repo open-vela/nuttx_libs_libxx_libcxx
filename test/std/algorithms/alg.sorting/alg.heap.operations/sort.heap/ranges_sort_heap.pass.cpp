@@ -112,13 +112,13 @@ constexpr void test_iterators_1() {
   test_iterators_2<Iter, sentinel_wrapper<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iterators_1<random_access_iterator<int*>>();
   test_iterators_1<contiguous_iterator<int*>>();
   test_iterators_1<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom comparator works.
@@ -213,11 +213,13 @@ constexpr bool test() {
   return true;
 }
 
+namespace {
 struct Stats {
   int compared = 0;
   int copied   = 0;
   int moved    = 0;
 } stats;
+}
 
 struct MyInt {
   int value;

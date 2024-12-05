@@ -35,7 +35,7 @@ TEST_CONSTEXPR_CXX20 void test1(S&& lhs, typename S::value_type rhs, const S& x)
 }
 #endif
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test0(S(""), '1', S("1"));

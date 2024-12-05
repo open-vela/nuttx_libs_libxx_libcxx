@@ -57,7 +57,7 @@ public:
     }
 };
 
-void
+static void
 test1()
 {
    typedef std::knuth_b E;
@@ -66,7 +66,7 @@ test1()
     assert(e() == 152607844u);
 }
 
-void
+static void
 test2()
 {
     typedef rand1<unsigned long long, 0, 0xFFFFFFFFFFFFFFFFull> E0;
@@ -76,7 +76,7 @@ test2()
     assert(e() == 501);
 }
 
-void
+static void
 test3()
 {
     typedef rand1<unsigned long long, 0, 0xFFFFFFFFFFFFFFFFull> E0;

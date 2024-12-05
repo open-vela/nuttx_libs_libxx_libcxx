@@ -93,7 +93,7 @@ TEST_CONSTEXPR_CXX14 void test_one() {
   }
 }
 
-TEST_CONSTEXPR_CXX14 bool test() {
+TEST_CONSTEXPR_CXX14 static bool test() {
   test_one<cpp17_input_iterator<int*> >();
   test_one<forward_iterator<int*> >();
   test_one<bidirectional_iterator<int*> >();

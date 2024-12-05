@@ -25,7 +25,7 @@ template <class T>
 concept has_equal = requires (T const& x, T const& y) { { x == y }; };
 
 template <class Iterator>
-constexpr void test() {
+constexpr static void test() {
   using Sentinel = sentinel_wrapper<Iterator>;
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, AlwaysTrue>;

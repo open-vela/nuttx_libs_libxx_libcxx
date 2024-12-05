@@ -200,7 +200,7 @@ void withAllPermutationsOfIter() {
   testImpl<int*, SentWrapper>();
 }
 
-bool test() {
+static bool test() {
   withAllPermutationsOfIter<std::type_identity_t>();
   withAllPermutationsOfIter<sentinel_wrapper>();
 

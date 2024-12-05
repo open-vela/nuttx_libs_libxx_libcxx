@@ -157,7 +157,7 @@ constexpr void testOne() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testOne<forward_iterator>();
   testOne<bidirectional_iterator>();
   testOne<random_access_iterator>();

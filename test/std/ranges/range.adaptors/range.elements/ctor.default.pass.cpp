@@ -31,7 +31,7 @@ static_assert( std::is_default_constructible_v<std::ranges::elements_view<View<t
 static_assert(!std::is_default_constructible_v<std::ranges::elements_view<View<false>, 0>>);
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::elements_view<View<true>, 0> ev = {};
     assert(ev.base().i == 42);

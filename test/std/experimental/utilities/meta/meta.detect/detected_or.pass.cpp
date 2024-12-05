@@ -28,7 +28,7 @@ struct noFoo {
 
 
 template <typename T, typename Res>
-void test() {
+static void test() {
     static_assert( std::is_same<Res, typename ex::detected_or  <double, hasFoo, T>::type>::value, "" );
     static_assert( std::is_same<Res, typename ex::detected_or_t<double, hasFoo, T>      >::value, "" );
 }

@@ -13,6 +13,7 @@
 
 #include "allocators.h"
 
+namespace {
 struct alloc_first
 {
     static bool allocator_constructed;
@@ -53,5 +54,6 @@ struct alloc_first
 };
 
 bool alloc_first::allocator_constructed = false;
+}
 
 #endif // ALLOC_FIRST_H

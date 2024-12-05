@@ -58,7 +58,7 @@ void test_fmt() {
 #endif
 }
 
-void test() {
+static void test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

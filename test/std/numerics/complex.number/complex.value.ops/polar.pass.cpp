@@ -44,7 +44,7 @@ test()
     test(T(100), T(0), std::complex<T>(100, 0));
 }
 
-void test_edges()
+static void test_edges()
 {
     const unsigned N = sizeof(testcases) / sizeof(testcases[0]);
     for (unsigned i = 0; i < N; ++i)

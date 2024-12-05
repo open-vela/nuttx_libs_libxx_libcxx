@@ -24,7 +24,7 @@
 #include "test_comparisons.h"
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using M = std::monostate;
   constexpr M m1{};
   constexpr M m2{};

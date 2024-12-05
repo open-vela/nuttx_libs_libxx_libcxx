@@ -14,6 +14,7 @@
 
 #include <cstdlib>
 
+_LIBCPP_WEAK
 void std::__libcpp_verbose_abort(char const*, ...) {
   std::exit(EXIT_SUCCESS);
 }

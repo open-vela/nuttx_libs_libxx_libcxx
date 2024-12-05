@@ -22,7 +22,7 @@
 #include "test_macros.h"
 
 template <uint8_t LockBit>
-void test() {
+static void test() {
   using Lock = std::__atomic_unique_lock<uint8_t, LockBit>;
 
   // lock on constructor

@@ -168,14 +168,14 @@ struct NonConst {
 };
 
 // check that the lambda body is not instantiated during overload resolution
-constexpr void test_sfinae() {
+constexpr static void test_sfinae() {
   std::optional<NonConst> opt{};
   auto l = [](auto&& x) { return x.non_const(); };
   opt.transform(l);
   std::move(opt).transform(l);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_sfinae();
   test_val_types();
   std::optional<int> opt;

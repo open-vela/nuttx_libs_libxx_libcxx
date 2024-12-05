@@ -73,7 +73,7 @@ constexpr void test_iteration(Args... args) {
   iterate_left(m, count);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr size_t D = std::dynamic_extent;
   test_iteration<std::extents<int>>();
   test_iteration<std::extents<unsigned, D>>(1);

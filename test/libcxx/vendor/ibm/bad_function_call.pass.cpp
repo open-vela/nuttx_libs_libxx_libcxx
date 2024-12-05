@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "assert.h"
 
-void foo() {}
+static void foo() {}
 
 void test_call() {
   std::function<void()> r(foo);

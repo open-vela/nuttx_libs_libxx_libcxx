@@ -138,7 +138,7 @@ constexpr void test_iter() {
   test_iter_sent<Iter, sentinel_wrapper<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iter<forward_iterator<int*>>();
   test_iter<bidirectional_iterator<int*>>();
   test_iter<random_access_iterator<int*>>();
@@ -146,7 +146,7 @@ constexpr void test_iterators() {
   test_iter<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // Complexity: at most `last - first` swaps.

@@ -52,7 +52,7 @@ struct NoCopyMoveDeleter : DeleterBase {
 #endif
 
 template <bool IsArray>
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
 #if TEST_STD_VER >= 11
   typedef typename std::conditional<!IsArray, int, int[]>::type VT;
   {
@@ -133,7 +133,7 @@ TEST_CONSTEXPR_CXX23 void test_noexcept() {
 #endif
 }
 
-TEST_CONSTEXPR_CXX23 void test_sfinae_runtime() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae_runtime() {
 #if TEST_STD_VER >= 11
   {
     using D = CopyOnlyDeleter;

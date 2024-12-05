@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   {
     std::vector<operator_hijacker> vo;
     std::vector<operator_hijacker> v(std::move(vo));

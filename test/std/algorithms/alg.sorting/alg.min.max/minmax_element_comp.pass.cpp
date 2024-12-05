@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class Iter>
 void
@@ -87,7 +87,7 @@ constexpr int il[] = { 2, 4, 6, 8, 7, 5, 3, 1 };
 struct less { constexpr bool operator ()( const int &x, const int &y) const { return x < y; }};
 #endif
 
-void constexpr_test()
+static void constexpr_test()
 {
 #if TEST_STD_VER >= 14
     constexpr auto p = std::minmax_element(il, il+8, less());

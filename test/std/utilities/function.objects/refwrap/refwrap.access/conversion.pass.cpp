@@ -30,7 +30,7 @@ test(T& t)
     assert(&r2 == &t);
 }
 
-void f() {}
+static void f() {}
 
 extern "C" int main(int, char**)
 {

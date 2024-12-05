@@ -36,7 +36,7 @@ static_assert(!std::is_nothrow_default_constructible_v<ThrowingDefaultCtorForwar
 static_assert(!std::is_nothrow_default_constructible_v<
     std::ranges::lazy_split_view<ThrowingDefaultCtorForwardView, ForwardView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::lazy_split_view<CopyableView, ForwardView> v;
     assert(v.base() == CopyableView());

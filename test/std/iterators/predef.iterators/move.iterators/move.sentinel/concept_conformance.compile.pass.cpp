@@ -17,7 +17,7 @@
 
 #include "test_iterators.h"
 
-void test()
+static void test()
 {
   // Pointer.
   {

@@ -23,7 +23,7 @@ concept ErrorNoexcept =
 static_assert(!ErrorNoexcept<int>);
 static_assert(ErrorNoexcept<std::unexpected<int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::unexpected<int> unex(5);
   decltype(auto) i = std::move(unex).error();
   static_assert(std::same_as<decltype(i), int&&>);

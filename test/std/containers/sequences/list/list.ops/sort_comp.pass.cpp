@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 #ifndef TEST_HAS_NO_EXCEPTIONS
 template <typename T>
@@ -48,9 +48,9 @@ struct Payload
     bool operator< (const Payload &rhs) const { return val <  rhs.val;}
 };
 
-bool greater(const Payload &lhs, const Payload &rhs) { return lhs.val >  rhs.val; }
+static bool greater(const Payload &lhs, const Payload &rhs) { return lhs.val >  rhs.val; }
 
-void test_stable(int N)
+static void test_stable(int N)
 {
     typedef Payload T;
     typedef std::list<T> C;

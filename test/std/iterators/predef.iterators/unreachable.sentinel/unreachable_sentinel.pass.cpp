@@ -27,7 +27,7 @@ concept weakly_equality_comparable_with = requires(const T& t, const U& u) {
   { u != t } -> std::same_as<bool>;
 };
 
-constexpr bool test() {
+constexpr static bool test() {
   static_assert(std::is_empty_v<std::unreachable_sentinel_t>);
   static_assert(std::semiregular<std::unreachable_sentinel_t>);
 

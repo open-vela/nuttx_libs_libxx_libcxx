@@ -22,7 +22,7 @@
 #include "test_iterators.h"
 
 template <class It>
-TEST_CONSTEXPR_CXX17 bool test()
+TEST_CONSTEXPR_CXX17 static bool test()
 {
   static_assert( std::is_constructible<std::move_iterator<It>, const It&>::value, "");
   static_assert( std::is_constructible<std::move_iterator<It>, It&&>::value, "");

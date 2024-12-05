@@ -26,7 +26,7 @@
 #  define INVOKE_NOEXCEPT(expected, ...)
 #endif
 
-int count = 0;
+static int count = 0;
 
 // 1 arg, return void
 

@@ -23,7 +23,7 @@
 #include "test_iterators.h"
 #include "test_macros.h"
 
-constexpr bool test() {
+constexpr static bool test() {
   // Can use `iter_move` with a regular array.
   {
     constexpr int N = 3;

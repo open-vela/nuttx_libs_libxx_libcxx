@@ -40,7 +40,7 @@ test(S s, test_allocator_statistics& alloc_stats)
     alloc_stats.throw_after = INT_MAX;
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     test_allocator_statistics alloc_stats;
     typedef std::basic_string<char, std::char_traits<char>, test_allocator<char> > S;

@@ -109,7 +109,7 @@ constexpr void test_iterator() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterator<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>>();
   test_iterator<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_iterator<forward_iterator<int*>>();

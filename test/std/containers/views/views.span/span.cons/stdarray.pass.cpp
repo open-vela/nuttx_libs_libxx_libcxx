@@ -27,7 +27,7 @@
 
 #include "test_macros.h"
 
-void checkCV()
+static void checkCV()
 {
     std::array<int, 3> arr  = {1,2,3};
 //  STL says these are not cromulent

@@ -26,7 +26,7 @@
 #include "test_macros.h"
 
 template <class CharT>
-constexpr void test() {
+static constexpr static void test() {
   std::format_to_n_result<CharT*> v{nullptr, std::iter_difference_t<CharT*>{42}};
 
   auto [out, size] = v;
@@ -36,7 +36,7 @@ constexpr void test() {
   assert(size == v.size);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

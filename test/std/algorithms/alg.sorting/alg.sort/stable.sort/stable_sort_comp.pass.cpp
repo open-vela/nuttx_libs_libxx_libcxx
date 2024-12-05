@@ -32,7 +32,7 @@ struct indirect_less
         {return *x < *y;}
 };
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 struct first_only
 {
@@ -42,7 +42,7 @@ struct first_only
     }
 };
 
-void test()
+static void test()
 {
     typedef std::pair<int, int> P;
     const int N = 1000;

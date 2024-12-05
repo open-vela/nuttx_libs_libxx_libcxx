@@ -31,7 +31,7 @@
 #define SV(S) MAKE_STRING_VIEW(CharT, S)
 
 template <class CharT>
-constexpr bool test() {
+static constexpr bool test() {
   assert((std::basic_format_string<CharT>{CSTR("foo")}.get() == SV("foo")));
   assert((std::basic_format_string<CharT, int>{CSTR("{}")}.get() == SV("{}")));
   assert((std::basic_format_string<CharT, int, char>{CSTR("{} {:*>6}")}.get() == SV("{} {:*>6}")));

@@ -139,7 +139,7 @@ struct std::hash<std::pair<const K, V>> {
   }
 };
 
-void test() {
+static void test() {
   { // Conversions always preserving equality.
     { // sequences <-> sequences
       types::for_each(sequence_containers<int>{}, []<class From>() {

@@ -24,7 +24,7 @@ struct Error{
   friend constexpr bool operator==(const Error&, const Error&) = default;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::unexpected<Error> unex1(Error{2});
   std::unexpected<Error> unex2(Error{3});
   std::unexpected<Error> unex3(Error{2});

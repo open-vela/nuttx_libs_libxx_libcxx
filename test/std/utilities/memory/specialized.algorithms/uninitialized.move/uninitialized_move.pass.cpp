@@ -54,7 +54,7 @@ int ThrowsCounted::count = 0;
 int ThrowsCounted::constructed = 0;
 int ThrowsCounted::throw_after = 0;
 
-void test_ctor_throws()
+static void test_ctor_throws()
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     using It = forward_iterator<ThrowsCounted*>;
@@ -77,7 +77,7 @@ void test_ctor_throws()
 #endif
 }
 
-void test_counted()
+static void test_counted()
 {
     using It = cpp17_input_iterator<int*>;
     using FIt = forward_iterator<Counted*>;

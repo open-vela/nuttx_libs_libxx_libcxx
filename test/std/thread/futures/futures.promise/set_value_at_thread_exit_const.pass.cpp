@@ -21,7 +21,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-void func(std::promise<int> p)
+static void func(std::promise<int> p)
 {
     const int i = 5;
     p.set_value_at_thread_exit(i);

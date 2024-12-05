@@ -20,8 +20,8 @@
 
 #include "test_macros.h"
 
-int new_nothrow_called = 0;
-int delete_called = 0;
+static int new_nothrow_called = 0;
+static int delete_called = 0;
 
 void* operator new(std::size_t s, std::nothrow_t const&) TEST_NOEXCEPT {
     ++new_nothrow_called;

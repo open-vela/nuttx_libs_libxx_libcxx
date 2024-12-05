@@ -35,7 +35,7 @@ struct EnumType
 
 
 template <class From, class To>
-void check_integral_types()
+static void check_integral_types()
 {
   typedef std::numeric_limits<From> Limits;
   const From max = Limits::max();
@@ -70,7 +70,7 @@ void check_integral_types()
 
 
 template <class From, class To>
-void check_enum_types()
+static void check_enum_types()
 {
   auto ret = std::__convert_to_integral((From)1);
   assert(ret == 1);

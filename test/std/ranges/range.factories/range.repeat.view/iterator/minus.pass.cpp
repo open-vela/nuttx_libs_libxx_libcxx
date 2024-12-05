@@ -16,7 +16,7 @@
 #include <cstdint>
 #include <concepts>
 
-constexpr bool test() {
+static constexpr bool test() {
   // <iterator> - difference_type
   {
     using Iter = std::ranges::iterator_t<std::ranges::repeat_view<int>>;

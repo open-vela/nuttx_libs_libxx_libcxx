@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-int globalBuff[8];
+static int globalBuff[8];
 
 template<bool IsNoexcept>
 struct View : std::ranges::view_base {
@@ -87,7 +87,7 @@ concept CanBePiped = requires (View&& view, T&& t) {
   { std::forward<View>(view) | std::forward<T>(t) };
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     ASSERT_SAME_TYPE(decltype(std::views::all(View<true>())), View<true>);
     static_assert(noexcept(std::views::all(View<true>())));

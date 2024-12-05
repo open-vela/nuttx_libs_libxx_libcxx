@@ -30,7 +30,7 @@ struct NonVoidOutputIterator {
     void operator=(int) const;
 };
 
-void test() {
+static void test() {
   {
     using Iter = simple_iterator<int*>;
     using CommonIter = std::common_iterator<Iter, sentinel_type<int*>>;

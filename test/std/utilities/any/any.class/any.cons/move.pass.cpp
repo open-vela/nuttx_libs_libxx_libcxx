@@ -50,7 +50,7 @@ void test_move_does_not_throw()
 #endif
 }
 
-void test_move_empty() {
+static void test_move_empty() {
     DisableAllocationGuard g; ((void)g); // no allocations should be performed.
 
     std::any a1;

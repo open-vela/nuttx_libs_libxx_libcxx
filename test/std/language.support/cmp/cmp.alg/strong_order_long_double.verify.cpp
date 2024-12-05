@@ -35,7 +35,7 @@
 
 #include "test_macros.h"
 
-void f() {
+static void f() {
     long double ld = 3.14;
     (void)std::strong_order(ld, ld);  // expected-error@*:* {{std::strong_order is unimplemented for this floating-point type}}
 }

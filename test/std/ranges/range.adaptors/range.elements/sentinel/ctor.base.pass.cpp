@@ -31,7 +31,7 @@ struct Range : std::ranges::view_base {
 static_assert(std::is_constructible_v<std::ranges::sentinel_t<std::ranges::elements_view<Range, 0>>, Sent>);
 static_assert(!std::is_convertible_v<Sent, std::ranges::sentinel_t<std::ranges::elements_view<Range, 0>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // base is init correctly
   {
     using R        = std::ranges::elements_view<Range, 0>;

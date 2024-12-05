@@ -32,7 +32,7 @@ constexpr void test_from_range() {
 
 struct A {};
 
-constexpr bool test() {
+static constexpr bool test() {
   test_from_range<int, std::dynamic_extent>();
   test_from_range<int, 3>();
   test_from_range<A, std::dynamic_extent>();

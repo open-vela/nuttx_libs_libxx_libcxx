@@ -35,7 +35,7 @@ static_assert(IsBaseNoexcept<ElementsIter&>);
 static_assert(IsBaseNoexcept<const ElementsIter&&>);
 static_assert(!IsBaseNoexcept<ElementsIter&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> t{5};
 
   // const &

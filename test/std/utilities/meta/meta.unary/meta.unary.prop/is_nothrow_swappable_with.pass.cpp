@@ -31,17 +31,17 @@ struct B {
 struct C {};
 struct D {};
 
-void swap(A&, A&) {}
+static void swap(A&, A&) {}
 
-void swap(A&, B&) noexcept {}
-void swap(B&, A&) noexcept {}
+static void swap(A&, B&) noexcept {}
+static void swap(B&, A&) noexcept {}
 
-void swap(A&, C&) noexcept {}
-void swap(C&, A&) {}
+static void swap(A&, C&) noexcept {}
+static void swap(C&, A&) {}
 
 struct M {};
 
-void swap(M&&, M&&) noexcept {}
+static void swap(M&&, M&&) noexcept {}
 
 } // namespace MyNS
 

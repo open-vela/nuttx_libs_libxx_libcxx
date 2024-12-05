@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-void test() {
+static void test() {
   // Case 1: http://eel.is/c++draft/iterators.common#common.iter.access-5.1
   {
     auto check = []<class Iterator>() {

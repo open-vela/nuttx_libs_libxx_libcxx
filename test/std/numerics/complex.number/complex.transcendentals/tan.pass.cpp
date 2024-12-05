@@ -33,7 +33,7 @@ test()
     test(std::complex<T>(10000, -10000), std::complex<T>(0, -1));
 }
 
-void test_edges()
+static void test_edges()
 {
     const unsigned N = sizeof(testcases) / sizeof(testcases[0]);
     for (unsigned i = 0; i < N; ++i)

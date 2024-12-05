@@ -19,7 +19,7 @@
 #include <functional>
 #include <memory>
 
-void f() {
+static void f() {
     typedef std::function<void(int)> F;
     F f1;
     F f2(std::allocator_arg, std::allocator<int>(), f1); // expected-error {{no matching constructor for initialization of}}

@@ -18,7 +18,7 @@
 struct A {};
 
 template <class T>
-void test() {
+static void test() {
   std::shared_ptr<T> p;
   assert(p.use_count() == 0);
   assert(p.get() == 0);

@@ -80,7 +80,7 @@ constexpr bool test_arrays() {
 #endif
 
 template <class It>
-TEST_CONSTEXPR_CXX20 void test() {
+TEST_CONSTEXPR_CXX20 static void test() {
     using Alloc = std::allocator<Counted>;
     int counter = 0;
     Alloc alloc;

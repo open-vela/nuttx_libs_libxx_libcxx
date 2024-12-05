@@ -33,7 +33,7 @@
 typedef std::chrono::high_resolution_clock Clock;
 typedef std::chrono::milliseconds ms;
 
-std::atomic_bool invoked{false};
+static std::atomic_bool invoked{false};
 
 int f0()
 {
@@ -42,7 +42,7 @@ int f0()
     return 3;
 }
 
-int i = 0;
+static int i = 0;
 
 int& f1()
 {
@@ -51,27 +51,27 @@ int& f1()
     return i;
 }
 
-void f2()
+static void f2()
 {
     invoked = true;
     std::this_thread::sleep_for(ms(200));
 }
 
-std::unique_ptr<int> f3(int j)
+static std::unique_ptr<int> f3(int j)
 {
     invoked = true;
     std::this_thread::sleep_for(ms(200));
     return std::unique_ptr<int>(new int(j));
 }
 
-std::unique_ptr<int> f4(std::unique_ptr<int>&& p)
+static std::unique_ptr<int> f4(std::unique_ptr<int>&& p)
 {
     invoked = true;
     std::this_thread::sleep_for(ms(200));
     return std::move(p);
 }
 
-void f5(int j)
+static void f5(int j)
 {
     std::this_thread::sleep_for(ms(200));
     ((void)j);

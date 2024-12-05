@@ -17,7 +17,7 @@
 
 #include <stop_token>
 
-void test() {
+static void test() {
   std::stop_token st;
   st.stop_requested(); // expected-warning {{ignoring return value of function}}
   st.stop_possible();  // expected-warning {{ignoring return value of function}}

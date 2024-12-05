@@ -21,7 +21,7 @@
 #include "count_new.h"
 
 template <class List>
-void test() {
+static void test() {
     int a1[] = {1, 2, 3};
     List l1;
     typename List::iterator i = l1.insert(l1.begin(), a1, a1+3);

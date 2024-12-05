@@ -6019,7 +6019,7 @@ TEST_CONSTEXPR_CXX20 bool test56() {
 }
 
 template <class S, class SV>
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   test0<S, SV>();
   test1<S, SV>();
   test2<S, SV>();

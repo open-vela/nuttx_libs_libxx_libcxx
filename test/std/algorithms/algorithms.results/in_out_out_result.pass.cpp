@@ -64,7 +64,7 @@ struct ConvertibleFrom {
   T content;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::in_out_out_result<int, double, float> res{10, 0., 1.f};
     assert(res.in == 10);

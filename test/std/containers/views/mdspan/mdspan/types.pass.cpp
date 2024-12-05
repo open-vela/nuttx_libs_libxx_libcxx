@@ -81,7 +81,7 @@ template <class T>
 constexpr bool trv_mv_asgn = std::is_trivially_move_assignable_v<T>;
 
 template <class MDS, bool default_ctor, bool copy_ctor, bool move_ctor, bool destr, bool copy_assign, bool move_assign>
-void check_triviality() {
+static void check_triviality() {
   static_assert(trv_df_ctor<MDS> == default_ctor);
   static_assert(trv_cp_ctor<MDS> == copy_ctor);
   static_assert(trv_mv_ctor<MDS> == move_ctor);

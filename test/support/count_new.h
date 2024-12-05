@@ -15,6 +15,9 @@
 #include <cstdlib>
 #include <new>
 #include <type_traits>
+#if defined(__NuttX__)
+#include <nuttx/tls.h>
+#endif
 
 #include "test_macros.h"
 
@@ -47,7 +50,7 @@ private:
 
 public:
     // All checks return true when disable_checking is enabled.
-    static const bool disable_checking;
+    static const bool disable_checking = true;
 
     // Disallow any allocations from occurring. Useful for testing that
     // code doesn't perform any allocations.
@@ -357,12 +360,45 @@ public:
     }
 };
 
+/*
 #ifdef DISABLE_NEW_COUNT
   const bool MemCounter::disable_checking = true;
 #else
   const bool MemCounter::disable_checking = false;
 #endif
+*/
 
+#if defined(__NuttX__) && !defined(CONFIG_BUILD_KERNEL)
+static void FreeMemCounter(FAR void* mem_counter) {
+  if (mem_counter) {
+    MemCounter *counter = static_cast<MemCounter*>(mem_counter);
+    delete counter;
+  }
+}
+
+static int g_mem_counter_index;
+
+static void alloc_mem_counter_key(void) {
+  g_mem_counter_index = task_tls_alloc(FreeMemCounter);
+}
+
+static MemCounter* getGlobalMemCounter() {
+  MemCounter* counter = nullptr;
+  static pthread_once_t once = PTHREAD_ONCE_INIT;
+
+  pthread_once(&once, alloc_mem_counter_key);
+  counter = (MemCounter*)task_tls_get_value(g_mem_counter_index);
+  if (counter == nullptr) {
+    counter = new MemCounter(MemCounter::MemCounterCtorArg_());
+    if (counter) {
+      task_tls_set_value(g_mem_counter_index, reinterpret_cast<uintptr_t>(counter));
+    }
+  }
+
+  return counter;
+}
+#define globalMemCounter (*getGlobalMemCounter())
+#else
 TEST_DIAGNOSTIC_PUSH
 TEST_MSVC_DIAGNOSTIC_IGNORED(4640) // '%s' construction of local static object is not thread safe (/Zc:threadSafeInit-)
 inline MemCounter* getGlobalMemCounter() {
@@ -372,6 +408,7 @@ inline MemCounter* getGlobalMemCounter() {
 TEST_DIAGNOSTIC_POP
 
 MemCounter &globalMemCounter = *getGlobalMemCounter();
+#endif
 
 #ifndef DISABLE_NEW_COUNT
 void* operator new(std::size_t s) TEST_THROW_SPEC(std::bad_alloc)

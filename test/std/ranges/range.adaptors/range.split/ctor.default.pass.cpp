@@ -32,7 +32,7 @@ static_assert(!std::is_default_constructible_v<std::ranges::split_view<View<true
 static_assert(!std::is_default_constructible_v<std::ranges::split_view<View<false>, View<false>>>);
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::split_view<View<true>, View<true>> sv = {};
     assert(sv.base().i == 42);

@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     static_assert((std::is_same<
@@ -28,7 +28,7 @@ test1()
         std::uint_fast32_t>::value), "");
 }
 
-void
+static void
 test2()
 {
     static_assert((std::is_same<

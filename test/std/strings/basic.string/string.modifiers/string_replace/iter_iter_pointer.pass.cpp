@@ -287,7 +287,7 @@ TEST_CONSTEXPR_CXX20 bool test2()
     return true;
 }
 
-TEST_CONSTEXPR_CXX20 void test() {
+TEST_CONSTEXPR_CXX20 static void test() {
   {
     typedef std::string S;
     test0<S>();

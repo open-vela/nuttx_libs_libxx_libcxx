@@ -55,7 +55,7 @@ concept ImplicitlyConstructible = requires(Args&&... args) { conversion_test<T>(
 static_assert(ImplicitlyConstructible<int, int>);
 static_assert(!ImplicitlyConstructible<std::unexpected<Error>, std::in_place_t, std::initializer_list<int>, Arg>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // lvalue
   {
     Arg a{5};
@@ -79,7 +79,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Except {};
 

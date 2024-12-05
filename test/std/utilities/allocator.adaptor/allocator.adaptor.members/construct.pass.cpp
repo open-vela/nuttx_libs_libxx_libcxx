@@ -36,7 +36,7 @@ struct B
     }
 };
 
-bool B::constructed = false;
+// bool B::constructed = false;
 
 struct C
 {

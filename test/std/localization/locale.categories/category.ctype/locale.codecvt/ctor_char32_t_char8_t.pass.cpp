@@ -21,6 +21,7 @@
 
 using F = std::codecvt<char32_t, char8_t, std::mbstate_t>;
 
+namespace {
 struct my_facet : F {
   static int count;
 
@@ -30,6 +31,7 @@ struct my_facet : F {
 };
 
 int my_facet::count = 0;
+}
 
 extern "C" int main(int, char**) {
   {

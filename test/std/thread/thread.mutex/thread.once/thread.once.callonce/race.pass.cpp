@@ -26,15 +26,15 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::once_flag flg0;
-long global = 0;
+static std::once_flag flg0;
+static long global = 0;
 
-void init0()
+static void init0()
 {
     ++global;
 }
 
-void f0()
+static void f0()
 {
     std::call_once(flg0, init0);
     assert(global == 1);

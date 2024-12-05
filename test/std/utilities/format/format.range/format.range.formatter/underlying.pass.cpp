@@ -37,7 +37,7 @@ constexpr void test_underlying() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_underlying<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_underlying<wchar_t>();

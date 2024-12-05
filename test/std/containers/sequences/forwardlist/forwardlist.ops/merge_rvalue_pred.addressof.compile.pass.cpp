@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::forward_list<operator_hijacker> lo;
   std::forward_list<operator_hijacker> l;
   lo.merge(std::move(l), std::less<operator_hijacker>());

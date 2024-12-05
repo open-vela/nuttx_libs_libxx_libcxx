@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     unsigned a[] = {3, 5, 7};
@@ -32,7 +32,7 @@ test1()
     assert(e1 == e2);
 }
 
-void
+static void
 test2()
 {
     unsigned a[] = {3, 5, 7};

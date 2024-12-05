@@ -1829,7 +1829,7 @@ TEST_CONSTEXPR_CXX20 bool test31() {
 }
 
 template <class S, class SV>
-void test() {
+static void test() {
   test0<S, SV>();
   test1<S, SV>();
   test2<S, SV>();

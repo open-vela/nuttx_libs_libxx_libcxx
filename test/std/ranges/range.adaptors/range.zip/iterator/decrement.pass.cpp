@@ -28,7 +28,7 @@ struct NonBidi : IntBufferView {
   constexpr sentinel_wrapper<iterator> end() const { return sentinel_wrapper<iterator>(iterator(buffer_ + size_)); }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::array a{1, 2, 3, 4};
   std::array b{4.1, 3.2, 4.3};
   {

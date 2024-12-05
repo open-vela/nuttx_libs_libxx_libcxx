@@ -135,7 +135,7 @@ constexpr void test_fail() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_fail();
   test_val_types();
   return true;

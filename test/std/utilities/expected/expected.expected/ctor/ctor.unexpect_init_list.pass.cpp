@@ -61,7 +61,7 @@ struct Data {
   constexpr Data(std::initializer_list<int> il, Us&&... us) : vec_(il), tuple_(std::forward<Us>(us)...) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // no arg
   {
     std::expected<int, Data<>> e(std::unexpect, {1, 2, 3});
@@ -103,7 +103,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing(std::initializer_list<int>, int) { throw Except{}; };

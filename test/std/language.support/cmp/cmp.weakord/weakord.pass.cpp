@@ -69,7 +69,7 @@ constexpr bool test_conversion() {
   return true;
 }
 
-constexpr void test_equality() {
+constexpr static void test_equality() {
   auto& WeakEq = std::weak_ordering::equivalent;
   auto& PartialEq = std::partial_ordering::equivalent;
   assert(WeakEq == PartialEq);

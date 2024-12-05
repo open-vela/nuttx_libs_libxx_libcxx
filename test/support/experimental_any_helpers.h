@@ -219,7 +219,7 @@ typedef large_type<2> large2;
 // and 'throws_on_move'.
 struct my_any_exception {};
 
-void throwMyAnyExpression() {
+static void throwMyAnyExpression() {
 #if !defined(TEST_HAS_NO_EXCEPTIONS)
         throw my_any_exception();
 #else
@@ -255,8 +255,6 @@ private:
     small_throws_on_copy& operator=(small_throws_on_copy &&) = delete;
 };
 
-int small_throws_on_copy::count = 0;
-
 // A test type that will NOT trigger the small object optimization within 'any'.
 // this type throws if it is copied.
 struct large_throws_on_copy
@@ -288,8 +286,6 @@ private:
     int data[10];
 };
 
-int large_throws_on_copy::count = 0;
-
 // A test type that throws when it is moved. This object will NOT trigger
 // the small object optimization in 'any'.
 struct throws_on_move
@@ -316,7 +312,6 @@ private:
     throws_on_move& operator=(throws_on_move &&) = delete;
 };
 
-int throws_on_move::count = 0;
 
 
 #endif

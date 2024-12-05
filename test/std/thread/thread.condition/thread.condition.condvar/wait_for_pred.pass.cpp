@@ -37,15 +37,15 @@ public:
     bool operator()() {return i_ != 0;}
 };
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-int runs = 0;
+static int runs = 0;
 
-void f()
+static void f()
 {
     typedef std::chrono::system_clock Clock;
     typedef std::chrono::milliseconds milliseconds;

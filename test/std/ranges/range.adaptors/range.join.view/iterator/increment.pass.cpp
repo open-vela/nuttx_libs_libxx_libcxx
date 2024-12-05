@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // This way if we read past end we'll catch the error.
   int buffer1[2][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}};
   int dummy = 42;

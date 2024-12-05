@@ -183,7 +183,7 @@ constexpr bool has_assign(long) { return false; }
 template <class It>
 constexpr bool has_assign() { return has_assign<It>(0); }
 
-void test_sfinae() {
+static void test_sfinae() {
   using namespace fs;
   {
     using It = const char* const;

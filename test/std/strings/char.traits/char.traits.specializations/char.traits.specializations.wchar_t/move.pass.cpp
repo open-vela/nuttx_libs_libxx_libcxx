@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 bool test()
+TEST_CONSTEXPR_CXX20 static bool test()
 {
     wchar_t s1[] = {1, 2, 3};
     assert(std::char_traits<wchar_t>::move(s1, s1+1, 2) == s1);

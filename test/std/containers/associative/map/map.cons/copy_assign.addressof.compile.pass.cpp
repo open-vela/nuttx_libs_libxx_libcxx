@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   {
     std::map<int, operator_hijacker> mo;
     std::map<int, operator_hijacker> m;

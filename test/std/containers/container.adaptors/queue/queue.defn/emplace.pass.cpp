@@ -24,7 +24,7 @@
 #include "../../../Emplaceable.h"
 
 template <typename Queue>
-void test_return_type() {
+static void test_return_type() {
     typedef typename Queue::container_type Container;
     typedef typename Container::value_type value_type;
     typedef decltype(std::declval<Queue>().emplace(std::declval<value_type &>())) queue_return_type;

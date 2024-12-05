@@ -16,7 +16,7 @@
 #include <execution>
 #include <iterator>
 
-void test() {
+static void test() {
   int a[] = {1};
   auto pred = [](auto) { return false; };
   std::all_of(std::execution::par, std::begin(a), std::end(a), pred); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}

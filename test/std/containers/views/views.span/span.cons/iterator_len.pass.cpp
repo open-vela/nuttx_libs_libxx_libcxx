@@ -49,7 +49,7 @@ constexpr bool test_ctor() {
   return true;
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_constructibility<std::dynamic_extent>();
   test_constructibility<3>();
 

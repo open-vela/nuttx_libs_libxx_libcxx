@@ -22,7 +22,7 @@ static_assert(std::ranges::view<V>);
 
 static_assert(std::is_base_of_v<std::ranges::view_interface<ValueTypeForward>, ValueTypeForward>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // empty()
   {
     {

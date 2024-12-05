@@ -192,7 +192,7 @@ TEST_CONSTEXPR_CXX23 void doDeleterTest() {
 }
 
 template <bool IsArray>
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
   typedef typename std::conditional<IsArray, A[], A>::type VT;
 
   { // Test that different non-reference deleter types are allowed so long

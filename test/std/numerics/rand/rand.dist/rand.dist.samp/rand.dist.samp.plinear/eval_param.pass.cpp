@@ -33,7 +33,7 @@ sqr(T x)
     return x*x;
 }
 
-double
+static double
 f(double x, double a, double m, double b, double c)
 {
     return a + m*(sqr(x) - sqr(b))/2 + c*(x-b);

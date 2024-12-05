@@ -117,7 +117,7 @@ struct WithoutADL {
   constexpr bool operator==(WithoutADL const&) const;
 };
 
-constexpr bool test() {
+constexpr static bool test() {
   constexpr int full_size = 100;
   constexpr int half_size = full_size / 2;
   constexpr int reset = 0;

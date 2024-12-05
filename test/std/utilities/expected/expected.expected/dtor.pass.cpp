@@ -42,7 +42,7 @@ struct TrackedDestroy {
   constexpr ~TrackedDestroy() { destroyed = true; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // has value
   {
     bool valueDestroyed = false;

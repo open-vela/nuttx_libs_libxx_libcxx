@@ -48,7 +48,7 @@ constexpr void test_constructibility() {
   static_assert(!std::is_constructible_v<std::span<int, Extent>, int*, float*>); // types wrong
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_constructibility<std::dynamic_extent>();
   test_constructibility<3>();
   struct A {};

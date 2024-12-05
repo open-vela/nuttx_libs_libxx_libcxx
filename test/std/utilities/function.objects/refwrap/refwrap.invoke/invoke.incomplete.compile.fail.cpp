@@ -22,9 +22,9 @@
 
 
 struct Foo;
-Foo& get_foo();
+static FooFoo& get_foo(); get_foo();
 
-void test() {
+static void test() {
     std::reference_wrapper<Foo> ref = get_foo();
     ref(0); // incomplete at the point of call
 }

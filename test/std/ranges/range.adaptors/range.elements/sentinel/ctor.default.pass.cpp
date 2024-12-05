@@ -25,7 +25,7 @@ struct Range : std::ranges::view_base {
   PODSentinel end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using EleView  = std::ranges::elements_view<Range, 0>;
   using Sentinel = std::ranges::sentinel_t<EleView>;
   static_assert(!std::is_same_v<Sentinel, std::ranges::iterator_t<EleView>>);

@@ -44,7 +44,7 @@ protected:
     virtual std::string do_grouping() const {return std::string("\1\2\3");}
 };
 
-void test1()
+static void test1()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -3004,7 +3004,7 @@ void test1()
     }
 }
 
-void test2()
+static void test2()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -5964,7 +5964,7 @@ void test2()
     }
 }
 
-void test3()
+static void test3()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -8925,7 +8925,7 @@ void test3()
     }
 }
 
-void test4()
+static void test4()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -10712,7 +10712,7 @@ void test4()
     }
 }
 
-void test5()
+static void test5()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -12501,7 +12501,7 @@ void test5()
     }
 }
 
-void test6()
+static void test6()
 {
     char str[200];
     std::locale lc = std::locale::classic();

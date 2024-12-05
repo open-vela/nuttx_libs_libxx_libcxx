@@ -23,7 +23,7 @@ test(const S& lhs, SV rhs, bool x)
     assert((lhs > rhs) == x);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     typedef std::string_view SV;

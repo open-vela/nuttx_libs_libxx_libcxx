@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::queue<operator_hijacker> qo;
   std::queue<operator_hijacker> q;
   q = qo;

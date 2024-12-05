@@ -36,19 +36,19 @@ public:
     }
 };
 
-void func0(std::packaged_task<double(int, char)> p)
+static void func0(std::packaged_task<double(int, char)> p)
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
     p(3, 97);
 }
 
-void func1(std::packaged_task<double(int, char)> p)
+static void func1(std::packaged_task<double(int, char)> p)
 {
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
     p(3, 122);
 }
 
-void func2(std::packaged_task<double(int, char)> p)
+static void func2(std::packaged_task<double(int, char)> p)
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   p(3, 97);
@@ -64,7 +64,7 @@ void func2(std::packaged_task<double(int, char)> p)
 #endif
 }
 
-void func3(std::packaged_task<double(int, char)> p)
+static void func3(std::packaged_task<double(int, char)> p)
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     try

@@ -25,7 +25,7 @@ concept CanCallEquals = requires(const Iter& i) {
   i != i;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // When `View` is a forward range, `inner-iterator` supports both overloads of `operator==`.
   {
     SplitViewForward v("abc def", " ");

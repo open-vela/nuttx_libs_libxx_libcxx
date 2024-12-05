@@ -34,7 +34,7 @@ static_assert(ErrorNoexcept<const std::expected<int, int>&>);
 static_assert(ErrorNoexcept<std::expected<int, int>&&>);
 static_assert(ErrorNoexcept<const std::expected<int, int>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // non-const &
   {
     std::expected<int, int> e(std::unexpect, 5);

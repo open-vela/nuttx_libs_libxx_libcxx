@@ -28,7 +28,7 @@ static_assert(std::semiregular<NonAssignable>);
 static_assert(std::is_assignable_v<NonAssignable, int>);
 static_assert(!std::assignable_from<NonAssignable, int>);
 
-constexpr bool test()
+constexpr static bool test()
 {
   // Assigning from an lvalue.
   {

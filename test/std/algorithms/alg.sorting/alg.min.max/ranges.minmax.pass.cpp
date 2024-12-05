@@ -347,7 +347,7 @@ constexpr void test_range() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_2_arguments();
   test_initializer_list();
   test_range();

@@ -28,7 +28,7 @@ struct my_facet : public std::locale::facet {
 
 std::locale::id my_facet::id;
 
-void exit_success(int) {
+static void exit_success(int) {
     std::_Exit(EXIT_SUCCESS);
 }
 

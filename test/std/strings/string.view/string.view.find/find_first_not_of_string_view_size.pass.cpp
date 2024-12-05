@@ -18,7 +18,7 @@
 #include "test_macros.h"
 
 template <class S>
-void
+static void
 test(const S& s, const S& str, typename S::size_type pos, typename S::size_type x)
 {
     LIBCPP_ASSERT_NOEXCEPT(s.find_first_not_of(str, pos));
@@ -28,7 +28,7 @@ test(const S& s, const S& str, typename S::size_type pos, typename S::size_type 
 }
 
 template <class S>
-void
+static void
 test(const S& s, const S& str, typename S::size_type x)
 {
     assert(s.find_first_not_of(str) == x);
@@ -37,7 +37,7 @@ test(const S& s, const S& str, typename S::size_type x)
 }
 
 template <class S>
-void test0()
+static void test0()
 {
     test(S(""), S(""), 0, S::npos);
     test(S(""), S("laenf"), 0, S::npos);
@@ -122,7 +122,7 @@ void test0()
 }
 
 template <class S>
-void test1()
+static void test1()
 {
     test(S(""), S(""), S::npos);
     test(S(""), S("laenf"), S::npos);

@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // range<const V>
   std::ranges::drop_view dropView1(MoveOnlyView(), 4);
   assert(dropView1.end() == globalBuff + 8);

@@ -79,7 +79,7 @@ constexpr void test2(const std::tuple<Ts...>&, const UTuple& utuple) {
   (test2_impl<Ts>(utuple) , ...);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<
 #ifndef TEST_HAS_NO_INT128
       __int128_t, __uint128_t,

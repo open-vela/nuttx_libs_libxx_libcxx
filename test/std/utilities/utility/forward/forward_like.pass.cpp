@@ -84,7 +84,7 @@ static_assert(std::is_same_v<decltype(std::forward_like<T&>(std::declval<NoCtorC
 
 static_assert(noexcept(std::forward_like<T>(std::declval<NoCtorCopyMove>())));
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     int val       = 1729;
     auto&& result = std::forward_like<const double&>(val);

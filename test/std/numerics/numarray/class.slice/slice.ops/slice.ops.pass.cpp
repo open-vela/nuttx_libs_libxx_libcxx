@@ -19,7 +19,7 @@
 
 #include "test_comparisons.h"
 
-void test() {
+static void test() {
   {
     std::slice s1;
     std::slice s2;

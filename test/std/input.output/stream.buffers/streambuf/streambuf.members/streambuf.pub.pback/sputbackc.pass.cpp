@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int pbackfail_called = 0;
+static int pbackfail_called = 0;
 
 struct test
     : public std::basic_streambuf<char>

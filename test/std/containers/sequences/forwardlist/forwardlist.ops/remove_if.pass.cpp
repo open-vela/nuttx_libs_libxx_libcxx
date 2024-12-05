@@ -36,7 +36,7 @@ void do_remove_if(L &l, Predicate pred, typename L::size_type expected)
     assert(old_size - std::distance(l.begin(), l.end()) == expected);
 }
 
-bool g(int i)
+static bool g(int i)
 {
     return i < 3;
 }

@@ -36,7 +36,7 @@ struct convertibleFoo {
 
 
 template <typename T, typename Res>
-void test() {
+static void test() {
     static_assert( std::is_same<Res, typename ex::detected_t<callFoo, T>>::value, "" );
 }
 

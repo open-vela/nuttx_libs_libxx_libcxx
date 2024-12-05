@@ -23,7 +23,7 @@ struct TakesTwoInts {
   constexpr TakesTwoInts(int a, int b) : a_(a), b_(b) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::single_view<TakesTwoInts> sv(std::in_place, 1, 2);
     assert(sv.data()->a_ == 1);

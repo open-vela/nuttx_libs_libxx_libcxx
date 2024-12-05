@@ -27,7 +27,7 @@ static_assert(
     std::is_invocable_v<decltype((std::views::zip)), SizedRandomAccessView, std::ranges::iota_view<int, int>>);
 static_assert(!std::is_invocable_v<decltype((std::views::zip)), SizedRandomAccessView, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // zip zero arguments
     auto v = std::views::zip();

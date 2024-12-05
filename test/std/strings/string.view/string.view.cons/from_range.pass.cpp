@@ -25,7 +25,7 @@
 #include "test_range.h"
 
 template<class CharT>
-constexpr void test() {
+constexpr static void test() {
   auto data = MAKE_STRING_VIEW(CharT, "test");
   std::array<CharT, 4> arr;
   for(int i = 0; i < 4; ++i) {
@@ -38,7 +38,7 @@ constexpr void test() {
   assert(sv.data() == arr.data());
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

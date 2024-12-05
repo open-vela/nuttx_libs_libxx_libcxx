@@ -31,7 +31,7 @@ struct NonDefaultConstructible : std::ranges::view_base {
   int* end() const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::take_view<DefaultConstructible> tv;
     assert(tv.begin() == buff);

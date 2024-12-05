@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     std::ranlux24_base e;
@@ -27,7 +27,7 @@ test1()
     assert(e() == 14283486u);
 }
 
-void
+static void
 test2()
 {
     std::ranlux48_base e;

@@ -109,7 +109,7 @@ concept DataIsInvocable = requires (std::ranges::ref_view<R> view) { view.data()
 static_assert(std::same_as<decltype(std::ranges::ref_view(std::declval<Range&>())),
               std::ranges::ref_view<Range>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // ref_view::base
     Range range;

@@ -85,7 +85,7 @@ constexpr void test_two()
   assert((i2 <=> j1) == std::strong_ordering::greater);
 }
 
-constexpr bool test()
+constexpr static bool test()
 {
   test_two<int*, int*>();
   test_two<int*, const int*>();

@@ -31,7 +31,7 @@
 #include "test_macros.h"
 
 template <class CharT, std::size_t N>
-TEST_CONSTEXPR_CXX23 void check_equal(std::basic_string<CharT> const& s, std::bitset<N> const& b, CharT zero, CharT one) {
+TEST_CONSTEXPR_CXX23 static void check_equal(std::basic_string<CharT> const& s, std::bitset<N> const& b, CharT zero, CharT one) {
     assert(s.size() == b.size());
     for (std::size_t i = 0; i < b.size(); ++i) {
         if (b[i]) {

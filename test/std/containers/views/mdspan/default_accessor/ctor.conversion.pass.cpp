@@ -36,7 +36,7 @@ constexpr void test_conversion() {
   [[maybe_unused]] std::default_accessor<ToT> acc_to(acc_from);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   // default accessor conversion largely behaves like pointer conversion
   test_conversion<int, int>();
   test_conversion<int, const int>();

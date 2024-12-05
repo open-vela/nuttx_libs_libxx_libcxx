@@ -29,16 +29,16 @@ struct View : std::ranges::view_base {
 
 namespace subsume_range {
   template <std::ranges::view>
-  constexpr bool test() { return true; }
+  static constexpr bool test() { return true; }
   template <std::ranges::range>
-  constexpr bool test() { return false; }
+  static constexpr bool test() { return false; }
   static_assert(test<View>());
 }
 
 namespace subsume_movable {
   template <std::ranges::view>
-  constexpr bool test() { return true; }
+  static constexpr bool test() { return true; }
   template <std::movable>
-  constexpr bool test() { return false; }
+  static constexpr bool test() { return false; }
   static_assert(test<View>());
 }

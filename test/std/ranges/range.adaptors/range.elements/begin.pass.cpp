@@ -52,7 +52,7 @@ static_assert(HasConstAndNonConstBegin<std::ranges::elements_view<NonSimpleCommo
 // !range<const V>
 static_assert(HasOnlyNonConstBegin<std::ranges::elements_view<NoConstBeginView, 0>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> buffer[] = {{1}, {2}};
   {
     // underlying iterator should be pointing to the first element

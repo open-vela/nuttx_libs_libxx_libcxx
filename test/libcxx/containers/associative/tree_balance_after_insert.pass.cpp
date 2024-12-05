@@ -31,7 +31,7 @@ struct Node
     Node() : __left_(), __right_(), __parent_(), __is_black_() {}
 };
 
-void
+static void
 test1()
 {
     {
@@ -556,7 +556,7 @@ test1()
     }
 }
 
-void
+static void
 test2()
 {
     {
@@ -793,7 +793,7 @@ test2()
     }
 }
 
-void
+static void
 test3()
 {
     {
@@ -1030,7 +1030,7 @@ test3()
     }
 }
 
-void
+static void
 test4()
 {
     Node root;
@@ -1320,7 +1320,7 @@ test4()
     assert(h.__is_black_ == false);
 }
 
-void
+static void
 test5()
 {
     Node root;

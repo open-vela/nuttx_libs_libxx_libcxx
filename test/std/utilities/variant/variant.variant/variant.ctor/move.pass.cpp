@@ -74,6 +74,7 @@ struct TMoveNTCopy {
 
 static_assert(std::is_trivially_move_constructible<TMoveNTCopy>::value, "");
 
+namespace {
 #ifndef TEST_HAS_NO_EXCEPTIONS
 struct MakeEmptyT {
   static int alive;
@@ -90,6 +91,7 @@ struct MakeEmptyT {
 };
 
 int MakeEmptyT::alive = 0;
+}
 
 template <class Variant> void makeEmpty(Variant &v) {
   Variant v2(std::in_place_type<MakeEmptyT>);

@@ -33,7 +33,7 @@ concept HasIteratorConcept = requires { typename T::iterator_concept; };
 template<class T>
 concept HasIteratorCategory = requires { typename T::iterator_category; };
 
-void test() {
+static void test() {
   {
     using Iter = std::counted_iterator<InputOrOutputArchetype>;
     static_assert(std::same_as<Iter::iterator_type, InputOrOutputArchetype>);

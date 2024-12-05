@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     typedef std::independent_bits_engine<std::ranlux24, 32, unsigned> E;
@@ -38,7 +38,7 @@ test1()
 #endif
 }
 
-void
+static void
 test2()
 {
     typedef std::independent_bits_engine<std::ranlux48, 64, unsigned long long> E;

@@ -60,7 +60,7 @@ static_assert(!HasFindIfR<InputRangeNotSentinelSemiregular>);
 static_assert(!HasFindIfR<InputRangeNotSentinelEqualityComparableWith>);
 
 template <class It, class Sent = It>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   {
     int a[] = {1, 2, 3, 4};
     std::same_as<It> auto ret = std::ranges::find_if(It(a), Sent(It(a + 4)), [](int x) mutable { return x == 4; });
@@ -83,7 +83,7 @@ struct NonConstComparable {
   friend constexpr bool operator==(NonConstComparable&, const NonConstComparable&) { return true; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<int*>();
   test_iterators<const int*>();
   test_iterators<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();

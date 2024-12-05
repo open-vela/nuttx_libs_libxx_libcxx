@@ -38,7 +38,7 @@ constexpr void test_construction() {
   assert(m.required_span_size() == expected_size);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr size_t D = std::dynamic_extent;
   test_construction<std::extents<int>>();
   test_construction<std::extents<unsigned, D>>();

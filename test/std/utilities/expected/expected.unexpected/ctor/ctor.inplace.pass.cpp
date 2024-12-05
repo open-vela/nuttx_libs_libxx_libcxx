@@ -54,7 +54,7 @@ struct Error {
   Error(std::initializer_list<Error>) :arg(0){ assert(false); }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // lvalue
   {
     Arg a{5};
@@ -79,7 +79,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Except {};
 

@@ -56,7 +56,7 @@ struct convertible_to_string_view {
 };
 
 template <class T, class U>
-void test() {
+static void test() {
   char_wrapper a[] = {{'a'}, {'b'}, {'c'}, {'\0'}};
 
   assert((testComparisons(T(a), U(a), true, false)));

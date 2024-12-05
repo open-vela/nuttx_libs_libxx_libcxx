@@ -26,7 +26,7 @@ struct A
     A(const A& a) : data_(a.data_) {++constructed;}
 };
 
-int A::constructed = 0;
+// int A::constructed = 0;
 
 extern "C" int main(int, char**)
 {

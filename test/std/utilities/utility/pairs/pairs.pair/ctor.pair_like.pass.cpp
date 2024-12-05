@@ -54,7 +54,7 @@ struct tuple_element<N, my_ns::MyPairLike> {
 static_assert(!std::is_constructible_v<std::pair<int,int>, my_ns::MyPairLike const&>);
 
 
-constexpr bool test() {
+static constexpr bool test() {
   // Make sure construction works from array, tuple, and ranges::subrange
   {
     // Check from std::array

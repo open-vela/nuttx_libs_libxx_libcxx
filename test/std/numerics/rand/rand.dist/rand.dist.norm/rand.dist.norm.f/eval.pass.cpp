@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-double fac(double x)
+static double fac(double x)
 {
     double r = 1;
     for (; x > 1; --x)
@@ -31,7 +31,7 @@ double fac(double x)
     return r;
 }
 
-double
+static double
 I(double x, unsigned a, unsigned b)
 {
     double r = 0;
@@ -41,7 +41,7 @@ I(double x, unsigned a, unsigned b)
     return r;
 }
 
-double
+static double
 f(double x, double m, double n)
 {
     return I(m * x / (m*x + n), static_cast<unsigned>(m/2), static_cast<unsigned>(n/2));

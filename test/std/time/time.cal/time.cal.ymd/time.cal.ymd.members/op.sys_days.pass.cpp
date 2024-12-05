@@ -35,7 +35,7 @@
 
 #include "test_macros.h"
 
-void RunTheExample()
+static void RunTheExample()
 {
     using namespace std::chrono;
 

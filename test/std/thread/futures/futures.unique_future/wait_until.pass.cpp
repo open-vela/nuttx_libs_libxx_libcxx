@@ -30,27 +30,27 @@ typedef std::chrono::milliseconds ms;
 
 std::atomic<WorkerThreadState> thread_state(WorkerThreadState::Uninitialized);
 
-void set_worker_thread_state(WorkerThreadState state)
+static void set_worker_thread_state(WorkerThreadState state)
 {
   thread_state.store(state, std::memory_order_relaxed);
 }
 
-void wait_for_worker_thread_state(WorkerThreadState state)
+static void wait_for_worker_thread_state(WorkerThreadState state)
 {
   while (thread_state.load(std::memory_order_relaxed) != state)
     std::this_thread::yield();
 }
 
-void func1(std::promise<int> p)
+static void func1(std::promise<int> p)
 {
   wait_for_worker_thread_state(WorkerThreadState::AllowedToRun);
   p.set_value(3);
   set_worker_thread_state(WorkerThreadState::Exiting);
 }
 
-int j = 0;
+static int j = 0;
 
-void func3(std::promise<int&> p)
+static void func3(std::promise<int&> p)
 {
   wait_for_worker_thread_state(WorkerThreadState::AllowedToRun);
   j = 5;
@@ -58,7 +58,7 @@ void func3(std::promise<int&> p)
   set_worker_thread_state(WorkerThreadState::Exiting);
 }
 
-void func5(std::promise<void> p)
+static void func5(std::promise<void> p)
 {
   wait_for_worker_thread_state(WorkerThreadState::AllowedToRun);
   p.set_value();

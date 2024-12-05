@@ -111,13 +111,13 @@ void test_iterators_1() {
   test_iterators_2<Iter, sentinel_wrapper<Iter>>();
 }
 
-void test_iterators() {
+static void test_iterators() {
   test_iterators_1<random_access_iterator<int*>>();
   test_iterators_1<contiguous_iterator<int*>>();
   test_iterators_1<int*>();
 }
 
-void test() {
+static void test() {
   test_iterators();
 
   struct OrderedValue {

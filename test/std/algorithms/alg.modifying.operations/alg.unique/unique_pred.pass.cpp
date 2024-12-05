@@ -42,10 +42,10 @@ struct count_equal
         {++count; return x == y;}
 };
 
-unsigned count_equal::count = 0;
+static unsigned count_equal::count = 0;
 
 template <class Iter>
-void
+static void
 test()
 {
     int ia[] = {0};
@@ -131,7 +131,7 @@ struct do_nothing
 typedef std::unique_ptr<int, do_nothing> Ptr;
 
 template <class Iter>
-void
+static void
 test1()
 {
     int one = 1;

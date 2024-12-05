@@ -22,7 +22,7 @@
 #include "utils.h"
 
 template <class CharT>
-void test() {
+static void test() {
   auto ints      = make_string_stream<CharT>("0 1  2   3     4");
   auto oss       = std::basic_ostringstream<CharT>{};
   auto delimiter = make_string<CharT>("-");

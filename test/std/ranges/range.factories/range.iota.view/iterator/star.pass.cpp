@@ -78,7 +78,7 @@ constexpr void testType() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testType<SomeInt>();
   testType<NotNoexceptCopy>();
   testType<signed long>();

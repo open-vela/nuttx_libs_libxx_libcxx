@@ -19,7 +19,7 @@
 #include "../utils.h"
 
 template <class CharT>
-void test() {
+static void test() {
   // fail to read
   {
     auto iss = make_string_stream<CharT>("a123 4");

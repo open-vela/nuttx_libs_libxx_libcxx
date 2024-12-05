@@ -26,7 +26,7 @@
 #error LIBCPP_STATIC_ASSERT must be defined
 #endif
 
-void test_noexcept() TEST_NOEXCEPT
+static void test_noexcept() TEST_NOEXCEPT
 {
 }
 

@@ -22,7 +22,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::unordered_map<operator_hijacker, operator_hijacker> m1;
   std::unordered_map<operator_hijacker, operator_hijacker> m2;
   std::swap(m1, m2);

@@ -35,7 +35,7 @@ using ElementsIter = std::ranges::iterator_t<std::ranges::elements_view<View, N>
 static_assert(!std::default_initializable<ElementsIter<IterNoDefaultCtrView, 0>>);
 static_assert(std::default_initializable<ElementsIter<IterDefaultCtrView, 0>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   using Iter = ElementsIter<IterDefaultCtrView, 0>;
   {
     Iter iter;

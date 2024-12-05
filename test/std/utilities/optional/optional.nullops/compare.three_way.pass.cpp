@@ -21,7 +21,7 @@
 
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::optional<int> op;
     assert((std::nullopt <=> op) == std::strong_ordering::equal);

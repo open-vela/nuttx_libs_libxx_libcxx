@@ -30,6 +30,7 @@
 
 #include "test_macros.h"
 
+namespace {
 class A
 {
     int data_[10];
@@ -58,8 +59,9 @@ public:
 };
 
 int A::count = 0;
+}
 
-int g(int) {return 0;}
+static int g(int) {return 0;}
 
 extern "C" int main(int, char**)
 {

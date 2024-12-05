@@ -19,7 +19,7 @@
 #include "types.h"
 
 template <class T>
-constexpr void check() {
+constexpr static void check() {
   std::ranges::__movable_box<T> const x(std::in_place, 10);
   assert(x.__has_value());
 }

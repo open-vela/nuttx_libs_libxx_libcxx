@@ -112,7 +112,7 @@ struct move_iterator_view : std::ranges::view_base {
   constexpr std::move_iterator<int*> end() const { return {}; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   test_range<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>, false>();
   test_range<cpp17_input_iterator<int*>, sized_sentinel<cpp17_input_iterator<int*>>, false>();
   test_range<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>, false>();

@@ -54,7 +54,7 @@ struct IterNoDefaultInitView : std::ranges::view_base {
   int *end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::transform_view<MoveOnlyView, PlusOne> transformView;
   auto iter = std::move(transformView).begin();
   std::ranges::iterator_t<std::ranges::transform_view<MoveOnlyView, PlusOne>> i2(iter);

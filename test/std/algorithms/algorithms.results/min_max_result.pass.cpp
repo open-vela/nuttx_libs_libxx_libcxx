@@ -59,7 +59,7 @@ struct ConvertibleFrom {
   T content;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::min_max_result<double> res{10, 1};
     assert(res.min == 10);

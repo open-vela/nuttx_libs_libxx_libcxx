@@ -14,7 +14,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-void testKeyValueTrait() {
+static void testKeyValueTrait() {
   {
     typedef int Tp;
     typedef std::__tree_key_value_types<Tp> Traits;

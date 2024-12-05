@@ -77,7 +77,7 @@ struct WithNonCopyableIterator : std::ranges::view_base {
 static_assert(std::ranges::input_range<WithNonCopyableIterator>);
 
 template <class Iterator, class Sentinel = sentinel_wrapper<Iterator>>
-constexpr void test() {
+constexpr static void test() {
   std::array<XYPoint, 5> array{{{0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}}};
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, AlwaysTrue>;

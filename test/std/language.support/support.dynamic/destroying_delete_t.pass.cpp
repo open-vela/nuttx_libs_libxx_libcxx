@@ -28,9 +28,9 @@ struct A {
   void operator delete(A*, std::destroying_delete_t);
 };
 
-bool A_constructed = false;
-bool A_destroyed = false;
-bool A_destroying_deleted = false;
+static bool A_constructed = false;
+static bool A_destroyed = false;
+static bool A_destroying_deleted = false;
 
 A::A() {
   A_constructed = true;

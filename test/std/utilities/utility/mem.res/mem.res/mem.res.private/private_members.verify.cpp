@@ -18,7 +18,7 @@
 
 #include <memory_resource>
 
-void test() {
+static void test() {
   std::pmr::memory_resource* m = std::pmr::new_delete_resource();
   m->do_allocate(0, 0);            // expected-error{{'do_allocate' is a private member}}
   m->do_deallocate(nullptr, 0, 0); // expected-error{{'do_deallocate' is a private member}}

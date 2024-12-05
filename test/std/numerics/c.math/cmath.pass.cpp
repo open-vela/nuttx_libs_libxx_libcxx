@@ -398,7 +398,7 @@ void test_ldexp()
     assert(std::ldexp(1, ip) == 2);
 }
 
-void test_log()
+static void test_log()
 {
     static_assert((std::is_same<decltype(std::log((float)0)), float>::value), "");
     static_assert((std::is_same<decltype(std::log((bool)0)), double>::value), "");
@@ -417,7 +417,7 @@ void test_log()
     assert(std::log(1) == 0);
 }
 
-void test_log10()
+static void test_log10()
 {
     static_assert((std::is_same<decltype(std::log10((float)0)), float>::value), "");
     static_assert((std::is_same<decltype(std::log10((bool)0)), double>::value), "");
@@ -1251,7 +1251,7 @@ void test_llround()
     assert(std::llround(1) == 1LL);
 }
 
-void test_log1p()
+static void test_log1p()
 {
     static_assert((std::is_same<decltype(std::log1p((float)0)), float>::value), "");
     static_assert((std::is_same<decltype(std::log1p((bool)0)), double>::value), "");
@@ -1270,7 +1270,7 @@ void test_log1p()
     assert(std::log1p(0) == 0);
 }
 
-void test_log2()
+static void test_log2()
 {
     static_assert((std::is_same<decltype(std::log2((float)0)), float>::value), "");
     static_assert((std::is_same<decltype(std::log2((bool)0)), double>::value), "");
@@ -1289,7 +1289,7 @@ void test_log2()
     assert(std::log2(1) == 0);
 }
 
-void test_logb()
+static void test_logb()
 {
     static_assert((std::is_same<decltype(std::logb((float)0)), float>::value), "");
     static_assert((std::is_same<decltype(std::logb((bool)0)), double>::value), "");

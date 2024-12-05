@@ -71,7 +71,7 @@ static_assert(!CanMinus<ElemIter<BidiRange>, int>);
 static_assert(!CanMinus<ElemIter<BidiRange>, ElemIter<BidiRange>>);
 static_assert(!CanMinusEqual<ElemIter<BidiRange>, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> ts[] = {{1}, {2}, {3}, {4}};
 
   RandomAccessRange r{&ts[0], &ts[0] + 4};

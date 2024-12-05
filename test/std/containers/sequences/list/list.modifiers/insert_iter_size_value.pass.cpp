@@ -21,7 +21,7 @@
 #include "test_macros.h"
 
 template <class List>
-void test() {
+static void test() {
     int a1[] = {1, 2, 3};
     int a2[] = {1, 4, 4, 4, 4, 4, 2, 3};
     List l1(a1, a1+3);

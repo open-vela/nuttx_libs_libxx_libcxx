@@ -19,7 +19,7 @@
 
 struct Incomplete;
 
-void test() {
+static void test() {
   // Reference: http://eel.is/c++draft/iterators.common#common.iter.nav-5
   // Case 2: can-reference
   {

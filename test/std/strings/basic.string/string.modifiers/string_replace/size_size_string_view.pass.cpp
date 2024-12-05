@@ -369,7 +369,7 @@ TEST_CONSTEXPR_CXX20 bool test2()
 }
 
 template <class S>
-void test() {
+static void test() {
   {
     typedef std::string_view SV;
     test0<S, SV>();

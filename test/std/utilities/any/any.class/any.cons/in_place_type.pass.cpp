@@ -103,9 +103,9 @@ void test_in_place_type_tracked() {
     }
 }
 
-void test_func() {}
+static void test_func() {}
 
-void test_in_place_type_decayed() {
+static void test_in_place_type_decayed() {
     {
         using Type = decltype(test_func);
         using DecayT = void(*)();
@@ -130,7 +130,7 @@ void test_in_place_type_decayed() {
     }
 }
 
-void test_ctor_sfinae() {
+static void test_ctor_sfinae() {
     {
         // Test that the init-list ctor SFINAE's away properly when
         // construction would be ill-formed.
@@ -167,7 +167,7 @@ struct Implicit {
   Implicit(std::initializer_list<int>, int) {}
 };
 
-void test_constructor_explicit() {
+static void test_constructor_explicit() {
     using I = Implicit;
     using IT = std::in_place_type_t<I>;
     static_assert(!test_convertible<std::any, IT, int>(), "");

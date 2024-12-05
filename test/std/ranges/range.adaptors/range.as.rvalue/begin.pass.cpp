@@ -83,7 +83,7 @@ struct move_iterator_view : std::ranges::view_base {
   constexpr std::move_iterator<int*> end() const { return {}; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   types::for_each(types::cpp20_input_iterator_list<int*>{}, []<class Iter> {
     if constexpr (std::sentinel_for<Iter, Iter>)
       test_range<Iter, Iter>();

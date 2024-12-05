@@ -29,7 +29,7 @@
 template <class T>
 void where(const T &) {}
 
-void
+static void
 test1()
 {
     typedef std::knuth_b E;

@@ -22,7 +22,7 @@
 #include "count_new.h"
 #include "test_macros.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class RI>
 void

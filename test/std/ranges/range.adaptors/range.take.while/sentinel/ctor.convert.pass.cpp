@@ -67,7 +67,7 @@ static_assert(!std::is_constructible_v<
               std::ranges::sentinel_t<const std::ranges::take_while_view<NonConvertConstSentRange, Pred>>,
               std::ranges::sentinel_t<std::ranges::take_while_view<NonConvertConstSentRange, Pred>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // base is init correctly
   {
     using R             = std::ranges::take_while_view<Range, bool (*)(int)>;

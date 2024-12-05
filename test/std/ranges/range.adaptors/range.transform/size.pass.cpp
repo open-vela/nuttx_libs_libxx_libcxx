@@ -19,7 +19,7 @@
 template<class T>
 concept SizeInvocable = requires(T t) { t.size(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::transform_view transformView(MoveOnlyView{}, PlusOne{});
     assert(transformView.size() == 8);

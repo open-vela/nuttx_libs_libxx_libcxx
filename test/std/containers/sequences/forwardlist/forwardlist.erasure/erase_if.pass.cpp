@@ -27,7 +27,7 @@ void test0(S s, Pred p, S expected, std::size_t expected_erased_count) {
 }
 
 template <typename S>
-void test()
+static void test()
 {
     auto is1 = [](auto v) { return v == 1;};
     auto is2 = [](auto v) { return v == 2;};
