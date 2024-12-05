@@ -14,7 +14,7 @@
 
 #include <atomic>
 
-void test() {
+static void test() {
   std::atomic<int> a;
   std::atomic_init(&a, 1); // expected-warning {{'atomic_init<int>' is deprecated}}
 

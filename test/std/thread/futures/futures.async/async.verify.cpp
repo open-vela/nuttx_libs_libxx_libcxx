@@ -24,7 +24,7 @@
 
 int foo (int x) { return x; }
 
-void f() {
+static void f() {
     std::async(                    foo, 3); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
     std::async(std::launch::async, foo, 3); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
 }

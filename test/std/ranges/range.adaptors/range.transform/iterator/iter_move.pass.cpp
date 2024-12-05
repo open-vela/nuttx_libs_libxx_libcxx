@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
   {

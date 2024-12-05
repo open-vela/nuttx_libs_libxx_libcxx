@@ -48,7 +48,7 @@ constexpr void test_setter() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_setter<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_setter<wchar_t>();

@@ -72,7 +72,7 @@ constexpr void test(Data<N> d) {
 }
 
 template <class Iter, class Sent = Iter>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<Iter, Sent, 4>({.input = {1, 2, 2, 4}, .expected = 1});
   // last is returned with no match
@@ -89,7 +89,7 @@ constexpr void test_iterators() {
   test<Iter, Sent, 0>({.input = {}, .expected = 0});
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<forward_iterator<int*>, sentinel_wrapper<forward_iterator<int*>>>();
   test_iterators<forward_iterator<int*>>();
   test_iterators<bidirectional_iterator<int*>>();

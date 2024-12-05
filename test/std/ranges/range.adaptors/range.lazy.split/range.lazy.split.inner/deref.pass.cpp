@@ -14,7 +14,7 @@
 
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // Can call `inner-iterator::operator*`; `View` is a forward range.
   {
     SplitViewDiff v("abc def", " ");

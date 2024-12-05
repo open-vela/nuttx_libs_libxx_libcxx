@@ -32,7 +32,7 @@ struct ConvertibleTo {
 };
 
 template<class SV>
-TEST_CONSTEXPR_CXX14 bool test()
+TEST_CONSTEXPR_CXX14 static bool test()
 {
     typedef typename SV::value_type CharT;
     typedef typename SV::traits_type Traits;

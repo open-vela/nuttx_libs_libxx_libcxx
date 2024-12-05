@@ -50,7 +50,7 @@ struct move_only_large final {
 };
 
 template <class Elem>
-void test_sfinae() {
+static void test_sfinae() {
     using Tup = std::tuple<Elem>;
     using Alloc = std::allocator<int>;
     using Tag = std::allocator_arg_t;

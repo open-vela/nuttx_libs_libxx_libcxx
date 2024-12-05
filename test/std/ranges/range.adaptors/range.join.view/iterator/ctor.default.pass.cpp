@@ -39,7 +39,7 @@ constexpr void test_non_default_constructible() {
   static_assert(!std::is_default_constructible_v<JoinIterator>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_non_default_constructible<cpp17_input_iterator<ChildView*>>();
   // NOTE: cpp20_input_iterator can't be used with join_view because it is not copyable.
   test_default_constructible<forward_iterator<ChildView*>>();

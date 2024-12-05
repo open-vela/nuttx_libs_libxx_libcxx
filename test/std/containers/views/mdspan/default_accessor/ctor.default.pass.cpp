@@ -30,7 +30,7 @@ constexpr void test_construction() {
   static_assert(std::is_trivially_default_constructible_v<std::default_accessor<T>>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_construction<int>();
   test_construction<const int>();
   test_construction<MinimalElementType>();

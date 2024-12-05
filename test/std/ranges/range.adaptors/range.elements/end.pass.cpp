@@ -45,7 +45,7 @@ struct NoConstEndView : TupleBufferView {
 static_assert(HasEnd<std::ranges::elements_view<NoConstEndView, 0>>);
 static_assert(!HasConstEnd<std::ranges::elements_view<NoConstEndView, 0>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<int> buffer[] = {{1}, {2}, {3}};
 
   // simple-view && common_view

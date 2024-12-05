@@ -17,7 +17,7 @@
 #include "test_iterators.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::subrange<int*> a(globalBuff, globalBuff + 8, 8);
   auto a1 = a.next();
   assert(a1.begin() == globalBuff + 1);

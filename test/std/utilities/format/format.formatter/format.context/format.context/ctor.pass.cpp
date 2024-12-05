@@ -35,7 +35,7 @@
 #include "test_macros.h"
 
 template <class OutIt, class CharT>
-void test() {
+static void test() {
   std::basic_string<CharT> string = MAKE_STRING(CharT, "string");
   // The type of the object is an exposition only type. The temporary is needed
   // to extend the lifetype of the object since args stores a pointer to the

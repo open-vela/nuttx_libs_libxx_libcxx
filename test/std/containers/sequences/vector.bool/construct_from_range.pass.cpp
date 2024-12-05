@@ -16,7 +16,7 @@
 // template<container-compatible-range<T> R>
 //   vector(from_range_t, R&& rg, const Allocator& = Allocator()); // C++23
 
-constexpr bool test() {
+static constexpr bool test() {
   for_all_iterators_and_allocators<bool>([]<class Iter, class Sent, class Alloc>() {
     test_vector_bool<Iter, Sent, Alloc>([](const auto& c) {
       LIBCPP_ASSERT(c.__invariants());

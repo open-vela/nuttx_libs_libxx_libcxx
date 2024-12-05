@@ -64,7 +64,7 @@ static_assert(!HasSearchR<UncheckedRange<int*>, ForwardRangeNotSentinelSemiregul
 static_assert(!HasSearchR<UncheckedRange<int*>, ForwardRangeNotSentinelEqualityComparableWith>);
 
 template <class Iter1, class Sent1, class Iter2, class Sent2 = Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       int a[] = {1, 2, 3, 4, 5, 6};
@@ -299,7 +299,7 @@ constexpr void test_iterators2() {
   test_iterators<Iter1, Sent1, int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators2<forward_iterator<int*>>();
   test_iterators2<forward_iterator<int*>, sized_sentinel<forward_iterator<int*>>>();
   test_iterators2<bidirectional_iterator<int*>>();

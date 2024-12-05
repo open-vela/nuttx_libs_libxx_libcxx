@@ -119,7 +119,7 @@ constexpr void test_static_extent_mismatch() {
   static_assert(!std::is_constructible_v<std::extents<int, 5, D>, std::extents<int, 4, D>>, "");
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_conversion<int, int>();
   test_conversion<int, size_t>();
   test_conversion<size_t, int>();

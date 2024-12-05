@@ -53,7 +53,7 @@ template <class... Args> constexpr bool emplace_exists() {
   return test_emplace_exists_imp<Args...>(0);
 }
 
-void test_emplace_sfinae() {
+static void test_emplace_sfinae() {
   using V =
       std::variant<int, TestTypes::NoCtors, InitList, InitListArg, long, long>;
   using IL = std::initializer_list<int>;
@@ -66,8 +66,7 @@ void test_emplace_sfinae() {
   static_assert(!emplace_exists<V, InitListArg, IL, int, int>(),
                 "too many args");
 }
-
-void test_basic() {
+static void test_basic() {
   using V = std::variant<int, InitList, InitListArg, TestTypes::NoCtors>;
   V v;
   auto& ref1 = v.emplace<InitList>({1, 2, 3});

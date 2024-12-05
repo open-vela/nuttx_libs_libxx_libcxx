@@ -26,19 +26,19 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable_any cv;
+static std::condition_variable_any cv;
 
 typedef std::timed_mutex L0;
 typedef std::unique_lock<L0> L1;
 
-L0 m0;
+static L0 m0;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-bool expect_timeout = false;
+static bool expect_timeout = false;
 
-void f()
+static void f()
 {
     typedef std::chrono::system_clock Clock;
     typedef std::chrono::milliseconds milliseconds;

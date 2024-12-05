@@ -22,6 +22,7 @@
 
 using std::optional;
 
+namespace {
 class X
 {
     int i_;
@@ -72,6 +73,7 @@ public:
     friend constexpr bool operator==(const W& x, const W& y) {return x.i_ == y.i_;}
     friend TEST_CONSTEXPR_CXX20 void swap(W& x, W& y) noexcept {std::swap(x.i_, y.i_);}
 };
+}
 
 template<class T>
 TEST_CONSTEXPR_CXX20 bool check_swap()

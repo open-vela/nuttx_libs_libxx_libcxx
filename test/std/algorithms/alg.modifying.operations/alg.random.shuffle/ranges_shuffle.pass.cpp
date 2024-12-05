@@ -172,12 +172,12 @@ void test_iterators_iter_sent() {
 }
 
 template <class Iter>
-void test_iterators_iter() {
+static void test_iterators_iter() {
   test_iterators_iter_sent<Iter, Iter>();
   test_iterators_iter_sent<Iter, sentinel_wrapper<Iter>>();
 }
 
-void test_iterators() {
+static void test_iterators() {
   test_iterators_iter<random_access_iterator<int*>>();
   test_iterators_iter<contiguous_iterator<int*>>();
   test_iterators_iter<int*>();
@@ -217,7 +217,7 @@ void test_generator() {
 
 // Checks the logic for wrapping the given iterator to make sure it works correctly regardless of whether the given
 // generator class has a const or non-const invocation operator (or both).
-void test_generators() {
+static void test_generators() {
   struct GenBase {
     constexpr static std::size_t min() { return 0; }
     constexpr static std::size_t max() { return 255; }
@@ -238,7 +238,7 @@ void test_generators() {
   test_generator<ConstAndNonconstGen>();
 }
 
-void test() {
+static void test() {
   test_iterators();
   test_generators();
 

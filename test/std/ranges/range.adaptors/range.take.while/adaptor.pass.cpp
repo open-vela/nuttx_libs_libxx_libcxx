@@ -54,7 +54,7 @@ static_assert(!CanBePiped<int, decltype(std::views::take_while(Pred{}))>);
 static_assert(CanBePiped<int (&)[2], decltype(std::views::take_while(Pred{}))>);
 static_assert(!CanBePiped<Foo (&)[2], decltype(std::views::take_while(Pred{}))>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 3, 2, 1};
 
   // Test `views::take_while(p)(v)`

@@ -107,7 +107,7 @@ struct Incomplete;
 template<class T> struct Holder { T t; };
 
 
-constexpr bool test() {
+static constexpr bool test() {
     int i = 0;
     ASSERT_NOEXCEPT(std::to_address(&i));
     assert(std::to_address(&i) == &i);

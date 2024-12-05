@@ -253,14 +253,14 @@ constexpr void test_val_types() {
 // clang-format on
 
 // check that the lambda body is not instantiated during overload resolution
-constexpr void test_sfinae() {
+constexpr static void test_sfinae() {
   std::expected<NonConst, int> e(std::unexpected<int>(2));
   auto l = [](auto&& x) { return x.non_const(); };
   e.and_then(l);
   std::move(e).and_then(l);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_sfinae();
   test_val_types();
 

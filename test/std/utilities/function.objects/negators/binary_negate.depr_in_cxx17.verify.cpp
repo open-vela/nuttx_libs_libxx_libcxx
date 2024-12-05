@@ -22,7 +22,7 @@ struct Predicate {
     bool operator()(first_argument_type, second_argument_type) const { return true; }
 };
 
-void test() {
+static void test() {
     std::binary_negate<Predicate> f((Predicate())); // expected-warning {{'binary_negate<Predicate>' is deprecated}}
     (void)f;
 }

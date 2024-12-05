@@ -66,7 +66,7 @@ constexpr void testMoveOnly() {
   assert(u.error() == 0);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testInt<int>();
   testInt<MyInt>();
   testInt<MoveOnly>();
@@ -75,7 +75,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing(int) { throw Except{}; }

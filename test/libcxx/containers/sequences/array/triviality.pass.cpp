@@ -27,7 +27,7 @@ struct NonTrivialCopy {
 };
 
 template <typename T>
-void check_trivially_copyable()
+static void check_trivially_copyable()
 {
     static_assert(std::is_trivially_copyable<std::array<T, 0> >::value, "");
     static_assert(std::is_trivially_copyable<std::array<T, 1> >::value, "");

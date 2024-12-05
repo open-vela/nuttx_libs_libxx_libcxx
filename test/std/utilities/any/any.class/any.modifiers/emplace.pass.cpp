@@ -228,7 +228,7 @@ template <class ...Args>
 constexpr bool has_emplace_init_list() { return has_emplace_init_list<Args...>(0); }
 
 
-void test_emplace_sfinae_constraints() {
+static void test_emplace_sfinae_constraints() {
     {
         static_assert(has_emplace<int>(), "");
         static_assert(has_emplace<int, int>(), "");

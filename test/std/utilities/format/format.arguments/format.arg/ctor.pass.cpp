@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 template <class CharT>
-void test() {
+static void test() {
   using Context = std::basic_format_context<CharT*, CharT>;
 
   ASSERT_NOEXCEPT(std::basic_format_arg<Context>{});
@@ -29,7 +29,7 @@ void test() {
   assert(!format_arg);
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

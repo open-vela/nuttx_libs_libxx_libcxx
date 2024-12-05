@@ -45,7 +45,7 @@ std::expected<int, NotSameAsInt> rval_error_type_not_same_as_int(int&&) { return
 std::expected<int, NotSameAsInt> crval_error_type_not_same_as_int(const int&&) { return {}; }
 
 // clang-format off
-void test() {
+static void test() {
   // Test & overload
   {
     // U is not a specialization of std::expected

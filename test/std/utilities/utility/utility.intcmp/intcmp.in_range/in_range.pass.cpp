@@ -62,7 +62,7 @@ constexpr void test1(const std::tuple<Ts...>&) {
   (test_in_range1<Ts>() , ...);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   std::tuple<
 #ifndef TEST_HAS_NO_INT128
       __int128_t, __uint128_t,

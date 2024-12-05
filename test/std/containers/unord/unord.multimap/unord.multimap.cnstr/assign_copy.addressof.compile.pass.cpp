@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   {
     std::unordered_multimap<int, operator_hijacker> mo;
     std::unordered_multimap<int, operator_hijacker> m;

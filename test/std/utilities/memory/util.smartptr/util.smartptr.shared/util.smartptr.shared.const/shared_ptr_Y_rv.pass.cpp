@@ -21,6 +21,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -54,6 +55,7 @@ struct C
 };
 
 int C::count = 0;
+}
 
 // https://llvm.org/PR60258
 // Invalid constructor SFINAE for std::shared_ptr's array ctors

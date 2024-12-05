@@ -26,7 +26,7 @@ using namespace ImplicitTypes; // Get implicitly archetypes
 
 template <class T1, class T1Arg,
           bool CanCopy = true, bool CanConvert = CanCopy>
-void test_sfinae() {
+static void test_sfinae() {
     using P1 = std::pair<T1, int>;
     using P2 = std::pair<int, T1>;
     using T2 = int const&;

@@ -62,7 +62,7 @@ static_assert(!HasMinMaxElementIt<int*, SentinelForNotWeaklyEqualityComparableWi
 static_assert(std::is_same_v<std::ranges::minmax_element_result<int>, std::ranges::min_max_result<int>>);
 
 template <class It>
-constexpr void test_iterators(std::initializer_list<int> a, int expectedMin, int expectedMax) {
+constexpr static void test_iterators(std::initializer_list<int> a, int expectedMin, int expectedMax) {
   using Expected = std::ranges::minmax_element_result<It>;
   const int* first = a.begin();
   const int* last = a.end();
@@ -93,7 +93,7 @@ constexpr void test_iterators(std::initializer_list<int> a, int expectedMin, int
 }
 
 template <class It>
-constexpr bool test_iterators() {
+constexpr static bool test_iterators() {
   test_iterators<It>({}, 0, 0);
   test_iterators<It>({1}, 0, 0);
   test_iterators<It>({1, 2}, 0, 1);
@@ -187,7 +187,7 @@ constexpr void test_dangling() {
   assert(projections == 6);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<forward_iterator<const int*>>();
   test_iterators<bidirectional_iterator<const int*>>();
   test_iterators<random_access_iterator<const int*>>();

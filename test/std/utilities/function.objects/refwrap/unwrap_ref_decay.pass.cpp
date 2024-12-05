@@ -23,7 +23,7 @@
 
 
 template <typename T, typename Result>
-void check() {
+static void check() {
   static_assert(std::is_same_v<typename std::unwrap_ref_decay<T>::type, Result>);
   static_assert(std::is_same_v<typename std::unwrap_ref_decay<T>::type, std::unwrap_ref_decay_t<T>>);
 }

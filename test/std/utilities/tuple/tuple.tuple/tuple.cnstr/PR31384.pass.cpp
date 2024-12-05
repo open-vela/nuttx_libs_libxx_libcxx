@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int count = 0;
+static int count = 0;
 
 struct Explicit {
   Explicit() = default;

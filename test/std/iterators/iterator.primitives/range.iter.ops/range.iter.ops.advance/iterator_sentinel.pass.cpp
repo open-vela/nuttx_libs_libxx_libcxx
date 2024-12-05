@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 template <bool Count, class It>
-constexpr void check_assignable(int* first, int* last, int* expected) {
+constexpr static void check_assignable(int* first, int* last, int* expected) {
   {
     It it(first);
     auto sent = assignable_sentinel(It(last));
@@ -40,7 +40,7 @@ constexpr void check_assignable(int* first, int* last, int* expected) {
 }
 
 template <bool Count, class It>
-constexpr void check_sized_sentinel(int* first, int* last, int* expected) {
+constexpr static void check_sized_sentinel(int* first, int* last, int* expected) {
   auto size = (last - first);
 
   {
@@ -65,7 +65,7 @@ constexpr void check_sized_sentinel(int* first, int* last, int* expected) {
 }
 
 template <bool Count, class It>
-constexpr void check_sentinel(int* first, int* last, int* expected) {
+constexpr static void check_sentinel(int* first, int* last, int* expected) {
   auto size = (last - first);
 
   {
@@ -85,7 +85,7 @@ constexpr void check_sentinel(int* first, int* last, int* expected) {
   }
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   for (int n = 0; n != 10; ++n) {

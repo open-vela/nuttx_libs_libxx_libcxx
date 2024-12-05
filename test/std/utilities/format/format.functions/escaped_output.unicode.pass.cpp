@@ -454,7 +454,7 @@ void test_format_functions(TestFunction check) {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   test_char<CharT>();
   test_string<CharT>();
 

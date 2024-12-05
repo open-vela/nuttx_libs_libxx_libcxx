@@ -30,12 +30,12 @@ int Func2() { return 0; }
 using FuncPtr2 = decltype(&Func2);
 
 template <bool Expected, class T, class U>
-constexpr void check_one() {
+constexpr static void check_one() {
   static_assert(std::__is_always_bitcastable<T, U>::value == Expected);
 }
 
 template <bool Expected, class T, class U>
-constexpr void check_with_volatile() {
+constexpr static void check_with_volatile() {
   check_one<Expected, T, U>();
   check_one<Expected, volatile T, U>();
   check_one<Expected, T, volatile U>();
@@ -43,7 +43,7 @@ constexpr void check_with_volatile() {
 }
 
 template <bool Expected, class T, class U>
-constexpr void check_with_cv() {
+constexpr static void check_with_cv() {
   check_with_volatile<Expected, T, U>();
   check_with_volatile<Expected, const T, U>();
   check_with_volatile<Expected, T, const U>();
@@ -51,7 +51,7 @@ constexpr void check_with_cv() {
 }
 
 template <bool Expected, class Types1, class Types2 = Types1>
-constexpr void check() {
+constexpr static void check() {
   types::for_each(Types1{}, []<class T>() {
     types::for_each(Types2{}, []<class U>() {
       check_with_cv<Expected, T, U>();
@@ -60,12 +60,12 @@ constexpr void check() {
 }
 
 template <bool Expected, class Types1, class Types2>
-constexpr void check_both_ways() {
+constexpr static void check_both_ways() {
   check<Expected, Types1, Types2>();
   check<Expected, Types2, Types1>();
 }
 
-constexpr void test() {
+constexpr static void test() {
   // Arithmetic types.
   {
     // Bit-castable arithmetic types.

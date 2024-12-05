@@ -32,7 +32,7 @@ using format_context = std::format_context;
 #endif
 
 template <class CharT, class... Args>
-void check(std::basic_string_view<CharT> expected, test_format_string<CharT, Args...> fmt, Args&&... args) {
+static void check(std::basic_string_view<CharT> expected, test_format_string<CharT, Args...> fmt, Args&&... args) {
   std::basic_string<CharT> out = std::format(fmt, std::forward<Args>(args)...);
   if constexpr (std::same_as<CharT, char>)
     if (out != expected)
@@ -42,7 +42,7 @@ void check(std::basic_string_view<CharT> expected, test_format_string<CharT, Arg
 }
 
 template <class CharT, class... Args>
-void check(const std::locale& loc,
+static void check(const std::locale& loc,
            std::basic_string_view<CharT> expected,
            test_format_string<CharT, Args...> fmt,
            Args&&... args) {
@@ -55,7 +55,7 @@ void check(const std::locale& loc,
 }
 
 template <class CharT, class... Args>
-void check_exception([[maybe_unused]] std::string_view what,
+static void check_exception([[maybe_unused]] std::string_view what,
                      [[maybe_unused]] std::basic_string_view<CharT> fmt,
                      [[maybe_unused]] const Args&... args) {
 #ifndef TEST_HAS_NO_EXCEPTIONS
@@ -82,7 +82,7 @@ void check_exception([[maybe_unused]] std::string_view what,
 }
 
 template <class CharT, class T>
-void check_invalid_type(const std::set<std::basic_string_view<CharT>>& valid_types,
+static void check_invalid_type(const std::set<std::basic_string_view<CharT>>& valid_types,
                         std::string_view what,
                         std::basic_string<CharT> type,
                         const T& arg) {
@@ -108,7 +108,7 @@ void check_invalid_type(const std::set<std::basic_string_view<CharT>>& valid_typ
 }
 
 template <class CharT, class T>
-void check_invalid_types(const std::set<std::basic_string_view<CharT>>& valid_types, const T& arg) {
+static void check_invalid_types(const std::set<std::basic_string_view<CharT>>& valid_types, const T& arg) {
   check_invalid_type(valid_types, "The supplied date time doesn't contain a weekday", STR("a"), arg);
   check_invalid_type(valid_types, "The supplied date time doesn't contain a weekday", STR("A"), arg);
   check_invalid_type(valid_types, "The supplied date time doesn't contain a month", STR("b"), arg);

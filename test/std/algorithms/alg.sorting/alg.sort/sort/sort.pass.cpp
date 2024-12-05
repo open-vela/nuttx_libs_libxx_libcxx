@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class Container, class RI>
 void

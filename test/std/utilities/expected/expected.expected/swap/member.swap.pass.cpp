@@ -93,7 +93,7 @@ static_assert(!MemberSwapNoexcept<SwapMayThrow, int>);
 // !is_nothrow_swappable_v<E>
 static_assert(!MemberSwapNoexcept<int, SwapMayThrow>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // this->has_value() && rhs.has_value()
   {
     std::expected<ADLSwap, int> x(std::in_place, 5);
@@ -230,7 +230,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   // !e1.has_value() && e2.has_value()
   {

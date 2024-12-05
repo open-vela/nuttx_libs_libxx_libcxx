@@ -106,7 +106,7 @@ struct TernaryOp {
 
 // (4.1)
 // -- If sizeof...(T) is zero, there shall be no member type.
-void test_bullet_one() {
+static void test_bullet_one() {
   static_assert(no_common_type<>::value, "");
 }
 
@@ -114,7 +114,7 @@ void test_bullet_one() {
 // -- If sizeof...(T) is one, let T0 denote the sole type constituting the pack
 //    T. The member typedef-name type shall denote the same type, if any, as
 //    common_type_t<T0, T0>; otherwise there shall be no member type.
-void test_bullet_two() {
+static void test_bullet_two() {
   static_assert((std::is_same<std::common_type<void>::type, void>::value), "");
   static_assert((std::is_same<std::common_type<int>::type, int>::value), "");
   static_assert((std::is_same<std::common_type<int const>::type, int>::value), "");
@@ -141,7 +141,7 @@ void test_bullet_three_one_imp() {
 // (4.3.1)
 //    -- If is_same_v<T1, D1> is false or is_same_v<T2, D2> is false, let C
 //       denote the same type, if any, as common_type_t<D1, D2>.
-void test_bullet_three_one() {
+static void test_bullet_three_one() {
   // Test that the user provided specialization of common_type is used after
   // decaying T1.
   {
@@ -184,7 +184,7 @@ void test_bullet_three_one() {
 //    -- Otherwise, if
 //       decay_t<decltype(false ? declval<D1>() : declval<D2>())>
 //       denotes a type, let C denote that type.
-void test_bullet_three_three() {
+static void test_bullet_three_three() {
   {
     typedef int const* T1;
     typedef int* T2;
@@ -228,7 +228,7 @@ void test_bullet_three_three() {
 // (4.3.4)
 //    -- Otherwise, if COND-RES(CREF(D1), CREF(D2)) denotes a type, let C
 //       denote the type decay_t<COND-RES(CREF(D1), CREF(D2))>.
-void test_bullet_three_four() {
+static void test_bullet_three_four() {
 #if TEST_STD_VER >= 20
   static_assert(std::is_same_v<std::common_type_t<int, bad_reference_wrapper<int>>, int>, "");
   static_assert(std::is_same_v<std::common_type_t<bad_reference_wrapper<double>, double>, double>, "");
@@ -252,7 +252,7 @@ void test_bullet_three_four() {
 // such a type C, the member typedef-name type shall denote the
 // same type, if any, as common_type_t<C, R...>. Otherwise, there shall be
 // no member type.
-void test_bullet_four() {
+static void test_bullet_four() {
   { // test that there is no ::type member
     static_assert((no_common_type<int, E>::value), "");
     static_assert((no_common_type<int, int, E>::value), "");

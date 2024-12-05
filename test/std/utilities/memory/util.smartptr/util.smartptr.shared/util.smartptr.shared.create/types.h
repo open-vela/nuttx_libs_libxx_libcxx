@@ -14,6 +14,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct DestroyInReverseOrder {
   static void reset() { global_count_ = 0; }
   static int alive() { return global_count_; }
@@ -94,6 +95,8 @@ private:
 };
 
 int ThrowOnConstruction::throw_after_ = -1;
+}
+
 #endif // TEST_HAS_NO_EXCEPTIONS
 
 #endif // TEST_STD_UTILITIES_MEMORY_UTIL_SMARTPTR_SHARED_CREATE_TYPES_H

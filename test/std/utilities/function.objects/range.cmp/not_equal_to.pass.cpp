@@ -39,7 +39,7 @@ struct PtrAndNotEqOperator {
   friend constexpr bool operator!=(PtrAndNotEqOperator, PtrAndNotEqOperator) { return true; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   auto fn = std::ranges::not_equal_to();
 
   assert(fn(MoveOnly(41), MoveOnly(42)));

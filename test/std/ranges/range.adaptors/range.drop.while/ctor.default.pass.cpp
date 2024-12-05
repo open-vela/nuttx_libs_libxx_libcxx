@@ -40,7 +40,7 @@ static_assert(!std::is_default_constructible_v<std::ranges::drop_while_view<View
 static_assert(!std::is_default_constructible_v<std::ranges::drop_while_view<View<false>, Pred<false>>>);
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::drop_while_view<View<true>, Pred<true>> dwv = {};
     assert(dwv.base().i == 42);

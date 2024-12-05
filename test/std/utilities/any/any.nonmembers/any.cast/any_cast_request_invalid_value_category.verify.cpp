@@ -21,7 +21,7 @@
 
 struct TestType {};
 
-void test_const_lvalue_cast_request_non_const_lvalue()
+static void test_const_lvalue_cast_request_non_const_lvalue()
 {
     const std::any a;
     // expected-error-re@any:* {{{{(static_assert|static assertion)}} failed{{.*}}ValueType is required to be a const lvalue reference or a CopyConstructible type}}
@@ -34,7 +34,7 @@ void test_const_lvalue_cast_request_non_const_lvalue()
     std::any_cast<int&>(a2); // expected-note {{requested here}}
 }
 
-void test_lvalue_any_cast_request_rvalue()
+static void test_lvalue_any_cast_request_rvalue()
 {
     std::any a;
     // expected-error-re@any:* {{{{(static_assert|static assertion)}} failed{{.*}}ValueType is required to be an lvalue reference or a CopyConstructible type}}
@@ -45,7 +45,7 @@ void test_lvalue_any_cast_request_rvalue()
     std::any_cast<int&&>(a2); // expected-note {{requested here}}
 }
 
-void test_rvalue_any_cast_request_lvalue()
+static void test_rvalue_any_cast_request_lvalue()
 {
     std::any a;
     // expected-error-re@any:* {{{{(static_assert|static assertion)}} failed{{.*}}ValueType is required to be an rvalue reference or a CopyConstructible type}}

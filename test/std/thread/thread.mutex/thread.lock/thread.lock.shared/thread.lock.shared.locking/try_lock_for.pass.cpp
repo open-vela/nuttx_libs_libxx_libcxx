@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-bool try_lock_for_called = false;
+static bool try_lock_for_called = false;
 
 typedef std::chrono::milliseconds ms;
 
@@ -40,7 +40,7 @@ struct mutex
     void unlock_shared() {}
 };
 
-mutex m;
+static mutex m;
 
 extern "C" int main(int, char**)
 {

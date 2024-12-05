@@ -30,7 +30,7 @@ constexpr void test_required_span_size(E e, typename E::index_type expected_size
   assert(m.required_span_size() == expected_size);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr size_t D = std::dynamic_extent;
   test_required_span_size(std::extents<int>(), 1);
   test_required_span_size(std::extents<unsigned, D>(0), 0);

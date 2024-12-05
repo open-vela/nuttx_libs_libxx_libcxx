@@ -49,7 +49,7 @@ test(S s, typename S::size_type pos, const typename S::value_type* str,
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     test(S(""), 0, "", 0, S(""));
     test(S(""), 0, "12345", 0, S(""));

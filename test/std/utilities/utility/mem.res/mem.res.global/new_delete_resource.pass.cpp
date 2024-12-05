@@ -35,7 +35,7 @@ class assert_on_compare : public std::pmr::memory_resource {
   }
 };
 
-void test_return() {
+static void test_return() {
   { ASSERT_SAME_TYPE(decltype(std::pmr::new_delete_resource()), std::pmr::memory_resource*); }
   // assert not null
   { assert(std::pmr::new_delete_resource()); }
@@ -43,7 +43,7 @@ void test_return() {
   { assert(std::pmr::new_delete_resource() == std::pmr::new_delete_resource()); }
 }
 
-void test_equality() {
+static void test_equality() {
   // Same object
   {
     std::pmr::memory_resource& r1 = *std::pmr::new_delete_resource();
@@ -66,7 +66,7 @@ void test_equality() {
   }
 }
 
-void test_allocate_deallocate() {
+static void test_allocate_deallocate() {
   std::pmr::memory_resource& r1 = *std::pmr::new_delete_resource();
 
   globalMemCounter.reset();

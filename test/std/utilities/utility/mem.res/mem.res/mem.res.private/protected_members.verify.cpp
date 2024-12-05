@@ -26,7 +26,7 @@
 
 #include <memory_resource>
 
-void test() {
+static void test() {
   {
     std::pmr::monotonic_buffer_resource m;
     m.do_allocate(0, 0);            // expected-error{{'do_allocate' is a protected member}}

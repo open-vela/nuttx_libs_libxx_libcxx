@@ -27,12 +27,12 @@ struct Tag {
     const char *tag;
     };
 
-bool eq(const Tag& rhs, const Tag& lhs) { return rhs.val == lhs.val && rhs.tag == lhs.tag; }
+static bool eq(const Tag& rhs, const Tag& lhs) { return rhs.val == lhs.val && rhs.tag == lhs.tag; }
 // bool operator==(const Tag& rhs, const Tag& lhs) { return rhs.val == lhs.val; }
-bool operator< (const Tag& rhs, const Tag& lhs) { return rhs.val <  lhs.val; }
+static bool operator< (const Tag& rhs, const Tag& lhs) { return rhs.val <  lhs.val; }
 
 template <class T>
-void
+static void
 test(const T& a, const T& lo, const T& hi, const T& x)
 {
     assert(&std::clamp(a, lo, hi) == &x);

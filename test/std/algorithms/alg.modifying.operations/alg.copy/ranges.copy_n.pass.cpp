@@ -39,7 +39,7 @@ static_assert(!HasCopyNIt<int*, int*, SentinelForNotWeaklyEqualityComparableWith
 static_assert(std::is_same_v<std::ranges::copy_result<int, long>, std::ranges::in_out_result<int, long>>);
 
 template <class In, class Out, class Sent = In>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     std::array in {1, 2, 3, 4};
     std::array<int, 4> out;
@@ -77,7 +77,7 @@ constexpr void test_proxy_in_iterators() {
   test_iterators<ProxyIterator<contiguous_iterator<int*>>, Out>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_in_iterators<cpp20_input_iterator<int*>>();
   test_in_iterators<forward_iterator<int*>>();
   test_in_iterators<bidirectional_iterator<int*>>();

@@ -38,7 +38,7 @@ struct InitListArg {
       : size(il.size()), value(v) {}
 };
 
-void test_ctor_sfinae() {
+static void test_ctor_sfinae() {
   using IL = std::initializer_list<int>;
   { // just init list
     using V = std::variant<InitList, InitListArg, int>;
@@ -81,7 +81,7 @@ void test_ctor_sfinae() {
   }
 }
 
-void test_ctor_basic() {
+static void test_ctor_basic() {
   {
     constexpr std::variant<InitList, InitListArg, InitList> v(
         std::in_place_index<0>, {1, 2, 3});

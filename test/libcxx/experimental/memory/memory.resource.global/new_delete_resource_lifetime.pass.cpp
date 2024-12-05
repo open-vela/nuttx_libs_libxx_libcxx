@@ -38,18 +38,18 @@ struct POSType {
   ~POSType() { if (ptr) res->deallocate(ptr, n); }
 };
 
-void swap(POSType & L, POSType & R) {
+static void swap(POSType & L, POSType & R) {
     std::swap(L.res, R.res);
     std::swap(L.ptr, R.ptr);
     std::swap(L.n, R.n);
 }
 
-POSType constructed_before_resources;
+static POSType constructed_before_resources;
 
 // Constructs resources
 ex::memory_resource* resource = ex::new_delete_resource();
 
-POSType constructed_after_resources(resource, resource->allocate(1024), 1024);
+static POSType constructed_after_resources(resource, resource->allocate(1024), 1024);
 
 extern "C" int main(int, char**)
 {

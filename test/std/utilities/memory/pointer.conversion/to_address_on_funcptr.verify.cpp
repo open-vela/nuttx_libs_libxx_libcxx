@@ -17,6 +17,6 @@
 
 int (*pf)();
 
-void test() {
+static void test() {
     (void)std::to_address(pf); // expected-error@*:* {{is a function type}}
 }

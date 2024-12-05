@@ -32,7 +32,7 @@ void test0(S s, U val, S expected, std::size_t expected_erased_count) {
 }
 
 template <class S>
-void test()
+static void test()
 {
   test0(S(), 1, S(), 0);
 

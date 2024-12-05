@@ -24,7 +24,7 @@ struct Range : std::ranges::view_base {
   PODSentinel end();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using SplitView = std::ranges::split_view<Range, Range>;
   using SplitIter = std::ranges::iterator_t<SplitView>;
   using SplitSent = std::ranges::sentinel_t<SplitView>;

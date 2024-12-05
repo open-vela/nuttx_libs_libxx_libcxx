@@ -61,7 +61,7 @@ void test_fmt() {
   test_format(SV("[1, 42, 99, 0]"), std::stack<int>{input.begin(), input.end()});
 }
 
-void test() {
+static void test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

@@ -11,6 +11,7 @@
 
 #include <cassert>
 
+namespace {
 class DefaultOnly
 {
     int data_;
@@ -30,5 +31,5 @@ public:
 };
 
 int DefaultOnly::count = 0;
-
+}
 #endif // DEFAULTONLY_H

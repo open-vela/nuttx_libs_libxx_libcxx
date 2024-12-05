@@ -93,7 +93,7 @@ void test_string_view(From value) {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   using Context = std::basic_format_context<CharT*, CharT>;
   std::basic_string<CharT> empty;
   std::basic_string<CharT> str = MAKE_STRING(CharT, "abc");

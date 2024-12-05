@@ -28,7 +28,7 @@
 #include <memory>
 
 template <typename T>
-void check()
+static void check()
 {
     typedef typename std::allocator<T>::pointer AP;                      // expected-error 3 {{no type named 'pointer'}}
     typedef typename std::allocator<T>::const_pointer ACP;               // expected-error 3 {{no type named 'const_pointer'}}

@@ -33,7 +33,7 @@ constexpr void test_ordinary() {
   ASSERT_SAME_TYPE(decltype(std::ranges::distance(r)), std::ranges::range_difference_t<R>);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   {
     using R = int[3];
     int a[] = {1, 2, 3};

@@ -25,7 +25,7 @@ struct Pred {
   bool operator()(int) const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // &
   {
     std::ranges::drop_while_view<View, Pred> dwv{{}, Pred{5}};

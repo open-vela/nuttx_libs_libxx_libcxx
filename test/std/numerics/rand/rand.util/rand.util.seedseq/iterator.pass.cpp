@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void test()
+static void test()
 {
   {
     unsigned a[5] = {5, 4, 3, 2, 1};

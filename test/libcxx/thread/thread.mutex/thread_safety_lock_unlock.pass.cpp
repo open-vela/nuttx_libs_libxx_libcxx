@@ -21,8 +21,8 @@
 
 #include "test_macros.h"
 
-std::mutex m;
-int foo __attribute__((guarded_by(m)));
+static std::mutex m;
+static int foo __attribute__((guarded_by(m)));
 
 extern "C" int main(int, char**) {
   m.lock();

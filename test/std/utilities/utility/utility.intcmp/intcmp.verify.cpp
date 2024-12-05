@@ -49,7 +49,7 @@ enum ColorT { red, green, blue };
 struct EmptyT {};
 
 template <class T>
-constexpr void test() {
+constexpr static void test() {
   std::cmp_equal(T(), T()); // expected-error 10-11 {{no matching function for call to 'cmp_equal'}}
   std::cmp_equal(T(), int()); // expected-error 10-11 {{no matching function for call to 'cmp_equal'}}
   std::cmp_equal(int(), T()); // expected-error 10-11 {{no matching function for call to 'cmp_equal'}}

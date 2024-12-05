@@ -18,7 +18,7 @@
 #include <random> // for __clamp_to_integral
 
 template <class IntT>
-void test() {
+static void test() {
   typedef std::numeric_limits<IntT> Lim;
   const bool MaxIsRepresentable = sizeof(IntT) < 8;
   const bool IsSigned = std::is_signed<IntT>::value;

@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::iota_view<Int42<DefaultTo42>> io;
     assert((*io.begin()).value_ == 42);

@@ -77,7 +77,7 @@ struct Pred {
   int operator()() { return 0; }
 };
 
-void test() {
+static void test() {
   Cpp20HostileIterator<int*> it;
   Pred pred;
   std::mt19937_64 rng;

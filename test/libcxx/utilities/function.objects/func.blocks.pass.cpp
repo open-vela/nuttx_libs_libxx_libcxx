@@ -25,7 +25,7 @@
 #include "test_macros.h"
 #include "count_new.h"
 
-
+namespace {
 struct A {
   static int count;
   int id_;
@@ -40,8 +40,7 @@ struct A {
 };
 
 int A::count = 0;
-
-int g(int) { return 0; }
+}
 
 extern "C" int main(int, char**)
 {

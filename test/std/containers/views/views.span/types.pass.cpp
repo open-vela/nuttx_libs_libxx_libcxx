@@ -68,7 +68,7 @@ void testSpan()
 
 
 template <typename T>
-void test()
+static void test()
 {
     testSpan<std::span<               T>,                T, std::dynamic_extent>();
     testSpan<std::span<const          T>, const          T, std::dynamic_extent>();

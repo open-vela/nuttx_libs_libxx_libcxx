@@ -16,6 +16,6 @@
 
 #include <memory_resource>
 
-void test() {
+static void test() {
   std::pmr::memory_resource m; // expected-error {{variable type 'std::pmr::memory_resource' is an abstract class}}
 }

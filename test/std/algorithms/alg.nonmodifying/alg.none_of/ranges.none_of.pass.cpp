@@ -64,7 +64,7 @@ static_assert(!HasNoneOfRFunc<IndirectUnaryPredicateNotCopyConstructible>);
 static_assert(!HasNoneOfRFunc<IndirectUnaryPredicateNotPredicate>);
 
 template <class It, class Sent = It>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       int a[] = {1, 2, 3, 4};
@@ -132,7 +132,7 @@ constexpr void test_iterators() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_iterators<forward_iterator<int*>>();
   test_iterators<bidirectional_iterator<int*>>();

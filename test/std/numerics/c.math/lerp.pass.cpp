@@ -30,7 +30,7 @@ constexpr bool constexpr_test()
 
 
 template <typename T>
-void test()
+static void test()
 {
     ASSERT_SAME_TYPE(T, decltype(std::lerp(T(), T(), T())));
     LIBCPP_ASSERT_NOEXCEPT(      std::lerp(T(), T(), T()));

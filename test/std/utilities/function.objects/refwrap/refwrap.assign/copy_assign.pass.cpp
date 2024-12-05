@@ -38,10 +38,10 @@ test(T& t)
     assert(&r2.get() == &t);
 }
 
-void f() {}
-void g() {}
+static void f() {}
+static void g() {}
 
-void
+static void
 test_function()
 {
     std::reference_wrapper<void ()> r(f);

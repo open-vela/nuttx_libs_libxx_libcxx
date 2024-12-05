@@ -77,7 +77,7 @@ struct RASentRange : std::ranges::view_base {
 template<class T>
 concept BeginInvocable = requires(T t) { t.begin(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // Common bidirectional range.

@@ -155,7 +155,7 @@ do_test()
 }
 
 template <class A, class T>
-void test()
+static void test()
 {
     do_test<A, T>();
     do_test<volatile A, T>();

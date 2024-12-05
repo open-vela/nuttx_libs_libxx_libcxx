@@ -27,10 +27,10 @@
 #include "test_macros.h"
 #include "../types.h"
 
-int new_called = 0;
-int delete_called = 0;
+static int new_called = 0;
+static int delete_called = 0;
 
-alignas(OverAligned) char DummyData[alignof(OverAligned) * 3];
+alignas(OverAligned) static char DummyData[alignof(OverAligned) * 3];
 
 void* operator new[](std::size_t s, std::align_val_t a) {
     assert(s <= sizeof(DummyData));

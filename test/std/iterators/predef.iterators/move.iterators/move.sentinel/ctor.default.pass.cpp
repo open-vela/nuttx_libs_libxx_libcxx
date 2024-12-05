@@ -17,7 +17,7 @@
 #include <iterator>
 #include <cassert>
 
-constexpr bool test()
+constexpr static bool test()
 {
 
   // The underlying sentinel is an integer.

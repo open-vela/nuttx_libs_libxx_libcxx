@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // non-const &
   {
     std::expected<int, int> e(5);
@@ -60,7 +60,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
 
   // int

@@ -36,7 +36,7 @@ struct Pred {
   constexpr bool operator()(int i) const { return i % 2 == 0; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     View v;
     Pred pred;

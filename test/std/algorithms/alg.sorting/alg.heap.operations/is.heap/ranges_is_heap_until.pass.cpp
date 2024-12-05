@@ -117,14 +117,14 @@ constexpr void test_iter() {
   test_iter_sent<Iter, sentinel_wrapper<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iter<random_access_iterator<int*>>();
   test_iter<contiguous_iterator<int*>>();
   test_iter<int*>();
   test_iter<const int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom comparator works.

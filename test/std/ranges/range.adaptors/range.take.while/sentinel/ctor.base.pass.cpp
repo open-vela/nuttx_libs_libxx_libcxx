@@ -46,7 +46,7 @@ static_assert(!ImplicitlyConstructible<std::ranges::sentinel_t<std::ranges::take
                                        std::ranges::sentinel_t<Range>,
                                        const Pred*>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // base is init correctly
   {
     using R        = std::ranges::take_while_view<Range, bool (*)(int)>;

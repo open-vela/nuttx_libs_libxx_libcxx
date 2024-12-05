@@ -50,7 +50,7 @@ static_assert(!HasIsSortedR<ForwardRangeNotSentinelEqualityComparableWith>);
 static_assert(!HasIsSortedR<UncheckedRange<HasNoComparator*>>);
 
 template <class Iter, class Sent = Iter>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       int a[] = {1, 2, 3, 4, 3};
@@ -136,7 +136,7 @@ constexpr void test_iterators() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<forward_iterator<int*>, sentinel_wrapper<forward_iterator<int*>>>();
   test_iterators<forward_iterator<int*>>();
   test_iterators<bidirectional_iterator<int*>>();

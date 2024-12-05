@@ -53,7 +53,7 @@ private:
 };
 
 template <class T, template <class> class Alloc>
-void test() {
+static void test() {
   using Old = OldEmplaceControlBlock<T, Alloc<T>>;
   using New = std::__shared_ptr_emplace<T, Alloc<T>>;
 

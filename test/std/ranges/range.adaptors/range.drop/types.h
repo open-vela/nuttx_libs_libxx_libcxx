@@ -12,7 +12,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-int globalBuff[8];
+static int globalBuff[8];
 
 struct MoveOnlyView : std::ranges::view_base {
   int start_;

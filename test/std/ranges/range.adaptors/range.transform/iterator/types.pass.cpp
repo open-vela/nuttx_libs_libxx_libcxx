@@ -21,7 +21,7 @@
 template<class V, class F>
 concept HasIterCategory = requires { typename std::ranges::transform_view<V, F>::iterator_category; };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // Member typedefs for contiguous iterator.
     static_assert(std::same_as<std::iterator_traits<int*>::iterator_concept, std::contiguous_iterator_tag>);

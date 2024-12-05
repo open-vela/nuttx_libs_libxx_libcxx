@@ -60,7 +60,7 @@ static_assert(!HasStartsWithR<UncheckedRange<int*>, ForwardRangeNotSentinelEqual
 
 // clang-format off
 template <class Iter1, class Sent1 = Iter1, class Iter2, class Sent2 = Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   {  // simple tests
     {
       int a[] = {1, 2, 3, 4, 5, 6};
@@ -213,7 +213,7 @@ constexpr void test_iterators() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   types::for_each(types::cpp20_input_iterator_list<int*>{}, []<class Iter2>() {
     types::for_each(types::cpp20_input_iterator_list<int*>{}, []<class Iter1>() {
       if constexpr (std::forward_iterator<Iter1> && std::forward_iterator<Iter2>)

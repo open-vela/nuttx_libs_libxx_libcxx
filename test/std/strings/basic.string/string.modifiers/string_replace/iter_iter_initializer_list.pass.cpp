@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     std::string s("123def456");
     s.replace(s.cbegin() + 3, s.cbegin() + 6, {'a', 'b', 'c'});

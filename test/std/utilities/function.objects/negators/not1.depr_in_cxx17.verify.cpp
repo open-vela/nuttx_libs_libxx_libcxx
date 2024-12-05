@@ -21,6 +21,6 @@ struct Predicate {
     bool operator()(argument_type) const { return true; }
 };
 
-void f() {
+static void f() {
     std::not1(Predicate()); // expected-warning {{'not1<Predicate>' is deprecated}}
 }

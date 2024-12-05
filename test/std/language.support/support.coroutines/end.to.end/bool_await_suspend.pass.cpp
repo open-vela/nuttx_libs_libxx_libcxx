@@ -43,15 +43,15 @@ struct DoSuspend {
   template <typename F> bool await_suspend(F) { return true; }
 };
 
-bool f_started, f_resumed = false;
-coro_t f() {
+static bool f_started, f_resumed = false;
+static coro_t f() {
   f_started = true;
   co_await DoSuspend{};
   f_resumed = true;
 }
 
-bool g_started, g_resumed = false;
-coro_t g() {
+static bool g_started, g_resumed = false;
+static coro_t g() {
   g_started = true;
   co_await NoSuspend{};
   g_resumed = true;

@@ -16,7 +16,7 @@
 #include <concepts>
 #include <iterator>
 
-constexpr bool test() {
+static constexpr bool test() {
   // bound
   {
     std::ranges::repeat_view<int, int> rv(0, 10);

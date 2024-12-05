@@ -170,7 +170,7 @@ constexpr void test_proxy_iterators() {
     assert(result == std::strong_ordering::equal);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterator_types();
   test_comparison_categories();
   test_comparator_invocation_count();

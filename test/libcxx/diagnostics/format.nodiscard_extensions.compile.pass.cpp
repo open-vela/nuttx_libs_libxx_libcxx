@@ -24,7 +24,7 @@
 #  include <locale>
 #endif
 
-void test() {
+static void test() {
   std::format("");
   std::vformat("", std::make_format_args());
   std::formatted_size("");

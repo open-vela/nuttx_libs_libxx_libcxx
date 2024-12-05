@@ -32,7 +32,7 @@ test()
     test(std::complex<T>(0, 0), std::complex<T>(0, 0));
 }
 
-void test_edges()
+static void test_edges()
 {
     const double pi = std::atan2(+0., -0.);
     const unsigned N = sizeof(testcases) / sizeof(testcases[0]);

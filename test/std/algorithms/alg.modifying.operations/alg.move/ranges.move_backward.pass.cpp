@@ -82,7 +82,7 @@ constexpr void test(std::array<int, N> in) {
 }
 
 template <class In, class Out, class Sent = In>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<In, Out, Sent, 4>({1, 2, 3, 4});
   // check that an empty range works
@@ -178,7 +178,7 @@ struct IteratorWithMoveIter {
   constexpr bool operator==(const IteratorWithMoveIter& other) const = default;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   test_in_iterators<bidirectional_iterator>();
   test_in_iterators<random_access_iterator>();
   test_in_iterators<contiguous_iterator>();

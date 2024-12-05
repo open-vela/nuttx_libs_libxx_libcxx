@@ -69,7 +69,7 @@ static_assert(
     !ImplicitlyConstructible<std::tuple<ExplicitConstructibleFrom<ConstMove>, ConvertibleFrom<ConstMove>>,
                              std::allocator_arg_t, test_allocator<int>, const std::pair<ConstMove, ConstMove>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   {
     const std::pair<ConstMove, int> p{1, 2};

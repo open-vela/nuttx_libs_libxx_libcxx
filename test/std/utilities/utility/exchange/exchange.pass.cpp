@@ -47,7 +47,7 @@ struct TestNoexcept {
     TestNoexcept& operator=(TestNoexcept&&) noexcept(Assign);
 };
 
-constexpr bool test_noexcept() {
+static constexpr bool test_noexcept() {
   {
     int x = 42;
     ASSERT_NOEXCEPT(std::exchange(x, 42));

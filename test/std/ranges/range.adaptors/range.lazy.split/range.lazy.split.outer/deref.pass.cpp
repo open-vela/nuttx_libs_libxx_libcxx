@@ -43,7 +43,7 @@ constexpr void test_one(Separator sep) {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   // `View` is a forward range.
   test_one<SplitViewDiff>(" ");
   test_one<SplitViewInput>(' ');

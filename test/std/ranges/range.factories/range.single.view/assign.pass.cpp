@@ -25,7 +25,7 @@ struct NotAssignable {
   NotAssignable& operator=(NotAssignable&&) = delete;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   const std::ranges::single_view<NotAssignable> a;
   std::ranges::single_view<NotAssignable> b;
   b = a;

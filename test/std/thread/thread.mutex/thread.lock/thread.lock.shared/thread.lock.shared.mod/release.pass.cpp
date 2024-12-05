@@ -28,10 +28,12 @@ struct mutex
     void unlock_shared() {++unlock_count;}
 };
 
+/*
 int mutex::lock_count = 0;
 int mutex::unlock_count = 0;
+*/
 
-mutex m;
+static mutex m;
 
 extern "C" int main(int, char**)
 {

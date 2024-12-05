@@ -43,7 +43,7 @@ static_assert(!std::is_assignable_v<const std::tuple<AssignableFrom<CopyAssign>,
 static_assert(!std::is_assignable_v<const std::tuple<AssignableFrom<ConstCopyAssign>, AssignableFrom<CopyAssign>>&,
                                     const std::tuple<ConstCopyAssign, CopyAssign>&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // reference types
   {
     int i1 = 1;

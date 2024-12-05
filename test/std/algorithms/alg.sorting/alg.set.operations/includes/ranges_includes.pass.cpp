@@ -235,7 +235,7 @@ constexpr void withAllPermutationsOfIter1AndIter2() {
   withAllPermutationsOfIter1<int*, SentWrapper>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   withAllPermutationsOfIter1AndIter2<std::type_identity_t>();
   withAllPermutationsOfIter1AndIter2<sentinel_wrapper>();
 

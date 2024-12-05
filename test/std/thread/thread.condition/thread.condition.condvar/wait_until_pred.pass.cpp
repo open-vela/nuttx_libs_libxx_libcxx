@@ -54,15 +54,15 @@ public:
     bool operator()() {return i_ != 0;}
 };
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-int runs = 0;
+static int runs = 0;
 
-void f()
+static void f()
 {
     std::unique_lock<std::mutex> lk(mut);
     assert(test2 == 0);

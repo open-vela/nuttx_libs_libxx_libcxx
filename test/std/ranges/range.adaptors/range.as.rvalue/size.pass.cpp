@@ -52,7 +52,7 @@ static_assert(!HasSize<const SizedView>);
 static_assert(!HasSize<UnsizedView>);
 static_assert(!HasSize<const UnsizedView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     bool size_called = false;
     std::ranges::as_rvalue_view view(ConstSizedView{{}, &size_called});

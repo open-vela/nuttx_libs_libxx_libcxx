@@ -75,7 +75,7 @@ struct test_signed : roundtrip_test_base<T>
     }
 };
 
-TEST_CONSTEXPR_CXX23 bool test()
+static TEST_CONSTEXPR_CXX23 bool test()
 {
     run<test_basics>(integrals);
     run<test_signed>(all_signed);

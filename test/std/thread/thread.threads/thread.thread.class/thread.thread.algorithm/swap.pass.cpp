@@ -41,9 +41,6 @@ public:
     }
 };
 
-int G::n_alive = 0;
-bool G::op_run = false;
-
 extern "C" int main(int, char**)
 {
     {

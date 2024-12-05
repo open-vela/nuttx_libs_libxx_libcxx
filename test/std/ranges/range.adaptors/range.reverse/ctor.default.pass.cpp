@@ -29,7 +29,7 @@ struct BidirRangeWith : std::ranges::view_base {
   constexpr bidirectional_iterator<const int*> end() const { return bidirectional_iterator<const int*>{ptr_ + 8}; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     static_assert( std::default_initializable<std::ranges::reverse_view<BidirRangeWith<DefaultCtor>>>);
     static_assert(!std::default_initializable<std::ranges::reverse_view<BidirRangeWith<PtrCtor>>>);

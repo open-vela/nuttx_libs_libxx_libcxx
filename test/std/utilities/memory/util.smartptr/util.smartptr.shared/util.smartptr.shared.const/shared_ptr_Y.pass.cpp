@@ -18,6 +18,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -51,6 +52,7 @@ struct C
 };
 
 int C::count = 0;
+}
 
 class private_delete_op
 {

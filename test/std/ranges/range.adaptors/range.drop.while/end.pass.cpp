@@ -33,7 +33,7 @@ struct Pred {
 static_assert(HasEnd<std::ranges::drop_while_view<View, Pred>>);
 static_assert(!HasEnd<const std::ranges::drop_while_view<View, Pred>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // return iterator
   {
     int buffer[] = {1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1};

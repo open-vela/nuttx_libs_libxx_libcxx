@@ -65,7 +65,7 @@ struct Counted {
   friend void operator&(Counted) = delete;
 
 private:
-  void check_throw() {
+  static void check_throw() {
     if (throw_on == total_objects) {
       TEST_THROW(1);
     }
@@ -76,10 +76,5 @@ private:
     ++total_objects;
   }
 };
-int Counted::current_objects = 0;
-int Counted::total_objects = 0;
-int Counted::total_copies = 0;
-int Counted::total_moves = 0;
-int Counted::throw_on = -1;
 
 #endif // LIBCPP_TEST_STD_UTILITIES_MEMORY_SPECIALIZED_ALGORITHMS_COUNTED_H

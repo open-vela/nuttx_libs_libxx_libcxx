@@ -151,7 +151,7 @@ void test_equality_basic() {
   }
 }
 
-void test_equality() {
+static void test_equality() {
   test_equality_basic<int, long>();
   test_equality_basic<ComparesToMyBool, int>();
   test_equality_basic<int, ComparesToMyBool>();

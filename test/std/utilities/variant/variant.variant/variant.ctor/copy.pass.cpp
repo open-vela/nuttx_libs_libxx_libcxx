@@ -72,6 +72,7 @@ struct TCopyNTMove {
 
 static_assert(std::is_trivially_copy_constructible<TCopyNTMove>::value, "");
 
+namespace {
 #ifndef TEST_HAS_NO_EXCEPTIONS
 struct MakeEmptyT {
   static int alive;
@@ -88,6 +89,7 @@ struct MakeEmptyT {
 };
 
 int MakeEmptyT::alive = 0;
+}
 
 template <class Variant> void makeEmpty(Variant &v) {
   Variant v2(std::in_place_type<MakeEmptyT>);

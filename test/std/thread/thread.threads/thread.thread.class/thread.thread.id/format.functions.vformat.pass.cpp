@@ -29,7 +29,7 @@
 #include "format.functions.tests.h"
 #include "test_macros.h"
 
-auto test = []<class CharT, class... Args>(
+static auto test = []<class CharT, class... Args>(
                 std::basic_string_view<CharT> expected, std::basic_string_view<CharT> fmt, Args&&... args) {
   std::basic_string<CharT> out = std::vformat(fmt, std::make_format_args<context_t<CharT>>(args...));
   TEST_REQUIRE(out == expected,
@@ -37,7 +37,7 @@ auto test = []<class CharT, class... Args>(
                    "\nFormat string   ", fmt, "\nExpected output ", expected, "\nActual output   ", out, '\n'));
 };
 
-auto test_exception =
+static auto test_exception =
     []<class CharT, class... Args>(
         [[maybe_unused]] std::string_view what,
         [[maybe_unused]] std::basic_string_view<CharT> fmt,

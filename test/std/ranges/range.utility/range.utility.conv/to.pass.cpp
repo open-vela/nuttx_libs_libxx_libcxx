@@ -559,7 +559,7 @@ constexpr void test_recursive() {
   assert((in | std::ranges::to<C4>()) == result);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_constraints();
   test_ctr_choice_order();
   test_lwg_3785();

@@ -33,7 +33,7 @@ test()
 
 // test edges
 
-TEST_CONSTEXPR_CXX20 bool test_edges()
+TEST_CONSTEXPR_CXX20 static bool test_edges()
 {
     const unsigned N = sizeof(testcases) / sizeof(testcases[0]);
     int classification[N];

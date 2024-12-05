@@ -56,7 +56,7 @@ bool checkCollectionsEqualBackwards(
     return (start1 == end1 && start2 == end2);
 }
 
-void checkIteratorConcepts() {
+static void checkIteratorConcepts() {
   using namespace fs;
   using It = path::iterator;
   using Traits = std::iterator_traits<It>;
@@ -92,7 +92,7 @@ void checkIteratorConcepts() {
   }
 }
 
-void checkBeginEndBasic() {
+static void checkBeginEndBasic() {
   using namespace fs;
   using It = path::iterator;
   {

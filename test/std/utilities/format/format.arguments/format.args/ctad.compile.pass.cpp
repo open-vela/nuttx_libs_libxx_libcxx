@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-void test() {
+static void test() {
   // Note the Standard way to create a format-arg-store is by using make_format_args.
   static_assert(std::same_as<decltype(std::basic_format_args(std::make_format_args(42))),
                              std::basic_format_args<std::format_context>>);

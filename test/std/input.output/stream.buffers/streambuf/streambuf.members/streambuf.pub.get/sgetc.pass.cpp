@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int underflow_called = 0;
+static int underflow_called = 0;
 
 struct test
     : public std::basic_streambuf<char>

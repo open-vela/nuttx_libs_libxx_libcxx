@@ -62,7 +62,7 @@ static_assert(!CanCallBase<std::ranges::lazy_split_view<MoveOnlyView, ForwardVie
 static_assert(!CanCallBase<std::ranges::lazy_split_view<MoveOnlyView, ForwardView> const &>);
 static_assert(!CanCallBase<std::ranges::lazy_split_view<MoveOnlyView, ForwardView> const &&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   using View = ViewWithInitTracking;
 
   // Copyable input -- both lvalue and rvalue overloads of `base` are available.

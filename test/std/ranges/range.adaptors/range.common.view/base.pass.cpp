@@ -23,7 +23,7 @@ constexpr bool hasLValueQualifiedBase(auto&& view) {
   return requires { view.base(); };
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   int buf[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

@@ -25,7 +25,7 @@ concept CanBePiped = requires (View&& view, T&& t) {
   { std::forward<View>(view) | std::forward<T>(t) };
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buf[] = {1, 2, 3};
 
   // views::common(r) is equivalent to views::all(r) if r is a common_range

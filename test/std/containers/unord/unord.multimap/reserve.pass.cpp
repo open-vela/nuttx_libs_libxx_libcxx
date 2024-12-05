@@ -46,7 +46,7 @@ void test(const C& c)
     assert(c.find(4)->second == "four");
 }
 
-void reserve_invariant(std::size_t n) // LWG #2156
+static void reserve_invariant(std::size_t n) // LWG #2156
 {
     for (std::size_t i = 0; i < n; ++i)
     {

@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using month  = std::chrono::month;
   using months = std::chrono::months;
 

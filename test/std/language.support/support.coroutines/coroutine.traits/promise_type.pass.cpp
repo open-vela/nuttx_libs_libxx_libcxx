@@ -47,14 +47,14 @@ struct std::coroutine_traits<C> {
 };
 
 template <class Expect, class T, class ...Args>
-void check_type() {
+static void check_type() {
   using Traits = std::coroutine_traits<T, Args...>;
   static_assert(has_promise_type<Traits>(), "");
   static_assert(std::is_same<typename Traits::promise_type, Expect>::value, "");
 }
 
 template <class T, class ...Args>
-void check_no_type() {
+static void check_no_type() {
   using Traits = std::coroutine_traits<T, Args...>;
   static_assert(!has_promise_type<Traits>(), "");
 }

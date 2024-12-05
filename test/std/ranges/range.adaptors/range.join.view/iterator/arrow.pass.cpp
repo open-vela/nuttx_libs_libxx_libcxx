@@ -96,7 +96,7 @@ using ArrowInner = BufferView<arrow_input_iter<Box*>>;
 static_assert(std::ranges::input_range<ArrowInner>);
 static_assert(HasArrow<std::ranges::iterator_t<ArrowInner>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   Box buffer[4][4] = {{{1111}, {2222}, {3333}, {4444}},
                       {{555}, {666}, {777}, {888}},
                       {{99}, {1010}, {1111}, {1212}},

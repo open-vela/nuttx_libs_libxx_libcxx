@@ -337,7 +337,7 @@ constexpr bool has_append() {
   return has_append<It>(0) && has_append_op<It>(0);
 }
 
-void test_sfinae()
+static void test_sfinae()
 {
   using namespace fs;
   {

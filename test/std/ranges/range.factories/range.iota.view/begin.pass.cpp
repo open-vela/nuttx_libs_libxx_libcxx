@@ -38,7 +38,7 @@ constexpr void testType() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testType<SomeInt>();
   testType<long long>();
   testType<unsigned long long>();

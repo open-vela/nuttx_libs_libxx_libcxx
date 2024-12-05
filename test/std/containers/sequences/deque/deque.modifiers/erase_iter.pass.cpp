@@ -33,7 +33,6 @@ struct Throws {
     static bool sThrows;
     };
 
-bool Throws::sThrows = false;
 #endif
 
 template <class C>

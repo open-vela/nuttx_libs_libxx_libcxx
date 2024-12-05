@@ -43,7 +43,7 @@ struct MaybeSimpleView : std::ranges::view_base {
 using SimpleView = MaybeSimpleView<true>;
 using NonSimpleView = MaybeSimpleView<false>;
 
-constexpr bool test() {
+static constexpr bool test() {
   // random_access_range<const V> && sized_range<const V>
   std::ranges::drop_view dropView1(MoveOnlyView(), 4);
   assert(dropView1.begin() == globalBuff + 4);

@@ -38,7 +38,7 @@ concept CanBePiped = requires(View&& view, T&& t) {
   { std::forward<View>(view) | std::forward<T>(t) };
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[3] = {1, 2, 3};
   int buffer2[2] = {4, 5};
   int buffer3[4] = {6, 7, 8, 9};

@@ -46,7 +46,7 @@ static_assert(std::input_iterator<IterSwappingIt<0>>);
 static_assert(std::indirectly_swappable<IterSwappingIt<0>, IterSwappingIt<0>>);
 static_assert(std::indirectly_swappable<IterSwappingIt<0>, IterSwappingIt<1>>);
 
-constexpr bool test() {
+constexpr static bool test() {
   {
     using It = int*;
     using CommonIt = std::common_iterator<It, sentinel_wrapper<It>>;

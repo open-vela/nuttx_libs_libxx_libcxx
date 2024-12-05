@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 template<class CharT>
-void test() {
+static void test() {
   auto val = MAKE_STRING(CharT, "test");
   auto sv = std::basic_string_view(val);
   ASSERT_SAME_TYPE(decltype(sv), std::basic_string_view<CharT>);
@@ -28,7 +28,7 @@ void test() {
   assert(sv.data() == val.data());
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

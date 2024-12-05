@@ -13,7 +13,10 @@
 
 #include "test_macros.h"
 
+namespace {
 struct Counter_base { static int gConstructed; };
+int Counter_base::gConstructed = 0;
+}
 
 template <typename T>
 class Counter : public Counter_base
@@ -37,8 +40,6 @@ public:
 private:
     T data_;
 };
-
-int Counter_base::gConstructed = 0;
 
 namespace std {
 

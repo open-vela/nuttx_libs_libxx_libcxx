@@ -21,7 +21,7 @@
 template<class T>
 concept brace_initializable = requires { T{}; };
 
-void test() {
+static void test() {
     // LWG3149
     // Changed the concept from constructible_from<T>
     // to constructible_from<T> &&

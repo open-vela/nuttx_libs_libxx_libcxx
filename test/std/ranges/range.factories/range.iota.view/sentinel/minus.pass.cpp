@@ -25,7 +25,7 @@ concept MinusInvocable = requires(std::ranges::iota_view<T, IntSentinelWith<T>> 
   io.end() - io.begin();
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

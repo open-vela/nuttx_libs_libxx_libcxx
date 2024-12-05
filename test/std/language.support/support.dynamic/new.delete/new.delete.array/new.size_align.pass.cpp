@@ -32,9 +32,9 @@
 #include "test_macros.h"
 #include "../types.h"
 
-int new_handler_called = 0;
+static int new_handler_called = 0;
 
-void my_new_handler() {
+static void my_new_handler() {
     ++new_handler_called;
     std::set_new_handler(nullptr);
 }

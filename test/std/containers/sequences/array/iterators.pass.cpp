@@ -34,7 +34,7 @@ struct NoDefault {
 };
 
 template <class T>
-TEST_CONSTEXPR_CXX17 void check_noexcept(T& c) {
+TEST_CONSTEXPR_CXX17 static void check_noexcept(T& c) {
     ASSERT_NOEXCEPT(c.begin());
     ASSERT_NOEXCEPT(c.end());
     ASSERT_NOEXCEPT(c.cbegin());

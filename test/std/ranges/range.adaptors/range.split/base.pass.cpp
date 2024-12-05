@@ -37,7 +37,7 @@ static_assert(HasBase<std::ranges::split_view<View, View>&&>);
 static_assert(!HasBase<std::ranges::split_view<MoveOnlyView, View> const&>);
 static_assert(HasBase<std::ranges::split_view<MoveOnlyView, View>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &
   {
     const std::ranges::split_view<View, View> sv{View{{}, 5}, View{{}, 0}};

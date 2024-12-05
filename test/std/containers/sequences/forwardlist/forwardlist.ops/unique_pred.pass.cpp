@@ -44,7 +44,7 @@ struct PredLWG526 {
 };
 
 
-bool g(int x, int y)
+static bool g(int x, int y)
 {
     return x == y;
 }

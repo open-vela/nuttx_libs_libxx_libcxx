@@ -94,7 +94,7 @@ constexpr void mixin_accessor() {
   mixin_layout(typename checked_accessor<T>::data_handle_type(elements.get_ptr()), acc);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   mixin_accessor<int>();
   mixin_accessor<const int>();
   mixin_accessor<double>();

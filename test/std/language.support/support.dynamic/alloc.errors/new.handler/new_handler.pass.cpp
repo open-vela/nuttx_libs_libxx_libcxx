@@ -14,7 +14,7 @@
 
 #include "test_macros.h"
 
-void f() {}
+static void f() {}
 
 extern "C" int main(int, char**)
 {

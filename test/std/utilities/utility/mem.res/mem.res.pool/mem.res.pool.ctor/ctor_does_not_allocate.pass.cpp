@@ -21,7 +21,7 @@
 #include "count_new.h"
 
 template <class PoolResource>
-void test() {
+static void test() {
   // Constructing a pool resource should not cause allocations
   // by itself; the resource should wait to allocate until an
   // allocation is requested.

@@ -19,7 +19,7 @@
 struct Base { };
 struct Derived : Base { };
 
-void test() {
+static void test() {
     std::reverse_iterator<Base*> base;
     std::reverse_iterator<Derived*> derived(base); // expected-error {{no matching constructor for initialization of 'std::reverse_iterator<Derived *>'}}
 }

@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class C>
 void test(int N)
@@ -49,7 +49,7 @@ struct Payload
 //     bool operator==(const Payload &rhs) const { return val == rhs.val;}
 };
 
-void test_stable(int N)
+static void test_stable(int N)
 {
     typedef Payload T;
     typedef std::forward_list<T> C;

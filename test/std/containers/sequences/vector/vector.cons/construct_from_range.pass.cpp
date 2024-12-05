@@ -17,7 +17,7 @@
 #include "asan_testing.h"
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   for_all_iterators_and_allocators<int>([]<class Iter, class Sent, class Alloc>() {
     test_sequence_container<std::vector, int, Iter, Sent, Alloc>([](const auto& c) {
       LIBCPP_ASSERT(c.__invariants());

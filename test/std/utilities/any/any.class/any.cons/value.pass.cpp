@@ -28,6 +28,18 @@
 #include "count_new.h"
 #include "test_macros.h"
 
+int small_throws_on_copy::count = 0;
+int small_throws_on_copy::copied = 0;
+int small_throws_on_copy::moved = 0;
+
+int large_throws_on_copy::count = 0;
+int large_throws_on_copy::copied = 0;
+int large_throws_on_copy::moved = 0;
+
+int throws_on_move::count = 0;
+int throws_on_move::copied = 0;
+int throws_on_move::moved = 0;
+
 template <class Type>
 void test_copy_value_throws()
 {
@@ -51,7 +63,7 @@ void test_copy_value_throws()
 #endif
 }
 
-void test_move_value_throws()
+static void test_move_value_throws()
 {
 #if !defined(TEST_HAS_NO_EXCEPTIONS)
     assert(throws_on_move::count == 0);
@@ -105,7 +117,7 @@ void test_copy_move_value() {
 }
 
 // Test that any(ValueType&&) is *never* selected for a std::in_place_type_t specialization.
-void test_sfinae_constraints() {
+static void test_sfinae_constraints() {
     using BadTag = std::in_place_type_t<int>;
     using OKTag = std::in_place_t;
     // Test that the tag type is properly handled in SFINAE

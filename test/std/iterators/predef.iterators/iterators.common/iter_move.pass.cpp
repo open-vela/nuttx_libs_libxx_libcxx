@@ -36,7 +36,7 @@ struct IterMovingIt {
 };
 static_assert(std::input_iterator<IterMovingIt>);
 
-constexpr bool test() {
+constexpr static bool test() {
   {
     using It = int*;
     using CommonIt = std::common_iterator<It, sentinel_wrapper<It>>;

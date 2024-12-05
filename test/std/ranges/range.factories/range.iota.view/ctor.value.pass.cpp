@@ -42,7 +42,7 @@ struct SomeIntComparable {
   constexpr SomeIntComparable  operator--() { --value_; return *this; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::iota_view<SomeInt> io(SomeInt(42));
     assert((*io.begin()).value_ == 42);

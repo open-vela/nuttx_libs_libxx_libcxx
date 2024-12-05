@@ -33,7 +33,7 @@ struct NotCopyConstructible {
 };
 
 template <class T>
-constexpr void test() {
+constexpr static void test() {
   using Cache = std::ranges::__non_propagating_cache<T>;
   static_assert(std::is_nothrow_copy_constructible_v<Cache>);
   Cache a;

@@ -21,7 +21,7 @@
 static_assert(std::semiregular<std::identity>);
 static_assert(requires { typename std::identity::is_transparent; });
 
-constexpr bool test() {
+static constexpr bool test() {
   std::identity id;
   int i = 42;
   assert(id(i) == 42);

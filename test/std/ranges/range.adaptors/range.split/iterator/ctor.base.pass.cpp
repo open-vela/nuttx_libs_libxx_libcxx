@@ -30,7 +30,7 @@ struct TracedMoveView : std::ranges::view_base {
   constexpr TracedMoveIter end() const { return {}; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using SplitView = std::ranges::split_view<TracedMoveView, TracedMoveView>;
   using SplitIter = std::ranges::iterator_t<SplitView>;
 

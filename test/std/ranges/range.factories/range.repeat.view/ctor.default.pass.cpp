@@ -25,7 +25,7 @@ struct Int {
 static_assert(std::default_initializable<std::ranges::repeat_view<DefaultInt42>>);
 static_assert(!std::default_initializable<std::ranges::repeat_view<Int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::repeat_view<DefaultInt42> rv;
   assert((*rv.begin()).value == 42);
 

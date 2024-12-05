@@ -14,7 +14,7 @@
 
 #include <new>
 
-void f() {
+static void f() {
     char buffer[100];
     ::operator new(4, buffer); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
 }

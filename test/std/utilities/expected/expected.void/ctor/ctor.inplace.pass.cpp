@@ -21,7 +21,7 @@ static_assert(!std::is_convertible_v<std::in_place_t, std::expected<void, int>>)
 // test noexcept
 static_assert(std::is_nothrow_constructible_v<std::expected<void, int>, std::in_place_t>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::expected<void, int> e(std::in_place);
   assert(e.has_value());
 

@@ -21,7 +21,7 @@
 
 
 template <typename T>
-constexpr void constexpr_test()
+constexpr static void constexpr_test()
 {
     constexpr T array[1000] = {};
     ASSERT_SAME_TYPE(decltype(std::midpoint(array, array)), const T*);

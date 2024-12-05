@@ -40,7 +40,7 @@ static_assert(std::is_nothrow_constructible_v<Iter<wchar_t>, IstreamView<wchar_t
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   auto iss = make_string_stream<CharT>("123");
   std::ranges::basic_istream_view<int, CharT> isv{iss};
   Iter<CharT> it{isv};

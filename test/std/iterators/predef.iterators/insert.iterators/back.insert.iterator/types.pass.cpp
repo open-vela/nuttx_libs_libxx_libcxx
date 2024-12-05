@@ -42,7 +42,7 @@ struct find_container
 };
 
 template <class C>
-void
+static void
 test()
 {
     typedef std::back_insert_iterator<C> R;

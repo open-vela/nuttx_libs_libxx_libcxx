@@ -37,20 +37,20 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-ms WaitTime = ms(250);
+static ms WaitTime = ms(250);
 
 // Thread sanitizer causes more overhead and will sometimes cause this test
 // to fail. To prevent this we give Thread sanitizer more time to complete the
 // test.
 #if !defined(TEST_IS_EXECUTED_IN_A_SLOW_ENVIRONMENT)
-ms Tolerance = ms(50);
+static ms Tolerance = ms(50);
 #else
-ms Tolerance = ms(50 * 5);
+static ms Tolerance = ms(50 * 5);
 #endif
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
-void f()
+static void f()
 {
     time_point t0 = Clock::now();
     time_point t1;
@@ -62,7 +62,7 @@ void f()
     assert(d < Tolerance);  // within tolerance
 }
 
-void g()
+static void g()
 {
     time_point t0 = Clock::now();
     time_point t1;

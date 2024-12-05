@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int g(int) {return 0;}
+static int g(int) {return 0;}
 
 extern "C" int main(int, char**)
 {

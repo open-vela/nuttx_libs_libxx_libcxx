@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // Both are integer like and both are less than zero.
   {
     const std::ranges::iota_view<int, int> io(-10, -5);

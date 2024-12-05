@@ -32,7 +32,7 @@
 #include "test_format_string.h"
 #include "test_macros.h"
 
-auto test = []<class CharT, class... Args>(
+static auto test = []<class CharT, class... Args>(
                 std::basic_string_view<CharT> expected, test_format_string<CharT, Args...> fmt, Args&&... args) {
   std::basic_string<CharT> out = std::format(fmt, std::forward<Args>(args)...);
   TEST_REQUIRE(out == expected,
@@ -40,7 +40,7 @@ auto test = []<class CharT, class... Args>(
                    "\nFormat string   ", fmt, "\nExpected output ", expected, "\nActual output   ", out, '\n'));
 };
 
-auto test_exception = []<class CharT, class... Args>(std::string_view, std::basic_string_view<CharT>, Args&&...) {
+static auto test_exception = []<class CharT, class... Args>(std::string_view, std::basic_string_view<CharT>, Args&&...) {
   // After P2216 most exceptions thrown by std::format become ill-formed.
   // Therefore this tests does nothing.
 };

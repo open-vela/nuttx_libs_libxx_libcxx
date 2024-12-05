@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 bool test()
+TEST_CONSTEXPR_CXX20 static bool test()
 {
     wchar_t s1[] = {1, 2, 3};
     wchar_t s2[3] = {0};

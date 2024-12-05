@@ -25,7 +25,7 @@ concept CanDeduce = requires(const T& t, const U& u) {
   std::ranges::iota_view(t, u);
 };
 
-void test() {
+static void test() {
   static_assert(std::same_as<
     decltype(std::ranges::iota_view(0, 0)),
     std::ranges::iota_view<int, int>

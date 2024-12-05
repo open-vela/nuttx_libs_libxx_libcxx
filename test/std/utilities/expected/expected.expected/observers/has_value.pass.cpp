@@ -32,7 +32,7 @@ static_assert(!HasValueNoexcept<Foo>);
 static_assert(HasValueNoexcept<std::expected<int, int>>);
 static_assert(HasValueNoexcept<const std::expected<int, int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // has_value
   {
     const std::expected<int, int> e(5);

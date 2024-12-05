@@ -31,7 +31,7 @@
 #include "test_iterators.h"
 
 template <class It>
-void test() {
+static void test() {
   typedef std::__unconstrained_reverse_iterator<It> R;
   typedef std::iterator_traits<It> T;
   static_assert((std::is_same<typename R::iterator_type, It>::value), "");

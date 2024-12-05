@@ -53,7 +53,7 @@ constexpr bool has_iterator_concept_v = requires {
 };
 
 template <class Iter, class Category, class ValueType, class DiffType, class RefType, class PtrType>
-constexpr bool test() {
+constexpr static bool test() {
   using Traits = std::iterator_traits<Iter>;
   static_assert(std::same_as<typename Traits::iterator_category, Category>);
   static_assert(std::same_as<typename Traits::value_type, ValueType>);

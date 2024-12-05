@@ -91,7 +91,7 @@ static_assert(std::is_assignable_v<std::expected<MaybeNoexcept<true, true>, Mayb
 static_assert(!std::is_assignable_v<std::expected<MaybeNoexcept<false, false>, MaybeNoexcept<false, false>>&,
                                     std::unexpected<int>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // - If has_value() is true, equivalent to:
   //   reinit-expected(unex, val, std::forward<GF>(e.error()));
   // is_nothrow_constructible_v<E, GF>
@@ -178,7 +178,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   std::expected<void, ThrowOnMoveConstruct> e1(std::in_place);
   std::unexpected<ThrowOnMoveConstruct> un(std::in_place);
