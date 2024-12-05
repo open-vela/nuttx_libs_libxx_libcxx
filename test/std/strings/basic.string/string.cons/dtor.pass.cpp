@@ -40,7 +40,7 @@ static_assert(std::is_nothrow_destructible<
 LIBCPP_STATIC_ASSERT(!std::is_nothrow_destructible<
                      std::basic_string<char, std::char_traits<char>, throwing_alloc<char>>>::value, "");
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   test_allocator_statistics alloc_stats;
   {
     std::basic_string<char, std::char_traits<char>, test_allocator<char>> str2((test_allocator<char>(&alloc_stats)));

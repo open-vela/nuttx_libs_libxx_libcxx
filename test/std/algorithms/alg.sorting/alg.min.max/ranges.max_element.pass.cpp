@@ -91,7 +91,7 @@ constexpr void test(std::initializer_list<int> a, int expected) {
 }
 
 template <class It>
-constexpr bool test() {
+static constexpr bool test() {
   test<It>({}, 0);
   test<It>({1}, 0);
   test<It>({1, 2}, 1);
@@ -165,7 +165,7 @@ constexpr void test_dangling() {
   assert(projections == 4);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
 
   test<forward_iterator<const int*>>();
   test<bidirectional_iterator<const int*>>();

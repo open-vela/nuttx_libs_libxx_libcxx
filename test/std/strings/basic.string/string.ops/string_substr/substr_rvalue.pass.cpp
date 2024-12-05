@@ -82,7 +82,7 @@ constexpr void test_char_traits() {
   test_allocators<CharT, constexpr_char_traits<CharT>>();
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   test_char_traits<char>();
   test_char_traits<char16_t>();
   test_char_traits<char32_t>();

@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-TEST_CONSTEXPR_CXX17 bool test() {
+TEST_CONSTEXPR_CXX17 static bool test() {
     typedef bidirectional_iterator<int*> Iter;
     int i = 0;
     Iter iter(&i);

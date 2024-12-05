@@ -77,7 +77,7 @@ struct View : std::ranges::view_base {
 
 } // namespace adl
 
-constexpr bool test() {
+static constexpr bool test() {
   // Can use `iter_move` with `inner-iterator`; `View` is a forward range.
   {
     SplitViewForward v("abc def", " ");

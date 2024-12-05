@@ -53,7 +53,7 @@ static_assert(!NonMemberSwapNoexcept<const std::pair<SwapMayThrow<true>, SwapMay
 static_assert(!NonMemberSwapNoexcept<const std::pair<SwapMayThrow<false>, SwapMayThrow<true>>>);
 static_assert(!NonMemberSwapNoexcept<const std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // user defined const swap
   {
     using P = std::pair<const ConstSwappable, const ConstSwappable>;

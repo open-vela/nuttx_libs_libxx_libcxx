@@ -50,7 +50,7 @@
 #include "bad_comparator_values.h"
 #include "check_assertion.h"
 
-void check_oob_sort_read() {
+static void check_oob_sort_read() {
     std::map<std::size_t, std::map<std::size_t, bool>> comparison_results; // terrible for performance, but really convenient
     for (auto line : std::views::split(DATA, '\n') | std::views::filter([](auto const& line) { return !line.empty(); })) {
         auto values = std::views::split(line, ' ');
@@ -183,7 +183,7 @@ std::vector<FloatContainer> generate_float_data() {
     return floats;
 }
 
-void check_nan_floats() {
+static void check_nan_floats() {
     auto floats = generate_float_data();
     TEST_LIBCPP_ASSERT_FAILURE(std::sort(floats.begin(), floats.end()), "not a valid strict-weak ordering");
     floats = generate_float_data();
@@ -198,7 +198,7 @@ void check_nan_floats() {
     TEST_LIBCPP_ASSERT_FAILURE(std::ranges::sort_heap(floats, std::less()), "not a valid strict-weak ordering");
 }
 
-void check_irreflexive() {
+static void check_irreflexive() {
     std::vector<int> v(1);
     TEST_LIBCPP_ASSERT_FAILURE(std::sort(v.begin(), v.end(), std::greater_equal<int>()), "not a valid strict-weak ordering");
     TEST_LIBCPP_ASSERT_FAILURE(std::stable_sort(v.begin(), v.end(), std::greater_equal<int>()), "not a valid strict-weak ordering");

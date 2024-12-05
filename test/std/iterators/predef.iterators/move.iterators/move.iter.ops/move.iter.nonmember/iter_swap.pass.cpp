@@ -42,7 +42,7 @@ static_assert(std::input_iterator<ThrowingBase>);
 ASSERT_NOT_NOEXCEPT(std::ranges::iter_swap(std::declval<ThrowingBase>(), std::declval<ThrowingBase>()));
 ASSERT_NOEXCEPT(std::ranges::iter_swap(std::declval<NoexceptBase>(), std::declval<NoexceptBase>()));
 
-constexpr bool test() {
+constexpr static bool test() {
   // Can use `iter_swap` with a regular array.
   {
     int a[] = {0, 1, 2};

@@ -86,7 +86,7 @@ void test_move_assign_empty() {
     assert(LHS::count == 0);
 }
 
-void test_move_assign_noexcept() {
+static void test_move_assign_noexcept() {
     std::any a1;
     std::any a2;
     ASSERT_NOEXCEPT(a1 = std::move(a2));

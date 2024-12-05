@@ -96,7 +96,7 @@ TEST_CONSTEXPR_CXX23 void test_basic() {
 }
 
 template <bool IsArray>
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
   typedef typename std::conditional<IsArray, int[], int>::type VT;
   {
     typedef std::unique_ptr<VT> U;

@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-bool g(int x, int y)
+static bool g(int x, int y)
 {
     return x == y;
 }

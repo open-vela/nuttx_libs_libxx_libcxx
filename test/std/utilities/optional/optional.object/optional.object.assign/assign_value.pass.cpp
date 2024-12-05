@@ -57,7 +57,7 @@ struct FromOptionalType {
   constexpr FromOptionalType& operator=(Opt&) { Dummy::BARK; return *this; }
 };
 
-void test_sfinae() {
+static void test_sfinae() {
     using I = TestTypes::TestType;
     using E = ExplicitTestTypes::TestType;
     assert_assignable<int>();
@@ -81,7 +81,7 @@ void test_sfinae() {
     assert_assignable<FromOptionalType, std::optional<FromOptionalType>&, false>();
 }
 
-void test_with_test_type()
+static void test_with_test_type()
 {
     using T = TestTypes::TestType;
     T::reset();

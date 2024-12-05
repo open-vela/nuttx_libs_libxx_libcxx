@@ -22,7 +22,7 @@ struct IsDefaultConstructible {
   IsDefaultConstructible() requires DefaultCtorEnabled = default;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   static_assert( std::default_initializable<std::ranges::single_view<IsDefaultConstructible<true>>>);
   static_assert(!std::default_initializable<std::ranges::single_view<IsDefaultConstructible<false>>>);
 

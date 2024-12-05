@@ -27,15 +27,15 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-bool expect_timeout = false;
+static bool expect_timeout = false;
 
-void f()
+static void f()
 {
     typedef std::chrono::system_clock Clock;
     typedef std::chrono::milliseconds milliseconds;

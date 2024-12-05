@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::vector<operator_hijacker> v;
   operator_hijacker val;
   v.insert(v.end(), 1, val);

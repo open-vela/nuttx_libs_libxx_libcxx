@@ -223,7 +223,7 @@ TEST_CONSTEXPR_CXX20 bool all_the_algorithms()
     return true;
 }
 
-void test()
+static void test()
 {
     all_the_algorithms();
 #if TEST_STD_VER > 17

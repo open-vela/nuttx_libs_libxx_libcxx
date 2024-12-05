@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "count_new.h"
 
-void test_default_does_not_allocate() {
+static void test_default_does_not_allocate() {
   DisableAllocationGuard g;
   ((void)g);
   {

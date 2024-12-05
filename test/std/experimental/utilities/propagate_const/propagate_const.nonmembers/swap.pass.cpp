@@ -19,8 +19,8 @@
 
 using std::experimental::propagate_const;
 
-bool swap_called = false;
-void swap(X &, X &) { swap_called = true; }
+static bool swap_called = false;
+static void swap(X &, X &) { swap_called = true; }
 
 extern "C" int main(int, char**) {
   typedef propagate_const<X> P;

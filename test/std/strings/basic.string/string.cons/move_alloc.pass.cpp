@@ -32,7 +32,7 @@ test(S s0, const typename S::allocator_type& a)
     assert(s2.get_allocator() == a);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   test_allocator_statistics alloc_stats;
   {
     typedef test_allocator<char> A;

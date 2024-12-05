@@ -46,7 +46,7 @@ struct ThrowOnIncrementView : IntBufferView {
 };
 
 // Cannot run the test at compile time because it is not allowed to throw exceptions
-void test() {
+static void test() {
   int buffer[] = {1, 2, 3};
   {
     // zip iterator should be able to be destroyed after member function throws

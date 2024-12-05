@@ -43,7 +43,7 @@ void test_copy_throws() {
 #endif
 }
 
-void test_copy_empty() {
+static void test_copy_empty() {
     DisableAllocationGuard g; ((void)g); // No allocations should occur.
     std::any a1;
     std::any a2(a1);

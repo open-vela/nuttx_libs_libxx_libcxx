@@ -24,7 +24,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::atomic_bool done(false);
+static std::atomic_bool done(false);
 
 class G
 {
@@ -45,10 +45,7 @@ public:
     }
 };
 
-int G::n_alive = 0;
-bool G::op_run = false;
-
-void foo() { done = true; }
+static void foo() { done = true; }
 
 extern "C" int main(int, char**)
 {

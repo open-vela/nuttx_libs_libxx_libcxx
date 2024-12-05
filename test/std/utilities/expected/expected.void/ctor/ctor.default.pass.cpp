@@ -29,7 +29,7 @@ struct MyInt {
   friend constexpr bool operator==(const MyInt&, const MyInt&) = default;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // default constructible
   {
     std::expected<void, int> e;

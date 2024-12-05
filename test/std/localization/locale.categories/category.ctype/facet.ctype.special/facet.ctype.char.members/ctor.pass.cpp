@@ -17,6 +17,7 @@
 
 #include "test_macros.h"
 
+namespace {
 class my_facet
     : public std::ctype<char>
 {
@@ -30,6 +31,7 @@ public:
 };
 
 int my_facet::count = 0;
+}
 
 extern "C" int main(int, char**)
 {

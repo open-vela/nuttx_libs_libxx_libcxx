@@ -32,7 +32,7 @@ static_assert(std::is_invocable_v<std::ranges::greater, explicit_operators, expl
 
 static_assert(requires { typename std::ranges::greater::is_transparent; });
 
-constexpr bool test() {
+static constexpr bool test() {
   auto fn = std::ranges::greater();
 
   assert(fn(MoveOnly(42), MoveOnly(41)));

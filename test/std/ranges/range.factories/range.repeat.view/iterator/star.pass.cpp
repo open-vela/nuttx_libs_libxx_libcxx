@@ -14,7 +14,7 @@
 #include <cassert>
 #include <concepts>
 
-constexpr bool test() {
+static constexpr bool test() {
   // unbound
   {
     std::ranges::repeat_view<int> v(31);

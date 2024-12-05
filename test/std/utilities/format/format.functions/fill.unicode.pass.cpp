@@ -56,7 +56,7 @@ auto check_exception =
     };
 
 template <class CharT>
-void test() {
+static void test() {
   // 1, 2, 3, 4 code unit UTF-8 transitions
   check(SV("\u000042\u0000"), SV("{:\u0000^4}"), 42);
   check(SV("\u007f42\u007f"), SV("{:\u007f^4}"), 42);

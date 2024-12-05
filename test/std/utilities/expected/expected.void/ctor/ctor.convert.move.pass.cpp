@@ -88,7 +88,7 @@ struct Data {
   constexpr Data(MoveOnly&& m) : data(std::move(m)) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // convert the error
   {
     std::expected<void, MoveOnly> e1(std::unexpect, 5);
@@ -110,7 +110,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct ThrowingInt {
     ThrowingInt(int) { throw Except{}; }

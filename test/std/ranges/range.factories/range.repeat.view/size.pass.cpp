@@ -25,7 +25,7 @@ static_assert(has_size<std::ranges::repeat_view<int, int>>);
 static_assert(!has_size<std::ranges::repeat_view<int>>);
 static_assert(!has_size<std::ranges::repeat_view<int, std::unreachable_sentinel_t>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::repeat_view<int, int> rv(10, 20);
     assert(rv.size() == 20);

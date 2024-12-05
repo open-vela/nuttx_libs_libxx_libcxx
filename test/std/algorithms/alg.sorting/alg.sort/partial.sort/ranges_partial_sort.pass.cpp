@@ -132,7 +132,7 @@ constexpr void test_iterator_and_sentinel() {
   test_all_subsequences<Iter, Sent>(std::array{1, 2, 1, 2, 1, 2});
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iterator_and_sentinel<random_access_iterator<int*>, random_access_iterator<int*>>();
   test_iterator_and_sentinel<random_access_iterator<int*>, sentinel_wrapper<random_access_iterator<int*>>>();
   test_iterator_and_sentinel<contiguous_iterator<int*>, contiguous_iterator<int*>>();
@@ -141,7 +141,7 @@ constexpr void test_iterators() {
   test_iterator_and_sentinel<int*, sentinel_wrapper<int*>>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom comparator works.

@@ -46,7 +46,7 @@ struct find_members
 };
 
 template <class C>
-void
+static void
 test()
 {
     typedef std::insert_iterator<C> R;

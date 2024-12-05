@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <vector>
 
-std::vector<int> ca_allocs;
+static std::vector<int> ca_allocs;
 
 extern "C" int main(int, char**) {
   ca_allocs.push_back(0);

@@ -50,7 +50,7 @@ constexpr void test_swap(MDS a, MDS b) {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   using extents_t = std::extents<int, 4, std::dynamic_extent>;
   float data_a[1024];
   float data_b[1024];

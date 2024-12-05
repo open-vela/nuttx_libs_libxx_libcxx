@@ -20,6 +20,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct A
 {
     static int constructed;
@@ -30,6 +31,7 @@ struct A
 };
 
 int A::constructed = 0;
+}
 
 extern "C" int main(int, char**)
 {

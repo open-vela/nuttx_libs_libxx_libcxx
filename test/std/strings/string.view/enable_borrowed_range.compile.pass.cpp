@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void test() {
+static void test() {
   using std::ranges::enable_borrowed_range;
   static_assert(enable_borrowed_range<std::basic_string_view<char> >);
   static_assert(enable_borrowed_range<std::basic_string_view<wchar_t> >);

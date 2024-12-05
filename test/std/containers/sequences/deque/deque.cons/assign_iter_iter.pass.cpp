@@ -87,7 +87,7 @@ testNI(int start, int N, int M)
     testI(c1, c2);
 }
 
-void basic_test()
+static void basic_test()
 {
     {
     int rng[] = {0, 1, 2, 3, 1023, 1024, 1025, 2047, 2048, 2049};
@@ -121,7 +121,7 @@ void basic_test()
 }
 
 template <class It>
-void test_emplacable_concept() {
+static void test_emplacable_concept() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};
@@ -143,7 +143,7 @@ void test_emplacable_concept() {
 #endif
 }
 
-void test_iterators() {
+static void test_iterators() {
   test_emplacable_concept<cpp17_input_iterator<int*> >();
   test_emplacable_concept<forward_iterator<int*> >();
   test_emplacable_concept<bidirectional_iterator<int*> >();

@@ -93,7 +93,7 @@ TEST_CONSTEXPR_CXX20 void test_set() {
 }
 
 template <class Vector>
-TEST_CONSTEXPR_CXX20 void test() {
+TEST_CONSTEXPR_CXX20 static void test() {
     test_get<Vector>();
     test_set<Vector>();
 

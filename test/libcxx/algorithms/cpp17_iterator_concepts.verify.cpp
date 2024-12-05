@@ -82,7 +82,7 @@ struct diff_t_not_signed : valid_iterator<diff_t_not_signed> {
   using difference_type = unsigned;
 };
 
-void check_iterator_requirements() {
+static void check_iterator_requirements() {
   static_assert(std::__cpp17_iterator<missing_deref>); // expected-error-re {{{{static assertion|static_assert}} failed}}
   // expected-note@*:* {{indirection requires pointer operand}}
 
@@ -114,7 +114,7 @@ struct not_unequality_comparable : valid_iterator<not_unequality_comparable> {};
 bool operator==(not_unequality_comparable, not_unequality_comparable);
 bool operator!=(not_unequality_comparable, not_unequality_comparable) = delete;
 
-void check_input_iterator_requirements() {
+static void check_input_iterator_requirements() {
   _LIBCPP_REQUIRE_CPP17_INPUT_ITERATOR(not_equality_comparable); // expected-error-re {{{{static assertion|static_assert}} failed}}
   // expected-note@*:* {{'__lhs == __rhs' would be invalid: overload resolution selected deleted operator '=='}}
 
@@ -137,7 +137,7 @@ struct not_default_constructible : valid_forward_iterator<not_default_constructi
 struct postincrement_not_ref : valid_iterator<postincrement_not_ref> {};
 bool operator==(postincrement_not_ref, postincrement_not_ref);
 
-void check_forward_iterator_requirements() {
+static void check_forward_iterator_requirements() {
   _LIBCPP_REQUIRE_CPP17_FORWARD_ITERATOR(not_default_constructible); // expected-error-re {{{{static assertion|static_assert}} failed}}
   // expected-note@*:* {{because 'not_default_constructible' does not satisfy '__cpp17_default_constructible'}}
   _LIBCPP_REQUIRE_CPP17_FORWARD_ITERATOR(postincrement_not_ref); // expected-error-re {{{{static assertion|static_assert}} failed}}
@@ -166,7 +166,7 @@ struct not_returning_iter_reference : valid_forward_iterator<not_returning_iter_
   Proxy operator--(int);
 };
 
-void check_bidirectional_iterator_requirements() {
+static void check_bidirectional_iterator_requirements() {
   _LIBCPP_REQUIRE_CPP17_BIDIRECTIONAL_ITERATOR(missing_predecrement); // expected-error-re {{{{static assertion|static_assert}} failed}}
   // expected-note@*:* {{cannot decrement value of type 'missing_predecrement'}}
   _LIBCPP_REQUIRE_CPP17_BIDIRECTIONAL_ITERATOR(missing_postdecrement); // expected-error-re {{{{static assertion|static_assert}} failed}}
@@ -358,7 +358,7 @@ struct missing_const_const_greater_eq : valid_random_access_iterator<missing_con
   friend bool operator>=(const missing_const_const_greater_eq&, const missing_const_const_greater_eq&) = delete;
 };
 
-void check_random_access_iterator() {
+static void check_random_access_iterator() {
   _LIBCPP_REQUIRE_CPP17_RANDOM_ACCESS_ITERATOR(missing_plus_equals); // expected-error-re {{{{static assertion|static_assert}} failed}}
   // expected-note@*:* {{because '__iter += __n' would be invalid: overload resolution selected deleted operator '+='}}
   _LIBCPP_REQUIRE_CPP17_RANDOM_ACCESS_ITERATOR(missing_minus_equals); // expected-error-re {{{{static assertion|static_assert}} failed}}

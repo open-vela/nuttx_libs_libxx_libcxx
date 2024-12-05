@@ -30,7 +30,7 @@ static_assert(std::semiregular<NonConvertible>);
 static_assert(std::is_convertible_v<long, NonConvertible>);
 static_assert(!std::convertible_to<long, NonConvertible>);
 
-constexpr bool test()
+constexpr static bool test()
 {
   // Constructing from an lvalue.
   {

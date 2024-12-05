@@ -91,7 +91,7 @@ constexpr void test(Data<N1, N2> d) {
 }
 
 template <class Iter1, class Sent1, class Iter2, class Sent2 = Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<Iter1, Sent1, Iter2, Sent2, 4, 2>({.input1 = {1, 2, 3, 4}, .input2 = {2, 3}, .expected = 1});
   // other elements from input2 are checked
@@ -122,7 +122,7 @@ constexpr void test_iterators1() {
   test_iterators<Iter1, Sent1, int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators1<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_iterators1<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>>();
   test_iterators1<forward_iterator<int*>>();

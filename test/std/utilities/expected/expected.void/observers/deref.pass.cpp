@@ -28,7 +28,7 @@ static_assert(!DerefNoexcept<int>);
 
 static_assert(DerefNoexcept<std::expected<void, int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   const std::expected<void, int> e;
   *e;
   static_assert(std::is_same_v<decltype(*e), void>);

@@ -17,14 +17,14 @@
 
 #include "test_macros.h"
 
-// Flag that makes the copy constructor for CMyClass throw an exception
+// Flag that makes the copy constructor for ForwardCMyClass throw an exception
 static bool gCopyConstructorShouldThow = false;
 
 
-class CMyClass {
-    public: CMyClass();
-    public: CMyClass(const CMyClass& iOther);
-    public: ~CMyClass();
+class ForwardCMyClass {
+    public: ForwardCMyClass();
+    public: ForwardCMyClass(const ForwardCMyClass& iOther);
+    public: ~ForwardCMyClass();
 
     private: int fMagicValue;
 
@@ -33,18 +33,18 @@ class CMyClass {
 };
 
 // Value for fMagicValue when the constructor has started running, but not yet finished
-int CMyClass::kStartedConstructionMagicValue = 0;
+int ForwardCMyClass::kStartedConstructionMagicValue = 0;
 // Value for fMagicValue when the constructor has finished running
-int CMyClass::kFinishedConstructionMagicValue = 12345;
+int ForwardCMyClass::kFinishedConstructionMagicValue = 12345;
 
-CMyClass::CMyClass() :
+ForwardCMyClass::ForwardCMyClass() :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // Signal that the constructor has finished running
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::CMyClass(const CMyClass& /*iOther*/) :
+ForwardCMyClass::ForwardCMyClass(const ForwardCMyClass& /*iOther*/) :
     fMagicValue(kStartedConstructionMagicValue)
 {
     // If requested, throw an exception _before_ setting fMagicValue to kFinishedConstructionMagicValue
@@ -55,15 +55,15 @@ CMyClass::CMyClass(const CMyClass& /*iOther*/) :
     fMagicValue = kFinishedConstructionMagicValue;
 }
 
-CMyClass::~CMyClass() {
+ForwardCMyClass::~ForwardCMyClass() {
     // Only instances for which the constructor has finished running should be destructed
     assert(fMagicValue == kFinishedConstructionMagicValue);
 }
 
 extern "C" int main(int, char**)
 {
-    CMyClass instance;
-    std::forward_list<CMyClass> vec;
+    ForwardCMyClass instance;
+    std::forward_list<ForwardCMyClass> vec;
 
     vec.push_front(instance);
 

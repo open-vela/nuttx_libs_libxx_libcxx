@@ -23,7 +23,7 @@ static_assert(!std::is_invocable_v<decltype((std::views::single))>);
 // Can invoke with a move-only type.
 static_assert(std::is_invocable_v<decltype((std::views::single)), MoveOnly>);
 #endif
-constexpr bool test() {
+static constexpr bool test() {
   // Lvalue.
   {
     int x = 42;

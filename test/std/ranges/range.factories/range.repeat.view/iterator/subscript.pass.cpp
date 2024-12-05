@@ -15,7 +15,7 @@
 #include <concepts>
 #include <algorithm>
 
-constexpr bool test() {
+static constexpr bool test() {
   // unbound
   {
     std::ranges::repeat_view<int> v(31);

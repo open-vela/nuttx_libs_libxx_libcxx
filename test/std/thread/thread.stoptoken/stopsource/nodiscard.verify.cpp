@@ -18,7 +18,7 @@
 
 #include <stop_token>
 
-void test() {
+static void test() {
   std::stop_source ss;
   ss.get_token();      // expected-warning {{ignoring return value of function}}
   ss.stop_requested(); // expected-warning {{ignoring return value of function}}

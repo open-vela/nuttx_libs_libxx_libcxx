@@ -42,12 +42,12 @@ struct A {
   template <typename F> void await_suspend(F) {}
 };
 
-int last_value = -1;
-void set_value(int x) {
+static int last_value = -1;
+static void set_value(int x) {
   last_value = x;
 }
 
-coro_t f(int n) {
+static coro_t f(int n) {
   if (n == 0) {
     set_value(0);
     co_return;
@@ -57,7 +57,7 @@ coro_t f(int n) {
   set_value(42);
 }
 
-coro_t g() { B val = co_await B{}; }
+static coro_t g() { B val = co_await B{}; }
 
 extern "C" int main(int, char**) {
   last_value = -1;

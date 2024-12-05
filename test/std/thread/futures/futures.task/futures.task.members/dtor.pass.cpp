@@ -31,11 +31,11 @@ public:
     long operator()(long i, long j) const {return data_ + i + j;}
 };
 
-void func(std::packaged_task<double(int, char)>)
+static void func(std::packaged_task<double(int, char)>)
 {
 }
 
-void func2(std::packaged_task<double(int, char)> p) { p(3, 97); }
+static void func2(std::packaged_task<double(int, char)> p) { p(3, 97); }
 
 extern "C" int main(int, char**)
 {

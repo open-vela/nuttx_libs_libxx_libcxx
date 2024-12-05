@@ -63,7 +63,7 @@ constexpr void test(std::array<int, N> value, std::array<int, N> expected) {
 }
 
 template <class Iter, class Sent = Iter>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<Iter, Sent, 4>({1, 2, 3, 4}, {4, 3, 2, 1});
   // check that an odd number of elements works
@@ -80,7 +80,7 @@ struct SwapCounter {
   friend constexpr void swap(SwapCounter& lhs, SwapCounter&) { ++*lhs.counter; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<bidirectional_iterator<int*>>();
   test_iterators<bidirectional_iterator<int*>, sentinel_wrapper<bidirectional_iterator<int*>>>();
   test_iterators<random_access_iterator<int*>>();

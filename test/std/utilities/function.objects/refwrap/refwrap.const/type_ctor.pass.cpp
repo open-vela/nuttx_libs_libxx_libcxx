@@ -30,7 +30,7 @@ test(T& t)
     assert(&r.get() == &t);
 }
 
-void f() {}
+static void f() {}
 
 extern "C" int main(int, char**)
 {

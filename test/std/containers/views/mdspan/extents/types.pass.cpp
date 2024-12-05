@@ -53,7 +53,7 @@ void testExtents() {
 }
 
 template <class T>
-void test() {
+static void test() {
   constexpr size_t D = std::dynamic_extent;
   testExtents<T, D>();
   testExtents<T, 3>();

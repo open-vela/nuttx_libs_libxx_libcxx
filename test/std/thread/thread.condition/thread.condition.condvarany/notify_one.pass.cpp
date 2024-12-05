@@ -23,18 +23,18 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable_any cv;
+static std::condition_variable_any cv;
 
 typedef std::timed_mutex L0;
 typedef std::unique_lock<L0> L1;
 
-L0 m0;
+static L0 m0;
 
-int test0 = 0;
-int test1 = 0;
-int test2 = 0;
+static int test0 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-void f1()
+static void f1()
 {
     L1 lk(m0);
     assert(test1 == 0);
@@ -44,7 +44,7 @@ void f1()
     test1 = 2;
 }
 
-void f2()
+static void f2()
 {
     L1 lk(m0);
     assert(test2 == 0);

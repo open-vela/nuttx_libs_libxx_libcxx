@@ -33,7 +33,7 @@ struct Comp {
 };
 
 template <typename Container>
-void test() {
+static void test() {
   Container s{{{2, 1}, 1}, {{1, 2}, 2}, {{1, 3}, 3}, {{1, 4}, 4}, {{2, 2}, 5}};
 
   assert(s.contains(1));

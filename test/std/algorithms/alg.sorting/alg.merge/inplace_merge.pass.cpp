@@ -47,7 +47,7 @@ struct S {
     };
 #endif
 
-std::mt19937 randomness;
+static std::mt19937 randomness;
 
 template <class Iter>
 void

@@ -22,13 +22,13 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable_any* cv;
-std::mutex m;
+static std::condition_variable_any* cv;
+static std::mutex m;
 
-bool f_ready = false;
-bool g_ready = false;
+static bool f_ready = false;
+static bool g_ready = false;
 
-void f()
+static void f()
 {
     m.lock();
     f_ready = true;
@@ -37,7 +37,7 @@ void f()
     m.unlock();
 }
 
-void g()
+static void g()
 {
     m.lock();
     g_ready = true;

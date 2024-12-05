@@ -74,7 +74,7 @@ struct DummyIt {
 };
 
 template <class It>
-void test() {
+static void test() {
   typedef std::move_iterator<It> R;
   typedef std::iterator_traits<It> T;
   static_assert((std::is_same<typename R::iterator_type, It>::value), "");

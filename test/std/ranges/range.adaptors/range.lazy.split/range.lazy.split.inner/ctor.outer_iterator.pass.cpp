@@ -23,7 +23,7 @@ constexpr void test_impl() {
   static_assert(!std::is_convertible_v<Outer, Inner>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_impl<InnerIterForward, OuterIterForward>();
   test_impl<InnerIterInput, OuterIterInput>();
 // Is only constructible if both the outer and the inner iterators have the same constness.

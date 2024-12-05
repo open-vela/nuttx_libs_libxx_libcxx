@@ -22,7 +22,7 @@
 #include "test_macros.h"
 
 template <class T, std::size_t N>
-void test()
+static void test()
 {
     static_assert((std::is_base_of<std::integral_constant<std::size_t, N>,
                                    std::tuple_size<T> >::value), "");

@@ -41,7 +41,7 @@ static_assert(std::is_constructible_v<std::insert_iterator<NoIteratorAlias>, NoI
 static_assert(
     !std::is_constructible_v<std::insert_iterator<NoIteratorAlias>, NoIteratorAlias&, NoIteratorAlias::value_type*>);
 
-constexpr bool test() {
+constexpr static bool test() {
     NoIteratorAlias c;
     double half = 0.5;
     auto it = std::insert_iterator<NoIteratorAlias>(c, c.data_);

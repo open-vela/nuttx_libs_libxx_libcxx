@@ -232,7 +232,7 @@ void test_return_type() {
   }
 }
 
-void test_constexpr_void() {
+static void test_constexpr_void() {
   constexpr ReturnFirst obj{};
   constexpr ReturnArity aobj{};
   {
@@ -275,7 +275,7 @@ void test_constexpr_void() {
   }
 }
 
-void test_constexpr_int() {
+static void test_constexpr_int() {
   constexpr ReturnFirst obj{};
   constexpr ReturnArity aobj{};
   {
@@ -396,7 +396,7 @@ void test_caller_accepts_nonconst() {
   std::visit<ReturnType>(Visitor{}, v);
 }
 
-void test_constexpr_explicit_side_effect() {
+static void test_constexpr_explicit_side_effect() {
   auto test_lambda = [](int arg) constexpr {
     std::variant<int> v = 101;
     std::visit<void>([arg](int& x) constexpr { x = arg; }, v);
@@ -406,7 +406,7 @@ void test_constexpr_explicit_side_effect() {
   static_assert(test_lambda(202) == 202, "");
 }
 
-void test_derived_from_variant() {
+static void test_derived_from_variant() {
   struct MyVariant : std::variant<short, long, float> {};
 
   std::visit<bool>(
@@ -492,7 +492,7 @@ constexpr bool has_visit(...) {
   return false;
 }
 
-void test_sfinae() {
+static void test_sfinae() {
   struct BadVariant : std::variant<short>, std::variant<long, float> {};
 
   static_assert(has_visit<std::variant<int> >(int()));

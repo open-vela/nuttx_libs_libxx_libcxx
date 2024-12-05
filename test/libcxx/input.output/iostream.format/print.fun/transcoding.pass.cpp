@@ -41,7 +41,7 @@ constexpr void test(std::basic_string_view<CharT> expected, std::string_view inp
 }
 
 template <class CharT>
-constexpr void test() {
+constexpr static void test() {
   // *** Test valid UTF-8 ***
 #define TEST(S) test(SV(S), S)
   TEST("hello world");

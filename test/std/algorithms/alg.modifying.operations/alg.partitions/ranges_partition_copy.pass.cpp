@@ -218,14 +218,14 @@ constexpr void test_iterators_in() {
   test_iterators_in_sent<InIter, sentinel_wrapper<InIter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // Note: deliberately testing with only the weakest and "strongest" iterator types to minimize combinatorial
   // explosion.
   test_iterators_in<cpp20_input_iterator<int*>>();
   test_iterators_in<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom projection works.

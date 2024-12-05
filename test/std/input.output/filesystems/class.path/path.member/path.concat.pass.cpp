@@ -301,7 +301,7 @@ constexpr bool has_concat() {
   return has_concat<It>(0) && has_concat_op<It>(0);
 }
 
-void test_sfinae() {
+static void test_sfinae() {
   using namespace fs;
   {
     static_assert(has_concat_op<char>(), "");

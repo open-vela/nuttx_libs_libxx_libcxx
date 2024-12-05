@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   std::format_parse_context context("", 10);
   for (std::size_t i = 0; i < 10; ++i)
     assert(i == context.next_arg_id());

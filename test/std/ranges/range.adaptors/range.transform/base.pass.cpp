@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::transform_view<MoveOnlyView, PlusOne> transformView;
     MoveOnlyView base = std::move(transformView).base();

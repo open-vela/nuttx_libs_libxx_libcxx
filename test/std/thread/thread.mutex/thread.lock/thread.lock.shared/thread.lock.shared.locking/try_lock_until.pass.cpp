@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-bool try_lock_until_called = false;
+static bool try_lock_until_called = false;
 
 struct mutex
 {
@@ -39,7 +39,7 @@ struct mutex
     void unlock_shared() {}
 };
 
-mutex m;
+static mutex m;
 
 extern "C" int main(int, char**)
 {

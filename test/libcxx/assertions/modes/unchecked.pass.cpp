@@ -13,8 +13,8 @@
 
 #include <cassert>
 
-bool executed_condition = false;
-bool f() { executed_condition = true; return false; }
+static bool executed_condition = false;
+static bool f() { executed_condition = true; return false; }
 
 extern "C" int main(int, char**) {
   _LIBCPP_ASSERT_UNCATEGORIZED(true, "Should not fire");

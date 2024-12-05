@@ -19,13 +19,13 @@
 #include "test_iterators.h"
 
 template <typename It>
-constexpr void check(int* first, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check(int* first, std::iter_difference_t<It> n, int* expected) {
   It it(first);
   std::same_as<It> auto result = std::ranges::prev(std::move(it), n);
   assert(base(result) == expected);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   // Check prev() forward

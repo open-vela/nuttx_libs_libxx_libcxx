@@ -98,7 +98,7 @@ struct Test {
 struct ThrowOnCompare {};
 
 #ifndef TEST_HAS_NO_EXCEPTIONS
-bool operator==(ThrowOnCompare, ThrowOnCompare) { throw int{}; }
+static bool operator==(ThrowOnCompare, ThrowOnCompare) { throw int{}; }
 #endif
 
 extern "C" int main(int, char**) {

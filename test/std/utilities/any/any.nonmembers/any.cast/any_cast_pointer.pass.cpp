@@ -26,7 +26,7 @@
 #include "any_helpers.h"
 
 // Test that the operators are properly noexcept.
-void test_cast_is_noexcept() {
+static void test_cast_is_noexcept() {
     std::any a;
     ASSERT_NOEXCEPT(std::any_cast<int>(&a));
 
@@ -35,7 +35,7 @@ void test_cast_is_noexcept() {
 }
 
 // Test that the return type of any_cast is correct.
-void test_cast_return_type() {
+static void test_cast_return_type() {
     std::any a;
     ASSERT_SAME_TYPE(decltype(std::any_cast<int>(&a)),       int*);
     ASSERT_SAME_TYPE(decltype(std::any_cast<int const>(&a)), int const*);
@@ -46,7 +46,7 @@ void test_cast_return_type() {
 }
 
 // Test that any_cast handles null pointers.
-void test_cast_nullptr() {
+static void test_cast_nullptr() {
     std::any *a = nullptr;
     assert(nullptr == std::any_cast<int>(a));
     assert(nullptr == std::any_cast<int const>(a));
@@ -57,7 +57,7 @@ void test_cast_nullptr() {
 }
 
 // Test casting an empty object.
-void test_cast_empty() {
+static void test_cast_empty() {
     {
         std::any a;
         assert(nullptr == std::any_cast<int>(&a));
@@ -135,7 +135,7 @@ void test_cast() {
     assert(Type::count == 0);
 }
 
-void test_cast_non_copyable_type()
+static void test_cast_non_copyable_type()
 {
     // Even though 'any' never stores non-copyable types
     // we still need to support any_cast<NoCopy>(ptr)
@@ -146,7 +146,7 @@ void test_cast_non_copyable_type()
     assert(std::any_cast<NoCopy>(&ca) == nullptr);
 }
 
-void test_cast_array() {
+static void test_cast_array() {
     int arr[3];
     std::any a(arr);
     RTTI_ASSERT(a.type() == typeid(int*)); // contained value is decayed
@@ -155,9 +155,9 @@ void test_cast_array() {
     assert(p == nullptr);
 }
 
-void test_fn() {}
+static void test_fn() {}
 
-void test_cast_function_pointer() {
+static void test_cast_function_pointer() {
     using T = void(*)();
     std::any a(test_fn);
     // An any can never store a function type, but we should at least be able

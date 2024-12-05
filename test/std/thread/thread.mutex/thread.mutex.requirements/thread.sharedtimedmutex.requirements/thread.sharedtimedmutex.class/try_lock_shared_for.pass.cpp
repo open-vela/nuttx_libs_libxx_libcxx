@@ -30,7 +30,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::steady_clock Clock;
 typedef Clock::time_point time_point;
@@ -38,18 +38,18 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-ms WaitTime = ms(250);
+static ms WaitTime = ms(250);
 
 // Thread sanitizer causes more overhead and will sometimes cause this test
 // to fail. To prevent this we give Thread sanitizer more time to complete the
 // test.
 #if !defined(TEST_IS_EXECUTED_IN_A_SLOW_ENVIRONMENT)
-ms Tolerance = ms(50);
+static ms Tolerance = ms(50);
 #else
-ms Tolerance = ms(50 * 5);
+static ms Tolerance = ms(50 * 5);
 #endif
 
-void f1()
+static void f1()
 {
     time_point t0 = Clock::now();
     assert(m.try_lock_shared_for(WaitTime + Tolerance) == true);
@@ -59,7 +59,7 @@ void f1()
     assert(d < Tolerance);  // within 50ms
 }
 
-void f2()
+static void f2()
 {
     time_point t0 = Clock::now();
     assert(m.try_lock_shared_for(WaitTime) == false);

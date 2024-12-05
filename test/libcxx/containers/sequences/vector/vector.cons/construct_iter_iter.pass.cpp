@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-void test_ctor_under_alloc() {
+static void test_ctor_under_alloc() {
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};
   {

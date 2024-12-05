@@ -55,7 +55,7 @@ ContainerWithBeginEndPair(Iter, Iter) -> ContainerWithBeginEndPair<std::iter_val
 template <class Iter>
 ContainerWithBeginEndPair(Iter, Iter, int, char) -> ContainerWithBeginEndPair<std::iter_value_t<Iter>>;
 
-constexpr bool test() {
+static constexpr bool test() {
   std::array in = {1, 2, 3, 4, 5};
   int arg1 = 42;
   char arg2 = 'a';

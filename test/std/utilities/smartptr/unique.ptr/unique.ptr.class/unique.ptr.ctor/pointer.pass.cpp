@@ -150,7 +150,7 @@ void TEST_CONSTEXPR_CXX23 test_sfinae() {
 #endif
 }
 
-static TEST_CONSTEXPR_CXX23 void test_sfinae_runtime() {
+static TEST_CONSTEXPR_CXX23 static void test_sfinae_runtime() {
 #if TEST_STD_VER >= 11
   { // the constructor does not participate in overload resolution when
     // a base <-> derived conversion would occur.

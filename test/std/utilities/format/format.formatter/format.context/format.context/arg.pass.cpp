@@ -22,7 +22,7 @@
 #include "make_string.h"
 
 template <class OutIt, class CharT>
-void test() {
+static void test() {
   std::basic_string<CharT> string = MAKE_STRING(CharT, "string");
   auto store = std::make_format_args<std::basic_format_context<OutIt, CharT>>(
       true, CharT('a'), 42, string);

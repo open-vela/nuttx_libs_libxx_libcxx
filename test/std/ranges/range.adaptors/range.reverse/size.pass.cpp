@@ -39,7 +39,7 @@ struct BidirSizedRange : std::ranges::view_base {
   constexpr std::size_t size() const { return size_; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // Non-common, non-const bidirectional range.

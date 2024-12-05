@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using Sent = std::ranges::sentinel_t<std::ranges::iota_view<Int42<DefaultTo42>, IntComparableWith<Int42<DefaultTo42>>>>;
   using Iter = std::ranges::iterator_t<std::ranges::iota_view<Int42<DefaultTo42>, IntComparableWith<Int42<DefaultTo42>>>>;
   assert(Sent() == Iter());

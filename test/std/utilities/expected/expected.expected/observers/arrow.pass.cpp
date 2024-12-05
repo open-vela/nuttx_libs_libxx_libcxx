@@ -30,7 +30,7 @@ static_assert(!ArrowNoexcept<int>);
 static_assert(ArrowNoexcept<std::expected<int, int>>);
 static_assert(ArrowNoexcept<const std::expected<int, int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // const
   {
     const std::expected<int, int> e(5);

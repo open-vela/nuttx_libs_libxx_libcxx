@@ -32,7 +32,7 @@ static_assert(!EmplaceNoexcept<int>);
 
 static_assert(EmplaceNoexcept<std::expected<void, int>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // has_value
   {
     std::expected<void, int> e;

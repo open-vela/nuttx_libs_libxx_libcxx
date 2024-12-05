@@ -49,7 +49,7 @@ constexpr void test_fmt() {
   test_parse(SV(":5}"), 1);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_fmt<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_fmt<wchar_t>();

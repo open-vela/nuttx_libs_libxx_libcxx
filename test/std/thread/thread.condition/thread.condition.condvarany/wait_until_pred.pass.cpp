@@ -54,19 +54,19 @@ public:
     bool operator()() {return i_ != 0;}
 };
 
-std::condition_variable_any cv;
+static std::condition_variable_any cv;
 
 typedef std::timed_mutex L0;
 typedef std::unique_lock<L0> L1;
 
-L0 m0;
+static L0 m0;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-int runs = 0;
+static int runs = 0;
 
-void f()
+static void f()
 {
     L1 lk(m0);
     assert(test2 == 0);

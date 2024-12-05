@@ -18,6 +18,10 @@
 #include "reset_helper.h"
 #include "test_macros.h"
 
+int test_deleter_base::count         = 0;
+int test_deleter_base::dealloc_count = 0;
+
+namespace {
 struct B
 {
     static int count;
@@ -40,6 +44,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 struct bad_ty { };
 struct bad_deleter

@@ -25,6 +25,7 @@
 
 #include "deleter_types.h"
 
+namespace {
 struct A
 {
     static int count;
@@ -35,6 +36,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 
 extern "C" int main(int, char**)

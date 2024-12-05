@@ -23,7 +23,7 @@
 
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::chrono::seconds s1(3);
     std::chrono::seconds s2(3);

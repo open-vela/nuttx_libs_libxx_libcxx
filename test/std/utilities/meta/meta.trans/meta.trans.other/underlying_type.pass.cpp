@@ -37,7 +37,7 @@ union U { int i; float f;};
 #endif
 
 template <typename T, typename Expected>
-void check()
+static void check()
 {
     ASSERT_SAME_TYPE(Expected, typename std::underlying_type<T>::type);
 #if TEST_STD_VER > 11

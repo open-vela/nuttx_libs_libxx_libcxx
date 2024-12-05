@@ -159,7 +159,7 @@ constexpr void test_stride_counting() {
   }
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   {
     int a[] = {1, 2, 3};
     assert(std::ranges::distance(a, a + 3) == 3);

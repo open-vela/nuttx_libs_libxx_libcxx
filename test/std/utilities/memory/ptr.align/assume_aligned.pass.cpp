@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 template <typename T>
-constexpr void check(T* p) {
+constexpr static void check(T* p) {
   ASSERT_SAME_TYPE(T*, decltype(std::assume_aligned<1>(p)));
   constexpr std::size_t alignment = alignof(T);
 

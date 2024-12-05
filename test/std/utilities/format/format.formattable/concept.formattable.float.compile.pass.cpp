@@ -38,13 +38,13 @@ void assert_is_formattable() {
 }
 
 template <class CharT>
-void test() {
+static void test() {
   assert_is_formattable<float, CharT>();
   assert_is_formattable<double, CharT>();
   assert_is_formattable<long double, CharT>();
 }
 
-void test() {
+static void test() {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

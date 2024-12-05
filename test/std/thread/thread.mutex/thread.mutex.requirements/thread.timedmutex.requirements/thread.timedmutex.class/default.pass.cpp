@@ -20,7 +20,7 @@
 
 extern "C" int main(int, char**)
 {
-    std::timed_mutex m;
+    static std::timed_mutex m;
 
   return 0;
 }

@@ -33,7 +33,7 @@ static_assert(!HasFillN<OutputIteratorNotIndirectlyWritable>);
 static_assert(!HasFillN<OutputIteratorNotInputOrOutputIterator>);
 
 template <class It, class Sent = It>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     int a[3];
     std::same_as<It> decltype(auto) ret = std::ranges::fill_n(It(a), 3, 1);
@@ -48,7 +48,7 @@ constexpr void test_iterators() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<cpp17_output_iterator<int*>, sentinel_wrapper<cpp17_output_iterator<int*>>>();
   test_iterators<cpp20_output_iterator<int*>, sentinel_wrapper<cpp20_output_iterator<int*>>>();
   test_iterators<forward_iterator<int*>>();

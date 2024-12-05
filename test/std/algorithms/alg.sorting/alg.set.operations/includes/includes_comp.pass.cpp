@@ -23,7 +23,7 @@
 
 template <class Iter1, class Iter2>
 TEST_CONSTEXPR_CXX20
-void test()
+static void test()
 {
     int ia[] = {4, 4, 4, 4, 3, 3, 3, 2, 2, 1};
     const unsigned sa = sizeof(ia)/sizeof(ia[0]);

@@ -5974,7 +5974,7 @@ TEST_CONSTEXPR_CXX20 bool test55()
 }
 
 template <class S>
-void test() {
+static void test() {
   test0<S>();
   test1<S>();
   test2<S>();

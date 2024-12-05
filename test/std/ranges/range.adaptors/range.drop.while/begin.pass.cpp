@@ -164,7 +164,7 @@ constexpr void testOne() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testOne<cpp17_input_iterator<int*>>();
   testOne<cpp20_input_iterator<int*>>();
   testOne<forward_iterator<int*>>();

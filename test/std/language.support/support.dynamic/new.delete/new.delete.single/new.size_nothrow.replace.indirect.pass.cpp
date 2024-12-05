@@ -21,8 +21,8 @@
 
 #include "test_macros.h"
 
-int new_called = 0;
-int delete_called = 0;
+static int new_called = 0;
+static int delete_called = 0;
 
 TEST_WORKAROUND_BUG_109234844_WEAK
 void* operator new(std::size_t s) TEST_THROW_SPEC(std::bad_alloc) {

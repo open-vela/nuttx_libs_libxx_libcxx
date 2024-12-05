@@ -42,7 +42,7 @@ template <class Var, std::size_t I, class... Args> constexpr bool emplace_exists
   return test_emplace_exists_imp<Var, I, Args...>(0);
 }
 
-void test_emplace_sfinae() {
+static void test_emplace_sfinae() {
   {
     using V = std::variant<int, void *, const void *, TestTypes::NoCtors>;
     static_assert(emplace_exists<V, 0>(), "");
@@ -82,7 +82,7 @@ void test_emplace_sfinae() {
 #endif
 }
 
-void test_basic() {
+static void test_basic() {
   {
     using V = std::variant<int>;
     V v(42);

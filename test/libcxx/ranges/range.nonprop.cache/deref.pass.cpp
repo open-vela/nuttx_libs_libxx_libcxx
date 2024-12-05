@@ -16,7 +16,7 @@
 #include <cassert>
 
 template <class T>
-constexpr void test() {
+constexpr static void test() {
   using Cache = std::ranges::__non_propagating_cache<T>;
 
   // non-const version

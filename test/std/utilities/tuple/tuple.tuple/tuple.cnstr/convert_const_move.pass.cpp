@@ -46,7 +46,7 @@ static_assert(
 static_assert(!std::is_convertible_v<const std::tuple<ConstMove, ConstMove>&&,
                                      std::tuple<ConvertibleFrom<ConstMove>, ExplicitConstructibleFrom<ConstMove>>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   // sizeof...(Types) == 1
   {

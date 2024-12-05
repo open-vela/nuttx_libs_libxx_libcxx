@@ -19,7 +19,7 @@
 #include "test_iterators.h"
 
 template <typename It>
-constexpr void check(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check(int* first, int* last, std::iter_difference_t<It> n, int* expected) {
   It it(last);
   It sent(first); // for std::ranges::prev, the sentinel *must* have the same type as the iterator
 
@@ -27,7 +27,7 @@ constexpr void check(int* first, int* last, std::iter_difference_t<It> n, int* e
   assert(base(result) == expected);
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   for (int size = 0; size != 10; ++size) {

@@ -50,9 +50,6 @@ public:
     int foo(int) const {return 1;}
 };
 
-int A::count = 0;
-
-int g(int) {return 0;}
 
 #if TEST_STD_VER >= 11
 struct RValueCallable {

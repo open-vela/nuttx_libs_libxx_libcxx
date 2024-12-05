@@ -227,14 +227,14 @@ constexpr void test_iterators_in() {
   test_iterators_in_sent1<InIter, sentinel_wrapper<InIter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iterators_in<cpp20_input_iterator<int*>>();
   // Omitting other iterator types to reduce the combinatorial explosion.
   test_iterators_in<random_access_iterator<int*>>();
   test_iterators_in<const int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom comparator works.

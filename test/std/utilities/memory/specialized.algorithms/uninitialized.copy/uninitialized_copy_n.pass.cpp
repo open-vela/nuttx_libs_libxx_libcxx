@@ -18,6 +18,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count_;
@@ -34,8 +35,8 @@ struct B
     ~B() {data_ = 0; --population_; }
 };
 
-int B::population_ = 0;
 int B::count_ = 0;
+int B::population_ = 0;
 
 struct Nasty
 {
@@ -46,6 +47,7 @@ struct Nasty
 };
 
 int Nasty::counter_ = 0;
+}
 
 extern "C" int main(int, char**)
 {

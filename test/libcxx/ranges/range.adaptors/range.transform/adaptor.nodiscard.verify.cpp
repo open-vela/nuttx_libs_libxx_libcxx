@@ -12,7 +12,7 @@
 
 #include <ranges>
 
-void test() {
+static void test() {
   int range[] = {1, 2, 3};
   auto f = [](int i) { return i; };
 

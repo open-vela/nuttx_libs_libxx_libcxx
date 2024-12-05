@@ -41,7 +41,7 @@ struct CopyConstructibleAndMoveConstructible {
 };
 
 // clang-format off
-void test() {
+static void test() {
 
   // Test & overload
   {

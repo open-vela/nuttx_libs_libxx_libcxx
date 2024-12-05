@@ -56,7 +56,7 @@ static_assert(!std::is_constructible_v<ElemIter<ConvertibleView>, ConstElemIter<
 static_assert(!std::is_constructible_v<ConstElemIter<NonConvertibleView>, ElemIter<NonConvertibleView>>);
 static_assert(!std::is_constructible_v<ElemIter<NonConvertibleView>, ConstElemIter<NonConvertibleView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   ElemIter<ConvertibleView> iter{ConvertibleIter<false>{5}};
   ConstElemIter<ConvertibleView> constIter = iter; // implicit
   assert(constIter.base().movedFromOtherConst);

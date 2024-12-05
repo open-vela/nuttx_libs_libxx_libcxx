@@ -44,7 +44,7 @@ static_assert( test_convertible<std::ranges::transform_view<Range, F>, Range, F>
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

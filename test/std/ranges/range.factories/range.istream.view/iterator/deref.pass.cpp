@@ -19,7 +19,7 @@
 #include "../utils.h"
 
 template <class CharT>
-void test() {
+static void test() {
   // operator* should return correct value
   {
     auto iss = make_string_stream<CharT>("1 2 345 ");

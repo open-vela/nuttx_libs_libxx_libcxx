@@ -23,17 +23,17 @@
 
 constexpr auto OverAligned = __STDCPP_DEFAULT_NEW_ALIGNMENT__ * 2;
 
-int unsized_delete_called = 0;
-int unsized_delete_nothrow_called = 0;
-int aligned_delete_called = 0;
+static int unsized_delete_called = 0;
+static int unsized_delete_nothrow_called = 0;
+static int aligned_delete_called = 0;
 
-void reset() {
+static void reset() {
     unsized_delete_called = 0;
     unsized_delete_nothrow_called = 0;
     aligned_delete_called = 0;
 }
 
-alignas(OverAligned) char DummyData[OverAligned * 4];
+alignas(OverAligned) static char DummyData[OverAligned * 4];
 
 void* operator new (std::size_t s, std::align_val_t)
 {

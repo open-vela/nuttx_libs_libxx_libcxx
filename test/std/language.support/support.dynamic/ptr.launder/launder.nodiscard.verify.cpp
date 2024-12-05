@@ -15,7 +15,7 @@
 
 #include <new>
 
-void f() {
+static void f() {
     int *p = nullptr;
     std::launder(p); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
 }

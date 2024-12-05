@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::list<operator_hijacker> l;
   l.erase(l.begin());
 }

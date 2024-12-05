@@ -28,14 +28,14 @@ struct testbuf
 {
 };
 
-bool f1_called = false;
-bool f2_called = false;
+static bool f1_called = false;
+static bool f2_called = false;
 
-bool g1_called = false;
-bool g2_called = false;
-bool g3_called = false;
+static bool g1_called = false;
+static bool g2_called = false;
+static bool g3_called = false;
 
-void f1(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f1(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::erase_event)
     {
@@ -50,7 +50,7 @@ void f1(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void f2(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f2(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::erase_event)
     {
@@ -65,7 +65,7 @@ void f2(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void g1(std::ios_base::event ev, std::ios_base& stream, int index)
+static void g1(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::copyfmt_event)
     {
@@ -80,7 +80,7 @@ void g1(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void g2(std::ios_base::event ev, std::ios_base& stream, int index)
+static void g2(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::copyfmt_event)
     {
@@ -95,7 +95,7 @@ void g2(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void g3(std::ios_base::event ev, std::ios_base& stream, int index)
+static void g3(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::copyfmt_event)
     {

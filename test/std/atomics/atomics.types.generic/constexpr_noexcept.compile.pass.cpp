@@ -14,7 +14,7 @@
 #include "test_macros.h"
 
 template <typename T>
-constexpr bool test() {
+static constexpr bool test() {
   [[maybe_unused]] constexpr T a;
   static_assert(std::is_nothrow_constructible_v<T>);
   ASSERT_NOEXCEPT(T{});
@@ -29,7 +29,7 @@ struct trivial {
   int a;
 };
 
-void test() {
+static void test() {
   static_assert(test<std::atomic<bool>>());
   static_assert(test<std::atomic<int>>());
   static_assert(test<std::atomic<int*>>());

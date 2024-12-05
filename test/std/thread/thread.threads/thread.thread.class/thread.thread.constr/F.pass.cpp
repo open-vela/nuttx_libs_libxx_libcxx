@@ -24,8 +24,8 @@
 
 #include "test_macros.h"
 
-std::atomic<unsigned> throw_one(0xFFFF);
-std::atomic<unsigned> outstanding_new(0);
+static std::atomic<unsigned> throw_one(0xFFFF);
+static std::atomic<unsigned> outstanding_new(0);
 
 
 void* operator new(std::size_t s) TEST_THROW_SPEC(std::bad_alloc)
@@ -47,7 +47,7 @@ void  operator delete(void* p) TEST_NOEXCEPT
     std::free(p);
 }
 
-bool f_run = false;
+static bool f_run = false;
 
 struct F {
     std::vector<int> v_;  // so f's copy-ctor calls operator new
@@ -84,9 +84,6 @@ public:
     }
 };
 
-int G::n_alive = 0;
-bool G::op_run = false;
-
 #if TEST_STD_VER >= 11
 
 class MoveOnly
@@ -121,9 +118,9 @@ public:
 //  3 Finally check that a thread runs successfully if we throw after
 //    'numAllocs + 1' allocations.
 
-int numAllocs;
+static int numAllocs;
 
-void test_throwing_new_during_thread_creation() {
+static void test_throwing_new_during_thread_creation() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     throw_one = 0xFFF;
     {

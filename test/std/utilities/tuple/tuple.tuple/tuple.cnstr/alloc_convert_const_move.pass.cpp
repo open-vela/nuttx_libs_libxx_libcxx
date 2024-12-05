@@ -51,7 +51,7 @@ static_assert(!ImplicitlyConstructible<std::tuple<ExplicitConstructibleFrom<Cons
                                        std::allocator_arg_t, const test_allocator<int>&,
                                        const std::tuple<ConstMove, ConstMove>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   // sizeof...(Types) == 1
   {

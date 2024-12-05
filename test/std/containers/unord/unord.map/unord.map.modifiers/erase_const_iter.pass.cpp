@@ -27,7 +27,7 @@ struct TemplateConstructor
     TemplateConstructor (const T&) {}
 };
 
-bool operator==(const TemplateConstructor&, const TemplateConstructor&) { return false; }
+static bool operator==(const TemplateConstructor&, const TemplateConstructor&) { return false; }
 struct Hash { std::size_t operator() (const TemplateConstructor &) const { return 0; } };
 
 extern "C" int main(int, char**)

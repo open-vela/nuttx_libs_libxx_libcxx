@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-TEST_CONSTEXPR_CXX20 bool test()
+TEST_CONSTEXPR_CXX20 static bool test()
 {
     char s2[3] = {0};
     assert(std::char_traits<char>::assign(s2, 3, char(5)) == s2);

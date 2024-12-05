@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using day       = std::chrono::day;
   using month     = std::chrono::month;
   using month_day = std::chrono::month_day;

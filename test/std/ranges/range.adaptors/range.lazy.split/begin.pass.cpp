@@ -23,7 +23,7 @@ concept ConstBeginDisabled = !requires (const View v) {
   { (*v.begin()) };
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // non-const: forward_range<View> && simple-view<View> -> outer-iterator<Const = true>
   // const: forward_range<View> && forward_range<const View> -> outer-iterator<Const = true>
   {

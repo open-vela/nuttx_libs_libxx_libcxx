@@ -32,7 +32,7 @@ concept HasLess = requires(T t) { t < t; };
 template <class T, class U = T>
 concept HasSpaceship = requires(T t, U u) { t <=> u; };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // Pairs of different types should compare with strong ordering.
     using P1 = std::pair<int, int>;

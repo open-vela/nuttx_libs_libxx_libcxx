@@ -23,6 +23,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct A {
   static int count;
   A() { ++count; }
@@ -40,6 +41,7 @@ struct B : public A {
 };
 
 int B::count = 0;
+}
 
 struct C {};
 
@@ -47,7 +49,7 @@ struct Deleter {
   void operator()(void*) {}
 };
 
-void test_sfinae() {
+static void test_sfinae() {
   {
     // the auto_ptr constructor should be disable with a non-default deleter.
     using AP = std::auto_ptr<int>;

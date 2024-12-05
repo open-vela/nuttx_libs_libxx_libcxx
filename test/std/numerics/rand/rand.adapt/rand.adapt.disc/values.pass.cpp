@@ -30,7 +30,7 @@
 template <class T>
 void where(const T &) {}
 
-void
+static void
 test1()
 {
     typedef std::ranlux24 E;
@@ -47,7 +47,7 @@ test1()
     where(E::used_block);
 }
 
-void
+static void
 test2()
 {
     typedef std::ranlux48 E;

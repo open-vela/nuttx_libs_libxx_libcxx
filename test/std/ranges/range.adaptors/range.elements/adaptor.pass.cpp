@@ -60,7 +60,7 @@ static_assert(!CanBePiped<View<int>, decltype((std::views::values))>);
 static_assert(CanBePiped<View<std::pair<int, int>>, decltype((std::views::values))>);
 static_assert(!CanBePiped<View<std::tuple<int>>, decltype((std::views::values))>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::pair<int, int> buff[] = {{1, 2}, {3, 4}, {5, 6}};
 
   // Test `views::elements<N>(v)`

@@ -54,7 +54,7 @@ constexpr void test(const CharT* fmt) {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test("abc");
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test(L"abc");

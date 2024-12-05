@@ -27,7 +27,7 @@
 #include <utility>
 #include <variant>
 
-void test_const_lvalue_get() {
+static void test_const_lvalue_get() {
   {
     using V = std::variant<int, const long>;
     constexpr V v(42);
@@ -82,7 +82,7 @@ void test_const_lvalue_get() {
 #endif
 }
 
-void test_lvalue_get() {
+static void test_lvalue_get() {
   {
     using V = std::variant<int, const long>;
     V v(42);
@@ -129,7 +129,7 @@ void test_lvalue_get() {
 #endif
 }
 
-void test_rvalue_get() {
+static void test_rvalue_get() {
   {
     using V = std::variant<int, const long>;
     V v(42);
@@ -181,7 +181,7 @@ void test_rvalue_get() {
 #endif
 }
 
-void test_const_rvalue_get() {
+static void test_const_rvalue_get() {
   {
     using V = std::variant<int, const long>;
     const V v(42);
@@ -235,7 +235,7 @@ void test_const_rvalue_get() {
 
 template <class Tp> struct identity { using type = Tp; };
 
-void test_throws_for_all_value_categories() {
+static void test_throws_for_all_value_categories() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   using V = std::variant<int, long>;
   V v0(42);

@@ -50,7 +50,7 @@ constexpr void constructorTest(auto&& buffer1, auto&& buffer2) {
   assert(j == buffer2[0]);
 };
 
-constexpr bool test() {
+static constexpr bool test() {
 
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
   int buffer2[4] = {9, 8, 7, 6};

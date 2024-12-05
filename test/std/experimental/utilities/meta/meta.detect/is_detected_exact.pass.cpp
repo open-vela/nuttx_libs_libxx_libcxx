@@ -35,7 +35,7 @@ struct convertibleFoo {
 };
 
 template <typename T, bool b>
-void test() {
+static void test() {
     static_assert( b == ex::is_detected_exact  <int, callFoo, T>::value, "" );
     static_assert( b == ex::is_detected_exact_v<int, callFoo, T>, "" );
 }

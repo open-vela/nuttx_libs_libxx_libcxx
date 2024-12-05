@@ -48,7 +48,7 @@ struct move_iterator_range {
 static_assert(!std::ranges::view<move_iterator_range>);
 static_assert(std::ranges::range<move_iterator_range>);
 
-constexpr bool test() {
+static constexpr bool test() {
   { // view | views::as_rvalue
     DefaultConstructibleView v{{}, 3};
     std::same_as<std::ranges::as_rvalue_view<DefaultConstructibleView>> decltype(auto) view = v | std::views::as_rvalue;

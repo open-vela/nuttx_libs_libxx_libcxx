@@ -18,7 +18,7 @@
 
 using namespace fs;
 
-constexpr bool test() {
+static constexpr bool test() {
   assert(testEquality(space_info{1, 2, 3}, space_info{1, 2, 3}, true));
   assert(testEquality(space_info{0, 2, 3}, space_info{1, 2, 3}, false));
   assert(testEquality(space_info{1, 0, 3}, space_info{1, 2, 3}, false));

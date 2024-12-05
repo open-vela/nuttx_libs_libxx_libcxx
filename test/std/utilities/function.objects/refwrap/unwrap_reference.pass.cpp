@@ -23,13 +23,13 @@
 
 
 template <typename T, typename Expected>
-void check_equal() {
+static void check_equal() {
   static_assert(std::is_same_v<typename std::unwrap_reference<T>::type, Expected>);
   static_assert(std::is_same_v<typename std::unwrap_reference<T>::type, std::unwrap_reference_t<T>>);
 }
 
 template <typename T>
-void check() {
+static void check() {
   check_equal<T, T>();
   check_equal<T&, T&>();
   check_equal<T const, T const>();

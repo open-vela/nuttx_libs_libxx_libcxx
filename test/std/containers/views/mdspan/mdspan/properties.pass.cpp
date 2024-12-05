@@ -198,7 +198,7 @@ constexpr void mixin_accessor() {
   mixin_layout(elements.get_ptr(), std::default_accessor<T>());
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   mixin_accessor<int>();
   mixin_accessor<const int>();
   mixin_accessor<double>();

@@ -21,7 +21,7 @@
 #include <vector>
 #include <new>
 
-struct reuse_allocator {
+static struct reuse_allocator {
   static size_t const N = 100;
   reuse_allocator() {
     for (size_t i = 0; i < N; ++i)

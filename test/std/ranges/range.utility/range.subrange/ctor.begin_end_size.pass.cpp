@@ -31,7 +31,7 @@ static_assert( std::is_constructible_v<SizedSentinelForwardSubrange, Conditional
 static_assert(!std::is_constructible_v<SizedIntPtrSubrange, long*, int*, std::size_t>); // 4.
 static_assert( std::is_constructible_v<SizedIntPtrSubrange, int*, int*, std::size_t>); // 5.
 
-constexpr bool test() {
+static constexpr bool test() {
   SizedSentinelForwardSubrange a(ConditionallyConvertibleIter(globalBuff), ConditionallyConvertibleIter(globalBuff + 8), 8);
   assert(a.begin().base() == globalBuff);
   assert(a.end().base() == globalBuff + 8);

@@ -32,7 +32,7 @@ template <class Inner>
 using ConstIncompatibleOuter = BufferView<forward_iterator<const Inner*>, forward_iterator<const Inner*>,
                                           bidirectional_iterator<Inner*>, bidirectional_iterator<Inner*>>;
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
   {
     CopyableChild children[4] = {CopyableChild(buffer[0]), CopyableChild(buffer[1]), CopyableChild(buffer[2]),

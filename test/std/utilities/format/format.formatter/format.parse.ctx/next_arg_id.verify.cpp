@@ -11,7 +11,7 @@
 
 #include <format>
 
-constexpr bool test() {
+static constexpr bool test() {
   // [format.parse.ctx]/8
   // Let cur-arg-id be the value of next_arg_id_ prior to this call. Call
   // expressions where cur-arg-id >= num_args_ is true are not core constant

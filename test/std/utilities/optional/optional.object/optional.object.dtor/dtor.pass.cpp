@@ -24,6 +24,7 @@ struct PODType {
   int value2;
 };
 
+namespace {
 class X
 {
 public:
@@ -35,6 +36,7 @@ public:
 };
 
 bool X::dtor_called = false;
+}
 
 extern "C" int main(int, char**)
 {

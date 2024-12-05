@@ -38,7 +38,7 @@ struct WithBitfieldEnums {
   e_bool e3 : 1;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   ASSERT_NOEXCEPT(std::to_underlying(e_default::a));
   ASSERT_SAME_TYPE(int, decltype(std::to_underlying(e_default::a)));
   ASSERT_SAME_TYPE(unsigned short, decltype(std::to_underlying(e_ushort::d)));

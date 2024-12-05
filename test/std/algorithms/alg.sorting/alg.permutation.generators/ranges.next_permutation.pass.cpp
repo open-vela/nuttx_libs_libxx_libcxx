@@ -170,14 +170,14 @@ constexpr void test_iter() {
   test_iter_sent<Iter, sized_sentinel<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iter<bidirectional_iterator<int*>>();
   test_iter<random_access_iterator<int*>>();
   test_iter<contiguous_iterator<int*>>();
   test_iter<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom predicate works.

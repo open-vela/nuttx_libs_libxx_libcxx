@@ -38,13 +38,13 @@ void test_eprintf(char const* fmt, Args const& ...args) {
   std::fprintf(stderr, fmt, args...);
 }
 
-void test_log(const char* condition, const char* file, int line, const char* message) {
+static void test_log(const char* condition, const char* file, int line, const char* message) {
   const char* msg = condition ? "Assertion failure: " : "Unconditional failure:";
   test_eprintf("%s%s %s %d\n%s", msg, condition, file, line, message);
 }
 
 template <class F>
-void test_log(const char* condition, const char* file, int line, const F& functor) {
+static void test_log(const char* condition, const char* file, int line, const F& functor) {
   test_eprintf("Assertion failure: %s %s %d\n", condition, file, line);
   functor();
 }

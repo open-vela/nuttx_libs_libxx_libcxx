@@ -13,6 +13,7 @@
 
 #include "allocators.h"
 
+namespace {
 struct alloc_last
 {
     static bool allocator_constructed;
@@ -53,5 +54,6 @@ struct alloc_last
 };
 
 bool alloc_last::allocator_constructed = false;
+}
 
 #endif // ALLOC_LAST_H

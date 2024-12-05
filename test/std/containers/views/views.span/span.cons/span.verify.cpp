@@ -28,7 +28,7 @@ std::span<T, extent> createImplicitSpan(std::span<T, otherExtent> s) {
     return {s}; // expected-error {{chosen constructor is explicit in copy-initialization}}
 }
 
-void checkCV ()
+static void checkCV ()
 {
 //  std::span<               int>   sp;
     std::span<const          int>  csp;

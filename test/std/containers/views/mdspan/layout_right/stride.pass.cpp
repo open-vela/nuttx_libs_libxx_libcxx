@@ -35,7 +35,7 @@ constexpr void test_stride(std::array<typename E::index_type, E::rank()> strides
     assert(strides[r] == m.stride(r));
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr size_t D = std::dynamic_extent;
   test_stride<std::extents<unsigned, D>>(std::array<unsigned, 1>{1}, 7);
   test_stride<std::extents<unsigned, 7>>(std::array<unsigned, 1>{1});

@@ -25,7 +25,7 @@
 template<class T>
 concept HasConstQualifiedEnd = requires(const T& t) { t.end(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using TransformView = std::ranges::transform_view<ForwardView, PlusOneMutable>;
     static_assert(std::ranges::common_range<TransformView>);

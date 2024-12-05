@@ -23,7 +23,7 @@ struct Error {
   }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   std::unexpected<Error> unex1(4);
   std::unexpected<Error> unex2(5);
   unex1 = std::move(unex2);

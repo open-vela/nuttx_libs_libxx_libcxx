@@ -53,7 +53,7 @@ struct Data {
   constexpr Data(std::initializer_list<int>& l, int ii) noexcept : il(l), i(ii) {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // has_value
   {
     auto list1 = {1, 2, 3};

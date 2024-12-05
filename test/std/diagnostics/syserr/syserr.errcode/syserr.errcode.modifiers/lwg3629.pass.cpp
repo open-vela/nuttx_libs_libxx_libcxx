@@ -14,7 +14,7 @@
 
 // Regression test for https://github.com/llvm/llvm-project/issues/57614
 
-int make_error_code; // It's important that this comes before <system_error>
+static int make_error_code; // It's important that this comes before <system_error>
 
 #include <system_error>
 #include <cassert>
@@ -23,7 +23,7 @@ int make_error_code; // It's important that this comes before <system_error>
 namespace User {
   enum Err {};
 
-  std::error_code make_error_code(Err) { return std::error_code(42, std::generic_category()); }
+  static std::error_code make_error_code(Err) { return std::error_code(42, std::generic_category()); }
 }
 
 namespace std {

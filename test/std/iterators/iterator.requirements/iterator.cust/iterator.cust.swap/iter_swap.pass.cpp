@@ -131,7 +131,7 @@ struct MoveOnly2 {
   };
 };
 
-constexpr bool test()
+constexpr static bool test()
 {
   {
     int value1 = 0;

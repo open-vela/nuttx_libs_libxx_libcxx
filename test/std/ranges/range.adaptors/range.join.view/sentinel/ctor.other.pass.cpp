@@ -48,7 +48,7 @@ static_assert(std::convertible_to<std::ranges::sentinel_t<ConstConveritbleView>,
                                   std::ranges::sentinel_t<ConstConveritbleView const>>);
 LIBCPP_STATIC_ASSERT(!std::ranges::__simple_view<ConstConveritbleView>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
   {
     BufferView<int*> inners[] = {buffer[0], buffer[1], buffer[2]};

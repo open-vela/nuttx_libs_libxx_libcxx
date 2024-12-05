@@ -48,7 +48,7 @@ test(const charT* s, unsigned n, const A& a)
     assert(s2.capacity() >= s2.size());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef test_allocator<char> A;
 

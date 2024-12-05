@@ -25,7 +25,7 @@ int make_error_condition; // It's important that this comes before <system_error
 namespace User {
   enum Err {};
 
-  std::error_condition make_error_condition(Err) { return std::error_condition(42, std::generic_category()); }
+  static std::error_condition make_error_condition(Err) { return std::error_condition(42, std::generic_category()); }
 }
 
 namespace std {

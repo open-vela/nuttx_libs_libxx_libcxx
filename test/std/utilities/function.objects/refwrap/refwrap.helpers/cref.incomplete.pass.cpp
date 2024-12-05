@@ -24,9 +24,9 @@
 
 struct Foo;
 
-Foo& get_foo();
+static Foo& get_foo();
 
-void test() {
+static void test() {
     Foo const& foo = get_foo();
     std::reference_wrapper<Foo const> ref = std::cref(foo);
     assert(&ref.get() == &foo);
@@ -34,7 +34,7 @@ void test() {
 
 struct Foo { };
 
-Foo& get_foo() {
+static Foo& get_foo() {
     static Foo foo;
     return foo;
 }

@@ -32,7 +32,7 @@ struct NotMoveConst
 
 void testNotMoveConst(NotMoveConst) { }
 
-void f() {
+static void f() {
     int n = 1;
     const int c = 1;
 

@@ -22,7 +22,7 @@ bool check_stream_failed(std::string const& val) {
 }
 
 template<typename T>
-void check_limits()
+static void check_limits()
 {
     const bool is_unsigned = std::is_unsigned<T>::value;
     T minv = std::numeric_limits<T>::min();

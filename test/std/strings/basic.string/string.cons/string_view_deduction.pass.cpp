@@ -43,7 +43,7 @@ struct NotAnAllocator { };
 static_assert( CanDeduce<std::string_view, std::allocator<char>>::value);
 static_assert(!CanDeduce<std::string_view, NotAnAllocator>::value);
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     std::string_view sv = "12345678901234";
     std::basic_string s1(sv);

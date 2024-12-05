@@ -43,7 +43,7 @@ struct ADLSwap {
   constexpr friend void swap(ADLSwap& x, ADLSwap& y) { std::swap(x.i, y.i); }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // using std::swap;
   {
     std::unexpected<int> unex1(5);

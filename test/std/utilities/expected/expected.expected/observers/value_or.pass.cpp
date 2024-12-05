@@ -19,7 +19,7 @@
 #include "MoveOnly.h"
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &, has_value()
   {
     const std::expected<int, int> e(5);

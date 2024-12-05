@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-void checkCV()
+static void checkCV()
 {
     std::span<               int>   sp;
 //  std::span<const          int>  csp;

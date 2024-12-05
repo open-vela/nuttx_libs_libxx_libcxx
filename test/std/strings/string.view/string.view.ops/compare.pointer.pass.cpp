@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "constexpr_char_traits.h"
 
-int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
+static int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
 
 template<typename CharT>
 void test1 ( std::basic_string_view<CharT> sv1, const CharT *s, int expected ) {

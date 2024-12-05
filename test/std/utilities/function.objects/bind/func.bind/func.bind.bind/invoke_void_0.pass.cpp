@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int count = 0;
+static int count = 0;
 
 template <class F>
 void
@@ -40,9 +40,9 @@ test_const(const F& f)
     assert(count == save_count + 2);
 }
 
-void f() {++count;}
+static void f() {++count;}
 
-int g() {++count; return 0;}
+static int g() {++count; return 0;}
 
 struct A_void_0
 {

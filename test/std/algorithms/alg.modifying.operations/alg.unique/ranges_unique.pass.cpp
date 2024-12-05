@@ -147,7 +147,7 @@ constexpr void withAllPermutationsOfIter() {
   testImpl<int*, SentWrapper>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   withAllPermutationsOfIter<std::type_identity_t>();
   withAllPermutationsOfIter<sentinel_wrapper>();
 
