@@ -36,7 +36,7 @@ struct convertibleFoo {
 
 
 template <typename T, bool b>
-void test() {
+static void test() {
     static_assert( b == ex::is_detected_convertible  <int, callFoo, T>::value, "" );
     static_assert( b == ex::is_detected_convertible_v<int, callFoo, T>, "" );
 }

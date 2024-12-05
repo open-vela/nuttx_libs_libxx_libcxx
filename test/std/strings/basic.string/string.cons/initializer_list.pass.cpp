@@ -19,7 +19,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     std::string s = {'a', 'b', 'c'};
     assert(s == "abc");

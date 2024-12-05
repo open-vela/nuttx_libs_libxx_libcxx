@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-void test() {
+static void test() {
 #if TEST_STD_VER >= 17
     {
         std::map<int, int>::node_type node;

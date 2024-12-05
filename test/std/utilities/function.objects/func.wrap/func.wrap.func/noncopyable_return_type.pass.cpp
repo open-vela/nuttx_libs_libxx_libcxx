@@ -40,7 +40,7 @@ struct LargeLambda {
     NonCopyable f() const { return NonCopyable(); }
 };
 
-void test()
+static void test()
 {
     std::function<NonCopyable()> f1a = []() { return NonCopyable(); };
     std::function<NonCopyable()> f2a = +[]() { return NonCopyable(); };

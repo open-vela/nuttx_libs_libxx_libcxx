@@ -31,7 +31,7 @@ struct MyArray {
 };
 
 template <class T, std::size_t Size>
-void test() {
+static void test() {
   typedef T CArrayT[Size == 0 ? 1 : Size];
   typedef std::array<T, Size> ArrayT;
   typedef MyArray<T, Size == 0 ? 1 : Size> MyArrayT;

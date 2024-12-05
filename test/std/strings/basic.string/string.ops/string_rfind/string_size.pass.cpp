@@ -17,7 +17,7 @@
 #include "min_allocator.h"
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void
+TEST_CONSTEXPR_CXX20 static void
 test(const S& s, const S& str, typename S::size_type pos, typename S::size_type x)
 {
     LIBCPP_ASSERT_NOEXCEPT(s.rfind(str, pos));
@@ -27,7 +27,7 @@ test(const S& s, const S& str, typename S::size_type pos, typename S::size_type 
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void
+TEST_CONSTEXPR_CXX20 static void
 test(const S& s, const S& str, typename S::size_type x)
 {
     LIBCPP_ASSERT_NOEXCEPT(s.rfind(str));
@@ -37,7 +37,7 @@ test(const S& s, const S& str, typename S::size_type x)
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test0()
+TEST_CONSTEXPR_CXX20 static void test0()
 {
     test(S(""), S(""), 0, 0);
     test(S(""), S("abcde"), 0, S::npos);
@@ -122,7 +122,7 @@ TEST_CONSTEXPR_CXX20 void test0()
 }
 
 template <class S>
-TEST_CONSTEXPR_CXX20 void test1()
+TEST_CONSTEXPR_CXX20 static void test1()
 {
     test(S(""), S(""), 0);
     test(S(""), S("abcde"), S::npos);
@@ -142,7 +142,7 @@ TEST_CONSTEXPR_CXX20 void test1()
     test(S("abcdeabcdeabcdeabcde"), S("abcdeabcdeabcdeabcde"), 0);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test0<S>();

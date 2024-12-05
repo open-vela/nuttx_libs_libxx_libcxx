@@ -17,7 +17,7 @@
 #include <utility>
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // Can copy `lazy_split_view`.
   {
     // Forward range.

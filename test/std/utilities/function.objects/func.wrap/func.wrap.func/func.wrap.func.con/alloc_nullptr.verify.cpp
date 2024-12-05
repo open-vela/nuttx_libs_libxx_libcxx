@@ -19,6 +19,6 @@
 #include <functional>
 #include <memory>
 
-void f() {
+static void f() {
     std::function<int(int)> f(std::allocator_arg, std::allocator<int>(), nullptr); // expected-error {{no matching constructor for initialization of}}
 }

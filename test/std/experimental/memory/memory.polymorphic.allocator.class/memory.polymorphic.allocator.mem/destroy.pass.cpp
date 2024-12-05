@@ -29,7 +29,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int count = 0;
+static int count = 0;
 
 struct destroyable
 {

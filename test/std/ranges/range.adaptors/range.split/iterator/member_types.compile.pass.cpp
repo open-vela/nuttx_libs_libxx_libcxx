@@ -44,7 +44,7 @@ void testIteratorTypedefPattern() {
   testIteratorTypedef<Iter, int*>();
 }
 
-void test() {
+static void test() {
   testIteratorTypedefPattern<forward_iterator<int*>>();
   testIteratorTypedefPattern<bidirectional_iterator<int*>>();
   testIteratorTypedefPattern<random_access_iterator<int*>>();

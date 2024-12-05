@@ -21,13 +21,13 @@
 #include <ranges>
 
 template<class Range>
-void test() {
+static void test() {
   static_assert(std::ranges::enable_borrowed_range<Range>);
   static_assert(!std::ranges::enable_borrowed_range<Range&>);
   static_assert(!std::ranges::enable_borrowed_range<const Range>);
 }
 
-void test() {
+static void test() {
   test<std::filesystem::directory_iterator>();
   test<std::filesystem::recursive_directory_iterator>();
 }

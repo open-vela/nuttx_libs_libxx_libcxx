@@ -48,7 +48,7 @@ static_assert(CanEmplace<std::expected<CtorFromInt<true>, int>, int, int>);
 static_assert(!CanEmplace<std::expected<CtorFromInt<false>, int>, int>);
 static_assert(!CanEmplace<std::expected<CtorFromInt<false>, int>, int, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // has_value
   {
     BothNoexcept::state oldState{};

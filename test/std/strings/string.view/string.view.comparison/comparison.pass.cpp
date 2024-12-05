@@ -70,7 +70,7 @@ struct char_traits {
 };
 
 template <class T, class Ordering = std::strong_ordering>
-constexpr void test() {
+constexpr static void test() {
   AssertOrderAreNoexcept<T>();
   AssertOrderReturn<Ordering, T>();
 

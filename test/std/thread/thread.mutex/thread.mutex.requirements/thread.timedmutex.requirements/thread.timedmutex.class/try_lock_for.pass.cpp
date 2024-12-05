@@ -24,7 +24,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::timed_mutex m;
+static std::timed_mutex m;
 
 typedef std::chrono::steady_clock Clock;
 typedef Clock::time_point time_point;
@@ -32,7 +32,7 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-void f1()
+static void f1()
 {
     time_point t0 = Clock::now();
     assert(m.try_lock_for(ms(300)) == true);
@@ -42,7 +42,7 @@ void f1()
     assert(d < ms(50));  // within 50ms
 }
 
-void f2()
+static void f2()
 {
     time_point t0 = Clock::now();
     assert(m.try_lock_for(ms(250)) == false);

@@ -18,9 +18,9 @@ private:
     int val;
     };
 
-bool operator < ( const PrivateConstructor &lhs, const PrivateConstructor &rhs ) { return lhs.get() < rhs.get(); }
+static bool operator < ( const PrivateConstructor &lhs, const PrivateConstructor &rhs ) { return lhs.get() < rhs.get(); }
 
-bool operator < ( const PrivateConstructor &lhs, int rhs ) { return lhs.get() < rhs; }
-bool operator < ( int lhs, const PrivateConstructor &rhs ) { return lhs < rhs.get(); }
+static bool operator < ( const PrivateConstructor &lhs, int rhs ) { return lhs.get() < rhs; }
+static bool operator < ( int lhs, const PrivateConstructor &rhs ) { return lhs < rhs.get(); }
 
 #endif // TEST_SUPPORT_PRIVATE_CONSTRUCTOR_H

@@ -23,7 +23,7 @@
 //   {empty/one-element/full} container);
 // - assigning move-only elements;
 // - an exception is thrown when copying the elements or when allocating new elements.
-constexpr bool test() {
+static constexpr bool test() {
   static_assert(test_constraints_assign_range<std::vector, int, double>());
 
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {

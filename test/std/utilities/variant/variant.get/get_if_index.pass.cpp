@@ -23,7 +23,7 @@
 #include <memory>
 #include <variant>
 
-void test_const_get_if() {
+static void test_const_get_if() {
   {
     using V = std::variant<int>;
     constexpr const V *v = nullptr;
@@ -70,7 +70,7 @@ void test_const_get_if() {
 #endif
 }
 
-void test_get_if() {
+static void test_get_if() {
   {
     using V = std::variant<int>;
     V *v = nullptr;

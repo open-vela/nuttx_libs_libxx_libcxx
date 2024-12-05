@@ -14,7 +14,7 @@
 
 #include "test_macros.h"
 
-void f1()
+static void f1()
 {
     std::exit(0);
 }

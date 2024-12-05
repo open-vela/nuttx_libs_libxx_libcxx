@@ -75,7 +75,7 @@ static_assert(!std::is_nothrow_move_constructible_v<std::expected<MoveMayThrow, 
 static_assert(!std::is_nothrow_move_constructible_v<std::expected<int, MoveMayThrow>>);
 static_assert(!std::is_nothrow_move_constructible_v<std::expected<MoveMayThrow, MoveMayThrow>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // move the value non-trivial
   {
     std::expected<MovableNonTrivial, int> e1(5);
@@ -133,7 +133,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct Throwing {
     Throwing() = default;

@@ -22,7 +22,7 @@ using V = SplitViewForward;
 
 static_assert(std::is_base_of_v<std::ranges::view_interface<SplitViewForward>, SplitViewForward>);
 
-constexpr bool test() {
+static constexpr bool test() {
   using namespace std::string_view_literals;
 
   // empty()

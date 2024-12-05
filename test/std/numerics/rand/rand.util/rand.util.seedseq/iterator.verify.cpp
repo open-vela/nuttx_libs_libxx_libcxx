@@ -16,7 +16,7 @@
 
 #include <random>
 
-void test()
+static void test()
 {
   {
     bool a[2] = {true, false};

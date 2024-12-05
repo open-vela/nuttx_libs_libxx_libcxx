@@ -59,7 +59,7 @@ template <class Iter, class Sent>
 concept EqualComparable = std::invocable<std::equal_to<>, const Iter&, const Sent&>;
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[4] = {1, 2, 3, 4};
   int buffer2[5] = {1, 2, 3, 4, 5};
   int buffer3[8] = {1, 2, 3, 4, 5, 6, 7, 8};

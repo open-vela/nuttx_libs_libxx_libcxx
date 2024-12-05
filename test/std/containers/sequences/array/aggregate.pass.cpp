@@ -15,7 +15,7 @@
 #include <type_traits>
 
 template <typename T>
-void check_aggregate()
+static void check_aggregate()
 {
     static_assert(std::is_aggregate<std::array<T, 0> >::value, "");
     static_assert(std::is_aggregate<std::array<T, 1> >::value, "");

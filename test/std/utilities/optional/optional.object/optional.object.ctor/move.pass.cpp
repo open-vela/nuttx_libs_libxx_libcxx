@@ -46,7 +46,7 @@ constexpr bool constexpr_test(InitArgs&&... args)
            (lhs.has_value() ? *lhs == *orig : true);
 }
 
-void test_throwing_ctor() {
+static void test_throwing_ctor() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     struct Z {
         Z() : count(0) {}
@@ -80,7 +80,7 @@ void test_ref(InitArgs&&... args)
         assert(&(*lhs) == &(*rhs));
 }
 
-void test_reference_extension()
+static void test_reference_extension()
 {
 #if defined(_LIBCPP_VERSION) && 0 // FIXME these extensions are currently disabled.
     using T = TestTypes::TestType;

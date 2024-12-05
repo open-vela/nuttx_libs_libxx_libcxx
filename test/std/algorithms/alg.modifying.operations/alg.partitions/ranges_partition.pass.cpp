@@ -158,7 +158,7 @@ constexpr void test_iterators_1() {
   test_iterators_2<Iter, sentinel_wrapper<Iter>>();
 }
 
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   test_iterators_1<forward_iterator<int*>>();
   test_iterators_1<bidirectional_iterator<int*>>();
   test_iterators_1<random_access_iterator<int*>>();
@@ -166,7 +166,7 @@ constexpr void test_iterators() {
   test_iterators_1<int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators();
 
   { // A custom projection works.

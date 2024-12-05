@@ -37,7 +37,7 @@ test(const S& s, typename S::value_type c, typename S::size_type x)
         assert(x < s.size());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S(""), 'i', 0, S::npos);

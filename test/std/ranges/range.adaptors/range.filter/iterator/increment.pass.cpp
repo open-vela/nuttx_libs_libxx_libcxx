@@ -34,7 +34,7 @@ struct TrackingPred : TrackInitialization {
 };
 
 template <class Iterator, bool IsForwardRange, bool IsConst>
-constexpr void test() {
+constexpr static void test() {
   using Sentinel = sentinel_wrapper<Iterator>;
   using View = minimal_view<Iterator, Sentinel>;
   using FilterView = std::ranges::filter_view<View, EqualTo>;

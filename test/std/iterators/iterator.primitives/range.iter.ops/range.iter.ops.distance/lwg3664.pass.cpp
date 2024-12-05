@@ -36,7 +36,7 @@ static_assert(!std::sized_sentinel_for<EvilSentinel<int*>, const int*>);
 static_assert( std::sized_sentinel_for<EvilSentinel<const int*>, int*>);
 static_assert( std::sized_sentinel_for<EvilSentinel<const int*>, const int*>);
 
-constexpr bool test() {
+constexpr static bool test() {
   {
     int a[] = {1, 2, 3};
     assert(std::ranges::distance(a, a + 3) == 3);

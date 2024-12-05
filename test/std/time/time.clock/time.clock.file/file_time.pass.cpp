@@ -17,7 +17,7 @@
 #include "test_macros.h"
 
 template <class Dur>
-void test() {
+static void test() {
   ASSERT_SAME_TYPE(std::chrono::file_time<Dur>, std::chrono::time_point<std::chrono::file_clock, Dur>);
 }
 

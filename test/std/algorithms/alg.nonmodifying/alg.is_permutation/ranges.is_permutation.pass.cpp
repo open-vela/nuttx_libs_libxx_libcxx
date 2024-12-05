@@ -95,7 +95,7 @@ constexpr void test(Data<N, M> d) {
 }
 
 template <class Iter1, class Sent1, class Iter2, class Sent2 = Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // Ranges are identical.
   test<Iter1, Sent1, Iter2, Sent2, 4, 4>({.input1 = {1, 2, 3, 4}, .input2 = {1, 2, 3, 4}, .expected = true});
 
@@ -138,7 +138,7 @@ constexpr void test_iterators1() {
   test_iterators<Iter1, Sent1, const int*>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators1<forward_iterator<int*>, sentinel_wrapper<forward_iterator<int*>>>();
   test_iterators1<forward_iterator<int*>>();
   test_iterators1<bidirectional_iterator<int*>>();

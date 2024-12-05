@@ -52,7 +52,7 @@ TEST_CONSTEXPR_CXX17 void test_one()
   assert(!(r3 == r1));
 }
 
-TEST_CONSTEXPR_CXX17 bool test()
+TEST_CONSTEXPR_CXX17 static bool test()
 {
   test_one<CustomIt>();
   test_one<cpp17_input_iterator<int*> >();

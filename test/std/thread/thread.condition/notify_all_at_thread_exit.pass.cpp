@@ -24,13 +24,13 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::high_resolution_clock Clock;
 
-void func()
+static void func()
 {
     std::unique_lock<std::mutex> lk(mut);
     std::notify_all_at_thread_exit(cv, std::move(lk));

@@ -33,7 +33,7 @@ static_assert(OpBoolNoexcept<const std::expected<void, int>>);
 // Test explicit
 static_assert(!std::is_convertible_v<std::expected<void, int>, bool>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // has_value
   {
     const std::expected<void, int> e;

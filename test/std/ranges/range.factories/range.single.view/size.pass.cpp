@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     auto sv = std::ranges::single_view<int>(42);
     assert(sv.size() == 1);

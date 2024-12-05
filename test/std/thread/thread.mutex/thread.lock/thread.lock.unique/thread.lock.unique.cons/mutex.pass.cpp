@@ -27,7 +27,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::mutex m;
+static std::mutex m;
 
 typedef std::chrono::system_clock Clock;
 typedef Clock::time_point time_point;
@@ -35,7 +35,7 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-void f()
+static void f()
 {
     time_point t0 = Clock::now();
     time_point t1;

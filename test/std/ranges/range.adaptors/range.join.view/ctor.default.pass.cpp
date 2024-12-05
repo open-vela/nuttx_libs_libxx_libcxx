@@ -23,7 +23,7 @@ struct DefaultView : std::ranges::view_base {
   ChildView* end() const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::join_view<ParentView<ChildView>> jv;
     assert(std::move(jv).base().ptr_ == globalChildren);

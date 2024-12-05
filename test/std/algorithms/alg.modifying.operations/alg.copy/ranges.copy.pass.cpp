@@ -57,7 +57,7 @@ static_assert(std::is_same_v<std::ranges::copy_result<int, long>, std::ranges::i
 
 // clang-format off
 template <class In, class Out, class Sent = In>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       std::array in{1, 2, 3, 4};
@@ -99,7 +99,7 @@ constexpr void test_iterators() {
 }
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   types::for_each(types::forward_iterator_list<int*>{}, []<class Out>() {
     test_iterators<cpp20_input_iterator<int*>, Out, sentinel_wrapper<cpp20_input_iterator<int*>>>();
     test_iterators<ProxyIterator<cpp20_input_iterator<int*>>,

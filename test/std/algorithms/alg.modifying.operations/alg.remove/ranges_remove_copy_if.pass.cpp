@@ -216,7 +216,7 @@ constexpr void withAllPermutationsOfInIterOutIter() {
   withAllPermutationsOfInIter<int*, SentWrapper>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   withAllPermutationsOfInIterOutIter<std::type_identity_t>();
   withAllPermutationsOfInIterOutIter<sentinel_wrapper>();
 

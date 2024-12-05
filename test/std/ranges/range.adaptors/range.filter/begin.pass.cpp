@@ -185,7 +185,7 @@ constexpr void cache_tests() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   general_tests<Range>();
   general_tests<InputRange>(); // test when we don't cache the result
   cache_tests<Range>();

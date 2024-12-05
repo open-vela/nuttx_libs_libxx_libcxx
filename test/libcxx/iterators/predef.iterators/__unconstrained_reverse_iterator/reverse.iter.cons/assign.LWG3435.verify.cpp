@@ -19,7 +19,7 @@
 struct Base { };
 struct Derived : Base { };
 
-void test() {
+static void test() {
     std::__unconstrained_reverse_iterator<Base*> base;
     std::__unconstrained_reverse_iterator<Derived*> derived;
     derived = base; // expected-error {{no viable overloaded '='}}

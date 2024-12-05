@@ -104,7 +104,7 @@ constexpr void test_containers() {
 }
 
 template <class In, class Out, class Sent = In>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   // simple test
   test<In, Out, Sent, 4>({1, 2, 3, 4});
   // check that an empty range works
@@ -185,7 +185,7 @@ struct IteratorWithMoveIter {
 template <class Iter>
 using Cpp17InIter = cpp17_input_iterator<Iter>;
 
-constexpr bool test() {
+static constexpr bool test() {
   test_in_iterators<cpp17_output_iterator>();
   test_in_iterators<cpp20_output_iterator>();
   test_in_iterators<Cpp17InIter>();

@@ -21,6 +21,7 @@
 #include "test_macros.h"
 #include "test_allocator.h"
 
+namespace {
 class A
 {
     int data_[10];
@@ -49,6 +50,7 @@ public:
 };
 
 int A::count = 0;
+}
 
 extern "C" int main(int, char**)
 {

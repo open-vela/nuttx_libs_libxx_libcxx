@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test(int i)
 {
     typedef std::error_code T;

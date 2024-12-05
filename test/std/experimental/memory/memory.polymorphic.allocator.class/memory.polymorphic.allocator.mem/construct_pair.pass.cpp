@@ -31,7 +31,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int constructed = 0;
+static int constructed = 0;
 
 struct default_constructible
 {

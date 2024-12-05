@@ -52,7 +52,7 @@ struct TestExpectations<std::input_iterator_tag>
 
 template <template<class...> class PopulationIteratorType, class PopulationItem,
           template<class...> class SampleIteratorType, class SampleItem>
-void test() {
+static void test() {
   typedef PopulationIteratorType<PopulationItem *> PopulationIterator;
   typedef SampleIteratorType<SampleItem *> SampleIterator;
   PopulationItem ia[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

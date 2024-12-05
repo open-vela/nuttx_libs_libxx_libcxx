@@ -48,11 +48,11 @@ struct NoexceptDependant {
 };
 
 template <class T>
-void test() {
+static void test() {
   static_assert(std::destructible<T> == std::is_nothrow_destructible_v<T>);
 }
 
-void test() {
+static void test() {
   test<Empty>();
 
   test<Defaulted>();

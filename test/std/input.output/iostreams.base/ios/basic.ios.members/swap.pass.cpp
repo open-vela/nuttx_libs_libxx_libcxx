@@ -34,38 +34,38 @@ struct testios
     void swap(std::ios& x) {std::ios::swap(x);}
 };
 
-bool f1_called = false;
-bool f2_called = false;
+static bool f1_called = false;
+static bool f2_called = false;
 
-bool g1_called = false;
-bool g2_called = false;
-bool g3_called = false;
+static bool g1_called = false;
+static bool g2_called = false;
+static bool g3_called = false;
 
-void f1(std::ios_base::event, std::ios_base&, int index)
+static void f1(std::ios_base::event, std::ios_base&, int index)
 {
     assert(index == 4);
     f1_called = true;
 }
 
-void f2(std::ios_base::event, std::ios_base&, int index)
+static void f2(std::ios_base::event, std::ios_base&, int index)
 {
     assert(index == 5);
     f2_called = true;
 }
 
-void g1(std::ios_base::event, std::ios_base&, int index)
+static void g1(std::ios_base::event, std::ios_base&, int index)
 {
     assert(index == 7);
     g1_called = true;
 }
 
-void g2(std::ios_base::event, std::ios_base&, int index)
+static void g2(std::ios_base::event, std::ios_base&, int index)
 {
     assert(index == 8);
     g2_called = true;
 }
 
-void g3(std::ios_base::event, std::ios_base&, int index)
+static void g3(std::ios_base::event, std::ios_base&, int index)
 {
     assert(index == 9);
     g3_called = true;

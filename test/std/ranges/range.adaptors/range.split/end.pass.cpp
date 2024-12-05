@@ -29,7 +29,7 @@ concept HasEnd = requires(T t) { t.end(); };
 static_assert(HasEnd<std::ranges::split_view<View, View>>);
 static_assert(!HasEnd<const std::ranges::split_view<View, View>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // return iterator
   {
     int buffer[]   = {1, 2, -1, 4, 5, 6, 5, 4, -1, 2, 1};

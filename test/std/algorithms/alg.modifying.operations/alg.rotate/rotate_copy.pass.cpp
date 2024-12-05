@@ -20,7 +20,7 @@
 
 
 template <class InIter, class OutIter>
-TEST_CONSTEXPR_CXX20 void test() {
+TEST_CONSTEXPR_CXX20 static void test() {
   int ia[] = {0, 1, 2, 3};
   const unsigned sa = sizeof(ia) / sizeof(ia[0]);
   int ib[sa] = {0};

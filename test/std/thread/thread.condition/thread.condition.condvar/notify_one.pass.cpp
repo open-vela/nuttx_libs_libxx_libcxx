@@ -45,15 +45,15 @@
 #include "test_macros.h"
 
 
-std::condition_variable cv;
-std::mutex mut;
+static std::condition_variable cv;
+static std::mutex mut;
 
-std::atomic_int test1(0);
-std::atomic_int test2(0);
-std::atomic_int ready(2);
-std::atomic_int which(0);
+static std::atomic_int test1(0);
+static std::atomic_int test2(0);
+static std::atomic_int ready(2);
+static std::atomic_int which(0);
 
-void f1()
+static void f1()
 {
   std::unique_lock<std::mutex> lk(mut);
   assert(test1 == 0);
@@ -65,7 +65,7 @@ void f1()
   test1 = 2;
 }
 
-void f2()
+static void f2()
 {
   std::unique_lock<std::mutex> lk(mut);
   assert(test2 == 0);

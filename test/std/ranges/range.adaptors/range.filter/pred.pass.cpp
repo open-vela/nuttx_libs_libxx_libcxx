@@ -25,7 +25,7 @@ struct Pred {
   int value;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     Pred pred{42};
     std::ranges::filter_view<Range, Pred> const view(Range{}, pred);

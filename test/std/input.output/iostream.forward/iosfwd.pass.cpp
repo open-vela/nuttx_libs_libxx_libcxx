@@ -16,7 +16,7 @@
 #   include <cwchar>
 #endif
 
-template <class Ptr> void test()
+template <class Ptr> static void test()
 {
     Ptr p = 0;
     ((void)p); // Prevent unused warning

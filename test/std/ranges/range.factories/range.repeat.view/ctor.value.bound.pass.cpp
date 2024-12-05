@@ -34,7 +34,7 @@ static_assert(!std::is_convertible_v<Empty&&, std::ranges::repeat_view<Empty, in
 static_assert(!std::is_constructible_v<std::ranges::repeat_view<MoveOnly>, const MoveOnly&>);
 static_assert(std::is_constructible_v<std::ranges::repeat_view<MoveOnly>, MoveOnly&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // Move && unbound && default argument
   {
     std::ranges::repeat_view<Empty> rv(Empty{});

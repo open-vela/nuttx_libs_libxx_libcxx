@@ -37,7 +37,7 @@ static_assert(std::is_move_assignable_v<Iter<wchar_t>>);
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   // test move constructor
   {
     auto iss = make_string_stream<CharT>("12   3");

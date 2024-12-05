@@ -67,7 +67,7 @@ static_assert(
     !ImplicitlyConstructible<std::tuple<ExplicitConstructibleFrom<MutableCopy>, ConvertibleFrom<MutableCopy>>,
                              std::allocator_arg_t, test_allocator<int>, std::pair<MutableCopy, MutableCopy>&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // test implicit conversions.
   {
     std::pair<MutableCopy, int> p{1, 2};

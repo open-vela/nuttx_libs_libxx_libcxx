@@ -31,7 +31,7 @@
 #include "test_macros.h"
 
 template <class C>
-void test_iterators() {
+static void test_iterators() {
     typedef std::iterator_traits<typename C::iterator> ItT;
     typedef std::iterator_traits<typename C::const_iterator> CItT;
     static_assert((std::is_same<typename ItT::iterator_category, std::random_access_iterator_tag>::value), "");

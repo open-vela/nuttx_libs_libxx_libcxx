@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-void
+static void
 test1()
 {
     const char* a = "13604817 711567 9760686 13278398 3323440 175548 5553651 "
@@ -37,7 +37,7 @@ test1()
     assert(os.str() == a);
 }
 
-void
+static void
 test2()
 {
     const char* a = "241408498702289 172342669275054 191026374555184 "

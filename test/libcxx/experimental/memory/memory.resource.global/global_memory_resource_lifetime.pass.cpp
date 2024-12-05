@@ -43,20 +43,20 @@ struct POSType {
   }
 };
 
-void swap(POSType & L, POSType & R) {
+static void swap(POSType & L, POSType & R) {
     std::swap(L.res, R.res);
     std::swap(L.ptr, R.ptr);
     std::swap(L.n, R.n);
 }
 
-POSType constructed_before_resources;
-POSType constructed_before_resources2;
+static POSType constructed_before_resources;
+static POSType constructed_before_resources2;
 
 // Constructs resources
-ex::memory_resource* resource = ex::get_default_resource();
+static ex::memory_resource* resource = ex::get_default_resource();
 
-POSType constructed_after_resources(resource, resource->allocate(1024), 1024);
-POSType constructed_after_resources2(nullptr, resource->allocate(1024), 1024);
+static POSType constructed_after_resources(resource, resource->allocate(1024), 1024);
+static POSType constructed_after_resources2(nullptr, resource->allocate(1024), 1024);
 
 extern "C" int main(int, char**)
 {

@@ -18,7 +18,7 @@
 #include "test_macros.h"
 
 template <bool Count, typename It>
-constexpr void check(int* first, std::iter_difference_t<It> n, int* expected) {
+constexpr static void check(int* first, std::iter_difference_t<It> n, int* expected) {
   using Difference = std::iter_difference_t<It>;
   Difference const M = (expected - first); // expected travel distance (which may be negative)
   auto abs = [](auto x) { return x < 0 ? -x : x; };
@@ -42,7 +42,7 @@ constexpr void check(int* first, std::iter_difference_t<It> n, int* expected) {
   }
 }
 
-constexpr bool test() {
+constexpr static bool test() {
   int range[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
   // Check advancing forward

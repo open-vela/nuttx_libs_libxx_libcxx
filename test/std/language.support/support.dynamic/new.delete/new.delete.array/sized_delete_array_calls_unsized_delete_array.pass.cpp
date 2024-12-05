@@ -19,8 +19,8 @@
 
 #include "test_macros.h"
 
-int delete_called = 0;
-int delete_nothrow_called = 0;
+static int delete_called = 0;
+static int delete_nothrow_called = 0;
 
 void operator delete[](void* p) TEST_NOEXCEPT
 {

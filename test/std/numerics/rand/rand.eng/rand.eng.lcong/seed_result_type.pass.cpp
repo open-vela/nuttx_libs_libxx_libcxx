@@ -19,7 +19,7 @@
 #include "test_macros.h"
 
 template <class T>
-void
+static void
 test1()
 {
     for (T s = 0; s < 20; ++s)

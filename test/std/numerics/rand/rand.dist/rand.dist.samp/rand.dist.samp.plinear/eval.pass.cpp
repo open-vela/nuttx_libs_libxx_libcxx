@@ -33,13 +33,13 @@ sqr(T x)
     return x*x;
 }
 
-double
+static double
 f(double x, double a, double m, double b, double c)
 {
     return a + m*(sqr(x) - sqr(b))/2 + c*(x-b);
 }
 
-void
+static void
 test1()
 {
     typedef std::piecewise_linear_distribution<> D;
@@ -91,7 +91,7 @@ test1()
     }
 }
 
-void
+static void
 test2()
 {
     typedef std::piecewise_linear_distribution<> D;
@@ -143,7 +143,7 @@ test2()
     }
 }
 
-void
+static void
 test3()
 {
     typedef std::piecewise_linear_distribution<> D;
@@ -195,7 +195,7 @@ test3()
     }
 }
 
-void
+static void
 test4()
 {
     typedef std::piecewise_linear_distribution<> D;
@@ -248,7 +248,7 @@ test4()
     }
 }
 
-void
+static void
 test5()
 {
     typedef std::piecewise_linear_distribution<> D;
@@ -302,7 +302,7 @@ test5()
     }
 }
 
-void
+static void
 test6()
 {
     typedef std::piecewise_linear_distribution<> D;

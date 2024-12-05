@@ -128,7 +128,7 @@ constexpr void test_sentinel() {
 }
 
 template <class Iter1, class Iter2>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   using Expected = std::ranges::swap_ranges_result<Iter1, Iter2>;
   int i[3] = {1, 2, 3};
   int j[3] = {4, 5, 6};
@@ -170,7 +170,7 @@ constexpr void test_proxy_in_iterators() {
   test_iterators<ProxyIterator<contiguous_iterator<int*>>, Out>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_range();
 
   test_iterators<cpp20_input_iterator<int*>, cpp20_input_iterator<int*>>();

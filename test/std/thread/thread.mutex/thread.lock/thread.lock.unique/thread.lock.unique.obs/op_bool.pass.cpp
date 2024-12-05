@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-std::mutex m;
+static std::mutex m;
 
 extern "C" int main(int, char**)
 {

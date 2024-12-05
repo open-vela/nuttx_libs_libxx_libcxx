@@ -54,7 +54,7 @@ struct NoexceptPredicate {
   bool operator()(int) const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using View = std::ranges::filter_view<DefaultConstructibleView, DefaultConstructiblePredicate>;
     View view;

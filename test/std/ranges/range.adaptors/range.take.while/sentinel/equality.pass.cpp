@@ -164,7 +164,7 @@ constexpr void testOne() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testOne<R, false, false>();
   testOne<R, true, true>();
   testOne<CrossComparableR, false, false>();

@@ -81,7 +81,7 @@ static_assert(std::is_copy_assignable_v<std::expected<int, MoveMayThrow>>);
 // !is_nothrow_move_constructible_v<T> && !is_nothrow_move_constructible_v<E>
 static_assert(!std::is_copy_assignable_v<std::expected<MoveMayThrow, MoveMayThrow>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // If this->has_value() && rhs.has_value() is true, equivalent to val = *rhs.
   {
     Traced::state oldState{};
@@ -246,7 +246,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   struct ThrowOnCopyMoveMayThrow {
     ThrowOnCopyMoveMayThrow() = default;

@@ -62,7 +62,7 @@ test(It first, It last, const A& a)
     assert(s2.capacity() >= s2.size());
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef test_allocator<char> A;
     const char* s = "12345678901234567890123456789012345678901234567890";

@@ -162,7 +162,7 @@ constexpr void testImpl() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   testImpl<forward_iterator<int*>>();
   testImpl<bidirectional_iterator<int*>>();
   testImpl<random_access_iterator<int*>>();

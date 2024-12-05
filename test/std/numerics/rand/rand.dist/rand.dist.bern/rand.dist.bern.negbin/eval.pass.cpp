@@ -28,7 +28,7 @@ T sqr(T x) {
 }
 
 template <class T>
-void test1() {
+static void test1() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::minstd_rand G;
     G g;
@@ -70,7 +70,7 @@ void test1() {
 }
 
 template <class T>
-void test2() {
+static void test2() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -112,7 +112,7 @@ void test2() {
 }
 
 template <class T>
-void test3() {
+static void test3() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -154,7 +154,7 @@ void test3() {
 }
 
 template <class T>
-void test4() {
+static void test4() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -198,7 +198,7 @@ void test4() {
 }
 
 template <class T>
-void test5() {
+static void test5() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -240,7 +240,7 @@ void test5() {
 }
 
 template <class T>
-void test6() {
+static void test6() {
     typedef std::negative_binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -282,7 +282,7 @@ void test6() {
 }
 
 template <class T>
-void tests() {
+static void tests() {
     test1<T>();
     test2<T>();
     test3<T>();

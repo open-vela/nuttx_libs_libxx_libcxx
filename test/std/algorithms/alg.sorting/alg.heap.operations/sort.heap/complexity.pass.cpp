@@ -19,11 +19,13 @@
 
 #include "test_macros.h"
 
+namespace {
 struct Stats {
   int compared = 0;
   int copied   = 0;
   int moved    = 0;
 } stats;
+}
 
 struct MyInt {
   int value;

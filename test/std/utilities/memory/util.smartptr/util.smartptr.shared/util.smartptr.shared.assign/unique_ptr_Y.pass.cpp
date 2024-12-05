@@ -19,6 +19,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -41,6 +42,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 template <class T>
 struct StatefulArrayDeleter {

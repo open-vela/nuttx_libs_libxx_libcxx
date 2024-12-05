@@ -99,7 +99,7 @@ constexpr void test_comparison() {
   test_comparison_different_rank<T1, T2>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_comparison<int, int>();
   test_comparison<int, size_t>();
   test_comparison<size_t, int>();

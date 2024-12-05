@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "types.h"
 
-void test() {
+static void test() {
   int buffer[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   {

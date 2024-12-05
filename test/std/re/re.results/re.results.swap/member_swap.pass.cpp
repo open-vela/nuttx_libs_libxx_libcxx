@@ -16,7 +16,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-void
+static void
 test()
 {
     std::match_results<const char*> m1;

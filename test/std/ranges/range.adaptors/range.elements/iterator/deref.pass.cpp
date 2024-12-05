@@ -47,7 +47,7 @@ constexpr void testValue(T t) {
   assert(result == std::get<N>(t));
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   // test tuple
   {
     std::tuple<int, short, long> ts[] = {{1, 2, 3}, {4, 5, 6}};

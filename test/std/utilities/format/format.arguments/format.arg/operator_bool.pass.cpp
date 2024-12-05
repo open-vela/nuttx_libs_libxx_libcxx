@@ -22,7 +22,7 @@
 #include "test_macros.h"
 
 template <class CharT>
-void test() {
+static void test() {
   using Context = std::basic_format_context<CharT*, CharT>;
   {
     std::basic_format_arg<Context> format_arg{};

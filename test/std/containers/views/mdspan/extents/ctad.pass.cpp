@@ -27,7 +27,7 @@ constexpr void test(E e, Expected expected) {
   assert(e == expected);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   constexpr std::size_t D = std::dynamic_extent;
 
   test(std::extents(), std::extents<size_t>());

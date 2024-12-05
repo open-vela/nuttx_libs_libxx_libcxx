@@ -22,6 +22,7 @@
 
 using std::optional;
 
+namespace {
 struct X
 {
     static bool throw_now;
@@ -49,6 +50,7 @@ struct Y2
     Y2(const int&) = delete;
     Y2& operator=(const int&) { return *this; }
 };
+}
 
 template <class T>
 struct AssignableFrom {
@@ -80,7 +82,7 @@ template <class T> int AssignableFrom<T>::int_constructed = 0;
 template <class T> int AssignableFrom<T>::int_assigned = 0;
 
 
-void test_with_test_type() {
+static void test_with_test_type() {
     using T = TestTypes::TestType;
     T::reset();
     { // non-empty to empty

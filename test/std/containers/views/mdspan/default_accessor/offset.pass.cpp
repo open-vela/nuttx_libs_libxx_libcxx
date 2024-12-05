@@ -34,7 +34,7 @@ constexpr void test_offset() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_offset<int>();
   test_offset<const int>();
   test_offset<MinimalElementType>();

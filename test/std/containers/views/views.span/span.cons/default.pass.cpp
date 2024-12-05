@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-void checkCV()
+static void checkCV()
 {
 //  Types the same (dynamic sized)
     {

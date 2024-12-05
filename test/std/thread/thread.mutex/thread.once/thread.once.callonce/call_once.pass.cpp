@@ -24,27 +24,27 @@
 
 typedef std::chrono::milliseconds ms;
 
-std::once_flag flg0;
+static std::once_flag flg0;
 
-int init0_called = 0;
+static int init0_called = 0;
 
-void init0()
+static void init0()
 {
     std::this_thread::sleep_for(ms(250));
     ++init0_called;
 }
 
-void f0()
+static void f0()
 {
     std::call_once(flg0, init0);
 }
 
-std::once_flag flg3;
+static std::once_flag flg3;
 
-int init3_called = 0;
-int init3_completed = 0;
+static int init3_called = 0;
+static int init3_completed = 0;
 
-void init3()
+static void init3()
 {
     ++init3_called;
     std::this_thread::sleep_for(ms(250));
@@ -53,7 +53,7 @@ void init3()
     ++init3_completed;
 }
 
-void f3()
+static void f3()
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     try
@@ -77,9 +77,9 @@ struct init1
 
 int init1::called = 0;
 
-std::once_flag flg1;
+static std::once_flag flg1;
 
-void f1()
+static void f1()
 {
     std::call_once(flg1, init1(), 1);
 }
@@ -93,9 +93,9 @@ struct init2
 
 int init2::called = 0;
 
-std::once_flag flg2;
+static std::once_flag flg2;
 
-void f2()
+static void f2()
 {
     std::call_once(flg2, init2(), 2, 3);
     std::call_once(flg2, init2(), 4, 5);
@@ -103,33 +103,33 @@ void f2()
 
 #endif // TEST_STD_VER >= 11
 
-std::once_flag flg41;
-std::once_flag flg42;
+static std::once_flag flg41;
+static std::once_flag flg42;
 
-int init41_called = 0;
-int init42_called = 0;
+static int init41_called = 0;
+static int init42_called = 0;
 
-void init42();
+static void init42();
 
-void init41()
+static void init41()
 {
     std::this_thread::sleep_for(ms(250));
     ++init41_called;
 }
 
-void init42()
+static void init42()
 {
     std::this_thread::sleep_for(ms(250));
     ++init42_called;
 }
 
-void f41()
+static void f41()
 {
     std::call_once(flg41, init41);
     std::call_once(flg42, init42);
 }
 
-void f42()
+static void f42()
 {
     std::call_once(flg42, init42);
     std::call_once(flg41, init41);

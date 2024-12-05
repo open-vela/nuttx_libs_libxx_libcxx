@@ -45,7 +45,7 @@ constexpr void test_iters() {
   test_iterators(Iter1(a), Iter1(a + 5), Iter2(b), Iter2(b + 5), a + 3, b + 3);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iters<cpp17_input_iterator<int*>, cpp17_input_iterator<int*>>();
   test_iters<cpp17_input_iterator<int*>, cpp20_input_iterator<int*>>();
   test_iters<cpp17_input_iterator<int*>, forward_iterator<int*>>();

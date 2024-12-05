@@ -29,11 +29,11 @@ public:
     }
 };
 
-bool f1_called = false;
-bool f2_called = false;
-bool f3_called = false;
+static bool f1_called = false;
+static bool f2_called = false;
+static bool f3_called = false;
 
-void f1(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f1(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::erase_event)
     {
@@ -46,7 +46,7 @@ void f1(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void f2(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f2(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::erase_event)
     {
@@ -59,7 +59,7 @@ void f2(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-void f3(std::ios_base::event ev, std::ios_base& stream, int index)
+static void f3(std::ios_base::event ev, std::ios_base& stream, int index)
 {
     if (ev == std::ios_base::erase_event)
     {

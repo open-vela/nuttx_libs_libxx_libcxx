@@ -44,7 +44,7 @@ static_assert(!std::is_default_constructible_v<std::ranges::zip_view<DefaultCons
 static_assert(!std::is_default_constructible_v<std::ranges::zip_view<NoDefaultCtrView, NoDefaultCtrView>>);
 static_assert(!std::is_default_constructible_v<std::ranges::zip_view<NoDefaultCtrView>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     using View = std::ranges::zip_view<DefaultConstructibleView, DefaultConstructibleView>;
     View v = View(); // the default constructor is not explicit

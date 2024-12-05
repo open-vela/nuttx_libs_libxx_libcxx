@@ -19,7 +19,7 @@
 #include "MoveOnly.h"
 #include "test_macros.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &
   {
     const std::expected<void, int> e;
@@ -51,7 +51,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
 
   // int

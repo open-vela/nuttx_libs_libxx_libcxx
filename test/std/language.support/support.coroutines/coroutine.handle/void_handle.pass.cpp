@@ -35,7 +35,7 @@ struct std::coroutine_traits<C> {
 };
 
 template <class Expect, class T, class ...Args>
-void check_type() {
+static void check_type() {
   using P = typename std::coroutine_traits<T, Args...>::promise_type ;
   static_assert(std::is_same<P, Expect>::value, "");
 };

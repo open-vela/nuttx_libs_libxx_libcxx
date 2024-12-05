@@ -14,7 +14,7 @@
 #include <memory>
 
 template <typename T>
-constexpr bool test() {
+static constexpr bool test() {
     std::allocator<T> alloc;
     (void)alloc;
 

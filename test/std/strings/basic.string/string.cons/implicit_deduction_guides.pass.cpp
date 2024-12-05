@@ -45,7 +45,7 @@ using BStr = std::basic_string<T, std::char_traits<T>, Alloc>;
 // (13) basic_string(initializer_list<CharT>, A const& = A())
 // (14) basic_string(BSV, A const& = A())
 // (15) basic_string(const T&, size_type, size_type, A const& = A())
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
 
   using TestSizeT = test_allocator<char>::size_type;
   { // Testing (1)

@@ -18,6 +18,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -40,6 +41,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 struct C
 {
@@ -50,7 +52,7 @@ struct C
     virtual ~C() {--count;}
 };
 
-int C::count = 0;
+// int C::count = 0;
 
 extern "C" int main(int, char**)
 {

@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::unordered_set<operator_hijacker> so;
   std::unordered_set<operator_hijacker> s;
   s = so;

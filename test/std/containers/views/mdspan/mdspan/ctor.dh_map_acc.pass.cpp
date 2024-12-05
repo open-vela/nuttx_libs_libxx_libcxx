@@ -89,7 +89,7 @@ constexpr void mixin_accessor() {
 template <class E>
 using mapping_t = typename std::layout_right::template mapping<E>;
 
-constexpr bool test() {
+static constexpr bool test() {
   mixin_accessor<int>();
   mixin_accessor<const int>();
   mixin_accessor<double>();

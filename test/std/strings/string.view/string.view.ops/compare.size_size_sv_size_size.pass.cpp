@@ -20,10 +20,10 @@
 #include "test_macros.h"
 #include "constexpr_char_traits.h"
 
-int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
+static int sign ( int x ) { return x > 0 ? 1 : ( x < 0 ? -1 : 0 ); }
 
 template<typename CharT>
-void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
+static void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
              std::basic_string_view<CharT> sv2, std::size_t pos2, size_t n2,
              int expected ) {
 #ifdef TEST_HAS_NO_EXCEPTIONS
@@ -42,7 +42,7 @@ void test1 ( std::basic_string_view<CharT> sv1, std::size_t pos1, size_t n1,
 
 
 template<typename CharT>
-void test ( const CharT *s1, std::size_t pos1, size_t n1,
+static void test ( const CharT *s1, std::size_t pos1, size_t n1,
             const CharT *s2, std::size_t pos2, size_t n2,
             int expected ) {
     typedef std::basic_string_view<CharT> string_view_t;
@@ -52,7 +52,7 @@ void test ( const CharT *s1, std::size_t pos1, size_t n1,
     test1(sv1, pos1, n1, sv2, pos2, n2, expected);
 }
 
-void test0()
+static void test0()
 {
     test("", 0, 0, "", 0, 0, 0);
     test("", 0, 0, "", 0, 1, 0);
@@ -156,7 +156,7 @@ void test0()
     test("", 0, 1, "abcde", 6, 0, 0);
 }
 
-void test1()
+static void test1()
 {
     test("", 0, 1, "abcdefghij", 0, 0, 0);
     test("", 0, 1, "abcdefghij", 0, 1, -1);
@@ -260,7 +260,7 @@ void test1()
     test("", 1, 0, "abcdefghijklmnopqrst", 0, 1, 0);
 }
 
-void test2()
+static void test2()
 {
     test("", 1, 0, "abcdefghijklmnopqrst", 0, 10, 0);
     test("", 1, 0, "abcdefghijklmnopqrst", 0, 19, 0);
@@ -364,7 +364,7 @@ void test2()
     test("abcde", 0, 1, "abcde", 0, 0, 1);
 }
 
-void test3()
+static void test3()
 {
     test("abcde", 0, 1, "abcde", 0, 1, 0);
     test("abcde", 0, 1, "abcde", 0, 2, -1);
@@ -468,7 +468,7 @@ void test3()
     test("abcde", 0, 2, "abcdefghij", 0, 9, -7);
 }
 
-void test4()
+static void test4()
 {
     test("abcde", 0, 2, "abcdefghij", 0, 10, -8);
     test("abcde", 0, 2, "abcdefghij", 0, 11, -8);
@@ -572,7 +572,7 @@ void test4()
     test("abcde", 0, 4, "abcdefghijklmnopqrst", 0, 21, -16);
 }
 
-void test5()
+static void test5()
 {
     test("abcde", 0, 4, "abcdefghijklmnopqrst", 1, 0, 4);
     test("abcde", 0, 4, "abcdefghijklmnopqrst", 1, 1, -1);
@@ -676,7 +676,7 @@ void test5()
     test("abcde", 0, 6, "abcde", 0, 5, 0);
 }
 
-void test6()
+static void test6()
 {
     test("abcde", 0, 6, "abcde", 0, 6, 0);
     test("abcde", 0, 6, "abcde", 1, 0, 5);
@@ -780,7 +780,7 @@ void test6()
     test("abcde", 1, 0, "abcdefghij", 1, 1, -1);
 }
 
-void test7()
+static void test7()
 {
     test("abcde", 1, 0, "abcdefghij", 1, 4, -4);
     test("abcde", 1, 0, "abcdefghij", 1, 8, -8);
@@ -884,7 +884,7 @@ void test7()
     test("abcde", 1, 1, "abcdefghijklmnopqrst", 1, 18, -17);
 }
 
-void test8()
+static void test8()
 {
     test("abcde", 1, 1, "abcdefghijklmnopqrst", 1, 19, -18);
     test("abcde", 1, 1, "abcdefghijklmnopqrst", 1, 20, -18);
@@ -988,7 +988,7 @@ void test8()
     test("abcde", 1, 3, "abcde", 1, 2, 1);
 }
 
-void test9()
+static void test9()
 {
     test("abcde", 1, 3, "abcde", 1, 3, 0);
     test("abcde", 1, 3, "abcde", 1, 4, -1);
@@ -1092,7 +1092,7 @@ void test9()
     test("abcde", 1, 4, "abcdefghij", 1, 10, -5);
 }
 
-void test10()
+static void test10()
 {
     test("abcde", 1, 4, "abcdefghij", 5, 0, 4);
     test("abcde", 1, 4, "abcdefghij", 5, 1, -4);
@@ -1196,7 +1196,7 @@ void test10()
     test("abcde", 1, 5, "abcdefghijklmnopqrst", 10, 1, -9);
 }
 
-void test11()
+static void test11()
 {
     test("abcde", 1, 5, "abcdefghijklmnopqrst", 10, 5, -9);
     test("abcde", 1, 5, "abcdefghijklmnopqrst", 10, 9, -9);
@@ -1300,7 +1300,7 @@ void test11()
     test("abcde", 2, 1, "abcde", 2, 0, 1);
 }
 
-void test12()
+static void test12()
 {
     test("abcde", 2, 1, "abcde", 2, 1, 0);
     test("abcde", 2, 1, "abcde", 2, 2, -1);
@@ -1404,7 +1404,7 @@ void test12()
     test("abcde", 2, 2, "abcdefghij", 5, 4, -3);
 }
 
-void test13()
+static void test13()
 {
     test("abcde", 2, 2, "abcdefghij", 5, 5, -3);
     test("abcde", 2, 2, "abcdefghij", 5, 6, -3);
@@ -1508,7 +1508,7 @@ void test13()
     test("abcde", 2, 3, "abcdefghijklmnopqrst", 10, 11, -8);
 }
 
-void test14()
+static void test14()
 {
     test("abcde", 2, 3, "abcdefghijklmnopqrst", 19, 0, 3);
     test("abcde", 2, 3, "abcdefghijklmnopqrst", 19, 1, -17);
@@ -1612,7 +1612,7 @@ void test14()
     test("abcde", 4, 0, "abcde", 2, 4, -3);
 }
 
-void test15()
+static void test15()
 {
     test("abcde", 4, 0, "abcde", 4, 0, 0);
     test("abcde", 4, 0, "abcde", 4, 1, -1);
@@ -1716,7 +1716,7 @@ void test15()
     test("abcde", 4, 1, "abcdefghij", 9, 1, -5);
 }
 
-void test16()
+static void test16()
 {
     test("abcde", 4, 1, "abcdefghij", 9, 2, -5);
     test("abcde", 4, 1, "abcdefghij", 10, 0, 1);
@@ -1820,7 +1820,7 @@ void test16()
     test("abcde", 4, 2, "abcdefghijklmnopqrst", 20, 0, 1);
 }
 
-void test17()
+static void test17()
 {
     test("abcde", 4, 2, "abcdefghijklmnopqrst", 20, 1, 1);
     test("abcde", 4, 2, "abcdefghijklmnopqrst", 21, 0, 0);
@@ -1924,7 +1924,7 @@ void test17()
     test("abcde", 5, 1, "abcde", 5, 0, 0);
 }
 
-void test18()
+static void test18()
 {
     test("abcde", 5, 1, "abcde", 5, 1, 0);
     test("abcde", 5, 1, "abcde", 6, 0, 0);
@@ -2028,7 +2028,7 @@ void test18()
     test("abcde", 6, 0, "abcdefghij", 11, 0, 0);
 }
 
-void test19()
+static void test19()
 {
     test("abcde", 6, 0, "abcdefghijklmnopqrst", 0, 0, 0);
     test("abcde", 6, 0, "abcdefghijklmnopqrst", 0, 1, 0);
@@ -2132,7 +2132,7 @@ void test19()
     test("abcdefghij", 0, 1, "", 0, 1, 1);
 }
 
-void test20()
+static void test20()
 {
     test("abcdefghij", 0, 1, "", 1, 0, 0);
     test("abcdefghij", 0, 1, "abcde", 0, 0, 1);
@@ -2236,7 +2236,7 @@ void test20()
     test("abcdefghij", 0, 5, "abcdefghij", 0, 1, 4);
 }
 
-void test21()
+static void test21()
 {
     test("abcdefghij", 0, 5, "abcdefghij", 0, 5, 0);
     test("abcdefghij", 0, 5, "abcdefghij", 0, 9, -4);
@@ -2340,7 +2340,7 @@ void test21()
     test("abcdefghij", 0, 9, "abcdefghijklmnopqrst", 0, 19, -10);
 }
 
-void test22()
+static void test22()
 {
     test("abcdefghij", 0, 9, "abcdefghijklmnopqrst", 0, 20, -11);
     test("abcdefghij", 0, 9, "abcdefghijklmnopqrst", 0, 21, -11);
@@ -2444,7 +2444,7 @@ void test22()
     test("abcdefghij", 0, 11, "abcde", 0, 2, 8);
 }
 
-void test23()
+static void test23()
 {
     test("abcdefghij", 0, 11, "abcde", 0, 4, 6);
     test("abcdefghij", 0, 11, "abcde", 0, 5, 5);
@@ -2548,7 +2548,7 @@ void test23()
     test("abcdefghij", 1, 0, "abcdefghij", 0, 11, -10);
 }
 
-void test24()
+static void test24()
 {
     test("abcdefghij", 1, 0, "abcdefghij", 1, 0, 0);
     test("abcdefghij", 1, 0, "abcdefghij", 1, 1, -1);
@@ -2652,7 +2652,7 @@ void test24()
     test("abcdefghij", 1, 1, "abcdefghijklmnopqrst", 1, 1, 0);
 }
 
-void test25()
+static void test25()
 {
     test("abcdefghij", 1, 1, "abcdefghijklmnopqrst", 1, 9, -8);
     test("abcdefghij", 1, 1, "abcdefghijklmnopqrst", 1, 18, -17);
@@ -2756,7 +2756,7 @@ void test25()
     test("abcdefghij", 1, 8, "abcde", 1, 0, 8);
 }
 
-void test26()
+static void test26()
 {
     test("abcdefghij", 1, 8, "abcde", 1, 1, 7);
     test("abcdefghij", 1, 8, "abcde", 1, 2, 6);
@@ -2860,7 +2860,7 @@ void test26()
     test("abcdefghij", 1, 9, "abcdefghij", 1, 8, 1);
 }
 
-void test27()
+static void test27()
 {
     test("abcdefghij", 1, 9, "abcdefghij", 1, 9, 0);
     test("abcdefghij", 1, 9, "abcdefghij", 1, 10, 0);
@@ -2964,7 +2964,7 @@ void test27()
     test("abcdefghij", 1, 10, "abcdefghijklmnopqrst", 1, 20, -10);
 }
 
-void test28()
+static void test28()
 {
     test("abcdefghij", 1, 10, "abcdefghijklmnopqrst", 10, 0, 9);
     test("abcdefghij", 1, 10, "abcdefghijklmnopqrst", 10, 1, -9);
@@ -3068,7 +3068,7 @@ void test28()
     test("abcdefghij", 5, 1, "abcde", 1, 4, 4);
 }
 
-void test29()
+static void test29()
 {
     test("abcdefghij", 5, 1, "abcde", 1, 5, 4);
     test("abcdefghij", 5, 1, "abcde", 2, 0, 1);
@@ -3172,7 +3172,7 @@ void test29()
     test("abcdefghij", 5, 2, "abcdefghij", 5, 1, 1);
 }
 
-void test30()
+static void test30()
 {
     test("abcdefghij", 5, 2, "abcdefghij", 5, 2, 0);
     test("abcdefghij", 5, 2, "abcdefghij", 5, 4, -2);
@@ -3276,7 +3276,7 @@ void test30()
     test("abcdefghij", 5, 4, "abcdefghijklmnopqrst", 10, 9, -5);
 }
 
-void test31()
+static void test31()
 {
     test("abcdefghij", 5, 4, "abcdefghijklmnopqrst", 10, 10, -5);
     test("abcdefghij", 5, 4, "abcdefghijklmnopqrst", 10, 11, -5);
@@ -3380,7 +3380,7 @@ void test31()
     test("abcdefghij", 5, 6, "abcde", 2, 2, 3);
 }
 
-void test32()
+static void test32()
 {
     test("abcdefghij", 5, 6, "abcde", 2, 3, 3);
     test("abcdefghij", 5, 6, "abcde", 2, 4, 3);
@@ -3484,7 +3484,7 @@ void test32()
     test("abcdefghij", 9, 0, "abcdefghij", 5, 6, -5);
 }
 
-void test33()
+static void test33()
 {
     test("abcdefghij", 9, 0, "abcdefghij", 9, 0, 0);
     test("abcdefghij", 9, 0, "abcdefghij", 9, 1, -1);
@@ -3588,7 +3588,7 @@ void test33()
     test("abcdefghij", 9, 1, "abcdefghijklmnopqrst", 19, 1, -10);
 }
 
-void test34()
+static void test34()
 {
     test("abcdefghij", 9, 1, "abcdefghijklmnopqrst", 19, 2, -10);
     test("abcdefghij", 9, 1, "abcdefghijklmnopqrst", 20, 0, 1);
@@ -3692,7 +3692,7 @@ void test34()
     test("abcdefghij", 10, 0, "abcde", 4, 1, -1);
 }
 
-void test35()
+static void test35()
 {
     test("abcdefghij", 10, 0, "abcde", 4, 2, -1);
     test("abcdefghij", 10, 0, "abcde", 5, 0, 0);
@@ -3796,7 +3796,7 @@ void test35()
     test("abcdefghij", 10, 1, "abcdefghij", 10, 0, 0);
 }
 
-void test36()
+static void test36()
 {
     test("abcdefghij", 10, 1, "abcdefghij", 10, 1, 0);
     test("abcdefghij", 10, 1, "abcdefghij", 11, 0, 0);
@@ -3900,7 +3900,7 @@ void test36()
     test("abcdefghij", 11, 0, "abcdefghijklmnopqrst", 21, 0, 0);
 }
 
-void test37()
+static void test37()
 {
     test("abcdefghijklmnopqrst", 0, 0, "", 0, 0, 0);
     test("abcdefghijklmnopqrst", 0, 0, "", 0, 1, 0);
@@ -4004,7 +4004,7 @@ void test37()
     test("abcdefghijklmnopqrst", 0, 1, "abcde", 6, 0, 0);
 }
 
-void test38()
+static void test38()
 {
     test("abcdefghijklmnopqrst", 0, 1, "abcdefghij", 0, 0, 1);
     test("abcdefghijklmnopqrst", 0, 1, "abcdefghij", 0, 1, 0);
@@ -4108,7 +4108,7 @@ void test38()
     test("abcdefghijklmnopqrst", 0, 10, "abcdefghijklmnopqrst", 0, 1, 9);
 }
 
-void test39()
+static void test39()
 {
     test("abcdefghijklmnopqrst", 0, 10, "abcdefghijklmnopqrst", 0, 10, 0);
     test("abcdefghijklmnopqrst", 0, 10, "abcdefghijklmnopqrst", 0, 19, -9);
@@ -4212,7 +4212,7 @@ void test39()
     test("abcdefghijklmnopqrst", 0, 20, "abcde", 0, 0, 20);
 }
 
-void test40()
+static void test40()
 {
     test("abcdefghijklmnopqrst", 0, 20, "abcde", 0, 1, 19);
     test("abcdefghijklmnopqrst", 0, 20, "abcde", 0, 2, 18);
@@ -4316,7 +4316,7 @@ void test40()
     test("abcdefghijklmnopqrst", 0, 21, "abcdefghij", 0, 9, 11);
 }
 
-void test41()
+static void test41()
 {
     test("abcdefghijklmnopqrst", 0, 21, "abcdefghij", 0, 10, 10);
     test("abcdefghijklmnopqrst", 0, 21, "abcdefghij", 0, 11, 10);
@@ -4420,7 +4420,7 @@ void test41()
     test("abcdefghijklmnopqrst", 1, 0, "abcdefghijklmnopqrst", 0, 21, -20);
 }
 
-void test42()
+static void test42()
 {
     test("abcdefghijklmnopqrst", 1, 0, "abcdefghijklmnopqrst", 1, 0, 0);
     test("abcdefghijklmnopqrst", 1, 0, "abcdefghijklmnopqrst", 1, 1, -1);
@@ -4524,7 +4524,7 @@ void test42()
     test("abcdefghijklmnopqrst", 1, 9, "abcde", 0, 5, 1);
 }
 
-void test43()
+static void test43()
 {
     test("abcdefghijklmnopqrst", 1, 9, "abcde", 0, 6, 1);
     test("abcdefghijklmnopqrst", 1, 9, "abcde", 1, 0, 9);
@@ -4628,7 +4628,7 @@ void test43()
     test("abcdefghijklmnopqrst", 1, 18, "abcdefghij", 1, 1, 17);
 }
 
-void test44()
+static void test44()
 {
     test("abcdefghijklmnopqrst", 1, 18, "abcdefghij", 1, 4, 14);
     test("abcdefghijklmnopqrst", 1, 18, "abcdefghij", 1, 8, 10);
@@ -4732,7 +4732,7 @@ void test44()
     test("abcdefghijklmnopqrst", 1, 19, "abcdefghijklmnopqrst", 1, 18, 1);
 }
 
-void test45()
+static void test45()
 {
     test("abcdefghijklmnopqrst", 1, 19, "abcdefghijklmnopqrst", 1, 19, 0);
     test("abcdefghijklmnopqrst", 1, 19, "abcdefghijklmnopqrst", 1, 20, 0);
@@ -4836,7 +4836,7 @@ void test45()
     test("abcdefghijklmnopqrst", 10, 0, "abcde", 1, 2, -2);
 }
 
-void test46()
+static void test46()
 {
     test("abcdefghijklmnopqrst", 10, 0, "abcde", 1, 3, -3);
     test("abcdefghijklmnopqrst", 10, 0, "abcde", 1, 4, -4);
@@ -4940,7 +4940,7 @@ void test46()
     test("abcdefghijklmnopqrst", 10, 1, "abcdefghij", 1, 10, 9);
 }
 
-void test47()
+static void test47()
 {
     test("abcdefghijklmnopqrst", 10, 1, "abcdefghij", 5, 0, 1);
     test("abcdefghijklmnopqrst", 10, 1, "abcdefghij", 5, 1, 5);
@@ -5044,7 +5044,7 @@ void test47()
     test("abcdefghijklmnopqrst", 10, 5, "abcdefghijklmnopqrst", 10, 1, 4);
 }
 
-void test48()
+static void test48()
 {
     test("abcdefghijklmnopqrst", 10, 5, "abcdefghijklmnopqrst", 10, 5, 0);
     test("abcdefghijklmnopqrst", 10, 5, "abcdefghijklmnopqrst", 10, 9, -4);
@@ -5148,7 +5148,7 @@ void test48()
     test("abcdefghijklmnopqrst", 10, 10, "abcde", 2, 0, 10);
 }
 
-void test49()
+static void test49()
 {
     test("abcdefghijklmnopqrst", 10, 10, "abcde", 2, 1, 8);
     test("abcdefghijklmnopqrst", 10, 10, "abcde", 2, 2, 8);
@@ -5252,7 +5252,7 @@ void test49()
     test("abcdefghijklmnopqrst", 10, 11, "abcdefghij", 5, 4, 5);
 }
 
-void test50()
+static void test50()
 {
     test("abcdefghijklmnopqrst", 10, 11, "abcdefghij", 5, 5, 5);
     test("abcdefghijklmnopqrst", 10, 11, "abcdefghij", 5, 6, 5);
@@ -5356,7 +5356,7 @@ void test50()
     test("abcdefghijklmnopqrst", 19, 0, "abcdefghijklmnopqrst", 10, 11, -10);
 }
 
-void test51()
+static void test51()
 {
     test("abcdefghijklmnopqrst", 19, 0, "abcdefghijklmnopqrst", 19, 0, 0);
     test("abcdefghijklmnopqrst", 19, 0, "abcdefghijklmnopqrst", 19, 1, -1);
@@ -5460,7 +5460,7 @@ void test51()
     test("abcdefghijklmnopqrst", 19, 2, "abcde", 2, 4, 17);
 }
 
-void test52()
+static void test52()
 {
     test("abcdefghijklmnopqrst", 19, 2, "abcde", 4, 0, 1);
     test("abcdefghijklmnopqrst", 19, 2, "abcde", 4, 1, 15);
@@ -5564,7 +5564,7 @@ void test52()
     test("abcdefghijklmnopqrst", 20, 0, "abcdefghij", 9, 1, -1);
 }
 
-void test53()
+static void test53()
 {
     test("abcdefghijklmnopqrst", 20, 0, "abcdefghij", 9, 2, -1);
     test("abcdefghijklmnopqrst", 20, 0, "abcdefghij", 10, 0, 0);
@@ -5668,7 +5668,7 @@ void test53()
     test("abcdefghijklmnopqrst", 20, 1, "abcdefghijklmnopqrst", 20, 0, 0);
 }
 
-void test54()
+static void test54()
 {
     test("abcdefghijklmnopqrst", 20, 1, "abcdefghijklmnopqrst", 20, 1, 0);
     test("abcdefghijklmnopqrst", 20, 1, "abcdefghijklmnopqrst", 21, 0, 0);

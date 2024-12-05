@@ -19,6 +19,7 @@
 #include "reset_helper.h"
 #include "test_allocator.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -41,6 +42,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 struct bad_ty { };
 

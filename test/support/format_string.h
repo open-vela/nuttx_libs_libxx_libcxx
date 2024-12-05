@@ -53,9 +53,9 @@ inline std::string format_string_imp(const char* msg, ...) {
   return std::string(buff_ptr.get());
 }
 
-const char* unwrap(std::string& s) { return s.c_str(); }
+static const char* unwrap(std::string& s) { return s.c_str(); }
 template <class Arg>
-Arg const& unwrap(Arg& a) {
+static Arg const& unwrap(Arg& a) {
   static_assert(!std::is_class<Arg>::value, "cannot pass class here");
   return a;
 }

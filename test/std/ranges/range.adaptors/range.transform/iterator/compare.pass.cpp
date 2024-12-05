@@ -17,7 +17,7 @@
 #include "test_iterators.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // Test a new-school iterator with operator<=>; the transform iterator should also have operator<=>.
     using It = three_way_contiguous_iterator<int*>;

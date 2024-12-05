@@ -45,7 +45,7 @@ static_assert(std::input_iterator<ThrowingBase>);
 ASSERT_NOT_NOEXCEPT(std::ranges::iter_move(std::declval<ThrowingBase>()));
 ASSERT_NOEXCEPT(std::ranges::iter_move(std::declval<NoexceptBase>()));
 
-constexpr bool test() {
+constexpr static bool test() {
   // Can use `iter_move` with a regular array.
   {
     int a[] = {0, 1, 2};

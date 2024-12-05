@@ -20,6 +20,7 @@
 
 #include "test_macros.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -42,6 +43,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 struct C
 {
@@ -52,7 +54,7 @@ struct C
     virtual ~C() {--count;}
 };
 
-int C::count = 0;
+// int C::count = 0;
 
 template <class T>
 std::weak_ptr<T> source (std::shared_ptr<T> p) { return std::weak_ptr<T>(p); }

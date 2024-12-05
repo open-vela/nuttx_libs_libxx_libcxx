@@ -169,7 +169,7 @@ constexpr void test_sentinels() {
   test_output_iterators<InIter, sized_sentinel<InIter>>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_output_iterators<cpp17_input_iterator<int*>, sentinel_wrapper<cpp17_input_iterator<int*>>>();
   test_output_iterators<cpp20_input_iterator<int*>, sentinel_wrapper<cpp20_input_iterator<int*>>>();
   test_sentinels<forward_iterator<int*>>();

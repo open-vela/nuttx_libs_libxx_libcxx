@@ -39,7 +39,7 @@ void operator delete(void* ptr) noexcept { std::free(ptr); }
 
 void operator delete[](void* ptr) noexcept { ::operator delete(ptr); }
 
-void test() {
+static void test() {
   {
     std::same_as<std::unique_ptr<int>> auto ptr = std::make_unique_for_overwrite<int>();
     assert(*(reinterpret_cast<char*>(ptr.get())) == pattern);

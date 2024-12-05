@@ -23,7 +23,7 @@ enum Enum2 {};
 #endif
 
 template <class T>
-void test()
+static void test()
 {
     static_assert(!std::is_void<T>::value, "");
 #if TEST_STD_VER > 11

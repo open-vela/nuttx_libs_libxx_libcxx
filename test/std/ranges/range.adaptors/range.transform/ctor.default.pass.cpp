@@ -44,7 +44,7 @@ struct NoDefaultFunction {
   constexpr int operator()(int i) const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::transform_view<DefaultConstructibleView, DefaultConstructibleFunction> view;
     assert(view.size() == 3);

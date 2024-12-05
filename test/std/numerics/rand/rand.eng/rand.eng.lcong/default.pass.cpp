@@ -19,7 +19,7 @@
 #include "test_macros.h"
 
 template <class T, T a, T c, T m>
-void
+static void
 test1()
 {
     typedef std::linear_congruential_engine<T, a, c, m> LCE;

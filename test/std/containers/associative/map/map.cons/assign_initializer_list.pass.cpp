@@ -73,7 +73,7 @@ void test_basic() {
 }
 
 
-void duplicate_keys_test() {
+static void duplicate_keys_test() {
   test_allocator_statistics alloc_stats;
   typedef std::map<int, int, std::less<int>, test_allocator<std::pair<const int, int> > > Map;
   {

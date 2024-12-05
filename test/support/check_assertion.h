@@ -236,6 +236,7 @@ private:
   std::string stderr_from_child_;
 };
 
+/**
 void std::__libcpp_verbose_abort(char const* format, ...) {
   // Extract information from the error message. This has to stay synchronized with
   // how we format assertions in the library.
@@ -252,6 +253,7 @@ void std::__libcpp_verbose_abort(char const* format, ...) {
   }
   std::exit(DeathTest::RK_MatchFailure);
 }
+*/
 
 template <class Func>
 inline bool ExpectDeath(const char* stmt, Func&& func, AssertionInfoMatcher Matcher) {

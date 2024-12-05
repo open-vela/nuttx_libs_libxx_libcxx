@@ -42,7 +42,7 @@
 #define SV(S) MAKE_STRING_VIEW(CharT, S)
 
 template < class CharT, class... Args>
-void check(std::basic_string_view<CharT> expected, test_format_string<CharT, Args...> fmt, Args&&... args) {
+static void check(std::basic_string_view<CharT> expected, test_format_string<CharT, Args...> fmt, Args&&... args) {
   std::basic_string<CharT> out = std::format(fmt, std::forward<Args>(args)...);
 #ifndef TEST_HAS_NO_LOCALIZATION
   if constexpr (std::same_as<CharT, char>)

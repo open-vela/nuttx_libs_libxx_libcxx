@@ -96,7 +96,7 @@ static_assert(std::is_assignable_v<std::expected<MaybeNoexcept<true, false>, May
 // !is_nothrow_move_constructible_v<E>
 static_assert(!std::is_assignable_v<std::expected<MaybeNoexcept<false, false>, MaybeNoexcept<false, false>>&, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // If has_value() is true, equivalent to: val = std::forward<U>(v);
   // Copy
   {
@@ -316,7 +316,7 @@ constexpr bool test() {
   return true;
 }
 
-void testException() {
+static void testException() {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   std::expected<ThrowOnConvert, int> e1(std::unexpect, 5);
   try {

@@ -44,7 +44,7 @@ static_assert(!has_or_else<std::optional<int>, decltype(take_int)>);
 static_assert(!has_or_else<std::optional<int>, decltype(take_int_return_void)>);
 static_assert(!has_or_else<std::optional<int>, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::optional<int> opt;
     assert(opt.or_else([] { return std::optional<int>{0}; }) == 0);

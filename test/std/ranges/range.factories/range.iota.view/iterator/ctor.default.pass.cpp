@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   using Iter = std::ranges::iterator_t<std::ranges::iota_view<Int42<DefaultTo42>>>;
   Iter iter;
   assert((*iter).value_ == 42);

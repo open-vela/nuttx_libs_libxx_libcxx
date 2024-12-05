@@ -30,7 +30,7 @@ T sqr(T x) {
 }
 
 template <class T>
-void test1() {
+static void test1() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937_64 G;
     G g;
@@ -72,7 +72,7 @@ void test1() {
 }
 
 template <class T>
-void test2() {
+static void test2() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -114,7 +114,7 @@ void test2() {
 }
 
 template <class T>
-void test3() {
+static void test3() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -156,7 +156,7 @@ void test3() {
 }
 
 template <class T>
-void test4() {
+static void test4() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -205,7 +205,7 @@ void test4() {
 }
 
 template <class T>
-void test5() {
+static void test5() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -254,7 +254,7 @@ void test5() {
 }
 
 template <class T>
-void test6() {
+static void test6() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -296,7 +296,7 @@ void test6() {
 }
 
 template <class T>
-void test7() {
+static void test7() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -338,7 +338,7 @@ void test7() {
 }
 
 template <class T>
-void test8() {
+static void test8() {
     const int N = 100000;
     std::mt19937 gen1;
     std::mt19937 gen2;
@@ -356,7 +356,7 @@ void test8() {
 }
 
 template <class T>
-void test9() {
+static void test9() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -405,7 +405,7 @@ void test9() {
 }
 
 template <class T>
-void test10() {
+static void test10() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -454,7 +454,7 @@ void test10() {
 }
 
 template <class T>
-void test11() {
+static void test11() {
     typedef std::binomial_distribution<T> D;
     typedef std::mt19937 G;
     G g;
@@ -503,7 +503,7 @@ void test11() {
 }
 
 template <class T>
-void tests() {
+static void tests() {
     test1<T>();
     test2<T>();
     test3<T>();

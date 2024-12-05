@@ -22,7 +22,7 @@
 #include "common.h"
 #include "test_allocator.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   Alloc a(12);
   {
     std::same_as<UsesAllocArgT> auto ret = std::make_obj_using_allocator<UsesAllocArgT>(a);

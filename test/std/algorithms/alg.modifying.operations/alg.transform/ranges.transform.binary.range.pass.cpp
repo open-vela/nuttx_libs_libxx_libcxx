@@ -73,7 +73,7 @@ static_assert(std::is_same_v<std::ranges::binary_transform_result<int, long, cha
 
 // clang-format off
 template <class In1, class In2, class Out, class Sent1, class Sent2>
-constexpr bool test_iterators() {
+constexpr static bool test_iterators() {
   { // simple
     int a[] = {1, 2, 3, 4, 5};
     int b[] = {5, 4, 3, 2, 1};
@@ -221,7 +221,7 @@ constexpr void test_iterators_in1_in2() {
   test_iterator_in1<int*, Out>();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators_in1_in2<cpp17_output_iterator<int*>>();
   test_iterators_in1_in2<cpp20_output_iterator<int*>>();
   test_iterators_in1_in2<forward_iterator<int*>>();

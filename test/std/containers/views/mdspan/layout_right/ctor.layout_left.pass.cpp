@@ -109,7 +109,7 @@ constexpr void test_rank_greater_one() {
   static_assert(!std::is_constructible_v<lr_mapping_t<int, D, D, D>, ll_mapping_t<int, D, D, D>>);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_conversion<int, int>();
   test_conversion<int, size_t>();
   test_conversion<size_t, int>();

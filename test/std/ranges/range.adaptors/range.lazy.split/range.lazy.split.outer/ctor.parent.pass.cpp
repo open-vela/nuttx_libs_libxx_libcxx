@@ -23,7 +23,7 @@ static_assert(!std::is_convertible_v<SplitViewInput&, OuterIterInput>);
 static_assert( std::ranges::forward_range<SplitViewForward>);
 static_assert(!std::is_constructible_v<OuterIterForward, SplitViewForward&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   InputView input;
   SplitViewInput v(input, ForwardTinyView());
   [[maybe_unused]] OuterIterInput i(v);

@@ -37,7 +37,7 @@ class assert_on_compare : public std::pmr::memory_resource {
 };
 
 template <class PoolResource>
-void test() {
+static void test() {
   // Same type
   {
     PoolResource pr1;

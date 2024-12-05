@@ -30,7 +30,7 @@ static_assert(!std::is_invocable_v<decltype((std::views::istream<int>)), const s
 #endif
 
 template <class CharT>
-void test() {
+static void test() {
   auto iss = make_string_stream<CharT>("12   3");
   auto isv = std::views::istream<int>(iss);
   auto it  = isv.begin();

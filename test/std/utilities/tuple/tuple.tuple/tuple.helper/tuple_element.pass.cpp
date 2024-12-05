@@ -24,7 +24,7 @@
 #include "test_macros.h"
 
 template <class T, std::size_t N, class U>
-void test()
+static void test()
 {
     static_assert((std::is_same<typename std::tuple_element<N, T>::type, U>::value), "");
     static_assert((std::is_same<typename std::tuple_element<N, const T>::type, const U>::value), "");

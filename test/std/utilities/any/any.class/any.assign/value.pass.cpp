@@ -169,7 +169,7 @@ void test_assign_throws() {
 // Test that any& operator=(ValueType&&) is *never* selected for:
 // * std::in_place type.
 // * Non-copyable types
-void test_sfinae_constraints() {
+static void test_sfinae_constraints() {
     { // Only the constructors are required to SFINAE on in_place_t
         using Tag = std::in_place_type_t<int>;
         using RawTag = std::remove_reference_t<Tag>;

@@ -112,7 +112,7 @@ constexpr void test_with_floating_point_ticks_value() {
   }
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_with_integral_ticks_value();
   test_with_integral_ticks_value_and_custom_period_value();
   test_with_floating_point_ticks_value();

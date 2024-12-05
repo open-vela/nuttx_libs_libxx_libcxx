@@ -32,10 +32,10 @@
 #include "test_macros.h"
 #include "../types.h"
 
-int new_nothrow_called = 0;
-int delete_called = 0;
+static int new_nothrow_called = 0;
+static int delete_called = 0;
 
-alignas(OverAligned) char DummyData[alignof(OverAligned)];
+alignas(OverAligned) static char DummyData[alignof(OverAligned)];
 
 void* operator new(std::size_t s, std::align_val_t a, std::nothrow_t const&) noexcept {
     assert(s <= sizeof(DummyData));

@@ -12,7 +12,7 @@
 
 #include <ranges>
 
-void test() {
+static void test() {
   int range[] = {1, 2, 3};
 
   std::views::all(range); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}

@@ -15,7 +15,7 @@
 #include "test_iterators.h"
 #include "test_range.h"
 
-int globalBuff[8] = {0,1,2,3,4,5,6,7};
+static int globalBuff[8] = {0,1,2,3,4,5,6,7};
 
 struct MoveOnlyView : std::ranges::view_base {
   int start_;

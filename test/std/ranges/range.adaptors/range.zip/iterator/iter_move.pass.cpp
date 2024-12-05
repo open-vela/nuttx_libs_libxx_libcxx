@@ -23,7 +23,7 @@ struct ThrowingMove {
   ThrowingMove(ThrowingMove&&){};
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     // underlying iter_move noexcept
     std::array a1{1, 2, 3, 4};

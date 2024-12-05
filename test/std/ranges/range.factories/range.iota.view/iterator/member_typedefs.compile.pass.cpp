@@ -61,7 +61,7 @@ struct CharDifferenceType {
 template<class T>
 concept HasIteratorCategory = requires { typename std::ranges::iterator_t<T>::iterator_category; };
 
-void test() {
+static void test() {
   {
     const std::ranges::iota_view<char> io(0);
     using Iter = decltype(io.begin());

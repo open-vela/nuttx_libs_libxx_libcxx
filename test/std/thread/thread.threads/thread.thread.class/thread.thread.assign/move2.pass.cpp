@@ -28,7 +28,7 @@ struct G
     void operator()() { }
 };
 
-void f1()
+static void f1()
 {
     std::_Exit(0);
 }

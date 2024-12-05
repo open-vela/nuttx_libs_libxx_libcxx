@@ -62,7 +62,7 @@ struct ConstVeryDifferentRange {
   forward_iterator<double*> end() const;
 };
 
-void test() {
+static void test() {
   int buffer[] = {1, 2, 3, 4};
   {
     // 2 views should have pair value_type

@@ -29,7 +29,7 @@ static_assert(ErrorNoexcept<std::bad_expected_access<int> const&>);
 static_assert(ErrorNoexcept<std::bad_expected_access<int>&&>);
 static_assert(ErrorNoexcept<std::bad_expected_access<int> const&&>);
 
-void test() {
+static void test() {
   // &
   {
     std::bad_expected_access<int> e(5);

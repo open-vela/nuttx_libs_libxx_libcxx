@@ -40,7 +40,7 @@ private:
   int* end_;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // Check the return type of `.end()`

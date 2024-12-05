@@ -36,10 +36,12 @@ public:
     long operator()(long i, long j) const {return data_ + i + j;}
 };
 
+/*
 int A::n_moves = 0;
 int A::n_copies = 0;
+*/
 
-int func(int i) { return i; }
+static int func(int i) { return i; }
 
 extern "C" int main(int, char**)
 {

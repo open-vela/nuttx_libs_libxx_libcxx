@@ -23,10 +23,10 @@
 #include "test_iterators.h"
 #include "counting_predicates.h"
 
-TEST_CONSTEXPR bool equal2 ( int i ) { return i == 2; }
+static TEST_CONSTEXPR bool equal2 ( int i ) { return i == 2; }
 
 #if TEST_STD_VER > 17
-TEST_CONSTEXPR bool test_constexpr() {
+static TEST_CONSTEXPR bool test_constexpr() {
     int ia[] = {1, 3, 5, 2, 5, 6};
 
     auto it = std::remove_if(std::begin(ia), std::end(ia), equal2);
@@ -38,7 +38,7 @@ TEST_CONSTEXPR bool test_constexpr() {
 #endif
 
 template <class Iter>
-void
+static void
 test()
 {
     int ia[] = {0, 1, 2, 3, 4, 2, 3, 4, 2};
@@ -63,7 +63,7 @@ struct pred
 };
 
 template <class Iter>
-void
+static void
 test1()
 {
     const unsigned sa = 9;

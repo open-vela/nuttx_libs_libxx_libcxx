@@ -63,7 +63,7 @@
 #include "test_macros.h"
 
 template <class T>
-void test() {
+static void test() {
   T a;
   typename T::value_type v;
 #if TEST_STD_VER >= 20
@@ -93,7 +93,7 @@ void test() {
   a.notify_all();
 }
 
-void test() {
+static void test() {
   test<std::atomic<operator_hijacker>>();
   test<volatile std::atomic<operator_hijacker>>();
 }

@@ -30,7 +30,7 @@
 #include "test_macros.h"
 
 template <class OutIt, class CharT>
-constexpr void test() {
+constexpr static void test() {
   static_assert(
       std::is_same_v<typename std::basic_format_context<OutIt, CharT>::iterator,
                      OutIt>);
@@ -95,7 +95,7 @@ constexpr void test() {
                      std::formatter<const void*, CharT>>);
 }
 
-constexpr void test() {
+constexpr static void test() {
   test<std::back_insert_iterator<std::__format::__output_buffer<char>>, char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<std::back_insert_iterator<std::__format::__output_buffer<wchar_t>>,

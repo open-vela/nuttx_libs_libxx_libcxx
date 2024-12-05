@@ -16,7 +16,7 @@
 #include "test_iterators.h"
 
 template<class It>
-constexpr bool test() {
+constexpr static bool test() {
   using CommonIt = std::common_iterator<It, sentinel_wrapper<It>>;
   int a[] = {1,2,3};
   It it = It(a);

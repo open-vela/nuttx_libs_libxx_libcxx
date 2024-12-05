@@ -18,7 +18,7 @@
 #include "test_iterators.h"
 
 template <class It>
-TEST_CONSTEXPR_CXX17 void test() {
+TEST_CONSTEXPR_CXX17 static void test() {
     std::__unconstrained_reverse_iterator<It> r;
     (void)r;
 }

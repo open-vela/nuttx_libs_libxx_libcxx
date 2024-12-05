@@ -46,7 +46,7 @@ static_assert(std::is_swappable_v<const std::tuple<S&>>);
 static_assert(!std::is_swappable_v<const std::tuple<CS, S>>);
 static_assert(std::is_swappable_v<const std::tuple<CS, S&>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   int cs_calls = 0;
   int s_calls = 0;
   S s1{&s_calls};

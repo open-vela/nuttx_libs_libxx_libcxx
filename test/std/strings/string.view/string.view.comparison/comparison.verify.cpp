@@ -53,7 +53,7 @@ struct traits {
 };
 
 template <class CharT, class Ordering, bool Valid>
-void test() {
+static void test() {
   using type = std::basic_string_view<CharT, traits<CharT, Ordering>>;
   if constexpr (Valid)
     type{} <=> type{};

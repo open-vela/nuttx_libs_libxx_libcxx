@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     const std::ranges::iota_view<int, IntComparableWith<int>> io(0, IntComparableWith<int>(10));
     auto iter = io.begin();

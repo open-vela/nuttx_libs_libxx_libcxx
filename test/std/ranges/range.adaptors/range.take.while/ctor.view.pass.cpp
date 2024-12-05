@@ -48,7 +48,7 @@ static_assert(test_convertible<std::ranges::take_while_view<View, Pred>, View, P
 
 #endif // TEST_STD_VER >= 23
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::take_while_view<View, Pred> twv{View{{}, MoveOnly{5}}, Pred{}};
     assert(twv.pred().moved);

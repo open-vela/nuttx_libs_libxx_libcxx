@@ -16,7 +16,7 @@
 #include "test_iterators.h"
 #include "types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5};
 
   {

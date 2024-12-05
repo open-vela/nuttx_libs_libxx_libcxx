@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int count = 0;
+static int count = 0;
 
 // 1 arg, return void
 

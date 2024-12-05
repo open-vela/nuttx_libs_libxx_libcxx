@@ -21,7 +21,7 @@
 template<class T>
 concept SizeInvocable = requires(std::ranges::drop_view<T> t) { t.size(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   // sized_range<V>
   std::ranges::drop_view dropView1(MoveOnlyView(), 4);
   assert(dropView1.size() == 4);

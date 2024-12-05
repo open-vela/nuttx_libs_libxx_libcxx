@@ -15,6 +15,6 @@
 template<class T> std::ranges::iota_view<T> f(int);
 template<class T> void f(...);
 
-void test() {
+static void test() {
   f<bool>(42);
 }

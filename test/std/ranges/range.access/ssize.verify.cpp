@@ -15,7 +15,7 @@
 extern int arr[];
 
 // Verify that for an array of unknown bound `ranges::ssize` is ill-formed.
-void test() {
+static void test() {
   std::ranges::ssize(arr);
   // expected-error-re@-1 {{{{no matching function for call to object of type 'const (std::ranges::)?__ssize::__fn'}}}}
 }

@@ -130,7 +130,7 @@ TEST_CONSTEXPR_CXX20 void emplaceable_concept_tests() {
 #endif
 }
 
-void test_ctor_under_alloc() {
+static void test_ctor_under_alloc() {
 #if TEST_STD_VER >= 11
   int arr1[] = {42};
   int arr2[] = {1, 101, 42};

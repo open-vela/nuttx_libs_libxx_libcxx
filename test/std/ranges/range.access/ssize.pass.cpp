@@ -49,7 +49,7 @@ struct ShortUnsignedReturnType {
 // size_t changes depending on the platform.
 using SignedSizeT = std::make_signed_t<std::size_t>;
 
-constexpr bool test() {
+static constexpr bool test() {
   int a[4];
 
   assert(std::ranges::ssize(a) == 4);

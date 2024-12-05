@@ -33,7 +33,7 @@ test(S s1, S s2)
     assert(s2 == s1_);
 }
 
-TEST_CONSTEXPR_CXX20 bool test() {
+TEST_CONSTEXPR_CXX20 static bool test() {
   {
     typedef std::string S;
     test(S(""), S(""));

@@ -135,7 +135,7 @@ struct test_signed
     }
 };
 
-TEST_CONSTEXPR_CXX23 bool test()
+static TEST_CONSTEXPR_CXX23 bool test()
 {
     run<test_basics>(integrals);
     run<test_signed>(all_signed);

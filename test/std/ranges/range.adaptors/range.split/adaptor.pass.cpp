@@ -46,7 +46,7 @@ static_assert(!CanBePiped<NotAView,     decltype(std::views::split)>);
 
 static_assert(std::same_as<decltype(std::views::split), decltype(std::ranges::views::split)>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::string_view input = "abc";
   std::string_view sep = "a";
 

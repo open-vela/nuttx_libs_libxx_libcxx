@@ -55,7 +55,7 @@ constexpr void test_char_type() {
   test_formatters(SV("}"), 1);
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_char_type<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_char_type<wchar_t>();

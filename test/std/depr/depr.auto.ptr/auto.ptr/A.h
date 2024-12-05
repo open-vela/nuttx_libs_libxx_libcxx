@@ -11,6 +11,7 @@
 
 #include <cassert>
 
+namespace {
 class A
 {
     int id_;
@@ -27,5 +28,6 @@ public:
 };
 
 int A::count = 0;
+}
 
 #endif // A_H

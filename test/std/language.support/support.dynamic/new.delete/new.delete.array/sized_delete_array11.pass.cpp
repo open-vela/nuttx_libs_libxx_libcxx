@@ -23,7 +23,7 @@
 
 int unsized_delete_called = 0;
 int unsized_delete_nothrow_called = 0;
-int sized_delete_called = 0;
+static int sized_delete_called = 0;
 
 void operator delete[](void* p) TEST_NOEXCEPT
 {

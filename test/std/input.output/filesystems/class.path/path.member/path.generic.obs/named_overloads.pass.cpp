@@ -34,13 +34,13 @@
 #include "test_iterators.h"
 #include "test_macros.h"
 
-MultiStringType input = MKSTR("c:\\foo\\bar");
+static MultiStringType input = MKSTR("c:\\foo\\bar");
 #ifdef _WIN32
 // On windows, the generic_* accessors return a path with forward slashes
-MultiStringType ref = MKSTR("c:/foo/bar");
+static MultiStringType ref = MKSTR("c:/foo/bar");
 #else
 // On posix, the input string is returned as-is
-MultiStringType ref = MKSTR("c:\\foo\\bar");
+static MultiStringType ref = MKSTR("c:\\foo\\bar");
 #endif
 
 extern "C" int main(int, char**)

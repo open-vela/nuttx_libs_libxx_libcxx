@@ -49,7 +49,7 @@ protected:
     virtual std::string do_grouping() const {return std::string("\1\2\3");}
 };
 
-void test1()
+static void test1()
 {
     char str[200];
     std::locale lc = std::locale::classic();
@@ -1838,7 +1838,7 @@ void test1()
     }
 }
 
-void test2()
+static void test2()
 {
     std::locale lc = std::locale::classic();
     std::locale lg(lc, new my_numpunct);

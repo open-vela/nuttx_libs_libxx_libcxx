@@ -57,7 +57,7 @@ constexpr void test_construction(AllExtents all_ext) {
 }
 
 template <class T, class TArg, class Test>
-constexpr void test() {
+constexpr static void test() {
   constexpr size_t D = std::dynamic_extent;
 
   test_construction<std::extents<T>, Test>(std::array<TArg, 0>{});

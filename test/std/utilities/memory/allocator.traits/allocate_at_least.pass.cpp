@@ -44,7 +44,7 @@ struct has_allocate_at_least {
   }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   { // check that std::allocate_at_least forwards to allocator::allocate if no allocate_at_least exists
     no_allocate_at_least<int> alloc;
     std::same_as<std::allocation_result<int*>> decltype(auto) ret = std::allocate_at_least(alloc, 1);

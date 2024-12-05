@@ -74,7 +74,7 @@ struct Elem {
   { return X == Y; }
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Bind arguments, call without arguments
   {
     {

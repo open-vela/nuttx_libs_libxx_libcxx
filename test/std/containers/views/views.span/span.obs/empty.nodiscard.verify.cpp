@@ -13,7 +13,7 @@
 
 #include <span>
 
-void test() {
+static void test() {
   std::span<int> s1;
   s1.empty(); // expected-warning {{ignoring return value of function declared with 'nodiscard' attribute}}
 

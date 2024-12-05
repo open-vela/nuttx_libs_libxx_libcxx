@@ -34,7 +34,7 @@
 #include <cstddef>
 
 template <class T>
-void test() {
+static void test() {
     static_assert((std::is_same<typename std::allocator<T>::size_type, std::size_t>::value), "");
     static_assert((std::is_same<typename std::allocator<T>::difference_type, std::ptrdiff_t>::value), "");
     static_assert((std::is_same<typename std::allocator<T>::pointer, T*>::value), "");

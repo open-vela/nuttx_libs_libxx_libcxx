@@ -27,7 +27,7 @@ constexpr std::size_t countn(std::span<const Sink, N> sp) {
     return sp.size();
 }
 
-constexpr bool test() {
+static constexpr bool test() {
     Sink a[10];
     assert(count({a}) == 10);
     assert(count({a, a+10}) == 10);

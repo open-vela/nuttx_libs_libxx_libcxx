@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "operator_hijacker.h"
 
-void test() {
+static void test() {
   std::valarray<operator_hijacker> vo;
   std::valarray<operator_hijacker> v;
   v = vo;

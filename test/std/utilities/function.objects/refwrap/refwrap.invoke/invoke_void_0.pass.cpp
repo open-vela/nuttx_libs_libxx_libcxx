@@ -22,7 +22,7 @@
 
 // 0 args, return void
 
-int count = 0;
+static int count = 0;
 
 void f_void_0()
 {

@@ -49,7 +49,7 @@ struct NoCopyRange : std::ranges::view_base {
 template <typename T>
 concept can_call_base_on = requires(T t) { std::forward<T>(t).base(); };
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
   // Check the const& overload

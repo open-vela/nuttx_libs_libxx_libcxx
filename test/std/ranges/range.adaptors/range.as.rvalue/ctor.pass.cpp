@@ -42,7 +42,7 @@ concept IsImplicitlyConstructible = requires(T val, Args... args) { val = {std::
 static_assert(IsImplicitlyConstructible<std::ranges::as_rvalue_view<DefaultConstructibleView>>);
 static_assert(!IsImplicitlyConstructible<std::ranges::as_rvalue_view<NonDefaultConstructibleView>, int>);
 
-constexpr bool test() {
+static constexpr bool test() {
   std::ranges::as_rvalue_view<DefaultConstructibleView> view = {};
   assert(view.base().i_ == 23);
 

@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 extern "C" int main(int, char**)
 {

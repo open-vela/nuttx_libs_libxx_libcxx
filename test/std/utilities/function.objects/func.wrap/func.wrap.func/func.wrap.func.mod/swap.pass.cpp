@@ -21,6 +21,7 @@
 
 #include "test_macros.h"
 
+namespace {
 class A {
   int data_[10];
 
@@ -54,12 +55,13 @@ public:
 };
 
 int A::count = 0;
+}
 
-int g0() { return 0; }
-int g(int) { return 0; }
-int h(int) { return 1; }
-int g2(int, int) { return 2; }
-int g3(int, int, int) { return 3; }
+static int g0() { return 0; }
+static int g(int) { return 0; }
+static int h(int) { return 1; }
+static int g2(int, int) { return 2; }
+static int g3(int, int, int) { return 3; }
 
 extern "C" int main(int, char**) {
   globalMemCounter.reset();

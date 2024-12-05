@@ -58,7 +58,7 @@ struct VirtualCountedDerived : VirtualCountedBase {
   constexpr ~VirtualCountedDerived() override {}
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   // Destroying a "trivial" object.
   {
     std::allocator<Counted> alloc;

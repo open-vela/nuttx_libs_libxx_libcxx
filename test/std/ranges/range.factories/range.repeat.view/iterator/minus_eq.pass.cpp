@@ -14,7 +14,7 @@
 #include <cassert>
 #include <concepts>
 
-constexpr bool test() {
+static constexpr bool test() {
   using Iter = std::ranges::iterator_t<std::ranges::repeat_view<int>>;
   std::ranges::repeat_view<int> v(10);
   auto iter = v.begin() + 10;

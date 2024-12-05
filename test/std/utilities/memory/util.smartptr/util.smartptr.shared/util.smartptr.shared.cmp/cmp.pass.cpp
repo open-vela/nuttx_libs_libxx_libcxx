@@ -29,7 +29,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-void do_nothing(int*) {}
+static void do_nothing(int*) {}
 
 extern "C" int main(int, char**) {
   AssertComparisonsAreNoexcept<std::shared_ptr<int> >();

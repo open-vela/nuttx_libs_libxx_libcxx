@@ -55,7 +55,7 @@ struct BadIter {
 
 // Verify that iterators with incorrect `iterator_traits` are rejected. This protects against potential undefined
 // behavior when these iterators are passed to standard algorithms.
-void test() {
+static void test() {
   std::sort(BadIter(), BadIter());
   //expected-error-re@*:* {{{{(static_assert|static assertion)}} failed {{.*}}It looks like your iterator's `iterator_traits<It>::reference` does not match the return type of dereferencing the iterator}}
 }

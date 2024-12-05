@@ -14,7 +14,7 @@
 
 #include "../types.h"
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     [[maybe_unused]] ValueTypeForward val;
   }

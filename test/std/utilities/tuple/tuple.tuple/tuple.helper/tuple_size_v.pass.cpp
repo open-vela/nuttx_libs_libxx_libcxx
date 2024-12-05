@@ -19,7 +19,7 @@
 #include "test_macros.h"
 
 template <class Tuple, int Expect>
-void test()
+static void test()
 {
     static_assert(std::tuple_size_v<Tuple> == Expect, "");
     static_assert(std::tuple_size_v<Tuple> == std::tuple_size<Tuple>::value, "");

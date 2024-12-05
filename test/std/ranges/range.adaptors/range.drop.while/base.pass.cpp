@@ -41,7 +41,7 @@ static_assert(HasBase<std::ranges::drop_while_view<View, Pred>&&>);
 static_assert(!HasBase<std::ranges::drop_while_view<MoveOnlyView, Pred> const&>);
 static_assert(HasBase<std::ranges::drop_while_view<MoveOnlyView, Pred>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   // const &
   {
     const std::ranges::drop_while_view<View, Pred> dwv{View{{}, 5}, {}};

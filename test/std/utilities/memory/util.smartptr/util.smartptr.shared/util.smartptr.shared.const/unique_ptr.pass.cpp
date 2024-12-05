@@ -21,6 +21,7 @@
 #include "test_macros.h"
 #include "count_new.h"
 
+namespace {
 struct B
 {
     static int count;
@@ -43,6 +44,7 @@ struct A
 };
 
 int A::count = 0;
+}
 
 void fn ( const std::shared_ptr<int> &) {}
 void fn ( const std::shared_ptr<B> &) { assert (false); }

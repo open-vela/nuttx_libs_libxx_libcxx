@@ -22,9 +22,9 @@
 
 // 0 args, return int
 
-int count = 0;
+static int count = 0;
 
-int f_int_0()
+static int f_int_0()
 {
     return 3;
 }
@@ -34,7 +34,7 @@ struct A_int_0
     int operator()() {return 4;}
 };
 
-void
+static void
 test_int_0()
 {
     // function
@@ -58,7 +58,7 @@ test_int_0()
 
 // 1 arg, return void
 
-void f_void_1(int i)
+static void f_void_1(int i)
 {
     count += i;
 }

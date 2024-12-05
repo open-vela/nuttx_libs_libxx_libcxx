@@ -93,7 +93,7 @@ constexpr bool test_ym_plus_m() {
   return true;
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   test_ym_plus_y();
   test_ym_plus_m();
   return true;

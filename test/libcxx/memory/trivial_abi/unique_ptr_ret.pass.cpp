@@ -17,7 +17,7 @@
 #include <memory>
 #include <cassert>
 
-__attribute__((noinline)) void call_something() { asm volatile(""); }
+__attribute__((noinline)) static void call_something() { asm volatile(""); }
 
 struct Node {
   explicit Node() {}

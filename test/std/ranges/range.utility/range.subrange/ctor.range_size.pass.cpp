@@ -32,7 +32,7 @@ namespace std::ranges {
   inline constexpr bool enable_borrowed_range<::BorrowedRange> = true;
 }
 
-constexpr bool test() {
+static constexpr bool test() {
   int buff[] = {1, 2, 3, 4, 5, 6, 7, 8};
   using Subrange = std::ranges::subrange<int*, int*, std::ranges::subrange_kind::sized>;
 

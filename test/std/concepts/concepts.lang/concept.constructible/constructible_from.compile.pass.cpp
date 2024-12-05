@@ -52,12 +52,12 @@ struct NoexceptDependant {
 };
 
 template <class T, class... Args>
-void test() {
+static void test() {
   static_assert(std::constructible_from<T, Args...> ==
                 (std::destructible<T> && std::is_constructible_v<T, Args...>));
 }
 
-void test() {
+static void test() {
   test<bool>();
   test<bool, bool>();
 

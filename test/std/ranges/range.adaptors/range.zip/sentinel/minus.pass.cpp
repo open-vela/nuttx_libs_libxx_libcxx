@@ -113,7 +113,7 @@ template <class T>
 concept SentinelHasMinus = HasMinus<std::ranges::sentinel_t<T>, std::ranges::iterator_t<T>>;
 // clang-format on
 
-constexpr bool test() {
+static constexpr bool test() {
   int buffer1[5] = {1, 2, 3, 4, 5};
 
   {

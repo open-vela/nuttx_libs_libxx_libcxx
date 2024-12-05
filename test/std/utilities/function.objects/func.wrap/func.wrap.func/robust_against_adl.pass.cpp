@@ -41,7 +41,7 @@ Ptr two_args(Ptr p, Ptr) { return p; }
 Ptr three_args(Ptr p, Ptr, Ptr) { return p; }
 Ptr four_args(Ptr p, Ptr, Ptr, Ptr) { return p; }
 
-void one_arg_void(Ptr) { }
+static void one_arg_void(Ptr) { }
 
 extern "C" int main(int, char**) {
     Ptr x = nullptr;

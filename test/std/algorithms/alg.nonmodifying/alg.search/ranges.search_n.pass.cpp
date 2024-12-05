@@ -55,7 +55,7 @@ static_assert(!HasSearchNR<ForwardRangeNotSentinelEqualityComparableWith>);
 static_assert(!HasSearchNR<UncheckedRange<int**>>); // not indirectly comparable
 
 template <class Iter, class Sent = Iter>
-constexpr void test_iterators() {
+constexpr static void test_iterators() {
   { // simple test
     {
       int a[] = {1, 2, 3, 4, 5, 6};
@@ -244,7 +244,7 @@ constexpr void test_iterators() {
     }
   }
 }
-constexpr bool test() {
+static constexpr bool test() {
   test_iterators<forward_iterator<int*>>();
   test_iterators<forward_iterator<int*>, sized_sentinel<forward_iterator<int*>>>();
   test_iterators<bidirectional_iterator<int*>>();

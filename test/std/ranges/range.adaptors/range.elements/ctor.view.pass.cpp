@@ -28,7 +28,7 @@ struct View : std::ranges::view_base {
 static_assert(std::is_constructible_v<std::ranges::elements_view<View, 0>, View>);
 static_assert(!std::is_convertible_v<View, std::ranges::elements_view<View, 0>>);
 
-constexpr bool test() {
+static constexpr bool test() {
   {
     std::ranges::elements_view<View, 0> ev{View{{}, MoveOnly{5}}};
     assert(std::move(ev).base().mo.get() == 5);

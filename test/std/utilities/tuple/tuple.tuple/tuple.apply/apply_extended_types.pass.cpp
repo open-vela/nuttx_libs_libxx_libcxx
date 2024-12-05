@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int count = 0;
+static int count = 0;
 
 struct A_int_0
 {

@@ -19,7 +19,7 @@
 #include "constexpr_char_traits.h"
 
 template <class S>
-void
+static void
 test(const S& s, const typename S::value_type* str, typename S::size_type pos,
      typename S::size_type n, typename S::size_type x)
 {
@@ -30,7 +30,7 @@ test(const S& s, const typename S::value_type* str, typename S::size_type pos,
 }
 
 template <class S>
-void test0()
+static void test0()
 {
     test(S(""), "", 0, 0, S::npos);
     test(S(""), "irkhs", 0, 0, S::npos);
@@ -135,7 +135,7 @@ void test0()
 }
 
 template <class S>
-void test1()
+static void test1()
 {
     test(S("gbhqo"), "skqne", 5, 4, 4);
     test(S("ktdor"), "kipnf", 5, 5, 4);
@@ -240,7 +240,7 @@ void test1()
 }
 
 template <class S>
-void test2()
+static void test2()
 {
     test(S("sdpcilonqj"), "dnjfsagktr", 10, 5, 8);
     test(S("gtfbdkqeml"), "nejaktmiqg", 10, 9, 9);
@@ -345,7 +345,7 @@ void test2()
 }
 
 template <class S>
-void test3()
+static void test3()
 {
     test(S("pboqganrhedjmltsicfk"), "gbkhdnpoietfcmrslajq", 20, 1, 19);
     test(S("klchabsimetjnqgorfpd"), "rtfnmbsglkjaichoqedp", 20, 10, 19);

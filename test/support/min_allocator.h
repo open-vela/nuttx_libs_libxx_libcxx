@@ -84,6 +84,7 @@ public:
     friend bool operator!=(no_default_allocator x, no_default_allocator y) {return !(x == y);}
 };
 
+namespace {
 struct malloc_allocator_base {
     static std::size_t outstanding_bytes;
     static std::size_t alloc_count;
@@ -108,6 +109,7 @@ size_t malloc_allocator_base::outstanding_bytes = 0;
 size_t malloc_allocator_base::alloc_count = 0;
 size_t malloc_allocator_base::dealloc_count = 0;
 bool malloc_allocator_base::disable_default_constructor = false;
+}
 
 
 template <class T>

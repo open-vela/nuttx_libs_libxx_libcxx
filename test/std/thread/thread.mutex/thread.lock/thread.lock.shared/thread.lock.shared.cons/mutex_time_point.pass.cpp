@@ -30,7 +30,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-std::shared_timed_mutex m;
+static std::shared_timed_mutex m;
 
 typedef std::chrono::steady_clock Clock;
 typedef Clock::time_point time_point;
@@ -38,14 +38,14 @@ typedef Clock::duration duration;
 typedef std::chrono::milliseconds ms;
 typedef std::chrono::nanoseconds ns;
 
-ms LongTime = ms(5000);
-ms ShortTime = ms(50);
+static ms LongTime = ms(5000);
+static ms ShortTime = ms(50);
 
 static constexpr unsigned Threads = 5;
 
-std::atomic<unsigned> CountDown(Threads);
+static std::atomic<unsigned> CountDown(Threads);
 
-void f1()
+static void f1()
 {
   --CountDown;
   time_point t0 = Clock::now();
@@ -55,7 +55,7 @@ void f1()
   assert(t1 - t0 <= LongTime);
 }
 
-void f2()
+static void f2()
 {
   time_point t0 = Clock::now();
   std::shared_lock<std::shared_timed_mutex> lk(m, t0 + ShortTime);

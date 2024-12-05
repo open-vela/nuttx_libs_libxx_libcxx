@@ -38,7 +38,7 @@ struct TracedMoveView : std::ranges::view_base {
   TracedMoveIter end() const;
 };
 
-constexpr bool test() {
+static constexpr bool test() {
   using Iter = std::ranges::iterator_t<std::ranges::elements_view<TracedMoveView, 0>>;
   Iter iter{TracedMoveIter{}};
   assert(iter.base().moved);

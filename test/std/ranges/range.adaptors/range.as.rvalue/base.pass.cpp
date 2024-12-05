@@ -36,7 +36,7 @@ static_assert(HasBase<std::ranges::as_rvalue_view<SimpleView>&&>);
 static_assert(!HasBase<std::ranges::as_rvalue_view<MoveOnlyView> const&>);
 static_assert(HasBase<std::ranges::as_rvalue_view<MoveOnlyView>&&>);
 
-constexpr bool test() {
+static constexpr bool test() {
   { // const &
     const std::ranges::as_rvalue_view<SimpleView> view(SimpleView{{}, 5});
     std::same_as<SimpleView> decltype(auto) v = view.base();

@@ -29,7 +29,7 @@
 // Explicit version
 
 template <class LHS, class RHS>
-TEST_CONSTEXPR_CXX23 void checkReferenceDeleter(LHS& lhs, RHS& rhs) {
+TEST_CONSTEXPR_CXX23 static void checkReferenceDeleter(LHS& lhs, RHS& rhs) {
   typedef typename LHS::deleter_type NewDel;
   static_assert(std::is_reference<NewDel>::value, "");
   rhs.get_deleter().set_state(42);
@@ -41,13 +41,13 @@ TEST_CONSTEXPR_CXX23 void checkReferenceDeleter(LHS& lhs, RHS& rhs) {
 }
 
 template <class LHS, class RHS>
-TEST_CONSTEXPR_CXX23 void checkDeleter(LHS& lhs, RHS& rhs, int LHSVal, int RHSVal) {
+TEST_CONSTEXPR_CXX23 static void checkDeleter(LHS& lhs, RHS& rhs, int LHSVal, int RHSVal) {
   assert(lhs.get_deleter().state() == LHSVal);
   assert(rhs.get_deleter().state() == RHSVal);
 }
 
 template <class LHS, class RHS>
-TEST_CONSTEXPR_CXX23 void checkCtor(LHS& lhs, RHS& rhs, A* RHSVal) {
+TEST_CONSTEXPR_CXX23 static void checkCtor(LHS& lhs, RHS& rhs, A* RHSVal) {
   assert(lhs.get() == RHSVal);
   assert(rhs.get() == nullptr);
   if (!TEST_IS_CONSTANT_EVALUATED) {
@@ -56,7 +56,7 @@ TEST_CONSTEXPR_CXX23 void checkCtor(LHS& lhs, RHS& rhs, A* RHSVal) {
   }
 }
 
-TEST_CONSTEXPR_CXX23 void checkNoneAlive() {
+TEST_CONSTEXPR_CXX23 static void checkNoneAlive() {
   if (!TEST_IS_CONSTANT_EVALUATED) {
     assert(A::count == 0);
     assert(B::count == 0);
@@ -95,7 +95,7 @@ struct NCGenericDeleter {
   TEST_CONSTEXPR_CXX23 void operator()(void*) const {}
 };
 
-TEST_CONSTEXPR_CXX23 void test_sfinae() {
+TEST_CONSTEXPR_CXX23 static void test_sfinae() {
   using DA = NCConvertingDeleter<A>; // non-copyable deleters
   using DB = NCConvertingDeleter<B>;
   using UA = std::unique_ptr<A>;

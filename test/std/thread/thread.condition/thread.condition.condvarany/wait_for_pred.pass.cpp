@@ -36,20 +36,20 @@ public:
     bool operator()() {return i_ != 0;}
 };
 
-std::condition_variable_any cv;
+static std::condition_variable_any cv;
 
 typedef std::timed_mutex L0;
 typedef std::unique_lock<L0> L1;
 
-L0 m0;
+static L0 m0;
 
-int test1 = 0;
-int test2 = 0;
+static int test1 = 0;
+static int test2 = 0;
 
-int runs = 0;
-bool expect_result = false;
+static int runs = 0;
+static bool expect_result = false;
 
-void f()
+static void f()
 {
     typedef std::chrono::system_clock Clock;
     typedef std::chrono::milliseconds milliseconds;

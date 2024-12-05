@@ -42,11 +42,11 @@
 #include "test_convertible.h"
 #endif
 
-void check_random_device_valid(const std::string &token) {
+static void check_random_device_valid(const std::string &token) {
   std::random_device r(token);
 }
 
-void check_random_device_invalid(const std::string &token) {
+static void check_random_device_invalid(const std::string &token) {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   try {
     std::random_device r(token);
