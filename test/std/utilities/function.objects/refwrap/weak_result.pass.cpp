@@ -74,7 +74,7 @@ public:
     static const bool value = sizeof(test<T>(0)) == 1;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::reference_wrapper<functor1>::result_type,
                                 char>::value), "");

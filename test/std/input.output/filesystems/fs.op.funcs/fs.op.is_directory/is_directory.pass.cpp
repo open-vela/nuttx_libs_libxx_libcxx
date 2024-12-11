@@ -98,7 +98,7 @@ static void test_is_directory_fails()
     TEST_THROWS_TYPE(filesystem_error, is_directory(p));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     is_directory_status_test();
     test_exist_not_found();

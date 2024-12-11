@@ -23,7 +23,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     TEST_LIBCPP_ASSERT_FAILURE(
         [] { std::counting_semaphore<> s(-1); }(),

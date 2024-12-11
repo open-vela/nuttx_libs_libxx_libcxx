@@ -69,7 +69,7 @@ test()
         test(Iter(v.data()), Iter(v.data()+v.size()), x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int d[] = {0, 1, 2, 3};
     for (int* e = d; e <= d+4; ++e)

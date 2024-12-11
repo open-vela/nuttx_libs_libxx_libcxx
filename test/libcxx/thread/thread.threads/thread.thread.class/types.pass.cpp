@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::thread::native_handle_type, pthread_t>::value), "");
 

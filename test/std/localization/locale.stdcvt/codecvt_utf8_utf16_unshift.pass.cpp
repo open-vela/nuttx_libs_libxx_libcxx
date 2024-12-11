@@ -27,7 +27,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
     {

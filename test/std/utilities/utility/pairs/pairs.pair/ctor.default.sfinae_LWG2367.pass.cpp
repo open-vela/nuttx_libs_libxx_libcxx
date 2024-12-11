@@ -139,7 +139,7 @@ void test_illformed_default()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         // Check that pair<T, U> can still be used even if

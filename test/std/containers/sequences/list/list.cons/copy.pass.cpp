@@ -18,7 +18,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::list<int> l(3, 2);

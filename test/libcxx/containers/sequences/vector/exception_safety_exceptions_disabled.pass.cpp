@@ -35,7 +35,7 @@ public:
   A(A const&) { assert(false); }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::vector<A> v;
 
   // Create a vector containing some number of elements that will

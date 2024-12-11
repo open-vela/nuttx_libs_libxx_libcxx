@@ -77,7 +77,7 @@ struct NonCopyConstructible {
     NonCopyConstructible(NonCopyConstructible&&) = default;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<std::unique_ptr<Derived>, int> P1;

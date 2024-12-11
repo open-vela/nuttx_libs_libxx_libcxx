@@ -23,7 +23,7 @@
 #include "test_macros.h"
 #include "allocators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::scoped_allocator_adaptor<A1<int>> A;

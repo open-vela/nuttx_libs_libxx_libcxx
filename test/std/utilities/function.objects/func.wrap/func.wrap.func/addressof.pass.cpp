@@ -24,7 +24,7 @@ struct TrapAddressof : operator_hijacker {
     int operator()() const { return 1; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::function<int()> f = TrapAddressof();
     assert(f() == 1);
     return 0;

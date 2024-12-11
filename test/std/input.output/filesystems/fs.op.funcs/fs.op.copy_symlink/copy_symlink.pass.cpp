@@ -102,7 +102,7 @@ static void copy_symlink_basic()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     test_error_reporting();
     copy_symlink_basic();

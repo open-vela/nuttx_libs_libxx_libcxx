@@ -181,7 +181,7 @@ test1()
 }
 #endif // TEST_STD_VER >= 11
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<int*> >();
     test<bidirectional_iterator<int*> >();

@@ -72,7 +72,7 @@ enum Enum {zero, one};
 typedef void (*FunctionPtr)();
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 // An object type is a (possibly cv-qualified) type that is not a function type,
 // not a reference type, and not a void type.

@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::istringstream inf(" 1 23");
     std::istream_iterator<int> i(inf);

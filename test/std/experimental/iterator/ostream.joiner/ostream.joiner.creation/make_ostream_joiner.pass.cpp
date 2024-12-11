@@ -40,7 +40,7 @@ void test (Delim &&d, Iter first, Iter last, const CharT *expected ) {
     assert(sstream.str() == expected);
     }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     const char chars[] = "0123456789";
     const int  ints [] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
 

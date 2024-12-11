@@ -36,7 +36,7 @@ struct alignas(32) A {
     int field;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::pair<A*, std::ptrdiff_t> ip = std::get_temporary_buffer<A>(5);
     assert(!(ip.first == nullptr) ^ (ip.second == 0));

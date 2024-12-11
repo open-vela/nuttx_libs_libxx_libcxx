@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::stoi("0") == 0);
     assert(std::stoi("-0") == 0);

@@ -27,7 +27,7 @@ struct mutex
 
 mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unique_lock<mutex> lk1(m);
     std::unique_lock<mutex> lk2;

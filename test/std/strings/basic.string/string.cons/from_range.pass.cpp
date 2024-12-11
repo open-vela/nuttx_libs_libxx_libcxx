@@ -118,7 +118,7 @@ constexpr bool test_inputs() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_inputs();
   static_assert(test_inputs());
 

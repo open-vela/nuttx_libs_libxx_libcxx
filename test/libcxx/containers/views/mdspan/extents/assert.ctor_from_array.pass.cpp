@@ -35,7 +35,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr size_t D = std::dynamic_extent;
   // working case
   {

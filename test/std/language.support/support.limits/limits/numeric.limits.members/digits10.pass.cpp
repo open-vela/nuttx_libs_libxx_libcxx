@@ -29,7 +29,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::is_bounded, "digits10 test 8");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, 0>();
     test<char, 2>();

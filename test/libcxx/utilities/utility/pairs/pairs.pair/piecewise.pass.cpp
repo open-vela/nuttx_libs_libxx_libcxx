@@ -25,7 +25,7 @@
 #include "test_macros.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     using NonThrowingConvert = NonThrowingTypes::ConvertingType;
     using ThrowingConvert = NonTrivialTypes::ConvertingType;
     static_assert(!std::is_nothrow_constructible<std::pair<ThrowingConvert, ThrowingConvert>,

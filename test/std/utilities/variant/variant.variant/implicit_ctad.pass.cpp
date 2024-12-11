@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // This is the motivating example from P0739R0
   {
     std::variant<int, double> v1(3);

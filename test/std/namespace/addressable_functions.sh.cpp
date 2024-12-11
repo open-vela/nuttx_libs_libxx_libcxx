@@ -159,7 +159,7 @@ WIstreamManipFunction* get_wistreammanip_tu2(std::string func)
 #endif // TEST_HAS_NO_WIDE_CHARACTERS
 
 #ifdef TU2
-    int main(int, char**) {
+    extern "C" int main(int, char**) {
         assert(get_formatflag_tu1("boolalpha") == get_formatflag_tu2("boolalpha"));
         assert(get_formatflag_tu1("noboolalpha") == get_formatflag_tu2("noboolalpha"));
         assert(get_formatflag_tu1("showbase") == get_formatflag_tu2("showbase"));

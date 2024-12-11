@@ -62,7 +62,7 @@ void test_stable(int N)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int a1[] = {4, 8, 1, 0, 5, 7, 2, 3, 6, 11, 10, 9};

@@ -40,7 +40,7 @@ static_assert(
 static_assert(std::is_same_v<remove_cvref_t<decltype(std::execution::unseq)>, std::execution::unsequenced_policy>);
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   use(std::execution::seq);
   use(std::execution::par);
   use(std::execution::par_unseq);

@@ -38,7 +38,7 @@ public:
     ~test_codecvt() {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         wchar_t buf[10];

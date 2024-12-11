@@ -37,7 +37,7 @@ constexpr int carr3[] = {7,8};
 std::string strs[] = {"ABC", "DEF", "GHI"};
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
 //  constexpr dynamically sized assignment

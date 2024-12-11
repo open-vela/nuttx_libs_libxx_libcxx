@@ -13,7 +13,7 @@
 
 #include <string_view>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::basic_string_view<char, std::char_traits<wchar_t>> s;
 

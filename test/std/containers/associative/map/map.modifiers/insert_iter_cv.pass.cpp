@@ -55,7 +55,7 @@ void do_insert_iter_cv_test()
     assert(r->second == 3.5);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_insert_iter_cv_test<std::map<int, double> >();
 #if TEST_STD_VER >= 11

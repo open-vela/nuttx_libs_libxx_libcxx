@@ -1575,7 +1575,7 @@ void test_trunc()
     assert(std::trunc(1) == 1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_abs();
     test_acos();

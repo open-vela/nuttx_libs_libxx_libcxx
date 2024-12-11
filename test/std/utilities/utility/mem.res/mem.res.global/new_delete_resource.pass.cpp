@@ -81,7 +81,7 @@ void test_allocate_deallocate() {
   ASSERT_WITH_LIBRARY_INTERNAL_ALLOCATIONS(globalMemCounter.checkDeleteCalledEq(1));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   ASSERT_NOEXCEPT(std::pmr::new_delete_resource());
   test_return();
   test_equality();

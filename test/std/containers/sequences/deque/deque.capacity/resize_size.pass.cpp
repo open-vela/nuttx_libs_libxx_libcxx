@@ -70,7 +70,7 @@ testN(int start, int N, int M)
     test(c1, M);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int rng[] = {0, 1, 2, 3, 1023, 1024, 1025, 2047, 2048, 2049};

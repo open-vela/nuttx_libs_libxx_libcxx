@@ -57,7 +57,7 @@ coro_t g() {
   g_resumed = true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(!f_started && !f_resumed && !g_started && !g_resumed);
   auto fret = f();
   assert(f_started && !f_resumed);

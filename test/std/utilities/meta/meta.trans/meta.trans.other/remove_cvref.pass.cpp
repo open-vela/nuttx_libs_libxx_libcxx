@@ -23,7 +23,7 @@ void test_remove_cvref()
     ASSERT_SAME_TYPE(U,        std::remove_cvref_t<T>);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_remove_cvref<void, void>();
     test_remove_cvref<int, int>();

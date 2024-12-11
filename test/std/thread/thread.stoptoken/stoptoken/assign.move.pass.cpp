@@ -23,7 +23,7 @@
 
 static_assert(std::is_nothrow_move_assignable_v<std::stop_token>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_token st1;
 

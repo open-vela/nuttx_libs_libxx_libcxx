@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using year_month_day = std::chrono::year_month_day;
 

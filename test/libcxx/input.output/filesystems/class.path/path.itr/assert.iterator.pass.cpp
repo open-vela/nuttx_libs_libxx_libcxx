@@ -22,7 +22,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Test incrementing/decrementing a singular iterator
   {
     fs::path::iterator singular;

@@ -17,7 +17,7 @@
 #include <iterator>
 #include <list>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::list<int> l;
     std::front_insert_iterator<std::list<int> > i = l;

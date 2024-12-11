@@ -29,7 +29,7 @@ struct A
     double a4(unsigned i) const {return i-1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const A a = A();
     assert(std::mem_fun(&A::a3)(&a) == 1);

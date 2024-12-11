@@ -68,7 +68,7 @@ static_assert(std::is_same<std::chars_format&, decltype(x &= x)>::value, "");
 static_assert(std::is_same<std::chars_format&, decltype(x |= x)>::value, "");
 static_assert(std::is_same<std::chars_format&, decltype(x ^= x)>::value, "");
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test());
   static_assert(test(), "");
 

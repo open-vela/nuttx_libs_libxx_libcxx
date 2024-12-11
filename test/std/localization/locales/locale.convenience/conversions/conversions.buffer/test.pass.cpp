@@ -19,7 +19,7 @@
 #include <locale>
 #include <sstream>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::string storage;
     {
         std::ostringstream bytestream;

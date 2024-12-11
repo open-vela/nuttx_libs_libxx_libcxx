@@ -358,7 +358,7 @@ void test_ext_int_2()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test_ext_int_0<

@@ -33,7 +33,7 @@ concept IsStopPossibleNoexcept = requires(const T& t) {
 
 static_assert(IsStopPossibleNoexcept<std::stop_token>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // no state
   {
     const std::stop_token st;

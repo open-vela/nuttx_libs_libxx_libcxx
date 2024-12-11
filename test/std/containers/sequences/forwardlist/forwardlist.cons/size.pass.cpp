@@ -33,7 +33,7 @@ void check_allocator(unsigned n, Allocator const &alloc = Allocator())
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     { // test that the ctor is explicit
       typedef std::forward_list<DefaultOnly> C;

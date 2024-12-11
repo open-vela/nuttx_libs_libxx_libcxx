@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     static_assert(std::is_enum<std::endian>::value, "");
 
 // Check that E is a scoped enum by checking for conversions.

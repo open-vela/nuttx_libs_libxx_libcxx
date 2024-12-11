@@ -688,7 +688,7 @@ test_int_2_noexcept()
 
 #endif // TEST_STD_VER >= 11
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_void_1();
     test_int_1();

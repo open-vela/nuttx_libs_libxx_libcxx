@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::stof("0") == 0);
     assert(std::stof("-0") == 0);

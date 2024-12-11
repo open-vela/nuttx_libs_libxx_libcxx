@@ -22,7 +22,7 @@
 #include "test_macros.h"
 #include "wide_temp_file.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::wstring temp = get_wide_temp_file_name();
     {
         std::ofstream fs(temp.c_str());

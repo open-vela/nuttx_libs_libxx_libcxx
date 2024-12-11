@@ -24,7 +24,7 @@
 #include <cassert>
 #include "platform_support.h" // locale name macros
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::locale en(LOCALE_en_US_UTF_8);
     std::locale zh(LOCALE_zh_CN_UTF_8);
     std::locale unnamed(std::locale(), new std::ctype<char>);

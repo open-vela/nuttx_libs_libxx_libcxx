@@ -56,7 +56,7 @@ struct implicit_construction {
   implicit_construction(T) : value(false) {}
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_index_type_combo<ArrayCtorTest>();
   static_assert(test_index_type_combo<ArrayCtorTest>());
 

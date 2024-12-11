@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef TEST_HAS_NO_CHAR8_T
     std::char_traits<char8_t>::int_type i = std::char_traits<char8_t>::eof();

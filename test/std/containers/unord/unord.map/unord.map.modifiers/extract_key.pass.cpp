@@ -48,7 +48,7 @@ void test(Container& c, KeyTypeIter first, KeyTypeIter last)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::unordered_map<int, int> m = {{1,1}, {2,2}, {3,3}, {4,4}, {5,5}, {6,6}};

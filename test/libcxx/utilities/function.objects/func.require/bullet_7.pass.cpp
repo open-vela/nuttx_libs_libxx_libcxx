@@ -247,7 +247,7 @@ void runTestCase() {
     runFunctorTestCase <Sig, Arity, LValueCaster, ArgCaster>();
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef void*& R;
     typedef ArgType A;
     typedef A const CA;

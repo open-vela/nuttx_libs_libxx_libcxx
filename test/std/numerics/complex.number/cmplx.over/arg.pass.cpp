@@ -44,7 +44,7 @@ test()
     test<T>(10);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

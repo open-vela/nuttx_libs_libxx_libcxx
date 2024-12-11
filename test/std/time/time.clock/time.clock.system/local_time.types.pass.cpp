@@ -26,7 +26,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using local_t = std::chrono::local_t;
     using year    = std::chrono::year;

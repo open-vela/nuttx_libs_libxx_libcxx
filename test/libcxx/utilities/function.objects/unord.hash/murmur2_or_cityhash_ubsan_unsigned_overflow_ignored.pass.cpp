@@ -29,7 +29,7 @@ void test(const void* key, int len) {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const std::string TestCases[] = {
       "abcdaoeuaoeclaoeoaeuaoeuaousaotehu]+}sthoasuthaoesutahoesutaohesutaoeusaoetuhasoetuhaoseutaoseuthaoesutaohes",
       "00000000000000000000000000000000000000000000000000000000000000000000000",

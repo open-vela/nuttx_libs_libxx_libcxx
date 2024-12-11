@@ -32,7 +32,7 @@ constexpr bool testConstexpr(D d1)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using month      = std::chrono::month;
     using year       = std::chrono::year;

@@ -36,7 +36,7 @@ enum E7        : std::underlying_type_t<E7> {}; // expected-error {{use of undec
 enum class E8  : std::underlying_type_t<E8> {}; // expected-error {{use of undeclared identifier 'E8'}}
 enum struct E9 : std::underlying_type_t<E9> {}; // expected-error {{use of undeclared identifier 'E9'}}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   return 0;
 }

@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::binary_function<int, unsigned, char>::first_argument_type, int>::value), "");
     static_assert((std::is_same<std::binary_function<int, unsigned, char>::second_argument_type, unsigned>::value), "");

@@ -20,7 +20,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     ex::memory_resource *m = ex::new_delete_resource();
     m->do_allocate(0, 0); // expected-error{{'do_allocate' is a private member}}
     m->do_deallocate(nullptr, 0, 0); // expected-error{{'do_deallocate' is a private member}}

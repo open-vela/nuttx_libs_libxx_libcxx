@@ -69,7 +69,7 @@ test()
     static_assert((std::is_same<typename S::reverse_iterator, typename S::const_reverse_iterator>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::char_traits<char> >();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

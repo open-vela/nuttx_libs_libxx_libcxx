@@ -71,7 +71,7 @@ struct incomplete_type;
 typedef void (*FunctionPtr)();
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_member_pointer<int Abstract::*>();
     test_is_member_pointer<double NotEmpty::*>();

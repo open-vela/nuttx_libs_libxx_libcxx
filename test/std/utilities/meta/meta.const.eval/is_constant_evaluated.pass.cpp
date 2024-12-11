@@ -30,7 +30,7 @@ TEST_MSVC_DIAGNOSTIC_IGNORED(5063)
 
 template <bool> struct InTemplate {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   // Test the signature
   {

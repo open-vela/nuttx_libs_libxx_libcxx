@@ -58,7 +58,7 @@ struct E
 template <typename T>
 struct X { T t; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_assignable<int&, int&> ();
     test_is_assignable<int&, int> ();

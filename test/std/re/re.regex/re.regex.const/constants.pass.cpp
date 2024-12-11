@@ -58,7 +58,7 @@ test()
     where(BR::egrep);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char>();
     test<wchar_t>();

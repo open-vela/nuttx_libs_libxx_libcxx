@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_allocator_statistics alloc_stats;
     assert(alloc_stats.alloc_count == 0);

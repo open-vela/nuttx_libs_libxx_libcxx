@@ -77,7 +77,7 @@ test2()
         unsigned long long>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

@@ -31,7 +31,7 @@ struct test
     test_allocator<int> get_allocator() {return c.get_allocator();}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test q(test_allocator<int>(3));
     assert(q.get_allocator() == test_allocator<int>(3));

@@ -21,7 +21,7 @@
 
 static_assert(std::is_nothrow_copy_constructible_v<std::stop_token>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source source;
     auto st = source.get_token();

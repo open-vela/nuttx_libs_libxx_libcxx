@@ -15,7 +15,7 @@
 #include <condition_variable>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::condition_variable_any cv0;
     std::condition_variable_any cv1;

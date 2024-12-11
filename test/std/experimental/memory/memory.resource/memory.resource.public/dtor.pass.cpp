@@ -33,7 +33,7 @@
 
 using std::experimental::pmr::memory_resource;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(
         std::has_virtual_destructor<memory_resource>::value

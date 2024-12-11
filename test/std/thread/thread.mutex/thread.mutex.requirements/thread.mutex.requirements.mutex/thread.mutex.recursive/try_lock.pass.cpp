@@ -48,7 +48,7 @@ void f()
     assert(d < ms(200));  // within 200ms
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     m.lock();
     std::thread t = support::make_test_thread(f);

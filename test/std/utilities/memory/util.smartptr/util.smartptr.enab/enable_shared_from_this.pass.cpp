@@ -52,7 +52,7 @@ struct PrivateBase : private std::enable_shared_from_this<PrivateBase> {
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     globalMemCounter.reset();
     {  // https://llvm.org/PR18843

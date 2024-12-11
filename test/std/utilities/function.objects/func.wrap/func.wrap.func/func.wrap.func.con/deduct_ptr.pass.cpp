@@ -30,7 +30,7 @@ R f2(A1, A2) { return {}; }
 R f3(A1, A2, A3) { return {}; }
 R f4(A1 = {}) { return {}; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // implicit
     std::function a = f0;

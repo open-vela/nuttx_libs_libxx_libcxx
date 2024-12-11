@@ -90,7 +90,7 @@ static void test_is_character_file_fails()
     TEST_THROWS_TYPE(filesystem_error, is_character_file(p));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     is_character_file_status_test();
     test_exist_not_found();

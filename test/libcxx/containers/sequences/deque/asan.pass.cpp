@@ -27,7 +27,7 @@ void do_exit() {
   exit(0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef cpp17_input_iterator<int*> MyInputIter;

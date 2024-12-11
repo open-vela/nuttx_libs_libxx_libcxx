@@ -41,7 +41,7 @@ const SwapTestcase TestCases[] =
 #undef LONG_STR1
 #undef LONG_STR2
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   {

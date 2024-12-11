@@ -40,7 +40,7 @@ struct NotConvertibleFromInt {};
 static_assert(!std::is_invocable_v<decltype(std::ranges::uninitialized_fill), NotConvertibleFromInt*,
                                    NotConvertibleFromInt*, int>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr int value = 42;
   Counted x(value);
   Counted::reset();

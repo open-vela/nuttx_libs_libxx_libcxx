@@ -46,7 +46,7 @@ struct MyInt {
   }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   const int N = 100'000;
   std::vector<MyInt> v;

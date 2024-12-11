@@ -55,7 +55,7 @@ struct CbNoExcept {
 static_assert(std::is_nothrow_constructible_v<std::stop_callback<CbNoExcept<true>>, std::stop_token&&, int>);
 static_assert(!std::is_nothrow_constructible_v<std::stop_callback<CbNoExcept<false>>, std::stop_token&&, int>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // was requested
   {
     std::stop_source ss;

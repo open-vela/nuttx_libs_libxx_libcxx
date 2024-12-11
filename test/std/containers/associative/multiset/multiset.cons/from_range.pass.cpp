@@ -28,7 +28,7 @@ void test_duplicates() {
   assert(std::ranges::is_permutation(input, c));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for_all_iterators_and_allocators<int>([]<class Iter, class Sent, class Alloc>() {
     test_associative_set<std::multiset, int, Iter, Sent, test_less<int>, Alloc>();
   });

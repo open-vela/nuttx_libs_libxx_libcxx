@@ -21,7 +21,7 @@
 #include <type_traits>
 #include <utility>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::pmr::polymorphic_allocator<void> A1;
   {
     static_assert(std::is_copy_constructible<A1>::value, "");

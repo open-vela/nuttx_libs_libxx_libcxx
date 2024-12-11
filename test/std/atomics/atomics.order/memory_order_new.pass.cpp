@@ -12,7 +12,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::memory_order_relaxed == std::memory_order::relaxed);
     static_assert(std::memory_order_consume == std::memory_order::consume);

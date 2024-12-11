@@ -127,7 +127,7 @@ TEST_CONSTEXPR_CXX20 bool check_swap()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_swap<int>();
     check_swap<W>();

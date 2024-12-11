@@ -213,7 +213,7 @@ constexpr bool test_char_traits() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // TODO: put these into a single function when we increase the constexpr step limit
   test_char_traits<char>();
   static_assert(test_char_traits<char>());

@@ -30,7 +30,7 @@ test()
     assert(m.str(4) == std::string(m[4]));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

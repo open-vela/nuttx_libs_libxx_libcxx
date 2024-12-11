@@ -30,7 +30,7 @@ test()
     static_assert(std::is_same<typename Opt::value_type, T>::value, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<optional<int>, int>();
     test<optional<const int>, const int>();

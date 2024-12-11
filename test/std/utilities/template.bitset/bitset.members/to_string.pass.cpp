@@ -109,7 +109,7 @@ TEST_CONSTEXPR_CXX23 bool test_to_string() {
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_to_string<0>();
   test_to_string<1>();
   test_to_string<31>();

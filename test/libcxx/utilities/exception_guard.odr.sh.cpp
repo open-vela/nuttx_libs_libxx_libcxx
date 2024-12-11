@@ -30,7 +30,7 @@ struct Rollback {
 
 const char* func();
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(std::strcmp(typeid(std::__exception_guard<Rollback>).name(), func()) != 0);
 
   return 0;

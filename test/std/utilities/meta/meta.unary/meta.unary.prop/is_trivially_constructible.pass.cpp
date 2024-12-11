@@ -65,7 +65,7 @@ struct A
     A(int, double);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_trivially_constructible<int> ();
     test_is_trivially_constructible<int, const int&> ();

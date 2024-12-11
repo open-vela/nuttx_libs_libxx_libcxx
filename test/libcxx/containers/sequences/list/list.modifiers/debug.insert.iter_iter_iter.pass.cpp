@@ -18,7 +18,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::list<int> v(100);
     std::list<int> v2(100);
     int a[] = {1, 2, 3, 4, 5};

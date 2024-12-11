@@ -147,7 +147,7 @@ static_assert(std::__has_random_access_iterator_category<fake2_deque_iterator>::
 static_assert(std::__libcpp_is_contiguous_iterator<fake2_deque_iterator>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  basic tests
     static_assert(( std::__libcpp_is_contiguous_iterator<char *>::value), "");

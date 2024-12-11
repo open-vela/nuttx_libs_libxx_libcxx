@@ -66,7 +66,7 @@ void test() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<WrappedSV, convertible_to_string_view>();
 
   return 0;

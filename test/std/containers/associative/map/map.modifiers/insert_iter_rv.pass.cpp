@@ -53,7 +53,7 @@ void do_insert_iter_rv_test()
     assert(r->first == 3);
     assert(r->second == 3);
 }
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_insert_iter_rv_test<std::map<int, MoveOnly>, std::pair<int, MoveOnly>>();
     do_insert_iter_rv_test<std::map<int, MoveOnly>, std::pair<const int, MoveOnly>>();

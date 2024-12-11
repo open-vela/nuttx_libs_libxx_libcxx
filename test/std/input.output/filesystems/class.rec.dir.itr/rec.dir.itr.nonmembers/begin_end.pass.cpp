@@ -59,7 +59,7 @@ static void test_ranged_for_loop()
     assert(dir_contents.empty());
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_function_signatures();
     test_ranged_for_loop();
 

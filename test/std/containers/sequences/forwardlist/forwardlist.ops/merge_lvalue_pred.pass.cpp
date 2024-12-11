@@ -34,7 +34,7 @@ struct value {
   friend bool operator==(const value& lhs, const value& rhs) { return lhs.a == rhs.a && lhs.b == rhs.b; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   { // Basic merge operation.
     typedef int T;
     typedef std::forward_list<T> C;

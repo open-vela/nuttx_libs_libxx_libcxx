@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "variant_test_helpers.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // expected-error-re@variant:* 3 {{{{(static_assert|static assertion)}} failed}}
     std::variant<int, int&> v; // expected-note {{requested here}}

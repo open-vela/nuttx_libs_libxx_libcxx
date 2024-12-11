@@ -45,7 +45,7 @@ constexpr bool alloc_copy_constructor_is_constexpr() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<long> T0;

@@ -235,7 +235,7 @@ void RunStringMoveTest(const fs::path::value_type* Expect) {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for (auto const& MS : PathList) {
     RunTestCase<char>(MS);
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

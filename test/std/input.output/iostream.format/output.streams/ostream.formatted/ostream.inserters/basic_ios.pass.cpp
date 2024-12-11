@@ -59,7 +59,7 @@ f(std::basic_ios<CharT>& os)
     return os;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb;

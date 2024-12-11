@@ -86,7 +86,7 @@ static_assert(!std::is_constructible_v<std::string_view, signed char*, signed ch
 static_assert(!std::is_constructible_v<std::string_view, random_access_iterator<char*>, random_access_iterator<char*>>); // not contiguous
 static_assert( std::is_constructible_v<std::string_view, contiguous_iterator<char*>, contiguous_iterator<char*>>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

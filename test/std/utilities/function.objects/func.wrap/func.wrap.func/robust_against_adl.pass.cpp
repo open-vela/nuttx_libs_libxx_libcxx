@@ -43,7 +43,7 @@ Ptr four_args(Ptr p, Ptr, Ptr, Ptr) { return p; }
 
 void one_arg_void(Ptr) { }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     Ptr x = nullptr;
     std::function<Ptr()> f(no_args); f();
     std::function<Ptr(Ptr)> g(one_arg); g(x);

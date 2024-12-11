@@ -26,7 +26,7 @@ struct TemplateConstructor
 
 bool operator<(const TemplateConstructor&, const TemplateConstructor&) { return false; }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::multiset<int> M;

@@ -28,7 +28,7 @@ private:
     int two;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
 //  array

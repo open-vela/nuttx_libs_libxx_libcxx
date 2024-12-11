@@ -52,7 +52,7 @@ auto test_exception =
           TEST_IGNORE_NODISCARD std::vformat(fmt, std::make_format_args<context_t<CharT>>(args...)));
     };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   format_tests<char>(test, test_exception);
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

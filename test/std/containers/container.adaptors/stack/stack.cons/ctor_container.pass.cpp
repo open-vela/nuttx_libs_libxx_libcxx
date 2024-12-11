@@ -29,7 +29,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::deque<int> Container;
     typedef std::stack<int> Q;

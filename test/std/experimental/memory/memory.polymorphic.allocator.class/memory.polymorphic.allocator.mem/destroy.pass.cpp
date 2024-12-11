@@ -37,7 +37,7 @@ struct destroyable
     ~destroyable() { --count; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef ex::polymorphic_allocator<double> A;
     {

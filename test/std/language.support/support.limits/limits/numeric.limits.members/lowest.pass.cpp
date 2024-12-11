@@ -35,7 +35,7 @@ test(T expected)
     assert(std::numeric_limits<const volatile T>::is_bounded);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool>(false);
     test<char>(CHAR_MIN);

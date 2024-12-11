@@ -70,7 +70,7 @@
 #error toupper defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
     ASSERT_SAME_TYPE(int, decltype(std::isalnum(0)));

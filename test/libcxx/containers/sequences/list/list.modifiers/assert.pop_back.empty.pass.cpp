@@ -20,7 +20,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int a[] = {1, 2, 3};
     std::list<int> c(a, a+3);
     c.pop_back();

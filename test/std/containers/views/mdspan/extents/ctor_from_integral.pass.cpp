@@ -47,7 +47,7 @@ struct IntegralCtorTest {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_index_type_combo<IntegralCtorTest>();
   static_assert(test_index_type_combo<IntegralCtorTest>());
 

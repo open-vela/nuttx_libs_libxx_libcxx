@@ -60,7 +60,7 @@ TEST_CONSTEXPR_CXX20 bool test_pointers()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<7, int, int*>();
     test<7, int, random_access_iterator<int*> >();

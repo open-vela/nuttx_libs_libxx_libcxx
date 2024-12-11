@@ -96,7 +96,7 @@ struct std::char_traits<char_ascii> {
     }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::basic_string<char_ascii> str;
 
     char_ascii ch('A');

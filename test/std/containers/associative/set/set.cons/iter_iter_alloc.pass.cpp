@@ -26,7 +26,7 @@
 #include "../../../test_compare.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef int V;

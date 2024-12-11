@@ -188,7 +188,7 @@ void test_empty_specialization()
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_primary_template();
   test_empty_specialization();
 

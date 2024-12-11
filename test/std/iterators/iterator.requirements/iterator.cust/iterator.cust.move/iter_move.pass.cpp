@@ -186,7 +186,7 @@ template<class T> struct Holder { T t; };
 static_assert(std::is_invocable_v<IterMoveT, Holder<Incomplete>**>);
 static_assert(std::is_invocable_v<IterMoveT, Holder<Incomplete>**&>);
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test();
   static_assert(test());

@@ -1057,7 +1057,7 @@ void all_floating_tests(mt19937_64& mt64) {
     }
 }
 
-int main(int argc, char** argv) {
+extern "C" int main(int argc, char** argv) {
     const auto start = chrono::steady_clock::now();
 
     mt19937_64 mt64;

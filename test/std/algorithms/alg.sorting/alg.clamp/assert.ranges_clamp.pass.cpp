@@ -20,7 +20,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   (void)std::ranges::clamp(1, 2, 0, std::ranges::greater{});
   TEST_LIBCPP_ASSERT_FAILURE(std::ranges::clamp(1, 2, 0), "Bad bounds passed to std::ranges::clamp");
 

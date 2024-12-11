@@ -40,7 +40,7 @@ constexpr bool check_tag(Up) {
         && std::is_same<Tp, Up>::value;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // test in_place_t
     {
         using T = std::in_place_t;

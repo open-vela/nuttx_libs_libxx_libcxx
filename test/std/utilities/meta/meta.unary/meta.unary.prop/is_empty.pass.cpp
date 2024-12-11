@@ -78,7 +78,7 @@ struct bit_one
     int :  1;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_empty<void>();
     test_is_not_empty<int&>();

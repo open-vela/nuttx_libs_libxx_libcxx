@@ -48,7 +48,7 @@ void do_test(int *LHSVal, int *RHSVal) {
   }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   int i;
   std::pair<int *, int *> const TestCases[] = {

@@ -19,7 +19,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   char c = 0;
   TEST_LIBCPP_ASSERT_FAILURE(
       std::string_view(&c, -1), "string_view::string_view(_CharT *, size_t): length does not fit in difference_type");

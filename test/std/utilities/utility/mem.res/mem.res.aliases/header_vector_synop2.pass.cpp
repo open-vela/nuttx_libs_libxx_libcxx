@@ -20,7 +20,7 @@
 
 #include <vector>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // Check that std::pmr::vector is usable without <memory_resource>.
     std::pmr::vector<int> l;

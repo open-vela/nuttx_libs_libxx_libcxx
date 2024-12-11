@@ -89,7 +89,7 @@ struct PotentiallyThrowingMoveAssignable
     PotentiallyThrowingMoveAssignable& operator=(PotentiallyThrowingMoveAssignable&&) { return *this; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<long, std::unique_ptr<D>> T0;

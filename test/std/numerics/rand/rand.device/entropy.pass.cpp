@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::random_device r;
   double e = r.entropy();
   assert(e >= 0);

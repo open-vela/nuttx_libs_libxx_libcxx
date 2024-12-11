@@ -52,7 +52,7 @@ struct C
     typedef int result_type;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::unary_function<int, char>,
                                    std::reference_wrapper<functor1> >::value), "");

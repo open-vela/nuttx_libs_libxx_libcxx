@@ -34,7 +34,7 @@ TEST_CONSTEXPR_CXX23 bool test_left_shift() {
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_left_shift<0>();
   test_left_shift<1>();
   test_left_shift<31>();

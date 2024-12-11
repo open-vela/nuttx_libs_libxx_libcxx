@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::logic_error, std::out_of_range>::value),
                  "std::is_base_of<std::logic_error, std::out_of_range>::value");

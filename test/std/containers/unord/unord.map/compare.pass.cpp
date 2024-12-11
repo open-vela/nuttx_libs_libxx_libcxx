@@ -34,7 +34,7 @@ namespace std
     };
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::unordered_map<Key, int> MapT;
     typedef MapT::iterator Iter;

@@ -117,7 +117,7 @@ static void test_exception_contains_paths()
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_canonical();
     test_dne_path();

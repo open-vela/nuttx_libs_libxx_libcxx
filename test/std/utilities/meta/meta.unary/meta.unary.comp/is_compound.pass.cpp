@@ -72,7 +72,7 @@ enum Enum {zero, one};
 typedef void (*FunctionPtr)();
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_compound<char[3]>();
     test_is_compound<char[]>();

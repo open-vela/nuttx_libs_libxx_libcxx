@@ -123,7 +123,7 @@ void test_padding () {
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     both_ways ( "" );   // This is a compilation check
 

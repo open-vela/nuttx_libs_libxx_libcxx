@@ -24,7 +24,7 @@
 #include "assert_macros.h"
 #include "concat_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // clang-format off
   struct {
     std::string input;

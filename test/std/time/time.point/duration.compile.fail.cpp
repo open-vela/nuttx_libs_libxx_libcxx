@@ -14,7 +14,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::time_point<std::chrono::system_clock, int> T;
     T t;

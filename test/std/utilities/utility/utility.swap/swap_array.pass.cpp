@@ -70,7 +70,7 @@ constexpr bool test_swap_constexpr()
 }
 #endif // TEST_STD_VER > 17
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         int i[3] = {1, 2, 3};

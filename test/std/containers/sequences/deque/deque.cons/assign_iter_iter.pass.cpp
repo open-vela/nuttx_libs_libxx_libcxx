@@ -154,7 +154,7 @@ void test_iterators() {
   test_emplacable_concept<int*>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   basic_test();
 
   return 0;

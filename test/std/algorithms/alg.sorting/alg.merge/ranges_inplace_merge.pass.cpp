@@ -332,7 +332,7 @@ bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   // inplace_merge is not constexpr in the latest finished Standard (C++20)
 

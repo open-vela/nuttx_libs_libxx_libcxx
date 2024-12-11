@@ -23,7 +23,7 @@ struct A {
     ~A() { *p_ -= 1; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // Example 1:
     // Without P1951, we call the `pair(int, const A&)` constructor (the converting constructor is not usable because
     // we can't deduce from an initializer list), which creates the A temporary as part of the call to f. With P1951,

@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::mutex m;
     pthread_mutex_t* h = m.native_handle();

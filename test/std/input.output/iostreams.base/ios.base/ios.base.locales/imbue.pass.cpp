@@ -75,7 +75,7 @@ void f3(std::ios_base::event ev, std::ios_base& stream, int index)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test t;
     std::ios_base& b = t;

@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::list<int> c1(100);
     std::list<int> c2;
     TEST_LIBCPP_ASSERT_FAILURE(c1.insert(c2.cbegin(), 5, 1),

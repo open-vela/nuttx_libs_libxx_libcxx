@@ -14,7 +14,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     ASSERT_SAME_TYPE(char, std::conditional<true, char, int>::type);
     ASSERT_SAME_TYPE(int,  std::conditional<false, char, int>::type);

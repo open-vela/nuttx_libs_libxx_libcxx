@@ -78,7 +78,7 @@ void test() {
   test_static_observers<std::extents<T, D, D, D>, 3, 3, D, D, D>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<int>();
   test<unsigned>();
   test<char>();

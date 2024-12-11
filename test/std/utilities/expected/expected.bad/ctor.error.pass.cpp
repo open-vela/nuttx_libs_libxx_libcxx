@@ -23,7 +23,7 @@
 static_assert(std::convertible_to<int, int>);
 static_assert(!std::convertible_to<int, std::bad_expected_access<int>>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::bad_expected_access<MoveOnly> b(MoveOnly{3});
   assert(b.error().get() == 3);
 

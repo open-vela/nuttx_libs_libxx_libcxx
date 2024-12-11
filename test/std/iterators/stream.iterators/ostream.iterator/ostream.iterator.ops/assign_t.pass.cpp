@@ -21,7 +21,7 @@
 TEST_CLANG_DIAGNOSTIC_IGNORED("-Wliteral-conversion")
 TEST_MSVC_DIAGNOSTIC_IGNORED(4244) // conversion from 'X' to 'Y', possible loss of data
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::ostringstream outf;

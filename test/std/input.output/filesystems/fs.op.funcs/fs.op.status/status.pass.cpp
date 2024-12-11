@@ -172,7 +172,7 @@ static void test_block_file()
     assert(st.permissions() != perms::unknown);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_status_not_found();
 #ifndef TEST_WIN_NO_FILESYSTEM_PERMS_NONE

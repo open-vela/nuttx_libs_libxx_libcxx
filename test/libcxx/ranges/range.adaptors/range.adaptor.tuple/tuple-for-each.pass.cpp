@@ -23,7 +23,7 @@ struct Evil {
   void operator,(Evil) { std::abort(); }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::tuple<int, int> t;
   std::ranges::__tuple_for_each([](int) { return Evil{}; }, t);
 

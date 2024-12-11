@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::string s;
     std::front_insert_iterator it(s);

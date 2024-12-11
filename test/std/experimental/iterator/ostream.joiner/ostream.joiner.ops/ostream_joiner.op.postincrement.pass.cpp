@@ -32,7 +32,7 @@ void test ( exper::ostream_joiner<Delim, CharT, Traits> &oj ) {
     assert( &ret == &oj );
     }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     { exper::ostream_joiner<char>         oj(std::cout, '8');                 test(oj); }
     { exper::ostream_joiner<std::string>  oj(std::cout, std::string("9"));    test(oj); }

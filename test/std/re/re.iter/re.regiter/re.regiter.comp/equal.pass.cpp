@@ -20,7 +20,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   AssertEqualityReturnBool<std::cregex_iterator>();
 
   {

@@ -67,7 +67,7 @@ void TestHelper<CharT, 4>::test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestHelper<wchar_t>::test();
   return 0;
 }

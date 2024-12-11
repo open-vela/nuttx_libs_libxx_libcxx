@@ -113,7 +113,7 @@ void test_evil() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_evil<WidgetV0, WidgetV0>();
   test_evil<WidgetV0, WidgetV1>();
   test_evil<WidgetV0, WidgetV2>();

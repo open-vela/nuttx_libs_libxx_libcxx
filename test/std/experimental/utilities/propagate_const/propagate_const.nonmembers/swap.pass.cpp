@@ -22,7 +22,7 @@ using std::experimental::propagate_const;
 bool swap_called = false;
 void swap(X &, X &) { swap_called = true; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef propagate_const<X> P;
   P p1(1);
   P p2(2);

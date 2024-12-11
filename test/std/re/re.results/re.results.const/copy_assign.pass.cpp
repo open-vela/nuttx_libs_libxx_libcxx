@@ -34,7 +34,7 @@ test(const Allocator& a)
         assert(m1.get_allocator() == Allocator());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char>   (std::allocator<std::sub_match<const char *> >());
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

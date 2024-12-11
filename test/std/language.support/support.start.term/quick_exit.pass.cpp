@@ -20,7 +20,7 @@
 
 void f() {}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::at_quick_exit(f);
     std::quick_exit(0);
     return 0;

@@ -44,7 +44,7 @@ void test2() {
   test.insert(test.end(), buff, buff + 32000);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test1();
   test2();
 

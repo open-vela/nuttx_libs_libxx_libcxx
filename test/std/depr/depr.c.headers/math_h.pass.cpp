@@ -897,7 +897,7 @@ struct CallThreeArgs {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   types::for_each(types::integral_types(), test_single_arg</*PromoteResult=*/double>());
   test_single_arg</*PromoteResult=*/float, /*Arg=*/float>();
   test_single_arg</*PromoteResult=*/double, /*Arg=*/double>();

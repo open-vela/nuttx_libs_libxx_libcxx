@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "../test_func.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::bind2nd(test_func(1), 5)(10) == 5.);
 

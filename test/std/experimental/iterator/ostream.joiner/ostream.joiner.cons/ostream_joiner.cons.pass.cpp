@@ -25,7 +25,7 @@
 
 namespace exper = std::experimental;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     const char eight = '8';
     const std::string nine = "9";
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

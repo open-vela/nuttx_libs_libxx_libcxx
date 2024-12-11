@@ -83,7 +83,7 @@ protected:
 };
 #endif // TEST_HAS_NO_EXCEPTIONS
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb(" 123456789");

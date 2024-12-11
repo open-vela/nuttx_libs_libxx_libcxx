@@ -71,7 +71,7 @@ test()
     test2<Iter, long double>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<int*> >();
     test<bidirectional_iterator<int*> >();

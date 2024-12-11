@@ -27,7 +27,7 @@
 typedef std::array<char, 1256> array_t;
 typedef std::tuple<array_t> tuple_t;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     array_t arr;
     tuple_t tup;

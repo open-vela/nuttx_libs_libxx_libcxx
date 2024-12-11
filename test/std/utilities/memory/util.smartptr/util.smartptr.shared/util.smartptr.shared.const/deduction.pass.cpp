@@ -29,7 +29,7 @@ struct D {
   }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     std::shared_ptr<A> s0(new A);

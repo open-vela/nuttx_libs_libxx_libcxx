@@ -14,6 +14,6 @@
 @interface I;
 @end
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     return 1;
 }

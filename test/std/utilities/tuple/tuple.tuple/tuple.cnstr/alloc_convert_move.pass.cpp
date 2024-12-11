@@ -60,7 +60,7 @@ constexpr bool alloc_move_constructor_is_constexpr() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<int> T0;

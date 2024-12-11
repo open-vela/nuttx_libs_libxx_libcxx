@@ -34,7 +34,7 @@ test()
     test(std::complex<T>(-1, -2), std::complex<T>(-1, 2));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

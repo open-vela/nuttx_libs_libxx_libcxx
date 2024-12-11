@@ -107,7 +107,7 @@ void test() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<cpp17_input_iterator<char*> >();
   test<forward_iterator<char*> >();
   test<bidirectional_iterator<char*> >();

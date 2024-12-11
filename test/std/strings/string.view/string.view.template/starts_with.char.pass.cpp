@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "constexpr_char_traits.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::string_view SV;

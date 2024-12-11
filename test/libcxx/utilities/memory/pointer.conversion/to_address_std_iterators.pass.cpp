@@ -40,7 +40,7 @@ void test_valarray_iterators()
     assert(q - p == 100);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_container_iterators(std::array<int, 3>());
     test_container_iterators(std::vector<int>(3));
     test_container_iterators(std::string("abc"));

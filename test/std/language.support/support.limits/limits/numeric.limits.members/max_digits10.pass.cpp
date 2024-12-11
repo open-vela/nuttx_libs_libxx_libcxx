@@ -25,7 +25,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::max_digits10 == expected, "max_digits10 test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, 0>();
     test<char, 0>();

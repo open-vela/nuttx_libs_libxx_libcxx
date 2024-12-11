@@ -10,7 +10,7 @@
 #include <chrono>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::chrono::hours;
 

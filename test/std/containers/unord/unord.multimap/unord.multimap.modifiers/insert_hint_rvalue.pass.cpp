@@ -25,7 +25,7 @@
 #include "MoveOnly.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_multimap<double, int> C;

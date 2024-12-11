@@ -46,7 +46,7 @@ struct test
     using base::c;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int> qo(std::less<int>(),
                       make<std::vector<int, test_allocator<int> > >(5),

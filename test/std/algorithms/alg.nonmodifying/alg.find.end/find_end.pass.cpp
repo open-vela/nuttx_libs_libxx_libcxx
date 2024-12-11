@@ -62,7 +62,7 @@ test()
     assert(std::find_end(Iter1(ia), Iter1(ia), Iter2(b), Iter2(b+1)) == Iter1(ia));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<const int*>, forward_iterator<const int*> >();
     test<forward_iterator<const int*>, bidirectional_iterator<const int*> >();

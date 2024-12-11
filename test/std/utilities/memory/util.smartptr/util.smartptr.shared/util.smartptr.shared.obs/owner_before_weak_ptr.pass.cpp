@@ -16,7 +16,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::shared_ptr<int> p1(new int);
     const std::shared_ptr<int> p2 = p1;

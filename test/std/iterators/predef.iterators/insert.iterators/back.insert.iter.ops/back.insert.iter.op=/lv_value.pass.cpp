@@ -43,7 +43,7 @@ public:
         {return x.data_ == y.data_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::vector<Copyable>());
 #if TEST_STD_VER >= 20

@@ -34,7 +34,7 @@ public:
     double getd() const {return d_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::list<A> c;

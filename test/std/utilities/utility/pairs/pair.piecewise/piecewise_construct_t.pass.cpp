@@ -16,7 +16,7 @@
 #include <utility>
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::piecewise_construct_t x = std::piecewise_construct;
     (void)x;
 

@@ -112,7 +112,7 @@ static void equivalent_is_other_succeeds() {
 }
 #endif // _WIN32
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   signature_test();
   equivalent_test();
   equivalent_reports_error_if_input_dne();

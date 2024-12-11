@@ -58,7 +58,7 @@ public:
 };
 #endif // TEST_HAS_NO_WIDE_CHARACTERS
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         Fnf f(1);

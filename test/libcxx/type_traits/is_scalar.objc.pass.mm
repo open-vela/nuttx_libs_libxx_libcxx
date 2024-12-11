@@ -33,6 +33,6 @@ static_assert(std::is_scalar<Foo (^)(Arg<0>, Arg<1>)>::value, "");
 static_assert(std::is_scalar<Foo (^)(Arg<0>, Arg<1>, Arg<2>)>::value, "");
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     return 0;
 }

@@ -17,7 +17,7 @@
 void f1() {}
 void f2() {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::set_terminate(f1);
     assert(std::get_terminate() == f1);

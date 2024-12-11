@@ -32,7 +32,7 @@ struct PredLWG526 {
     int i_;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int a1[] = {2, 1, 1, 4, 4, 4, 4, 3, 3};

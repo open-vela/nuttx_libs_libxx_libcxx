@@ -30,7 +30,7 @@ test(It i, It x)
     assert(&rr == &r);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char s[] = "123";
     test(cpp17_input_iterator<char*>(s), cpp17_input_iterator<char*>(s+1));

@@ -39,7 +39,7 @@ struct CallbackHolder {
 
 void DeleteHolder::operator()() const { holder_.callback_.reset(); }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Unregisters the callback from the owned stop state, if any
   {
     std::stop_source ss;

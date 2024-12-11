@@ -46,7 +46,7 @@ test()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         optional<X> opt; ((void)opt);

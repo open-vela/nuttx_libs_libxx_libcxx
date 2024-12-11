@@ -63,7 +63,7 @@ struct NotAnIteratorNoCategory
 //     typedef std::forward_iterator_tag iterator_category;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::iterator_traits<NotAnIteratorEmpty> T;

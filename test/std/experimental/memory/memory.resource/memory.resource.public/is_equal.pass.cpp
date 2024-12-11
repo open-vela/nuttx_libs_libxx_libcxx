@@ -35,7 +35,7 @@
 
 using std::experimental::pmr::memory_resource;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         memory_resource const* r1 = nullptr;

@@ -64,7 +64,7 @@ test2()
     where(E::used_block);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

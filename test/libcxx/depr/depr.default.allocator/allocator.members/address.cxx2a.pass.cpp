@@ -40,7 +40,7 @@ struct A
     void operator&() const {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_address<int>();
     test_address<A>();

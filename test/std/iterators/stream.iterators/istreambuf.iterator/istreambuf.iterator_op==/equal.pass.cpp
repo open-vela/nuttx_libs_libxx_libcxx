@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::istringstream inf1("abc");
     std::istringstream inf2("def");

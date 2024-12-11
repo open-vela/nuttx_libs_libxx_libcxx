@@ -174,7 +174,7 @@ TEST_CONSTEXPR_CXX14 bool with_all_types()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     with_all_types<test_nondefault_initialization>();
     with_all_types<test_default_initialization>(); // not constexpr

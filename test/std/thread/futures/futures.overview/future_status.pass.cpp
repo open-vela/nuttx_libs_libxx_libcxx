@@ -21,7 +21,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(static_cast<int>(std::future_status::ready) == 0, "");
     static_assert(static_cast<int>(std::future_status::timeout) == 1, "");

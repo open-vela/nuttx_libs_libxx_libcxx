@@ -20,7 +20,7 @@
 #include "min_allocator.h"
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::istringstream in(" abc\n  def\n   ghij");

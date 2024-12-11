@@ -26,7 +26,7 @@ struct A
     typedef char difference_type;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::pointer_traits<A>::pointer, A>::value), "");
     static_assert((std::is_same<std::pointer_traits<int*>::pointer, int*>::value), "");

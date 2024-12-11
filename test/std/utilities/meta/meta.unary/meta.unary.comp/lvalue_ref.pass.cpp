@@ -26,7 +26,7 @@ void test_lvalue_ref()
     static_assert(!std::is_member_pointer<T>::value, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_lvalue_ref<int&>();
     test_lvalue_ref<const int&>();

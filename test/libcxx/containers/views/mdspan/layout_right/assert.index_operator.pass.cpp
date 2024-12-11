@@ -28,7 +28,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // value out of range
   {
     std::layout_right::template mapping<std::extents<unsigned char, 5>> m;

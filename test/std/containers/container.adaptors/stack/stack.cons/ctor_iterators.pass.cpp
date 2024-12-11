@@ -34,7 +34,7 @@ struct alloc : test_allocator<T> {
 static_assert(
     std::is_constructible_v<std::stack<int, std::deque<int, alloc<int>>>, int*, int*, test_allocator_statistics*>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const int a[] = {4, 3, 2, 1};
   std::stack<int> stack(a, a + 4);
   assert(stack.top() == 1);

@@ -96,7 +96,7 @@ static void last_write_time_not_representable_error() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   last_write_time_not_representable_error();
 
   return 0;

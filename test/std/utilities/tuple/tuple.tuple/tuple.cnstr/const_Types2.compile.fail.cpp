@@ -18,7 +18,7 @@
 #include <string>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<int, char*, std::string, double&> t(2, nullptr, "text");

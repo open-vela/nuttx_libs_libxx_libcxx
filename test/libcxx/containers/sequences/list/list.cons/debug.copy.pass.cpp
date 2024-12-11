@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::list<int> l1;
     l1.push_back(1); l1.push_back(2); l1.push_back(3);
     std::list<int>::iterator i = l1.begin();

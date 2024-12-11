@@ -59,7 +59,7 @@ void check_no_type() {
   static_assert(!has_promise_type<Traits>(), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     check_type<A*, A>();

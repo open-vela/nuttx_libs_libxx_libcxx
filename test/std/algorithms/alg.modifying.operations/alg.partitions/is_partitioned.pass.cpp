@@ -35,7 +35,7 @@ TEST_CONSTEXPR bool test_constexpr() {
 #endif
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     const int ia[] = {1, 2, 3, 4, 5, 6};
     unary_counting_predicate<is_odd, int> pred((is_odd()));

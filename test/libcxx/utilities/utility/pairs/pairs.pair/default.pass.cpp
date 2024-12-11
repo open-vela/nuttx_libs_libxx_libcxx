@@ -28,7 +28,7 @@ struct NonThrowingDefault {
   NonThrowingDefault() noexcept { }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     static_assert(!std::is_nothrow_default_constructible<std::pair<ThrowingDefault, ThrowingDefault>>::value, "");
     static_assert(!std::is_nothrow_default_constructible<std::pair<NonThrowingDefault, ThrowingDefault>>::value, "");

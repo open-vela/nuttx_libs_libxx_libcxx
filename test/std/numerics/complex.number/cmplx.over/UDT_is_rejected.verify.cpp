@@ -26,7 +26,7 @@ UDT<long double> ldt;
 UDT<int> it;
 UDT<unsigned long> uit;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::real(ft); // expected-error {{no matching function}}

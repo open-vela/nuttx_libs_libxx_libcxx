@@ -23,7 +23,7 @@ struct Foo {
   void call() {}
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Check that we get a static assertion when we try to use the bracket
   // operator on shared_ptr<T> when T is not an array type.
   const std::shared_ptr<Foo[]> p1;

@@ -23,7 +23,7 @@ auto extract ( const AtContainer &t, const std::integer_sequence<T, I...> )
 -> decltype ( std::make_tuple ( std::get<I>(t)... ))
 {     return  std::make_tuple ( std::get<I>(t)... ); }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  Make a couple of sequences
     using int3    = std::make_integer_sequence<int, 3>;     // generates int:    0,1,2

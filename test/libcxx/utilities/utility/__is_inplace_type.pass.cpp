@@ -16,7 +16,7 @@
 
 struct S {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using T = std::in_place_type_t<int>;
   static_assert( std::__is_inplace_type<T>::value, "");
   static_assert( std::__is_inplace_type<const T>::value, "");

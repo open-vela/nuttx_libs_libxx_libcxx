@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert((std::minmax({1, 2, 3}) == std::pair<int, int>(1, 3)));
     assert((std::minmax({1, 3, 2}) == std::pair<int, int>(1, 3)));

@@ -20,7 +20,7 @@
 #include "../../../insert_range_maps_sets.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Note: we want to use a pair with non-const elements for input (an assignable type is a lot more convenient) but
   // have to use the exact `value_type` of the map (that is, `pair<const K, V>`) for the allocator.
   using Pair = std::pair<int, char>;

@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int bad=-1;
     std::ostringstream os;

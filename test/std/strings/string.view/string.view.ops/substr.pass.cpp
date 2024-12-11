@@ -71,7 +71,7 @@ void test ( const CharT *s ) {
     test1(sv1, sv1.size() + 1, string_view_t::npos);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test ( "ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" );
     test ( "ABCDE");
     test ( "a" );

@@ -23,7 +23,7 @@
 #include "min_allocator.h"
 #include "container_test_types.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::map<MoveOnly, double> m;

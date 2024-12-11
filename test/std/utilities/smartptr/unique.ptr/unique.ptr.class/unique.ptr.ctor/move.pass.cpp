@@ -188,7 +188,7 @@ void test_sink3() {
   assert(A::count == 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_sink3</*IsArray*/ false>();
   test_sink3</*IsArray*/ true>();
   test();

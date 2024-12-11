@@ -18,7 +18,7 @@
 #include <execution>
 #include <iterator>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::size_t call_count = 0;
   int a[]        = {1, 2, 3, 4, 5, 6, 7, 8};
   assert(std::is_partitioned(std::execution::seq, std::begin(a), std::end(a), [&](int i) {

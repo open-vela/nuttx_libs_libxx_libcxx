@@ -15,7 +15,7 @@
 #include <iterator>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using T = std::istream_iterator<int>;
 
   {

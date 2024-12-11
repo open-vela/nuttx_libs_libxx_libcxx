@@ -66,7 +66,7 @@ void test_implicit_ctor() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

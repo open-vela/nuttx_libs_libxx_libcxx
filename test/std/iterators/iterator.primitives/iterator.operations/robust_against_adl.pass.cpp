@@ -20,7 +20,7 @@ struct Intable {
     operator int() const { return 1; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     Holder<Incomplete> *a[2] = {};
     Holder<Incomplete> **p = a;
 #if TEST_STD_VER >= 17

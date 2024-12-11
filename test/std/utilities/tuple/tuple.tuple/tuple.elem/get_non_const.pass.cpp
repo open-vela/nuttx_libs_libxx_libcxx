@@ -36,7 +36,7 @@ struct S {
 constexpr std::tuple<int, int> getP () { return { 3, 4 }; }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<int> T;

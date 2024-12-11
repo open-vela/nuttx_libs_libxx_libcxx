@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using day = std::chrono::day;
     day d1 = 4d; // expected-error-re {{no matching literal operator for call to 'operator""d' {{.*}}}}

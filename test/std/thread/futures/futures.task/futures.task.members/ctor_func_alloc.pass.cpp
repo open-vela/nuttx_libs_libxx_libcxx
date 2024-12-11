@@ -45,7 +45,7 @@ int A::n_copies = 0;
 
 int func(int i) { return i; }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_allocator_statistics alloc_stats;
     {

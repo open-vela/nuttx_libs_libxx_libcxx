@@ -203,7 +203,7 @@ public:
   friend bool operator==(const Comparable& lhs, long long rhs) { return comparable_data[lhs.index_] == rhs; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

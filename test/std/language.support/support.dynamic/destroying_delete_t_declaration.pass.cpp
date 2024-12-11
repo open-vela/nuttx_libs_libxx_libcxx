@@ -42,7 +42,7 @@ constexpr bool test_constexpr(std::destroying_delete_t) {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_default_constructible<std::destroying_delete_t>::value, "");
   static_assert(!test_convertible<std::destroying_delete_t>(), "");
   constexpr std::destroying_delete_t dd{};

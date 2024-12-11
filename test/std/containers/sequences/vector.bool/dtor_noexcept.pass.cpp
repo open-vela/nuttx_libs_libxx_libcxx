@@ -26,7 +26,7 @@ struct some_alloc
     ~some_alloc() noexcept(false);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::vector<bool> C;

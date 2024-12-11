@@ -62,7 +62,7 @@ void test_nullptr_conversions() {
 TEST_DIAGNOSTIC_POP
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(sizeof(std::nullptr_t) == sizeof(void*),
                   "sizeof(std::nullptr_t) == sizeof(void*)");

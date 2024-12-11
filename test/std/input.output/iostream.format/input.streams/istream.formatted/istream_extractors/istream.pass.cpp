@@ -29,7 +29,7 @@ f(std::basic_istream<CharT>& is)
     return is;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::istream is((std::streambuf*)0);

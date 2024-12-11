@@ -32,7 +32,7 @@ struct Y
     int test() const {return 2;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const optional<X> opt; ((void)opt);

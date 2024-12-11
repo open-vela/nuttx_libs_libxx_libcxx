@@ -38,7 +38,7 @@ test2()
     assert(e() == 13109570281517897720ull);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

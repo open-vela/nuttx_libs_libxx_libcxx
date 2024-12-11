@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "platform_support.h" // locale name macros
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::regex_traits<char> t;

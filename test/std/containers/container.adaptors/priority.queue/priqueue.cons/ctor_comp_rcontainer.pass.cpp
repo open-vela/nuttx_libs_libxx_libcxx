@@ -30,7 +30,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::vector<MoveOnly> Container;
     typedef std::less<MoveOnly> Compare;

@@ -24,7 +24,7 @@ struct A {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::list<A> c1;
     std::list<A> c2;
     TEST_LIBCPP_ASSERT_FAILURE(c1.emplace(c2.cbegin(), 2, 3.5),

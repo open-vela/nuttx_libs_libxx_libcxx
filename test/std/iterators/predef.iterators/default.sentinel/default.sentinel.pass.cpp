@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_empty_v<std::default_sentinel_t>);
   static_assert(std::semiregular<std::default_sentinel_t>);
 

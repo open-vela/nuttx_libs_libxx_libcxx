@@ -16,7 +16,7 @@
 
 // expected-warning@array:* 0-1 {{suggest braces around initialization of subobject}}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     char source[3][6] = {"hi", "world"};
     // expected-error@array:* {{to_array does not accept multidimensional arrays}}

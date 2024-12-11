@@ -192,7 +192,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

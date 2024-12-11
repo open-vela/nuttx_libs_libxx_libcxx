@@ -252,7 +252,7 @@ void check_swap(expected<T> const& e) {
   static_assert(noexcept(std::ranges::swap(a, b)) == bool(is_noexcept));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     auto const e = expected<std::deque<int> >{
         .x = {6, 7, 8, 9},

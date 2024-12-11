@@ -22,7 +22,7 @@ struct A {};
 
 struct B {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<int, A> T;

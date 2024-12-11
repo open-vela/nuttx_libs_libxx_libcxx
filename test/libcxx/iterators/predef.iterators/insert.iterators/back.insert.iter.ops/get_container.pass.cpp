@@ -26,7 +26,7 @@ TEST_CONSTEXPR_CXX20 bool test(C c) {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test(std::vector<int>());
   test(nasty_vector<int>());
 #if TEST_STD_VER >= 20

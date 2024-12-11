@@ -110,7 +110,7 @@ struct CountCopiesAllocV2 {
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using T = CountCopies;

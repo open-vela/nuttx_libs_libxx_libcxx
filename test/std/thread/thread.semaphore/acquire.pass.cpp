@@ -19,7 +19,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   std::counting_semaphore<> s(2);
 
