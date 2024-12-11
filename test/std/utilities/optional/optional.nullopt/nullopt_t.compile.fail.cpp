@@ -18,7 +18,7 @@
 
 #include <optional>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::nullopt_t n = {};
 

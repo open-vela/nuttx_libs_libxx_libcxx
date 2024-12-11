@@ -112,7 +112,7 @@ static void test_is_symlink_fails()
     TEST_THROWS_TYPE(filesystem_error, is_symlink(p));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     is_symlink_status_test();
     static_env_test();

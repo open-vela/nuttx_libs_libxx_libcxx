@@ -31,7 +31,7 @@ struct Wrapped {
   std::optional<Inner> inner;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_default_constructible<Wrapped::Inner>::value, "");
   Wrapped w;
   w.inner.emplace();

@@ -18,7 +18,7 @@
 
 #include <cassert>
 
-int main(int argc, char**) {
+extern "C" int main(int argc, char**) {
   assert(argc == 1);
   return 0;
 }

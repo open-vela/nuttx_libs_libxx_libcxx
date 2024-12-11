@@ -61,7 +61,7 @@ void test_const_array( const T (&array)[Sz] )
     assert ( std::data(array) == &array[0]);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<int> v; v.push_back(1);
     std::array<int, 1> a; a[0] = 3;

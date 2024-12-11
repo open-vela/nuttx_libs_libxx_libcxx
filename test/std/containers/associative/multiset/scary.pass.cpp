@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::set<int> M1;
     typedef std::multiset<int> M2;

@@ -220,7 +220,7 @@ void test_resize_param() {
   assert(is_contiguous_container_asan_correct(v));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_push_back();
   test_emplace_back();
   test_insert_range();

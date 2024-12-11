@@ -13,7 +13,7 @@
 
 // constexpr byte operator~(byte b) noexcept;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     constexpr std::byte b1{static_cast<std::byte>(1)};
     constexpr std::byte b2{static_cast<std::byte>(2)};
     constexpr std::byte b8{static_cast<std::byte>(8)};

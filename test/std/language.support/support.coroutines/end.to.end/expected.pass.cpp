@@ -73,7 +73,7 @@ expected<int> f2() {
   co_return 200;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   auto c1 = f1();
   assert(f1_started && f1_resumed);
   assert(c1.value() == 100);

@@ -66,7 +66,7 @@ void test_noexcept_function_pointers() {
   static_assert(std::is_nothrow_invocable<decltype(&Dummy::bar)>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using AbominableFunc = void(...) const noexcept;
   //  Non-callable things
   {

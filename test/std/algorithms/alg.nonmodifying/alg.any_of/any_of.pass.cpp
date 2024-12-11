@@ -36,7 +36,7 @@ TEST_CONSTEXPR bool test_constexpr() {
     }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         int ia[] = {2, 4, 6, 8};

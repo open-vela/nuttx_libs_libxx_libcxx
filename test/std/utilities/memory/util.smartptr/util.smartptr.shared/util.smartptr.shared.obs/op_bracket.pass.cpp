@@ -19,7 +19,7 @@
 #include <memory>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     const std::shared_ptr<int[8]> p(new int[8]);
 

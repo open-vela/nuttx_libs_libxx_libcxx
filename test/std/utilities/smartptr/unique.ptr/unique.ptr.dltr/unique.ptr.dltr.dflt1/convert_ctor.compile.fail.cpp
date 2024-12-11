@@ -24,7 +24,7 @@ struct B
 {
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::default_delete<B[]> d2;
     std::default_delete<A[]> d1 = d2;

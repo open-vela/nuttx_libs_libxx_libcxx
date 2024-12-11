@@ -16,7 +16,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::list<int, test_allocator<int> > l(3, 2, test_allocator<int>(5));

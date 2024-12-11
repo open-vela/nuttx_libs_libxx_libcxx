@@ -55,7 +55,7 @@ void test_constexpr ()
 
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::chrono::milliseconds(7265000), std::chrono::hours(2));
     test(std::chrono::milliseconds(7265000), std::chrono::minutes(121));

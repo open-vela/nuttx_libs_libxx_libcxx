@@ -27,7 +27,7 @@ double fw(double x)
     return 2*x;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::piecewise_linear_distribution<> D;

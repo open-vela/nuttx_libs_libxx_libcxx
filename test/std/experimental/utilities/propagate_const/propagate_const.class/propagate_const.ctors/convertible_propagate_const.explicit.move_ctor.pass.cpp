@@ -22,7 +22,7 @@ using std::experimental::propagate_const;
 typedef propagate_const<X> PX;
 typedef propagate_const<ExplicitMoveConstructibleFromX> PY;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(!std::is_convertible<PY, PX &&>::value, "");
   static_assert(std::is_constructible<PY, PX &&>::value, "");
 

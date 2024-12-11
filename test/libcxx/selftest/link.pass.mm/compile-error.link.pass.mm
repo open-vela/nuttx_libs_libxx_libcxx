@@ -15,4 +15,4 @@
 struct Foo { };
 typedef Foo::x x;
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

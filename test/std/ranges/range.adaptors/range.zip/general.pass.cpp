@@ -20,7 +20,7 @@
 #include <vector>
 #include <string>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::ranges::zip_view v{
         std::array{1, 2},

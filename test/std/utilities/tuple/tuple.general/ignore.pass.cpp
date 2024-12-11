@@ -40,7 +40,7 @@ constexpr bool test_ignore_constexpr()
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         constexpr auto& ignore_v = std::ignore;
         ((void)ignore_v);

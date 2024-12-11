@@ -29,7 +29,7 @@
 
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::has_virtual_destructor_v<std::pmr::memory_resource>);
   static_assert(std::is_nothrow_destructible_v<std::pmr::memory_resource>);
   static_assert(std::is_abstract_v<std::pmr::memory_resource>);

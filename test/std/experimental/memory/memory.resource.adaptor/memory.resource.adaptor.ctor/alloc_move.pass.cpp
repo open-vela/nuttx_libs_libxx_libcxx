@@ -28,7 +28,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef CountingAllocator<char> AllocT;
     typedef ex::resource_adaptor<AllocT> R;

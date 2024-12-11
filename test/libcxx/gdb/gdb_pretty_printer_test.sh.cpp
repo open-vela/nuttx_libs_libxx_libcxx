@@ -653,7 +653,7 @@ void streampos_test() {
   ComparePrettyPrintToRegex(test1, "^std::fpos with stream offset:5( with state: {count:0 value:0})?$");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   framework_self_test();
 
   string_test();

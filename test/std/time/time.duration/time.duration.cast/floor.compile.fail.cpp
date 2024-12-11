@@ -19,7 +19,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::floor<int>(std::chrono::milliseconds(3));
 

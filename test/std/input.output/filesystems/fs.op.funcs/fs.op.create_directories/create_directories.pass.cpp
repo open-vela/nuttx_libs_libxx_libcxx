@@ -164,7 +164,7 @@ static void nonexistent_root()
 }
 #endif // _WIN32
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     create_existing_directory();
     create_directory_one_level();

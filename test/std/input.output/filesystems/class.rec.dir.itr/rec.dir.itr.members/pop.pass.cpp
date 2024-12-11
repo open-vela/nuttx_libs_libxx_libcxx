@@ -89,7 +89,7 @@ static void test_depth()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_tests();
     test_depth();
 

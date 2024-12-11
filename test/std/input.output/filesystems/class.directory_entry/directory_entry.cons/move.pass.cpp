@@ -65,7 +65,7 @@ static void move_ctor_copies_cache() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   move_ctor();
   move_ctor_copies_cache();
 

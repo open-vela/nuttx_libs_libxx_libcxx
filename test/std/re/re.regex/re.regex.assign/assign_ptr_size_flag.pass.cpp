@@ -16,7 +16,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::regex r0;
     r0.assign("(a([bc]))", 9);

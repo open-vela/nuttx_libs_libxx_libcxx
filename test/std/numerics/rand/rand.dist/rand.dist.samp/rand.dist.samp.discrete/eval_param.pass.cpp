@@ -20,7 +20,7 @@
 #include <random>
 #include <vector>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::discrete_distribution<> D;

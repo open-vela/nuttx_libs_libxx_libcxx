@@ -185,7 +185,7 @@ static void test_no_resolve_symlink_on_symlink()
 }
 #endif // _WIN32
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     test_error_reporting();
     basic_permissions_test();

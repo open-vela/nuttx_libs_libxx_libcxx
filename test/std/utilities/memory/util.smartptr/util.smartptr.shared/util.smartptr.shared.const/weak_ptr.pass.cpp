@@ -58,7 +58,7 @@ static_assert(!std::is_constructible<std::shared_ptr<int[5]>,  const std::weak_p
 static_assert(!std::is_constructible<std::shared_ptr<int[7]>,  const std::weak_ptr<int[5]>&>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     {

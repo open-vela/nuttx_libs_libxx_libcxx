@@ -30,7 +30,7 @@ struct testbuf
     void pbump(int n) {base::pbump(n);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb("123");

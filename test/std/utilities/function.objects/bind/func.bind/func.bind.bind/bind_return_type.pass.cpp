@@ -116,7 +116,7 @@ void do_test_r(Fn* func) {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_test<int>(return_value);
     do_test<int&>(return_lvalue);

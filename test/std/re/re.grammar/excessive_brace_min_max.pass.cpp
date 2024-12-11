@@ -17,7 +17,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // test that `n <= m`
   for (std::regex_constants::syntax_option_type op :
        {std::regex::basic}) {

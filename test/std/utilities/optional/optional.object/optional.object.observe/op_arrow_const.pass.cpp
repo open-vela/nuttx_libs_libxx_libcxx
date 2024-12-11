@@ -35,7 +35,7 @@ struct Z
     constexpr int test() const {return 1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::optional<X> opt; ((void)opt);

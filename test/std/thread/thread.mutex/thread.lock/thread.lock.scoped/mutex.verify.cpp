@@ -21,7 +21,7 @@
 template <class LG>
 void test_conversion(LG) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using M = std::mutex;
     M m0, m1, m2;

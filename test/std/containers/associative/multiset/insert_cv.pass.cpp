@@ -49,7 +49,7 @@ void do_insert_cv_test()
     assert(*r == 3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_insert_cv_test<std::multiset<int> >();
 #if TEST_STD_VER >= 11

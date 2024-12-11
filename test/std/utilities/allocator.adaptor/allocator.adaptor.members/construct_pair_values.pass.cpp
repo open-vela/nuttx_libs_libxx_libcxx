@@ -173,7 +173,7 @@ void test_with_inner_alloc()
         std::free(ptr);
     }
 }
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_no_inner_alloc();
     test_with_inner_alloc();
 

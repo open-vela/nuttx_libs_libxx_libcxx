@@ -24,7 +24,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::has_denorm == expected, "has_denorm test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, std::denorm_absent>();
     test<char, std::denorm_absent>();

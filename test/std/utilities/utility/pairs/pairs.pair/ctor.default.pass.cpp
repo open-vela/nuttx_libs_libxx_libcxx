@@ -23,7 +23,7 @@
 #include "test_macros.h"
 #include "archetypes.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<float, short*> P;

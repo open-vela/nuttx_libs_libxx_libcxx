@@ -84,7 +84,7 @@ struct WideChecker {
 static WideChecker wide_check;
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     assert(std::memcmp(check.cerr_mem_dump, (char const*)&std::cerr, sizeof(std::cerr)) == 0);
     assert(std::memcmp(check.cin_mem_dump, (char const*)&std::cin, sizeof(std::cin)) == 0);
     assert(std::memcmp(check.cout_mem_dump, (char const*)&std::cout, sizeof(std::cout)) == 0);

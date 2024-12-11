@@ -18,7 +18,7 @@
 
 #include "test_container_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_sequence_container_spaceship<std::deque>());
   // `std::deque` is not constexpr, so no `static_assert` test here.
   return 0;

@@ -48,7 +48,7 @@ auto test_exception = []<class CharT, class... Args>(std::string_view, std::basi
   // The exceptions are tested by other functions that don't use the basic-format-string as fmt argument.
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   run_tests<char>(test, test_exception);
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

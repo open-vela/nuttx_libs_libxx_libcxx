@@ -42,7 +42,7 @@ void test_make_signed()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_make_signed< signed char, signed char >();
     test_make_signed< unsigned char, signed char >();

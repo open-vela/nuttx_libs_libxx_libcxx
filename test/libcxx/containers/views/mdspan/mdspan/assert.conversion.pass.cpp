@@ -45,7 +45,7 @@
 #include "../../../../../std/containers/views/mdspan/mdspan/CustomTestLayouts.h"
 
 // We use a funky mapping in this test that doesn't check the dynamic/static extents mismatch itself
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr size_t D = std::dynamic_extent;
   std::array<float, 10> data;
   typename layout_wrapping_integral<4>::template mapping<std::dextents<int, 2>> src_map(

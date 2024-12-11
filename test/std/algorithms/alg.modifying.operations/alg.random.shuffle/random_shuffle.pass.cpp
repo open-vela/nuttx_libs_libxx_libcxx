@@ -41,7 +41,7 @@ test_with_iterator()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int ia[]  = {1, 2, 3, 4};
     int ia1[] = {1, 4, 3, 2};

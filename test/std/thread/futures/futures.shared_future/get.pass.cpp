@@ -62,7 +62,7 @@ void func6(std::promise<void> p)
     p.set_exception(std::make_exception_ptr('c'));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int T;

@@ -61,7 +61,7 @@ struct TestMutexThrows {
 };
 #endif // !defined(TEST_HAS_NO_EXCEPTIONS)
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using LG = std::scoped_lock<>;

@@ -32,7 +32,7 @@ struct B
 
 bool B::constructed = false;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::scoped_allocator_adaptor<A1<B>> A;

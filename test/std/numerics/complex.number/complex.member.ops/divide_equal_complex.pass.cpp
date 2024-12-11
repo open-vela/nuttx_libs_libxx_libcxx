@@ -47,7 +47,7 @@ test()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

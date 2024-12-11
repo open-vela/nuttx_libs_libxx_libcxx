@@ -26,7 +26,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::codecvt<char, char, std::mbstate_t> F;
     static_assert((std::is_base_of<std::locale::facet, F>::value), "");

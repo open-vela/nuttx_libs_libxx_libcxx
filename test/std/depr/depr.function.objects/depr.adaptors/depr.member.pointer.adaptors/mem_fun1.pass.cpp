@@ -28,7 +28,7 @@ struct A
     double a4(unsigned i) const {return i-1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     A a;
     assert(std::mem_fun(&A::a2)(&a, 5) == 6);

@@ -30,7 +30,7 @@ struct indirect_less
         {return *x < *y;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::vector<int> v(1000);

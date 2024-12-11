@@ -177,7 +177,7 @@ static void test() {
   TEST_EQUAL(stream_ja_JP_locale<CharT>(std::chrono::month{255}), SV("255 is not a valid month"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

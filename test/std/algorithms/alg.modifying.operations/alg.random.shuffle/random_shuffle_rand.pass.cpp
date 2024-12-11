@@ -53,7 +53,7 @@ test_with_iterator()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_with_iterator<random_access_iterator<int*> >();
     test_with_iterator<int*>();

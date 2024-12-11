@@ -30,7 +30,7 @@ void test_is_volatile()
 
 struct A; // incomplete
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_volatile<void>();
     test_is_volatile<int>();

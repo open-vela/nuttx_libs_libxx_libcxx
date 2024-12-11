@@ -117,4 +117,4 @@ void run()
 #endif
 }
 
-int main(int, char**) { run(); return 0; }
+extern "C" int main(int, char**) { run(); return 0; }

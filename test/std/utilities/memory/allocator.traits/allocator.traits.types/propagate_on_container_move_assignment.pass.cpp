@@ -44,7 +44,7 @@ private:
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::allocator_traits<A<char> >::propagate_on_container_move_assignment, std::true_type>::value), "");
     static_assert((std::is_same<std::allocator_traits<B<char> >::propagate_on_container_move_assignment, std::false_type>::value), "");

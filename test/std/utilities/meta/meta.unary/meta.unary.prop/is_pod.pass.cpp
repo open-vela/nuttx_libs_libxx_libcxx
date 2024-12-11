@@ -49,7 +49,7 @@ public:
     ~Class();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_pod<void>();
     test_is_not_pod<int&>();

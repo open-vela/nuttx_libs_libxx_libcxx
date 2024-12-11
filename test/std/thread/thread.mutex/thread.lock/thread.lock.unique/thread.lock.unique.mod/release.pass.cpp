@@ -32,7 +32,7 @@ int mutex::unlock_count = 0;
 
 mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unique_lock<mutex> lk(m);
     assert(lk.mutex() == &m);

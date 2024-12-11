@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(sizeof(std::any) == sizeof(void*)*4, "");
     static_assert(alignof(std::any) == alignof(void*), "");

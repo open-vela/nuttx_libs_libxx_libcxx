@@ -46,7 +46,7 @@ void testForSizeAndAlign() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::pmr::polymorphic_allocator<int> a;
     ASSERT_SAME_TYPE(decltype(a.deallocate(nullptr, 0)), void);

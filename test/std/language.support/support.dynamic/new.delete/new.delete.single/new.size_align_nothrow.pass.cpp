@@ -39,7 +39,7 @@ void my_new_handler() {
     std::set_new_handler(nullptr);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // Test that we can call the function directly
     {
         void* x = operator new(10, static_cast<std::align_val_t>(64), std::nothrow);

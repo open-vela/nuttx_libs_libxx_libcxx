@@ -45,7 +45,7 @@ concept CanAllocateShared = requires(Args&& ...args) {
   { std::allocate_shared<T>(std::forward<Args>(args)...) } -> std::same_as<std::shared_ptr<T>>;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Check behavior for a zero-sized array
   {
     // Without passing an initial value

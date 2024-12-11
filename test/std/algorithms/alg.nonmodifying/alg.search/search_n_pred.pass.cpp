@@ -173,7 +173,7 @@ struct Pred {
   bool operator()(const A& l, int r) const { return l.x() == r; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<const int*> >();
     test<bidirectional_iterator<const int*> >();

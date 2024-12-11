@@ -69,7 +69,7 @@ void test_death() {
   TEST_LIBCPP_ASSERT_FAILURE(oob[-6], "__bounded_iter::operator[]: Attempt to index an iterator out-of-range");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   tests<Foo*>();
   test_death<Foo*>();
 #if TEST_STD_VER > 11

@@ -36,7 +36,7 @@ static void search(const char* pat, std::regex_constants::syntax_option_type f,
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::regex_constants::ECMAScript;
     using std::regex_constants::basic;

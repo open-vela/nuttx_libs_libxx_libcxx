@@ -339,7 +339,7 @@ constexpr void test_all_orderings() {
 }
 #endif //  TEST_STD_VER > 17
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::string("123"), std::string("123"));
     test(std::string("1234"), std::string("123"));

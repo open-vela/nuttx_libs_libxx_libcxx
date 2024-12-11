@@ -61,7 +61,7 @@ void operator delete(void*, std::align_val_t) noexcept
 struct alignas(OverAligned) A {};
 struct alignas(std::max_align_t) B {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     reset();
     {

@@ -68,7 +68,7 @@ void test_termination_condition(std::string expected, std::string f, color arg) 
   test(expected, fmt, arg, 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_termination_condition("black", "}", color::black);
   test_termination_condition("red", "}", color::red);
   test_termination_condition("gold", "}", color::gold);

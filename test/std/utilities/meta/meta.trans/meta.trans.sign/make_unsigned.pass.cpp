@@ -42,7 +42,7 @@ void test_make_unsigned()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_make_unsigned<signed char, unsigned char> ();
     test_make_unsigned<unsigned char, unsigned char> ();

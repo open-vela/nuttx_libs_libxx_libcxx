@@ -24,7 +24,7 @@
 #include <type_traits>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using StdVector = std::vector<int, std::pmr::polymorphic_allocator<int>>;
   using PmrVector = std::pmr::vector<int>;
   static_assert(std::is_same<StdVector, PmrVector>::value, "");

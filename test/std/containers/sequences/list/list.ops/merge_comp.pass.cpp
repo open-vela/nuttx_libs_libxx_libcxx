@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int a1[] = {10, 9, 7, 3, 1};

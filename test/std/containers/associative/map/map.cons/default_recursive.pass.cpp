@@ -28,4 +28,4 @@ struct X
 #endif // TEST_STD_VER <= 17
 };
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

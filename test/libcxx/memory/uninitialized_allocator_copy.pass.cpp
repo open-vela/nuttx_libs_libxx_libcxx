@@ -50,7 +50,7 @@ struct ThrowSometimes {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int constructed_count     = 0;
   int max_constructed_count = 0;
   construct_counting_allocator<ThrowSometimes> alloc(&constructed_count, &max_constructed_count);

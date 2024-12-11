@@ -206,7 +206,7 @@ TEST_CONSTEXPR_CXX20 bool all_the_algorithms()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     all_the_algorithms<void*>();
     all_the_algorithms<int>();

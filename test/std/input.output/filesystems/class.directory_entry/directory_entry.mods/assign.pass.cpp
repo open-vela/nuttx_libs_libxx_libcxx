@@ -144,7 +144,7 @@ static void test_assign_propagates_error() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_path_assign_method();
   test_path_assign_ec_method();
   test_assign_calls_refresh();

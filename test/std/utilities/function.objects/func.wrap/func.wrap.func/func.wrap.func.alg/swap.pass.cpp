@@ -58,7 +58,7 @@ int A::count = 0;
 int g(int) {return 0;}
 int h(int) {return 1;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     globalMemCounter.reset();
     assert(globalMemCounter.checkOutstandingNewEq(0));

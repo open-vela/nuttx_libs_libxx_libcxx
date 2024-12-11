@@ -31,7 +31,7 @@ namespace std {
   struct is_error_code_enum<User::Err> : true_type {};
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::error_code e((User::Err()));
   assert(e.value() == 42);
   assert(e.category() == std::generic_category());

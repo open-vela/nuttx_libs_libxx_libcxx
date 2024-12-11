@@ -58,7 +58,7 @@ protected:
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   testbuf<char> sb1;
   std::ostream os1(&sb1);
   int n1;

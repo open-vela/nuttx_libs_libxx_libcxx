@@ -78,7 +78,7 @@ void test_float() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<short>();
   test<unsigned short>();
   test<int>();

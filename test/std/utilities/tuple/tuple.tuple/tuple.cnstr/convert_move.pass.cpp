@@ -60,7 +60,7 @@ void test_bonkers_bananas_conversion() {
 
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<long> T0;

@@ -31,7 +31,7 @@ constexpr bool test_constexpr() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_constraints_assign_range<std::basic_string, char, int>());
 
   for_all_iterators_and_allocators<char, const char*>([]<class Iter, class Sent, class Alloc>() {

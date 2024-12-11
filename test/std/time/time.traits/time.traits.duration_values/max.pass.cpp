@@ -17,7 +17,7 @@
 #include "test_macros.h"
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::chrono::duration_values<int>::max() ==
            std::numeric_limits<int>::max());

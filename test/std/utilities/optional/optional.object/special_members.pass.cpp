@@ -54,7 +54,7 @@ struct DoTestsMetafunction {
     DoTestsMetafunction() { sink(SpecialMemberTest<TestTypes>{}...); }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     sink(
         ImplicitTypes::ApplyTypes<DoTestsMetafunction>{},
         ExplicitTypes::ApplyTypes<DoTestsMetafunction>{},

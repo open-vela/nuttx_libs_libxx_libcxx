@@ -92,7 +92,7 @@ void test_abs() {
   assert(abs(-1.) == 1);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     size_t s = 0; ((void)s);
     div_t d; ((void)d);
     ldiv_t ld; ((void)ld);

@@ -29,7 +29,7 @@ struct TemplateConstructor
 bool operator==(const TemplateConstructor&, const TemplateConstructor&) { return false; }
 struct Hash { std::size_t operator() (const TemplateConstructor &) const { return 0; } };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_set<int> C;

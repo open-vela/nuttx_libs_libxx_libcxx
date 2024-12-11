@@ -66,7 +66,7 @@ void test()
   test0(S("aba"), opt('c'), S("aba"), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::string>();
     test<std::basic_string<char, std::char_traits<char>, min_allocator<char>>> ();

@@ -25,7 +25,7 @@
 #include <io.h>
 #include <fcntl.h>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     _setmode(_fileno(stderr), _O_WTEXT);
     std::wcerr << L"1234\u20ac\u00e5\u00e4\u00f6";
     return 0;

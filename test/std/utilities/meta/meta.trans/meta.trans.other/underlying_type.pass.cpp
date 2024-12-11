@@ -59,7 +59,7 @@ enum struct J { red, green = 20, blue };
 enum struct K : short { red, green = 20, blue };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  Basic tests
     check<E, int>();

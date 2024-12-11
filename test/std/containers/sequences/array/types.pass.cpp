@@ -47,7 +47,7 @@ void test_iterators() {
     static_assert((std::is_same<typename CItT::difference_type, typename C::difference_type>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef double T;

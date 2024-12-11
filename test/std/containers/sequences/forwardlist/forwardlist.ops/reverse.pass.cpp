@@ -31,7 +31,7 @@ void test(int N)
         assert(*j == i);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     for (int i = 0; i < 10; ++i)
         test<std::forward_list<int> >(i);

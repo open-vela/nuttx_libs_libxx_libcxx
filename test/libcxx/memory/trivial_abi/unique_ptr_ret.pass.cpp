@@ -35,7 +35,7 @@ __attribute__((noinline)) std::unique_ptr<Node> make_val(void** local_addr) {
   return ret;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   void* local_addr = nullptr;
   auto ret = make_val(&local_addr);
   assert(local_addr != nullptr);

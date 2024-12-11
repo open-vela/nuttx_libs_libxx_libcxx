@@ -32,7 +32,7 @@ struct NoCompare {};
 // expected-error@*:* 3 {{no matching function for call to object of type 'std::__less<void, void>'}}
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef NoCompare<0> T;
     typedef std::array<T, 3> C;

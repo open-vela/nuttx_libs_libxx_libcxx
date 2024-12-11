@@ -97,7 +97,7 @@ void test_allocate_deallocate()
 
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(noexcept(ex::new_delete_resource()), "Must be noexcept");
     test_return();

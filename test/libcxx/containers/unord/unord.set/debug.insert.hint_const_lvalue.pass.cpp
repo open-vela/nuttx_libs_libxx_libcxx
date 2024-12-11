@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::unordered_set<double> C;
     typedef C::value_type P;
     C c;

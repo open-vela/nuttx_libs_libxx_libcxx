@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::system_clock Clock;
     typedef std::chrono::duration<Rep, std::milli> Duration;

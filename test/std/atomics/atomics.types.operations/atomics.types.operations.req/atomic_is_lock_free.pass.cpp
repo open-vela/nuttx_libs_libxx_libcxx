@@ -42,7 +42,7 @@ struct A {
   char x[4];
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestFn<A>()();
   TestEachAtomicType<TestFn>()();
   return 0;

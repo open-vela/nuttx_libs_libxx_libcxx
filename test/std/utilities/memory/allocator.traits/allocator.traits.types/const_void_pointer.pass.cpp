@@ -57,7 +57,7 @@ private:
     typedef int const_void_pointer;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::allocator_traits<A<char> >::const_void_pointer, Ptr<const void> >::value), "");
     static_assert((std::is_same<std::allocator_traits<B<char> >::const_void_pointer, const void*>::value), "");

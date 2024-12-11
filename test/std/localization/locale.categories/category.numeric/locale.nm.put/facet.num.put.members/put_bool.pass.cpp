@@ -40,7 +40,7 @@ protected:
     virtual string_type do_falsename() const {return "no";}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const my_facet f(1);
     {

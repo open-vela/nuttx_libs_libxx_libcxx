@@ -105,7 +105,7 @@ static void test() {
   assert(stream_ja_JP_locale<CharT>(std::chrono::weekday(255)) == SV("255 is not a valid weekday"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

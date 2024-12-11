@@ -63,7 +63,7 @@ void f()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::unique_lock<std::mutex> lk(mut);

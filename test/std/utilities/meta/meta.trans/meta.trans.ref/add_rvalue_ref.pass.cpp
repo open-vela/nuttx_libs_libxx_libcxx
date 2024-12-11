@@ -44,7 +44,7 @@ void test_function1()
 
 struct Foo {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_add_rvalue_reference<void, void>();
     test_add_rvalue_reference<int, int&&>();

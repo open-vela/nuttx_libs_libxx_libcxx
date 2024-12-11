@@ -32,7 +32,7 @@ public:
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const int a[] = {4, 3, 2, 1};
   test_allocator_statistics stats{};
   GetAlloc queue(stats, a, a + 4);

@@ -23,7 +23,7 @@
 #   include <cwctype>
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // typedef std::int8_t
     static_assert(sizeof(std::int8_t)*CHAR_BIT == 8,

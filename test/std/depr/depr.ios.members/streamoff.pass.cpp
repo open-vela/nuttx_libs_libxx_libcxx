@@ -20,7 +20,7 @@
 #include <ios>
 #include <type_traits>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER <= 14
     static_assert((std::is_integral<std::ios_base::streamoff>::value), "");

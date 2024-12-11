@@ -20,7 +20,7 @@ constexpr std::byte test(std::byte b1, std::byte b2) {
     }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::byte b;  // not constexpr, just used in noexcept check
     constexpr std::byte b1{static_cast<std::byte>(1)};
     constexpr std::byte b8{static_cast<std::byte>(8)};

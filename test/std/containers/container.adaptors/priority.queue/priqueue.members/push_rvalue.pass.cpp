@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "MoveOnly.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::priority_queue<MoveOnly> q;
     q.push(1);

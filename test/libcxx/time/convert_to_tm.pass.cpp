@@ -34,7 +34,7 @@ struct minimal_short_tm {
   const char* tm_zone;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   { // Test with the maximum number of hours that fit in a short.
     std::chrono::hh_mm_ss time{std::chrono::hours{32767}};
     minimal_short_tm result = std::__convert_to_tm<minimal_short_tm>(time);

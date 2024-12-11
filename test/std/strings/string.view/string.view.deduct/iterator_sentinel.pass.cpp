@@ -48,7 +48,7 @@ constexpr void test() {
   test_with_char<char32_t>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 
   return 0;

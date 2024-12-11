@@ -50,7 +50,7 @@ public:
     ~Class();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     ASSERT_SAME_TYPE(void, std::void_t<>);
 

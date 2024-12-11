@@ -16,7 +16,7 @@
 #include <cassert>
 #include <ranges>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     auto input      = {0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1, 0};
     auto small      = [](const auto x) noexcept { return x < 5; };

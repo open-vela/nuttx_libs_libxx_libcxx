@@ -126,7 +126,7 @@ struct Test {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   types::for_each(types::random_access_iterator_list<int*>{}, TestIteratorWithPolicies<Test>{});
 
 #ifndef TEST_HAS_NO_EXCEPTIONS

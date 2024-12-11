@@ -555,7 +555,7 @@ static void test_ill_formed_utf32() {
 #  endif // _LIBCPP_SHORT_WCHAR
 #endif   // TEST_HAS_NO_WIDE_CHARACTERS
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

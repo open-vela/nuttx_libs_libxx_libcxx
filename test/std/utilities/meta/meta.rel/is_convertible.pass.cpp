@@ -62,7 +62,7 @@ class CannotInstantiate {
 
 struct abstract { virtual int f() = 0; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // void
     test_is_convertible<void,void> ();

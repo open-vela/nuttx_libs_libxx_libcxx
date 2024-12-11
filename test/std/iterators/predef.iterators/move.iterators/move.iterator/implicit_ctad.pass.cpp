@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int* it = nullptr;
   std::move_iterator move_it(it);
   ASSERT_SAME_TYPE(decltype(move_it), std::move_iterator<int*>);

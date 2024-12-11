@@ -57,7 +57,7 @@ struct A
     A& operator=(const A&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_trivial_assign<int&>();
     test_has_trivial_assign<Union>();

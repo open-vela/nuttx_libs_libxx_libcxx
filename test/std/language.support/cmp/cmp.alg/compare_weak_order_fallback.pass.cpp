@@ -556,7 +556,7 @@ constexpr bool test_2()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_1_1();
     test_1_2();

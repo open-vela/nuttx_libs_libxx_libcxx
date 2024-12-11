@@ -46,7 +46,7 @@ static_assert(!std::is_constructible<std::shared_ptr<int[5]>, int(*)[5]>::value,
 static_assert(std::is_constructible<std::shared_ptr<int>, int*>::value, "");
 static_assert(!std::is_convertible<int*, std::shared_ptr<int> >::value, "");
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         assert(A::count == 0);

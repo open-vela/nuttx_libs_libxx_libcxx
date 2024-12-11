@@ -12,7 +12,7 @@
 
 #include <tuple>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::tuple<int&>(std::tuple<int&&>(42));
 
     return 0;

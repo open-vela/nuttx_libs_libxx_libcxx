@@ -299,7 +299,7 @@ TEST_CONSTEXPR_CXX20 void test() {
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test();
 

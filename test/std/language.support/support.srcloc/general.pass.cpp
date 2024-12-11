@@ -58,7 +58,7 @@ static_assert(cur.file_name()[0] == 's' && cur.file_name()[1] == 's' && cur.file
 static_assert(cur.function_name()[0] == '\0');
 
 // and inside a function.
-int main(int, char**) {
+extern "C" int main(int, char**) {
   auto local =
 #line 2000
       std::source_location::current();

@@ -95,7 +95,7 @@ static void test_returns_reference_to_self()
     assert(&ref == &it2);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_assignment_signature();
     test_copy_to_end_iterator();
     test_copy_from_end_iterator();

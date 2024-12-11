@@ -62,7 +62,7 @@ void test(int expected_num_allocs = 1) {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   { // test sequence containers
     test<std::vector<int, test_allocator<int> > >();
     test<std::vector<bool, test_allocator<bool> > >();

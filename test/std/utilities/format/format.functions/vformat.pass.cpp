@@ -49,7 +49,7 @@ auto test_exception =
           TEST_IGNORE_NODISCARD std::vformat(fmt, std::make_format_args<context_t<CharT>>(args...)));
     };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if !defined(TEST_HAS_NO_EXCEPTIONS)
   // reproducer of https://llvm.org/PR65011
   try {

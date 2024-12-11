@@ -54,7 +54,7 @@ void do_insert_rv_test()
     assert(r->second == 2);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_insert_rv_test<std::multimap<int, MoveOnly>, std::pair<int, MoveOnly> >();
     do_insert_rv_test<std::multimap<int, MoveOnly>, std::pair<const int, MoveOnly> >();

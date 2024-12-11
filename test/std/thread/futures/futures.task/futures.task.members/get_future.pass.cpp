@@ -30,7 +30,7 @@ public:
     long operator()(long i, long j) const {return data_ + i + j;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::packaged_task<double(int, char)> p(A(5));

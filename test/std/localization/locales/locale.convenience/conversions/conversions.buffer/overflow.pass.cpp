@@ -44,7 +44,7 @@ struct test_buf
     virtual int_type overflow(int_type c = traits_type::eof()) {return base::overflow(c);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::string s;

@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::wcerr << L"1234";
     assert(std::wcerr.flags() & std::ios_base::unitbuf);
     assert(std::wcerr.tie() == &std::wcout);

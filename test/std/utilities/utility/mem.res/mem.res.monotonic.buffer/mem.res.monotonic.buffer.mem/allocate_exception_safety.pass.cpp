@@ -72,7 +72,7 @@ void test_exception_safety() {
   assert(globalMemCounter.checkDeleteCalledEq(2));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if TEST_SUPPORTS_LIBRARY_INTERNAL_ALLOCATIONS && !defined(DISABLE_NEW_COUNT)
   test_exception_safety();
 #endif

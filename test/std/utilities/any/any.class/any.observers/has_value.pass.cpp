@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "any_helpers.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::any a;

@@ -38,7 +38,7 @@ struct Deleter {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     SPtr<0> s; // OK
     SPtr<1> s1(nullptr); // OK

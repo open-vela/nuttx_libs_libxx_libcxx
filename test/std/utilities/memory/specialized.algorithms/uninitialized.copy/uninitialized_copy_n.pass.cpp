@@ -47,7 +47,7 @@ struct Nasty
 
 int Nasty::counter_ = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     const int N = 5;

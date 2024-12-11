@@ -21,7 +21,7 @@ using std::experimental::propagate_const;
 
 typedef propagate_const<ExplicitX> P;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(!std::is_convertible<P, int>::value, "");
   static_assert(std::is_constructible<P, int>::value, "");
 

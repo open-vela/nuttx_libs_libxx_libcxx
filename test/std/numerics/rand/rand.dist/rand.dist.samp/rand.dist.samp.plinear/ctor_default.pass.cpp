@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::piecewise_linear_distribution<> D;

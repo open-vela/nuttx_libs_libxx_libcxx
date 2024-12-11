@@ -21,7 +21,7 @@
 
 struct NonDestructible { ~NonDestructible() = delete; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::optional<char &> o1;          // expected-error-re@optional:* {{{{(static_assert|static assertion)}} failed{{.*}}instantiation of optional with a reference type is ill-formed}}

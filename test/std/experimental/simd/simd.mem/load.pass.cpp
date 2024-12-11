@@ -112,7 +112,7 @@ void test_converting_load() {
   assert(a[3] == 8);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // TODO: adjust the tests when this assertion fails.
   assert(ex::native_simd<std::int32_t>::size() >= 4);
   test_load<ex::native_simd<std::int32_t>>();

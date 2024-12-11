@@ -193,7 +193,7 @@ void test_sfinae_constraints() {
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_assign_value<small1, small2>();
     test_assign_value<large1, large2>();
     test_assign_value<small, large>();

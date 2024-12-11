@@ -30,7 +30,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // value out of range
   {
     std::layout_right::template mapping<std::dextents<int, 3>> m{std::dextents<int, 3>{100, 100, 100}};

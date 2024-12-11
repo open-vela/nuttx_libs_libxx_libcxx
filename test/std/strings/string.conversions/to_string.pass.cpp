@@ -108,7 +108,7 @@ test_float()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_signed<int>();
     test_signed<long>();

@@ -247,7 +247,7 @@ constexpr bool test_constexpr() {
 }
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_passing();
     test_upper_and_lower_bound();
     test_non_const_arg_cmp();

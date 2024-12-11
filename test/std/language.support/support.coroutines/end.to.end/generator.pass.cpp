@@ -152,7 +152,7 @@ void test_mini_generator() {
   assert(sum == 10);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_count();
   test_range();
   test_mini_generator();

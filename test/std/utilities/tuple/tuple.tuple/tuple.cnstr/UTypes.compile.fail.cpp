@@ -42,7 +42,7 @@ public:
     bool operator< (const MoveOnly& x) const {return data_ <  x.data_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<MoveOnly> t = 1;

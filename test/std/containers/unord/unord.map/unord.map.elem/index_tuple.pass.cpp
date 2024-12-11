@@ -26,7 +26,7 @@ struct my_hash {
     std::size_t operator()(const std::tuple<int, int>&) const { return 0; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::unordered_map<std::tuple<int, int>, std::size_t, my_hash> m;
     m[std::make_tuple(2, 3)] = 7;
 

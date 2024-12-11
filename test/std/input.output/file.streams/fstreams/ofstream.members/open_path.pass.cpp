@@ -25,7 +25,7 @@
 
 namespace fs = std::filesystem;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   fs::path p = get_temp_file_name();
   {
     std::ofstream fs;

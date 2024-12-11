@@ -18,7 +18,7 @@
 #include "test_allocator.h"
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
       typedef limited_allocator<int, 10> A;

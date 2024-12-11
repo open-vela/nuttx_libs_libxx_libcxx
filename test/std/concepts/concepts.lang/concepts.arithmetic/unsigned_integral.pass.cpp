@@ -94,4 +94,4 @@ static_assert(!CheckUnsignedIntegralQualifiers<int (EmptyStruct::*)()>());
 static_assert(CheckSubsumption(0));
 static_assert(CheckSubsumption(0U));
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

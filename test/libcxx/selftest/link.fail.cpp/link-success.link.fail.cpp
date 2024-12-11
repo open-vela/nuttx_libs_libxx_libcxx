@@ -10,4 +10,4 @@
 
 // Make sure the test DOES NOT pass if it succeeds to link.
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

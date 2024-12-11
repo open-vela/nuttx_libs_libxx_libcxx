@@ -25,7 +25,7 @@ typedef std::packaged_task<A(int, char)> PT;
 typedef volatile std::packaged_task<A(int, char)> VPT;
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     VPT init{};
     auto const& c_init = init;

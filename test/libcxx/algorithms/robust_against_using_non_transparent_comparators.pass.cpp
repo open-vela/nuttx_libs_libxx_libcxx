@@ -58,7 +58,7 @@ private:
   T* ptr_;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int array[5] = {1, 2, 3, 4, 5};
   Iterator<int> first(array);
   Iterator<int> middle(array + 3);

@@ -21,7 +21,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::expected<int, int> e{std::unexpect, 5};
   TEST_LIBCPP_ASSERT_FAILURE(e.operator->(), "expected::operator-> requires the expected to contain a value");
   TEST_LIBCPP_ASSERT_FAILURE(std::as_const(e).operator->(), "expected::operator-> requires the expected to contain a value");

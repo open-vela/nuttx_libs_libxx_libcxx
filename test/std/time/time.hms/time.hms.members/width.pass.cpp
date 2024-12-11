@@ -34,7 +34,7 @@ constexpr bool check_width()
     return HMS::fractional_width == width;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using microfortnights = std::chrono::duration<int, std::ratio<756, 625>>;
 

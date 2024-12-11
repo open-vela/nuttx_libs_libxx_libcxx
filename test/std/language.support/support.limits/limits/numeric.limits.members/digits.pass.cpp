@@ -25,7 +25,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::digits == expected, "digits test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, 1>();
     test<char, std::numeric_limits<char>::is_signed ? 7 : 8>();

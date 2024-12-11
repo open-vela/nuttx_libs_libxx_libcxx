@@ -34,7 +34,7 @@ protected:
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::locale loc(std::locale::classic(), new custom_codecvt);
     std::wcerr.imbue(loc);
     std::wcerr << L"1234";

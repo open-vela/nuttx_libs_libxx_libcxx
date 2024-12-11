@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // Basic test
     {
         std::complex<double> const c(1, 2);

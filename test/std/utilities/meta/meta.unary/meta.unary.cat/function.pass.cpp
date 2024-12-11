@@ -64,7 +64,7 @@ void test()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     TEST_REGULAR( void () );
     TEST_REGULAR( void (int) );

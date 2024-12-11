@@ -18,7 +18,7 @@
 
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::duration<Rep> d(Rep(15));
     d = d % 5;

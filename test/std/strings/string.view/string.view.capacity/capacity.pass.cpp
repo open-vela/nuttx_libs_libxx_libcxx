@@ -75,7 +75,7 @@ void test2 ( const CharT *s, std::size_t len ) {
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test1<std::string_view> ();
 #ifndef TEST_HAS_NO_CHAR8_T
     test1<std::u8string_view> ();

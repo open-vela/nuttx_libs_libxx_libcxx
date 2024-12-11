@@ -51,7 +51,7 @@ public:
     B();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_trivial<int> ();
     test_is_trivial<A> ();

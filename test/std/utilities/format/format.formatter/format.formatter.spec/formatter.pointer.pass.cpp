@@ -99,7 +99,7 @@ void test_all_pointer_types() {
   test_pointer_type<const void*, CharT>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all_pointer_types<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_all_pointer_types<wchar_t>();

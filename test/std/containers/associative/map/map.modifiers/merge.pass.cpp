@@ -49,7 +49,7 @@ struct throw_comparator
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::map<int, int> src{{1, 0}, {3, 0}, {5, 0}};

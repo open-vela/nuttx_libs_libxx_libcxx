@@ -117,7 +117,7 @@ void test_for_alloc(Alloc& alloc)
     test_MemFunClass<int(MemFunClass::*)(int, int) const, int(MemFunClass&, int, int)>(alloc);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   globalMemCounter.reset();
   {

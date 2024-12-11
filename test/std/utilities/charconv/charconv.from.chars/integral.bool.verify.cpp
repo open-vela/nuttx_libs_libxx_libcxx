@@ -19,7 +19,7 @@
 
 #include <charconv>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::from_chars;
     char buf[] = "01001";

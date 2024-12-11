@@ -17,7 +17,7 @@
 #include <complex>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::complex<long double> cd(2.5, 3.5);
     std::complex<double> cf = cd;

@@ -78,7 +78,7 @@ struct TestMembers {
 void func1();
 int func2(int);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_positive<CEnum1>();
   test_positive<CEnum2>();
   test_positive<CEnum3>();

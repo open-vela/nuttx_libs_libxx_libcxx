@@ -27,7 +27,7 @@ concept IsNoThrowFreeSwappable = requires(T& t) {
 
 static_assert(IsNoThrowFreeSwappable<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source ss1;
     std::stop_source ss2;

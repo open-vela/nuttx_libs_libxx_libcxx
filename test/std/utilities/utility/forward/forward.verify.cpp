@@ -19,7 +19,7 @@ struct A
 A source() {return A();}
 const A csource() {return A();}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         (void)std::forward<A&>(source());  // expected-note {{requested here}}

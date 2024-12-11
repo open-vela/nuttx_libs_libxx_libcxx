@@ -32,7 +32,7 @@ void test_remove_volatile()
     test_remove_volatile_imp<const volatile T, const T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_remove_volatile<void>();
     test_remove_volatile<int>();

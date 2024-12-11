@@ -13,7 +13,7 @@
 
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   _LIBCPP_ASSERT_UNCATEGORIZED(true, "Should not fire");
   _LIBCPP_ASSERT_UNCATEGORIZED(false, "Also should not fire");
 

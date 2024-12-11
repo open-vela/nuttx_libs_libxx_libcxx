@@ -28,7 +28,7 @@ struct A
     double a4(unsigned i) const {return i-1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::mem_fun1_ref_t<short, A, int> F;
 

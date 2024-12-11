@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::ptrdiff_t i = reinterpret_cast<std::ptrdiff_t>(nullptr);
     assert(i == 0);

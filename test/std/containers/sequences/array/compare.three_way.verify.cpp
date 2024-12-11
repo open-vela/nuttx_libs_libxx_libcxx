@@ -17,7 +17,7 @@
 
 #include <array>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::array a1{1};
     std::array a2{1, 2};

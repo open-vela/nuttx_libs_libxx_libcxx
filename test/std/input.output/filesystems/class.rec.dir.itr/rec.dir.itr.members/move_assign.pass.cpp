@@ -165,7 +165,7 @@ static void test_self_move()
     assert(*it2 == *it);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_assignment_signature();
     test_move_to_end_iterator();
     test_move_from_end_iterator();

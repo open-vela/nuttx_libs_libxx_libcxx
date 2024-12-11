@@ -36,7 +36,7 @@ struct test_istream
         : base(std::move(s)) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb;

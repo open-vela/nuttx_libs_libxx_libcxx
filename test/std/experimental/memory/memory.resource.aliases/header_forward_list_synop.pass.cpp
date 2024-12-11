@@ -30,7 +30,7 @@
 
 namespace pmr = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using StdForwardList = std::forward_list<int, pmr::polymorphic_allocator<int>>;
     using PmrForwardList = pmr::forward_list<int>;

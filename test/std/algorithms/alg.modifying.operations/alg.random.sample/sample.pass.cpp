@@ -134,7 +134,7 @@ void test_small_population() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<cpp17_input_iterator, int, random_access_iterator, int>();
   test<forward_iterator, int, cpp17_output_iterator, int>();
   test<forward_iterator, int, random_access_iterator, int>();

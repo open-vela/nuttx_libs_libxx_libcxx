@@ -54,7 +54,7 @@ void operator delete(void* p, std::size_t) TEST_NOEXCEPT
     std::free(p);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int *x = new int(42);
     DoNotOptimize(x);

@@ -41,7 +41,7 @@ test(It i, typename std::iterator_traits<It>::value_type x)
     assert(*r == x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     A a;
     test(&a+1, A());

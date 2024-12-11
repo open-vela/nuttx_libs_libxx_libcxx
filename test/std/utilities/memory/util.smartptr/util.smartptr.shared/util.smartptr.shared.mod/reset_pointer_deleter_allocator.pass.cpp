@@ -66,7 +66,7 @@ static_assert(!HasReset<std::shared_ptr<int[5]>, int*, bad_deleter, test_allocat
 static_assert(!HasReset<std::shared_ptr<int[5]>, int(*)[5], test_deleter<int>, test_allocator<int>>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_allocator_statistics alloc_stats;
     {

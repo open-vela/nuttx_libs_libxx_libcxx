@@ -27,7 +27,7 @@ test(const T& a, const T& b, const T& x, const T& y)
     assert(&p.second == &y);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int x = 0;

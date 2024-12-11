@@ -24,7 +24,7 @@
 #include <strstream>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::strstream::seek_dir b = std::strstream::cur;
     assert(b == std::ios::cur);

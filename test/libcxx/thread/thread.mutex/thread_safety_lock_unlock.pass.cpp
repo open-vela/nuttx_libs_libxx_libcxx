@@ -24,7 +24,7 @@
 std::mutex m;
 int foo __attribute__((guarded_by(m)));
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   m.lock();
   foo++;
   m.unlock();

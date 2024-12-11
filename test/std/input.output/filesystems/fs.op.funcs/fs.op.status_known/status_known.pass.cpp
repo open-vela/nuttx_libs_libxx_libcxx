@@ -54,7 +54,7 @@ static void status_known_test()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     status_known_test();
 

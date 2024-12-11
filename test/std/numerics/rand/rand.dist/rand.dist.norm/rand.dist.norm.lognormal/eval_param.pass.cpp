@@ -260,7 +260,7 @@ test5()
     assert(std::abs((kurtosis - x_kurtosis) / x_kurtosis) < 0.7);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

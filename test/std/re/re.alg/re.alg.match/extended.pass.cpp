@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::cmatch m;

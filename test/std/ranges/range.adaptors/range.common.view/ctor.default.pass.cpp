@@ -18,7 +18,7 @@
 #include "test_iterators.h"
 #include "types.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(!std::default_initializable<std::ranges::common_view<MoveOnlyView>>);
   static_assert( std::default_initializable<std::ranges::common_view<DefaultConstructibleView>>);
 

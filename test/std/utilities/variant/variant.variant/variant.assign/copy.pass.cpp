@@ -571,7 +571,7 @@ void test_constexpr_copy_assignment() {
   static_assert(test_constexpr_assign_imp<2>(V(42l), 101), "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_copy_assignment_empty_empty();
   test_copy_assignment_non_empty_empty();
   test_copy_assignment_empty_non_empty();

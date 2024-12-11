@@ -20,7 +20,7 @@
 
 #include <map>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // Check that std::pmr::map is usable without <memory_resource>.
     std::pmr::map<int, int> m;

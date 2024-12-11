@@ -53,7 +53,7 @@ struct DThrows
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_nothrow_default_constructor<void>();
     test_has_not_nothrow_default_constructor<int&>();

@@ -27,7 +27,7 @@ struct A
     double a4(unsigned i) const {return i-1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::const_mem_fun1_t<double, A, unsigned> F;
     static_assert((std::is_base_of<std::binary_function<const A*, unsigned, double>, F>::value), "");

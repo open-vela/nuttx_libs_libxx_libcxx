@@ -58,7 +58,7 @@ static void test_move_valid_iterator()
     assert(it == it2 || it == endIt);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_constructor_signature();
     test_move_end_iterator();
     test_move_valid_iterator();

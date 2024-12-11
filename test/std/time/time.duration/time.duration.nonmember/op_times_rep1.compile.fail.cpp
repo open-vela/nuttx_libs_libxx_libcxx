@@ -22,7 +22,7 @@
 
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::duration<Rep> d;
     d = d * 5;

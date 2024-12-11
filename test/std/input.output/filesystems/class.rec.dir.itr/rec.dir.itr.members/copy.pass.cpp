@@ -75,7 +75,7 @@ static void test_copy_valid_iterator()
     assert(it != endIt);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_constructor_signature();
     test_copy_end_iterator();
     test_copy_valid_iterator();

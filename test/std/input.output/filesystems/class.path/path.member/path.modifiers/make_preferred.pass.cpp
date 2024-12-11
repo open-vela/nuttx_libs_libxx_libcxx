@@ -41,7 +41,7 @@ const MakePreferredTestcase TestCases[] =
     , {"\\foo\\/bar\\/baz\\", "\\foo\\/bar\\/baz\\", "\\foo\\\\bar\\\\baz\\"}
   };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   // This operation is an identity operation on linux.
   // On windows, compare with preferred_win, if set.

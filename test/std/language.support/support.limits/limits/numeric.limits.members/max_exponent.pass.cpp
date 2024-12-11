@@ -25,7 +25,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::max_exponent == expected, "max_exponent test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, 0>();
     test<char, 0>();

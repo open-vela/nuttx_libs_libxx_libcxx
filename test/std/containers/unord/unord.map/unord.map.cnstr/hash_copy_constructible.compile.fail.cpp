@@ -26,7 +26,7 @@ private:
 };
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::unordered_map<int, int, Hash<int> > m;
 
   return 0;

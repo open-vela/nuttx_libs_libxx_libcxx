@@ -48,7 +48,7 @@ void test_nullptr()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_nullptr<std::nullptr_t>();
 

@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::unary_function<int, bool> uf;
     static_assert((std::is_same<uf::argument_type, int>::value), "");

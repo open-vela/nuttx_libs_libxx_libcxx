@@ -36,7 +36,7 @@ test(const T&)
 
 struct C {int operator()(...) const { return 0; }};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<true>(std::bind(C()));
     test<true>(std::bind(C(), std::placeholders::_2));

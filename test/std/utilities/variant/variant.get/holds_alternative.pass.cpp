@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include <variant>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     using V = std::variant<int>;
     constexpr V v;

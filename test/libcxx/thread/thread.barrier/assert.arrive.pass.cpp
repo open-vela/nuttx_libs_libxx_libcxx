@@ -25,7 +25,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::barrier<> b(5);
     TEST_LIBCPP_ASSERT_FAILURE(b.arrive(0), "barrier:arrive must be called with a value greater than 0");

@@ -56,7 +56,7 @@ void testN(int start, int N, int M)
     LIBCPP_ASSERT(is_double_ended_contiguous_container_asan_correct(c2_save));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         int rng[] = {0, 1, 2, 3, 1023, 1024, 1025, 2047, 2048, 2049};

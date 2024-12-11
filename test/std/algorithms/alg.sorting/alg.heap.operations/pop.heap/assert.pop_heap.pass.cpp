@@ -20,7 +20,7 @@
 #include <array>
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::array<int, 0> a;
 
   TEST_LIBCPP_ASSERT_FAILURE(std::pop_heap(a.begin(), a.end()), "The heap given to pop_heap must be non-empty");

@@ -26,7 +26,7 @@ struct M {
     void unlock_shared() {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_constructible<bool, std::shared_lock<M>>::value, "");
     static_assert(!std::is_convertible<std::shared_lock<M>, bool>::value, "");

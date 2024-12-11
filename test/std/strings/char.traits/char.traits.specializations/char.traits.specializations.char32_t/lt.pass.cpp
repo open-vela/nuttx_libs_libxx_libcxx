@@ -17,7 +17,7 @@
 #include <string>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(!std::char_traits<char32_t>::lt(U'a', U'a'));
     assert( std::char_traits<char32_t>::lt(U'A', U'a'));

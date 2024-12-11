@@ -22,7 +22,7 @@
 #include "check_assertion.h"
 #include "../types.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     OuterIterForward i;
     TEST_LIBCPP_ASSERT_FAILURE(i == std::default_sentinel, "Cannot call comparison on a default-constructed iterator.");

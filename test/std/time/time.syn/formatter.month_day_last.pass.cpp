@@ -394,7 +394,7 @@ static void test() {
       "The format specifier expects a '%' or a '}'", SV("{:.3}"), std::chrono::month_day_last{std::chrono::January});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

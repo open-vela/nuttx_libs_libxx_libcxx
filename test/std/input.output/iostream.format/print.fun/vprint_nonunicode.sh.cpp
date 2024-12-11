@@ -37,7 +37,7 @@
 
 #include <print>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // The data is passed as-is so it does not depend on the encoding of the input.
   std::vprint_nonunicode("{} {} ", std::make_format_args(1234, "一二三四"));
   std::vprint_nonunicode("{} {}", std::make_format_args(true, nullptr));

@@ -41,7 +41,7 @@ void test(Container& c)
     assert(c.size() == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using map_type = std::unordered_map<int, int>;

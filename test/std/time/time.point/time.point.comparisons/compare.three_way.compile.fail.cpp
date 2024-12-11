@@ -23,7 +23,7 @@
 
 #include "../../clock.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace std::chrono_literals;
   std::chrono::time_point<std::chrono::system_clock, std::chrono::milliseconds> t1{3ms};
   std::chrono::time_point<Clock, std::chrono::milliseconds> t2{3ms};

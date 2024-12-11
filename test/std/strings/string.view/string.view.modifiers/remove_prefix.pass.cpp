@@ -47,7 +47,7 @@ constexpr std::size_t test_ce ( size_t n, size_t k ) {
 }
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test ( "ABCDE", 5 );
     test ( "a", 1 );
     test ( "", 0 );

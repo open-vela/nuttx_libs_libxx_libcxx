@@ -28,7 +28,7 @@ void test(B bad, Pairs... args) {
 
 struct E { int a = 1; double b = 1; char c = 1; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test<std::unordered_map<char, int>, std::pair<char, int> >(

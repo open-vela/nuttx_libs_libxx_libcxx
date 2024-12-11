@@ -266,7 +266,7 @@ static void test_options_post_conditions()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_constructor_signatures();
     test_construction_from_bad_path();
     access_denied_test_case();

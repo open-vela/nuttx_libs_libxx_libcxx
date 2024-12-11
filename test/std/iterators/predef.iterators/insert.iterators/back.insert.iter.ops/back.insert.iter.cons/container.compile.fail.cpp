@@ -17,7 +17,7 @@
 #include <iterator>
 #include <vector>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<int> v;
     std::back_insert_iterator<std::vector<int> > i = v;

@@ -38,7 +38,7 @@ void test_throw() {
 #endif // TEST_HAS_NO_EXCEPTIONS
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_call();
   test_throw();
   return 0;

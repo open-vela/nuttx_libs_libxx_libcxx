@@ -15,7 +15,7 @@
 
 #include <random>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef unsigned long long T;
 

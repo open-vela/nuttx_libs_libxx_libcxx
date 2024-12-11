@@ -133,7 +133,7 @@ void test_exceptions() {
 }
 #endif // TEST_HAS_NO_EXCEPTIONS
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 #ifndef TEST_HAS_NO_EXCEPTIONS
   test_exceptions();

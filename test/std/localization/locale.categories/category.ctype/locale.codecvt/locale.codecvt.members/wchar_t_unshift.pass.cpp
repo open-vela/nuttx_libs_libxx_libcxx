@@ -26,7 +26,7 @@
 
 typedef std::codecvt<wchar_t, char, std::mbstate_t> F;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::locale l = std::locale::classic();
     std::vector<F::extern_type> to(3);

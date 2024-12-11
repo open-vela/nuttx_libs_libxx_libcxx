@@ -65,7 +65,7 @@ void test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::pmr::synchronized_pool_resource>();
   test<std::pmr::unsynchronized_pool_resource>();
 

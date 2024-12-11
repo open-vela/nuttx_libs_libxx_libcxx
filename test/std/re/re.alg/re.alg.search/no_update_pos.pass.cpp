@@ -19,7 +19,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Iterating over /^a/ should yield one instance at the beginning
     // of the text.

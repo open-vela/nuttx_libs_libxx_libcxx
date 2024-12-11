@@ -70,7 +70,7 @@ struct type_with_index {
 #endif
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_index_type<unsigned char>();
   // This won't compile due to template depth issues.
   //test_index_type<unsigned short>();

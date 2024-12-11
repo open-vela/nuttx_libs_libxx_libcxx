@@ -81,6 +81,6 @@ void test_is_valid_trait() {
   static_assert(!std::_IsValidExpansion<FuncCallable, MemberTest, void*>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }

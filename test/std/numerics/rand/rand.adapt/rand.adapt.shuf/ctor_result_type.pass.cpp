@@ -74,7 +74,7 @@ test1()
     assert(os.str() == a);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
 

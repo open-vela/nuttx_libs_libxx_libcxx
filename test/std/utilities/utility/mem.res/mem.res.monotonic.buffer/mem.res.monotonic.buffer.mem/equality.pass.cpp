@@ -32,7 +32,7 @@ struct assert_on_compare : public std::pmr::memory_resource {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Same object
   {
     std::pmr::monotonic_buffer_resource r1;

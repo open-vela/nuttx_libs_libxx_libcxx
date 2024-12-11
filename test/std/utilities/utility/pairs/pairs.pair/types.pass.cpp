@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pair<float, short*> P;
     static_assert((std::is_same<P::first_type, float>::value), "");

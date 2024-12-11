@@ -58,7 +58,7 @@ bool test()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 #if TEST_STD_VER >= 20

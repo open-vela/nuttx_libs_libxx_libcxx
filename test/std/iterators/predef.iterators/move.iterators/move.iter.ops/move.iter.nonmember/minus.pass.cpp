@@ -33,7 +33,7 @@ test(It l, It r, typename std::iterator_traits<It>::difference_type x)
     assert(r1 - r2 == x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char s[] = "1234567890";
     test(random_access_iterator<char*>(s+5), random_access_iterator<char*>(s), 5);

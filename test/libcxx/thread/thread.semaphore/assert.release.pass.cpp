@@ -24,7 +24,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::counting_semaphore<> s(2);
     TEST_LIBCPP_ASSERT_FAILURE(s.release(-1), "counting_semaphore:release called with a negative value");

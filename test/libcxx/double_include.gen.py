@@ -28,6 +28,6 @@ for header in public_headers:
 #include <{header}>
 
 #if defined(WITH_MAIN)
-int main(int, char**) {{ return 0; }}
+extern "C" int main(int, char**) {{ return 0; }}
 #endif
 """)

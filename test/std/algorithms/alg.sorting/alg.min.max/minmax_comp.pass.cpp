@@ -30,7 +30,7 @@ test(const T& a, const T& b, C c, const T& x, const T& y)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int x = 0;

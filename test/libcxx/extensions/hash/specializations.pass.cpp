@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char str[] = "test";
     assert(__gnu_cxx::hash<const char *>()("test") ==

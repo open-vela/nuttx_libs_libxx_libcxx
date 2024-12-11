@@ -35,7 +35,7 @@ struct X
     int test() && {return 6;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const optional<X> opt; ((void)opt);

@@ -25,7 +25,7 @@ constexpr bool test_constexpr()
         && std::char_traits<char8_t>::length(u8"abcd") == 4;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::char_traits<char8_t>::length(u8"") == 0);
     assert(std::char_traits<char8_t>::length(u8"a") == 1);
@@ -37,7 +37,7 @@ int main(int, char**)
     return 0;
 }
 #else
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }
 #endif

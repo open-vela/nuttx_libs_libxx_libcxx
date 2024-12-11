@@ -28,7 +28,7 @@ test()
     assert(m.prefix().matched == true);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

@@ -65,7 +65,7 @@ void test()
     test0<S>({1, 2, 3}, False, {1, 2, 3}, 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::map<int, int>>();
     test<std::map<int, int, std::less<int>, min_allocator<std::pair<const int, int>>>> ();

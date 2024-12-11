@@ -30,7 +30,7 @@
 #include "test_macros.h"
 #include "allocators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<
         A1<int>,

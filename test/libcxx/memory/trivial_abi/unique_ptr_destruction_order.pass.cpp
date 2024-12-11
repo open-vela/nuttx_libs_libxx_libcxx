@@ -46,7 +46,7 @@ __attribute__((noinline)) void func(A /*unused*/, std::unique_ptr<B> /*unused*/,
   call_something();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   char shared_buf[3] = {'0', '0', '0'};
   int cur_idx = 0;
 

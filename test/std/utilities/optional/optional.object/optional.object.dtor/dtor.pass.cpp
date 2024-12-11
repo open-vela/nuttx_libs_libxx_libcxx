@@ -36,7 +36,7 @@ public:
 
 bool X::dtor_called = false;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int T;

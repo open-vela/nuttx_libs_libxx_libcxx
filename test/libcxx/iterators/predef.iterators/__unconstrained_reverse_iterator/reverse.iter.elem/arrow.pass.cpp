@@ -74,7 +74,7 @@ public:
 
 TEST_CONSTEXPR  C gC;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   A a;
   test(&a+1, A());

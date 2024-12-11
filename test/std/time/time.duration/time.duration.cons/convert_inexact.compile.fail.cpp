@@ -17,7 +17,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::microseconds us(1);
     std::chrono::milliseconds ms = us;

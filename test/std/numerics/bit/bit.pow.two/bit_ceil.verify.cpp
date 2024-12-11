@@ -30,7 +30,7 @@ constexpr bool toobig()
     return 0 == std::bit_ceil(std::numeric_limits<T>::max());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Make sure we generate a compile-time error for UB
     static_assert(toobig<unsigned char>(),      ""); // expected-error-re {{{{(static_assert|static assertion)}} expression is not an integral constant expression}}

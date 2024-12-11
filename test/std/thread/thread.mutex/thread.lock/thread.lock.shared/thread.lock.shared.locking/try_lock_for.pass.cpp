@@ -42,7 +42,7 @@ struct mutex
 
 mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::shared_lock<mutex> lk(m, std::defer_lock);
     assert(lk.try_lock_for(ms(5)) == true);

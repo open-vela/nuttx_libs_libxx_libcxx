@@ -22,7 +22,7 @@ void test_type_identity()
     ASSERT_SAME_TYPE(T,          std::type_identity_t<T>);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_type_identity<void>();
     test_type_identity<int>();

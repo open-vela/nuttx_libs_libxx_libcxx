@@ -24,7 +24,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::unordered_multiset<int> C;
     C c;
     TEST_LIBCPP_ASSERT_FAILURE(c.max_load_factor(0), "unordered container::max_load_factor(lf) called with lf <= 0");

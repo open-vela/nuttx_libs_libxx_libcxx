@@ -20,7 +20,7 @@ struct Foo {
     int x;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // span<T>::iterator
     {
         Foo array[] = {{0}, {1}, {2}};

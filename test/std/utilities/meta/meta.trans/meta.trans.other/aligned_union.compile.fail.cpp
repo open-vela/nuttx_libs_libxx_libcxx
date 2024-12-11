@@ -16,7 +16,7 @@
 
 class A; // Incomplete
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::aligned_union<10, A>::type T1;
 

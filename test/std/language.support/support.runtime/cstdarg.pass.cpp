@@ -30,7 +30,7 @@
 #error va_start not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::va_list va;
     ((void)va);

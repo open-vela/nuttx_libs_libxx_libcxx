@@ -62,7 +62,7 @@ void test_pr34298()
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_pr34298();
 
   return 0;

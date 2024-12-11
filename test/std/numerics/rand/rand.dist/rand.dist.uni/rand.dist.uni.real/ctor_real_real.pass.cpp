@@ -36,7 +36,7 @@ void test_implicit() {
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::uniform_real_distribution<> D;

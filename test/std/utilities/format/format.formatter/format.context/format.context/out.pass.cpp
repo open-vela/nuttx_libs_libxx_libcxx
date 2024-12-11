@@ -62,7 +62,7 @@ void test() {
           std::basic_format_context<cpp20_output_iterator<std::basic_string<char32_t>::iterator>, char32_t>>()));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 
   return 0;

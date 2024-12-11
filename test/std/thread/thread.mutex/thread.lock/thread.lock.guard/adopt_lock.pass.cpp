@@ -28,7 +28,7 @@ void do_try_lock() {
   assert(m.try_lock() == false);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     m.lock();
     std::lock_guard<std::mutex> lg(m, std::adopt_lock);

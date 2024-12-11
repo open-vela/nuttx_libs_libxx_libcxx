@@ -91,7 +91,7 @@ constexpr bool test_all()
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_all<int, short>();
     test_all<X, int>();

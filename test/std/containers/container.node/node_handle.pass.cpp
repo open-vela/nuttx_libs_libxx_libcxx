@@ -127,7 +127,7 @@ void test_insert_return_type()
     test_typedef<typename Container::insert_return_type>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_node_handle_operations<std::map<int, int>>();
     test_node_handle_operations_multi<std::multimap<int, int>>();

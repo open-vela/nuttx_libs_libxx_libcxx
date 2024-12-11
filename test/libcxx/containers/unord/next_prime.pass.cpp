@@ -38,7 +38,7 @@ is_prime(std::size_t n)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::__next_prime(0) == 0);
     for (std::size_t n = 1; n <= 100000; ++n)

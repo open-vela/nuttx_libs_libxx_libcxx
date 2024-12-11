@@ -74,7 +74,7 @@ class Abstract
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_nothrow_destructible<void>();
     test_is_not_nothrow_destructible<char[]>();

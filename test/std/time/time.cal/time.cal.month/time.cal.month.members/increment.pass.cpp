@@ -48,7 +48,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using month = std::chrono::month;
 
   ASSERT_NOEXCEPT(++(std::declval<month&>()));

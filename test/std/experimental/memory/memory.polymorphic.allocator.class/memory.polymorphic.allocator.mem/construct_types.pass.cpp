@@ -193,7 +193,7 @@ void test_non_pmr_uses_alloc(AllocObj const& A, Args&&... args)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using ET = std::experimental::erased_type;
     using PMR = ex::memory_resource*;

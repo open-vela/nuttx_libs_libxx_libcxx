@@ -83,7 +83,7 @@ enum enum2 : unsigned long {
   value = std::numeric_limits<unsigned long>::max()
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   check_integral_types<bool, int>();
   check_integral_types<char, int>();

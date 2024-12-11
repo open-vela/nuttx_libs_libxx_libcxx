@@ -71,7 +71,7 @@ static void move_assign_copies_cache() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_move_assign_operator();
   move_assign_copies_cache();
 

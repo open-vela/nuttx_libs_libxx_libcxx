@@ -138,7 +138,7 @@ void test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 
   return 0;

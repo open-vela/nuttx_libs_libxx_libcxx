@@ -13,7 +13,7 @@
 #include <ios>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_error_code_enum  <std::io_errc>::value, "");
 #if TEST_STD_VER > 14

@@ -106,7 +106,7 @@ void test_all_unsigned_integral_types() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all_unsigned_integral_types<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_all_unsigned_integral_types<wchar_t>();

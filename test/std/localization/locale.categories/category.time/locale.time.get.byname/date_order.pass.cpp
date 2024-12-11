@@ -34,7 +34,7 @@ public:
         : F(nm, refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const my_facet f(LOCALE_en_US_UTF_8, 1);

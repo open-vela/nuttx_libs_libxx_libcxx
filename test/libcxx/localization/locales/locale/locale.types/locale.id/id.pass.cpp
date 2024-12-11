@@ -27,7 +27,7 @@ std::locale::id id0;
 std::locale::id id2;
 std::locale::id id1;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     long id = id0.__get();
     assert(id0.__get() == id+0);

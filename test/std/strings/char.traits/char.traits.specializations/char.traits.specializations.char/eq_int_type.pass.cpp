@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert( std::char_traits<char>::eq_int_type('a', 'a'));
     assert(!std::char_traits<char>::eq_int_type('a', 'A'));

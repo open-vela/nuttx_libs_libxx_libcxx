@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::ios ios(0);
     assert(static_cast<bool>(ios) == !ios.fail());

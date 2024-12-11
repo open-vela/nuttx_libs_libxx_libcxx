@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::variant_npos == static_cast<std::size_t>(-1), "");
 
   return 0;

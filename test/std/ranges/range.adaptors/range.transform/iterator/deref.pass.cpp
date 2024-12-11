@@ -15,7 +15,7 @@
 #include "test_macros.h"
 #include "../types.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     int buff[] = {0, 1, 2, 3, 4, 5, 6, 7};
     using View = std::ranges::transform_view<MoveOnlyView, PlusOne>;

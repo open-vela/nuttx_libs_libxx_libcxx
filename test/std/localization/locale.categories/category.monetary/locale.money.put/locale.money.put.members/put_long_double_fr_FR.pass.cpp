@@ -58,7 +58,7 @@ static std::wstring convert_thousands_sep(std::wstring const& in) {
 }
 #endif // TEST_HAS_NO_WIDE_CHARACTERS
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::ios ios(0);
     std::string loc_name(LOCALE_fr_FR_UTF_8);

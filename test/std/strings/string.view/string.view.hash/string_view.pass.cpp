@@ -58,7 +58,7 @@ test()
     assert(sh(ss2) == h(s2));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::string_view>();
 #ifndef TEST_HAS_NO_CHAR8_T

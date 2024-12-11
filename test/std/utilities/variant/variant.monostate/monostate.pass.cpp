@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using M = std::monostate;
   static_assert(std::is_trivially_default_constructible<M>::value, "");
   static_assert(std::is_trivially_copy_constructible<M>::value, "");

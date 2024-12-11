@@ -29,7 +29,7 @@
 #include "MoveOnly.h"
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<MoveOnly> lhs, rhs;
     lhs.push_back(MoveOnly(2));

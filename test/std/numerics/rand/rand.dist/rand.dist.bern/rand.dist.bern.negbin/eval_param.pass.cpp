@@ -30,7 +30,7 @@ sqr(T x)
     return x * x;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::negative_binomial_distribution<> D;

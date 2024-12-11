@@ -34,7 +34,7 @@ operator < (const A& x, const A& y)
     return x.data_ < y.data_;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using namespace std::rel_ops;
     A a1(1);

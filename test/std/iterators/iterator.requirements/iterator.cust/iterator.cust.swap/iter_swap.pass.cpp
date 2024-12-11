@@ -216,7 +216,7 @@ static_assert(std::is_invocable_v<IterSwapT, Holder<Incomplete>**, Holder<Incomp
 static_assert(std::is_invocable_v<IterSwapT, Holder<Incomplete>**&, Holder<Incomplete>**>);
 static_assert(std::is_invocable_v<IterSwapT, Holder<Incomplete>**&, Holder<Incomplete>**&>);
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test();
   static_assert(test());

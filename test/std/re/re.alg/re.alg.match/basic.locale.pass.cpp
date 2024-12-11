@@ -31,7 +31,7 @@
 
 #include "platform_support.h" // locale name macros
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::locale::global(std::locale(LOCALE_cs_CZ_ISO8859_2));
     {

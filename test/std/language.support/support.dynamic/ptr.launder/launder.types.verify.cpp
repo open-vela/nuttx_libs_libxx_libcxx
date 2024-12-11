@@ -20,7 +20,7 @@
 
 void foo() {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     void *p = nullptr;
     (void) std::launder((               void *) nullptr);

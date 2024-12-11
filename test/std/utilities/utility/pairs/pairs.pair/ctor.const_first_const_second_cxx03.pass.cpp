@@ -26,7 +26,7 @@ public:
     bool operator==(const A& a) const {return data_ == a.data_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<float, short*> P;

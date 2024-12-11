@@ -63,7 +63,7 @@ test_void_0()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_void_0();
 

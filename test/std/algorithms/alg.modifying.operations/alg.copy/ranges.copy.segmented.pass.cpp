@@ -92,7 +92,7 @@ constexpr void test_join_view() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   if (!std::is_constant_evaluated()) {
     test_containers<std::deque<int>, std::deque<int>>();
     test_containers<std::deque<int>, std::vector<int>>();

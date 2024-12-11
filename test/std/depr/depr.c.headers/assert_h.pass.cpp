@@ -14,7 +14,7 @@
 #error assert not defined
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(true);
 
   return 0;

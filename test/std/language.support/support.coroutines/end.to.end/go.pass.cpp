@@ -161,7 +161,7 @@ goroutine pusher(channel& left, channel& right)
 const int N = 100;
 channel c[N + 1];
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for (int i = 0; i < N; ++i)
     pusher(c[i], c[i + 1]);
 

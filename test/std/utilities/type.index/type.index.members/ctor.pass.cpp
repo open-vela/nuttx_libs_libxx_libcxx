@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::type_info const & info = typeid(int);
     std::type_index t1(info);
