@@ -63,7 +63,7 @@ void swap(T&, T&) {}
 
 } // end namespace MyNS2
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using namespace MyNS;
     {

@@ -100,7 +100,7 @@ coro2 d() {
   assert(dtor_called == 1);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   a();
   b();
   c();

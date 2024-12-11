@@ -20,7 +20,7 @@
 constexpr int gi = 5;
 constexpr float gf = 8.f;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     static_assert(std::launder(&gi) == &gi, "" );
     static_assert(std::launder(&gf) == &gf, "" );
 

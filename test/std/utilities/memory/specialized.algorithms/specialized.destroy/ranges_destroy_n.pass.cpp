@@ -130,7 +130,7 @@ constexpr bool test_arrays() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   tests();
   test_arrays();
 

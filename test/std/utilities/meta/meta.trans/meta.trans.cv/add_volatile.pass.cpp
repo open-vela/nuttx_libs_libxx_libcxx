@@ -32,7 +32,7 @@ void test_add_volatile()
     test_add_volatile_imp<const volatile T, const volatile T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_add_volatile<void>();
     test_add_volatile<int>();

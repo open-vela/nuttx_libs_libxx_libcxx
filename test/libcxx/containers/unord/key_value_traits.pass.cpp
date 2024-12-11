@@ -53,7 +53,7 @@ void testKeyValueTrait() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   testKeyValueTrait();
 
   return 0;

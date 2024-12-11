@@ -31,7 +31,7 @@ void test ( const CharT *s, std::size_t len ) {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test ( "ABCDE", 5 );
     test ( "a", 1 );
 

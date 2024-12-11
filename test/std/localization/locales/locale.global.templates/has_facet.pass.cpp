@@ -23,7 +23,7 @@ struct my_facet
 
 std::locale::id my_facet::id;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::locale loc;
     assert(std::has_facet<std::ctype<char> >(loc));

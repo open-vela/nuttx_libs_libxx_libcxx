@@ -32,7 +32,7 @@ struct NotCopyOrMoveConstructible {
   NotCopyOrMoveConstructible(NotCopyOrMoveConstructible&&) = delete;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<int, short> P1;

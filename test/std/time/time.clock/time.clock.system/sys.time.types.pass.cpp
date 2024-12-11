@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using system_clock = std::chrono::system_clock;
     using year         = std::chrono::year;

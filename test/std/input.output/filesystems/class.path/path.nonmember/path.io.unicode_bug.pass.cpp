@@ -63,7 +63,7 @@ void doIOTest() {
 }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   doIOTest<char16_t>();
   doIOTest<char32_t>();
 

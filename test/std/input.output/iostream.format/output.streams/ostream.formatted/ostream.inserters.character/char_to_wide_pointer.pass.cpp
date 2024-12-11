@@ -53,7 +53,7 @@ protected:
         }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::wostream os((std::wstreambuf*)0);

@@ -27,7 +27,7 @@ concept IsNoThrowMemberSwappable = requires(T& t) {
 
 static_assert(IsNoThrowMemberSwappable<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source ss1;
     std::stop_source ss2;

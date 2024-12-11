@@ -30,7 +30,7 @@ struct some_alloc
     some_alloc(const some_alloc&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if defined(_LIBCPP_VERSION)
     {

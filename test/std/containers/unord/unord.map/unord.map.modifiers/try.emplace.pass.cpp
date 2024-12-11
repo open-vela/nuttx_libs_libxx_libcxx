@@ -63,7 +63,7 @@ namespace std {
     };
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
     { // pair<iterator, bool> try_emplace(const key_type& k, Args&&... args);

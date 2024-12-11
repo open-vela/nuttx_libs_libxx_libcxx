@@ -56,7 +56,7 @@ static void test() {
   static_assert(std::is_same_v<decltype(tss.view()), std::basic_string_view<CharT, my_char_traits<CharT>>>);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

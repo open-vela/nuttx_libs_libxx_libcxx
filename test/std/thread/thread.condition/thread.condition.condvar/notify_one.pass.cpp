@@ -77,7 +77,7 @@ void f2()
   test2 = 2;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   std::thread t1 = support::make_test_thread(f1);
   std::thread t2 = support::make_test_thread(f2);

@@ -91,7 +91,7 @@ void f()
     ++runs;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         L1 lk(m0);

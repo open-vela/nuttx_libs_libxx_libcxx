@@ -80,7 +80,7 @@ struct G {
     };
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     static_assert((std::is_same<std::allocator_traits<A<char> >::rebind_alloc<double>, ReboundA<double> >::value), "");

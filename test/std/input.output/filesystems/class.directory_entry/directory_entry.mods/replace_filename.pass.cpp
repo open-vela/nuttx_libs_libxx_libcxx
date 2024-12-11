@@ -167,7 +167,7 @@ static void test_replace_filename_propagates_error() {
 }
 #endif // TEST_WIN_NO_FILESYSTEM_PERMS_NONE
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_replace_filename_method();
   test_replace_filename_ec_method();
   test_replace_filename_calls_refresh();

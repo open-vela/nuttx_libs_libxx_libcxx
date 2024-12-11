@@ -42,7 +42,7 @@ struct ExplicitDerived : std::tuple<T> {
   explicit operator std::tuple<U>() && { ++count; return {}; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::tuple<Explicit> foo = Derived<int>{42}; ((void)foo);
     assert(count == 1);

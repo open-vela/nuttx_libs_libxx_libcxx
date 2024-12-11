@@ -19,7 +19,7 @@
 
 #include "count_new.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   globalMemCounter.reset();
   std::pmr::monotonic_buffer_resource mono;
 

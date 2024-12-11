@@ -58,7 +58,7 @@ void check_random_device_invalid(const std::string &token) {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::random_device r;
   }

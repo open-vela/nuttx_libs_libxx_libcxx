@@ -56,7 +56,7 @@ struct A_int_0
     int operator()() const {count += 2; return 5;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::bind(f));
     test(std::bind(&f));

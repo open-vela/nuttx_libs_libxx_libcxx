@@ -39,7 +39,7 @@ testd(const C& c, int p, int l)
     assert(std::distance(c.begin(), c.end()) == size_t1 + l);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     // splicing different containers

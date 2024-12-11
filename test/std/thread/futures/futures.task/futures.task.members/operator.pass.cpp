@@ -80,7 +80,7 @@ void func3(std::packaged_task<double(int, char)> p)
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::packaged_task<double(int, char)> p(A(5));

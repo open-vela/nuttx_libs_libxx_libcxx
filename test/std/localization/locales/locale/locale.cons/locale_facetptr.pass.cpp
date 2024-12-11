@@ -74,7 +74,7 @@ struct my_facet
 
 std::locale::id my_facet::id;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::locale loc(LOCALE_ru_RU_UTF_8);

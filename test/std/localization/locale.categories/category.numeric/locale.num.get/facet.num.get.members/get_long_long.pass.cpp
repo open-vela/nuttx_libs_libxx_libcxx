@@ -41,7 +41,7 @@ protected:
     virtual std::string do_grouping() const {return std::string("\1\2\3");}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const my_facet f(1);
     std::ios ios(0);

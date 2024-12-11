@@ -50,7 +50,7 @@ public:
 
 int A::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER <= 14
     {

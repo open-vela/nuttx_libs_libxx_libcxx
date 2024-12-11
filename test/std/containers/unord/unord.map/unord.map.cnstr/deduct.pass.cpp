@@ -93,7 +93,7 @@
 using P = std::pair<int, long>;
 using PC = std::pair<const int, long>;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const PC expected_m[] = { {1,1}, {2,2}, {3,1}, {INT_MAX,1} };
 

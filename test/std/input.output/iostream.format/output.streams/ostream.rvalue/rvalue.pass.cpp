@@ -57,7 +57,7 @@ struct Int {
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb;

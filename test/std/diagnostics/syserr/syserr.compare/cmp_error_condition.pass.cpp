@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   AssertOrderAreNoexcept<std::error_condition>();
   AssertOrderReturn<std::strong_ordering, std::error_condition>();
 

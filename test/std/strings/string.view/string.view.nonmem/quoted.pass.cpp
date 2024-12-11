@@ -163,7 +163,7 @@ std::wstring unquote ( const wchar_t *p, wchar_t delim='"', wchar_t escape='\\' 
 }
 #endif // TEST_HAS_NO_WIDE_CHARACTERS
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     round_trip    (  "" );
     round_trip_ws (  "" );

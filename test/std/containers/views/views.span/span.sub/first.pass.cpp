@@ -66,7 +66,7 @@ constexpr int carr1[] = {1,2,3,4};
           int   arr[] = {5,6,7};
 std::string   sarr [] = { "ABC", "DEF", "GHI", "JKL", "MNO"};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     using Sp = std::span<const int>;

@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef __STDCPP_THREADS__
 #error __STDCPP_THREADS__ is not defined

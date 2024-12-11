@@ -23,7 +23,7 @@ struct X
     int test() {return 4;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         constexpr optional<X> opt;

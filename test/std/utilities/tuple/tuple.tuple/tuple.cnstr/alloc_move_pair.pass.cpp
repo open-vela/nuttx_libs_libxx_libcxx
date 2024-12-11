@@ -40,7 +40,7 @@ struct D
     explicit D(int i) : B(i) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<int, std::unique_ptr<D>> T0;

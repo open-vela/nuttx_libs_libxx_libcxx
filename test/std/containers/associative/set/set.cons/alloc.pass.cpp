@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::less<int> C;
     typedef test_allocator<int> A;

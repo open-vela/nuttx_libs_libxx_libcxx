@@ -14,7 +14,7 @@
 
 void f() {}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using T = std::unexpected_handler; // expected-error {{no type named 'unexpected_handler' in namespace 'std'}}
   std::unexpected(); // expected-error {{no member named 'unexpected' in namespace 'std'}}
   std::get_unexpected(); // expected-error {{no member named 'get_unexpected' in namespace 'std'}}

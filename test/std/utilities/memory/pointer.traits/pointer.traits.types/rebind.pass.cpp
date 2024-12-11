@@ -81,7 +81,7 @@ struct G
 #endif
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     static_assert((std::is_same<std::pointer_traits<A<int*> >::rebind<double*>, A<double*> >::value), "");

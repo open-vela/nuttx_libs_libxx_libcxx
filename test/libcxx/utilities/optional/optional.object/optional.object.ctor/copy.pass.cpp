@@ -37,7 +37,7 @@ struct Z
     Z& operator=(const Z&) = delete;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using T = int;

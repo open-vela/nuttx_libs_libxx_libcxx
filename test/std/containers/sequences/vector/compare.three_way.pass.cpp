@@ -20,7 +20,7 @@
 
 #include "test_container_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_sequence_container_spaceship<std::vector>());
   static_assert(test_sequence_container_spaceship<std::vector>());
   return 0;

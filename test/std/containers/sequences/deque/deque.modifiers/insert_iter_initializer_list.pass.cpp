@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::deque<int> d(10, 1);

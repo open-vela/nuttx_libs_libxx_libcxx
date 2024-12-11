@@ -68,7 +68,7 @@ TEST_CONSTEXPR bool test_constexpr() {
 #define HAS_FOUR_ITERATOR_VERSION
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int ia[] = {0, 1, 2, 2, 0, 1, 2, 3};
     const unsigned sa = sizeof(ia)/sizeof(ia[0]);

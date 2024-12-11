@@ -268,7 +268,7 @@ void test_emplace_sfinae_constraints() {
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_emplace_type<small>();
     test_emplace_type<large>();
     test_emplace_type<small_throws_on_copy>();

@@ -63,7 +63,7 @@ struct A
     A(const A&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_trivial_copy_constructor<void>();
     test_has_not_trivial_copy_constructor<A>();

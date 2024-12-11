@@ -162,7 +162,7 @@ static void pop_does_not_reset_value()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     initial_value_test();
     value_after_copy_construction_and_assignment_test();
     value_after_move_construction_and_assignment_test();

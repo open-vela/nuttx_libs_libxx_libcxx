@@ -882,7 +882,7 @@ constexpr bool test_constexpr() {
 // - different kinds of replacements (varying the size of the initial string, the cut point and the cut size, and the
 //   size of the input range);
 // - an exception is thrown when allocating new elements.
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_constraints_replace_with_range());
 
   for_all_iterators_and_allocators<char, const char*>([]<class Iter, class Sent, class Alloc>() {

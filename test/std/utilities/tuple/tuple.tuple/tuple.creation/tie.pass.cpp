@@ -43,7 +43,7 @@ bool test_tie()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_tie();
 #if TEST_STD_VER >= 14

@@ -28,7 +28,7 @@
 #include "../../../test_hash.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::allocator<std::pair<const int, std::string> > A;

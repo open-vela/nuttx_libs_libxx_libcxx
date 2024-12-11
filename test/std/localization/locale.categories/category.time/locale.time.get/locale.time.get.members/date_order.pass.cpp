@@ -27,7 +27,7 @@ public:
         : F(refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const my_facet f(1);
     assert(f.date_order() == std::time_base::mdy);

@@ -45,7 +45,7 @@ void test_floating_point()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_floating_point<float>();
     test_floating_point<double>();

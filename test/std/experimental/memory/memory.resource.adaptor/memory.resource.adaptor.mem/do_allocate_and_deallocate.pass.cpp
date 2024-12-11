@@ -110,7 +110,7 @@ void check_alloc_max_size() {
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_allocate_deallocate<CountingAllocator<char>>();
     check_allocate_deallocate<MinAlignedAllocator<char>>();

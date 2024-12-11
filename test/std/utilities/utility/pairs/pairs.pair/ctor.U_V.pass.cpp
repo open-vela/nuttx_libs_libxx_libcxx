@@ -46,7 +46,7 @@ struct ImplicitT {
   int value;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<std::unique_ptr<int>, short*> P;

@@ -18,7 +18,7 @@
 #include <cassert>
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   _LIBCPP_ASSERT_UNCATEGORIZED(true, "Should not fire");
   TEST_LIBCPP_ASSERT_FAILURE([] {
     _LIBCPP_ASSERT_UNCATEGORIZED(false, "Should fire");

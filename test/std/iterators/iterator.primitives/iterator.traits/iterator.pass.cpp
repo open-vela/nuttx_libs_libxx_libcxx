@@ -34,7 +34,7 @@ struct test_iterator
     typedef std::forward_iterator_tag iterator_category;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::iterator_traits<test_iterator> It;
     static_assert((std::is_same<It::difference_type, int>::value), "");

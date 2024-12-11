@@ -57,7 +57,7 @@
 #error FE_DFL_ENV not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::fenv_t fenv;
     std::fexcept_t fex;

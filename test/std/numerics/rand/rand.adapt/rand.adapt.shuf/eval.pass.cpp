@@ -86,7 +86,7 @@ test3()
     assert(e() == 500);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

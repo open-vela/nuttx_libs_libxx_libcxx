@@ -29,7 +29,7 @@ static bool error_range_thrown(const char *pat)
     return result;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(error_range_thrown("([\\w-a])"));
     assert(error_range_thrown("([a-\\w])"));

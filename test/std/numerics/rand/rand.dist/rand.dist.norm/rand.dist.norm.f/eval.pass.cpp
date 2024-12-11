@@ -47,7 +47,7 @@ f(double x, double m, double n)
     return I(m * x / (m*x + n), static_cast<unsigned>(m/2), static_cast<unsigned>(n/2));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Purposefully only testing even integral values of m and n (for now)
     {

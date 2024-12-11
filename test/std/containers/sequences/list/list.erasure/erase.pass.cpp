@@ -63,7 +63,7 @@ void test()
   test0(S({1, 2, 1}), opt(3), S({1, 2, 1}), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::list<int>>();
     test<std::list<int, min_allocator<int>>> ();

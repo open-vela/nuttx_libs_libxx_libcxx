@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::map<int, std::string> map_type;
     typedef map_type::value_compare value_compare;
     typedef map_type::value_type value_type;

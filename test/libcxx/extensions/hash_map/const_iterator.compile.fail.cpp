@@ -8,7 +8,7 @@
 
 #include <ext/hash_map>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     __gnu_cxx::hash_map<int, int> m;
     m[1] = 1;

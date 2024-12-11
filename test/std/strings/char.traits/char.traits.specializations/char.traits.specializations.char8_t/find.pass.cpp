@@ -28,7 +28,7 @@ constexpr bool test_constexpr()
         && std::char_traits<char8_t>::find(p, 3, u8'4') == nullptr;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char8_t s1[] = {1, 2, 3};
     assert(std::char_traits<char8_t>::find(s1, 3, char8_t(1)) == s1);
@@ -42,7 +42,7 @@ int main(int, char**)
     return 0;
 }
 #else
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }
 #endif

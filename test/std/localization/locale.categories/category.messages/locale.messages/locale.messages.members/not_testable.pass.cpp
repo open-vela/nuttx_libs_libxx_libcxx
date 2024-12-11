@@ -30,7 +30,7 @@ public:
         : std::messages<CharT>(refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
   return 0;

@@ -120,7 +120,7 @@ void test_pmr_not_uses_allocator(std::pair<TT, UU>&& p)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using ERT = std::experimental::erased_type;
     using PMR = ex::memory_resource*;

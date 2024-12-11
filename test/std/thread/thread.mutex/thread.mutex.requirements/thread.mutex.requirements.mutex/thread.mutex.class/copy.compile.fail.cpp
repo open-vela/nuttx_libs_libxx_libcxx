@@ -14,7 +14,7 @@
 
 #include <mutex>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::mutex m0;
     std::mutex m1(m0);

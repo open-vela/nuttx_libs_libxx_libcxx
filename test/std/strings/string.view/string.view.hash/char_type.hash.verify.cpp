@@ -64,7 +64,7 @@ void test() {
     (void)h;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test<char>();
     test<wchar_t>();
 #if TEST_STD_VER > 17 && defined(__cpp_char8_t)

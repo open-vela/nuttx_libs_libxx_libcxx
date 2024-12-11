@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::error_code ec(6, std::generic_category());
     assert(ec.message() == std::generic_category().message(6));

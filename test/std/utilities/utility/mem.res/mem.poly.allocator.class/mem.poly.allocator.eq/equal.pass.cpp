@@ -28,7 +28,7 @@
 
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::pmr::polymorphic_allocator<void> A1;
   typedef std::pmr::polymorphic_allocator<int> A2;
   // check return types

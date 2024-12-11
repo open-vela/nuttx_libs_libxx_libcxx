@@ -18,7 +18,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::initializer_list<int> init_list{};
   TEST_LIBCPP_ASSERT_FAILURE(std::ranges::minmax(init_list),
                              "initializer_list has to contain at least one element");

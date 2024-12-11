@@ -21,7 +21,7 @@ struct A {
 
 void *operator new(std::size_t, A*) = delete;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     A a[4] = {};
     std::sort(a, a+4);

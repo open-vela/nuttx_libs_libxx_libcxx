@@ -25,7 +25,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::stack<int> q(make<std::deque<int> >(5));
     std::stack<int> q2;

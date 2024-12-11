@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "../../../test_compare.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef test_less<int> C;
     const std::multiset<int, C> m(C(3));

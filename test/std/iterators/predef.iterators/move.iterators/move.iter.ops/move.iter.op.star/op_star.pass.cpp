@@ -48,7 +48,7 @@ struct do_nothing
 };
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     A a;
     test(&a, A());

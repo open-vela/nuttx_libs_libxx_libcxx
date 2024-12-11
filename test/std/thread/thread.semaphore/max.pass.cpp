@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   static_assert(std::counting_semaphore<>::max() >= 1, "");
   static_assert(std::counting_semaphore<1>::max() >= 1, "");

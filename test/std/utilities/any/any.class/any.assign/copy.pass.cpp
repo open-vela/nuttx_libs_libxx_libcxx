@@ -182,7 +182,7 @@ void test_copy_assign_throws()
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     globalMemCounter.reset();
     test_copy_assign<small1, small2>();
     test_copy_assign<large1, large2>();

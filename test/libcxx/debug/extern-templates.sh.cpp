@@ -42,7 +42,7 @@ std::string numToString(int x) {
 
 #elif defined(TU2)
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::string s = numToString(42);
   assert(s == "42");
 

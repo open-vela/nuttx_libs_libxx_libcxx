@@ -81,7 +81,7 @@
 #include "deduction_guides_sfinae_checks.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const int expected_s[] = {1, 2, 3, INT_MAX};
 

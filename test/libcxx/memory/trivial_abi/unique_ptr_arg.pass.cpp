@@ -35,7 +35,7 @@ __attribute__((noinline)) void expect_1(int* shared, bool /*unused*/) {
   assert(*shared == 1);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int shared = 0;
 
   // Without trivial-abi, the unique_ptr is deleted at the end of this

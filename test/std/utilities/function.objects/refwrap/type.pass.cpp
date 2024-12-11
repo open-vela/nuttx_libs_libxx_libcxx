@@ -19,7 +19,7 @@
 
 class C {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::reference_wrapper<C>::type,
                                                        C>::value), "");

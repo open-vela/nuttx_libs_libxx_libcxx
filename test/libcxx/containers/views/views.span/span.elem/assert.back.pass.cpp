@@ -22,7 +22,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::array<int, 3> array{0, 1, 2};
         std::span<int> const s(array.data(), 0);

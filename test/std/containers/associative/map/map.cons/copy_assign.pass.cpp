@@ -114,7 +114,7 @@ bool balanced_allocs() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<const int, double> V;

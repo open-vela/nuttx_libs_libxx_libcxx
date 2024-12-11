@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::error_category& e_cat = std::future_category();
     assert(e_cat.equivalent(std::error_code(5, e_cat), 5));

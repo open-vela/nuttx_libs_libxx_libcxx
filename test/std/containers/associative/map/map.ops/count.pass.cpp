@@ -20,7 +20,7 @@
 #include "private_constructor.h"
 #include "is_transparent.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::pair<const int, double> V;

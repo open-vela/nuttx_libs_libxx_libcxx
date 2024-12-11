@@ -45,7 +45,7 @@ class Abstract
 enum Enum {zero, one};
 typedef void (*FunctionPtr)();
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Non-array types
     test_array<void,           false>();

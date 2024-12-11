@@ -82,7 +82,7 @@ constexpr bool tests() {
 
 static_assert(tests());
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   tests();
   return 0;
 }

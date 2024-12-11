@@ -127,7 +127,7 @@ static void test() {
   test(SV("\u0061\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0062"), "\x61\xf1\x80\x80\xe1\x80\xc2\x62");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_basics();
   test();
 }

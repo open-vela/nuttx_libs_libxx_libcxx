@@ -92,7 +92,7 @@ void test_move_assign_noexcept() {
     ASSERT_NOEXCEPT(a1 = std::move(a2));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_move_assign_noexcept();
     test_move_assign<small1, small2>();
     test_move_assign<large1, large2>();

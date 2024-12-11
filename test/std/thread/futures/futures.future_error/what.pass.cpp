@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::future_error f(std::make_error_code(std::future_errc::broken_promise));

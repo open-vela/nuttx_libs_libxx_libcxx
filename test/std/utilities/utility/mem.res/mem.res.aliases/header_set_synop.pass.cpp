@@ -28,7 +28,7 @@
 #include <type_traits>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using V  = char;
   using DC = std::less<V>;
   using OC = std::greater<V>;

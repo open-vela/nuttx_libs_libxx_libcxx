@@ -36,7 +36,7 @@ void test_return_type() {
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_return_type<std::stack<int> > ();
     test_return_type<std::stack<int, std::vector<int> > > ();

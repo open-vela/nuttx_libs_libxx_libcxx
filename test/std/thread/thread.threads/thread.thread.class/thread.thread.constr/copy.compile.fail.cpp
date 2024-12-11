@@ -14,7 +14,7 @@
 
 #include <thread>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::thread t0; (void)t0;
     std::thread t1(t0); (void)t1;

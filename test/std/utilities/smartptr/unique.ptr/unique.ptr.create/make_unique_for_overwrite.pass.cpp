@@ -138,7 +138,7 @@ void testCustomNew() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   testCustomNew();
 #if TEST_STD_VER >= 23

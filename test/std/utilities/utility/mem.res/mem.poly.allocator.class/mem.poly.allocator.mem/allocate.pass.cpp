@@ -81,7 +81,7 @@ void testAllocForSizeThrows() {
 }
 #endif // TEST_HAS_NO_EXCEPTIONS
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::pmr::polymorphic_allocator<int> a;
     ASSERT_SAME_TYPE(decltype(a.allocate(0)), int*);

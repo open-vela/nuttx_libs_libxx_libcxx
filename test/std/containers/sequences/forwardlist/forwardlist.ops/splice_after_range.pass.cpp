@@ -77,7 +77,7 @@ tests(const C& c, std::ptrdiff_t p, ptrdiff_t f, ptrdiff_t l)
     assert(std::distance(c.begin(), c.end()) == size_t1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     // splicing different containers

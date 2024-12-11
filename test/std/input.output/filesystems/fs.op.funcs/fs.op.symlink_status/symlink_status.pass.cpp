@@ -199,7 +199,7 @@ static void test_block_file()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_symlink_status_not_found();
 #ifndef TEST_WIN_NO_FILESYSTEM_PERMS_NONE

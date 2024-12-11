@@ -12,7 +12,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::atto::num == 1 && std::atto::den == 1000000000000000000ULL, "");
     static_assert(std::femto::num == 1 && std::femto::den == 1000000000000000ULL, "");

@@ -33,7 +33,7 @@ void test_trivial_clock() {
   ((void)odr_use);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_trivial_clock();
 
   return 0;

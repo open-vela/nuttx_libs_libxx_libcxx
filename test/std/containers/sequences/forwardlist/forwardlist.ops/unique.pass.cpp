@@ -32,7 +32,7 @@ void do_unique(L &l, typename L::size_type expected)
     assert(old_size - std::distance(l.begin(), l.end()) == expected);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int T;

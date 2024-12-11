@@ -84,7 +84,7 @@ void test_value_categories() {
   s.resize_and_overwrite(10, RefQualified{});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
   test<char8_t>();
   test<char16_t>();

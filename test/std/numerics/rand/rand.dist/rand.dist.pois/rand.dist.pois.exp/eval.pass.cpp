@@ -31,7 +31,7 @@ sqr(T x)
     return x * x;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::exponential_distribution<> D;

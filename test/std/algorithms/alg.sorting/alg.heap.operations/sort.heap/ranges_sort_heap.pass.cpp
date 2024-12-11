@@ -272,7 +272,7 @@ void test_complexity() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
   test_complexity();

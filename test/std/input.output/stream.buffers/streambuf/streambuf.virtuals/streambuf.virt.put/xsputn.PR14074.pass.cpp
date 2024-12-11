@@ -41,7 +41,7 @@ static std::size_t count_bytes(char const* filename) {
     return count;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         // with basic_stringbuf
         std::basic_stringbuf<char> buf;

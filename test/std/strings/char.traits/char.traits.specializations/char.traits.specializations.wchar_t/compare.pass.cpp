@@ -29,7 +29,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::char_traits<wchar_t>::compare(L"", L"", 0) == 0);
     assert(std::char_traits<wchar_t>::compare(NULL, NULL, 0) == 0);

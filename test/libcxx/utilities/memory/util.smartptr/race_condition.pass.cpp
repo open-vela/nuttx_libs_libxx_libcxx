@@ -80,7 +80,7 @@ void run_test(Ptr p) {
     assert(p.use_count() == 3);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // Test with out-of-place shared_count.
     Ptr p(new int(42));

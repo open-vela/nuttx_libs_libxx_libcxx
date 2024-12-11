@@ -65,7 +65,7 @@ struct NonConstView : std::ranges::view_base {
   const int *e_;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::vector<int> vec = {1, 2, 3, 4};
     auto transformed = std::ranges::transform_view(vec, [](int x) { return x + 42; });

@@ -62,7 +62,7 @@ int tu2();
 int tu3();
 int tu4();
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(tu1() == 1);
   assert(tu2() == 2);
   assert(tu3() == 3);

@@ -61,7 +61,7 @@ struct some_alloc3
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::vector<MoveOnly> C;

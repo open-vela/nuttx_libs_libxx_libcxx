@@ -88,7 +88,7 @@ static void file_size_error_cases()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     file_size_empty_test();
     file_size_non_empty();

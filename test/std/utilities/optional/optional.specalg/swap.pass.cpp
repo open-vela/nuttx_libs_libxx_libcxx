@@ -109,7 +109,7 @@ void test_swap_sfinae() {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_swap_sfinae();
     {

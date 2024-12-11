@@ -24,7 +24,7 @@
 #include "test_macros.h"
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // check return types
   {
     const std::pmr::memory_resource* mr1 = nullptr;

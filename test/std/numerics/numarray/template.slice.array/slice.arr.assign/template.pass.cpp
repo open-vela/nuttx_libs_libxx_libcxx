@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     double a[] = { 0, 0, 0 };
     std::valarray<double> m(a, sizeof(a)/sizeof(a[0]));

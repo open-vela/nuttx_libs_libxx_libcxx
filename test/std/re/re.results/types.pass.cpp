@@ -44,7 +44,7 @@ test()
     static_assert((std::is_same<typename MR::string_type, std::basic_string<CharT> >::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char>();
     test<wchar_t>();

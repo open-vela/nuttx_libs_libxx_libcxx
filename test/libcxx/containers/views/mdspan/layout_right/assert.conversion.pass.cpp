@@ -26,7 +26,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr size_t D = std::dynamic_extent;
   std::extents<int, D, D> arg_exts{100, 5};
   std::layout_right::mapping<std::extents<int, D, D>> arg(arg_exts);

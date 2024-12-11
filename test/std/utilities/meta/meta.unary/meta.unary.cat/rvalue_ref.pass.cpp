@@ -36,7 +36,7 @@ void test_rvalue_ref()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_rvalue_ref<int&&>();
     test_rvalue_ref<const int&&>();

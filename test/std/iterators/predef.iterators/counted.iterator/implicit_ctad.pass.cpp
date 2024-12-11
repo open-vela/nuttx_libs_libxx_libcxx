@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int array[] = {1, 2, 3};
   int* p = array;
   std::counted_iterator iter(p, 3);

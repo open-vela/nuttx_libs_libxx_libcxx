@@ -28,7 +28,7 @@ test()
     static_assert((std::is_same<Dc, De>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::chrono::duration<int, std::ratio<1, 100> >,
          std::chrono::duration<long, std::ratio<1, 1000> >,

@@ -74,7 +74,7 @@ constexpr bool std::ranges::enable_view<std::list<int>> = true;
 template<>
 constexpr bool std::ranges::enable_view<std::string> = true;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const std::vector vec = {1,1,2,3,5,8,13};
   assert(orderedFibonacci(std::ranges::drop_view(vec, 0)));
   const std::vector vec2 = {1,1,2,3,5,8,14};

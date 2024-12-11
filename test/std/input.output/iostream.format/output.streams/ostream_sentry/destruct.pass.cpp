@@ -35,7 +35,7 @@ protected:
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::ostream os((std::streambuf*)0);

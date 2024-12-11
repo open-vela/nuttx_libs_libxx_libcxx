@@ -22,7 +22,7 @@
 #include "test_macros.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace fs;
   static_assert(std::is_nothrow_default_constructible<path>::value, "");
   const path p;

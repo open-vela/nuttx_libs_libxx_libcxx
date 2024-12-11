@@ -26,7 +26,7 @@
 #include "test_macros.h"
 #include "is_transparent.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::map<int, double, transparent_less> M;

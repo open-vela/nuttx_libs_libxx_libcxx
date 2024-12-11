@@ -118,7 +118,7 @@ static void test_name_too_long() {
 }
 #endif // _WIN32
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     exists_status_test();
     test_exist_not_found();

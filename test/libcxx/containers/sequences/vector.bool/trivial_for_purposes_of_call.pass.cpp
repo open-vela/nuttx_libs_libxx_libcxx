@@ -48,7 +48,7 @@ void test_non_const_iterator() {
   static_assert(!IsTrivialForCall<It>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_const_iterator();
   test_non_const_iterator();
 

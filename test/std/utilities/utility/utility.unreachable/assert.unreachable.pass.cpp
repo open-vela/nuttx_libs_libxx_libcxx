@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     TEST_LIBCPP_ASSERT_FAILURE(std::unreachable(), "std::unreachable() was reached");
 
     return 0;

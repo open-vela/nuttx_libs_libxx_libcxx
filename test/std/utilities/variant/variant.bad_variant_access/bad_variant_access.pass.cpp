@@ -28,7 +28,7 @@ public:
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_base_of<std::exception, std::bad_variant_access>::value,
                 "");
   static_assert(noexcept(std::bad_variant_access{}), "must be noexcept");

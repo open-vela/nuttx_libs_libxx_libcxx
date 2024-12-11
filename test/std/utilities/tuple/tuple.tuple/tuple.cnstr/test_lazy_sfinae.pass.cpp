@@ -41,7 +41,7 @@ struct BlowsUpOnConstCopy {
   BlowsUpOnConstCopy(BlowsUpOnConstCopy&) = default;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   NonConstCopyable v(42);
   BlowsUpOnConstCopy<int> b;
   std::tuple<NonConstCopyable, BlowsUpOnConstCopy<int>> t(v, b);

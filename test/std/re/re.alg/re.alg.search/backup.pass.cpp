@@ -21,7 +21,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // This regex_iterator uses regex_search(__wrap_iter<_Iter> __first, ...)
     // Test for https://llvm.org/PR16240 fixed in r185273.

@@ -15,7 +15,7 @@
 #include <future>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_error_code_enum  <std::future_errc>::value, "");
 #if TEST_STD_VER > 14

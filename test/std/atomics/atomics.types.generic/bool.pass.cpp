@@ -56,7 +56,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         volatile std::atomic<bool> obj(true);

@@ -145,7 +145,7 @@ void test6()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_char<cpp17_output_iterator<char*> >();
     test_char<forward_iterator<char*> >();

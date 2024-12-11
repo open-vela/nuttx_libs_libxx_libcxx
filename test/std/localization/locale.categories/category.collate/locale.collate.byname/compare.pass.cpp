@@ -39,7 +39,7 @@
                          s2.data(), s2.data() + s2.size()) == (expected)); \
     } while (0)
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::locale l(LOCALE_en_US_UTF_8);

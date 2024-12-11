@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::char_traits<wchar_t>::eq(L'a', L'a'));
     assert(!std::char_traits<wchar_t>::eq(L'a', L'A'));

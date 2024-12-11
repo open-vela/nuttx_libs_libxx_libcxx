@@ -50,7 +50,7 @@
 #include <functional>
 #include <unordered_set>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         // cannot deduce Key from nothing

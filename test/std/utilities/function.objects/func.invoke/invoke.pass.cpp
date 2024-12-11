@@ -346,7 +346,7 @@ void noexcept_test() {
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     bullet_one_two_tests();
     bullet_three_four_tests();
     bullet_five_tests();

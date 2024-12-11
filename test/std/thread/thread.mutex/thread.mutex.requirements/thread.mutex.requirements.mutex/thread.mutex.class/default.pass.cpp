@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   static_assert(std::is_nothrow_default_constructible<std::mutex>::value, "");
   std::mutex m;

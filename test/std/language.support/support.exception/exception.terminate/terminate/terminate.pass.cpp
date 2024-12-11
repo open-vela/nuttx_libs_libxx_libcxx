@@ -19,7 +19,7 @@ void f1()
     std::exit(0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::set_terminate(f1);
     std::terminate();

@@ -42,7 +42,7 @@ void test()
     test_max<T> ((std::size_t) -1);                     // way too large
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<double>();
     LIBCPP_ONLY(test<const double>());

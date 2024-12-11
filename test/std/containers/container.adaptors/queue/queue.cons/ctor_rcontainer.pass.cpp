@@ -33,7 +33,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::deque<MoveOnly> Container;
     typedef std::queue<MoveOnly> Q;

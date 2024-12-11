@@ -33,7 +33,7 @@ test()
     std::auto_ptr<A> ap2(source());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

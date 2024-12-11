@@ -22,7 +22,7 @@ struct S {
   S& operator=(S&&) = delete;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #ifdef TEST_WORKAROUND_MSVC_BROKEN_IS_TRIVIALLY_COPYABLE
   static_assert(!std::is_trivially_copyable<S>::value, "");
 #else

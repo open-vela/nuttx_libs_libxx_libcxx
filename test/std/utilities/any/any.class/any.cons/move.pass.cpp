@@ -86,7 +86,7 @@ void test_move() {
     assert(Type::count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // noexcept test
     static_assert(std::is_nothrow_move_constructible<std::any>::value);

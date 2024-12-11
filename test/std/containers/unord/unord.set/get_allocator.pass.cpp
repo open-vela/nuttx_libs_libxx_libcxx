@@ -18,7 +18,7 @@
 #include "test_allocator.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::allocator<int> alloc;
         const std::unordered_set<int> s(alloc);

@@ -33,7 +33,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   float data[1024];
   // value out of range
   {

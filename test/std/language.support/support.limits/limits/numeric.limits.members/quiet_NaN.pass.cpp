@@ -45,7 +45,7 @@ test()
     test_imp<T>(std::is_floating_point<T>());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool>();
     test<char>();

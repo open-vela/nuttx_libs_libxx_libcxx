@@ -32,7 +32,7 @@ struct hash<B> {
 
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::optional;
     const std::size_t nullopt_hash =

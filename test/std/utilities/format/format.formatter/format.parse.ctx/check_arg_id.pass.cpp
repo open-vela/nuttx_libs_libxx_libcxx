@@ -52,7 +52,7 @@ void test_exception() {
     test_arg(i);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   test_exception();
   static_assert(test());

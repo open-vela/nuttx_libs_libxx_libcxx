@@ -33,7 +33,7 @@
 #include "test_convertible.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     globalMemCounter.reset();
     typedef std::wbuffer_convert<std::codecvt_utf8<wchar_t> > B;

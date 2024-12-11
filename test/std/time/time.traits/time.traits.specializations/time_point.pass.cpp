@@ -32,7 +32,7 @@ test()
     static_assert((std::is_same<Tc, Te>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::chrono::duration<int, std::ratio<1, 100> >,
          std::chrono::duration<long, std::ratio<1, 1000> >,

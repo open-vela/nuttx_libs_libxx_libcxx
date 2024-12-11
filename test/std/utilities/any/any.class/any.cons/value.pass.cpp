@@ -142,7 +142,7 @@ void test_sfinae_constraints() {
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_copy_move_value<small>();
     test_copy_move_value<large>();
     test_copy_value_throws<small_throws_on_copy>();

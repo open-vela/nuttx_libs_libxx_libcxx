@@ -31,7 +31,7 @@ void exit_success(int) {
 
 struct testbuf : public std::streambuf {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::signal(SIGABRT, exit_success);
 
     testbuf buf;

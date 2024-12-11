@@ -11,7 +11,7 @@
 #include <stddef.h>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         void *p = NULL;
         assert(!p);

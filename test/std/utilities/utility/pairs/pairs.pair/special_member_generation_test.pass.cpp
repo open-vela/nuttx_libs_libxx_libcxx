@@ -122,7 +122,7 @@ void test_assignment_operator_exists() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_constructors_exist();
   test_assignment_operator_exists();
 

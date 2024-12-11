@@ -39,7 +39,7 @@ test(F f)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::mem_fn(&A::data_));
 

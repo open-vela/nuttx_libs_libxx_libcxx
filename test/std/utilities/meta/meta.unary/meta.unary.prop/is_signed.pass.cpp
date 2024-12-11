@@ -79,7 +79,7 @@ enum class EnumClass { zero, one };
 
 typedef void (*FunctionPtr)();
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   // Cases where !is_arithmetic implies !is_signed
   test_is_not_signed<std::nullptr_t>();

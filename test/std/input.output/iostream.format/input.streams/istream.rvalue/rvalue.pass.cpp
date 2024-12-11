@@ -53,7 +53,7 @@ struct A { };
 bool called = false;
 void operator>>(std::istream&, A&&) { called = true; }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb("   123");

@@ -28,7 +28,7 @@
 #include "test_convertible.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::codecvt_utf8<wchar_t> Codecvt;

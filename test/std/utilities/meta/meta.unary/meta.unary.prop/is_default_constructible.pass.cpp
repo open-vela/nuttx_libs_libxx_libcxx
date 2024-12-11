@@ -81,7 +81,7 @@ class B
     B();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_default_constructible<A>();
     test_is_default_constructible<Union>();

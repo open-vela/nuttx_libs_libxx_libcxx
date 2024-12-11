@@ -43,7 +43,7 @@ void test_big()
 // The following is helpful to keep in mind:
 // 1byte == char <= short <= int <= long <= long long
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // On some systems char is unsigned.
     // If that is the case, we should just test signed char twice.

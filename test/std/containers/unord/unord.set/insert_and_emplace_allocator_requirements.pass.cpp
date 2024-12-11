@@ -22,7 +22,7 @@
 #include "../../set_allocator_requirement_test_templates.h"
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   testSetInsert<TCT::unordered_set<> >();
   testSetEmplace<TCT::unordered_set<> >();

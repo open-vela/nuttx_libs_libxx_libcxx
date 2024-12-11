@@ -20,7 +20,7 @@ struct two {one _[2];};
 one test(std::float_denorm_style);
 two test(int);
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::denorm_indeterminate == -1,
                  "std::denorm_indeterminate == -1");

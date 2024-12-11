@@ -88,7 +88,7 @@ void duplicate_keys_test() {
   LIBCPP_ASSERT(alloc_stats.alloc_count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_basic();
   duplicate_keys_test();

@@ -24,7 +24,7 @@
 #include "variant_test_helpers.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     using V = std::variant<int, long>;
     constexpr V v;

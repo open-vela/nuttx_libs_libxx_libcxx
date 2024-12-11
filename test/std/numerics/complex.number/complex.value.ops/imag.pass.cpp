@@ -25,7 +25,7 @@ test()
     assert(imag(z) == 2.5);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

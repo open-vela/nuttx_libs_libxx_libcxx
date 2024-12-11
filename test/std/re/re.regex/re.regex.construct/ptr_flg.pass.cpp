@@ -25,7 +25,7 @@ test(const CharT* p, std::regex_constants::syntax_option_type f, unsigned mc)
     assert(r.mark_count() == mc);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test("\\(a\\)", std::regex_constants::basic, 1);
     test("\\(a[bc]\\)", std::regex_constants::basic, 1);

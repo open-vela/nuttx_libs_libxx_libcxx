@@ -36,7 +36,7 @@ void test ( const CharT *s1, const CharT  *s2, int expected ) {
     test1(sv1, sv2, expected);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     test("",                     "", 0);
     test("",                     "abcde", -5);

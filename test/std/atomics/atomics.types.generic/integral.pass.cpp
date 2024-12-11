@@ -162,7 +162,7 @@ void test()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::atomic_char, char>();
     test<std::atomic_schar, signed char>();

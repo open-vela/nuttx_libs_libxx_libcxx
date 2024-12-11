@@ -34,7 +34,7 @@ void test()
                                    std::tuple_size<const volatile T> >::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::tuple<>, 0>();
     test<std::tuple<int>, 1>();

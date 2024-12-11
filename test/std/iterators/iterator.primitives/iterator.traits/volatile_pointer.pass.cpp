@@ -18,7 +18,7 @@
 
 struct A {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::iterator_traits<volatile A*> It;
     static_assert((std::is_same<It::difference_type, std::ptrdiff_t>::value), "");

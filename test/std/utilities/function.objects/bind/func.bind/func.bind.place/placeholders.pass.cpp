@@ -73,7 +73,7 @@ TEST_CONSTEXPR_CXX17 bool test_all() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all();
 #if TEST_STD_VER >= 17
   static_assert(test_all(), "");

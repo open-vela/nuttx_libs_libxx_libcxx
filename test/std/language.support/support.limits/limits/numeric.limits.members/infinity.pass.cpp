@@ -28,7 +28,7 @@ test(T expected)
 
 extern float zero;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool>(false);
     test<char>(0);

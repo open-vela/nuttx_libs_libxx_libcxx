@@ -20,7 +20,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::expected<void, int> e{std::unexpect, 5};
   TEST_LIBCPP_ASSERT_FAILURE(*e, "expected::operator* requires the expected to contain a value");
 

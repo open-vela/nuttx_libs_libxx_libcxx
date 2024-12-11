@@ -32,7 +32,7 @@ struct Foo {
   int sum(int a, int b) const { return a + b; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pointer_to_unary_function<int, int> PUF;
     typedef std::pointer_to_binary_function<int, int, int> PBF;

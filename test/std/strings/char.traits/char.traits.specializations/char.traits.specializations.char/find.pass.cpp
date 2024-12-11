@@ -29,7 +29,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char s1[] = {1, 2, 3};
     assert(std::char_traits<char>::find(s1, 3, char(1)) == s1);

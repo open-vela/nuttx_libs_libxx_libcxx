@@ -21,7 +21,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using last_spec = std::chrono::last_spec;
 

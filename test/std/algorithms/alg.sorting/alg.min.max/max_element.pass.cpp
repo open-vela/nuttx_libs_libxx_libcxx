@@ -72,7 +72,7 @@ void constexpr_test()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<const int*> >();
     test<bidirectional_iterator<const int*> >();

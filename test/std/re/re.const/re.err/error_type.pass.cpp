@@ -34,7 +34,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     LIBCPP_ASSERT(std::regex_constants::error_collate != 0);
     LIBCPP_ASSERT(std::regex_constants::error_ctype != 0);

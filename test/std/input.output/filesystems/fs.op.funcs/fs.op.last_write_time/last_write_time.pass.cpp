@@ -645,7 +645,7 @@ static void test_exists_fails()
 }
 #endif // TEST_WIN_NO_FILESYSTEM_PERMS_NONE
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     read_last_write_time_static_env_test();
     get_last_write_time_dynamic_env_test();

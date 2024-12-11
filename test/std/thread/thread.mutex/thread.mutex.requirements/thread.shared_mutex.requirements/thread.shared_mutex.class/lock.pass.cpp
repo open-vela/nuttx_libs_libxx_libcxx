@@ -57,7 +57,7 @@ void f()
     assert(d < Tolerance);  // within tolerance
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     m.lock();
     std::thread t = support::make_test_thread(f);

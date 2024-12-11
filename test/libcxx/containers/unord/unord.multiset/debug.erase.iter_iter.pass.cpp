@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // With first iterator from another container
     {
         int a1[] = {1, 2, 3};

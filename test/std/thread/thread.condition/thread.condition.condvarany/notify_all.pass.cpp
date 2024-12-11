@@ -42,7 +42,7 @@ void helper() {
     cv.wait(lk);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   notReady = threadCount;
   std::vector<std::thread> threads(threadCount);

@@ -18,7 +18,7 @@
 #include <mutex>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using M = std::mutex;
     M m0, m1, m2;

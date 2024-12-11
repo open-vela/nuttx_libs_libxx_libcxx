@@ -37,7 +37,7 @@ struct convertible_from_int {
 void meow(std::reference_wrapper<int>) {}
 void meow(convertible_from_int) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     convertible_to_int_ref t;

@@ -31,7 +31,7 @@ test(It i, typename std::iterator_traits<It>::difference_type n, It x)
     assert(rr.base() == x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char s[] = "1234567890";
     test(random_access_iterator<char*>(s+5), 5, random_access_iterator<char*>(s+10));

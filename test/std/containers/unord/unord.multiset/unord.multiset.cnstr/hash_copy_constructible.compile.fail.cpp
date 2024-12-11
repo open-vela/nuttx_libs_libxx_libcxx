@@ -24,7 +24,7 @@ private:
     };
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::unordered_multiset<int, Hash<int> > m;
 
   return 0;

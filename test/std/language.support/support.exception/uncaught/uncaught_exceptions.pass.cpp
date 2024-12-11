@@ -41,7 +41,7 @@ struct Outer {
     int d_;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     assert(std::uncaught_exceptions() == 0);
     {
     Outer o(0);

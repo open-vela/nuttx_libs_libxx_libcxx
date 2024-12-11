@@ -69,7 +69,7 @@ struct A
     A();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_trivial_default_constructor<void>();
     test_has_not_trivial_default_constructor<int&>();

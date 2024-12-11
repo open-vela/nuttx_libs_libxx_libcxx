@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_signed<std::chrono::file_clock::rep>::value, "");
     assert(std::chrono::file_clock::duration::min() <

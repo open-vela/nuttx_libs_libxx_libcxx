@@ -89,7 +89,7 @@ constexpr bool do_test(int = 0)
     return accumulate;
 }
 
-int main(int argc, char**)
+extern "C" int main(int argc, char**)
 {
     int non_cce = argc; // a value that can't possibly be constexpr
 

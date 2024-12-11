@@ -19,7 +19,7 @@
 #include <map>
 #include <tuple>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::map<std::tuple<int, int>, std::size_t> m;
     m[std::make_tuple(2, 3)] = 7;
 

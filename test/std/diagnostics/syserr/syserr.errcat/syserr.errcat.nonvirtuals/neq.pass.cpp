@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::error_category& e_cat1 = std::generic_category();
     const std::error_category& e_cat2 = std::generic_category();

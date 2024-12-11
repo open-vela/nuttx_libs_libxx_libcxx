@@ -20,7 +20,7 @@
 using Fn = std::function<void()>;
 struct S : public std::function<void()> { using function::function; };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     S s( [](){} );
     S f1( s );
 #if TEST_STD_VER <= 14

@@ -182,7 +182,7 @@ static_assert( has_three_way_op<std::variant<int, HasFullOrdering>>);
 static_assert( three_way_comparable<HasFullOrdering>);
 static_assert( three_way_comparable<std::variant<int, HasFullOrdering>>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_three_way();
   static_assert(test_three_way());
 

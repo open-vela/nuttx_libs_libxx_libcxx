@@ -22,7 +22,7 @@
 
 int g(int) {return 0;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_constructible<bool, std::function<void()> >::value, "");
     static_assert(!std::is_convertible<std::function<void()>, bool>::value, "");

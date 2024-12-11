@@ -25,7 +25,7 @@
 #include "test_macros.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace fs;
   using string_type = path::string_type;
   const char* const value = "hello world";

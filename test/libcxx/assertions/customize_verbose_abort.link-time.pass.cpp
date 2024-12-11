@@ -18,7 +18,7 @@ void std::__libcpp_verbose_abort(char const*, ...) {
   std::exit(EXIT_SUCCESS);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   _LIBCPP_ASSERT(false, "message");
   return EXIT_FAILURE;
 }

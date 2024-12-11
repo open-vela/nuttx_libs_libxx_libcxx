@@ -39,7 +39,7 @@ private:
 
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using SetAlloc = test_allocator<int>;
   using MapAlloc = test_allocator<std::pair<const int, int>>;

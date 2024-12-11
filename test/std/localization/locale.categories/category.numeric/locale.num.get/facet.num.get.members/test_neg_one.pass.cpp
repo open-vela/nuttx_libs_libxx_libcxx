@@ -146,7 +146,7 @@ void test_negate() {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_neg_one<long>();
     test_neg_one<long long>();

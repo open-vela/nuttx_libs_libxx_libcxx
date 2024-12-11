@@ -49,7 +49,7 @@ DECLARE_FUNCTIONS_WITH_QUALS(13, const & noexcept);
 DECLARE_FUNCTIONS_WITH_QUALS(14, volatile & noexcept);
 DECLARE_FUNCTIONS_WITH_QUALS(15, const volatile & noexcept);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #define CHECK_FUNCTIONS(N)                                                    \
   do {                                                                        \
     /* implicit */                                                            \

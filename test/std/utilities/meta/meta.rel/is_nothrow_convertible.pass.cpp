@@ -26,7 +26,7 @@ public:
     operator C() noexcept { return c; } C c;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     static_assert((std::is_nothrow_convertible<int, double>::value), "");
     static_assert(!(std::is_nothrow_convertible<int, char*>::value), "");
 

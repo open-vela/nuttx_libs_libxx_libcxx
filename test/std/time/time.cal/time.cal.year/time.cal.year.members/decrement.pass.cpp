@@ -30,7 +30,7 @@ constexpr bool testConstexpr()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using year = std::chrono::year;
     ASSERT_NOEXCEPT(--(std::declval<year&>())  );

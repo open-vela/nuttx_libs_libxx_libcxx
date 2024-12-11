@@ -14,7 +14,7 @@
 
 #include <mutex>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::timed_mutex m0;
     std::timed_mutex m1;

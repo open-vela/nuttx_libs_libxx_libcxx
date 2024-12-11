@@ -21,7 +21,7 @@
 struct True  { static constexpr bool value = true; };
 struct False { static constexpr bool value = false; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert (!std::negation<std::true_type >::value, "" );
     static_assert ( std::negation<std::false_type>::value, "" );

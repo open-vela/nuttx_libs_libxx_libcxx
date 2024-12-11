@@ -27,7 +27,7 @@
 #include "deduction_guides_sfinae_checks.h"
 #include "test_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using Char = char16_t;
 
   {

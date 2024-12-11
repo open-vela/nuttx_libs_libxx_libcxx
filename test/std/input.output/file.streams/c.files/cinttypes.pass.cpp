@@ -879,7 +879,7 @@ template <class T> void test()
     ((void)t); // Prevent unused warning
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::int8_t >();
     test<std::int16_t>();

@@ -55,7 +55,7 @@ void test(Container& c)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::multimap<int, int> m;
     test(m);

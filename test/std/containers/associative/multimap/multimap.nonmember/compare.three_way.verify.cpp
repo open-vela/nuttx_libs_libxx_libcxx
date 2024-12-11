@@ -20,7 +20,7 @@
 
 #include "test_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Mismatching allocators
   {
     std::multimap<int, int, std::less<int>, std::allocator<int>> s1;

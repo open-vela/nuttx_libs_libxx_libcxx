@@ -102,7 +102,7 @@ struct CountCopiesAllocV2 {
   CountCopiesAllocV2(CountCopiesAllocV2 const& o) : count(o.count + 1) {}
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     using T = CountCopies;
     using U = CountCopiesAllocV1;

@@ -29,7 +29,7 @@ test1()
     assert(d1 == d2);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
 

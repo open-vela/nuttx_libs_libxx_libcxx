@@ -273,7 +273,7 @@ struct std::common_type<A, std::tuple<B>> {
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::common_type<int>::type, int>::value), "");
     static_assert((std::is_same<std::common_type<char>::type, char>::value), "");

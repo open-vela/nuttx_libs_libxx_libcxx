@@ -89,7 +89,7 @@ constexpr bool test_sequence_container_spaceship_vectorbool() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_sequence_container_spaceship_vectorbool());
   static_assert(test_sequence_container_spaceship_vectorbool());
   return 0;

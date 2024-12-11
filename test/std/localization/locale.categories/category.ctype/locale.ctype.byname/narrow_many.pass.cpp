@@ -24,7 +24,7 @@
 #include "test_macros.h"
 #include "platform_support.h" // locale name macros
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::locale l(LOCALE_fr_CA_ISO8859_1);

@@ -36,7 +36,7 @@
 
 using std::experimental::pmr::memory_resource;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     TestResource R(42);
     auto& P = R.getController();

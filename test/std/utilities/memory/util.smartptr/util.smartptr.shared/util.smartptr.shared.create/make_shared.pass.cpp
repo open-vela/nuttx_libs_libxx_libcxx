@@ -89,7 +89,7 @@ void test(const T &t0)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int nc = globalMemCounter.outstanding_new;
     {

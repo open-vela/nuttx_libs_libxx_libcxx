@@ -78,7 +78,7 @@ void test(F func, bool waitFirst) {
   assert(t1 - t0 >= sleepTime);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test<int>(func1, true);
   test<int&>(func3, true);

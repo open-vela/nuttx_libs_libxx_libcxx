@@ -247,7 +247,7 @@ void test_constexpr_copy_ctor() {
   static_assert(test_constexpr_copy_ctor_imp<2>(V(101)), "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_copy_ctor_basic();
   test_copy_ctor_valueless_by_exception();
   test_copy_ctor_sfinae();

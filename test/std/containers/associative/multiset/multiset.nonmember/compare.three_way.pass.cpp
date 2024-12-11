@@ -20,7 +20,7 @@
 
 #include "test_container_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_ordered_set_container_spaceship<std::multiset>());
   // `std::multiset` is not constexpr, so no `static_assert` test here.
   return 0;

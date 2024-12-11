@@ -20,7 +20,7 @@
 
 #include <unordered_set>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // Check that std::pmr::unordered_set is usable without <memory_resource>.
     std::pmr::unordered_set<int> s;

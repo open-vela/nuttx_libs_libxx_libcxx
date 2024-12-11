@@ -194,7 +194,7 @@ void test_compare_elements() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_compare_basic();
   test_compare_elements();
 

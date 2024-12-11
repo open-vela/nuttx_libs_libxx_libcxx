@@ -23,7 +23,7 @@
 #include "test_macros.h"
 #include "MoveOnly.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::priority_queue<MoveOnly> C;

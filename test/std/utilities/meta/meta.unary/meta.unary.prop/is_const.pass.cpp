@@ -30,7 +30,7 @@ void test_is_const()
 
 struct A; // incomplete
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_const<void>();
     test_is_const<int>();

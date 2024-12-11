@@ -22,7 +22,7 @@
 
 static_assert(std::is_nothrow_copy_constructible_v<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source source;
     std::stop_source copy{source};

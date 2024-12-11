@@ -126,7 +126,7 @@ void test_aligned(void* p, std::size_t align) {
   assert(reinterpret_cast<std::uintptr_t>(p) % align == 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::shared_ptr<int> p = std::allocate_shared<int>(MyAllocator<int>());
     assert(construct_called);

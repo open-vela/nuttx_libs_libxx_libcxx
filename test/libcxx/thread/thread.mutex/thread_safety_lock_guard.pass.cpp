@@ -31,7 +31,7 @@ static void scoped() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   scoped();
   std::lock_guard<std::mutex> lock(m);
   foo++;

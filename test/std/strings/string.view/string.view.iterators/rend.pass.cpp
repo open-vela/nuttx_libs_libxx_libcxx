@@ -50,7 +50,7 @@ test(S s)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::string_view    string_view;
 #ifndef TEST_HAS_NO_CHAR8_T

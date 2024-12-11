@@ -89,7 +89,7 @@ constexpr bool test_aligned_constexpr() {
 }
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_aligned<1>();
     test_aligned<2>();
     test_aligned<4>();

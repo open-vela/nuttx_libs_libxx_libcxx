@@ -30,7 +30,7 @@ test(It i)
     assert(std::make_move_iterator(i) == r);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     char s[] = "1234567890";

@@ -46,7 +46,7 @@ void g()
         cv->wait(lk);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     cv = new std::condition_variable;
     std::thread th2 = support::make_test_thread(g);

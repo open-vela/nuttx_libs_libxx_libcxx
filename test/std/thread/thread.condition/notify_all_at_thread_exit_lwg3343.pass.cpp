@@ -103,7 +103,7 @@ void test()
     assert(sum == (0xcd * sizeof(std::condition_variable)));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     for (int i = 0; i < 1000; ++i) {
         test();

@@ -522,7 +522,7 @@ static void test() {
                   std::chrono::month_day{std::chrono::January, std::chrono::day{31}});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

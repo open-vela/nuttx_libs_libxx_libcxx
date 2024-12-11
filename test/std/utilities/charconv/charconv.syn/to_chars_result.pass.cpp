@@ -42,7 +42,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if TEST_STD_VER > 17
   static_assert(std::equality_comparable<std::to_chars_result>);
   static_assert(!std::totally_ordered<std::to_chars_result>);

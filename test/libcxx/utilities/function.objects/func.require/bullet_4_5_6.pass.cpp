@@ -198,7 +198,7 @@ private:
     }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     TestCase<ArgType>::run();
     TestCase<ArgType const>::run();
     TestCase<ArgType volatile>::run();

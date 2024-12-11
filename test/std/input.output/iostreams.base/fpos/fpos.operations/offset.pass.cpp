@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::fpos<std::mbstate_t> P;
     P p(std::streamoff(7));

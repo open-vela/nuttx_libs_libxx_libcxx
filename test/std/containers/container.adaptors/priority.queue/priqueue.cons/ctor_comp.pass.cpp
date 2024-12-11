@@ -19,7 +19,7 @@
 #include "test_convertible.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::vector<int, limited_allocator<int, 10> > Container;
     typedef std::less<int> Compare;

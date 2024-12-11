@@ -53,7 +53,7 @@ void f()
   assert(t1 - t0 >= WaitTime);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   m.lock();
   std::thread t = support::make_test_thread(f);

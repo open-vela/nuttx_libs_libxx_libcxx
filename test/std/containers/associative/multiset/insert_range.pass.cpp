@@ -20,7 +20,7 @@
 #include "../../insert_range_maps_sets.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {
     test_map_set_insert_range<std::multiset<int, test_less<int>, Alloc>, int, Iter, Sent>(/*allow_duplicates=*/true);
   });

@@ -367,7 +367,7 @@ constexpr void CheckNotDerivedFrom() {
 enum Enumeration { Yes, No };
 enum class ScopedEnumeration : int { No, Yes };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   { // Fundamentals shouldn't be derived from anything
     CheckNotDerivedFrom<int, long>();
     CheckNotDerivedFrom<signed char, char>();

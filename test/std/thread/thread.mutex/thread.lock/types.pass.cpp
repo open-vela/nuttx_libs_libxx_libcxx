@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::defer_lock_t T1;
     typedef std::try_to_lock_t T2;

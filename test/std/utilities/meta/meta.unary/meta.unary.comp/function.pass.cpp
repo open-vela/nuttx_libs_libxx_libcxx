@@ -35,7 +35,7 @@ void test_function()
     test_function_imp<const volatile T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_function<void ()>();
     test_function<void (int)>();

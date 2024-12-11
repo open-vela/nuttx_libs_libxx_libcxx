@@ -43,7 +43,7 @@ MultiStringType ref = MKSTR("c:/foo/bar");
 MultiStringType ref = MKSTR("c:\\foo\\bar");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   auto const& MS = ref;

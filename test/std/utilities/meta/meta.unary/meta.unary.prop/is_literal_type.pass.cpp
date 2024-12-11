@@ -72,7 +72,7 @@ enum Enum {zero, one};
 
 typedef void (*FunctionPtr)();
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     test_is_literal_type<std::nullptr_t>();

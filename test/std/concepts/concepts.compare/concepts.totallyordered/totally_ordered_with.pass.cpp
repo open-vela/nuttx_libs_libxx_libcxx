@@ -1138,4 +1138,4 @@ static_assert(
                                 no_ge_not_totally_ordered_with>());
 } // namespace types_fit_for_purpose
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

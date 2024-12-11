@@ -29,7 +29,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     wchar_t c = L'\0';
     std::char_traits<wchar_t>::assign(c, L'a');

@@ -21,7 +21,7 @@ void test()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::ratio<1, 1> R1;

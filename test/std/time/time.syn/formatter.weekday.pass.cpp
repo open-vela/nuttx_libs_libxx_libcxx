@@ -201,7 +201,7 @@ static void test() {
   check_exception("The format specifier expects a '%' or a '}'", SV("{:.3}"), std::chrono::weekday(0));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

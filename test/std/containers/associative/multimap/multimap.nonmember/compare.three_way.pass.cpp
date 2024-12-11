@@ -21,7 +21,7 @@
 
 #include "test_container_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_ordered_map_container_spaceship<std::multimap>());
   // `std::multimap` is not constexpr, so no `static_assert` test here.
   return 0;

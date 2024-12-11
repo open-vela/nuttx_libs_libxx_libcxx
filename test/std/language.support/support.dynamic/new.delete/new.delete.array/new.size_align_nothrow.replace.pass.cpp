@@ -50,7 +50,7 @@ void operator delete[](void*, std::align_val_t) noexcept {
     // nothing to delete, we didn't actually allocate in `operator new`
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // Test with an overaligned type
     {
         new_nothrow_called = delete_called = 0;

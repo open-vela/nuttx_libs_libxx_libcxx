@@ -146,7 +146,7 @@ TEST_CONSTEXPR_CXX20 bool all_tests() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   all_tests();
 
 #if TEST_STD_VER > 17

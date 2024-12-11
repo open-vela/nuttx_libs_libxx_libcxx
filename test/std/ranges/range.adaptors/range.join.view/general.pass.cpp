@@ -27,7 +27,7 @@ bool isEqual(R& r, I i) {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     int buffer[4][4] = {{1111, 2222, 3333, 4444}, {555, 666, 777, 888}, {99, 1010, 1111, 1212}, {13, 14, 15, 16}};
     int* flattened = reinterpret_cast<int*>(buffer);

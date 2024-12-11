@@ -32,7 +32,7 @@ void test_remove_cv()
     test_remove_cv_imp<const volatile T, T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_remove_cv<void>();
     test_remove_cv<int>();

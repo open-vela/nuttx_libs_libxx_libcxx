@@ -42,7 +42,7 @@ struct NotConvertibleFromInt {};
 static_assert(!std::is_invocable_v<decltype(std::ranges::uninitialized_move), int*, int*, NotConvertibleFromInt*,
                                    NotConvertibleFromInt*>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // An empty range -- no default constructors should be invoked.
   {
     Counted in[] = {Counted()};

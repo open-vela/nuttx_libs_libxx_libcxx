@@ -30,7 +30,7 @@ test()
     assert(m.size() == 3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char>();
 

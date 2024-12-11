@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::logical_and<int> F;
     assert(!std::not2(F())(36, 36));

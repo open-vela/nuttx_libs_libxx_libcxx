@@ -28,7 +28,7 @@ test(const C& x)
     LIBCPP_ASSERT(is_double_ended_contiguous_container_asan_correct(x));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         int ab[] = {3, 4, 2, 8, 0, 1, 44, 34, 45, 96, 80, 1, 13, 31, 45};

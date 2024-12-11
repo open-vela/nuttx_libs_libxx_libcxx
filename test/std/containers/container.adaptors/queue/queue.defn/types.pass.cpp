@@ -45,7 +45,7 @@ struct C
     typedef int size_type;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(( std::is_same<std::queue<int>::container_type, std::deque<int> >::value), "");
     static_assert(( std::is_same<std::queue<int, std::vector<int> >::container_type, std::vector<int> >::value), "");

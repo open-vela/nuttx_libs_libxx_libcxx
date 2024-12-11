@@ -34,7 +34,7 @@ constexpr bool operator!=(const nullptr_t &, const X &) {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr X x1_1(1);
   constexpr X x2_1(1);
   constexpr X x3_2(2);

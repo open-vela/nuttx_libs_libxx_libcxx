@@ -24,7 +24,7 @@ void test() {
   assert(p.get() == 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<int>();
   test<int const>();
   test<A>();

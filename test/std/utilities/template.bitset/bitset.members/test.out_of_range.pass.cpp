@@ -16,7 +16,7 @@
 #include <cassert>
 #include <stdexcept>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::bitset<0> v;
         try { (void) v.test(0); assert(false); }

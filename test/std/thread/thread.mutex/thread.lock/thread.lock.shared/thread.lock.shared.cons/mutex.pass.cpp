@@ -74,7 +74,7 @@ void g()
     assert(d < Tolerance);  // within tolerance
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<std::thread> v;
     {

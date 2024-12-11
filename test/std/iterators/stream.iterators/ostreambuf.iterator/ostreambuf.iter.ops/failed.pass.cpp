@@ -27,7 +27,7 @@ struct my_streambuf : public std::basic_streambuf<Char,Traits> {
     int_type sputc(char_type) { return Traits::eof(); }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         my_streambuf<char> buf;

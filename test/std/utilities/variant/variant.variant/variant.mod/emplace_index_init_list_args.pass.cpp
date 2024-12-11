@@ -85,7 +85,7 @@ void test_basic() {
   assert(&ref3 == &std::get<1>(v));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_basic();
   test_emplace_sfinae();
 

@@ -76,7 +76,7 @@ void test(Container& c)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::map<int, int> m;
     test(m);

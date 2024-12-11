@@ -45,7 +45,7 @@
 
 void do_nothing(int*) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   AssertComparisonsAreNoexcept<std::shared_ptr<int>, nullptr_t>();
   AssertComparisonsAreNoexcept<nullptr_t, std::shared_ptr<int> >();

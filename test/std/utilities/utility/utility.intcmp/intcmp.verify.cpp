@@ -121,7 +121,7 @@ constexpr void test_uchars() {
   std::in_range<int>(T()); // expected-error 2 {{no matching function for call to 'in_range'}}
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<bool>();
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

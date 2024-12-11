@@ -54,7 +54,7 @@ static void test_basic() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_basic();
 
   return 0;

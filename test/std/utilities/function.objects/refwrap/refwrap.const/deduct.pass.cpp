@@ -15,7 +15,7 @@
 
 #include <functional>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int i = 0;
     std::reference_wrapper ri(i);
     static_assert(std::is_same_v<decltype(ri), std::reference_wrapper<int>>);

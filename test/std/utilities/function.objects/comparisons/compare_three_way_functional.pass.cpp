@@ -16,7 +16,7 @@
 #include <functional>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::compare_three_way()(1, 2) < 0);
     assert(std::compare_three_way()(1, 1) == 0);

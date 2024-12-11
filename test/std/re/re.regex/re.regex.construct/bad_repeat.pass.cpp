@@ -29,7 +29,7 @@ static bool error_badrepeat_thrown(const char *pat)
     return result;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(error_badrepeat_thrown("?a"));
     assert(error_badrepeat_thrown("*a"));

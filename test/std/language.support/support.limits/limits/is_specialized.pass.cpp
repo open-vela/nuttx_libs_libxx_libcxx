@@ -42,7 +42,7 @@ struct Test {
   }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   types::for_each(types::arithmetic_types(), Test());
 

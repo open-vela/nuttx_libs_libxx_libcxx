@@ -85,7 +85,7 @@ void test_counted()
     assert(Counted::count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_counted();
     test_ctor_throws();

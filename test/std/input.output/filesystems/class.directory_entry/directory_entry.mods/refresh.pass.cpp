@@ -357,7 +357,7 @@ static void access_cache_after_refresh_fails() {
 }
 #endif // TEST_WIN_NO_FILESYSTEM_PERMS_NONE
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_refresh_method();
   test_refresh_ec_method();
 #ifndef TEST_WIN_NO_FILESYSTEM_PERMS_NONE

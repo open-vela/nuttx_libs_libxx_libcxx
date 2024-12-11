@@ -83,7 +83,7 @@ TEST_CONSTEXPR_CXX14 bool test()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::string_view>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

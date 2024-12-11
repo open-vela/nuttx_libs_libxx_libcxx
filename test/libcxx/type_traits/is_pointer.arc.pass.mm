@@ -55,7 +55,7 @@ void test_is_pointer() {
 
 @class Foo;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_is_pointer<id>();
     test_is_pointer<id const>();
     test_is_pointer<id volatile>();

@@ -70,7 +70,7 @@ void test_assignability_checks() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_arity_checks();
   test_assignability_checks();
   return 0;

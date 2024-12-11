@@ -44,7 +44,7 @@
 
 using namespace std::experimental::pmr;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     TestResource R;
     { // Test (A) and (B)
         memory_resource* p = get_default_resource();

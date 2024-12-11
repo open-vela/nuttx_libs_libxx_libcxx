@@ -1610,7 +1610,7 @@ test5()
     assert(h.__is_black_ == true);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

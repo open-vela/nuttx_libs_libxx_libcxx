@@ -100,7 +100,7 @@ static_assert(!std::is_constructible<std::shared_ptr<B[]>, std::unique_ptr<A[]>&
 static_assert(!std::is_constructible<std::shared_ptr<B>,   std::unique_ptr<A[]>&&>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::unique_ptr<A> ptr(new A);

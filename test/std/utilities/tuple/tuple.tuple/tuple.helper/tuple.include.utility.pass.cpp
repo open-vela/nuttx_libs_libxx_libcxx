@@ -40,7 +40,7 @@ void test()
     static_assert((std::is_same<typename std::tuple_element<idx, const volatile T>::type, const volatile U>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::pair<int, int>, 2, int, 0>();
     test<std::pair<int, int>, 2, int, 1>();

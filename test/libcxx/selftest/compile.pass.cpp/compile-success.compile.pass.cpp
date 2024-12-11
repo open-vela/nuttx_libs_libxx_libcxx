@@ -8,4 +8,4 @@
 
 // Make sure the test passes if it succeeds to compile
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

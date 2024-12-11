@@ -133,7 +133,7 @@ test()
     assert(count_equal::count == si-1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<cpp17_input_iterator<const int*>, cpp17_output_iterator<int*> >();
     test<cpp17_input_iterator<const int*>, forward_iterator<int*> >();

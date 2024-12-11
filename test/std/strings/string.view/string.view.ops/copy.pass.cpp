@@ -87,7 +87,7 @@ TEST_CONSTEXPR_CXX20 bool test_constexpr_copy(const CharT *abcde, const CharT *g
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test ( "ABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDEABCDE" );
     test ( "ABCDE");
     test ( "a" );

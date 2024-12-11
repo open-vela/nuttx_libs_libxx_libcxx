@@ -85,7 +85,7 @@ ASSERT_SAME_TYPE(int, decltype(toupper(0)));
 
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(isalnum('a'));
   assert(isalpha('a'));
   assert(isblank(' '));

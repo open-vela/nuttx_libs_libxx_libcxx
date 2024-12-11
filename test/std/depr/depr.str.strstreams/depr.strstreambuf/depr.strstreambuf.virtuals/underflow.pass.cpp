@@ -31,7 +31,7 @@ struct test
     base::int_type underflow() {return base::underflow();}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         char buf[10] = "123";

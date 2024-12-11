@@ -23,7 +23,7 @@ void test_decay()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_decay<void, void>();
     test_decay<int, int>();

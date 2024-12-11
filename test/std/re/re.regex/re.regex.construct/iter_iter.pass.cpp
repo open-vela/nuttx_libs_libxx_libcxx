@@ -28,7 +28,7 @@ test(Iter first, Iter last, unsigned mc)
     assert(r.mark_count() == mc);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef forward_iterator<std::string::const_iterator> F;
     std::string s1("\\(a\\)");

@@ -17,7 +17,7 @@
 #  error "TEST_HAS_NO_EXCEPTIONS should NOT be defined"
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     try { (void)0; } catch (...) { }
     return 0;
 }

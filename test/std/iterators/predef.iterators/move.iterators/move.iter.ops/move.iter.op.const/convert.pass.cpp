@@ -34,7 +34,7 @@ test(U u)
 struct Base {};
 struct Derived : Base {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     Derived d;
 

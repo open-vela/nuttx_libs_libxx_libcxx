@@ -27,7 +27,7 @@ struct CallCompMember : MMap::value_compare {
     }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::multimap<int, std::string> map_type;
 
     map_type m;

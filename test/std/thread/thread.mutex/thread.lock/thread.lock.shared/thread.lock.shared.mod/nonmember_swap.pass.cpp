@@ -29,7 +29,7 @@ struct mutex
 
 mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::shared_lock<mutex> lk1(m);
     std::shared_lock<mutex> lk2;

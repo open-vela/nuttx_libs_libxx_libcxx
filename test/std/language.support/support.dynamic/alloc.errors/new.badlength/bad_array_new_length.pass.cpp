@@ -14,7 +14,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::bad_alloc, std::bad_array_new_length>::value),
                   "std::is_base_of<std::bad_alloc, std::bad_array_new_length>::value");

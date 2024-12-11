@@ -62,7 +62,7 @@ struct pointer_traits<C<char>::pointer>
 
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::allocator_traits<A<char> >::size_type, unsigned short>::value), "");
     static_assert((std::is_same<std::allocator_traits<B<char> >::size_type,

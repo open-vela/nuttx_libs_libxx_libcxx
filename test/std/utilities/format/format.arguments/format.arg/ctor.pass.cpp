@@ -41,7 +41,7 @@ void test() {
   test<char32_t>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 
   return 0;

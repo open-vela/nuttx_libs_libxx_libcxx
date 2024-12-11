@@ -37,7 +37,7 @@ struct my_facet
 
 int my_facet::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     my_facet* f = new my_facet;
     f->__add_shared();

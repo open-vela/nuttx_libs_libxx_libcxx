@@ -23,7 +23,7 @@
 #include "../../../test_hash.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_set<NotConstructible,

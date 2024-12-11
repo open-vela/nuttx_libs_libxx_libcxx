@@ -38,7 +38,7 @@ int tu2() { return f(); }
 int tu1();
 int tu2();
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(tu1() == 1);
   assert(tu2() == 2);
   return 0;

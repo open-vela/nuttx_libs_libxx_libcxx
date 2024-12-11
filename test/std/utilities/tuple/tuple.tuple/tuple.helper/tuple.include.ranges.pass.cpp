@@ -52,7 +52,7 @@ constexpr bool test_tuple_element() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_tuple_element<0, SizedRange, Iterator>());
   static_assert(test_tuple_element<1, SizedRange, SizedSentinel>());
   static_assert(test_tuple_element<0, UnsizedRange, Iterator>());

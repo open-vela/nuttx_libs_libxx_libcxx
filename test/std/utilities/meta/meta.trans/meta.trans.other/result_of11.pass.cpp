@@ -68,7 +68,7 @@ void test_result_of_imp()
 // Do not warn on deprecated uses of 'volatile' below.
 _LIBCPP_SUPPRESS_DEPRECATED_PUSH
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef char F::*PMD;

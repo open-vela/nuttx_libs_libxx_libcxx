@@ -30,7 +30,7 @@ bool test (T sv0)
     return sv0.size() == sv1.size() && sv0.data() == sv1.data();
     }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     assert( test<std::string_view>    (  "1234"));
 #ifndef TEST_HAS_NO_CHAR8_T

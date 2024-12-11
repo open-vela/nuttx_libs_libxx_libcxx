@@ -32,7 +32,7 @@ constexpr std::int64_t check_seconds(Duration d)
     return HMS(d).seconds().count();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using microfortnights = std::chrono::duration<int, std::ratio<756, 625>>;
 

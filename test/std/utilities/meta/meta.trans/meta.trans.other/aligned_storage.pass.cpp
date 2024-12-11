@@ -33,7 +33,7 @@ struct natural_alignment {
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::aligned_storage<10, 1 >::type T1;

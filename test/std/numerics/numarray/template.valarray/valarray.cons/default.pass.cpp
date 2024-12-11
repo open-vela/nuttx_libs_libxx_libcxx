@@ -24,7 +24,7 @@ struct S {
 
 bool S::ctor_called = false;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::valarray<int> v;

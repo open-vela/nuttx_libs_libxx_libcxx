@@ -21,7 +21,7 @@ struct A
     int x;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(noexcept(offsetof(A, x)), "");
 

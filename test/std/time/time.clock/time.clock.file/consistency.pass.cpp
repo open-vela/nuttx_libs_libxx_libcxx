@@ -26,7 +26,7 @@
 template <class T>
 void test(const T &) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::file_clock C;
     static_assert((std::is_same<C::rep, C::duration::rep>::value), "");

@@ -19,7 +19,7 @@
 #include <cassert>
 #include <locale>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using F = std::codecvt<char32_t, char8_t, std::mbstate_t>;
   const F& f = std::use_facet<F>(std::locale::classic());
   assert(f.max_length() == 4);

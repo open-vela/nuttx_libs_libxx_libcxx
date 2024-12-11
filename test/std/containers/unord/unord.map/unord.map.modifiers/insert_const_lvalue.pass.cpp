@@ -65,7 +65,7 @@ void do_insert_cv_test()
     assert(r.first->second == 3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_map<double, int> M;

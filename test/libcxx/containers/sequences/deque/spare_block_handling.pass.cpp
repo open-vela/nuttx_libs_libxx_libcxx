@@ -274,7 +274,7 @@ static void pop_front_push_back() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   push_back();
   push_front();
   std_queue();

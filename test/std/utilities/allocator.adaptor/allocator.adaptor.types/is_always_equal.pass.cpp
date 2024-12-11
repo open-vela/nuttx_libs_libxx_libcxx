@@ -22,7 +22,7 @@
 #include "allocators.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // sanity checks
     static_assert( (std::is_same<

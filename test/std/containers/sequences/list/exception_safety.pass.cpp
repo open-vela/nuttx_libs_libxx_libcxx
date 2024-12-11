@@ -61,7 +61,7 @@
 #include <ranges>
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     constexpr int ThrowOn = 1;
     constexpr int Size = 1;

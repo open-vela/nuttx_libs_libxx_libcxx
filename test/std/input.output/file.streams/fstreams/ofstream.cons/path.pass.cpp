@@ -27,7 +27,7 @@
 
 namespace fs = std::filesystem;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   fs::path p = get_temp_file_name();
   {
     static_assert(!std::is_convertible<fs::path, std::ofstream>::value,

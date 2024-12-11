@@ -133,7 +133,7 @@ struct NonTrivialAlloc {
   void deallocate(T*, std::size_t) { }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<TrivialEmptyType, TrivialEmptyAlloc>();
   test<TrivialEmptyType, TrivialNonEmptyAlloc>();
   test<TrivialEmptyType, FinalEmptyAlloc>();

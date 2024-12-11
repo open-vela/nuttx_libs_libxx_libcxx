@@ -22,7 +22,7 @@
 
 std::mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_constructible<bool, std::unique_lock<std::mutex> >::value, "");
     static_assert(!std::is_convertible<std::unique_lock<std::mutex>, bool>::value, "");

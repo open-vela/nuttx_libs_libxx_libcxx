@@ -30,7 +30,7 @@ struct some_alloc
     void allocate(std::size_t);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::vector<MoveOnly> C;

@@ -39,7 +39,7 @@ void TestOutput() {
   assert(&result == &stream);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestOutput<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   TestOutput<wchar_t>();

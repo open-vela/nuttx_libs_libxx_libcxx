@@ -51,7 +51,7 @@ struct test
     using base::c;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::vector<int, test_allocator<int> > C;
     test<int> q(std::less<int>(), make<C>(5), test_allocator<int>(3));

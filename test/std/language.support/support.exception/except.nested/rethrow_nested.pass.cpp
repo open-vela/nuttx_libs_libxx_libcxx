@@ -33,7 +33,7 @@ void go_quietly()
     std::exit(0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         try

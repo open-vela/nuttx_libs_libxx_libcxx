@@ -30,6 +30,6 @@ static_assert(std::is_same<ex::abi_for_size_t<int, 4>,
                            ex::simd_abi::fixed_size<4>>::value,
               "");
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }

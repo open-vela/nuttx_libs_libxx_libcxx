@@ -24,7 +24,7 @@ int AssertCount = 0;
 #include "check_assertion.h"
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using Alloc  = std::pmr::polymorphic_allocator<int>;
   using Traits = std::allocator_traits<Alloc>;
   NullResource R;

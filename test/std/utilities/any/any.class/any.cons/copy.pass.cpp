@@ -89,7 +89,7 @@ void test_copy()
     assert(Type::count == 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_copy<small>();
     test_copy<large>();
     test_copy_empty();

@@ -40,7 +40,7 @@ static void basic_test()
     assert(it.recursion_pending() == false);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     basic_test();
 
     return 0;

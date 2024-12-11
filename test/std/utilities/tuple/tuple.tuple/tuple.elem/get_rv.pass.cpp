@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<std::unique_ptr<int> > T;

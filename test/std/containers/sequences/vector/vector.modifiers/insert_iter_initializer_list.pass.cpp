@@ -102,7 +102,7 @@ TEST_CONSTEXPR_CXX20 bool tests()
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #ifndef TEST_HAS_NO_EXCEPTIONS
   test_throwing();
 #endif

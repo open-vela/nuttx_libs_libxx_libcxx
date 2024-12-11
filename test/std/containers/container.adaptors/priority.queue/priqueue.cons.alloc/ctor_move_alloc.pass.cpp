@@ -54,7 +54,7 @@ struct test
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<MoveOnly> qo(std::less<MoveOnly>(),
                       make<std::vector<MoveOnly, test_allocator<MoveOnly> > >(5),

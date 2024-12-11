@@ -54,7 +54,7 @@ void test(Container& c)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unordered_multimap<int, int> m;
     test(m);

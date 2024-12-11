@@ -19,7 +19,7 @@
 
 struct A {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::initializer_list<A> il;
     assert(il.size() == 0);

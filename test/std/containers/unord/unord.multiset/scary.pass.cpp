@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::unordered_set<int> M1;
     typedef std::unordered_multiset<int> M2;

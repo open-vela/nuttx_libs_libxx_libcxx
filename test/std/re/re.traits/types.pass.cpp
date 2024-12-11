@@ -20,7 +20,7 @@
 #include <type_traits>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::regex_traits<char>::char_type, char>::value), "");
     static_assert((std::is_same<std::regex_traits<char>::string_type, std::string>::value), "");

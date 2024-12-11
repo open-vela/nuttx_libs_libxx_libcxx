@@ -39,7 +39,7 @@ public:
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb("  Sat Dec 31 23:55:59 2061");

@@ -26,7 +26,7 @@ namespace __gnu_cxx {
 template class hash_set<int>;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef __gnu_cxx::hash_set<int> Set;
   Set s;
   Set s2(s);

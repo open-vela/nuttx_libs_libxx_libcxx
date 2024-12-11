@@ -22,7 +22,7 @@
 
 constexpr fs::copy_options ME(int val) { return static_cast<fs::copy_options>(val); }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef fs::copy_options E;
   static_assert(std::is_enum<E>::value, "");
 

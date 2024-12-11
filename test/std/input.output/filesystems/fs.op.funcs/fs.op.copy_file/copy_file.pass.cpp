@@ -185,7 +185,7 @@ static void copy_file() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_signatures();
   test_error_reporting();
 #ifndef _WIN32

@@ -27,7 +27,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     char16_t c = u'\0';

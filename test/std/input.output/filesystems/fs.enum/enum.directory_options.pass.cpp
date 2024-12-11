@@ -22,7 +22,7 @@
 
 constexpr fs::directory_options ME(int val) { return static_cast<fs::directory_options>(val); }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef fs::directory_options E;
   static_assert(std::is_enum<E>::value, "");
 

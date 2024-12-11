@@ -26,7 +26,7 @@
 template <class T>
 void test(const T &) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::locale::facet, std::moneypunct<char> >::value), "");
     static_assert((std::is_base_of<std::money_base, std::moneypunct<char> >::value), "");

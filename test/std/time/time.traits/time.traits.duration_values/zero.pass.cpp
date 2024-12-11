@@ -16,7 +16,7 @@
 #include "test_macros.h"
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::chrono::duration_values<int>::zero() == 0);
     assert(std::chrono::duration_values<Rep>::zero() == 0);

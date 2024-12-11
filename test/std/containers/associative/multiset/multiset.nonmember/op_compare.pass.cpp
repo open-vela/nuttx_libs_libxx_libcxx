@@ -38,7 +38,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::multiset<int> s1, s2;
         s1.insert(1);

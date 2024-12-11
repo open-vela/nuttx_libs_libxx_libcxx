@@ -38,7 +38,7 @@ bool only_deletions ( const Unordered &whole, const Unordered &part ) {
 #endif
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_map<int, std::string> C;

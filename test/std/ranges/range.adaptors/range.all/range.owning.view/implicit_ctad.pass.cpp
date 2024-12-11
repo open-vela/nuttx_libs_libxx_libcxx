@@ -22,7 +22,7 @@ struct Range {
   int* end();
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   Range r;
   std::ranges::owning_view view{std::move(r)};
   ASSERT_SAME_TYPE(decltype(view), std::ranges::owning_view<Range>);

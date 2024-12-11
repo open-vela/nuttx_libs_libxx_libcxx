@@ -373,7 +373,7 @@ void test_sfinae()
   }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   for (auto const & TC : Cases) {

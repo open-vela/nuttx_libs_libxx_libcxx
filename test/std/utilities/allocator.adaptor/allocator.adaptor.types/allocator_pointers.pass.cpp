@@ -110,7 +110,7 @@ void test_void_pointer()
 
 struct Foo { int x; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_pointer<std::scoped_allocator_adaptor<std::allocator<char>>> ();
     test_pointer<std::scoped_allocator_adaptor<std::allocator<int>>> ();

@@ -63,7 +63,7 @@ struct C
     void operator=(C&);  // not const
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_copy_assignable<int> ();
     test_is_copy_assignable<int&> ();

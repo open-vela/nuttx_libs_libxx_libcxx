@@ -39,7 +39,7 @@
 
 #include <print>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // The data is passed as-is so it does not depend on the encoding of the input.
   std::print("{} {} ", 1234, "一二三四");
   std::print("{} {}", true, nullptr);

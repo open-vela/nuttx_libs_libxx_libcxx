@@ -70,7 +70,7 @@ void test(void) {
   assert(e() == X0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Test for k == 1: word_size <= 32.
   test<unsigned short, 3u>();
 

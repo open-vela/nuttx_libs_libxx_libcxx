@@ -20,7 +20,7 @@
 #include "count_new.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   globalMemCounter.reset();
   char buffer[100];
   auto mono1 = std::pmr::monotonic_buffer_resource(buffer, sizeof buffer, std::pmr::new_delete_resource());

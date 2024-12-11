@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::codecvt_base::ok == 0);
     assert(std::codecvt_base::partial == 1);

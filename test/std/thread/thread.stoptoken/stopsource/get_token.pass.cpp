@@ -27,7 +27,7 @@ concept IsGetTokenNoexcept = requires(const T& t) {
 
 static_assert(IsGetTokenNoexcept<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // no state
   {
     std::stop_source ss{std::nostopstate};

@@ -16,4 +16,4 @@ std::set<int> s;
 using std::map;
 using std::multimap;
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

@@ -42,7 +42,7 @@ struct A
 
 int A::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::shared_ptr<A> ps(new A);

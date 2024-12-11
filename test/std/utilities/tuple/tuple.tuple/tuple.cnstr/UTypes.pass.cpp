@@ -83,7 +83,7 @@ void test_sfinae_missing_elements()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<MoveOnly> t(MoveOnly(0));

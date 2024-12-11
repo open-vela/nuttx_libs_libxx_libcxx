@@ -90,7 +90,7 @@ test(unsigned n)
     test2<T, Allocator> ( n );
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<DefaultOnly, std::allocator<DefaultOnly> >(0);
     test<DefaultOnly, std::allocator<DefaultOnly> >(1);

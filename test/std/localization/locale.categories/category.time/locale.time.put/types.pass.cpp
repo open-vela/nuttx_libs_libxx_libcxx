@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::locale::facet, std::time_put<char> >::value), "");
     static_assert((std::is_base_of<std::locale::facet, std::time_put<wchar_t> >::value), "");

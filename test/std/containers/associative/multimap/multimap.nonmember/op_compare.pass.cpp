@@ -38,7 +38,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::multimap<int, std::string> map_type;
     typedef map_type::value_type value_type;
     {

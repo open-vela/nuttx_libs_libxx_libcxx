@@ -29,7 +29,7 @@ static bool error_badbackref_thrown(const char *pat, std::regex::flag_type f)
     return result;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  no references
     assert(error_badbackref_thrown("\\1abc", std::regex_constants::ECMAScript));

@@ -30,7 +30,7 @@ test()
     assert(m.length(4) == m[4].length());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

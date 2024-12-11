@@ -22,7 +22,7 @@ public:
     static const int den = D;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::duration<int, Ratio<1> > D;
     D d;

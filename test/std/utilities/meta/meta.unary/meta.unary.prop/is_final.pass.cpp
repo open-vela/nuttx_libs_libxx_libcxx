@@ -48,7 +48,7 @@ void test_is_not_final()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_final<int>();
     test_is_not_final<int*>();

@@ -18,7 +18,7 @@
 
 #include <any>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::any a = 1;
 

@@ -16,7 +16,7 @@
 
 #include <memory>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::allocate_shared<int[]>(std::allocator<int>{}, 10);
   std::make_shared<int[]>(10);
 

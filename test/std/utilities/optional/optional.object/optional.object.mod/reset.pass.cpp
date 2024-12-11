@@ -47,7 +47,7 @@ constexpr bool check_reset()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_reset();
 #if TEST_STD_VER >= 20

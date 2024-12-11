@@ -17,7 +17,7 @@
 #include "filesystem_include.h"
 #include "poisoned_hash_helper.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_library_hash_specializations_available();
   test_hash_enabled_for_type<fs::path>();
 

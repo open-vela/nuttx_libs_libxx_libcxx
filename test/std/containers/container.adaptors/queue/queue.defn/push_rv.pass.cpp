@@ -18,7 +18,7 @@
 #include "test_macros.h"
 #include "MoveOnly.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::queue<MoveOnly> q;
     q.push(MoveOnly(1));

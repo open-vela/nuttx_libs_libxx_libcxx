@@ -31,7 +31,7 @@ struct NonTrivial {
     NonTrivial(NonTrivial const&) { }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_aggregate<char>();
     check_aggregate<int>();

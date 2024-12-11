@@ -22,7 +22,7 @@ struct such {};
 void foo(const such &) {}
 void foo(const ex::nonesuch &) {}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     foo({});  // nonesuch is not an aggregate
 
     return 0;

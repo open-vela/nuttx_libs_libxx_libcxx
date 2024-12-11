@@ -55,7 +55,7 @@ struct alignas(DoubleBufferAlignment) OverSizeAndAlignedType {
     char buff[BufferSize + 1];
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::__any_imp::_IsSmallObject;
     static_assert(_IsSmallObject<small>::value, "");

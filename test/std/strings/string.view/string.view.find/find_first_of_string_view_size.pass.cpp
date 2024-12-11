@@ -143,7 +143,7 @@ void test1()
     test(S("pniotcfrhqsmgdkjbael"), S("htaobedqikfplcgjsmrn"), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::string_view S;

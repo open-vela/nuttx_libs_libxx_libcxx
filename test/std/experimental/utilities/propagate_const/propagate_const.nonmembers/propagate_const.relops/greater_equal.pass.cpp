@@ -25,7 +25,7 @@ constexpr bool operator>=(const X &lhs, const X &rhs) {
   return lhs.i_ >= rhs.i_;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr X x1_1(1);
   constexpr X x2_1(1);
   constexpr X x3_2(2);

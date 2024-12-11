@@ -28,7 +28,7 @@
 #include "min_allocator.h"
 #include "deleter_types.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unique_ptr<int, PointerDeleter<int>> p;
     std::ostringstream os;

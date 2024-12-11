@@ -21,7 +21,7 @@ class A
     A& operator=(const A&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<decltype(std::declval<A>()), A&&>::value), "");
 

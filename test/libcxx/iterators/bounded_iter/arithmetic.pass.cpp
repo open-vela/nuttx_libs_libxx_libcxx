@@ -97,7 +97,7 @@ TEST_CONSTEXPR_CXX14 bool tests() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   tests<int*>();
 #if TEST_STD_VER > 11
   static_assert(tests<int*>(), "");

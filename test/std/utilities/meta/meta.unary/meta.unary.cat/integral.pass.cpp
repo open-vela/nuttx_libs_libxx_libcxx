@@ -45,7 +45,7 @@ void test_integral()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_integral<bool>();
     test_integral<char>();

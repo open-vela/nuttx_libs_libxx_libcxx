@@ -17,7 +17,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         int a1[] = {1, 3, 7, 9, 10};

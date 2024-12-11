@@ -66,7 +66,7 @@ constexpr bool assign_value(optional<Tp>&& lhs) {
     return lhs.has_value() && rhs.has_value() && *lhs == Tp{101};
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         static_assert(std::is_nothrow_move_assignable<optional<int>>::value, "");

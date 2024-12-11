@@ -57,7 +57,7 @@ constexpr bool check_precision()
     return std::is_same_v<typename HMS::precision, Pre>;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using microfortnights = std::chrono::duration<int, std::ratio<756, 625>>;
 

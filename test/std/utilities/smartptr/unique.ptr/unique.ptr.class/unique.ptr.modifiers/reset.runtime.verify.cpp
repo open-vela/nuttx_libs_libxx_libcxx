@@ -18,7 +18,7 @@
 
 #include "unique_ptr_test_helper.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::unique_ptr<A[]> p;
     p.reset(static_cast<B*>(nullptr)); // expected-error {{no matching member function for call to 'reset'}}

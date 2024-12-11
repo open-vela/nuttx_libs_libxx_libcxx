@@ -82,7 +82,7 @@ static void large_file() {
   assert(out_data == additional_data);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   large_file();
 
   return 0;

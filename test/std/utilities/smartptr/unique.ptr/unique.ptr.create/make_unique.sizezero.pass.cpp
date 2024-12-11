@@ -21,7 +21,7 @@ struct A {
 };
 static_assert(sizeof(A) == 0, "");  // an extension supported by GCC and Clang
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     std::unique_ptr<A> p = std::unique_ptr<A>(new A);

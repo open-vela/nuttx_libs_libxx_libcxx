@@ -29,7 +29,7 @@ constexpr bool constexpr_test()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::chrono::system_clock Clock;

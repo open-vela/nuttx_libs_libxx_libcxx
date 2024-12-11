@@ -28,7 +28,7 @@
 #include "test_macros.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     using namespace fs;
     using D = directory_iterator;
     ASSERT_SAME_TYPE(D::value_type, directory_entry);

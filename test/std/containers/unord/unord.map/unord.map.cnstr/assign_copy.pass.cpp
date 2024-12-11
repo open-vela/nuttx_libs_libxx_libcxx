@@ -28,7 +28,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef test_allocator<std::pair<const int, std::string> > A;

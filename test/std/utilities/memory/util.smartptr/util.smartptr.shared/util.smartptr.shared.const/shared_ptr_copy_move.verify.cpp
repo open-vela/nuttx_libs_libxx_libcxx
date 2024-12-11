@@ -26,7 +26,7 @@ struct ADel : std::default_delete<A> {
   typedef A* pointer;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(!(std::is_convertible<A, int>::value), "");
 
   {

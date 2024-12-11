@@ -34,7 +34,7 @@ void test(T t) {
   std::atomic<T> t0(t);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test(TriviallyCopyable(42));
   test(std::chrono::nanoseconds(2));
 #ifndef TEST_HAS_NO_THREADS

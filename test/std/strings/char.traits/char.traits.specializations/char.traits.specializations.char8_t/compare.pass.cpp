@@ -27,7 +27,7 @@ constexpr bool test_constexpr()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::char_traits<char8_t>::compare(u8"", u8"", 0) == 0);
     assert(std::char_traits<char8_t>::compare(NULL, NULL, 0) == 0);
@@ -54,7 +54,7 @@ int main(int, char**)
     return 0;
 }
 #else
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }
 #endif

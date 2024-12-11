@@ -47,7 +47,7 @@ test()
     assert(ia[4] == 4);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<int*> >();
     test<bidirectional_iterator<int*> >();

@@ -41,7 +41,7 @@ static_assert(std::is_same<decltype(std::noop_coroutine()), std::noop_coroutine_
 // // [coroutine.handle.noop.address], address
 // constexpr void* address() const noexcept;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   auto h = std::noop_coroutine();
   std::coroutine_handle<> base = h;

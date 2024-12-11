@@ -36,7 +36,7 @@ test2()
         std::uint_fast64_t>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

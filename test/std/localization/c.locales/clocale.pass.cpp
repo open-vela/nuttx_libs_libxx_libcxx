@@ -41,7 +41,7 @@
 #error NULL not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::lconv lc;
     ((void)lc); // Prevent unused warning

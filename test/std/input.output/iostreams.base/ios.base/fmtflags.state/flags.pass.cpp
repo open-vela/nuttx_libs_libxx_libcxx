@@ -27,7 +27,7 @@ public:
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const test t;
     assert(t.flags() == (test::skipws | test::dec));

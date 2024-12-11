@@ -80,7 +80,7 @@ constexpr bool test_sequence_container_array_spaceship() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test_sequence_container_array_spaceship());
   static_assert(test_sequence_container_array_spaceship());
   return 0;

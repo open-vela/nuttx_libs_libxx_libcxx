@@ -19,7 +19,7 @@
 
 #include <iostream>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::wclog << L"1234";
     return 0;
 }

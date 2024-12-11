@@ -116,7 +116,7 @@ adl_test()
     assert(std::search(Iter(ua), Iter(ua), Iter(ua), Iter(ua)) == Iter(ua));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<const int*>, forward_iterator<const int*> >();
     test<forward_iterator<const int*>, bidirectional_iterator<const int*> >();

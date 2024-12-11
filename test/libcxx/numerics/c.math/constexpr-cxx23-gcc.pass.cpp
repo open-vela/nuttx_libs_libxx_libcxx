@@ -23,7 +23,7 @@
 #include <cstdlib>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   bool ImplementedP0533R9 = true;
 
 #define ASSERT_CONSTEXPR_CXX23(Expr) static_assert(__builtin_constant_p(Expr) && (Expr))

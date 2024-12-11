@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "pointer_comparison_test_helper.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::less_equal<int> F;
     const F f = F();

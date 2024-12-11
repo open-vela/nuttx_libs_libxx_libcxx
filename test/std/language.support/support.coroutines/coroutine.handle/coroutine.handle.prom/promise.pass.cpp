@@ -73,7 +73,7 @@ void do_test(std::coroutine_handle<Promise>&& H) {
   }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   do_test(std::coroutine_handle<int>{});
   do_test(std::coroutine_handle<const int>{});

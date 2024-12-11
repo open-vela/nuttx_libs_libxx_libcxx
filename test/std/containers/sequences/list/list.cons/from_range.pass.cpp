@@ -16,7 +16,7 @@
 #include "../../from_range_sequence_containers.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for_all_iterators_and_allocators<int>([]<class Iter, class Sent, class Alloc>() {
     test_sequence_container<std::list, int, Iter, Sent, Alloc>([](const auto&) {
       // No additional validation to do.

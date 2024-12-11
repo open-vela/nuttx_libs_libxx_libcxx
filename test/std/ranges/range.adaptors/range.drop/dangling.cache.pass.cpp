@@ -44,7 +44,7 @@ struct ZeroOnDestroy : std::ranges::view_base {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   auto noDanlingCache = ZeroOnDestroy::dropFirstFour();
   // If we use the cached version, it will reference the copied-from view.
   // Worst case this is a segfault, best case it's an assertion fired.

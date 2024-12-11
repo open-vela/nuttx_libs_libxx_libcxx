@@ -39,7 +39,7 @@ void operator ()() const {}
 #endif
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
     typedef std::istream_iterator<int> T;
     T it;

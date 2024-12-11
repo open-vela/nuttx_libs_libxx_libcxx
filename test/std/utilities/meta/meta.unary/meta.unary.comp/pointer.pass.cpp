@@ -35,7 +35,7 @@ void test_pointer()
     test_pointer_imp<const volatile T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_pointer<void*>();
     test_pointer<int*>();

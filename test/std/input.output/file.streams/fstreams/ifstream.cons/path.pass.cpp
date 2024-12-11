@@ -29,7 +29,7 @@
 
 namespace fs = std::filesystem;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     fs::path p;
     static_assert(!std::is_convertible<fs::path, std::ifstream>::value,

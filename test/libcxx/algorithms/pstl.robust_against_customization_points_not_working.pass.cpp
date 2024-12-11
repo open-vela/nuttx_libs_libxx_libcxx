@@ -280,7 +280,7 @@ struct std::__select_backend<TestPolicy> {
   using type = TestBackend;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int a[]   = {1, 2};
   auto pred = [](auto&&...) { return true; };
 

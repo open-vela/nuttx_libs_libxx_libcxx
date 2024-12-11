@@ -44,7 +44,7 @@ static_assert(!std::allocator_traits<NonPropagatingAlloc>::propagate_on_containe
 using NoexceptSwapAlloc = Alloc</*Propagate=*/true, /*Noexcept=*/true>;
 using ThrowingSwapAlloc = Alloc</*Propagate=*/true, /*Noexcept=*/false>;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     PropagatingAlloc a1(1), a2(42);
     std::__swap_allocator(a1, a2);

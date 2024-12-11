@@ -318,7 +318,7 @@ void test_constexpr_move_ctor() {
   static_assert(test_constexpr_ctor_imp<2>(V(101)), "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_move_ctor_basic();
   test_move_ctor_valueless_by_exception();
   test_move_noexcept();

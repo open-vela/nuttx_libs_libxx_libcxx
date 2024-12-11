@@ -24,7 +24,7 @@
 #include "filesystem_include.h"
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   AssertEqualityAreNoexcept<fs::directory_iterator>();
   AssertEqualityReturnBool<fs::directory_iterator>();
 

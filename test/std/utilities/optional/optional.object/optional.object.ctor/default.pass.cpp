@@ -61,7 +61,7 @@ test()
     };
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_constexpr<optional<int>>();
     test_constexpr<optional<int*>>();

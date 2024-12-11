@@ -251,7 +251,7 @@ void test_allocator_and_new_match() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_libcpp_dealloc();
   test_allocator_and_new_match();
 

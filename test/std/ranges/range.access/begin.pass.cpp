@@ -325,7 +325,7 @@ static_assert(!std::is_invocable_v<RangeBeginT, Holder<Incomplete>*&>);
 static_assert(!std::is_invocable_v<RangeCBeginT, Holder<Incomplete>*>);
 static_assert(!std::is_invocable_v<RangeCBeginT, Holder<Incomplete>*&>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(testReturnTypes());
 
   testArray();

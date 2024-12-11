@@ -269,7 +269,7 @@ static void test_with_ec_cannot_resolve() {
 }
 #endif // TEST_WIN_NO_FILESYSTEM_PERMS_NONE
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   file_dne();
   signatures();
   test_without_ec();

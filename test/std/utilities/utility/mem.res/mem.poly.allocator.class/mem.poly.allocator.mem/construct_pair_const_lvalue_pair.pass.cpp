@@ -112,7 +112,7 @@ void test_pmr_not_uses_allocator(std::pair<TT, UU> const& p) {
 template <class Tp>
 struct Print;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using PMR = std::pmr::memory_resource*;
   using PMA = std::pmr::polymorphic_allocator<char>;
   {

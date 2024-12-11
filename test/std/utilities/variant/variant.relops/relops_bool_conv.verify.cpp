@@ -71,7 +71,7 @@ inline constexpr MyBoolExplicit operator>=(const ComparesToMyBoolExplicit& LHS, 
 }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using V = std::variant<int, ComparesToMyBoolExplicit>;
   V v1(42);
   V v2(101);

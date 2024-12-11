@@ -35,7 +35,7 @@ struct do_nothing
     void operator()(void*) const {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         char s[] = "1234567890";

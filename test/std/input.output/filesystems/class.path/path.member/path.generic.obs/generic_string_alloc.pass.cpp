@@ -61,7 +61,7 @@ void doAllocTest()
   }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   doAllocTest<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

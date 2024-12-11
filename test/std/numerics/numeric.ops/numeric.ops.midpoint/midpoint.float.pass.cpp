@@ -124,7 +124,7 @@ void fp_test()
 }
 
 
-int main (int, char**)
+extern "C" int main (int, char**)
 {
     fp_test<float>();
     fp_test<double>();

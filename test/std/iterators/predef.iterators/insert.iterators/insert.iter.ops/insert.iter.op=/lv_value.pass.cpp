@@ -45,7 +45,7 @@ insert3at(C& c, typename C::iterator i,
     c.insert(++i, x3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::vector<int> C;

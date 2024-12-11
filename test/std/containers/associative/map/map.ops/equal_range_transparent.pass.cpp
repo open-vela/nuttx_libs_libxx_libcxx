@@ -39,7 +39,7 @@ struct Comp {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::map<std::pair<int, int>, int, Comp> s{
       {{2, 1}, 1}, {{1, 2}, 2}, {{1, 3}, 3}, {{1, 4}, 4}, {{2, 2}, 5}};
 

@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "valarray_helper.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef double T;

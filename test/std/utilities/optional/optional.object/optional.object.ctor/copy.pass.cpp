@@ -113,7 +113,7 @@ void test_reference_extension()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int>();
     test<int>(3);

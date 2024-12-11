@@ -58,7 +58,7 @@ bool counting_equals ( const T &a, const T &b ) {
     return a == b;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int ia[] = {0, 1, 2, 3, 4, 5};
     const unsigned s = sizeof(ia)/sizeof(ia[0]);

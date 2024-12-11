@@ -45,7 +45,7 @@ test_int_1()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_int_1();
 

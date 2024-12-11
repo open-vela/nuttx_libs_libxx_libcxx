@@ -123,16 +123,16 @@ class TestSourceBuilds(SetupConfigs):
     """
 
     def test_valid_program_builds(self):
-        source = """int main(int, char**) { return 0; }"""
+        source = """extern "C" int main(int, char**) { return 0; }"""
         self.assertTrue(dsl.sourceBuilds(self.config, source))
 
     def test_compilation_error_fails(self):
-        source = """int main(int, char**) { this does not compile }"""
+        source = """extern "C" int main(int, char**) { this does not compile }"""
         self.assertFalse(dsl.sourceBuilds(self.config, source))
 
     def test_link_error_fails(self):
         source = """extern void this_isnt_defined_anywhere();
-                    int main(int, char**) { this_isnt_defined_anywhere(); return 0; }"""
+                    extern "C" int main(int, char**) { this_isnt_defined_anywhere(); return 0; }"""
         self.assertFalse(dsl.sourceBuilds(self.config, source))
 
 
@@ -144,27 +144,27 @@ class TestProgramOutput(SetupConfigs):
     def test_valid_program_returns_output(self):
         source = """
         #include <cstdio>
-        int main(int, char**) { std::printf("FOOBAR"); return 0; }
+        extern "C" int main(int, char**) { std::printf("FOOBAR"); return 0; }
         """
         self.assertEqual(dsl.programOutput(self.config, source), "FOOBAR")
 
     def test_valid_program_returns_output_newline_handling(self):
         source = """
         #include <cstdio>
-        int main(int, char**) { std::printf("FOOBAR\\n"); return 0; }
+        extern "C" int main(int, char**) { std::printf("FOOBAR\\n"); return 0; }
         """
         self.assertEqual(dsl.programOutput(self.config, source), "FOOBAR\n")
 
     def test_valid_program_returns_no_output(self):
         source = """
-        int main(int, char**) { return 0; }
+        extern "C" int main(int, char**) { return 0; }
         """
         self.assertEqual(dsl.programOutput(self.config, source), "")
 
     def test_program_that_fails_to_run_raises_runtime_error(self):
         # The program compiles, but exits with an error
         source = """
-        int main(int, char**) { return 1; }
+        extern "C" int main(int, char**) { return 1; }
         """
         self.assertRaises(
             dsl.ConfigurationRuntimeError,
@@ -174,7 +174,7 @@ class TestProgramOutput(SetupConfigs):
     def test_program_that_fails_to_compile_raises_compilation_error(self):
         # The program doesn't compile
         source = """
-        int main(int, char**) { this doesnt compile }
+        extern "C" int main(int, char**) { this doesnt compile }
         """
         self.assertRaises(
             dsl.ConfigurationCompilationError,
@@ -185,7 +185,7 @@ class TestProgramOutput(SetupConfigs):
         source = """
         #include <cassert>
         #include <string>
-        int main(int argc, char** argv) {
+        extern "C" int main(int argc, char** argv) {
             assert(argc == 3);
             assert(argv[1] == std::string("first-argument"));
             assert(argv[2] == std::string("second-argument"));
@@ -202,7 +202,7 @@ class TestProgramOutput(SetupConfigs):
         # first program run.
         source = """
         #include <cstdio>
-        int main(int, char**) {
+        extern "C" int main(int, char**) {
             std::printf("MACRO=%u\\n", MACRO);
             return 0;
         }
@@ -231,7 +231,7 @@ class TestProgramOutput(SetupConfigs):
         # sure the stderr output does not pollute the stdout output.
         source = """
         #include <cstdio>
-        int main(int, char**) {
+        extern "C" int main(int, char**) {
             std::fprintf(stdout, "STDOUT-OUTPUT");
             std::fprintf(stderr, "STDERR-OUTPUT");
             return 0;
@@ -247,13 +247,13 @@ class TestProgramSucceeds(SetupConfigs):
 
     def test_success(self):
         source = """
-        int main(int, char**) { return 0; }
+        extern "C" int main(int, char**) { return 0; }
         """
         self.assertTrue(dsl.programSucceeds(self.config, source))
 
     def test_failure(self):
         source = """
-        int main(int, char**) { return 1; }
+        extern "C" int main(int, char**) { return 1; }
         """
         self.assertFalse(dsl.programSucceeds(self.config, source))
 

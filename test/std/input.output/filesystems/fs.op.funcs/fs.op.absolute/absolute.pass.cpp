@@ -55,7 +55,7 @@ static void basic_test()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     absolute_signature_test();
     basic_test();
 

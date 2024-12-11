@@ -25,7 +25,7 @@ void g() {
   return _LIBCPP_ASSUME(true);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   f();
   g();
   return 0;

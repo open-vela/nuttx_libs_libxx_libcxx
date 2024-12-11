@@ -23,7 +23,7 @@ static_assert(std::is_nothrow_constructible_v<std::stop_source, std::nostopstate
 // explicit
 static_assert(!std::is_convertible_v<std::nostopstate_t, std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source ss(std::nostopstate);
     assert(!ss.stop_possible());

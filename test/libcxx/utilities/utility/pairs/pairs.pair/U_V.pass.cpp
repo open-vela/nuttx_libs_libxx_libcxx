@@ -40,7 +40,7 @@ struct ImplicitNothrowT {
     int value;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     { // explicit noexcept test
         static_assert(!std::is_nothrow_constructible<std::pair<ExplicitT, ExplicitT>, int, int>::value, "");
         static_assert(!std::is_nothrow_constructible<std::pair<ExplicitNothrowT, ExplicitT>, int, int>::value, "");

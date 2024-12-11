@@ -24,7 +24,7 @@
 
 std::shared_timed_mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::shared_lock<std::shared_timed_mutex> lk0;
     assert(lk0.owns_lock() == false);

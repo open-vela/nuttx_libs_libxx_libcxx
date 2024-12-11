@@ -22,7 +22,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::vector<int> vec{0, 1, 2}; // must use std::vector instead of std::array, because std::span has a special constructor from std::array
 
     auto invalid_size = [&] { std::span<int, 2> const s(vec); (void)s; };

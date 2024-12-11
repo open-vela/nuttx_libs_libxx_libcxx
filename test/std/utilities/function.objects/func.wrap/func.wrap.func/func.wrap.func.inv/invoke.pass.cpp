@@ -421,7 +421,7 @@ void test_int_2()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_void_0();
     test_int_0();

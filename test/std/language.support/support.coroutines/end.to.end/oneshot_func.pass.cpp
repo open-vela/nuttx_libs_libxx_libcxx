@@ -65,7 +65,7 @@ private:
   std::coroutine_handle<promise_type> h;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   func<int> f = func<int>::Create([]() { return 44; });
   assert(f() == 44);
 

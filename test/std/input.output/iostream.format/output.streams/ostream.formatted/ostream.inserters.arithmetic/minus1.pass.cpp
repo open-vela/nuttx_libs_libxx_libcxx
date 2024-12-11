@@ -60,7 +60,7 @@ void test_hex(const char *expected)
     assert(str == expected);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
     test_octal<std::uint16_t>(                "177777");

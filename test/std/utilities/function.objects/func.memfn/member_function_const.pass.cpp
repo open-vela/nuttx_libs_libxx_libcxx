@@ -74,7 +74,7 @@ test2(F f)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test0(std::mem_fn(&A::test0));
     test1(std::mem_fn(&A::test1));

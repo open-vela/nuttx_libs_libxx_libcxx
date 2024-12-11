@@ -27,7 +27,7 @@ double fw(double x)
     return x+1;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::discrete_distribution<> D;

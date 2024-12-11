@@ -313,7 +313,7 @@ struct V1 : std::ranges::view_interface<V1> { };
 struct V2 : std::ranges::view_interface<V2> { V1 base_; };
 static_assert(sizeof(V2) == sizeof(V1));
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   testEmpty();
   static_assert(testEmpty());
 

@@ -98,7 +98,7 @@ static void hard_link_count_error_cases()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     hard_link_count_for_file();
     hard_link_count_for_directory();

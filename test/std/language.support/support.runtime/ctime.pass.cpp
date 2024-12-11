@@ -20,7 +20,7 @@
 #error CLOCKS_PER_SEC not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::clock_t c = 0;
     std::size_t s = 0;

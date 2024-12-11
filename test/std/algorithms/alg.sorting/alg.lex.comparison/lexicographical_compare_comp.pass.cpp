@@ -51,7 +51,7 @@ test()
     assert( std::lexicographical_compare(Iter1(ib+1), Iter1(ib+3),  Iter2(ia),   Iter2(ia+sa), c));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<cpp17_input_iterator<const int*>, cpp17_input_iterator<const int*> >();
     test<cpp17_input_iterator<const int*>, forward_iterator<const int*> >();

@@ -403,7 +403,7 @@ static void test_append_concat_narrow()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_latin_unicode();
   test_wide_unicode();

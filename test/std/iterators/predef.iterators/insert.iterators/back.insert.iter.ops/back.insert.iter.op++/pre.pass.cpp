@@ -30,7 +30,7 @@ test(C c)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::vector<int>());
     test(nasty_vector<int>());

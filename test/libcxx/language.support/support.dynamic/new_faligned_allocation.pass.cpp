@@ -55,7 +55,7 @@ static void test_allocations(std::size_t size, size_t alignment) {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     static_assert(std::is_enum<std::align_val_t>::value, "");
     typedef std::underlying_type<std::align_val_t>::type UT;

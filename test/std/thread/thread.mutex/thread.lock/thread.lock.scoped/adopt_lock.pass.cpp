@@ -31,7 +31,7 @@ struct TestMutex {
     TestMutex& operator=(TestMutex const&) = delete;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using LG = std::scoped_lock<>;

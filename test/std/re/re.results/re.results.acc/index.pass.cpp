@@ -46,7 +46,7 @@ test(std::regex_constants::syntax_option_type syntax)
     assert(m[4].matched == false);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::regex_constants::ECMAScript);
     test(std::regex_constants::extended);

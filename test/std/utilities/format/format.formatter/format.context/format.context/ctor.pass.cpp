@@ -123,7 +123,7 @@ static_assert(!std::is_copy_assignable_v<std::basic_format_context<cpp20_output_
 static_assert(std::is_move_constructible_v<std::basic_format_context<cpp20_output_iterator<int*>, char>>);
 static_assert(std::is_move_assignable_v<std::basic_format_context<cpp20_output_iterator<int*>, char>>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::back_insert_iterator<std::basic_string<char>>, char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<std::back_insert_iterator<std::basic_string<wchar_t>>, wchar_t>();

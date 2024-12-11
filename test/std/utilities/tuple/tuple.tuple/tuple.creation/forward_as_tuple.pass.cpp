@@ -64,7 +64,7 @@ test3(const Tuple&)
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test0(std::forward_as_tuple());

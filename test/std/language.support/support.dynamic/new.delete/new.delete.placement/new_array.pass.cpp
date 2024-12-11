@@ -21,7 +21,7 @@ struct A
     ~A() {--A_constructed;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::size_t Size = 3;
     // placement new might require additional space.

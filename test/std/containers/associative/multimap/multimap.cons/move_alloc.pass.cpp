@@ -24,7 +24,7 @@
 #include "min_allocator.h"
 #include "Counter.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<MoveOnly, MoveOnly> V;

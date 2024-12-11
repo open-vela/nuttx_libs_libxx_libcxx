@@ -27,7 +27,7 @@ void do_exit() {
   exit(0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11 && TEST_CLANG_VER >= 1600
   // TODO(LLVM-18): Remove the special-casing

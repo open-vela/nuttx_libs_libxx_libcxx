@@ -144,7 +144,7 @@ void test1()
     test(S("abcdeabcdeabcdeabcde"), S("abcdeabcdeabcdeabcde"), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::string_view S;

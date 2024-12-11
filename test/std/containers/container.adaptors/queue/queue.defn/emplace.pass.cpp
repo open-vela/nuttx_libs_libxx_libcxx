@@ -37,7 +37,7 @@ void test_return_type() {
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_return_type<std::queue<int> > ();
     test_return_type<std::queue<int, std::list<int> > > ();

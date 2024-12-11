@@ -27,7 +27,7 @@ concept IsStopPossibleNoexcept = requires(const T& t) {
 
 static_assert(IsStopPossibleNoexcept<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // no state
   {
     const std::stop_source st{std::nostopstate};

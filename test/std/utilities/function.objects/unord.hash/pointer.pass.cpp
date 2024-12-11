@@ -58,7 +58,7 @@ void test_nullptr()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int*>();
     test_nullptr();

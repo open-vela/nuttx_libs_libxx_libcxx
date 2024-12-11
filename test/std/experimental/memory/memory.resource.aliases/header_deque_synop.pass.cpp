@@ -30,7 +30,7 @@
 
 namespace pmr = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using StdDeque = std::deque<int, pmr::polymorphic_allocator<int>>;
     using PmrDeque = pmr::deque<int>;

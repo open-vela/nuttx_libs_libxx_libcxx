@@ -22,7 +22,7 @@ template <class Ptr> void test()
     ((void)p); // Prevent unused warning
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::char_traits<char>*          >();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

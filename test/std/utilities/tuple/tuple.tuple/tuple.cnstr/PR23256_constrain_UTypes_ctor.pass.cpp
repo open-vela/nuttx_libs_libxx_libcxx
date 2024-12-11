@@ -61,7 +61,7 @@ struct ExplicitUnconstrainedCtor {
 
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef UnconstrainedCtor A;
     typedef ExplicitUnconstrainedCtor ExplicitA;
     {

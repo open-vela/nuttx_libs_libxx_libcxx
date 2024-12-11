@@ -35,7 +35,7 @@ struct InconsistentEquals {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int zero = 0;
   int one  = 1;
 

@@ -21,7 +21,7 @@
 
 constexpr fs::file_type ME(int val) { return static_cast<fs::file_type>(val); }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef fs::file_type E;
   static_assert(std::is_enum<E>::value, "");
 

@@ -114,7 +114,7 @@ static void basic_space_test()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_error_reporting();
     basic_space_test();

@@ -25,7 +25,7 @@
 #include "test_macros.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::signal(SIGABRT, [](int) { std::_Exit(EXIT_SUCCESS); });
     std::unordered_map<int, int> const map;
     map.at(1);

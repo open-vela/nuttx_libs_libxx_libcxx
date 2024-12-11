@@ -53,7 +53,7 @@ test_w(const char_type* A,
       assert(!matches_underscore && "should not match underscore");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  if __regex_word is not distinct from all the classes, bad things happen
 //  See https://llvm.org/PR26476 for an example.

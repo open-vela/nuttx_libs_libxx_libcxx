@@ -27,7 +27,7 @@ struct test
 
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test t;
     assert(t.sgetc() == -1);

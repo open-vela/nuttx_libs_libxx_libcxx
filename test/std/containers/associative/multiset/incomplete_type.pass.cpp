@@ -25,7 +25,7 @@ struct A {
 
 inline bool operator==(A const& L, A const& R) { return &L == &R; }
 inline bool operator<(A const& L, A const& R)  { return L.data < R.data; }
-int main(int, char**) {
+extern "C" int main(int, char**) {
     A a;
 
   return 0;

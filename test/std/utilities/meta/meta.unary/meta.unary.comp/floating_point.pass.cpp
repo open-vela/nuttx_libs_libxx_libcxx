@@ -35,7 +35,7 @@ void test_floating_point()
     test_floating_point_imp<const volatile T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_floating_point<float>();
     test_floating_point<double>();

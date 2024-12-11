@@ -17,7 +17,7 @@
 #include <memory_resource>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::pmr::memory_resource* expected = std::pmr::null_memory_resource();
   std::pmr::set_default_resource(expected);
   {

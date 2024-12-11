@@ -30,7 +30,7 @@ void test_noexcept() TEST_NOEXCEPT
 {
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_noexcept();
 

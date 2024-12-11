@@ -21,7 +21,7 @@ struct T {
   }
 } t;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Triggers construction of __thread_local_data.
   support::make_test_thread(func).join();
 

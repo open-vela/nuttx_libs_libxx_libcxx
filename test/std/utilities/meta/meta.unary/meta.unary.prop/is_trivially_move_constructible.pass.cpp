@@ -73,7 +73,7 @@ struct MoveOnly2
 
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_trivial_move_constructor<void>();
     test_has_not_trivial_move_constructor<A>();

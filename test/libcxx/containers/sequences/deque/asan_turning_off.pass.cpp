@@ -57,7 +57,7 @@ template <class T>
 struct std::__asan_annotate_container_with_allocator<user_allocator<T>> : false_type {};
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using D = std::deque<int, user_allocator<int>>;
 
   {

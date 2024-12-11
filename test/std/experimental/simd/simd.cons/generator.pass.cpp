@@ -82,7 +82,7 @@ void test_generator() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // TODO: adjust the tests when this assertion fails.
   assert(ex::native_simd<std::int32_t>::size() >= 4);
   test_generator<ex::native_simd<std::int32_t>>();

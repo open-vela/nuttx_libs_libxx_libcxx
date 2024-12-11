@@ -24,7 +24,7 @@ struct X {
     int test() const { return 3; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::optional<X> opt;
         TEST_LIBCPP_ASSERT_FAILURE(opt->test(), "optional operator-> called on a disengaged value");

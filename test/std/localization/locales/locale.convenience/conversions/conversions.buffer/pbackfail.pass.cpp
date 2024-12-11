@@ -41,7 +41,7 @@ struct test_buf
     virtual int_type pbackfail(int_type c = traits_type::eof()) {return base::pbackfail(c);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::string const s = "123456789";
     {

@@ -32,7 +32,7 @@ constexpr bool testConstexpr()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using year  = std::chrono::year;
     using years = std::chrono::years;

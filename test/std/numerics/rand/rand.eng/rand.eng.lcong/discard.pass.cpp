@@ -58,7 +58,7 @@ other()
     assert(e1 == e2);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     rand0<unsigned int>();
     rand0<unsigned long>();

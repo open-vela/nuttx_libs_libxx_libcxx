@@ -72,7 +72,7 @@ Haldir()
     assert(e() == 217250280);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     randu<unsigned int>();
     randu<unsigned long>();

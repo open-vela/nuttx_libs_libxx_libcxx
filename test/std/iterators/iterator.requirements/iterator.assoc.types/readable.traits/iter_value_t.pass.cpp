@@ -70,4 +70,4 @@ struct different_value_element_members {
 };
 static_assert(check_no_iter_value_t<different_value_element_members>());
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

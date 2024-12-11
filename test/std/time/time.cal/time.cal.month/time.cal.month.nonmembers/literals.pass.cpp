@@ -29,7 +29,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
     ASSERT_SAME_TYPE(const std::chrono::month, decltype(std::chrono::January));

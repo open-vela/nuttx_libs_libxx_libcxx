@@ -45,7 +45,7 @@ TEST_CONSTEXPR_CXX20 bool test()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int, random_access_iterator<int*> >();
     test<int, int*>();

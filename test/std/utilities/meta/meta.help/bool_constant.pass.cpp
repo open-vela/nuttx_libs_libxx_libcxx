@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER > 14
     typedef std::bool_constant<true> _t;

@@ -26,7 +26,7 @@ struct X {
 
 constexpr bool operator>(const X& lhs, const X& rhs) { return lhs.i_ > rhs.i_; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef X T;
     typedef optional<T> O;

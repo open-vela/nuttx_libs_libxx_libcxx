@@ -152,7 +152,7 @@ void test_basic() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_basic();
   test_emplace_sfinae();
 

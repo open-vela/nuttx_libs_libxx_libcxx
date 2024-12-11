@@ -94,7 +94,7 @@ static void set_to_empty()
     assert(old_p == current_path());
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     current_path_signature_test();
     current_path_test();
     current_path_after_change_test();

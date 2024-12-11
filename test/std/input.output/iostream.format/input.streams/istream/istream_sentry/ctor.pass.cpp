@@ -51,7 +51,7 @@ protected:
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::istream is((testbuf<char>*)0);

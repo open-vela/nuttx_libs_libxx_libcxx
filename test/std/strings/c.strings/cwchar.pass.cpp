@@ -34,7 +34,7 @@
 #error WEOF not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::mbstate_t mb = {};
     std::size_t s = 0;

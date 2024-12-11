@@ -45,7 +45,7 @@ void test_void()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_void<void>();
 

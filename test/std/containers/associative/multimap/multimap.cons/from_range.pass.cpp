@@ -30,7 +30,7 @@ void test_duplicates() {
   assert(std::ranges::is_permutation(input, c));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using T = std::pair<const int, int>;
   for_all_iterators_and_allocators<T>([]<class Iter, class Sent, class Alloc>() {
     test_associative_map<std::multimap, int, int, Iter, Sent, test_less<int>, Alloc>();

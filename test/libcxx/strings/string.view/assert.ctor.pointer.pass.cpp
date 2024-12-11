@@ -18,7 +18,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TEST_LIBCPP_ASSERT_FAILURE(std::string_view((char const*)NULL), "null pointer passed to non-null argument of char_traits<...>::length");
   TEST_LIBCPP_ASSERT_FAILURE(std::string_view((char const*)nullptr), "null pointer passed to non-null argument of char_traits<...>::length");
   TEST_LIBCPP_ASSERT_FAILURE(std::string_view((char const*)0), "null pointer passed to non-null argument of char_traits<...>::length");

@@ -18,7 +18,7 @@
 #include <memory_resource>
 #include <type_traits>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using MBR = std::pmr::monotonic_buffer_resource;
   static_assert(!std::is_copy_constructible_v<MBR>);
   static_assert(!std::is_move_constructible_v<MBR>);

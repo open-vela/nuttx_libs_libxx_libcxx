@@ -22,7 +22,7 @@
 
 static_assert(std::is_nothrow_copy_assignable_v<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // have two different states
   {
     std::stop_source ss1;

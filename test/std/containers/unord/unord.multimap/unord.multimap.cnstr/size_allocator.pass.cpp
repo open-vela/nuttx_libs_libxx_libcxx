@@ -47,7 +47,7 @@ void test(const Allocator& alloc)
     assert(c.max_load_factor() == 1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pair<const NotConstructible, NotConstructible> V;
     test(test_allocator<V>(10));

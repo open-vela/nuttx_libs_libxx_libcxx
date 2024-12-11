@@ -325,7 +325,7 @@ void test() {
   test_different_signedness();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   // The test relies on a global variable, so it cannot be made `constexpr`; the `memmove` optimization is not used in
   // `constexpr` mode anyway.

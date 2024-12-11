@@ -149,7 +149,7 @@ void test_non_pmr_uses_alloc(AllocObj const& A, Args&&... args) {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using PMR   = std::pmr::memory_resource*;
   using PMA   = std::pmr::polymorphic_allocator<char>;
   using STDA  = std::allocator<char>;

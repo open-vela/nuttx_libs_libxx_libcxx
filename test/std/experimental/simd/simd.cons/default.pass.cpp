@@ -20,7 +20,7 @@
 
 namespace ex = std::experimental::parallelism_v2;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(ex::native_simd<std::int32_t>().size() > 0, "");
   static_assert(ex::fixed_size_simd<std::int32_t, 4>().size() == 4, "");
   static_assert(ex::fixed_size_simd<std::int32_t, 5>().size() == 5, "");

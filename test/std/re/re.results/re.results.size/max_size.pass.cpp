@@ -24,7 +24,7 @@ test()
     assert(m.max_size() > 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char>();
     test<wchar_t>();

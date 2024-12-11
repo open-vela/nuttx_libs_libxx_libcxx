@@ -19,7 +19,7 @@
 #include "check_assertion.h"
 
 // clang-format off
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TEST_LIBCPP_ASSERT_FAILURE(std::ranges::repeat_view(0, -1), "The value of bound must be greater than or equal to 0");
   const int val = 0;
   TEST_LIBCPP_ASSERT_FAILURE(std::ranges::repeat_view(val, -1), "The value of bound must be greater than or equal to 0");

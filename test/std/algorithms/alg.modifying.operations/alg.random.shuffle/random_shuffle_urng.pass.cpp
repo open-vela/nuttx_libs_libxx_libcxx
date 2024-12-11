@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int ia[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int ia1[] = {2, 7, 1, 4, 3, 6, 5, 10, 9, 8};

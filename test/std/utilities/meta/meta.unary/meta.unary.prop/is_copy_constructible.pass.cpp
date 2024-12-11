@@ -70,7 +70,7 @@ struct C
     void operator=(C&);  // not const
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_copy_constructible<A>();
     test_is_copy_constructible<int&>();

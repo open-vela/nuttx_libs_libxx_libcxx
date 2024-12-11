@@ -35,7 +35,7 @@ public:
     ~Class();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_rank<void, 0>();
     test_rank<int&, 0>();

@@ -31,7 +31,7 @@ void test ( const std::basic_string<CharT, Traits> &str ) {
     assert ( sv1.data() == str.data());
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     test ( std::string("QBCDE") );
     test ( std::string("") );

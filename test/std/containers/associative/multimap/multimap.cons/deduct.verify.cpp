@@ -38,7 +38,7 @@ struct NotAnAllocator {
 using P = std::pair<int, long>;
 using PC = std::pair<const int, long>;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         // cannot deduce Key and T from nothing

@@ -72,7 +72,7 @@ TEST_CONSTEXPR_CXX17 bool test_conv_assign()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     Derived d;
 

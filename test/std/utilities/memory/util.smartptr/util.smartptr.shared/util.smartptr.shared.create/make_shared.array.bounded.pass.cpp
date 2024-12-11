@@ -38,7 +38,7 @@ concept CanMakeShared = requires(Args&& ...args) {
   { std::make_shared<T>(std::forward<Args>(args)...) } -> std::same_as<std::shared_ptr<T>>;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Make sure we initialize elements correctly
   {
     // Without passing an initial value

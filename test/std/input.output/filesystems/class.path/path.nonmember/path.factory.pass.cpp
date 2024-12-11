@@ -27,7 +27,7 @@
 #include "count_new.h"
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   const char* In1 = "abcd/efg";

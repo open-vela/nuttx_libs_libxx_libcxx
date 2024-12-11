@@ -23,7 +23,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         typedef int T;
         std::promise<T> p;

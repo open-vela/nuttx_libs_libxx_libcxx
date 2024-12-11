@@ -33,7 +33,7 @@
 #include "test_macros.h"
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     const std::pmr::memory_resource* r1 = nullptr;
     const std::pmr::memory_resource* r2 = nullptr;

@@ -365,7 +365,7 @@ static void test() {
              SV("255 is not a valid month/8 is not a valid weekday[last]"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

@@ -39,7 +39,7 @@ public:
     ~Class();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_alignment_of<int&, 4>();
     test_alignment_of<Class, 1>();

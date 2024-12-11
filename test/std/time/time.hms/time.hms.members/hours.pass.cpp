@@ -40,7 +40,7 @@ constexpr long check_hours(Duration d)
     return HMS(d).hours().count();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using microfortnights = std::chrono::duration<int, std::ratio<756, 625>>;
 

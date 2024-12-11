@@ -49,7 +49,7 @@ bool g(int x, int y)
     return x == y;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int T;

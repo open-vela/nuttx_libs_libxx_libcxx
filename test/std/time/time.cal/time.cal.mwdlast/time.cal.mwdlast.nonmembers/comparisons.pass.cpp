@@ -24,7 +24,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using month              = std::chrono::month;
     using weekday_last       = std::chrono::weekday_last;

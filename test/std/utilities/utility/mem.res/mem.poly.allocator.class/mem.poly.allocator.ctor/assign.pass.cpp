@@ -20,7 +20,7 @@
 #include <type_traits>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::pmr::polymorphic_allocator<void> T;
   static_assert(!std::is_copy_assignable<T>::value, "");
   static_assert(!std::is_move_assignable<T>::value, "");

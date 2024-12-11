@@ -30,7 +30,7 @@
 
 namespace pmr = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using StdVector = std::vector<int, pmr::polymorphic_allocator<int>>;
     using PmrVector = pmr::vector<int>;

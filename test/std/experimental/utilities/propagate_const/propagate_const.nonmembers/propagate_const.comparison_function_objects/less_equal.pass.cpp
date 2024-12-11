@@ -21,7 +21,7 @@ using std::experimental::propagate_const;
 
 constexpr bool operator<=(const X &x1, const X &x2) { return x1.i_ <= x2.i_; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
   typedef propagate_const<X> P;
 

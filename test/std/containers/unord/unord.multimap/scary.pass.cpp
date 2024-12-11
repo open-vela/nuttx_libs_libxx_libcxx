@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::unordered_map<int, int> M1;
     typedef std::unordered_multimap<int, int> M2;

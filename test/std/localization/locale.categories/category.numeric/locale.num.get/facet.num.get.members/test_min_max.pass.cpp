@@ -51,7 +51,7 @@ void check_limits()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_limits<short>();
     check_limits<unsigned short>();

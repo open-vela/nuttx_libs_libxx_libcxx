@@ -150,7 +150,7 @@ void test_exceptions() {
 #endif // TEST_HAS_NO_EXCEPTIONS
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test();
     test_exceptions();
 #if TEST_STD_VER > 17

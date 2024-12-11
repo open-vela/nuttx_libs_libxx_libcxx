@@ -33,7 +33,7 @@ public:
 
 template <class C> int my_facet<C>::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::locale l(std::locale::classic(), new my_facet<char>);

@@ -37,7 +37,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using month = std::chrono::month;
   AssertOrderAreNoexcept<month>();
   AssertOrderReturn<std::strong_ordering, month>();

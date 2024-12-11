@@ -50,7 +50,7 @@ struct pair
     T2 second;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_standard_layout<int> ();
     test_is_standard_layout<int[3]> ();

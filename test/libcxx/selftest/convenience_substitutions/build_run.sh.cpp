@@ -14,7 +14,7 @@
 #include <cassert>
 #include <string>
 
-int main(int argc, char** argv) {
+extern "C" int main(int argc, char** argv) {
   assert(argc == 2);
 
   std::string arg = argv[1];

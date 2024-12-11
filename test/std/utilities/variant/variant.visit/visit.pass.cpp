@@ -423,7 +423,7 @@ void test_sfinae() {
   static_assert(has_visit<GoodVariant2>(0));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_call_operator_forwarding();
   test_argument_forwarding();
   test_return_type();

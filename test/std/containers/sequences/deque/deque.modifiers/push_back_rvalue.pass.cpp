@@ -61,7 +61,7 @@ void test(int size)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int rng[] = {0, 1, 2, 3, 1023, 1024, 1025, 2046, 2047, 2048, 2049, 4094, 4095, 4096};

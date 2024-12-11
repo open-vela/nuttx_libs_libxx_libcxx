@@ -23,7 +23,7 @@
 #include "test_macros.h"
 #include "platform_support.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::filesystem::path p = get_temp_file_name();
   {
     std::fstream stream;

@@ -315,7 +315,7 @@ static void test_otherwise_no_effects_clause()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_error_reporting();
     from_is_symlink();

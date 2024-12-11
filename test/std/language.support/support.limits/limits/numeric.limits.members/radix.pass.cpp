@@ -25,7 +25,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::radix == expected, "radix test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, 2>();
     test<char, 2>();

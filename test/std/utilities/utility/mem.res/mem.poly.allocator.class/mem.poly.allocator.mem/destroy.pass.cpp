@@ -31,7 +31,7 @@ struct destroyable {
   ~destroyable() { --count; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::pmr::polymorphic_allocator<double> A;
   {
     A a;

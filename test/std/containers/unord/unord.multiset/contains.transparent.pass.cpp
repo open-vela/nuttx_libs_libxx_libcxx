@@ -20,7 +20,7 @@
 #include <unordered_set>
 #include "test_transparent_unordered.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using key_type = StoredType<int>;
 

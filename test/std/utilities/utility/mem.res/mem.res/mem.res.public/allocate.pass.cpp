@@ -34,7 +34,7 @@
 #include "test_macros.h"
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestResource R(42);
   auto& P                      = R.getController();
   std::pmr::memory_resource& M = R;

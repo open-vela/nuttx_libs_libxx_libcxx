@@ -27,7 +27,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using space_info = std::filesystem::space_info;
 
   AssertEqualityAreNoexcept<space_info>();

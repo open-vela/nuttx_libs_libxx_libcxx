@@ -74,7 +74,7 @@ struct incomplete_type;
 
 typedef void (*FunctionPtr)();
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_function<void(void)>();
     test_is_function<int(int)>();

@@ -121,7 +121,7 @@ void test_layout_mapping_left() {
   test_layout_mapping_requirements<std::layout_left, E>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr size_t D = std::dynamic_extent;
   test_layout_mapping_left<std::extents<int>>();
   test_layout_mapping_left<std::extents<char, 4, 5>>();

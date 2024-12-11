@@ -26,7 +26,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::queue<int> q1 = make<std::queue<int> >(5);
     std::queue<int> q2 = make<std::queue<int> >(10);

@@ -28,7 +28,7 @@ constexpr bool check_neg(Duration d)
     return std::chrono::hh_mm_ss<Duration>(d).is_negative();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using microfortnights = std::chrono::duration<int, std::ratio<756, 625>>;
 

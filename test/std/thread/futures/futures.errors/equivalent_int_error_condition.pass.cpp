@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::error_category& e_cat = std::future_category();
     std::error_condition e_cond = e_cat.default_error_condition(5);

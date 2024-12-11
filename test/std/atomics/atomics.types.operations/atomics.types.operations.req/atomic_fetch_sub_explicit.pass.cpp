@@ -72,7 +72,7 @@ void testp()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     TestEachIntegralType<TestFn>()();
     testp<int*>();

@@ -35,7 +35,7 @@ LIBCPP_STATIC_ASSERT(std::is_class_v<decltype(std::ranges::uninitialized_fill_n)
 struct NotConvertibleFromInt {};
 static_assert(!std::is_invocable_v<decltype(std::ranges::uninitialized_fill_n), NotConvertibleFromInt*, std::size_t, int>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr int value = 42;
   Counted x(value);
   Counted::reset();

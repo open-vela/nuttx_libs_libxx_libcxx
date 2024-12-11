@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER < 11
    LIBCPP_STATIC_ASSERT(static_cast<int>(std::launch::any) ==

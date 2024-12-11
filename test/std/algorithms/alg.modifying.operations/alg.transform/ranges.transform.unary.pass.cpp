@@ -234,7 +234,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_iterator_in1<cpp17_output_iterator<int*>>();
   test_iterator_in1<cpp20_output_iterator<int*>>();
   test_iterator_in1<forward_iterator<int*>>();

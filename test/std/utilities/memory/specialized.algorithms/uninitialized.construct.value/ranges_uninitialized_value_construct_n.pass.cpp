@@ -35,7 +35,7 @@ struct NotDefaultCtrable {
 };
 static_assert(!std::is_invocable_v<decltype(std::ranges::uninitialized_value_construct_n), NotDefaultCtrable*, int>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // An empty range -- no default constructors should be invoked.
   {
     Buffer<Counted, 1> buf;

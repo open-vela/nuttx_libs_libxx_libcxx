@@ -71,7 +71,7 @@ struct my_facet
 
 std::locale::id my_facet::id;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 {
     globalMemCounter.reset();

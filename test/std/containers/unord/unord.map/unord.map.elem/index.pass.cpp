@@ -28,7 +28,7 @@
 #include "container_test_types.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_map<int, std::string> C;

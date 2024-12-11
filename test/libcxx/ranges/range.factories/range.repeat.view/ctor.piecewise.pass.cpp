@@ -23,7 +23,7 @@
 #include "check_assertion.h"
 
 // clang-format off
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using Repeat = std::ranges::repeat_view<int, int>;
   TEST_LIBCPP_ASSERT_FAILURE(Repeat(std::piecewise_construct, std::tuple{1}, std::tuple{-1}), "The behavior is undefined if Bound is not unreachable_sentinel_t and bound is negative");
 

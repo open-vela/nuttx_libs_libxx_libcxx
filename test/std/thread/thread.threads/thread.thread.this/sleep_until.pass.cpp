@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   typedef std::chrono::system_clock Clock;
   typedef Clock::time_point time_point;

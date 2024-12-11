@@ -23,7 +23,7 @@
 #include <chrono>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Test round-trip through the system clock, starting from file_clock::now()
   {
     std::chrono::file_clock::time_point const ft = std::chrono::file_clock::now();

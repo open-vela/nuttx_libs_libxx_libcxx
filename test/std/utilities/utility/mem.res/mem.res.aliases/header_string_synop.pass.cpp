@@ -47,7 +47,7 @@ void test_basic_string_alias() {
   static_assert(std::is_same<StdStr, PmrStr>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     test_string_typedef<char, std::pmr::string>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

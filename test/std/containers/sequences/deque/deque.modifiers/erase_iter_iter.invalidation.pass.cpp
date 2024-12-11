@@ -64,7 +64,7 @@ void del_at_end(C c, std::size_t num)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::deque<int> queue;
     for (int i = 0; i < 20; ++i)

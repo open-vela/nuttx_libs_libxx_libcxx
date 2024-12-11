@@ -36,7 +36,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using year_month         = std::chrono::year_month;
     using year               = std::chrono::year;

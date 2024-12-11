@@ -23,7 +23,7 @@
 
 double unary_f(int i) {return 0.5 - i;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::ptr_fun(unary_f)(36) == -35.5);
 

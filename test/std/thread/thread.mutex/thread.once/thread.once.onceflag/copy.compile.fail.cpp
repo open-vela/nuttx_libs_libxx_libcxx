@@ -16,7 +16,7 @@
 
 #include <mutex>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::once_flag f;
     std::once_flag f2(f);

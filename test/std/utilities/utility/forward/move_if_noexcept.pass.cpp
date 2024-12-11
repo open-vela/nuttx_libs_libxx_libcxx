@@ -40,7 +40,7 @@ struct legacy
     legacy(const legacy&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int i = 0;
     const int ci = 0;

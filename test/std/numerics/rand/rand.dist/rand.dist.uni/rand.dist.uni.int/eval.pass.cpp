@@ -97,7 +97,7 @@ void test_statistics() {
     test_statistics<ResultType, EngineType>(0, std::numeric_limits<ResultType>::max());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_statistics<int, std::minstd_rand0>();
     test_statistics<int, std::minstd_rand>();

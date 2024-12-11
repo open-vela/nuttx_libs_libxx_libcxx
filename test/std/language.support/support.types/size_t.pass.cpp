@@ -17,7 +17,7 @@
 //  2. be the same sizeof as void*.
 //  3. be an unsigned integral.
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(sizeof(std::size_t) == sizeof(void*),
                   "sizeof(std::size_t) == sizeof(void*)");

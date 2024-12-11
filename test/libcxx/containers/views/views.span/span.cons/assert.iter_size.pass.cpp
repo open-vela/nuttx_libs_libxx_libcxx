@@ -24,7 +24,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::array<int, 3> array{0, 1, 2};
 
     auto too_large = [&] { std::span<int, 3> const s(array.data(), 4); (void)s; };

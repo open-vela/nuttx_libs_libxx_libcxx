@@ -37,7 +37,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::deque<int> d1, d2;

@@ -107,7 +107,7 @@ struct Test {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   types::for_each(
       types::forward_iterator_list<int*>{}, types::apply_type_identity{[](auto v) {
         using Iter2 = typename decltype(v)::type;

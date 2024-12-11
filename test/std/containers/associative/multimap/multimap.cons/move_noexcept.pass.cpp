@@ -31,7 +31,7 @@ struct some_comp
     bool operator()(const T&, const T&) const { return false; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if defined(_LIBCPP_VERSION)
     typedef std::pair<const MoveOnly, MoveOnly> V;

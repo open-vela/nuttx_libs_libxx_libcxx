@@ -21,7 +21,7 @@ void test() {
   ASSERT_SAME_TYPE(std::chrono::file_time<Dur>, std::chrono::time_point<std::chrono::file_clock, Dur>);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::chrono::nanoseconds>();
   test<std::chrono::minutes>();
   test<std::chrono::hours>();

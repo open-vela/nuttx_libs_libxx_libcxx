@@ -12,7 +12,7 @@
 #include <cassert>
 #include <type_traits>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  LWG#2566 says that the first template param must match the second one's value type
     std::queue<double, std::deque<int>> t;

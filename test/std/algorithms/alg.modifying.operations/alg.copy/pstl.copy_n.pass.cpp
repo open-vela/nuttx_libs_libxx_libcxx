@@ -94,7 +94,7 @@ struct TestIteratorsNonTrivial {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   types::for_each(types::forward_iterator_list<int*>{}, TestIteratorsInt{});
   types::for_each(types::forward_iterator_list<CopiedToTester*>{}, TestIteratorsNonTrivial{});
 

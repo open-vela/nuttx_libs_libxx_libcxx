@@ -102,7 +102,7 @@ void test_char_type() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_char_type<char, char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_char_type<char, wchar_t>();

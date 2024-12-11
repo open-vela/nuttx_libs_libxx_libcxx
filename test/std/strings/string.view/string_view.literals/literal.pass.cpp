@@ -21,7 +21,7 @@
     typedef std::string_view   u8string_view;
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         using namespace std::literals::string_view_literals;
 

@@ -35,7 +35,7 @@ void check_trivially_copyable()
     static_assert(std::is_trivially_copyable<std::array<T, 3> >::value, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     check_trivially_copyable<int>();
     check_trivially_copyable<long>();

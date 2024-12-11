@@ -20,7 +20,7 @@
 
 typedef std::chrono::duration<unsigned> unsigned_secs;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::abs(unsigned_secs(0));
 

@@ -23,7 +23,7 @@
 
 typedef std::codecvt<char, char, std::mbstate_t> F;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::locale l = std::locale::classic();
     const std::basic_string<F::intern_type> from("some text");

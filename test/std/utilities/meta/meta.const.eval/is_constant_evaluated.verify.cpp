@@ -16,7 +16,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef __cpp_lib_is_constant_evaluated
   // expected-error@+1 {{no member named 'is_constant_evaluated' in namespace 'std'}}

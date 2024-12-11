@@ -25,7 +25,7 @@
 #error
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::smatch m;

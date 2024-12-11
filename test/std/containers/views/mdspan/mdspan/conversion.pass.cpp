@@ -192,7 +192,7 @@ constexpr bool test(FromA from_acc) {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // using shorthands here: t and o for better visual distinguishability
   constexpr bool t = true;
   constexpr bool o = false;

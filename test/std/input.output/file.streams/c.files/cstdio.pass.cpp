@@ -81,7 +81,7 @@
 
 TEST_CLANG_DIAGNOSTIC_IGNORED("-Wformat-zero-length")
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::FILE* fp = 0;
     std::fpos_t fpos = std::fpos_t();

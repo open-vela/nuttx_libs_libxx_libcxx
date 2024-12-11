@@ -39,7 +39,7 @@ using P = std::pair<int, long>;
 using PC = std::pair<const int, long>;
 using PCC = std::pair<const int, const long>;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     const PCC arr[] = { {1,1L}, {2,2L}, {1,1L}, {INT_MAX,1L}, {3,1L} };

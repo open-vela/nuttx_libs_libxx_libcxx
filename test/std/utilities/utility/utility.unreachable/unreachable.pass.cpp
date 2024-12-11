@@ -15,7 +15,7 @@
 #include <type_traits>
 #include <utility>
 
-int main(int argc, char**) {
+extern "C" int main(int argc, char**) {
     assert(argc == 1);
     if (argc != 1) {
         std::unreachable();

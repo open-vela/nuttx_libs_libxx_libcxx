@@ -64,7 +64,7 @@ static_assert(!HasReset<std::shared_ptr<int[5]>, int*, bad_deleter>::value, "");
 static_assert(!HasReset<std::shared_ptr<int[5]>, int(*)[5], test_deleter<int>>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::shared_ptr<B> p(new B);

@@ -43,7 +43,7 @@ void test() {
   assert(!s.contains(-1));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::set<std::pair<int, int>, Comp> >();
   test<std::multiset<std::pair<int, int>, Comp> >();
 

@@ -232,7 +232,7 @@ constexpr bool all_the_algorithms()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     all_the_algorithms();
     static_assert(all_the_algorithms());

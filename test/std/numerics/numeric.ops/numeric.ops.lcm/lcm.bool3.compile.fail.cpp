@@ -18,7 +18,7 @@
 #include <numeric>
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::lcm<volatile bool, int>(false, 4);
 

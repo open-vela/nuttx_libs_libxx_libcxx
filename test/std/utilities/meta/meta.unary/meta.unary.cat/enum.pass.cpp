@@ -46,7 +46,7 @@ void test_enum()
 enum Enum {zero, one};
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_enum<Enum>();
 

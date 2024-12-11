@@ -26,7 +26,7 @@ private:
     };
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::unordered_multimap<int, int, std::hash<int>, Comp<int> > m;
 
   return 0;

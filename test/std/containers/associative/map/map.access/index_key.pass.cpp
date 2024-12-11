@@ -23,7 +23,7 @@
 #include "container_test_types.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::pair<const int, double> V;

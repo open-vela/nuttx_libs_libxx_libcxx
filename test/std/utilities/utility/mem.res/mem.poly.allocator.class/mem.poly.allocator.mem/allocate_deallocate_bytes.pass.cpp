@@ -57,7 +57,7 @@ void test() {
 
 struct S {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::byte>();
   test<S>();
 

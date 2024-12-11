@@ -32,7 +32,7 @@ TEST_CONSTEXPR_CXX20 bool test()
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test<std::basic_string<char, std::char_traits<char>, test_allocator<char> > >();
 #if TEST_STD_VER >= 11

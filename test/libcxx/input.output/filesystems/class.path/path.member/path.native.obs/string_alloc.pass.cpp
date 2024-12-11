@@ -141,7 +141,7 @@ void doLongStringTest(MultiStringType const& MS) {
   /////////////////////////////////////////////////////////////////////////////
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   {

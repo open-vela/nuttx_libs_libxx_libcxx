@@ -77,7 +77,7 @@ void pointer_test()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     pointer_test<char>();
     pointer_test<int>();

@@ -23,7 +23,7 @@ private:
     };
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::multiset<int, Comp<int> > m;
 
   return 0;

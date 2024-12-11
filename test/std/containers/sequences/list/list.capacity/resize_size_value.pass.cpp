@@ -16,7 +16,7 @@
 #include "DefaultOnly.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::list<double> l(5, 2);

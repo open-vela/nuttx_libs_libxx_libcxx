@@ -116,7 +116,7 @@ void test_self_swap() {
     assert(large::count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_noexcept();
     test_swap_empty<small>();

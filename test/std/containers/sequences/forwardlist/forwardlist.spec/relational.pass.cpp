@@ -52,7 +52,7 @@ void test(int N, int M)
         assert(c1 > c2);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     for (int i = 0; i < 10; ++i)
         for (int j = 0; j < 10; ++j)

@@ -198,7 +198,7 @@ static void path_ctor_cannot_resolve() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   path_ctor();
   path_ec_ctor();
   path_ctor_calls_refresh();

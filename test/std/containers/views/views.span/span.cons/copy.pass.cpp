@@ -41,7 +41,7 @@ void testCV ()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     constexpr int carr[] = {1,2,3};
 

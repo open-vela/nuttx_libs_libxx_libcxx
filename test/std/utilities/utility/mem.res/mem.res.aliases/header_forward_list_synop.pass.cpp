@@ -24,7 +24,7 @@
 #include <type_traits>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using StdForwardList = std::forward_list<int, std::pmr::polymorphic_allocator<int>>;
   using PmrForwardList = std::pmr::forward_list<int>;
   static_assert(std::is_same<StdForwardList, PmrForwardList>::value, "");

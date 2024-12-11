@@ -52,7 +52,7 @@ class Class
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_member_function_pointer<void (Class::*)()>();
   test_member_function_pointer<void (Class::*)(int)>();

@@ -21,7 +21,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_library_hash_specializations_available();
   {
     test_hash_enabled_for_type<std::thread::id>();

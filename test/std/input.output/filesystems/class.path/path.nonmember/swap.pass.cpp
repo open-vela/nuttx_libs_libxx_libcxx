@@ -21,7 +21,7 @@
 #include "count_new.h"
 
 // NOTE: this is tested in path.members/path.modifiers via the member swap.
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   const char* value1 = "foo/bar/baz";

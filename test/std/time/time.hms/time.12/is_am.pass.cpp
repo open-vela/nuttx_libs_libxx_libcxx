@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using hours = std::chrono::hours;
     ASSERT_SAME_TYPE(bool, decltype(std::chrono::is_am(std::declval<hours>())));

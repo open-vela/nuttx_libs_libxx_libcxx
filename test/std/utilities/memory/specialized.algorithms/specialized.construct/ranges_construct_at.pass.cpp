@@ -130,7 +130,7 @@ static_assert(!can_construct_at((int(*)())nullptr));
 static_assert(!can_construct_at((int(*)())nullptr, nullptr));
 // TODO(varconst): check that array types work once D114649 implementing LWG3639 lands.
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

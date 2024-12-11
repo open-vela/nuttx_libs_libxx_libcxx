@@ -20,7 +20,7 @@
 #include "min_allocator.h"
 #include "private_constructor.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int V;

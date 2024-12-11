@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "allocators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Deduct from (const OuterAlloc&).
     {

@@ -259,7 +259,7 @@ TEST_CONSTEXPR_CXX17 bool test_adl_proofing() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_arrays_and_initializer_lists_forward();
 #if TEST_STD_VER > 11
   test_arrays_and_initializer_lists_backward();

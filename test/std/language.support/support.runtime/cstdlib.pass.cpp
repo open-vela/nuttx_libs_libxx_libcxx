@@ -85,7 +85,7 @@ void test_abs() {
     assert(std::abs(-1.) == 1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::size_t s = 0;
     ((void)s);

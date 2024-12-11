@@ -53,7 +53,7 @@ void do_insert_hint_const_lvalue_test()
     assert(r->second == 4);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_insert_hint_const_lvalue_test<std::unordered_map<double, int> >();
 #if TEST_STD_VER >= 11

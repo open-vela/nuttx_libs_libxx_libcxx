@@ -30,7 +30,7 @@ concept IsRequestStopNoexcept = requires(T& t) {
 
 static_assert(IsRequestStopNoexcept<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // If *this does not have ownership of a stop state, returns false
   {
     std::stop_source ss{std::nostopstate};

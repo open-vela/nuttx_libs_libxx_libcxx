@@ -95,7 +95,7 @@ struct MakeTestType {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   MakeTestType<char>::Test();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   MakeTestType<wchar_t>::Test();

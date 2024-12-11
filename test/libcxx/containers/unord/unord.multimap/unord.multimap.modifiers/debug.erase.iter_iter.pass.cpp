@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // With first iterator from another container
     {
         typedef std::pair<int, int> P;

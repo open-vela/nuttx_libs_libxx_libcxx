@@ -38,7 +38,7 @@ test(const S& s, typename S::value_type c, typename S::size_type x)
         assert(0 <= x && x + 1 <= s.size());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::string_view S;

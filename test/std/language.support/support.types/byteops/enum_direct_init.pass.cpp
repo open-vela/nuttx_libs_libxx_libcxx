@@ -11,7 +11,7 @@
 
 // UNSUPPORTED: c++03, c++11, c++14
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr std::byte b{42};
   static_assert(std::to_integer<int>(b) == 42, "");
 

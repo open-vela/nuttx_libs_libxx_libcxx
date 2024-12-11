@@ -41,7 +41,7 @@ test()
     assert(h(s1) != h(s2));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::string>();
 #ifndef TEST_HAS_NO_CHAR8_T

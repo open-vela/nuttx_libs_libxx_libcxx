@@ -29,7 +29,7 @@ test(const Allocator& a)
     LIBCPP_ASSERT(is_double_ended_contiguous_container_asan_correct(d));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int>(std::allocator<int>());
     test<NotConstructible>(test_allocator<NotConstructible>(3));

@@ -62,7 +62,7 @@ struct LValueCallable {
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     globalMemCounter.reset();
     assert(globalMemCounter.checkOutstandingNewEq(0));

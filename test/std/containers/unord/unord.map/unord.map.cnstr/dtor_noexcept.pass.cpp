@@ -38,7 +38,7 @@ struct some_hash
     std::size_t operator()(T const&) const;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_map<MoveOnly, MoveOnly> C;

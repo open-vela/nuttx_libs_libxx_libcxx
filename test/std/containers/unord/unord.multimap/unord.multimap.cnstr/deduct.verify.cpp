@@ -59,7 +59,7 @@
 #include <functional>
 #include <unordered_map>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using P = std::pair<const int, int>;
     {

@@ -27,7 +27,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     using Alloc = NullAllocator<char>;
 
     AllocController P;

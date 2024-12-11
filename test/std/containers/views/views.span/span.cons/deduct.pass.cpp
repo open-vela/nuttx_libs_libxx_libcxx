@@ -104,7 +104,7 @@ void test_range_std_container() {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_iterator_sentinel();
   test_c_array();

@@ -30,7 +30,7 @@ void func(std::promise<void> p)
     i = 1;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::promise<void> p;

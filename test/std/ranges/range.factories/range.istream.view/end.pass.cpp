@@ -39,7 +39,7 @@ void test() {
   [[maybe_unused]] std::same_as<std::default_sentinel_t> auto sent = isv.end();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

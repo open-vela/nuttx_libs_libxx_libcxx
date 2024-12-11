@@ -34,7 +34,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::array<char, 100> buffer;
   std::ranges::fill(buffer, '*');
 

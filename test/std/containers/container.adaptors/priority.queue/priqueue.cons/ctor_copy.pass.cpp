@@ -26,7 +26,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<int> v = make<std::vector<int> >(5);
     std::priority_queue<int, std::vector<int>, std::greater<int> > qo(std::greater<int>(), v);

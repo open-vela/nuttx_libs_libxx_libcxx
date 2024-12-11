@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::ranlux48_base e;
     e.discard(9999);

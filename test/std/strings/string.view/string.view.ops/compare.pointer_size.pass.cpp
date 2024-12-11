@@ -356,7 +356,7 @@ void test2()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test0();
     test1();

@@ -34,7 +34,7 @@ void test(std::size_t initial_buffer_size) {
   ASSERT_WITH_LIBRARY_INTERNAL_ALLOCATIONS(globalMemCounter.checkNewCalledEq(1));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test(1);
   test(8);
   test(10);

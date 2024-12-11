@@ -20,7 +20,7 @@ void test()
     static_assert((std::ratio<N, D>::den == eD), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<1, 1, 1, 1>();
     test<1, 10, 1, 10>();

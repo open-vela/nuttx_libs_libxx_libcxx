@@ -272,7 +272,7 @@ void run_sort_tests()
     test_larger_sorts<Container>(1009);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // test various combinations of contiguous/non-contiguous containers with
     // arithmetic/non-arithmetic types

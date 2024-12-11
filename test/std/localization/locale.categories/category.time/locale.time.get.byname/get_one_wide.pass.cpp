@@ -44,7 +44,7 @@ public:
         : F(nm, refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::ios ios(0);
     std::ios_base::iostate err;

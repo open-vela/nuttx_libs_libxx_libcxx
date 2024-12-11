@@ -17,7 +17,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::duration<double> d;
     std::chrono::duration<int> i = d;

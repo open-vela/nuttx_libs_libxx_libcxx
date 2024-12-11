@@ -28,7 +28,7 @@ struct A
 
 int A::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::shared_ptr<A> p(nullptr, test_deleter<A>(3));

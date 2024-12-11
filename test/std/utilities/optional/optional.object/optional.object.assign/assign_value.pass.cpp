@@ -251,7 +251,7 @@ constexpr T pr38638(T v)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_sfinae();
     // Test with instrumented type

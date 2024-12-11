@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "test_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::basic_string<char, std::char_traits<char>, test_allocator<char> > nstr;
     {

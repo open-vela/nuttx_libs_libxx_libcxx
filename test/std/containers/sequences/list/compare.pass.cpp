@@ -37,7 +37,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         const std::list<int> l1, l2;
         assert(testComparisons(l1, l2, true, false));

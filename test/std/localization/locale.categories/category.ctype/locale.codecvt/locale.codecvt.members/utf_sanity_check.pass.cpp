@@ -29,7 +29,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::codecvt<char32_t, char, std::mbstate_t> F32_8;
   typedef std::codecvt<char16_t, char, std::mbstate_t> F16_8;
   typedef std::codecvt_utf16<char32_t> F32_16;

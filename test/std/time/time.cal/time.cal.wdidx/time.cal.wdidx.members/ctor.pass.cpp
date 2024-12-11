@@ -26,7 +26,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using weekday  = std::chrono::weekday;
     using weekday_indexed = std::chrono::weekday_indexed;

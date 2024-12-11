@@ -34,7 +34,7 @@ struct MyHash : std::hash<T> {};
 template <class T>
 struct MyPred : std::equal_to<T> {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using V  = char;
   using DH = std::hash<V>;
   using MH = MyHash<V>;

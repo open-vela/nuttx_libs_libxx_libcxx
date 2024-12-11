@@ -62,7 +62,7 @@ bool G::op_run = false;
 
 void foo() { done = true; }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         G g;

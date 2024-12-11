@@ -32,7 +32,7 @@ struct ThrowOnCopyPred {
   bool operator()(int) const { return false; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int input[] = {1, 2, 3};
   auto v1     = std::views::drop_while(input, ThrowOnCopyPred{});
   auto v2     = std::views::drop_while(input, ThrowOnCopyPred{});

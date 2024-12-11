@@ -17,7 +17,7 @@
 #include <string>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::char_traits<char16_t>::eq(u'a', u'a'));
     assert(!std::char_traits<char16_t>::eq(u'a', u'A'));

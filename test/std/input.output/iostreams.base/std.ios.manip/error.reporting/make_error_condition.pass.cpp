@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::error_condition ec1 = std::make_error_condition(std::io_errc::stream);

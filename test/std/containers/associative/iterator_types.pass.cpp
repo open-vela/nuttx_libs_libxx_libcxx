@@ -50,7 +50,7 @@ void testSet() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef std::map<int, int> Map;
     typedef std::pair<const int, int> ValueTp;

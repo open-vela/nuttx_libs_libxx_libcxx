@@ -58,7 +58,7 @@ void del_at_end(C c)
     LIBCPP_ASSERT(is_double_ended_contiguous_container_asan_correct(c));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::deque<int> queue;
     for (int i = 0; i < 20; ++i)

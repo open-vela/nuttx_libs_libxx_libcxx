@@ -42,7 +42,7 @@ struct GoodHashNoDefault {
   std::size_t operator()(T const&) const { return 0; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
   {
     using Set = std::unordered_set<VT>;

@@ -20,7 +20,7 @@
 #include "test_allocator.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::deque<int, test_allocator<int>> d({3, 4, 5, 6}, test_allocator<int>(3));

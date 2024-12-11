@@ -296,7 +296,7 @@ TEST_CONSTEXPR_CXX20 bool test_reference_wrapper_reference_wrapper() {
 }
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef void*& R;
     typedef ArgType A;
     TestCase<R(),                                   0, Q_None>::run();

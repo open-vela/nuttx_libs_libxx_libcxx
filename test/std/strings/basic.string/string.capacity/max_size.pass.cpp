@@ -83,7 +83,7 @@ constexpr bool test_constexpr() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test();
 #if TEST_STD_VER > 17

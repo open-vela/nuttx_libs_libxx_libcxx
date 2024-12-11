@@ -33,7 +33,7 @@ namespace std {
   struct is_error_condition_enum<User::Err> : true_type {};
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::error_condition e;
   e = User::Err();
   assert(e.value() == 42);

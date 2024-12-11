@@ -19,7 +19,7 @@
 
 #include "../../rep.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::duration<int> d = 1;
 

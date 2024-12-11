@@ -174,7 +174,7 @@ static_assert(
     std::same_as<int,
                  decltype(SubsumptionTest<int& (S2::*)(), int& (S2::*)()>())>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   { // Checks std::same_as<T, T> is true
     CheckSameAs();
 

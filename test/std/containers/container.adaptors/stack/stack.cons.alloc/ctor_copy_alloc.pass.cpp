@@ -43,7 +43,7 @@ struct test
     allocator_type get_allocator() {return this->c.get_allocator();}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int> q(make<C>(5), test_allocator<int>(4));
     test<int> q2(q, test_allocator<int>(5));

@@ -18,7 +18,7 @@
 #include <numeric>
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::lcm(2.0, 4);
 

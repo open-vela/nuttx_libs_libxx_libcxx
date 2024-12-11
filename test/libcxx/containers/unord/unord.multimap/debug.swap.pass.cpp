@@ -21,7 +21,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::pair<int, int> P;
     P a1[] = {P(1, 1), P(3, 3), P(7, 7), P(9, 9), P(10, 10)};
     P a2[] = {P(0, 0), P(2, 2), P(4, 4), P(5, 5), P(6, 6), P(8, 8), P(11, 11)};

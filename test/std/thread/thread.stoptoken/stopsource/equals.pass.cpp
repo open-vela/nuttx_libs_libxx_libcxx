@@ -28,7 +28,7 @@ concept IsNoThrowEqualityComparable = requires(const T& t1, const T& t2) {
 
 static_assert(IsNoThrowEqualityComparable<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // both no state
   {
     const std::stop_source ss1(std::nostopstate);

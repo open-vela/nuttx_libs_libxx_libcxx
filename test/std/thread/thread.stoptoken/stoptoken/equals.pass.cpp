@@ -37,7 +37,7 @@ concept IsNoThrowInequalityComparable = requires(const T& t1, const T& t2) {
 static_assert(IsNoThrowEqualityComparable<std::stop_token>);
 static_assert(IsNoThrowInequalityComparable<std::stop_token>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // both no state
   {
     const std::stop_token st1;

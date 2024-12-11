@@ -65,7 +65,7 @@ void func5(std::promise<void> p)
   set_worker_thread_state(WorkerThreadState::Exiting);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   typedef std::chrono::high_resolution_clock Clock;
   {

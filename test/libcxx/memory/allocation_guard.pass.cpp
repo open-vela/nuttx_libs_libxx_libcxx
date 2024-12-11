@@ -106,7 +106,7 @@ static_assert(std::is_move_constructible<std::__allocation_guard<A> >::value, ""
 static_assert(!std::is_copy_assignable<std::__allocation_guard<A> >::value, "");
 static_assert(std::is_move_assignable<std::__allocation_guard<A> >::value, "");
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const int size = 42;
 
   { // The constructor allocates using the given allocator.

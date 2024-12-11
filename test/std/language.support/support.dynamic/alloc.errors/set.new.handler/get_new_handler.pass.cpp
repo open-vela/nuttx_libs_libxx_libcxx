@@ -23,7 +23,7 @@
 void f1() {}
 void f2() {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::get_new_handler() == 0);
     std::set_new_handler(f1);

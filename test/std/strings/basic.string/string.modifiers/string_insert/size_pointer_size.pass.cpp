@@ -391,7 +391,7 @@ TEST_CONSTEXPR_CXX20 bool test() {
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test<std::string>();
 #if TEST_STD_VER >= 11

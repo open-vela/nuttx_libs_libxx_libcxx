@@ -19,7 +19,7 @@
 
 #include "count_new.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Constructing a monotonic_buffer_resource should not cause allocations
   // by itself; the resource should wait to allocate until an allocation is
   // requested.

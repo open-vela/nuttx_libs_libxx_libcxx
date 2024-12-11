@@ -109,7 +109,7 @@ void run_test()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     run_test<TestClock>();
     run_test<std::chrono::steady_clock>();

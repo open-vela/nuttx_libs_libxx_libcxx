@@ -23,7 +23,7 @@ struct A {
 };
 static_assert(sizeof(A) == 0); // an extension supported by GCC and Clang
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   A a[10];
   std::same_as<A*> auto p = std::ranges::end(a);

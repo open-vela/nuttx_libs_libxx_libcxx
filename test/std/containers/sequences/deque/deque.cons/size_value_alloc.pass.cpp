@@ -33,7 +33,7 @@ test(unsigned n, const T& x, const Allocator& a)
         assert(*i == x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::allocator<int> a;

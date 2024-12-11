@@ -78,7 +78,7 @@ enum class EnumClass { zero, one };
 typedef void (*FunctionPtr)();
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_arithmetic<short>();
     test_is_arithmetic<unsigned short>();

@@ -20,7 +20,7 @@
 #include <string>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::tuple<double&, std::string, int> T;

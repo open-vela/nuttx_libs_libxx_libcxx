@@ -33,7 +33,7 @@ struct S {
   int *i_;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     int a1[] = {1, 2, 3, 4};
     int a2[] = {1, 2, 4};

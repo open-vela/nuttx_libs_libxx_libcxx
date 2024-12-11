@@ -350,7 +350,7 @@ void TestHelper<CharT, 4>::test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestHelper<char32_t>::test();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   TestHelper<wchar_t>::test();

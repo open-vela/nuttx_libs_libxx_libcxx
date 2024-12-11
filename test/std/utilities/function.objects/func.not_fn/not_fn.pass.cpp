@@ -438,7 +438,7 @@ bool test_lwg2767() {
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     constructor_tests();
     return_type_tests();

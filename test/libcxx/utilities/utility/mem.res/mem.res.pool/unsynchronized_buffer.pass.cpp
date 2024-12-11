@@ -33,7 +33,7 @@ void test_pool_options(std::pmr::pool_options initial, std::pmr::pool_options ex
   assert_options(mr2.options(), expected);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_pool_options({0, 0}, {1048576, 1048576});
   test_pool_options({0, 1}, {1048576, 8});
   test_pool_options({0, 2}, {1048576, 8});

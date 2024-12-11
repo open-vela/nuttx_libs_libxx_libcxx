@@ -240,7 +240,7 @@ constexpr bool test_1_4()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_1_1();
     test_1_2();

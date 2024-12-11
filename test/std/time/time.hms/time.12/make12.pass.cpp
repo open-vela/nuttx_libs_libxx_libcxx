@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using hours = std::chrono::hours;
     ASSERT_SAME_TYPE(hours, decltype(std::chrono::make12(std::declval<hours>())));

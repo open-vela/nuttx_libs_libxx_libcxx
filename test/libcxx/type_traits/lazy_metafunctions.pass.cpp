@@ -118,7 +118,7 @@ void LazyOrTest() {
 }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     LazyNotTest();
     LazyAndTest();

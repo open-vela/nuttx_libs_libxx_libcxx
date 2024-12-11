@@ -58,7 +58,7 @@ public:
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         constexpr optional<int> opt(in_place, 5);

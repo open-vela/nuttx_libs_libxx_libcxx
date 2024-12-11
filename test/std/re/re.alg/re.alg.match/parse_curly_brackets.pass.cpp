@@ -62,7 +62,7 @@ test4()
     assert((std::regex_match(target, smatch, regex)));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

@@ -33,7 +33,7 @@ constexpr bool testConstexpr()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using weekday = std::chrono::weekday;
     using days    = std::chrono::days;

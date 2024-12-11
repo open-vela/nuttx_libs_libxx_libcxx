@@ -33,7 +33,7 @@ test(const FromDuration& f, const ToDuration& d)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  7290000ms is 2 hours, 1 minute, and 30 seconds
     test(std::chrono::milliseconds( 7290000), std::chrono::hours( 2));

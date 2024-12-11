@@ -32,7 +32,7 @@
 
 #include "../../clock.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::system_clock Clock1;
     typedef Clock                     Clock2;

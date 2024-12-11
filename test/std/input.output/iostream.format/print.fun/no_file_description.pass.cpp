@@ -81,7 +81,7 @@ static void test_vprint_nonunicode() {
   assert(std::string_view(buffer.data(), pos) == "hello world!");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_print();
   test_println();
   test_vprint_unicode();

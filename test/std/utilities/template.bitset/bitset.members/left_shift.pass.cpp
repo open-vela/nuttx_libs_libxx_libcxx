@@ -44,7 +44,7 @@ TEST_CONSTEXPR_CXX23 bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   test_left_shift<1000>(); // not in constexpr because of constexpr evaluation step limits
 #if TEST_STD_VER > 20

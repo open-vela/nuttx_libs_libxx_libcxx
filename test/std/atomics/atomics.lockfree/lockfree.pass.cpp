@@ -25,7 +25,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(ATOMIC_BOOL_LOCK_FREE == 0 ||
            ATOMIC_BOOL_LOCK_FREE == 1 ||

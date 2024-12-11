@@ -37,7 +37,7 @@ test(const T&)
 
 struct C {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<1>(std::placeholders::_1);
     test<2>(std::placeholders::_2);

@@ -39,7 +39,7 @@ struct gen
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<int> v;
     std::random_shuffle(v.begin(), v.end());

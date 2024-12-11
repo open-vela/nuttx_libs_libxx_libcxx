@@ -19,7 +19,7 @@
 
 void test(std::allocator_arg_t) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::allocator_arg);
 

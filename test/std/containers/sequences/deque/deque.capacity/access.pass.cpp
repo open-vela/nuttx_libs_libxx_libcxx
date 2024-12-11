@@ -50,7 +50,7 @@ make(int size, int start = 0 )
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::deque<int> C;

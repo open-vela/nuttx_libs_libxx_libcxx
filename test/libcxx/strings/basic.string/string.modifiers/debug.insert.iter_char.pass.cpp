@@ -23,7 +23,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef std::string S;
     S s;
     S s2;

@@ -45,7 +45,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::istream_iterator<double> I1; // double is trivially destructible

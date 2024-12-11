@@ -34,7 +34,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef ex::polymorphic_allocator<void> A1;
     typedef ex::polymorphic_allocator<int> A2;

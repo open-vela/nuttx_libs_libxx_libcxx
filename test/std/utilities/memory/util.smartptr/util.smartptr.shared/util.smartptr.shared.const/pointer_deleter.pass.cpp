@@ -76,7 +76,7 @@ static_assert(!std::is_constructible<std::shared_ptr<int[5]>, int*, bad_deleter>
 static_assert(!std::is_constructible<std::shared_ptr<int[5]>, int(*)[5], test_deleter<int>>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         A* ptr = new A;

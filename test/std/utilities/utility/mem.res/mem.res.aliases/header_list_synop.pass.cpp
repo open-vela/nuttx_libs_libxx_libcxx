@@ -24,7 +24,7 @@
 #include <type_traits>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using StdList = std::list<int, std::pmr::polymorphic_allocator<int>>;
   using PmrList = std::pmr::list<int>;
   static_assert(std::is_same<StdList, PmrList>::value, "");

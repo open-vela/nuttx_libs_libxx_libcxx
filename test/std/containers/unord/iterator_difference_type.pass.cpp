@@ -73,7 +73,7 @@ void testUnorderedSet() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef std::unordered_map<int, int> Map;
     typedef std::pair<const int, int> ValueTp;

@@ -48,7 +48,7 @@ void test_sfinae() {
     static_assert(test_convertible<P2,   T2,   T1Arg>() == CanConvert, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<float, short*> P;

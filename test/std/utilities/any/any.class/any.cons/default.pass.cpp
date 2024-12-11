@@ -20,7 +20,7 @@
 #include "any_helpers.h"
 #include "count_new.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         static_assert(

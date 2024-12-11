@@ -24,7 +24,7 @@ struct A
 
 bool operator == (const A& x, const A& y) {return x.data_ == y.data_;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::numeric_limits<A>::is_specialized == false,
                  "std::numeric_limits<A>::is_specialized == false");

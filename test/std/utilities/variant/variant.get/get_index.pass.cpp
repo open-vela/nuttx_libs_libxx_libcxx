@@ -275,7 +275,7 @@ void test_throws_for_all_value_categories() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_const_lvalue_get();
   test_lvalue_get();
   test_rvalue_get();

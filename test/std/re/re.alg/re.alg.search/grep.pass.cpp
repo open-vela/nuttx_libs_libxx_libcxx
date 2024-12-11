@@ -50,7 +50,7 @@ void fuzz_tests()  // patterns that the fuzzer has found
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::cmatch m;

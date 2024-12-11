@@ -44,7 +44,7 @@ void test(Container& c, KeyTypeIter first, KeyTypeIter last)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::unordered_multiset<int> m = {1, 2, 3, 4, 5, 6};

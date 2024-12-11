@@ -31,7 +31,7 @@ void test_alias_template_dextents() {
   ASSERT_SAME_TYPE(std::dextents<IndexType, 9>, std::extents<IndexType, D, D, D, D, D, D, D, D, D>);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_alias_template_dextents<int>();
   test_alias_template_dextents<unsigned int>();
   test_alias_template_dextents<size_t>();

@@ -21,7 +21,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::duration<long, std::ratio<3, 2> > D;
     static_assert((std::is_same<D::rep, long>::value), "");

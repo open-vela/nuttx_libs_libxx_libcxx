@@ -17,7 +17,7 @@
 // template<container-compatible-range<T> R, class Alloc>
 //   queue(from_range_t, R&& rg, const Alloc&); // since C++23
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for_all_iterators_and_allocators<int>([]<class Iter, class Sent, class Alloc>() {
     test_container_adaptor<std::queue, std::deque, int, Iter, Sent, Alloc>();
   });

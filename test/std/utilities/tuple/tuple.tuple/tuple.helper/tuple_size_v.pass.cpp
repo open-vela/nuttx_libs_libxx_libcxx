@@ -28,7 +28,7 @@ void test()
     static_assert(std::tuple_size_v<Tuple const volatile> == std::tuple_size<Tuple>::value, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::tuple<>, 0>();
 

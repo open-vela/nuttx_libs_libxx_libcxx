@@ -27,7 +27,7 @@ concept IsNoThrowFreeSwappable = requires(T& t) {
 
 static_assert(IsNoThrowFreeSwappable<std::stop_token>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_token st1;
 

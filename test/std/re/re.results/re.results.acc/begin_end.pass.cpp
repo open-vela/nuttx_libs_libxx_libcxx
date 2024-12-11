@@ -33,7 +33,7 @@ test()
         assert(*i == m[j]);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

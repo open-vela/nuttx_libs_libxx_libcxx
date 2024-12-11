@@ -26,7 +26,7 @@ public:
     friend bool operator==(const A& x, const A& y) {return x.data_ == y.data_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::nested_exception e0;

@@ -65,7 +65,7 @@ void f2()
   assert(Clock::now() - t0 >= FailureWaitTime);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   int threads = 5;
   {

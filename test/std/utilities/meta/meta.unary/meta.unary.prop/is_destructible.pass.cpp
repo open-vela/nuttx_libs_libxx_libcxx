@@ -92,7 +92,7 @@ struct DeletedVirtualPrivateDestructor   { private:   virtual ~DeletedVirtualPri
 #endif
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_destructible<A>();
     test_is_destructible<int&>();

@@ -67,7 +67,7 @@ public:
         {return x.i_ == y.i_ && x.j_ == y.j_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         static_assert(!std::is_constructible<X, std::initializer_list<int>&>::value, "");

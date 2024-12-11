@@ -63,7 +63,7 @@ static void test_depth()
     assert(it == endIt);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_depth();
 
     return 0;

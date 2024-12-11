@@ -25,7 +25,7 @@
 
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     static_assert(std::is_nothrow_default_constructible<std::pmr::polymorphic_allocator<void>>::value,
                   "Must me nothrow default constructible");

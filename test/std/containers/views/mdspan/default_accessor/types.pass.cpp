@@ -45,7 +45,7 @@ void test() {
   LIBCPP_STATIC_ASSERT(std::is_empty_v<A>);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<int>();
   test<const int>();
   test<MinimalElementType>();

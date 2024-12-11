@@ -19,7 +19,7 @@
 #include "test_macros.h"
 #include "truncate_fp.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::minstd_rand0 E;

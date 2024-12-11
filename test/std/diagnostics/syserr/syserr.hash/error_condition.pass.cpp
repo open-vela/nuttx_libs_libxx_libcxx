@@ -37,7 +37,7 @@ test(int i)
     ((void)result); // Prevent unused warning
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(0);
     test(2);

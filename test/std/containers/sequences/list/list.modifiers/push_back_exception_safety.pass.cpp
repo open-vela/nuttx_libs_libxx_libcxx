@@ -60,7 +60,7 @@ CMyClass::~CMyClass() {
     assert(fMagicValue == kFinishedConstructionMagicValue);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     CMyClass instance;
     std::list<CMyClass> vec;

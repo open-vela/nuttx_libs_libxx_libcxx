@@ -33,7 +33,7 @@ void test_cat() {
 
 // [class.spaceship]p4: The 'common comparison type' U of a possibly-empty list
 //   of 'n' types T0, T1, ..., TN, is defined as follows:
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using PO = std::partial_ordering;
   using WO = std::weak_ordering;
   using SO = std::strong_ordering;

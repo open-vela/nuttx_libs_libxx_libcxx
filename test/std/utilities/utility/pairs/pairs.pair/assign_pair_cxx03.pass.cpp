@@ -35,7 +35,7 @@ struct ConstructibleFromInt {
   int value;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
       // Test that we don't constrain the assignment operator in C++03 mode.

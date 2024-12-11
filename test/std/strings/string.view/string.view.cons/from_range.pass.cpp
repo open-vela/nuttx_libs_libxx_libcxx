@@ -177,7 +177,7 @@ void test_throwing() {
 
 static_assert(!std::is_convertible_v<std::vector<char>, std::string_view>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 #ifndef TEST_HAS_NO_EXCEPTIONS

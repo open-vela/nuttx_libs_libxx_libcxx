@@ -40,7 +40,7 @@ struct PredLWG526 {
 
 typedef unary_counting_predicate<bool(*)(int), int> Predicate;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int a1[] = {1, 2, 3, 4};

@@ -20,7 +20,7 @@ struct two {one _[2];};
 one test(std::float_round_style);
 two test(int);
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::round_indeterminate == -1,
                  "std::round_indeterminate == -1");

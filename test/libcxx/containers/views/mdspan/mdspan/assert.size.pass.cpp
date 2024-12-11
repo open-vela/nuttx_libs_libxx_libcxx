@@ -25,7 +25,7 @@
 #include "../../../../../std/containers/views/mdspan/mdspan/CustomTestLayouts.h"
 
 // We use a funky mapping in this test where required_span_size is much smaller than the size of the index space
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::array<float, 10> data;
   // make sure we are not failing because of using index_type instead of size_type
   {

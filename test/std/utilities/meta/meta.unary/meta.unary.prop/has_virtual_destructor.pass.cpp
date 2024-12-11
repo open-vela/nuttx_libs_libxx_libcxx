@@ -70,7 +70,7 @@ struct A
     ~A();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_virtual_destructor<void>();
     test_has_not_virtual_destructor<A>();

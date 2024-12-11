@@ -44,7 +44,7 @@ union U1 {};
 struct I0;
 struct I1 {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // A union is never the base class of anything (including incomplete types)
     test_is_not_base_of<U0, B>();

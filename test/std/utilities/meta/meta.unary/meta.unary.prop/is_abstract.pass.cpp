@@ -72,7 +72,7 @@ struct AbstractTemplate {
 template <>
 struct AbstractTemplate<double> {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_abstract<void>();
     test_is_not_abstract<int&>();

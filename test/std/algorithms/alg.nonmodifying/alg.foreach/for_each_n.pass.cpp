@@ -41,7 +41,7 @@ struct for_each_test
     void operator()(int& i) {++i; ++count;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef cpp17_input_iterator<int*> Iter;
     int ia[] = {0, 1, 2, 3, 4, 5};

@@ -29,7 +29,7 @@ test()
         T>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<unsigned short>();
     test<unsigned int>();

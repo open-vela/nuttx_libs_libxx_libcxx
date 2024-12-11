@@ -29,7 +29,7 @@ test()
 
 struct A {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int>();
     test<unsigned>();

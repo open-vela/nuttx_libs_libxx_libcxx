@@ -23,7 +23,7 @@
 #include "poisoned_hash_helper.h"
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
 #if TEST_STD_VER <= 14

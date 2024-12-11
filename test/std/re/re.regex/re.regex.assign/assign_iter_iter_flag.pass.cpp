@@ -22,7 +22,7 @@
 #include "test_macros.h"
 #include "test_iterators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef cpp17_input_iterator<std::string::const_iterator> I;
     typedef forward_iterator<std::string::const_iterator> F;

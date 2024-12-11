@@ -21,7 +21,7 @@ struct NotCopyConstructible
     NotCopyConstructible(NotCopyConstructible const&) = delete;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(!std::is_copy_constructible_v<NotCopyConstructible>);
 

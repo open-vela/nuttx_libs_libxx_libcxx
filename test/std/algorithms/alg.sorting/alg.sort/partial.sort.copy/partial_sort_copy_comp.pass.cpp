@@ -63,7 +63,7 @@ TEST_CONSTEXPR_CXX20 bool test()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int i = 42;
     int j = 75;

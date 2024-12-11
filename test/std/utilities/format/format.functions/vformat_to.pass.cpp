@@ -76,7 +76,7 @@ auto test_exception =
           }());
     };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   format_tests<char, execution_modus::partial>(test, test_exception);
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

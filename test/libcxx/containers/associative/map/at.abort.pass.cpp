@@ -28,7 +28,7 @@ void exit_success(int) {
     std::_Exit(EXIT_SUCCESS);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::signal(SIGABRT, exit_success);
     std::map<int, int> map;
     map.at(1);

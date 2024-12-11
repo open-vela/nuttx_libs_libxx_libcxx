@@ -28,7 +28,7 @@ TEST_CONSTEXPR bool test(IntType max_v = IntType(std::numeric_limits<UnderlyingT
 
 }  // namespace
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         assert(test<char>());

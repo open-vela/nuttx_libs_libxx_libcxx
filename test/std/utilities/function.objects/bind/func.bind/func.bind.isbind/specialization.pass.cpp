@@ -26,7 +26,7 @@ struct MyBind {
 };
 template<> struct std::is_bind_expression<MyBind> : std::true_type {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     auto f = [](auto x) { return 10*x + 9; };

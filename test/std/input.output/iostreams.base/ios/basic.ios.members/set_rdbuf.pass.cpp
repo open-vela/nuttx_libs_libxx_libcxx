@@ -30,7 +30,7 @@ struct testios
     void set_rdbuf(std::streambuf* x) {std::ios::set_rdbuf(x);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     testbuf sb1;
     testbuf sb2;

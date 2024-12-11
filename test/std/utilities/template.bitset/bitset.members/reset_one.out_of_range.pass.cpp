@@ -16,7 +16,7 @@
 #include <cassert>
 #include <stdexcept>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::bitset<0> v;
         try { v.reset(0); assert(false); } catch (std::out_of_range const&) { }

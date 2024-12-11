@@ -60,7 +60,7 @@ void test()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(constexpr_test<float>(), "");
     static_assert(constexpr_test<double>(), "");

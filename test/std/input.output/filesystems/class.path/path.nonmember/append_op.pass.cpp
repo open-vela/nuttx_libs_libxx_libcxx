@@ -20,7 +20,7 @@
 #include "test_macros.h"
 
 // This is mainly tested via the member append functions.
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace fs;
   path p1("abc");
   path p2("def");

@@ -47,7 +47,7 @@ void test() {
   ASSERT_SAME_TYPE(decltype(bsv), std::basic_string_view<char16_t>);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
 
   return 0;

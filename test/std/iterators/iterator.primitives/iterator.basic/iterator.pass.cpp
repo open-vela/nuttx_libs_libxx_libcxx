@@ -76,7 +76,7 @@ test5()
     static_assert((std::is_same<typename It::iterator_category, std::input_iterator_tag>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test2<A>();
     test3<A>();

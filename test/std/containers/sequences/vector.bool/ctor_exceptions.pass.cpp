@@ -79,7 +79,7 @@ void check_new_delete_called() {
   assert(globalMemCounter.aligned_new_array_called == globalMemCounter.aligned_delete_array_called);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using AllocVec = std::vector<bool, Allocator<bool> >;
 
 #if TEST_STD_VER >= 14

@@ -923,7 +923,7 @@ static void test() {
       std::chrono::year_month_day_last{std::chrono::year{1970}, std::chrono::month_day_last{std::chrono::January}});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

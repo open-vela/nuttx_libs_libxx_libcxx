@@ -101,6 +101,6 @@ static_assert(std::is_same<std::remove_volatile<volatile id>::type, id>::value, 
 static_assert(std::is_same<std::remove_volatile<I>::type, I>::value, "");
 static_assert(std::is_same<std::remove_volatile<volatile I>::type, I>::value, "");
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }

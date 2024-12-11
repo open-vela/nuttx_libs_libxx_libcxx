@@ -68,7 +68,7 @@ void test(Container& c)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::multiset<int> m;
     test(m);

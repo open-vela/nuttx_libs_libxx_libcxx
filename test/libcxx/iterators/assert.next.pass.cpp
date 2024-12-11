@@ -20,7 +20,7 @@
 #include "check_assertion.h"
 #include "test_iterators.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int a[] = {1, 2, 3};
     forward_iterator<int *> it(a+1);
     std::next(it, 1);  // should work fine

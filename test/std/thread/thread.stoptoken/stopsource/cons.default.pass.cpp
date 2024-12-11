@@ -21,7 +21,7 @@
 
 static_assert(std::is_default_constructible_v<std::stop_source>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::stop_source ss = {}; // implicit
     assert(ss.stop_possible());

@@ -46,7 +46,7 @@ public:
         : F(nm, refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char str[200];
     tm t;

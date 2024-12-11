@@ -15,7 +15,7 @@
 #include <memory>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::default_delete<const void> d;
     const void* p = 0;

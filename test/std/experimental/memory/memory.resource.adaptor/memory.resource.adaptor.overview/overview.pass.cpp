@@ -26,7 +26,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef ex::resource_adaptor<std::allocator<int>> R;
     typedef ex::resource_adaptor<std::allocator<long>> R2;

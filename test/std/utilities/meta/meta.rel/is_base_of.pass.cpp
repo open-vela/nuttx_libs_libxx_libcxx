@@ -41,7 +41,7 @@ struct B2 : B {};
 struct D : private B1, private B2 {};
 struct I0; // incomplete
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_base_of<B, D>();
     test_is_base_of<B1, D>();

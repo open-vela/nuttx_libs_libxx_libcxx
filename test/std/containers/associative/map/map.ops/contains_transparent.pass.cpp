@@ -40,7 +40,7 @@ void test() {
   assert(!s.contains(-1));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::map<std::pair<int, int>, int, Comp> >();
   test<std::multimap<std::pair<int, int>, int, Comp> >();
 

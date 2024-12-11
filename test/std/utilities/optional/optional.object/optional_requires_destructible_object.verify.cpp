@@ -21,7 +21,7 @@ private:
     ~X() {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using std::optional;
     {

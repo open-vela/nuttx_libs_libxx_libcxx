@@ -55,7 +55,7 @@ struct eq {
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const int ia[] = {0};

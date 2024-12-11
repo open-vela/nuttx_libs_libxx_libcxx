@@ -24,7 +24,7 @@ struct Dummy {
   Dummy(Dummy &&) = default;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pair<int, short> P;
     {

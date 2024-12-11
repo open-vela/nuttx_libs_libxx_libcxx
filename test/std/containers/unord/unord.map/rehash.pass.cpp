@@ -37,7 +37,7 @@ void test(const C& c)
     assert(c.at(4) == "four");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_map<int, std::string> C;

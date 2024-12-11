@@ -42,7 +42,7 @@ constexpr bool do_test() {
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   do_test<std::coroutine_handle<>>();
   do_test<std::coroutine_handle<int>>();

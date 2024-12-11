@@ -105,7 +105,7 @@ void test(CheckLamdba&& getAndCheckFn, bool IsDeferred, Args&&... args) {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // The default launch policy is implementation defined. libc++ defines
     // it to be std::launch::async.

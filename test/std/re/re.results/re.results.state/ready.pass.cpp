@@ -36,7 +36,7 @@ test2()
     assert(m.ready() == true);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

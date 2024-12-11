@@ -303,7 +303,7 @@ void TestHelper<CharT, 4>::test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if !defined(_WIN32) && !defined(TEST_HAS_NO_WIDE_CHARACTERS)
   TestHelper<wchar_t>::test();
 #endif

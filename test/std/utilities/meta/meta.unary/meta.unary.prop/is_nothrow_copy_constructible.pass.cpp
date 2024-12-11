@@ -41,7 +41,7 @@ void test_has_not_nothrow_copy_constructor()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_not_nothrow_copy_constructor<void>();
     test_has_not_nothrow_copy_constructor<A>();

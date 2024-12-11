@@ -20,7 +20,7 @@
 #include "test_basic_format_arg.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   [[maybe_unused]] auto store = std::make_format_args(42, nullptr, false, 'x');
 
   LIBCPP_STATIC_ASSERT(

@@ -101,7 +101,7 @@ test()
     test<Iter>(1000);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bidirectional_iterator<int*> >();
     test<random_access_iterator<int*> >();

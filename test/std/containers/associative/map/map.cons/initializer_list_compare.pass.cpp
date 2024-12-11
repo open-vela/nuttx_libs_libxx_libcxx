@@ -20,7 +20,7 @@
 #include "../../../test_compare.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::pair<const int, double> V;

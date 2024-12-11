@@ -20,7 +20,7 @@
 
 double unary_f(int i) {return 0.5 - i;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pointer_to_unary_function<int, double> F;
 

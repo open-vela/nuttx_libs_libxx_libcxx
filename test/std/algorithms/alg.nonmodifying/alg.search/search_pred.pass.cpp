@@ -110,7 +110,7 @@ test()
     assert(count_equal::count <= sh*3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<forward_iterator<const int*>, forward_iterator<const int*> >();
     test<forward_iterator<const int*>, bidirectional_iterator<const int*> >();

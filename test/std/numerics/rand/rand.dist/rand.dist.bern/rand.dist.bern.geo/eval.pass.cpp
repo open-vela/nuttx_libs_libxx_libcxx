@@ -300,7 +300,7 @@ void tests() {
     test6<T>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_small_inputs();
 
     tests<short>();

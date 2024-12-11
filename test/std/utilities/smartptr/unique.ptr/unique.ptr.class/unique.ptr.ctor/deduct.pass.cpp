@@ -27,7 +27,7 @@ struct Deleter {
   void operator()(int* p) const { delete p; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Cannot deduce from (ptr).
   static_assert(SFINAEs_away<std::unique_ptr, int*>);
   // Cannot deduce from (array).

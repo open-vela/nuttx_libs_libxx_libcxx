@@ -39,7 +39,7 @@ public:
     CharT* egptr() const {return base::egptr();}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb("          ");

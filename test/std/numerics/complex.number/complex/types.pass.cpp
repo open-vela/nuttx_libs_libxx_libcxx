@@ -29,7 +29,7 @@ test()
     static_assert((std::is_same<typename C::value_type, T>::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

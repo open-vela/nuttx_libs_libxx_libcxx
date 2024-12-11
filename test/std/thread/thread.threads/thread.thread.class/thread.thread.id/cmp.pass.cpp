@@ -26,7 +26,7 @@
 #include "test_macros.h"
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   AssertComparisonsAreNoexcept<std::thread::id>();
   AssertComparisonsReturnBool<std::thread::id>();
 #if TEST_STD_VER > 17

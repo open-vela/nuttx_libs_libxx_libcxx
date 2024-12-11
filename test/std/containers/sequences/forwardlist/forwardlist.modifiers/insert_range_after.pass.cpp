@@ -368,7 +368,7 @@ void test_insert_range_after_exception_safety_throwing_allocator() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_constraints_insert_range_after<std::forward_list, int, double>());
 
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {

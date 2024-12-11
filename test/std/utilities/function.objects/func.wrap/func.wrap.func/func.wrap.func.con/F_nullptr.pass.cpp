@@ -241,7 +241,7 @@ void test_md() {
     test_imp<int MemData::*, int(MemData&)>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_func();
     test_mf();
     test_md();

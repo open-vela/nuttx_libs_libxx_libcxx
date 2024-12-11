@@ -41,7 +41,7 @@ typedef char incomplete_array[];
 
 class incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_array<array>();
     test_array<const_array>();

@@ -38,7 +38,7 @@ void test()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::tuple<int>, 0, int>();
     test<std::tuple<char, int>, 0, char>();

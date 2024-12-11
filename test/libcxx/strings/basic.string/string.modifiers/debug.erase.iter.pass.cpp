@@ -18,7 +18,7 @@
 #include "check_assertion.h"
 #include "min_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::string l1("123");
         std::string l2("123");

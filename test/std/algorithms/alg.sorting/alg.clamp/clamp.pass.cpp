@@ -38,7 +38,7 @@ test(const T& a, const T& lo, const T& hi, const T& x)
     assert(&std::clamp(a, lo, hi) == &x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int x = 0;

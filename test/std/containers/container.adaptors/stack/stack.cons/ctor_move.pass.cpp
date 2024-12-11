@@ -30,7 +30,7 @@ make(int n)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::stack<MoveOnly> q(make<std::deque<MoveOnly> >(5));
     std::stack<MoveOnly> q2 = std::move(q);

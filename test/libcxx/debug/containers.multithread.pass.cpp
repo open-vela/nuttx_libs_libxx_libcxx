@@ -59,7 +59,7 @@ void ThreadUseIter() {
     threads[count].join();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   ThreadUseIter<std::vector<int> >();
   return 0;
 }

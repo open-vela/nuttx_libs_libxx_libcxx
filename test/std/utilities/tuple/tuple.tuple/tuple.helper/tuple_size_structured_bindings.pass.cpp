@@ -139,7 +139,7 @@ void test_after_tuple_size_specialization() {
   assert(p == -1);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_decomp_user_type();
   test_decomp_tuple();
   test_decomp_pair();

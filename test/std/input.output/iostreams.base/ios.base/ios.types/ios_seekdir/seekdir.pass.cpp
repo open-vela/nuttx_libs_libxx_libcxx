@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::ios_base::beg != std::ios_base::cur);
     assert(std::ios_base::beg != std::ios_base::end);

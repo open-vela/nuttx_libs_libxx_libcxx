@@ -24,7 +24,7 @@
 #include "DefaultOnly.h"
 #include "min_allocator.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::map<int, DefaultOnly> M;

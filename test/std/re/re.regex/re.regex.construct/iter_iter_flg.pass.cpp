@@ -29,7 +29,7 @@ test(Iter first, Iter last, std::regex_constants::syntax_option_type f, unsigned
     assert(r.mark_count() == mc);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef forward_iterator<std::string::const_iterator> F;
     std::string s1("\\(a\\)");

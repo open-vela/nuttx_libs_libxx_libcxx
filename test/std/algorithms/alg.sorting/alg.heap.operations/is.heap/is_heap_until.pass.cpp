@@ -530,7 +530,7 @@ void test()
     assert(std::is_heap_until(i246, i246+7) == i246+7);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

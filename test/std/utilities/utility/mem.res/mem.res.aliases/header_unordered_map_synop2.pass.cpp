@@ -20,7 +20,7 @@
 
 #include <unordered_map>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     // Check that std::pmr::unordered_map is usable without <memory_resource>.
     std::pmr::unordered_map<int, int> m;

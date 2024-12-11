@@ -25,7 +25,7 @@ typedef std::basic_ostream<char, MyTraits> BasicStream;
 
 void operator&(BasicStream const&) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::ostringstream outf;

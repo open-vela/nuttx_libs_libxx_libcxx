@@ -32,7 +32,7 @@ void test_allocators()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // test_allocators<void>();
     test_allocators<char>();

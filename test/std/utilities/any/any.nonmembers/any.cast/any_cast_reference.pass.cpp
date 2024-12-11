@@ -295,7 +295,7 @@ void test_cast_to_value() {
     assert(Type::count == 0);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_cast_is_not_noexcept();
     test_cast_return_type();
     test_cast_empty();

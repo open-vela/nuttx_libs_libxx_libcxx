@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   std::vector<std::stringstream> vecss;
   vecss.push_back(std::stringstream());

@@ -62,7 +62,7 @@ struct E
     template <class U> struct rebind {typedef ReboundA<U> otter;};
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     static_assert((std::is_same<std::allocator_traits<A<char> >::rebind_traits<double>, std::allocator_traits<ReboundA<double> > >::value), "");

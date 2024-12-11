@@ -62,7 +62,7 @@ template <class T>
 void sink (std::weak_ptr<T> &&) {}
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::shared_ptr<A> ps(new A);

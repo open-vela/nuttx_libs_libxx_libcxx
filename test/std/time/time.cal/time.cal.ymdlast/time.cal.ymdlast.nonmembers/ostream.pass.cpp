@@ -353,7 +353,7 @@ static void test() {
              SV("-32768 is not a valid year/255 is not a valid month/last"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

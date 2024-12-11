@@ -32,7 +32,7 @@ std::string CityHash[] = {
     {/* "CitYHash" */ "\x43\x69\x74\x59\x48\x61\x73\x68"},
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const std::pair<std::string, std::uint64_t> TestCases[] = {
       {CityHash[0], CHOOSE_BY_ENDIANESS(0x87c69099911bab7eULL, 0x297621d7fa436a3ULL)},
       {CityHash[1], CHOOSE_BY_ENDIANESS(0x87c69099911bab7eULL, 0xb17be531dde56e57ULL)},

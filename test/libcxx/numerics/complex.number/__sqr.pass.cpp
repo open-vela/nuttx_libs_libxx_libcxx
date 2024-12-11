@@ -74,7 +74,7 @@ test()
     assert(inf2.real() < 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

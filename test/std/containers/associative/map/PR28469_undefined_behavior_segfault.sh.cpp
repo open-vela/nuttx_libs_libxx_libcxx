@@ -26,7 +26,7 @@ struct F {
     F() { m[42] = &dummy; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     F f;
     f = F();
 

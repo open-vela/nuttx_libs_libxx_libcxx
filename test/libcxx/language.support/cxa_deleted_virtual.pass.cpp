@@ -14,7 +14,7 @@
 // XFAIL: stdlib=apple-libc++ && target={{.+}}-apple-macosx10.{{9|10|11|12|13}}
 
 struct S { virtual void f() = delete; virtual ~S() {} };
-int main(int, char**) {
+extern "C" int main(int, char**) {
   S *s = new S;
   delete s;
 

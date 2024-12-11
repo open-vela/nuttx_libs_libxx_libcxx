@@ -37,7 +37,7 @@ test3(unsigned n, Allocator const &alloc = Allocator())
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::list<int> l(3);

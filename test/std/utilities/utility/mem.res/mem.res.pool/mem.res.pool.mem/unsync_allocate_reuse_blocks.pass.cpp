@@ -28,7 +28,7 @@ static bool is_aligned_to(void* p, std::size_t alignment) {
   return (result == p);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   globalMemCounter.reset();
   std::pmr::pool_options opts{1, 256};
   auto unsync1                  = std::pmr::unsynchronized_pool_resource(opts, std::pmr::new_delete_resource());

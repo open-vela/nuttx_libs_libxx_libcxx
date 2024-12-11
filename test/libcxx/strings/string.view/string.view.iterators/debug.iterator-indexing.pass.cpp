@@ -15,7 +15,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // string_view::iterator
     {
         std::string_view const str("hello world");

@@ -10,7 +10,7 @@
 
 #include <ratio>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::ratio<-0x7FFFFFFFFFFFFFFFLL, 1> R1;
     typedef std::ratio<1, 1> R2;

@@ -27,7 +27,7 @@
 
 int new_called = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const std::allocator<int> a;
     std::size_t M = a.max_size();

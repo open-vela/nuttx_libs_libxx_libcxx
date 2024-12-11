@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER <= 14
     typedef std::hash<std::type_index> H;

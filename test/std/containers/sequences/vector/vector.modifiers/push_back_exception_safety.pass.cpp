@@ -64,7 +64,7 @@ CMyClass::~CMyClass() {
 
 bool operator==(const CMyClass &lhs, const CMyClass &rhs) { return lhs.equal(rhs); }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     CMyClass instance(42);
     std::vector<CMyClass> vec;

@@ -21,7 +21,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int a1[] = {1, 3, 7, 9, 10};
     int a2[] = {0, 2, 4, 5, 6, 8, 11};
     std::unordered_set<int> c1(a1, a1+sizeof(a1)/sizeof(a1[0]));

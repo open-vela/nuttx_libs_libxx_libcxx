@@ -20,7 +20,7 @@
 #include "check_assertion.h"
 #include "test_iterators.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int a[] = {1, 2, 3};
 
     bidirectional_iterator<int *> bidi(a+1);

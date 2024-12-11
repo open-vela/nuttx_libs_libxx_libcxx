@@ -36,7 +36,7 @@ struct NonDefaultConstructible {
 
 struct DerivedFromAllocArgT : std::allocator_arg_t {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<> t(std::allocator_arg, A1<int>());

@@ -32,7 +32,7 @@ test1()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1<unsigned short>();
     test1<unsigned int>();

@@ -32,7 +32,7 @@
 template <typename T>
 using is_volatile_copy_assignable = std::is_assignable<volatile T&, const T&>;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(!std::is_copy_constructible<std::atomic<int> >::value, "");
     static_assert(!std::is_copy_assignable<std::atomic<int> >::value, "");

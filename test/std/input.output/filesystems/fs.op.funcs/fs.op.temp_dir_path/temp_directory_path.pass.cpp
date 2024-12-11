@@ -165,7 +165,7 @@ static void basic_tests()
     }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     basic_tests();
     return 0;

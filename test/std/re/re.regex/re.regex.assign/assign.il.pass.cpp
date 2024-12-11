@@ -20,7 +20,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::regex r2;
     r2.assign({'(', 'a', '(', '[', 'b', 'c', ']', ')', ')'});

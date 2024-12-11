@@ -111,7 +111,7 @@ void test_deallocate()
     assert(globalMemCounter.checkDeleteArrayCalledEq(0));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_return();
     test_equality();

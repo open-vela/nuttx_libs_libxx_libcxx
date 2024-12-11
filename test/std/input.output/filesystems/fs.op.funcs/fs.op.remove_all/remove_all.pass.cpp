@@ -154,7 +154,7 @@ static void nested_dir()
     assert(exists(out_of_dir_file));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     test_error_reporting();
     basic_remove_all_test();

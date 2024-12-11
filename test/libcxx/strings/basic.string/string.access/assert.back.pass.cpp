@@ -20,7 +20,7 @@
 #include "check_assertion.h"
 #include "min_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
         std::string s;
         TEST_LIBCPP_ASSERT_FAILURE(s.back(), "string::back(): string is empty");

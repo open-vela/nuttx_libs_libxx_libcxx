@@ -21,7 +21,7 @@
 
 #include "variant_test_helpers.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   static_assert(!std::is_assignable<std::variant<int, int>, int>::value, "");
   static_assert(!std::is_assignable<std::variant<long, long long>, int>::value, "");

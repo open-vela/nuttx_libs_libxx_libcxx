@@ -65,7 +65,7 @@ public:
 };
 #endif // TEST_HAS_NO_WIDE_CHARACTERS
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Monetary grouping strings may be terminated with 0 or CHAR_MAX, defining
     // how the grouping is repeated.

@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::string what_arg("test message");
     std::system_error se(static_cast<int>(std::errc::not_a_directory),
                          std::generic_category(), what_arg.c_str());

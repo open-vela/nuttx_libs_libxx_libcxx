@@ -23,7 +23,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::expected<void, int> e{std::in_place};
   TEST_LIBCPP_ASSERT_FAILURE(e.error(), "expected::error requires the expected to contain an error");
   TEST_LIBCPP_ASSERT_FAILURE(std::as_const(e).error(), "expected::error requires the expected to contain an error");

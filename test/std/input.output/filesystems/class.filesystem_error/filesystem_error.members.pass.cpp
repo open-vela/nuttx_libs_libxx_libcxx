@@ -97,7 +97,7 @@ void test_signatures()
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_base_of<std::system_error, fs::filesystem_error>::value, "");
   test_constructors();
   test_signatures();

@@ -85,7 +85,7 @@ void f()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     m.lock();
     std::vector<std::thread> v;

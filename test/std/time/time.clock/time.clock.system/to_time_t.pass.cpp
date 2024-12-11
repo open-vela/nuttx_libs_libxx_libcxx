@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::system_clock C;
     std::time_t t1 = C::to_time_t(C::now());

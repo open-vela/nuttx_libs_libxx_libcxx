@@ -61,7 +61,7 @@ struct alignas(alignof(std::max_align_t)) TestType3 {
 };
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_type<char>();
   test_type<int>();
   test_type<double>();

@@ -33,7 +33,7 @@ test()
     assert(A::count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

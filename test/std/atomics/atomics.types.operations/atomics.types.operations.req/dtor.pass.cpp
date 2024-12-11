@@ -27,7 +27,7 @@ struct CheckTriviallyDestructible {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   TestEachIntegralType<CheckTriviallyDestructible>()();
   TestEachFloatingPointType<CheckTriviallyDestructible>()();
   TestEachPointerType<CheckTriviallyDestructible>()();

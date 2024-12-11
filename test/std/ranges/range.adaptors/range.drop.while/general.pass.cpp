@@ -17,7 +17,7 @@
 #include <ranges>
 #include <string_view>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace std::string_view_literals;
   std::string_view source = "  \t   \t   \t   hello there"sv;
   auto is_invisible       = [](const auto x) { return x == ' ' || x == '\t'; };

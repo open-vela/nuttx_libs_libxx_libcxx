@@ -19,7 +19,7 @@
 
 struct A;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::weak_ptr<A> p;
     assert(p.use_count() == 0);

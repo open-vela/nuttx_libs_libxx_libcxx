@@ -170,7 +170,7 @@ static void dest_is_symlink_to_file() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_signatures();
   create_existing_directory();
 #ifndef TEST_WIN_NO_FILESYSTEM_PERMS_NONE

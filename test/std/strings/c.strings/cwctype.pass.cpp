@@ -92,7 +92,7 @@
 #error wctrans defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::wint_t w = 0;
     ASSERT_SAME_TYPE(int, decltype(std::iswalnum(w)));

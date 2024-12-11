@@ -125,7 +125,7 @@ void test_sfinae() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for (auto const& MS : PathList) {
     RunTestCase<char>(MS);
 #if TEST_STD_VER > 17 && defined(__cpp_char8_t)

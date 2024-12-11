@@ -99,7 +99,7 @@ void testRuntimeSpan()
 
 struct A{};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(testConstexprSpan<int>(),    "");
     static_assert(testConstexprSpan<long>(),   "");

@@ -133,7 +133,7 @@ static void dest_is_symlink_to_file()
     assert(ec);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     create_existing_directory();
     create_directory_one_level();

@@ -24,7 +24,7 @@ constexpr fs::perm_options ME(int val) {
   return static_cast<fs::perm_options>(val);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef fs::perm_options E;
   static_assert(std::is_enum<E>::value, "");
 

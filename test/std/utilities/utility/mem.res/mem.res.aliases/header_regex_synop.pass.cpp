@@ -42,7 +42,7 @@ void test_match_result_typedef() {
   static_assert(std::is_same<PmrMR, PmrTypedef>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     test_match_result_typedef<const char*, std::pmr::cmatch>();
     test_match_result_typedef<std::pmr::string::const_iterator, std::pmr::smatch>();

@@ -216,7 +216,7 @@ void test_empty_state() {
 }
 #endif // !defined(TEST_HAS_NO_EXCEPTIONS)
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(test());
   static_assert(test());
 

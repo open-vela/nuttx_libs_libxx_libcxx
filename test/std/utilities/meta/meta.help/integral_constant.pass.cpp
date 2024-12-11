@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::integral_constant<int, 5> _5;
     static_assert(_5::value == 5, "");

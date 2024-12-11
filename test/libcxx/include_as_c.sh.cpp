@@ -51,7 +51,7 @@
 #   include <wctype.h>
 #endif
 
-int main(int argc, char **argv) {
+extern "C" int main(int argc, char **argv) {
   (void)argc;
   (void)argv;
   return 0;

@@ -40,7 +40,7 @@ void f0()
     assert(global == 1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::thread t0 = support::make_test_thread(f0);
     std::thread t1 = support::make_test_thread(f0);

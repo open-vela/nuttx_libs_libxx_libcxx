@@ -64,7 +64,7 @@ void A::operator delete(A* a, std::destroying_delete_t) {
 #  endif
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Ensure that we call the destroying delete and not the destructor.
   A* ap = A::New();
   assert(A_constructed);

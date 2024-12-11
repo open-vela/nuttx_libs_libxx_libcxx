@@ -24,7 +24,7 @@
 #include "../alloc_first.h"
 #include "../alloc_last.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::pair<long, int> T0;

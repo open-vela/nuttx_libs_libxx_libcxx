@@ -79,7 +79,7 @@ void test_stable(int N)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     for (int i = 0; i < 40; ++i)
         test<std::forward_list<int> >(i);

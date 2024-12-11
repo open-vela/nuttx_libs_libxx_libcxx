@@ -27,7 +27,7 @@ namespace __gnu_cxx {
 template class hash_map<int, int>;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef __gnu_cxx::hash_map<int, int> Map;
   Map m;
   Map m2(m);

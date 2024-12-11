@@ -25,7 +25,7 @@ X x;
 std::atomic_flag global{false};
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER >= 11
     assert(global.test_and_set() == 1);

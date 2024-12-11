@@ -24,7 +24,7 @@ struct A {
 };
 struct B : A {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::is_constructible<bool, std::shared_ptr<A> >::value, "");
     static_assert(!std::is_convertible<std::shared_ptr<A>, bool>::value, "");

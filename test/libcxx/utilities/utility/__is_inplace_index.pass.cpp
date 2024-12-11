@@ -16,7 +16,7 @@
 
 struct S {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using I = std::in_place_index_t<0>;
   static_assert( std::__is_inplace_index<I>::value, "");
   static_assert( std::__is_inplace_index<const I>::value, "");

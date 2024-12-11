@@ -23,7 +23,7 @@ Ptr three_args(Ptr p, Ptr, Ptr) { return p; }
 
 void one_arg_void(Ptr) { }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     Ptr x = nullptr;
     const Ptr cx = nullptr;

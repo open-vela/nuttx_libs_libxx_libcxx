@@ -62,7 +62,7 @@ struct std::iterator_traits<EmptyWithSpecial> {
   // empty non-default.
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // If the qualified-id ITER_TRAITS(I)::iterator_concept is valid and names a type,
   // then ITER_CONCEPT(I) denotes that type.
   {

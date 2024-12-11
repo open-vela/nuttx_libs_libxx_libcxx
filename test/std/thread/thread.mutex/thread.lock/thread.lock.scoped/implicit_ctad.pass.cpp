@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::mutex m1;
   std::recursive_mutex m2;
   std::recursive_timed_mutex m3;

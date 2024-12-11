@@ -207,7 +207,7 @@ constexpr bool test() {
   mixin_accessor<const MinimalElementType>();
   return true;
 }
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
   return 0;

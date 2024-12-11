@@ -41,7 +41,7 @@ void test() {
     static_assert( b == ex::is_detected_convertible_v<int, callFoo, T>, "" );
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test<yesFoo, true>();
     test<noFoo, false>();
     test<wrongFoo, false>();

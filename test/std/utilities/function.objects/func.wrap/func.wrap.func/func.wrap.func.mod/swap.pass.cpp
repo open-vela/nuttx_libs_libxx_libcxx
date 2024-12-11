@@ -61,7 +61,7 @@ int h(int) { return 1; }
 int g2(int, int) { return 2; }
 int g3(int, int, int) { return 3; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   globalMemCounter.reset();
   assert(globalMemCounter.checkOutstandingNewEq(0));
   {

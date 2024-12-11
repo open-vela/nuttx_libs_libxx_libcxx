@@ -10,7 +10,7 @@
 #include <string>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     auto up3 = std::make_unique<int[5]>();    // this is deleted
 

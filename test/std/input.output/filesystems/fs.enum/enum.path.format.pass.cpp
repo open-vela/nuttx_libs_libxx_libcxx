@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef fs::path::format E;
   static_assert(std::is_enum<E>::value, "");
 

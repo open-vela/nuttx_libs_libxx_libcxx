@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::binary_function<int, short, bool> bf;
     static_assert((std::is_same<bf::first_argument_type, int>::value), "");

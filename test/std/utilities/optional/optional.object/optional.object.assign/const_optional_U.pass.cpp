@@ -196,7 +196,7 @@ void test_ambiguous_assign() {
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_with_test_type();
     test_ambiguous_assign();

@@ -26,7 +26,7 @@
 #include <io.h>
 #include <fcntl.h>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     _setmode(_fileno(stdin), _O_WTEXT);
     std::wstring str;
     std::wcin >> str;

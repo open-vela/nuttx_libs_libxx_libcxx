@@ -23,7 +23,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Use a builtin type so we don't get ADL lookup.
     typedef double T[17][29];

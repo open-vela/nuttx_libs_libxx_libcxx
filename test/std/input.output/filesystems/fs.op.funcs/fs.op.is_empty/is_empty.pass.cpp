@@ -128,7 +128,7 @@ static void test_fifo_fails()
 }
 #endif // _WIN32
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     test_exist_not_found();
     test_is_empty_directory();

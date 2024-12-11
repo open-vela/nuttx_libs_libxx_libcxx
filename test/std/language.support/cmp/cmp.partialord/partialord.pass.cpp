@@ -178,7 +178,7 @@ constexpr bool test_constexpr() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_static_members();
   test_signatures();
   test_equality();

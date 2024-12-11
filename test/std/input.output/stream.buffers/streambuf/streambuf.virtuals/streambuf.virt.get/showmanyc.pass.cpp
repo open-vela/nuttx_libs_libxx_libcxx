@@ -27,7 +27,7 @@ struct test
     test() {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<char> t;
     assert(t.in_avail() == 0);

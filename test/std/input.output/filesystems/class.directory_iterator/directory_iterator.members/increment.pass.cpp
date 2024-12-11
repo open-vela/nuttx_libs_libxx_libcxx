@@ -113,7 +113,7 @@ static void test_increment_method()
     assert(it == endIt);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_increment_signatures();
     test_prefix_increment();
     test_postfix_increment();

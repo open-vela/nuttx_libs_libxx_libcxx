@@ -143,7 +143,7 @@ TEST_CONSTEXPR_CXX23 bool test()
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test();
 #if TEST_STD_VER > 20
     static_assert(test());

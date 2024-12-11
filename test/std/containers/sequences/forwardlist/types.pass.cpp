@@ -32,7 +32,7 @@
 
 struct A { std::forward_list<A> v; }; // incomplete type support
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     typedef std::forward_list<char> C;

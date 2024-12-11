@@ -36,7 +36,7 @@ struct NotAnAllocator {
   friend bool operator<(NotAnAllocator, NotAnAllocator) { return false; }
 };
 
-int main(int, char **) {
+extern "C" int main(int, char **) {
   {
     // cannot deduce Key from nothing
     std::multiset s;

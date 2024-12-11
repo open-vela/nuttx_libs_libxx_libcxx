@@ -17,7 +17,7 @@
 #include <cmath>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(std::isfinite(1.0));
   assert(!std::isinf(1.0));
   assert(!std::isnan(1.0));

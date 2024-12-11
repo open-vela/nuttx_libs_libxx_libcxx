@@ -41,7 +41,7 @@ struct mutex
 
 mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::steady_clock Clock;
     std::shared_lock<mutex> lk(m, std::defer_lock);

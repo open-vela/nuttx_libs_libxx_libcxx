@@ -16,7 +16,7 @@
 
 struct X {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     X x;
     std::size_t h = std::hash<X>{} ( x );

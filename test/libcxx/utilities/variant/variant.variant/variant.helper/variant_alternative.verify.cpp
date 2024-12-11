@@ -25,7 +25,7 @@
 #include <cassert>
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::variant<int, double> T;

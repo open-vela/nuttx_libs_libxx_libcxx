@@ -29,7 +29,7 @@
 struct A {};
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     int* ptr = new int;

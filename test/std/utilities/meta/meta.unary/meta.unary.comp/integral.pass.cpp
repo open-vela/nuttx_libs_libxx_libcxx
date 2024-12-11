@@ -35,7 +35,7 @@ void test_integral()
     test_integral_imp<const volatile T>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_integral<bool>();
     test_integral<char>();

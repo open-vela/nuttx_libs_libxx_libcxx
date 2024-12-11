@@ -50,7 +50,7 @@ struct atomic_test : public std::__atomic_base<T> {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
 // structs and unions can't be defined in the template invocation.
 // Work around this with a typedef.

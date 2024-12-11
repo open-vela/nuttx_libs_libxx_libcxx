@@ -133,7 +133,7 @@ void ctad_test()
     static_assert(std::is_same_v<decltype(f2b), std::function<NonCopyable(int)>>);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
     const_test();

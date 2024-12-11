@@ -21,7 +21,7 @@
 //   {empty/one-element/full} container);
 // - prepending move-only elements;
 // - an exception is thrown when copying the elements or when allocating new elements.
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_constraints_prepend_range<std::list, int, double>());
 
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {

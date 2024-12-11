@@ -61,7 +61,7 @@ test()
     test(Iter(v.data()), Iter(v.data()+v.size()), M, false);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int d[] = {0, 2, 4, 6};
     for (int* e = d; e <= d+4; ++e)

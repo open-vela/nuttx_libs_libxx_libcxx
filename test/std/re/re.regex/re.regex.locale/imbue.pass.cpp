@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "platform_support.h" // locale name macros
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::regex r;
     std::locale loc = r.imbue(std::locale(LOCALE_en_US_UTF_8));

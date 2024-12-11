@@ -32,7 +32,7 @@ void exit_success(int) {
     std::_Exit(EXIT_SUCCESS);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::signal(SIGABRT, exit_success);
     std::use_facet<my_facet>(std::locale());
     return EXIT_FAILURE;

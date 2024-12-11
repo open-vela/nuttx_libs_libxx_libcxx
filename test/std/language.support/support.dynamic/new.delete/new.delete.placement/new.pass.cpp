@@ -21,7 +21,7 @@ struct A
     ~A() {--A_constructed;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char buf[sizeof(A)];
 
