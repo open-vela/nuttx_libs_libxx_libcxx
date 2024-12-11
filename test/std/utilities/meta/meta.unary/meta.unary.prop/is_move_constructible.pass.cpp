@@ -64,7 +64,7 @@ struct B
     B(B&&);
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_is_not_move_constructible<char[3]>();
     test_is_not_move_constructible<char[]>();

@@ -71,7 +71,7 @@ void writerMustWait() {
   assert(t1 - t0 >= WaitTime);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   int threads = 5;
 

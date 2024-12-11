@@ -19,7 +19,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::deque<int> q;
     q.push_back(0);
     q.pop_back();

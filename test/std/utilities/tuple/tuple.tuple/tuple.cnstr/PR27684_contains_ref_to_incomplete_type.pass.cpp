@@ -27,7 +27,7 @@ extern IncompleteType inc2;
 IncompleteType const& cinc1 = inc1;
 IncompleteType const& cinc2 = inc2;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     using IT = IncompleteType;
     { // try calling tuple(Tp const&...)
         using Tup = std::tuple<const IT&, const IT&>;

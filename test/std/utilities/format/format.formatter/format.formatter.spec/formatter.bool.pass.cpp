@@ -71,7 +71,7 @@ void test_boolean() {
   test_termination_condition(STR("false"), STR("}"), false);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_boolean<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_boolean<wchar_t>();

@@ -32,7 +32,7 @@ template <> struct hash<X>
 };
 } // namespace std
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
   typedef propagate_const<X> P;
 

@@ -15,7 +15,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::duration<std::chrono::milliseconds> D;
     D d;

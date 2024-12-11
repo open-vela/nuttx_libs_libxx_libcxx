@@ -36,7 +36,7 @@ make_error_code(testing x)
     return std::error_code(static_cast<int>(x), std::generic_category());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::error_code ec(two);

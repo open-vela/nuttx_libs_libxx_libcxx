@@ -33,7 +33,7 @@ constexpr int i = 0;
 constexpr double d = 0.0;
 constexpr A a{};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(std::addressof(i) == &i, "");
     static_assert(std::addressof(d) == &d, "");

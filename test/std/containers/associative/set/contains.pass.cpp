@@ -28,7 +28,7 @@ void test(B bad, Vals... args) {
 
 struct E { int a = 1; double b = 1; char c = 1; };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test<std::set<int>, int>(14, 10, 11, 12, 13);

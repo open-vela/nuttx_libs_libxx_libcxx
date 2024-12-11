@@ -240,7 +240,7 @@ void test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   // Note: `stable_partition` is not `constexpr`.
 

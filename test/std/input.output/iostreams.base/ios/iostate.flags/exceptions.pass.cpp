@@ -20,7 +20,7 @@
 
 struct testbuf : public std::streambuf {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const std::ios ios(0);

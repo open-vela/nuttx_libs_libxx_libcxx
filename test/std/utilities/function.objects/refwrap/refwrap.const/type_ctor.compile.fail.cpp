@@ -15,7 +15,7 @@
 #include <functional>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::reference_wrapper<const int> r(3);
 

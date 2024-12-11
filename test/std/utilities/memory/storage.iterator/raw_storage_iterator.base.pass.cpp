@@ -33,7 +33,7 @@ public:
     A* operator& () = delete;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::aligned_storage<3*sizeof(A), std::alignment_of<A>::value>::type
             Storage;

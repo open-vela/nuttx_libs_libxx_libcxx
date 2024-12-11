@@ -49,7 +49,7 @@ struct throw_comparator
 };
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::multiset<int> src{1, 3, 5};

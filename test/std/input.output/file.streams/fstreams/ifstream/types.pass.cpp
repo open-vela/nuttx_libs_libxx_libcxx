@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_base_of<std::basic_istream<char>, std::basic_ifstream<char> >::value), "");
     static_assert((std::is_same<std::basic_ifstream<char>::char_type, char>::value), "");

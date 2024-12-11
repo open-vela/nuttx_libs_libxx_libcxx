@@ -71,7 +71,7 @@ test()
     static_assert(S::npos == -1, "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<test_traits<char>, test_allocator<char> >();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

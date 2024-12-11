@@ -21,7 +21,7 @@
 
 std::mutex m;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unique_lock<std::mutex> lk0;
     assert(lk0.owns_lock() == false);

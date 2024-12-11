@@ -24,7 +24,7 @@ template<class T> struct Holder { T t; };
 
 void f(Holder<Incomplete> *) { }
 
-int main(int, char **)
+extern "C" int main(int, char **)
 {
     Holder<Incomplete> *p = nullptr;
     std::thread t(f, p);

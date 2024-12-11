@@ -96,7 +96,7 @@ public:
     bool locked() const {return locked_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         L0 l0;

@@ -67,7 +67,7 @@ void test()
     assert(std::is_sorted(v.begin(), v.end()));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
 

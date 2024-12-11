@@ -20,7 +20,7 @@
 bool test_constructor_explicit(std::type_info const&) { return false; }
 bool test_constructor_explicit(std::string const&) { return true; }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     const std::type_info& t1 = typeid(int);

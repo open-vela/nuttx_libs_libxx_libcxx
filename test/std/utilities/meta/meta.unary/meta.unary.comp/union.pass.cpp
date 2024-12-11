@@ -41,7 +41,7 @@ union Union
     double __;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_union<Union>();
 

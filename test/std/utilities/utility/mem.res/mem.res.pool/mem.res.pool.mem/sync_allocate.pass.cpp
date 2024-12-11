@@ -20,7 +20,7 @@
 #include "count_new.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   globalMemCounter.reset();
   {
     auto sync1                    = std::pmr::synchronized_pool_resource(std::pmr::new_delete_resource());

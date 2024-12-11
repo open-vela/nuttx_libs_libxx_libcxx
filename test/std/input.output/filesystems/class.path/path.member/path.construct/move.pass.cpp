@@ -24,7 +24,7 @@
 #include "count_new.h"
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace fs;
   static_assert(std::is_nothrow_move_constructible<path>::value, "");
   assert(globalMemCounter.checkOutstandingNewEq(0));

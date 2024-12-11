@@ -78,7 +78,7 @@ void g3(std::ios_base::event ev, std::ios_base&, int index)
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     testios ios1;
     testbuf sb2;

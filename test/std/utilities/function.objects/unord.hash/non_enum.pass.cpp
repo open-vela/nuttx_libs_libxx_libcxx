@@ -22,7 +22,7 @@
 
 struct X {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using H = std::hash<X>;
     static_assert(!std::is_default_constructible<H>::value, "");

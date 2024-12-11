@@ -39,7 +39,7 @@ struct default_constructible
     int x{0};
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // pair<default_constructible, default_constructible> as T()
     {

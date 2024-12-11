@@ -65,7 +65,7 @@ testN(int start, int N)
     test(c1, -10);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int rng[] = {0, 1, 2, 3, 1023, 1024, 1025, 2047, 2048, 2049};

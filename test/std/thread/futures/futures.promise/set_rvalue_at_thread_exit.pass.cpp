@@ -26,7 +26,7 @@ void func(std::promise<std::unique_ptr<int>> p)
     p.set_value_at_thread_exit(std::unique_ptr<int>(new int(5)));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::promise<std::unique_ptr<int>> p;

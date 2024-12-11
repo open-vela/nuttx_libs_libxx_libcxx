@@ -54,7 +54,7 @@ static void test_signature() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_signature();
   return 0;
 }

@@ -78,7 +78,7 @@ struct ConvertibleFromInt {
   ConvertibleFromInt(int) : state(FromInt) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Test for the creation of dangling references when a tuple is used to
     // store a reference to another tuple as its only element.

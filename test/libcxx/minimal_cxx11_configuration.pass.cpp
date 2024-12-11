@@ -120,7 +120,7 @@ void test() {
 }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   variadics_templates::test();
   rvalue_references_move_semantics::test();
   rvalue_references_perfect_forwarding::test();

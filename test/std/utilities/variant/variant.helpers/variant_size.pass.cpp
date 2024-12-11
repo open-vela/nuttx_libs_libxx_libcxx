@@ -37,7 +37,7 @@ template <class V, std::size_t E> void test() {
                 "");
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<std::variant<>, 0>();
   test<std::variant<void *>, 1>();
   test<std::variant<long, long, void *, double>, 4>();

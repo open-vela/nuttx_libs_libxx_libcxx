@@ -33,7 +33,7 @@ test(C c)
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(std::list<std::unique_ptr<int> >());
 #if TEST_STD_VER >= 20

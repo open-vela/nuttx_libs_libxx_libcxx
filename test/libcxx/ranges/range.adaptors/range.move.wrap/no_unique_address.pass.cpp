@@ -34,7 +34,7 @@ struct Hold : Box {
   [[no_unique_address]] Inherit member;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   Hold box;
 
   Box& base   = static_cast<Box&>(box);

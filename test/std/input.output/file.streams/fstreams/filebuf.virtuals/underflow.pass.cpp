@@ -38,7 +38,7 @@ struct test_buf
     virtual int_type underflow() {return base::underflow();}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test_buf<char> f;

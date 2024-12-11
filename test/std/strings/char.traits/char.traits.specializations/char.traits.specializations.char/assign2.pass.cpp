@@ -27,7 +27,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     char c = '\0';
     std::char_traits<char>::assign(c, 'a');

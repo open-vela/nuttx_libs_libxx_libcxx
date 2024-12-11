@@ -131,7 +131,7 @@ void test_one()
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Instantiate with 1-5 arguments.
     test_all<1>();

@@ -40,7 +40,7 @@ public:
 
 int my_facet::count = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::locale l(std::locale::classic(), new my_facet("en_US"));

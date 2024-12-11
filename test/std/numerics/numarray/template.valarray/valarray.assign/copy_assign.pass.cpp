@@ -33,7 +33,7 @@ bool operator==(const S& lhs, const S& rhs)
     return lhs.x_ == rhs.x_;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef int T;

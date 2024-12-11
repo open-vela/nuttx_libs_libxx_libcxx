@@ -24,7 +24,7 @@
 struct My2 {};
 template<> struct std::is_placeholder<My2> : std::integral_constant<int, 2> {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     auto f = [](auto x) { return 10*x + 9; };

@@ -23,7 +23,7 @@
 
 #include "test_iterators.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace std::string_view_literals;
   auto historicalFigures =
       std::map{std::pair{"Lovelace"sv, 1815}, {"Turing"sv, 1912}, {"Babbage"sv, 1791}, {"Hamilton"sv, 1936}};

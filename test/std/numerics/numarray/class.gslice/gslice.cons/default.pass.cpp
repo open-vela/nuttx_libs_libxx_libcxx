@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::gslice gs;
     assert(gs.start() == 0);

@@ -30,7 +30,7 @@ void do_try_lock() {
   assert(m.try_lock() == false);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     std::lock_guard<std::mutex> lg(m);
     std::thread t = support::make_test_thread(do_try_lock);

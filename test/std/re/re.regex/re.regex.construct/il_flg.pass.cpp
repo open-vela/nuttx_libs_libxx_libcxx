@@ -29,7 +29,7 @@ test(std::initializer_list<char> il, std::regex_constants::syntax_option_type f,
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::string s1("\\(a\\)");
     std::string s2("\\(a[bc]\\)");

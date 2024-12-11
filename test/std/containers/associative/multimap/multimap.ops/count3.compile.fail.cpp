@@ -25,7 +25,7 @@
 #include "test_macros.h"
 #include "is_transparent.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::multimap<int, double, transparent_less_not_a_type> M;
 

@@ -32,7 +32,7 @@ void test()
     ASSERT_SAME_TYPE(T, decltype(std::midpoint<T>(0, 0)));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<signed char>();
     test<short>();

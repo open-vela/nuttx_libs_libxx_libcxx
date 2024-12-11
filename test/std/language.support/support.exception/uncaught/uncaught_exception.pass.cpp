@@ -31,7 +31,7 @@ struct B
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     try
     {

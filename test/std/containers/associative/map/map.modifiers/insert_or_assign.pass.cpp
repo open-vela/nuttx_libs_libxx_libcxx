@@ -56,7 +56,7 @@ public:
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     { // pair<iterator, bool> insert_or_assign(const key_type& k, M&& obj);
         typedef std::map<int, Moveable> M;

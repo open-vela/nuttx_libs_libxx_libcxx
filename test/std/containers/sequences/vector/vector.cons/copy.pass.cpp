@@ -108,7 +108,7 @@ void test_copy_from_volatile_src() {
     assert(v[2] == 3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     tests();
 #if TEST_STD_VER > 17

@@ -16,7 +16,7 @@
 #include "test_allocator.h"
 #include "../../../NotConstructible.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef test_allocator<NotConstructible> A;

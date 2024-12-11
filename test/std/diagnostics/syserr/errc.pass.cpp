@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(static_cast<int>(std::errc::address_family_not_supported) == EAFNOSUPPORT, "");
     static_assert(static_cast<int>(std::errc::address_in_use) == EADDRINUSE, "");

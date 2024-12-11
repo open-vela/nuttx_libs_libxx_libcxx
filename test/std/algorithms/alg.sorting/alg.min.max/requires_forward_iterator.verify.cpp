@@ -16,7 +16,7 @@
 
 #include "test_iterators.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   int arr[] = {1, 2, 3};
   const int *b = std::begin(arr), *e = std::end(arr);
   typedef cpp17_input_iterator<const int*> Iter;

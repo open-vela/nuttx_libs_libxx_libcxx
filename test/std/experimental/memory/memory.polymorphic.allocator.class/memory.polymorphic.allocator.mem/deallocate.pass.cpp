@@ -49,7 +49,7 @@ void testForSizeAndAlign() {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         ex::polymorphic_allocator<int> a;

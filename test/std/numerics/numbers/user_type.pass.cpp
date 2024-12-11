@@ -53,4 +53,4 @@ user std::numbers::egamma_v<user>{};
 template <>
 user std::numbers::phi_v<user>{};
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

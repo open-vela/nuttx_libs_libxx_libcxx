@@ -24,7 +24,7 @@
 #include <strstream>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::strstream::open_mode b = std::strstream::app;
     assert(b == std::ios::app);

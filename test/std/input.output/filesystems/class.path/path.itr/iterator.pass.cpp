@@ -129,7 +129,7 @@ void checkBeginEndBasic() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace fs;
   checkIteratorConcepts();
   checkBeginEndBasic(); // See path.decompose.pass.cpp for more tests.

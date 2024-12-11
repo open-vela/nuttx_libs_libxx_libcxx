@@ -96,7 +96,7 @@ struct LargeTriviallyCopyable
     int i, j[127]; /* decidedly not lock-free */
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool>               ();
     test<char>               ();

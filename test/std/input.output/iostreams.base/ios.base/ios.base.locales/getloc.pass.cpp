@@ -28,7 +28,7 @@ public:
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const test t;
     assert(t.getloc().name() == std::string("C"));

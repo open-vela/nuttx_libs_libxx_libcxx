@@ -21,7 +21,7 @@
 
 struct S { S(); }; // not constexpr
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   constexpr std::istream_iterator<S> it;
 

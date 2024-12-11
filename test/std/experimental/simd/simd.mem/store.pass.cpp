@@ -86,7 +86,7 @@ void test_converting_store() {
   assert(buffer[3] == 8.);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // TODO: adjust the tests when this assertion fails.
   test_store<ex::native_simd<std::int32_t>>();
   test_store<ex::fixed_size_simd<std::int32_t, 4>>();

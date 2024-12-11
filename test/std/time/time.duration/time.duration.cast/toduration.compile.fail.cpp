@@ -18,7 +18,7 @@
 
 #include <chrono>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::chrono::duration_cast<int>(std::chrono::milliseconds(3));
 

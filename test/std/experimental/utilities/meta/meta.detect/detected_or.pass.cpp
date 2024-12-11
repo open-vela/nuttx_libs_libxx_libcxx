@@ -33,7 +33,7 @@ void test() {
     static_assert( std::is_same<Res, typename ex::detected_or_t<double, hasFoo, T>      >::value, "" );
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test<yesFoo, int>();
     test<noFoo, double>();
 

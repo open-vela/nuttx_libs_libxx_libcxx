@@ -39,7 +39,7 @@ void test ( const CharT *s ) {
     }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     test ( "QBCDE" );
     test ( "A" );

@@ -28,7 +28,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::codecvt_utf16<char32_t> C;

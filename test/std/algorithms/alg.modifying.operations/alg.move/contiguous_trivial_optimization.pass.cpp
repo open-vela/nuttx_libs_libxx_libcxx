@@ -92,7 +92,7 @@ test_trivial_copyassign_but_no_trivial_moveassign()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_trivial_moveassign_but_no_trivial_copyassign();
     test_trivial_copyassign_but_no_trivial_moveassign();

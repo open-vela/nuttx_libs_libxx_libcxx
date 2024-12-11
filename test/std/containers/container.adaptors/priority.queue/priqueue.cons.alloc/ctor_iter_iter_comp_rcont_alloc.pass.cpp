@@ -31,7 +31,7 @@ struct PQ : std::priority_queue<T, Cont, Comp> {
     using base::c;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using Alloc = test_allocator<MoveOnly>;
     int a[] = {3, 5, 2, 0, 6, 8, 1};

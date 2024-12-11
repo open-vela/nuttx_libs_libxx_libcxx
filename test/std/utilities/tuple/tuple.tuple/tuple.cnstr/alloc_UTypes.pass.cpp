@@ -78,7 +78,7 @@ struct Explicit {
   explicit Explicit(int x) : value(x) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<Explicit> t{std::allocator_arg, std::allocator<int>{}, 42};

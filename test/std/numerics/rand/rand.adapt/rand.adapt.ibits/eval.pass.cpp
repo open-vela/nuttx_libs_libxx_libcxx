@@ -129,7 +129,7 @@ test8()
     assert(e() == 16470362623952407241ull);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
     test2();

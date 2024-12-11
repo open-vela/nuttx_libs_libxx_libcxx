@@ -38,7 +38,7 @@ struct BadComparator {
     }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     typedef MyType<0> MT0;
     MT0 one(1);
     MT0 two(2);

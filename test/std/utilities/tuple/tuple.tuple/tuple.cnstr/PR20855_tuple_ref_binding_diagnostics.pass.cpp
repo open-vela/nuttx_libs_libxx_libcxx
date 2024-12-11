@@ -130,7 +130,7 @@ void allocator_tests() {
 }
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   compile_tests();
   allocator_tests();
 

@@ -117,7 +117,7 @@ bool fast_is_permutation(Iter1 first1, Iter1 last1, Iter2 first2) {
 #if !defined(LIBCPP_OSS_FUZZ)
 extern "C" int LLVMFuzzerTestOneInput(const std::uint8_t*, std::size_t);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   const char* test_cases[] = {
     "",
     "s",

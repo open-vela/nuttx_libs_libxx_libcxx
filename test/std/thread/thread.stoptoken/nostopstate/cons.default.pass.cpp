@@ -34,7 +34,7 @@ template <class T>
 concept ImplicitlyDefaultConstructible = requires { conversionTest<T>({}); };
 static_assert(!ImplicitlyDefaultConstructible<std::nostopstate_t>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   [[maybe_unused]] std::same_as<std::nostopstate_t> auto x = std::nostopstate;
   [[maybe_unused]] auto y                                  = std::nostopstate_t{};
 

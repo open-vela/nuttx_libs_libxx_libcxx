@@ -54,7 +54,7 @@ Foo AssignmentFactory2() {
   });
 }
 
-int main(int, char **) {
+extern "C" int main(int, char **) {
   // Case 1, works
   {
     auto hello = std::string("Hello world");

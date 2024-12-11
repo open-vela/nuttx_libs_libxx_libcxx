@@ -15,7 +15,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::stack<int> q;
     assert(q.empty());

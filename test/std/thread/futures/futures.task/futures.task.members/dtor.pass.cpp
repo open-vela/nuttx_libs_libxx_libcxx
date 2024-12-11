@@ -37,7 +37,7 @@ void func(std::packaged_task<double(int, char)>)
 
 void func2(std::packaged_task<double(int, char)> p) { p(3, 97); }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #ifndef TEST_HAS_NO_EXCEPTIONS
     {

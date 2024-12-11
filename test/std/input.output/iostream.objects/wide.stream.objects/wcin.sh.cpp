@@ -20,7 +20,7 @@
 #include <iostream>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int i;
     std::wcin >> i;
     assert(i == 1234);

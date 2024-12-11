@@ -52,7 +52,7 @@ struct NotAnAllocator {
   friend bool operator<(NotAnAllocator, NotAnAllocator) { return false; }
 };
 
-int main(int, char **) {
+extern "C" int main(int, char **) {
   {
     const int arr[] = { 1, 2, 1, INT_MAX, 3 };
     std::multiset s(std::begin(arr), std::end(arr));

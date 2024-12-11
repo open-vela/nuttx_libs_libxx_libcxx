@@ -29,7 +29,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using local_days = std::chrono::local_days;
     using days       = std::chrono::days;

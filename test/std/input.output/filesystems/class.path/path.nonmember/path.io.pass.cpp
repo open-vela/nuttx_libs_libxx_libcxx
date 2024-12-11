@@ -90,7 +90,7 @@ void test_LWG2989() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   doIOTest<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   doIOTest<wchar_t>();

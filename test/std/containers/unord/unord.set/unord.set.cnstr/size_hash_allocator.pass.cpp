@@ -46,7 +46,7 @@ void test(const Allocator& alloc)
     assert(c.max_load_factor() == 1);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test(test_allocator<NotConstructible>(10));
     test(min_allocator<NotConstructible>());

@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using month_weekday   = std::chrono::month_weekday;
     using month           = std::chrono::month;

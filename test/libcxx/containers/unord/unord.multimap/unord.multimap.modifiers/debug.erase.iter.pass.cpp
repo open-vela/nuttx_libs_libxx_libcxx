@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // With end()
     {
         typedef std::pair<int, int> P;

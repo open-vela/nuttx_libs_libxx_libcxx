@@ -91,7 +91,7 @@ static_assert(!std::is_constructible<std::shared_ptr<int[5]>,  const std::shared
 static_assert(!std::is_constructible<std::shared_ptr<int[7]>,  const std::shared_ptr<int[5]>&>::value, "");
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(( std::is_convertible<std::shared_ptr<A>, std::shared_ptr<B> >::value), "");
     static_assert((!std::is_convertible<std::shared_ptr<B>, std::shared_ptr<A> >::value), "");

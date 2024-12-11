@@ -29,7 +29,7 @@ test()
     assert(a[1] == z.imag());
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<float>();
     test<double>();

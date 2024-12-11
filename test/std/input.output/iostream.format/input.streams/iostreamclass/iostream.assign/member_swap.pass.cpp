@@ -35,7 +35,7 @@ struct test_iostream
     void swap(test_iostream& s) {base::swap(s);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb1;

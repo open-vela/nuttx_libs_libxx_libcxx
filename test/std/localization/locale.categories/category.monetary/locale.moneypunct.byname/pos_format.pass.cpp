@@ -95,7 +95,7 @@ void assert_sign_value_none_symbol(std::money_base::pattern p)
     assert(p.field[3] == std::money_base::symbol);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         Fnf f("C", 1);

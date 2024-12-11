@@ -50,7 +50,7 @@ public:
     ~Class();
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_extent<void, 0>();
     test_extent<int&, 0>();

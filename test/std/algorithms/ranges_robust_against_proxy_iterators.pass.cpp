@@ -181,7 +181,7 @@ constexpr bool test_all() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all();
   static_assert(test_all());
 

@@ -13,7 +13,7 @@
 #include <array>
 #include <cassert>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef double T;
     typedef std::array<const T, 0> C;

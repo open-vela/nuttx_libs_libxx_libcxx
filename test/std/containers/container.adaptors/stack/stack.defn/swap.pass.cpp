@@ -25,7 +25,7 @@ make(int n)
     return c;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::stack<int> q1 = make<std::stack<int> >(5);
     std::stack<int> q2 = make<std::stack<int> >(10);

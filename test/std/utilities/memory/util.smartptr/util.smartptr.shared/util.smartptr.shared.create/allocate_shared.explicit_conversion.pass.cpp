@@ -24,7 +24,7 @@ struct ExplicitAllocator {
     void deallocate(T* ptr, std::size_t n) { return std::allocator<T>().deallocate(ptr, n); }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::shared_ptr<int> ptr = std::allocate_shared<int>(ExplicitAllocator<int>(), 0);
     (void)ptr;
 

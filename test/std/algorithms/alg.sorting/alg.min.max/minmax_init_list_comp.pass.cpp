@@ -35,7 +35,7 @@ void test_all_equal(std::initializer_list<int> il)
     assert(pred.count() <= ((3 * il.size()) / 2));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert((std::minmax({1, 2, 3}, std::greater<int>()) == std::pair<int, int>(3, 1)));
     assert((std::minmax({1, 3, 2}, std::greater<int>()) == std::pair<int, int>(3, 1)));

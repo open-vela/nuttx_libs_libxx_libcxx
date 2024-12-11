@@ -116,7 +116,7 @@ static_assert(!can_construct_at(contiguous_iterator<Foo*>(), 1, '2', 3.0));
 static_assert(!can_construct_at((int(*)())nullptr));
 static_assert(!can_construct_at((int(*)())nullptr, nullptr));
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test();
     static_assert(test());

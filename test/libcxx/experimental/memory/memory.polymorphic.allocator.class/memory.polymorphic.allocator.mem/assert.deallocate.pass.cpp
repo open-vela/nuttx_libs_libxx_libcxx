@@ -27,7 +27,7 @@
 
 namespace ex = std::experimental::pmr;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     using Alloc = ex::polymorphic_allocator<int>;
     using Traits = std::allocator_traits<Alloc>;
     NullResource R;

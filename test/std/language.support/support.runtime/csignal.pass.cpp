@@ -49,7 +49,7 @@
 #error SIGTERM not defined
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::sig_atomic_t sig = 0;
     ((void)sig);

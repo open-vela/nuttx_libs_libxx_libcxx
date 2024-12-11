@@ -16,7 +16,7 @@
 void f1() {}
 void f2() {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::set_new_handler(f1) == 0);
     assert(std::set_new_handler(f2) == f1);

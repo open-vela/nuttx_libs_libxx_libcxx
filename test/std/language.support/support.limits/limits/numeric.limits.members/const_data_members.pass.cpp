@@ -68,7 +68,7 @@ void test(const T &) {}
 
 struct other {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // bool
     TEST_NUMERIC_LIMITS(bool)

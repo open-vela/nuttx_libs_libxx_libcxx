@@ -24,7 +24,7 @@ void f3()
     std::exit(0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 
     std::unexpected_handler old = std::get_unexpected();

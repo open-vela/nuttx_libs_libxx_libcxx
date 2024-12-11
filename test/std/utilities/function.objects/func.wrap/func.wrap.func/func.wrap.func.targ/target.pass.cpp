@@ -61,7 +61,7 @@ int A::count = 0;
 
 int g(int) {return 0;}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::function<int(int)> f = A();

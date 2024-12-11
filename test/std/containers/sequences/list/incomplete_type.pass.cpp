@@ -23,7 +23,7 @@ struct A {
     std::list<A>::const_reverse_iterator crit;
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     A a;
 
   return 0;

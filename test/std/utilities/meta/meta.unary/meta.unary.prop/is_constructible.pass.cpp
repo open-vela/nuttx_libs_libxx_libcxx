@@ -119,7 +119,7 @@ void test_is_not_constructible()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef Base B;
     typedef Derived D;

@@ -18,7 +18,7 @@
 bool executed_condition = false;
 bool f() { executed_condition = true; return false; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   _LIBCPP_ASSERT_VALID_ELEMENT_ACCESS(f(), "message"); // should not execute anything
   assert(!executed_condition); // really make sure we did not execute anything at all
   return 0;

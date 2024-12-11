@@ -22,7 +22,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   typedef std::ctype<char> F;
   const std::size_t* G = &F::table_size;
   assert(*G >= 256);

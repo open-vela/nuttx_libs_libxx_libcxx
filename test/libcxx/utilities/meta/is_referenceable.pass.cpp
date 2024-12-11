@@ -189,6 +189,6 @@ static_assert((std::__libcpp_is_referenceable<void (Foo::*)(int, float, Foo&, ..
 static_assert((std::__libcpp_is_referenceable<void (Foo::*)(int, float, Foo&, ...) const&&>::value), "");
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   return 0;
 }

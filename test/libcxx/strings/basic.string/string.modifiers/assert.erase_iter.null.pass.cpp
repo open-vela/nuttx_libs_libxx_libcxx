@@ -20,7 +20,7 @@
 #include "check_assertion.h"
 #include "min_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef std::basic_string<char, std::char_traits<char>, min_allocator<char> > S;
     S l1("123");

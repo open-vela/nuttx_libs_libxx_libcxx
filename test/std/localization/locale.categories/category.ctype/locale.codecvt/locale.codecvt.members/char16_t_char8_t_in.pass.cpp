@@ -21,7 +21,7 @@
 #include <cassert>
 #include <locale>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using F = std::codecvt<char16_t, char8_t, std::mbstate_t>;
   const F::extern_type from[] = u8"some text";
   F::intern_type to[9];

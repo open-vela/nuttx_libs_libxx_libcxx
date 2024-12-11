@@ -25,7 +25,7 @@
 
 #include "test_std_memory_resource.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef std::pmr::polymorphic_allocator<void> A;
     static_assert(std::is_convertible_v<decltype(nullptr), A>);

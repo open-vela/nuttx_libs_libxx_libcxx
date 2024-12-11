@@ -32,7 +32,7 @@ TEST_CONSTEXPR_CXX23 bool test_op_xor_eq() {
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_op_xor_eq<0>();
   test_op_xor_eq<1>();
   test_op_xor_eq<31>();

@@ -325,7 +325,7 @@ void test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   // Note: `ranges::sample` is not `constexpr`.
 

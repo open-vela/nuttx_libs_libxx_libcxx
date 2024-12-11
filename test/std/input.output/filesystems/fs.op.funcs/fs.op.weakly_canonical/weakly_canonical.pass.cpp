@@ -26,7 +26,7 @@
 #include "filesystem_test_helper.h"
 #include "../../class.path/path_helper.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_test_env static_env;
 
   fs::path root = fs::current_path().root_path();

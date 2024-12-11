@@ -132,7 +132,7 @@ void test_custom_pred() {
     assert(ret.second == std::end(str));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test<random_access_iterator<const int*>, random_access_iterator<const int*> >();
     test2<random_access_iterator<const char*>, random_access_iterator<const char*> >();
     test_custom_pred();

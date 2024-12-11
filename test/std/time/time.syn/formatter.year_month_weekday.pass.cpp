@@ -726,7 +726,7 @@ static void test() {
           std::chrono::year{1970}, std::chrono::January, std::chrono::weekday_indexed{std::chrono::weekday{1}, 1}});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

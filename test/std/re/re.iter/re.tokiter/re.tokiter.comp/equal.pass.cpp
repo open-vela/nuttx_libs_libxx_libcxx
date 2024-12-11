@@ -20,7 +20,7 @@
 
 #include "test_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if _LIBCPP_STD_VER >= 20
   AssertEqualityReturnBool<std::cregex_token_iterator>();
 

@@ -41,7 +41,7 @@ void check() {
 
 struct T { };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   check<T>();
   check<int>();
   check<float>();

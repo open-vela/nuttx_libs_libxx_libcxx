@@ -39,7 +39,7 @@ constexpr bool test_constexpr_forward() {
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     A a;
     const A ca = A();

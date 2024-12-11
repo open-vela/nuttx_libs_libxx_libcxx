@@ -252,7 +252,7 @@ void decompFilenameTest()
   }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   decompPathTest();
   decompFilenameTest();

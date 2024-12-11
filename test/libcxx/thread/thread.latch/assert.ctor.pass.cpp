@@ -24,7 +24,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char **) {
+extern "C" int main(int, char **) {
   {
     TEST_LIBCPP_ASSERT_FAILURE([]{ std::latch l(-1); }(),
                                "latch::latch(ptrdiff_t): latch cannot be "

@@ -20,7 +20,7 @@
 struct A { virtual ~A() { } };
 struct B : A { };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     A* ptr = new B;
     (void)dynamic_cast<B*>(ptr);
     delete ptr;

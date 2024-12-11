@@ -48,7 +48,7 @@ test()
     test1<T, M-1, M-1, M>();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<unsigned short>();
     test<unsigned int>();

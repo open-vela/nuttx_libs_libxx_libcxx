@@ -135,7 +135,7 @@ static void test_new_line() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   print_tests(test_file, test_exception);
 
 #if defined(TEST_HAS_GLIBC) && !defined(TEST_HAS_NO_WIDE_CHARACTERS)

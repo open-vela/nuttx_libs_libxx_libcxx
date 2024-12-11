@@ -45,7 +45,7 @@ void test_traits()
 
 struct Foo { };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_traits<std::mbstate_t>();
     test_traits<int>();

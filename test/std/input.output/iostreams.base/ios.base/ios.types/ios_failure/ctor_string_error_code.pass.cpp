@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // LWG2462 std::ios_base::failure is overspecified
     static_assert((std::is_base_of<std::system_error, std::ios_base::failure>::value), "");

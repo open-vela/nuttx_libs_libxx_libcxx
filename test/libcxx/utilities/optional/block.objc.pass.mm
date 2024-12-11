@@ -18,7 +18,7 @@
 #include <optional>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using Block = void (^)(void);
     std::optional<Block> block;

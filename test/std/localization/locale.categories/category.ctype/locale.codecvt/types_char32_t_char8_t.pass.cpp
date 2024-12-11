@@ -28,7 +28,7 @@
 #include <locale>
 #include <type_traits>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using F = std::codecvt<char32_t, char8_t, std::mbstate_t>;
   static_assert(std::is_base_of_v<std::locale::facet, F>);
   static_assert(std::is_base_of_v<std::codecvt_base, F>);

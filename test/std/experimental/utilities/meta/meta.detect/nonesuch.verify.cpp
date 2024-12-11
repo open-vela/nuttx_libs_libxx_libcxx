@@ -24,7 +24,7 @@ namespace ex = std::experimental;
 
 void doSomething (const ex::nonesuch &) {}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     ex::nonesuch *e0 = new ex::nonesuch; // expected-error {{no matching constructor for initialization of 'ex::nonesuch'}}
     doSomething({}); // expected-error{{no matching function for call to 'doSomething'}}
 

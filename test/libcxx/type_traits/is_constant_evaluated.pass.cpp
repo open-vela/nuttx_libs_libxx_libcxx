@@ -19,7 +19,7 @@
 
 #include "test_macros.h"
 
-int main (int, char**) {
+extern "C" int main (int, char**) {
     ASSERT_SAME_TYPE(decltype(std::__libcpp_is_constant_evaluated()), bool);
     ASSERT_NOEXCEPT(std::__libcpp_is_constant_evaluated());
 

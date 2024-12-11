@@ -17,7 +17,7 @@
 
 #include <iostream>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::clog << "1234";
     return 0;
 }

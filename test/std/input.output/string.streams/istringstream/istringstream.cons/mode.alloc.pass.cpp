@@ -29,7 +29,7 @@ static void test() {
   assert(ss.view().empty());
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test<wchar_t>();

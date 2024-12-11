@@ -17,7 +17,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::string s;
     std::string s2;
     TEST_LIBCPP_ASSERT_FAILURE(

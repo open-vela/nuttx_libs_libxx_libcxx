@@ -17,7 +17,7 @@
 
 #include "count_new.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert(globalMemCounter.checkOutstandingNewEq(0));
   return 0;
 }

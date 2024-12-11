@@ -60,7 +60,7 @@ TEST_CONSTEXPR_CXX17 bool test_moveonly()
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test<cpp17_input_iterator<char*> >();
   test<forward_iterator<char*> >();

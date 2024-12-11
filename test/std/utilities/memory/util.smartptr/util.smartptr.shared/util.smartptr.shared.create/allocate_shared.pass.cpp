@@ -138,7 +138,7 @@ void test()
     assert(Three::count == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bare_allocator<void> >();
     test<test_allocator<void> >();

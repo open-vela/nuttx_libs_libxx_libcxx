@@ -38,7 +38,7 @@ struct test_iostream
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         testbuf<char> sb1;

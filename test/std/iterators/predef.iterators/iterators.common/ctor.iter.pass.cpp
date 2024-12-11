@@ -28,7 +28,7 @@ constexpr bool test() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<cpp17_input_iterator<int*>>();
   test<forward_iterator<int*>>();
   test<bidirectional_iterator<int*>>();

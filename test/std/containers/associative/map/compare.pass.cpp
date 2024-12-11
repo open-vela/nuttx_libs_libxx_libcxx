@@ -26,7 +26,7 @@ struct Key {
   bool operator< (const Key&) const { return false; }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::map<Key, int> MapT;
     typedef MapT::iterator Iter;

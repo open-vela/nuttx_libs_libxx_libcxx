@@ -18,7 +18,7 @@
 #include <cassert>
 #include <string>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   char str1[] = "\na";
   auto str1_scnd = str1 + 1;
 

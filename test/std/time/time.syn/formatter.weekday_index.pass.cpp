@@ -419,7 +419,7 @@ static void test() {
                   std::chrono::weekday_indexed{std::chrono::weekday(0), 1});
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<char>();
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

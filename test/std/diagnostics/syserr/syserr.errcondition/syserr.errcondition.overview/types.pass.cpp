@@ -14,7 +14,7 @@
 #include <system_error>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::error_condition x = std::errc(0);
     TEST_IGNORE_NODISCARD  x.category();   // returns a std::error_condition &

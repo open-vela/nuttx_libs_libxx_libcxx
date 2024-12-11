@@ -29,7 +29,7 @@ sqr(T x)
     return x * x;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::uniform_int_distribution<> D;

@@ -28,7 +28,7 @@ struct PQ : std::priority_queue<T, Cont, Comp> {
     using base::c;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef test_allocator<int> Alloc;
     int a[] = {3, 5, 2, 0, 6, 8, 1};

@@ -28,7 +28,7 @@ struct A
     A(A&&) {throw 9;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unique_ptr<int> T;

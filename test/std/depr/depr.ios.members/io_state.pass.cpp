@@ -24,7 +24,7 @@
 #include <strstream>
 #include <cassert>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::strstream::io_state b = std::strstream::eofbit;
     assert(b == std::ios::eofbit);

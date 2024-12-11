@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::size_t a1[] = {1, 2, 3};
     std::size_t a2[] = {4, 5, 6};

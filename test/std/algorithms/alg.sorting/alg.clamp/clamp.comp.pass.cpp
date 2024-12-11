@@ -40,7 +40,7 @@ test(const T& v, const T& lo, const T& hi, C c, const T& x)
     assert(&std::clamp(v, lo, hi, c) == &x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int x = 0;

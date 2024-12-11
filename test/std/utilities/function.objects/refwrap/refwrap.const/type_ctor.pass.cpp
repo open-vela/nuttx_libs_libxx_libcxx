@@ -32,7 +32,7 @@ test(T& t)
 
 void f() {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     void (*fp)() = f;
     test(fp);

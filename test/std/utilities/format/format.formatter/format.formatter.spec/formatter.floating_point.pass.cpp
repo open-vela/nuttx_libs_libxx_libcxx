@@ -478,7 +478,7 @@ void test_all_float_types() {
   test_float_type<long double, CharT>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all_float_types<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_all_float_types<wchar_t>();

@@ -45,7 +45,7 @@ void test() {
                                 std::allocator<int> >::value), "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test<char>();
     return 0;
 }

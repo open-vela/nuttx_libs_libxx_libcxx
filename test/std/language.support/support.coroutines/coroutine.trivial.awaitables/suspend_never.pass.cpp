@@ -34,7 +34,7 @@ constexpr bool test_trivial_awaitable_constexpr(bool expected) {
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using H = std::coroutine_handle<>;
   using S = std::suspend_never;

@@ -90,7 +90,7 @@ static void test_is_other_fails()
     TEST_THROWS_TYPE(filesystem_error, is_other(p));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     signature_test();
     is_other_status_test();
     test_exist_not_found();

@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::chrono::microseconds D;
     typedef D::rep Rep;

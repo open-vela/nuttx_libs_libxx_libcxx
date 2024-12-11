@@ -69,7 +69,7 @@ struct TestFn {
   }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     TestEachAtomicType<TestFn>()();
 

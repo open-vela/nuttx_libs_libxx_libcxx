@@ -62,7 +62,7 @@ void test(F func) {
     assert(t1-t0 < ms(5));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int>(func1);
     test<int&>(func3);

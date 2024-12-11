@@ -53,7 +53,7 @@ private:
   typedef int element_type;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::pointer_traits<A>::element_type, char>::value), "");
     static_assert((std::is_same<std::pointer_traits<B<int> >::element_type, char>::value), "");

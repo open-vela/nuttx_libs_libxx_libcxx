@@ -77,7 +77,7 @@ static_assert(!std::is_constructible<std::shared_ptr<int[5]>, int(*)[5], test_de
 #endif
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test_allocator_statistics alloc_stats;

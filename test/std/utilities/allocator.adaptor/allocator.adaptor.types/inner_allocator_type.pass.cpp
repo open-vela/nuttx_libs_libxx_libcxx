@@ -21,7 +21,7 @@
 #include "test_macros.h"
 #include "allocators.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<
         std::scoped_allocator_adaptor<A1<int>>::inner_allocator_type,

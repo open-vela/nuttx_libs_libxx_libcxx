@@ -278,7 +278,7 @@ static_assert(!std::is_invocable_v<RangeDataT, RandomButNotContiguous&>);
 static_assert(!std::is_invocable_v<RangeCDataT, RandomButNotContiguous>);
 static_assert(!std::is_invocable_v<RangeCDataT, RandomButNotContiguous&>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(testReturnTypes());
 
   testDataMember();

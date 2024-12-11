@@ -86,7 +86,7 @@ bool do_tests()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     do_tests();
 #if TEST_STD_VER > 17

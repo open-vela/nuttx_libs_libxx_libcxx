@@ -27,7 +27,7 @@ struct std::__intrusive_shared_ptr_traits<Object> {
 
 using Ptr = std::__intrusive_shared_ptr<Object>;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // default
   {
     Ptr ptr;

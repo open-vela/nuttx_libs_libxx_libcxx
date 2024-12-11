@@ -37,7 +37,7 @@ make_val(std::shared_ptr<Node>& sptr, void** local_addr) {
   return ret;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   void* local_addr = nullptr;
   auto sptr = std::make_shared<Node>();
   std::weak_ptr<Node> ret = make_val(sptr, &local_addr);

@@ -31,7 +31,7 @@ struct Type
 #endif
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert(sizeof(std::__invoke(&Type::f1, std::declval<Type        >())) == 1, "");
     static_assert(sizeof(std::__invoke(&Type::f2, std::declval<Type const  >())) == 2, "");

@@ -33,7 +33,7 @@ void operator delete[](void* p) TEST_NOEXCEPT {
     std::free(p);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     new_nothrow_called = delete_called = 0;
     int* x = new (std::nothrow) int[3];
     assert(x != nullptr);

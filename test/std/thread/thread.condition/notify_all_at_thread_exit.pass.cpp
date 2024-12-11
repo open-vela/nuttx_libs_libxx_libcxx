@@ -37,7 +37,7 @@ void func()
     std::this_thread::sleep_for(ms(300));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::unique_lock<std::mutex> lk(mut);
     std::thread t = support::make_test_thread(func);

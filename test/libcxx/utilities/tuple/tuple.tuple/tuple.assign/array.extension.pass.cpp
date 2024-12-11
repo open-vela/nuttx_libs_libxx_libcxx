@@ -36,7 +36,7 @@ struct PotentiallyThrowingAssignableFrom {
     PotentiallyThrowingAssignableFrom& operator=(T) { return *this; }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // Tests for the array const& overload
     {
         std::array<long, 3> array = {1l, 2l, 3l};

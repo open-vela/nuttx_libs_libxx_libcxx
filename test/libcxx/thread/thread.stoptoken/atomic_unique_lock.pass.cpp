@@ -82,7 +82,7 @@ void test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test<1 << 0>();
   test<1 << 1>();
   test<1 << 2>();

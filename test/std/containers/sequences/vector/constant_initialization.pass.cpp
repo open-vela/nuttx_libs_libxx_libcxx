@@ -13,7 +13,7 @@
 
 std::vector<int> ca_allocs;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   ca_allocs.push_back(0);
   for ([[maybe_unused]] const auto& a : ca_allocs)
     ;

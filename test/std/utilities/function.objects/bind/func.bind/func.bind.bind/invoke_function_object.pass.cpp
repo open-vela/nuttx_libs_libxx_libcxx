@@ -40,7 +40,7 @@ struct BadUnaryFunction
     }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // Check that BadUnaryFunction::operator()(S const &) is not
     // instantiated when checking if BadUnaryFunction is a nested bind

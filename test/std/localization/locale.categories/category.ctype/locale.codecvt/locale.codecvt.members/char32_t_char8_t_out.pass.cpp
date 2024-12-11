@@ -21,7 +21,7 @@
 #include <cassert>
 #include <locale>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using F = std::codecvt<char32_t, char8_t, std::mbstate_t>;
   const F& f = std::use_facet<F>(std::locale::classic());
   F::intern_type from[9] = {u's', u'o', u'm', u'e', u' ', u't', u'e', u'x', u't'};

@@ -22,7 +22,7 @@ void test_remove_reference()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_remove_reference<void, void>();
     test_remove_reference<int, int>();

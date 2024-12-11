@@ -40,7 +40,7 @@ static_assert(test_constexpr_context<int>(), "");
 static_assert(test_constexpr_context<void>(), "");
 
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
 
   return 0;

@@ -36,7 +36,7 @@ void test(It i, It x) {
     assert(rr.base() == i);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   char s[] = "123";
 #if TEST_STD_VER > 17
   test_single_pass(cpp17_input_iterator<char*>(s), cpp17_input_iterator<char*>(s + 1));

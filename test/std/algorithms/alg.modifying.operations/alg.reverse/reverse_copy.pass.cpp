@@ -72,7 +72,7 @@ test()
     assert(jd[3] == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bidirectional_iterator<const int*>, cpp17_output_iterator<int*> >();
     test<bidirectional_iterator<const int*>, forward_iterator<int*> >();

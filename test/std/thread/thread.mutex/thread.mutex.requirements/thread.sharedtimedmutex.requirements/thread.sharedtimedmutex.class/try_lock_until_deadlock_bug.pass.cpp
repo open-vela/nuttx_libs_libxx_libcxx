@@ -52,7 +52,7 @@ void blocked_reader() {
   m.unlock_shared();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   typedef std::chrono::steady_clock Clock;
 

@@ -42,7 +42,7 @@ struct test
         {return std::strstreambuf::overflow(c);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         test s(my_alloc, my_free);

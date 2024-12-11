@@ -70,7 +70,7 @@ void f2()
   assert(t1 - t0 >= ShortTime);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   {
     m.lock();

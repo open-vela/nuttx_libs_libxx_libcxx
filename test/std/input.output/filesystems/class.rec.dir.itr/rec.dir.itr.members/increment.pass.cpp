@@ -495,7 +495,7 @@ static void test_PR35078_with_symlink_file()
 }
 #endif // TEST_WIN_NO_FILESYSTEM_PERMS_NONE
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_increment_signatures();
     test_prefix_increment();
     test_postfix_increment();

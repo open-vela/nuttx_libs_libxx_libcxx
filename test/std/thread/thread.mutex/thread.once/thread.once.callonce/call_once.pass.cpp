@@ -187,7 +187,7 @@ struct RefQual
 
 #endif // TEST_STD_VER >= 11
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // check basic functionality
     {

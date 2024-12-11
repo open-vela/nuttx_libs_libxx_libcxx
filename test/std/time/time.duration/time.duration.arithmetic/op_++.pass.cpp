@@ -25,7 +25,7 @@ constexpr bool test_constexpr()
 }
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::chrono::hours h(3);

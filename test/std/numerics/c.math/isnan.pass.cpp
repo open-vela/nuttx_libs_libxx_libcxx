@@ -62,7 +62,7 @@ struct TestInt {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   types::for_each(types::floating_point_types(), TestFloat());
   types::for_each(types::integral_types(), TestInt());
 

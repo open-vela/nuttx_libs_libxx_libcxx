@@ -30,7 +30,7 @@ make(int n)
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::priority_queue<MoveOnly> qo(std::less<MoveOnly>(), make<std::vector<MoveOnly> >(5));
     std::priority_queue<MoveOnly> q = std::move(qo);

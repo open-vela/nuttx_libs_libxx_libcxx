@@ -27,7 +27,7 @@ void func(std::promise<int> p)
     p.set_value_at_thread_exit(i);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::promise<int> p;

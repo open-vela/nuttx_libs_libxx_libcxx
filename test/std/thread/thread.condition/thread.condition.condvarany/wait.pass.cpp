@@ -44,7 +44,7 @@ void f()
     assert(test2 != 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     L1 lk(m0);
     std::thread t = support::make_test_thread(f);

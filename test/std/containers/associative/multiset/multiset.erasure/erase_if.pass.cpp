@@ -65,7 +65,7 @@ void test()
     test0(S({1, 2, 3}), False, S({1, 2, 3}), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::multiset<int>>();
     test<std::multiset<int, std::less<int>, min_allocator<int>>> ();

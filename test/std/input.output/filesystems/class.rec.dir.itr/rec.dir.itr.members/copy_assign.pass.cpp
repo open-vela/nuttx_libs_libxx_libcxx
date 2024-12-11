@@ -157,7 +157,7 @@ static void test_self_copy()
     assert(*it2 == *it);
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_assignment_signature();
     test_copy_to_end_iterator();
     test_copy_from_end_iterator();

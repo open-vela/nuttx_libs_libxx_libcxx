@@ -78,7 +78,7 @@ auto foo() {
   };
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_allocation_pattern(foo<2, 1>());
   test_allocation_pattern(foo<2, 8>());
   test_allocation_pattern(foo<2, 64>());

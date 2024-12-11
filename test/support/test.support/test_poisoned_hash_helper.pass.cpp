@@ -26,7 +26,7 @@ template <class T> struct has_complete_hash {
   enum { value = is_complete<std::hash<T> >() };
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(LibraryHashTypes::assertTrait<has_complete_hash, false>(), "");
 
   return 0;

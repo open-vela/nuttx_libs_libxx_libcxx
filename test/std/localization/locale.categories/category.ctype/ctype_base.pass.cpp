@@ -35,7 +35,7 @@
 template <class T>
 void test(const T &) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     assert(std::ctype_base::space);
     assert(std::ctype_base::print);

@@ -46,7 +46,7 @@ struct MyInt {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   constexpr int N = (1 << 20);
   std::vector<MyInt> v;
   v.reserve(N);

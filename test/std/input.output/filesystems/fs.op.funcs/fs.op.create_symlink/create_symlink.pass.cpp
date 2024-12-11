@@ -90,7 +90,7 @@ static void create_symlink_dest_cleanup()
     assert(ret.native() == sym_target_normalized.native());
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     test_error_reporting();
     create_symlink_basic();

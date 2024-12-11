@@ -57,7 +57,7 @@ constexpr bool test_constexpr_move() {
         && std::move(static_cast<int const&&>(y)) == 42;
 }
 #endif
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     { // Test return type and noexcept.
         static_assert(std::is_same<decltype(std::move(x)), int&&>::value, "");

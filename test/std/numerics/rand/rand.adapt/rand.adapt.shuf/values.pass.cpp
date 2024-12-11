@@ -44,7 +44,7 @@ test1()
     where(E::table_size);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test1();
 

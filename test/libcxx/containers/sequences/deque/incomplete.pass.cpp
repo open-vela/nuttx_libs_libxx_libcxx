@@ -24,7 +24,7 @@ struct A {
   std::deque<A>::reverse_iterator it2;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   A a;
   assert(a.d.size() == 0);

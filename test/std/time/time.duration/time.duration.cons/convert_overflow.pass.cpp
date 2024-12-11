@@ -29,7 +29,7 @@ void f(std::chrono::seconds)
     called = true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     std::chrono::duration<int, std::exa> r(1);

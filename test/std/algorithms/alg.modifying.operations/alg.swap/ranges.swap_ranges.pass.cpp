@@ -219,7 +219,7 @@ constexpr bool test() {
 
 static_assert(std::same_as<std::ranges::swap_ranges_result<int, char>, std::ranges::in_in_result<int, char>>);
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

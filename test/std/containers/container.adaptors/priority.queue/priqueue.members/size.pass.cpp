@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::priority_queue<int> q;
     assert(q.size() == 0);

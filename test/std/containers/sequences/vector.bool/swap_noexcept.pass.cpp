@@ -52,7 +52,7 @@ struct some_alloc2
     typedef std::true_type is_always_equal;
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if defined(_LIBCPP_VERSION)
     {

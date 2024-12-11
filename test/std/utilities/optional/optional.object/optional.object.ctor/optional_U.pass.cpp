@@ -74,7 +74,7 @@ TEST_CONSTEXPR_CXX20 bool test_all()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_all<short, int>();
     test_all<int, X>();

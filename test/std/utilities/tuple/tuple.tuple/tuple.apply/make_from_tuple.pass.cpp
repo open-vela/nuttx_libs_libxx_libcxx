@@ -195,7 +195,7 @@ void test_noexcept() {
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_constexpr_construction();
     test_perfect_forwarding();

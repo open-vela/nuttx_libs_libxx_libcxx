@@ -69,7 +69,7 @@ constexpr bool test_noexcept() {
   return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int v = 12;

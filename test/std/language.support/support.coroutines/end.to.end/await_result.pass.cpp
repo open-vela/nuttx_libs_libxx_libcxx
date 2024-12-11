@@ -59,7 +59,7 @@ coro_t f(int n) {
 
 coro_t g() { B val = co_await B{}; }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   last_value = -1;
   f(0);
   assert(last_value == 0);

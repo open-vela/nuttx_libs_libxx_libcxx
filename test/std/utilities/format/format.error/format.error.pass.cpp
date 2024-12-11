@@ -20,7 +20,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(std::is_base_of_v<std::runtime_error, std::format_error>);
   static_assert(std::is_polymorphic_v<std::format_error>);
 

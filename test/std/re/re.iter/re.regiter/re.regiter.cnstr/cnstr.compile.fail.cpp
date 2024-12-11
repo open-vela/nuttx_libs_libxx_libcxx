@@ -24,7 +24,7 @@
 #error
 #endif
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const char phone_book[] = "555-1234, 555-2345, 555-3456";

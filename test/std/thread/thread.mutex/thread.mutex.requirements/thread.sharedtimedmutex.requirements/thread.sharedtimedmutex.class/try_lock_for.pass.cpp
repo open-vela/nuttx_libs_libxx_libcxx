@@ -67,7 +67,7 @@ void f2()
     assert(d < Tolerance);  // within tolerance
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         m.lock();

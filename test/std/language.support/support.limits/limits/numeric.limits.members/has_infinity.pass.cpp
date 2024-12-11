@@ -24,7 +24,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::has_infinity == expected, "has_infinity test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, false>();
     test<char, false>();

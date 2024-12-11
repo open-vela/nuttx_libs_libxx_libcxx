@@ -81,7 +81,7 @@ void test(int N)
         assert(*j == N-1-i);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     for (int i = 0; i < 40; ++i)
         test<std::forward_list<int> >(i);

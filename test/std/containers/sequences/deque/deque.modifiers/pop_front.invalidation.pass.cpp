@@ -37,7 +37,7 @@ void test(C c)
     assert(&*it2 == &*it4);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::deque<int> queue;
     for (int i = 0; i < 4098; ++i)

@@ -38,7 +38,7 @@
 
 void sig_action(int) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   int ec;
   struct sigaction action;

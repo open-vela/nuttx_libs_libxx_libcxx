@@ -49,7 +49,7 @@ void test_geometric_progression() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 #if TEST_SUPPORTS_LIBRARY_INTERNAL_ALLOCATIONS && !defined(DISABLE_NEW_COUNT)
   test_geometric_progression();
 #endif

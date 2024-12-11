@@ -32,7 +32,7 @@ void register2();
 #elif defined(MAIN)
   std::vector<std::type_index> registry;
 
-  int main(int, char**) {
+  extern "C" int main(int, char**) {
     register1();
     register2();
 

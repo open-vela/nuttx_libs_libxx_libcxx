@@ -35,7 +35,7 @@ void test(T& t)
     assert(std::as_const<const volatile T>(t) == t);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     int i = 3;
     double d = 4.0;

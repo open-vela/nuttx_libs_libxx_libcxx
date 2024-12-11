@@ -28,7 +28,7 @@ const move_only csource() {return move_only();}
 
 void test(move_only) {}
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   const move_only ca = move_only();
   // expected-error@+1 {{call to implicitly-deleted copy constructor of 'move_only'}}

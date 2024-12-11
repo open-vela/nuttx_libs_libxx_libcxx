@@ -31,7 +31,7 @@
 
 void do_nothing(int*) {}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   AssertComparisonsAreNoexcept<std::shared_ptr<int> >();
   AssertComparisonsReturnBool<std::shared_ptr<int> >();
 #if TEST_STD_VER > 17

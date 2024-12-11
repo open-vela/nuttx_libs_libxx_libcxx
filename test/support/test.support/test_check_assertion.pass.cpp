@@ -56,7 +56,7 @@ void test_unknown() {
   TEST_DEATH_TEST(DeathTest::RK_Unknown, std::exit(13));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_no_match_found();
   test_did_not_die();
   test_unknown();

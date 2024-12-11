@@ -51,7 +51,7 @@ void test_incomplete() {
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_complete<std::tuple<> >();
   test_complete<std::tuple<int&> >();

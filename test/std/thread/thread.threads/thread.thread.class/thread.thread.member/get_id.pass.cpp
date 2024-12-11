@@ -44,7 +44,7 @@ public:
 int G::n_alive = 0;
 bool G::op_run = false;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         G g;

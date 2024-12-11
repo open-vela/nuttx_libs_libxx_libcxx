@@ -31,7 +31,7 @@ template<typename ...Ts>
 void forward_as_tuple(Ts...) = delete;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::tuple<> t = std::tuple_cat();

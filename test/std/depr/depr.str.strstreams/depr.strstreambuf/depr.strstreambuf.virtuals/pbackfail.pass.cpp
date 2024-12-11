@@ -31,7 +31,7 @@ struct test
     virtual int_type pbackfail(int_type c = EOF) {return base::pbackfail(c);}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         const char buf[] = "123";

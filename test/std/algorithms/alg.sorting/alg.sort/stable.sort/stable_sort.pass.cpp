@@ -133,7 +133,7 @@ test_larger_sorts(int N)
     test_larger_sorts(N, N);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     // test null range
     int d = 0;

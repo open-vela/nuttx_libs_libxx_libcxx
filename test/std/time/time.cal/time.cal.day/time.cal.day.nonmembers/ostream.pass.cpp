@@ -78,7 +78,7 @@ static void test() {
   assert(stream_ja_JP_locale<CharT>(255d) == SV("255 is not a valid day"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   using namespace std::literals::chrono_literals;
 
   test<char>();

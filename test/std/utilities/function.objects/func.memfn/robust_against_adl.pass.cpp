@@ -22,7 +22,7 @@ struct A {
     void one_arg_void(Ptr) const { }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     A a;
     A *pa = &a;

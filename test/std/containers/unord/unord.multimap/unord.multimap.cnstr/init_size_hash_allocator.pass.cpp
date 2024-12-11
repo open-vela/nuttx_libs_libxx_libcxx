@@ -90,7 +90,7 @@ void test(const Allocator& alloc)
     assert(c.get_allocator() == alloc);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::pair<const int, std::string> V;
     test(test_allocator<V>(10));

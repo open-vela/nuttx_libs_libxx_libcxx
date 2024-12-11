@@ -29,7 +29,7 @@ struct NoDefaultAllocator : std::allocator<T>
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::stringstream ss(" 123 456 ");

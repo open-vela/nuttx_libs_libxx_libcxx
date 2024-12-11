@@ -210,7 +210,7 @@ void check_irreflexive() {
     TEST_LIBCPP_ASSERT_FAILURE(std::ranges::sort_heap(v, std::greater_equal<int>()), "not a valid strict-weak ordering");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
     check_oob_sort_read();
 

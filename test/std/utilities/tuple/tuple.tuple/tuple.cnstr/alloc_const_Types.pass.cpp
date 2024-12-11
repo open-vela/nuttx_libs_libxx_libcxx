@@ -41,7 +41,7 @@ std::tuple<ImplicitCopy> testImplicitCopy2() {
     return {std::allocator_arg, std::allocator<int>{}, i};
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         // check that the literal '0' can implicitly initialize a stored pointer.

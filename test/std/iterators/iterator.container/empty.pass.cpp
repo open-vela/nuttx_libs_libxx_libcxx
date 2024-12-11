@@ -60,7 +60,7 @@ void test_const_array( const T (&array)[Sz] )
     assert (!std::empty(array));
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<int> v; v.push_back(1);
     std::list<int>   l; l.push_back(2);

@@ -28,7 +28,7 @@ bool test ( const CharT *s, std::size_t len ) {
     return &sv.front() == s;
     }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     assert ( test ( "ABCDE", 5 ));
     assert ( test ( "a", 1 ));
 

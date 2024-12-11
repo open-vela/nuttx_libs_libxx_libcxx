@@ -27,7 +27,7 @@ f(std::ios_base& is)
     return is;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::istream is((std::streambuf*)0);

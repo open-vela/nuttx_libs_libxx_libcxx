@@ -49,7 +49,7 @@ struct test
 };
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<MoveOnly> q(make<C>(5), test_allocator<MoveOnly>(4));
     assert(q.get_allocator() == test_allocator<MoveOnly>(4));

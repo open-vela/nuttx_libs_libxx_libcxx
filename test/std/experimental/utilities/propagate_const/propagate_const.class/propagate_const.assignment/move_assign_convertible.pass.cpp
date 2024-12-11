@@ -19,7 +19,7 @@
 
 using std::experimental::propagate_const;
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
 
   typedef propagate_const<X> PX;
   typedef propagate_const<MoveConstructibleFromX> PY;

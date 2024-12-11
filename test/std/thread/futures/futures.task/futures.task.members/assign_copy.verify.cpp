@@ -17,7 +17,7 @@
 
 #include <future>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::packaged_task<double(int, char)> p0, p;

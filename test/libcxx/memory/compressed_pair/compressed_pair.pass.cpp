@@ -44,7 +44,7 @@ void test_constructor_default_init() {
   assert(value.second() == 3);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   test_constructor();
   test_constructor_default_init();

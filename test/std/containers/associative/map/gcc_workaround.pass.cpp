@@ -16,4 +16,4 @@ std::map<int,int>::iterator it;
 using std::set;
 using std::multiset;
 
-int main(int, char**) { return 0; }
+extern "C" int main(int, char**) { return 0; }

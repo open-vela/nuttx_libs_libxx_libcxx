@@ -286,7 +286,7 @@ TEST_CONSTEXPR_CXX20 bool test_many_args() {
     return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_void_1();
     test_int_1();
     test_void_2();

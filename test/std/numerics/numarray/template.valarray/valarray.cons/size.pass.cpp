@@ -26,7 +26,7 @@ struct S {
 
 size_t S::cnt_dtor = 0;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::valarray<int> v(100);

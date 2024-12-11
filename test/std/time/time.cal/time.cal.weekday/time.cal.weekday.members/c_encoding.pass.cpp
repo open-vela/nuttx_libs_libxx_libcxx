@@ -26,7 +26,7 @@ constexpr bool testConstexpr()
     return wd.c_encoding() == 5;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     using weekday = std::chrono::weekday;
 

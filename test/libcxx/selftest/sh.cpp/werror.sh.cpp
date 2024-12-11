@@ -17,7 +17,7 @@
 // RUN: %{build} -Wunused-variable
 // RUN: %{run}
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     int foo;
     return 0;
 }

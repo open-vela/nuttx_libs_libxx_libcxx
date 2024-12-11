@@ -158,7 +158,7 @@ void mixin_accessor() {
   mixin_layout<T, checked_accessor<T>>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   mixin_accessor<int>();
   mixin_accessor<const int>();
   mixin_accessor<double>();

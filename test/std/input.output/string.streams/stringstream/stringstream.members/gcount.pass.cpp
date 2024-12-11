@@ -17,7 +17,7 @@
 #include <sstream>
 #include <string>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::stringstream ss;
   std::string payload(INT_MAX - 1, '\0');
 

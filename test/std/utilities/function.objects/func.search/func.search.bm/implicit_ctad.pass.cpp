@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     char const* str = "hello";
     std::boyer_moore_searcher searcher(str, str + 3);

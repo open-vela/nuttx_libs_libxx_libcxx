@@ -24,7 +24,7 @@ test()
     static_assert(std::numeric_limits<const volatile T>::has_signaling_NaN == expected, "has_signaling_NaN test 4");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<bool, false>();
     test<char, false>();

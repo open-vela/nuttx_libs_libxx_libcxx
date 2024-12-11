@@ -21,7 +21,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::stringstream ss0(" 123 456 ");

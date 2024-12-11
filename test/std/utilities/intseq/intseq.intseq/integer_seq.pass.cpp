@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 //  Make a few of sequences
     using int3    = std::integer_sequence<int, 3, 2, 1>;

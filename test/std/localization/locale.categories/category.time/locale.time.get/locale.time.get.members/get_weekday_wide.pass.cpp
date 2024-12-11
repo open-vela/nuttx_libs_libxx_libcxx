@@ -33,7 +33,7 @@ public:
         : F(refs) {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     const my_facet f(1);
     std::ios ios(0);

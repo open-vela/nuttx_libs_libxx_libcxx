@@ -33,7 +33,7 @@ void test_has_not_nothrow_assign()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_has_nothrow_assign<int&>();
     test_has_nothrow_assign<Union>();

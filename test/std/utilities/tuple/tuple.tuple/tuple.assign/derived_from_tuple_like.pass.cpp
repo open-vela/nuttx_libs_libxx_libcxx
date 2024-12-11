@@ -112,7 +112,7 @@ void do_derived_assign_test() {
   }
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     do_derived_assign_test<VC_LVal | VC_Const>();
     do_derived_assign_test<VC_RVal>();
 

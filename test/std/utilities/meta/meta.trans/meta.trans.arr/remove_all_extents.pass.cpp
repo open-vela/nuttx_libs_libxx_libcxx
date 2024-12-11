@@ -25,7 +25,7 @@ void test_remove_all_extents()
 #endif
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_remove_all_extents<int, int> ();
     test_remove_all_extents<const Enum, const Enum> ();

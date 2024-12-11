@@ -122,7 +122,7 @@ void test_get_if() {
 #endif
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_const_get_if();
   test_get_if();
 

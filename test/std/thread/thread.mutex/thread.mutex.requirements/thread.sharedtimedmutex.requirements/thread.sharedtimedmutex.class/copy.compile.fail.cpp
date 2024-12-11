@@ -18,7 +18,7 @@
 
 #include <shared_mutex>
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::shared_timed_mutex m0;
     std::shared_timed_mutex m1(m0);

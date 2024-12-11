@@ -215,7 +215,7 @@ constexpr bool test() {
 }
 // clang-format on
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test();
   static_assert(test());
 

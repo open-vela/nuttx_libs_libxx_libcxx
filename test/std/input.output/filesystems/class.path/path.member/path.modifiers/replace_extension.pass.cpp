@@ -51,7 +51,7 @@ const ReplaceExtensionTestcase NoArgCases[] =
     , {"foo..cpp", "foo.", ""}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   using namespace fs;
   for (auto const & TC : TestCases) {

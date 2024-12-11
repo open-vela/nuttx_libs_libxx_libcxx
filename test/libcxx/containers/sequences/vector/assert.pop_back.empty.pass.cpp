@@ -19,7 +19,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::vector<int> v;
     v.push_back(0);
     v.pop_back();

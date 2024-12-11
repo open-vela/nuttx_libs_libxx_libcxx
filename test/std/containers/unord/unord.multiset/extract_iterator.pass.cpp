@@ -37,7 +37,7 @@ void test(Container& c)
     assert(c.size() == 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         using set_type = std::unordered_multiset<int>;

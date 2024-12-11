@@ -18,7 +18,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     char const* str = "hello world";
     std::basic_string_view sv(str);

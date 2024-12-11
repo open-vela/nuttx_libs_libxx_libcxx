@@ -17,7 +17,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     {
     std::tuple<std::unique_ptr<char>> up;
     std::tuple<std::shared_ptr<char>> sp;

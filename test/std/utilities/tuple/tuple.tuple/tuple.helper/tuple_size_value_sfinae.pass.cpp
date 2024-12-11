@@ -28,7 +28,7 @@ template <class T> constexpr bool has_value() { return has_value<T>(0); }
 
 struct Dummy {};
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // Test that the ::value member does not exist
   static_assert(has_value<std::tuple<int> const>(), "");
   static_assert(has_value<std::pair<int, long> volatile>(), "");

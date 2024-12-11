@@ -59,7 +59,7 @@ static void create_directory_symlink_basic()
     assert(equivalent(dest, dir));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_signatures();
     test_error_reporting();
     create_directory_symlink_basic();

@@ -54,7 +54,7 @@ test()
     assert(ib[4] == 4);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<cpp17_input_iterator<const int*>, cpp17_output_iterator<int*> >();
     test<cpp17_input_iterator<const int*>, forward_iterator<int*> >();

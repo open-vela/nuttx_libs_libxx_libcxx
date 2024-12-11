@@ -35,7 +35,7 @@ test(const Allocator& a)
     assert(m1.get_allocator() == a);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_allocator_statistics alloc_stats;
     test<char>   (std::allocator<std::sub_match<const char *> >());

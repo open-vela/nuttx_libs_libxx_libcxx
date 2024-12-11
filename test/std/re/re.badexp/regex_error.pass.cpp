@@ -20,7 +20,7 @@
 #include <cassert>
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         std::regex_error e(std::regex_constants::error_collate);

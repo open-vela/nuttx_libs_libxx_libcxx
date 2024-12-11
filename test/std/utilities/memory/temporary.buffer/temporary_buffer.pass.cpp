@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::pair<int*, std::ptrdiff_t> ip = std::get_temporary_buffer<int>(5);
     assert(ip.first);

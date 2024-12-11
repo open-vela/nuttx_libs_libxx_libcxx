@@ -47,7 +47,7 @@ void g()
     m.unlock();
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     cv = new std::condition_variable_any;
     std::thread th2 = support::make_test_thread(g);

@@ -29,7 +29,7 @@ struct A {
 struct Base { };
 struct Derived : public Base { };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     const std::shared_ptr<A> pA(new A);
     ASSERT_NOEXCEPT(std::reinterpret_pointer_cast<int>(pA));

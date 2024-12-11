@@ -45,7 +45,7 @@ auto test_exception = []<class CharT, class... Args>(std::string_view, std::basi
   // Therefore this tests does nothing.
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   format_tests<char>(test, test_exception);
 
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS

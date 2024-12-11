@@ -37,7 +37,7 @@ struct X
         {return x.i_ == y.i_;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         constexpr optional<X> opt(2);

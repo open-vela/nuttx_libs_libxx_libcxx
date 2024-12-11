@@ -33,7 +33,7 @@ static int& worker_ref(int& i) { return i; }
 
 static void worker_void() { }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // future<T>
   {
     std::vector<int> const v{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

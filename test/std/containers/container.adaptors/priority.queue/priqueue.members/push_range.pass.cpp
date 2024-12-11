@@ -16,7 +16,7 @@
 #include "../../push_range_container_adaptors.h"
 #include "test_macros.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   for_all_iterators_and_allocators<int, const int*>([]<class Iter, class Sent, class Alloc>() {
     test_push_range<std::priority_queue<int, std::vector<int, Alloc>>, Iter, Sent>(/*is_result_heapified=*/true);
   });

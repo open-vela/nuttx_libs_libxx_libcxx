@@ -134,7 +134,7 @@ struct ImplicitlyConstructible {
   ImplicitlyConstructible(ImplicitlyConvertible);
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   // void
   CheckConvertibleTo<void, void>();
   CheckNotConvertibleTo<void, Function>();

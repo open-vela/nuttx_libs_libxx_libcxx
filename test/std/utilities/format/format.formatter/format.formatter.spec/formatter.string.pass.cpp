@@ -144,7 +144,7 @@ void test_all_string_types() {
                    std::basic_string_view<CharT>>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_all_string_types<char>();
 #ifndef TEST_HAS_NO_WIDE_CHARACTERS
   test_all_string_types<wchar_t>();

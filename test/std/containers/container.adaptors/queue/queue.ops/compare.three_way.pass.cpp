@@ -23,7 +23,7 @@
 #include "nasty_containers.h"
 #include "test_container_comparisons.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   assert((test_sequence_container_adaptor_spaceship<std::queue, std::deque>()));
   assert((test_sequence_container_adaptor_spaceship<std::queue, std::list>()));
   assert((test_sequence_container_adaptor_spaceship<std::queue, nasty_list>()));

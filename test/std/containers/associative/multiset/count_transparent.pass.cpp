@@ -36,7 +36,7 @@ struct Comp {
   }
 };
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   std::multiset<std::pair<int, int>, Comp> s{{2, 1}, {1, 1}, {1, 1}, {1, 1}, {2, 2}};
 
   auto cnt = s.count(1);

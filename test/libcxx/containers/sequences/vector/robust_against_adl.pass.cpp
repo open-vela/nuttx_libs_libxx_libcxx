@@ -28,7 +28,7 @@ struct MyAlloc {
     void deallocate(T *p, std::size_t n) { return std::allocator<T>().deallocate(p, n); }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::vector<bool, MyAlloc<bool>> vb;
     std::vector<bool, MyAlloc<bool>> wb(100);

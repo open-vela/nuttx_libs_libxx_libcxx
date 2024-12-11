@@ -200,7 +200,7 @@ void test_construction_with_repeated_types() {
   static_assert(std::is_constructible<V, Bar>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_T_ctor_basic();
   test_T_ctor_noexcept();
   test_T_ctor_sfinae();

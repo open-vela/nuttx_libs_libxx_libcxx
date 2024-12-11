@@ -97,7 +97,7 @@ TEST_CONSTEXPR_CXX20 bool check_Y()
     return true;
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         check_X();

@@ -517,7 +517,7 @@ void tests() {
     test11<T>();
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     tests<short>();
     tests<int>();
     tests<long>();

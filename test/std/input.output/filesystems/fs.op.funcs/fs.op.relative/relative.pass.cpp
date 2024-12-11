@@ -135,7 +135,7 @@ static void test_signature_13() {
   assert(output == fs::path::string_type(static_env.Dir / "foo"));
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   test_signature_0();
   test_signature_1();
   test_signature_2();

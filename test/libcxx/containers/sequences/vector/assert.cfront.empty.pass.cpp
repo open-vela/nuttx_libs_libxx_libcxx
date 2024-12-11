@@ -20,7 +20,7 @@
 #include "check_assertion.h"
 #include "min_allocator.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     typedef int T;
     typedef std::vector<T, min_allocator<T> > C;

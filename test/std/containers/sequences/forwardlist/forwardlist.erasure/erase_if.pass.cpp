@@ -65,7 +65,7 @@ void test()
     test0(S({1, 2, 3}), False, S({1, 2, 3}), 0);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<std::forward_list<int>>();
     test<std::forward_list<int, min_allocator<int>>> ();

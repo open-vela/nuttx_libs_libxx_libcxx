@@ -37,7 +37,7 @@ void test_lvalue_ref()
 
 struct incomplete_type;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test_lvalue_ref<int&>();
     test_lvalue_ref<const int&>();

@@ -178,7 +178,7 @@ void test_constructor_explicit() {
     static_assert(std::is_constructible<std::any, IT, std::initializer_list<int>&, int>::value, "");
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     test_in_place_type<small>();
     test_in_place_type<large>();
     test_in_place_type<small_throws_on_copy>();

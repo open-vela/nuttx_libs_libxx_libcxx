@@ -77,6 +77,6 @@ static_assert(!std::__is_implicitly_default_constructible<PrivateDefaultConstruc
 static_assert(!std::__is_implicitly_default_constructible<ProtectedDefaultConstructibleWithBase>::value, "");
 static_assert(!std::__is_implicitly_default_constructible<PrivateDefaultConstructibleWithBase>::value, "");
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     return 0;
 }

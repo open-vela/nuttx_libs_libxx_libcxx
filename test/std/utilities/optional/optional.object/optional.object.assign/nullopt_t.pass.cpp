@@ -65,7 +65,7 @@ TEST_CONSTEXPR_CXX20 bool test()
 }
 
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
 #if TEST_STD_VER > 17
     static_assert(test());

@@ -15,7 +15,7 @@
 
 struct S {int i;};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::as_const(S{});
 

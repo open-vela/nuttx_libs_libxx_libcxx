@@ -37,7 +37,7 @@ struct SB : std::stringbuf
   const char* pubpptr() const { return pptr(); }
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     try {
         std::string str(2147483648, 'a');

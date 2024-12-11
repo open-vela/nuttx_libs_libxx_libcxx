@@ -16,7 +16,7 @@
 #include <cassert>
 #include <cstddef>
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   {
     auto chunks = std::__par_backend::__libdispatch::__partition_chunks(0);
     assert(chunks.__chunk_count_ == 1);

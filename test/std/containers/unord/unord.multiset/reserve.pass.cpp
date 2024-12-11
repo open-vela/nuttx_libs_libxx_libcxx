@@ -45,7 +45,7 @@ void reserve_invariant(std::size_t n) // LWG #2156
     }
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
         typedef std::unordered_multiset<int> C;

@@ -24,7 +24,7 @@
 
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     static_assert((std::is_same<std::unary_function<unsigned, char>::argument_type, unsigned>::value), "");
     static_assert((std::is_same<std::unary_function<unsigned, char>::result_type, char>::value), "");

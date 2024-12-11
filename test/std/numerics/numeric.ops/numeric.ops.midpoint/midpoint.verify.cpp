@@ -25,7 +25,7 @@ struct Incomplete;
 Incomplete *ip = nullptr;
 void       *vp = nullptr;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     (void) std::midpoint(false, true);  // expected-error {{no matching function for call to 'midpoint'}}
 

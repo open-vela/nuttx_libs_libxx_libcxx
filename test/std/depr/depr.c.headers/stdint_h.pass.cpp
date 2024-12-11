@@ -61,7 +61,7 @@ void use() {
 #   include <cwctype>
 #endif
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     // typedef int8_t
     static_assert(sizeof(int8_t)*CHAR_BIT == 8, "");
     static_assert(std::is_signed<int8_t>::value, "");

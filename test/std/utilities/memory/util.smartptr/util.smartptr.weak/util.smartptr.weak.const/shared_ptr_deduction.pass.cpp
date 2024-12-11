@@ -20,7 +20,7 @@
 
 struct A {};
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   std::shared_ptr<A> s(new A);
   auto w = std::weak_ptr(s);

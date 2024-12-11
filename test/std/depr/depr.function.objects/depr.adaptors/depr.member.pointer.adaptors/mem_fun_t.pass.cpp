@@ -27,7 +27,7 @@ struct A
     double a4(unsigned i) const {return i-1;}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     typedef std::mem_fun_t<char, A> F;
     static_assert((std::is_base_of<std::unary_function<A*, char>, F>::value), "");

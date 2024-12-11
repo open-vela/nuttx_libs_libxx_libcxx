@@ -20,7 +20,7 @@
 #include "make_test_thread.h"
 #include "test_macros.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
   int x = 0;
   auto comp = [&]() noexcept { x += 1; };

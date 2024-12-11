@@ -18,7 +18,7 @@
 
 #include "check_assertion.h"
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
     std::string v;
     std::string v2;
     char a[] = "123";

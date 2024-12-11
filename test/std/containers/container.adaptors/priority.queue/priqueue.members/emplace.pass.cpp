@@ -20,7 +20,7 @@
 #include "test_macros.h"
 #include "../../../Emplaceable.h"
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::priority_queue<Emplaceable> q;
     q.emplace(1, 2.5);

@@ -31,7 +31,7 @@ constexpr bool test_dangling() {
   return true;
 }
 
-int main(int, char**) {
+extern "C" int main(int, char**) {
   static_assert(test_dangling());
   test_dangling();
   return 0;

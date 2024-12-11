@@ -25,7 +25,7 @@ struct X
     void operator()() {}
 };
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     X x;
     std::function<void()> f(x);

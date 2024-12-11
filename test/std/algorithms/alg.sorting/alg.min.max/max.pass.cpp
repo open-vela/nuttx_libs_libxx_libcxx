@@ -24,7 +24,7 @@ test(const T& a, const T& b, const T& x)
     assert(&std::max(a, b) == &x);
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     {
     int x = 0;

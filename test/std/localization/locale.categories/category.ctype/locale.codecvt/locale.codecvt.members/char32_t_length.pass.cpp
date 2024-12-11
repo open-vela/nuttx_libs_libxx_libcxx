@@ -27,7 +27,7 @@
 
 typedef std::codecvt<char32_t, char, std::mbstate_t> F;
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     std::locale l = std::locale::classic();
     const F& f = std::use_facet<F>(l);

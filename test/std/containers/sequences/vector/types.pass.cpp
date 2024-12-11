@@ -82,7 +82,7 @@ test()
         std::reverse_iterator<typename C::const_iterator> >::value), "");
 }
 
-int main(int, char**)
+extern "C" int main(int, char**)
 {
     test<int, test_allocator<int> >();
     test<int*, std::allocator<int*> >();
