@@ -15,23 +15,34 @@ namespace std {
 exception_ptr::~exception_ptr() noexcept
 {
 #  warning exception_ptr not yet implemented
-  fprintf(stderr, "exception_ptr not yet implemented\n");
-  ::abort();
+  if (__ptr_!= nullptr)
+  {
+    fprintf(stderr, "exception_ptr not yet implemented\n");
+    ::abort();
+  }
 }
 
 exception_ptr::exception_ptr(const exception_ptr& other) noexcept
     : __ptr_(other.__ptr_)
 {
 #  warning exception_ptr not yet implemented
-  fprintf(stderr, "exception_ptr not yet implemented\n");
-  ::abort();
+  if (__ptr_ != nullptr)
+  {
+    fprintf(stderr, "exception_ptr not yet implemented\n");
+    ::abort();
+  }
 }
 
 exception_ptr& exception_ptr::operator=(const exception_ptr& other) noexcept
 {
 #  warning exception_ptr not yet implemented
-  fprintf(stderr, "exception_ptr not yet implemented\n");
-  ::abort();
+  if (other.__ptr_ != nullptr)
+  {
+    fprintf(stderr, "exception_ptr not yet implemented\n");
+    ::abort();
+  }
+
+  return *this;
 }
 
 nested_exception::nested_exception() noexcept
