@@ -13,16 +13,29 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class Comp, class RandomAccessIterator>
 void __sort(RandomAccessIterator first, RandomAccessIterator last, Comp comp) {
+#if _LIBCPP_STD_VER >= 20
   auto depth_limit = 2 * std::__bit_log2(static_cast<size_t>(last - first));
+#else
+  auto depth_limit = 2 * std::__log2i(static_cast<size_t>(last - first));
+#endif
 
   // Only use bitset partitioning for arithmetic types.  We should also check
   // that the default comparator is in use so that we are sure that there are no
   // branches in the comparator.
+#if _LIBCPP_STD_VER >= 20
   std::__introsort<_ClassicAlgPolicy,
                    ranges::less,
                    RandomAccessIterator,
                    __use_branchless_sort<ranges::less, RandomAccessIterator>::value>(
       first, last, ranges::less{}, depth_limit);
+#else
+  std::__introsort<_ClassicAlgPolicy,
+                   std::less<>,
+                   RandomAccessIterator,
+                   __use_branchless_sort<Comp, RandomAccessIterator>::value>(
+      first, last, std::less<>{}, depth_limit);
+
+#endif
 }
 
 // clang-format off

@@ -46,6 +46,8 @@
   TODO: Document the parallel backend
 */
 
+#if _LIBCPP_STD_VER >= 17
+
 #include <__algorithm/pstl_backends/cpu_backends/any_of.h>
 #include <__algorithm/pstl_backends/cpu_backends/backend.h>
 #include <__algorithm/pstl_backends/cpu_backends/fill.h>
@@ -55,5 +57,7 @@
 #include <__algorithm/pstl_backends/cpu_backends/stable_sort.h>
 #include <__algorithm/pstl_backends/cpu_backends/transform.h>
 #include <__algorithm/pstl_backends/cpu_backends/transform_reduce.h>
+
+#endif // _LIBCPP_STD_VER
 
 #endif // _LIBCPP___ALGORITHM_PSTL_BACKENDS_CPU_BACKEND_H
