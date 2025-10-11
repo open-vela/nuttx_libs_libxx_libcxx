@@ -319,12 +319,56 @@ struct __cxx_atomic_base_impl {
 
 _LIBCPP_HIDE_FROM_ABI inline
 void __cxx_atomic_thread_fence(memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     __c11_atomic_thread_fence(static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      __c11_atomic_thread_fence(memory_order_relaxed);
+      break;
+    case memory_order_consume:
+      __c11_atomic_thread_fence(memory_order_consume);
+      break;
+    case memory_order_acquire:
+      __c11_atomic_thread_fence(memory_order_acquire);
+      break;
+    case memory_order_release:
+      __c11_atomic_thread_fence(memory_order_release);
+      break;
+    case memory_order_acq_rel:
+      __c11_atomic_thread_fence(memory_order_acq_rel);
+      break;
+    default:
+      __c11_atomic_thread_fence(memory_order_seq_cst);
+    }
+#endif
 }
 
 _LIBCPP_HIDE_FROM_ABI inline
 void __cxx_atomic_signal_fence(memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     __c11_atomic_signal_fence(static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      __c11_atomic_signal_fence(memory_order_relaxed);
+      break;
+    case memory_order_consume:
+      __c11_atomic_signal_fence(memory_order_consume);
+      break;
+    case memory_order_acquire:
+      __c11_atomic_signal_fence(memory_order_acquire);
+      break;
+    case memory_order_release:
+      __c11_atomic_signal_fence(memory_order_release);
+      break;
+    case memory_order_acq_rel:
+      __c11_atomic_signal_fence(memory_order_acq_rel);
+      break;
+    default:
+      __c11_atomic_signal_fence(memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
@@ -341,40 +385,138 @@ void __cxx_atomic_init(__cxx_atomic_base_impl<_Tp> * __a, _Tp __val) _NOEXCEPT {
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 void __cxx_atomic_store(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __val, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     __c11_atomic_store(std::addressof(__a->__a_value), __val, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_relaxed);
+      break;
+    case memory_order_release:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_release);
+      break;
+    default:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 void __cxx_atomic_store(__cxx_atomic_base_impl<_Tp> * __a, _Tp __val, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     __c11_atomic_store(std::addressof(__a->__a_value), __val, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_relaxed);
+      break;
+    case memory_order_release:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_release);
+      break;
+    default:
+      __c11_atomic_store(std::addressof(__a->__a_value), __val, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_load(__cxx_atomic_base_impl<_Tp> const volatile* __a, memory_order __order) _NOEXCEPT {
     using __ptr_type = __remove_const_t<decltype(__a->__a_value)>*;
+#ifndef _LIBCPP_COMPILER_TASKING
     return __c11_atomic_load(
         const_cast<__ptr_type>(std::addressof(__a->__a_value)), static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_acquire);
+    default:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_load(__cxx_atomic_base_impl<_Tp> const* __a, memory_order __order) _NOEXCEPT {
     using __ptr_type = __remove_const_t<decltype(__a->__a_value)>*;
+#ifndef _LIBCPP_COMPILER_TASKING
     return __c11_atomic_load(
         const_cast<__ptr_type>(std::addressof(__a->__a_value)), static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_acquire);
+    default:
+      return __c11_atomic_load(const_cast<__ptr_type>(std::addressof(__a->__a_value)), memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_exchange(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __value, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     return __c11_atomic_exchange(
         std::addressof(__a->__a_value), __value, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_acq_rel);
+    default:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_exchange(__cxx_atomic_base_impl<_Tp> * __a, _Tp __value, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
     return __c11_atomic_exchange(
         std::addressof(__a->__a_value), __value, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_acq_rel);
+    default:
+      return __c11_atomic_exchange(
+          std::addressof(__a->__a_value), __value, memory_order_seq_cst);
+    }
+#endif
 }
 
 _LIBCPP_HIDE_FROM_ABI inline _LIBCPP_CONSTEXPR memory_order __to_failure_order(memory_order __order) {
@@ -387,133 +529,655 @@ _LIBCPP_HIDE_FROM_ABI inline _LIBCPP_CONSTEXPR memory_order __to_failure_order(m
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 bool __cxx_atomic_compare_exchange_strong(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp* __expected, _Tp __value, memory_order __success, memory_order __failure) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_compare_exchange_strong(
       std::addressof(__a->__a_value),
       __expected,
       __value,
       static_cast<__memory_order_underlying_t>(__success),
       static_cast<__memory_order_underlying_t>(__to_failure_order(__failure)));
+#else
+    switch (__success) {
+    case memory_order_relaxed:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_seq_cst);
+      }
+    case memory_order_consume:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_seq_cst);
+      }
+    case memory_order_acquire:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_seq_cst);
+      }
+    case memory_order_release:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_seq_cst);
+      }
+    case memory_order_acq_rel:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_seq_cst);
+      }
+    default:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_seq_cst);
+      }
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 bool __cxx_atomic_compare_exchange_strong(__cxx_atomic_base_impl<_Tp> * __a, _Tp* __expected, _Tp __value, memory_order __success, memory_order __failure) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_compare_exchange_strong(
       std::addressof(__a->__a_value),
       __expected,
       __value,
       static_cast<__memory_order_underlying_t>(__success),
       static_cast<__memory_order_underlying_t>(__to_failure_order(__failure)));
+#else
+    switch (__success) {
+    case memory_order_relaxed:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_seq_cst);
+      }
+    case memory_order_consume:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_seq_cst);
+      }
+    case memory_order_acquire:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_seq_cst);
+      }
+    case memory_order_release:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_seq_cst);
+      }
+    case memory_order_acq_rel:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_seq_cst);
+      }
+    default:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_acquire);
+      case memory_order_seq_cst:
+        return __c11_atomic_compare_exchange_strong(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_seq_cst);
+      }
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 bool __cxx_atomic_compare_exchange_weak(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp* __expected, _Tp __value, memory_order __success, memory_order __failure) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_compare_exchange_weak(
       std::addressof(__a->__a_value),
       __expected,
       __value,
       static_cast<__memory_order_underlying_t>(__success),
       static_cast<__memory_order_underlying_t>(__to_failure_order(__failure)));
+#else
+    switch (__success) {
+    case memory_order_relaxed:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_seq_cst);
+      }
+    case memory_order_consume:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_seq_cst);
+      }
+    case memory_order_acquire:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_seq_cst);
+      }
+    case memory_order_release:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_seq_cst);
+      }
+    case memory_order_acq_rel:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_seq_cst);
+      }
+    default:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_acquire);
+      case memory_order_seq_cst:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_seq_cst);
+      }
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 bool __cxx_atomic_compare_exchange_weak(__cxx_atomic_base_impl<_Tp> * __a, _Tp* __expected, _Tp __value, memory_order __success, memory_order __failure) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_compare_exchange_weak(
       std::addressof(__a->__a_value),
       __expected,
       __value,
       static_cast<__memory_order_underlying_t>(__success),
       static_cast<__memory_order_underlying_t>(__to_failure_order(__failure)));
+#else
+    switch (__success) {
+    case memory_order_relaxed:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_relaxed, memory_order_seq_cst);
+      }
+    case memory_order_consume:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_consume, memory_order_seq_cst);
+      }
+    case memory_order_acquire:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acquire, memory_order_seq_cst);
+      }
+    case memory_order_release:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_release, memory_order_seq_cst);
+      }
+    case memory_order_acq_rel:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_acquire);
+      default:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_acq_rel, memory_order_seq_cst);
+      }
+    default:
+      switch (__to_failure_order(__failure)) {
+      case memory_order_relaxed:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_relaxed);
+      case memory_order_consume:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_consume);
+      case memory_order_acquire:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_acquire);
+      case memory_order_seq_cst:
+        return __c11_atomic_compare_exchange_weak(std::addressof(__a->__a_value), __expected, __value, memory_order_seq_cst, memory_order_seq_cst);
+      }
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_add(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp> * __a, _Tp __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_add(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp* __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp*> volatile* __a, ptrdiff_t __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_add(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp* __cxx_atomic_fetch_add(__cxx_atomic_base_impl<_Tp*> * __a, ptrdiff_t __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_add(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_add(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_sub(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_sub(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_sub(__cxx_atomic_base_impl<_Tp> * __a, _Tp __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_sub(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp* __cxx_atomic_fetch_sub(__cxx_atomic_base_impl<_Tp*> volatile* __a, ptrdiff_t __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_sub(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp* __cxx_atomic_fetch_sub(__cxx_atomic_base_impl<_Tp*> * __a, ptrdiff_t __delta, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_sub(
       std::addressof(__a->__a_value), __delta, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_sub(std::addressof(__a->__a_value), __delta, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_and(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_and(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_and(__cxx_atomic_base_impl<_Tp> * __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_and(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_and(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_or(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_or(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_or(__cxx_atomic_base_impl<_Tp> * __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_or(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_or(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_xor(__cxx_atomic_base_impl<_Tp> volatile* __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_xor(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 template<class _Tp>
 _LIBCPP_HIDE_FROM_ABI
 _Tp __cxx_atomic_fetch_xor(__cxx_atomic_base_impl<_Tp> * __a, _Tp __pattern, memory_order __order) _NOEXCEPT {
+#ifndef _LIBCPP_COMPILER_TASKING
   return __c11_atomic_fetch_xor(
       std::addressof(__a->__a_value), __pattern, static_cast<__memory_order_underlying_t>(__order));
+#else
+    switch (__order) {
+    case memory_order_relaxed:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_relaxed);
+    case memory_order_consume:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_consume);
+    case memory_order_acquire:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_acquire);
+    case memory_order_release:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_release);
+    case memory_order_acq_rel:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_acq_rel);
+    default:
+      return __c11_atomic_fetch_xor(std::addressof(__a->__a_value), __pattern, memory_order_seq_cst);
+    }
+#endif
 }
 
 #endif // _LIBCPP_HAS_GCC_ATOMIC_IMP, _LIBCPP_HAS_C_ATOMIC_IMP
