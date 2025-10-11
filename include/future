@@ -1342,14 +1342,14 @@ promise<_Rp>::promise()
 
 template <class _Rp>
 template <class _Alloc>
-promise<_Rp>::promise(allocator_arg_t, const _Alloc& __a0)
+promise<_Rp>::promise(allocator_arg_t, const _Alloc& ___a0)
 {
     typedef __assoc_state_alloc<_Rp, _Alloc> _State;
     typedef typename __allocator_traits_rebind<_Alloc, _State>::type _A2;
     typedef __allocator_destructor<_A2> _D2;
-    _A2 __a(__a0);
+    _A2 __a(___a0);
     unique_ptr<_State, _D2> __hold(__a.allocate(1), _D2(__a, 1));
-    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(__a0);
+    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(___a0);
     __state_ = _VSTD::addressof(*__hold.release());
 }
 
@@ -1485,14 +1485,14 @@ promise<_Rp&>::promise()
 
 template <class _Rp>
 template <class _Alloc>
-promise<_Rp&>::promise(allocator_arg_t, const _Alloc& __a0)
+promise<_Rp&>::promise(allocator_arg_t, const _Alloc& ___a0)
 {
     typedef __assoc_state_alloc<_Rp&, _Alloc> _State;
     typedef typename __allocator_traits_rebind<_Alloc, _State>::type _A2;
     typedef __allocator_destructor<_A2> _D2;
-    _A2 __a(__a0);
+    _A2 __a(___a0);
     unique_ptr<_State, _D2> __hold(__a.allocate(1), _D2(__a, 1));
-    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(__a0);
+    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(___a0);
     __state_ = _VSTD::addressof(*__hold.release());
 }
 
@@ -1604,14 +1604,14 @@ public:
 };
 
 template <class _Alloc>
-promise<void>::promise(allocator_arg_t, const _Alloc& __a0)
+promise<void>::promise(allocator_arg_t, const _Alloc& ___a0)
 {
     typedef __assoc_sub_state_alloc<_Alloc> _State;
     typedef typename __allocator_traits_rebind<_Alloc, _State>::type _A2;
     typedef __allocator_destructor<_A2> _D2;
-    _A2 __a(__a0);
+    _A2 __a(___a0);
     unique_ptr<_State, _D2> __hold(__a.allocate(1), _D2(__a, 1));
-    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(__a0);
+    ::new ((void*)_VSTD::addressof(*__hold.get())) _State(___a0);
     __state_ = _VSTD::addressof(*__hold.release());
 }
 
@@ -1788,7 +1788,7 @@ __packaged_task_function<_Rp(_ArgTypes...)>::__packaged_task_function(_Fp&& __f)
 template<class _Rp, class ..._ArgTypes>
 template <class _Fp, class _Alloc>
 __packaged_task_function<_Rp(_ArgTypes...)>::__packaged_task_function(
-                                  allocator_arg_t, const _Alloc& __a0, _Fp&& __f)
+                                  allocator_arg_t, const _Alloc& ___a0, _Fp&& __f)
     : __f_(nullptr)
 {
     typedef __libcpp_remove_reference_t<__decay_t<_Fp> > _FR;
@@ -1801,7 +1801,7 @@ __packaged_task_function<_Rp(_ArgTypes...)>::__packaged_task_function(
     else
     {
         typedef typename __allocator_traits_rebind<_Alloc, _FF>::type _Ap;
-        _Ap __a(__a0);
+        _Ap __a(___a0);
         typedef __allocator_destructor<_Ap> _Dp;
         unique_ptr<__base, _Dp> __hold(__a.allocate(1), _Dp(__a, 1));
         ::new ((void*)_VSTD::addressof(*__hold.get()))

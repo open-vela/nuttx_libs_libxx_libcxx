@@ -90,7 +90,7 @@ template <size_t _Len, size_t _Align = __find_max_align<__all_types, _Len>::valu
 struct _LIBCPP_DEPRECATED_IN_CXX23 _LIBCPP_TEMPLATE_VIS aligned_storage {
   typedef typename __find_pod<__all_types, _Align>::type _Aligner;
   union type {
-    _Aligner __align;
+    _Aligner ___align;
     unsigned char __data[(_Len + _Align - 1) / _Align * _Align];
   };
 };

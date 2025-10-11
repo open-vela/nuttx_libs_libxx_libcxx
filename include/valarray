@@ -450,7 +450,7 @@ struct _UnaryOp
     _A0 __a0_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _UnaryOp(const _Op& __op, const _A0& __a0) : __op_(__op), __a0_(__a0) {}
+    _UnaryOp(const _Op& __op, const _A0& ___a0) : __op_(__op), __a0_(___a0) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i]);}
@@ -470,8 +470,8 @@ struct _BinaryOp
     _A1 __a1_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _BinaryOp(const _Op& __op, const _A0& __a0, const _A1& __a1)
-        : __op_(__op), __a0_(__a0), __a1_(__a1) {}
+    _BinaryOp(const _Op& __op, const _A0& ___a0, const _A1& ___a1)
+        : __op_(__op), __a0_(___a0), __a1_(___a1) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i], __a1_[__i]);}
@@ -1133,7 +1133,7 @@ struct _UnaryOp<_Op, valarray<_Tp> >
     const valarray<_Tp>& __a0_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _UnaryOp(const _Op& __op, const valarray<_Tp>& __a0) : __op_(__op), __a0_(__a0) {}
+    _UnaryOp(const _Op& __op, const valarray<_Tp>& ___a0) : __op_(__op), __a0_(___a0) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i]);}
@@ -1153,8 +1153,8 @@ struct _BinaryOp<_Op, valarray<_Tp>, _A1>
     _A1 __a1_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _BinaryOp(const _Op& __op, const valarray<_Tp>& __a0, const _A1& __a1)
-        : __op_(__op), __a0_(__a0), __a1_(__a1) {}
+    _BinaryOp(const _Op& __op, const valarray<_Tp>& ___a0, const _A1& ___a1)
+        : __op_(__op), __a0_(___a0), __a1_(___a1) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i], __a1_[__i]);}
@@ -1174,8 +1174,8 @@ struct _BinaryOp<_Op, _A0, valarray<_Tp> >
     const valarray<_Tp>& __a1_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _BinaryOp(const _Op& __op, const _A0& __a0, const valarray<_Tp>& __a1)
-        : __op_(__op), __a0_(__a0), __a1_(__a1) {}
+    _BinaryOp(const _Op& __op, const _A0& ___a0, const valarray<_Tp>& ___a1)
+        : __op_(__op), __a0_(___a0), __a1_(___a1) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i], __a1_[__i]);}
@@ -1195,8 +1195,8 @@ struct _BinaryOp<_Op, valarray<_Tp>, valarray<_Tp> >
     const valarray<_Tp>& __a1_;
 
     _LIBCPP_INLINE_VISIBILITY
-    _BinaryOp(const _Op& __op, const valarray<_Tp>& __a0, const valarray<_Tp>& __a1)
-        : __op_(__op), __a0_(__a0), __a1_(__a1) {}
+    _BinaryOp(const _Op& __op, const valarray<_Tp>& ___a0, const valarray<_Tp>& ___a1)
+        : __op_(__op), __a0_(___a0), __a1_(___a1) {}
 
     _LIBCPP_INLINE_VISIBILITY
     __result_type operator[](size_t __i) const {return __op_(__a0_[__i], __a1_[__i]);}

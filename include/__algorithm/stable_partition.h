@@ -155,7 +155,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 template <class _AlgPolicy, class _Predicate, class _BidirectionalIterator, class _Distance, class _Pair>
 _BidirectionalIterator
 __stable_partition_impl(_BidirectionalIterator __first, _BidirectionalIterator __last, _Predicate __pred,
-                   _Distance __len, _Pair __p, bidirectional_iterator_tag __bit)
+                   _Distance __len, _Pair __p, bidirectional_iterator_tag ___bit)
 {
     using _Ops = _IterOps<_AlgPolicy>;
 
@@ -236,7 +236,7 @@ __stable_partition_impl(_BidirectionalIterator __first, _BidirectionalIterator _
     // F???TFFF?????????T
     // f   m1  m        l
     __first_false = std::__stable_partition_impl<_AlgPolicy, _Predicate&>(
-        __first, __m1, __pred, __len_half, __p, __bit);
+        __first, __m1, __pred, __len_half, __p, ___bit);
 __first_half_done:
     // TTTFFFFF?????????T
     // f  ff   m        l
@@ -254,7 +254,7 @@ __first_half_done:
     // TTTFFFFFTTTF?????T
     // f  ff   m  m1    l
     __second_false = std::__stable_partition_impl<_AlgPolicy, _Predicate&>(
-        __m1, __last, __pred, __len_half, __p, __bit);
+        __m1, __last, __pred, __len_half, __p, ___bit);
 __second_half_done:
     // TTTFFFFFTTTTTFFFFF
     // f  ff   m    sf  l
