@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 17
+#if _LIBCPP_STD_VER >= 14
 
 struct _LIBCPP_EXPORTED_FROM_ABI to_chars_result {
   char* ptr;

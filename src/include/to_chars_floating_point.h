@@ -898,7 +898,7 @@ to_chars_result _Floating_to_chars_general_precision(
     const _Uint_type* const _Table_lower_bound = [=] {
         if constexpr (!_IsSame<_Floating, float>::value) {
             if (_Precision > 155) { // threshold determined via profiling
-                return _VSTD::lower_bound(_Table_begin, _Table_end, _Uint_value, less{});
+                return _VSTD::lower_bound(_Table_begin, _Table_end, _Uint_value, less<>{});
             }
         }
 

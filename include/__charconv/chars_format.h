@@ -19,7 +19,7 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 17
+#if _LIBCPP_STD_VER >= 14
 
 enum class _LIBCPP_ENUM_VIS chars_format { scientific = 0x1, fixed = 0x2, hex = 0x4, general = fixed | scientific };
 

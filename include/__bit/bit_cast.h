@@ -19,17 +19,20 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
-#if _LIBCPP_STD_VER >= 20
-
 template <class _ToType, class _FromType>
+#if _LIBCPP_STD_VER >= 20
   requires(sizeof(_ToType) == sizeof(_FromType) &&
            is_trivially_copyable_v<_ToType> &&
            is_trivially_copyable_v<_FromType>)
+#endif
 _LIBCPP_NODISCARD_EXT _LIBCPP_HIDE_FROM_ABI constexpr _ToType bit_cast(const _FromType& __from) noexcept {
+#if _LIBCPP_STD_VER < 20
+  static_assert(sizeof(_ToType) == sizeof(_FromType), "bit_cast requires source and destination to be same size");
+  static_assert(is_trivially_copyable<_FromType>::value, "bit_cast source type must be trivially copyable");
+  static_assert(is_trivially_copyable<_ToType>::value, "bit_cast destination type must be trivial");
+#endif
   return __builtin_bit_cast(_ToType, __from);
 }
-
-#endif // _LIBCPP_STD_VER >= 20
 
 _LIBCPP_END_NAMESPACE_STD
 
