@@ -28,10 +28,13 @@ _LIBCPP_BEGIN_NAMESPACE_STD
 
 template <class _Tp>
 struct __libcpp_datasizeof {
-#if __has_cpp_attribute(__no_unique_address__)
+#if __has_cpp_attribute(__no_unique_address__) || defined(_LIBCPP_COMPILER_TASKING)
   template <class = char>
   struct _FirstPaddingByte {
-    [[__no_unique_address__]] _Tp __v_;
+#  if __has_cpp_attribute(__no_unique_address__)
+    [[__no_unique_address__]]
+#  endif
+    _Tp __v_;
     char __first_padding_byte_;
   };
 #else

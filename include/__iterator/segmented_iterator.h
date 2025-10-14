@@ -65,11 +65,11 @@ struct __segmented_iterator_traits;
 };
 */
 
-template <class _Tp, size_t = 0>
+template <class _Tp, typename T = void>
 struct __has_specialization : false_type {};
 
 template <class _Tp>
-struct __has_specialization<_Tp, sizeof(_Tp) * 0> : true_type {};
+struct __has_specialization<_Tp, decltype(sizeof(_Tp))> : true_type {};
 
 template <class _Iterator>
 using __is_segmented_iterator = __has_specialization<__segmented_iterator_traits<_Iterator> >;

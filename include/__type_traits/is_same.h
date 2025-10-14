@@ -18,6 +18,20 @@
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
+#ifdef _LIBCPP_COMPILER_TASKING
+template <typename T, typename U>
+struct _is_same {
+    static constexpr bool value = false;
+};
+
+template <typename T>
+struct _is_same<T, T> {
+    static constexpr bool value = true;
+};
+
+#define __is_same(_Tp, _Up) _is_same<_Tp, _Up>::value
+#endif
+
 template <class _Tp, class _Up>
 struct _LIBCPP_TEMPLATE_VIS is_same : _BoolConstant<__is_same(_Tp, _Up)> {};
 
