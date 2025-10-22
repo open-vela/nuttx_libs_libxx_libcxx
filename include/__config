@@ -31,6 +31,8 @@
 #  define _LIBCPP_CLANG_VER (__clang_major__ * 100 + __clang_minor__)
 #elif defined(__GNUC__)
 #  define _LIBCPP_COMPILER_GCC
+#elif defined(__TASKING__)
+#  define _LIBCPP_COMPILER_TASKING
 #endif
 
 #ifdef __cplusplus
@@ -660,7 +662,13 @@ typedef __char32_t char32_t;
 
 #    define _LIBCPP_DISABLE_EXTENSION_WARNING __extension__
 
-#  endif // _LIBCPP_COMPILER_[CLANG|GCC]
+#  elif defined(_LIBCPP_COMPILER_TASKING)
+
+#    define _LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER 1 // skip #pragma GCC system_header
+#    define _LIBCPP_ALWAYS_INLINE __attribute__((__always_inline__))
+#    define _LIBCPP_DISABLE_EXTENSION_WARNING
+
+#  endif // _LIBCPP_COMPILER_[CLANG|GCC|TASKING]
 
 #  if defined(_LIBCPP_OBJECT_FORMAT_COFF)
 
