@@ -90,14 +90,14 @@ public:
   }
 
   template <class _Tp>
-  _LIBCPP_HIDE_FROM_ABI constexpr void __enable() {
+  _LIBCPP_HIDE_FROM_ABI constexpr void __activate() {
     __parse_ = [](basic_format_parse_context<_CharT>& __ctx) {
       formatter<_Tp, _CharT> __f;
       __ctx.advance_to(__f.parse(__ctx));
     };
   }
 
-  // Before calling __parse the proper handler needs to be set with __enable.
+  // Before calling __parse the proper handler needs to be set with __activate.
   // The default handler isn't a core constant expression.
   _LIBCPP_HIDE_FROM_ABI constexpr __compile_time_handle()
       : __parse_([](basic_format_parse_context<_CharT>&) { std::__throw_format_error("Not a handle"); }) {}
@@ -363,7 +363,7 @@ private:
     using _Tp = remove_cvref_t<_Args>;
     __format::__compile_time_handle<_CharT> __handle;
     if (__format::__determine_arg_t<_Context, _Tp>() == __format::__arg_t::__handle)
-      __handle.template __enable<_Tp>();
+      __handle.template __activate<_Tp>();
 
     return __handle;
   }()...};

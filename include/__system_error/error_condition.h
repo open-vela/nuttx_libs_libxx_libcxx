@@ -61,7 +61,9 @@ public:
   template <class _Ep>
   _LIBCPP_HIDE_FROM_ABI
   error_condition(_Ep __e, typename enable_if<is_error_condition_enum<_Ep>::value>::type* = nullptr) _NOEXCEPT {
+  #if !defined(_LIBCPP_COMPILER_GCC) || !defined(__tricore__)
     using __adl_only::make_error_condition;
+  #endif
     *this = make_error_condition(__e);
   }
 
@@ -73,7 +75,9 @@ public:
   template <class _Ep>
   _LIBCPP_HIDE_FROM_ABI typename enable_if< is_error_condition_enum<_Ep>::value, error_condition& >::type
   operator=(_Ep __e) _NOEXCEPT {
+  #if !defined(_LIBCPP_COMPILER_GCC) || !defined(__tricore__)
     using __adl_only::make_error_condition;
+  #endif
     *this = make_error_condition(__e);
     return *this;
   }

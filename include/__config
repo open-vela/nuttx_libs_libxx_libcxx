@@ -1375,7 +1375,8 @@ __sanitizer_verify_double_ended_contiguous_container(const void*, const void*, c
 #    define _LIBCPP_HAS_NO_FGETPOS_FSETPOS
 #  endif
 
-#  if __has_attribute(__init_priority__)
+#  if __has_attribute(__init_priority__) &&                                                                            \
+      (!defined(_LIBCPP_COMPILER_GCC) || !defined(__tricore__))
 #    define _LIBCPP_INIT_PRIORITY_MAX __attribute__((__init_priority__(100)))
 #  else
 #    define _LIBCPP_INIT_PRIORITY_MAX
