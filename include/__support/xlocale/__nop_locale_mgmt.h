@@ -27,6 +27,7 @@ inline _LIBCPP_HIDE_FROM_ABI_C locale_t newlocale(int, const char*, locale_t) { 
 
 inline _LIBCPP_HIDE_FROM_ABI_C locale_t uselocale(locale_t) { return NULL; }
 
+#ifndef LC_ALL_MASK
 #define LC_COLLATE_MASK  (1 << LC_COLLATE)
 #define LC_CTYPE_MASK    (1 << LC_CTYPE)
 #define LC_MESSAGES_MASK (1 << LC_MESSAGES)
@@ -39,6 +40,7 @@ inline _LIBCPP_HIDE_FROM_ABI_C locale_t uselocale(locale_t) { return NULL; }
                      LC_NUMERIC_MASK|\
                      LC_TIME_MASK|\
                      LC_MESSAGES_MASK)
+#endif
 
 #ifdef __cplusplus
 } // extern "C"

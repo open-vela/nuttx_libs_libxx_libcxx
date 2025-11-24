@@ -126,6 +126,7 @@ _LIBCPP_NORETURN static void __throw_runtime_error(const string &msg)
 
 }
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 string
 build_name(const string& other, const string& one, locale::category c) {
     if (other == "*" || one == "*")
@@ -146,6 +147,7 @@ const locale::category locale::numeric;
 const locale::category locale::time;
 const locale::category locale::messages;
 const locale::category locale::all;
+#endif
 
 class _LIBCPP_HIDDEN locale::__imp
     : public facet
@@ -155,11 +157,15 @@ class _LIBCPP_HIDDEN locale::__imp
     string         name_;
 public:
     explicit __imp(size_t refs = 0);
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     explicit __imp(const string& name, size_t refs = 0);
+#endif
     __imp(const __imp&);
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     __imp(const __imp&, const string&, locale::category c);
     __imp(const __imp& other, const __imp& one, locale::category c);
     __imp(const __imp&, facet* f, long id);
+#endif
     ~__imp();
 
     const string& name() const {return name_;}
@@ -172,7 +178,9 @@ public:
 private:
     void install(facet* f, long id);
     template <class F> void install(F* f) {install(f, f->id.__get());}
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     template <class F> void install_from(const __imp& other);
+#endif
 };
 
 locale::__imp::__imp(size_t refs)
@@ -213,6 +221,8 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
     install(&make<num_put<wchar_t> >(1u));
 #endif
+
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     install(&make<moneypunct<char, false> >(1u));
     install(&make<moneypunct<char, true> >(1u));
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
@@ -239,8 +249,10 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
 #ifndef _LIBCPP_HAS_NO_WIDE_CHARACTERS
     install(&make<_VSTD::messages<wchar_t> >(1u));
 #endif
+#endif // _LIBCPP_HAS_MINI_LOCALIZATION
 }
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 locale::__imp::__imp(const string& name, size_t refs)
     : facet(refs),
       facets_(N),
@@ -307,6 +319,7 @@ _LIBCPP_SUPPRESS_DEPRECATED_POP
     }
 #endif // _LIBCPP_HAS_NO_EXCEPTIONS
 }
+#endif // _LIBCPP_HAS_MINI_LOCALIZATION
 
 locale::__imp::__imp(const __imp& other)
     : facets_(max<size_t>(N, other.facets_.size())),
@@ -318,6 +331,7 @@ locale::__imp::__imp(const __imp& other)
             facets_[i]->__add_shared();
 }
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 locale::__imp::__imp(const __imp& other, const string& name, locale::category c)
     : facets_(N), name_(build_name(other.name_, name, c))
 {
@@ -521,6 +535,7 @@ locale::__imp::__imp(const __imp& other, facet* f, long id)
             facets_[i]->__add_shared();
     install(hold.get(), id);
 }
+#endif // _LIBCPP_HAS_MINI_LOCALIZATION
 
 locale::__imp::~__imp()
 {
@@ -610,6 +625,7 @@ locale::operator=(const locale& other) noexcept
     return *this;
 }
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 locale::locale(const char* name)
     : __locale_(name ? new __imp(name)
                      : (__throw_runtime_error("locale constructed with null"), nullptr))
@@ -641,6 +657,7 @@ locale::locale(const locale& other, const locale& one, category c)
 {
     __locale_->__add_shared();
 }
+#endif // _LIBCPP_HAS_MINI_LOCALIZATION
 
 string
 locale::name() const
@@ -648,6 +665,7 @@ locale::name() const
     return __locale_->name();
 }
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 void
 locale::__install_ctor(const locale& other, facet* f, long id)
 {
@@ -657,6 +675,7 @@ locale::__install_ctor(const locale& other, facet* f, long id)
         __locale_ = other.__locale_;
     __locale_->__add_shared();
 }
+#endif // _LIBCPP_HAS_MINI_LOCALIZATION
 
 locale
 locale::global(const locale& loc)

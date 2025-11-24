@@ -31,7 +31,9 @@
 #  include <__std_mbstate_t.h>
 #endif
 
-#if defined(_LIBCPP_MSVCRT_LIKE)
+#if defined(_LIBCPP_HAS_MINI_LOCALIZATION)
+#include <__support/xlocale/__nop_locale_mgmt.h>
+#elif defined(_LIBCPP_MSVCRT_LIKE)
 # include <__support/win32/locale_win32.h>
 #elif defined(_AIX) || defined(__MVS__)
 # include <__support/ibm/xlocale.h>
@@ -77,6 +79,7 @@ public:
     class _LIBCPP_EXPORTED_FROM_ABI facet;
     class _LIBCPP_EXPORTED_FROM_ABI id;
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     typedef int category;
     _LIBCPP_AVAILABILITY_LOCALE_CATEGORY
     static const category // values assigned here are for exposition only
@@ -88,10 +91,13 @@ public:
         time     = LC_TIME_MASK,
         messages = LC_MESSAGES_MASK,
         all = collate | ctype | monetary | numeric | time | messages;
+#endif
 
     // construct/copy/destroy:
     locale()  _NOEXCEPT;
     locale(const locale&)  _NOEXCEPT;
+
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     explicit locale(const char*);
     explicit locale(const string&);
     locale(const locale&, const char*, category);
@@ -99,14 +105,17 @@ public:
     template <class _Facet>
         _LIBCPP_INLINE_VISIBILITY locale(const locale&, _Facet*);
     locale(const locale&, const locale&, category);
+#endif
 
     ~locale();
 
     const locale& operator=(const locale&)  _NOEXCEPT;
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
     template <class _Facet>
       _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
       locale combine(const locale&) const;
+#endif
 
     // locale operations:
     string name() const;
@@ -172,6 +181,7 @@ public:  // only needed for tests
     friend class locale::__imp;
 };
 
+#ifndef _LIBCPP_HAS_MINI_LOCALIZATION
 template <class _Facet>
 inline _LIBCPP_INLINE_VISIBILITY
 locale::locale(const locale& __other, _Facet* __f)
@@ -188,6 +198,7 @@ locale::combine(const locale& __other) const
 
     return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
 }
+#endif
 
 template <class _Facet>
 inline _LIBCPP_INLINE_VISIBILITY
