@@ -27,7 +27,7 @@
 #endif
 
 #if defined(__NuttX__) && !defined(CONFIG_BUILD_KERNEL)
-#include <nuttx/tls.h>
+#include <nuttx/tls_task.h>
 #endif
 
 #if defined(_LIBCPP_WIN32API)
