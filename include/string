@@ -1091,7 +1091,7 @@ public:
   }
 #endif // _LIBCPP_CXX03_LANG
 
-#if defined(__arm__)
+#if defined(__arm__) && !defined(__clang__)
   inline ~basic_string() {
 #else
   inline _LIBCPP_CONSTEXPR_SINCE_CXX20 ~basic_string() {
