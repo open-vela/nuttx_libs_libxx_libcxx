@@ -1091,11 +1091,13 @@ public:
   }
 #endif // _LIBCPP_CXX03_LANG
 
-#if defined(__arm__) && !defined(__clang__)
-  inline ~basic_string() {
-#else
-  inline _LIBCPP_CONSTEXPR_SINCE_CXX20 ~basic_string() {
+// Currently, only clang supports constexpr inline of basic_string dtor,
+// update below #if directive if more compilers support, e.g.
+// #if defined(__clang__) || defined(__TASKING__)
+#ifdef __clang__
+  _LIBCPP_CONSTEXPR_SINCE_CXX20
 #endif
+  inline ~basic_string() {
     if (__is_long())
       __alloc_traits::deallocate(__alloc(), __get_long_pointer(), __get_long_cap());
   }
